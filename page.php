@@ -4,26 +4,28 @@ if (!isset($_GET["page"])) {
     $title = "Bad Request Error";
     $content = "Invalid URL";
     $status = 400;
-}
-else {
-    # Get page location in the ?page query param.
-    # TODO: Filter the data with built-in `filter_input`.
-    $loc = $_GET["page"];
-
-    # Check whether the URL is dangerous.
-    if (false != strpos($loc, "..")) {
-        $title = "Bad Request Error";
-        $content = "Invalid URL";
-        $status = 400;
-    }
-    # A dummu blog post.
-    else {
-        $title = "My blog post";
-        $content = "Your request page is " . $_GET["page"];
-        $status = 200;
-    }
+    goto render;
 }
 
+# Get page location in the ?page query param.
+# TODO: Filter the data with built-in `filter_input`.
+$loc = $_GET["page"];
+
+# Check whether the URL is dangerous.
+if (false != strpos($loc, "..")) {
+    $title = "Bad Request Error";
+    $content = "Invalid URL";
+    $status = 400;
+    goto render;
+}
+
+# A dummu blog post.
+$title = "My blog post";
+$content = "Your request page is " . $_GET["page"];
+$status = 200;
+
+render:
+    # pass.
 ?>
 
 <!DOCTYPE html>
