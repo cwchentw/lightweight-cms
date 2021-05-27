@@ -1,0 +1,16 @@
+{
+    "name": "cwchen/mdcms",
+    "description": "Markdown-based content management system powered by PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Chen",
+            "email": "cwchen.tw@outlook.com"
+        }
+    ],
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "erusev/parsedown-extra": "^0.8.1"
+    }
+}
