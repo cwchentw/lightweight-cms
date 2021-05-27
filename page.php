@@ -7,6 +7,7 @@ if (!isset($_GET["page"])) {
 }
 else {
     # Get page location in the ?page query param.
+    # TODO: Filter the data with built-in `filter_input`.
     $loc = $_GET["page"];
 
     # Check whether the URL is dangerous.
