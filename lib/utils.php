@@ -87,7 +87,7 @@ function fetchTitle($arr) {
 }
 
 function fetchContent($arr) {
-    $result = "";
+    $result = array();
 
     $html_path = getPath($arr, HTML_FILE_EXTENSION);
     $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
@@ -95,10 +95,18 @@ function fetchContent($arr) {
     # Here we just set higher priority for HTML pages.
     # We may change it later.
     if (file_exists($html_path)) {
-        $result = file_get_contents($html_path);
+        $raw_content = file_get_contents($html_path);
+
+        # TODO: Read title from raw content.
+
+        $result["content"] = $raw_content;
     }
     else if (file_exists($markdown_path)) {
-        $result = file_get_contents($markdown_path);
+        $raw_content = file_get_contents($markdown_path);
+
+        # TODO: Read title from raw content.
+
+        $result["content"] = $raw_content;
     }
 
     return $result;

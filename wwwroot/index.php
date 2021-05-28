@@ -32,16 +32,16 @@ temp:
 # Change it later.
 $arr = parsePage("/c-programming/hello-world/");
 $mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
-$raw_content = fetchContent($arr);
+$result = fetchContent($arr);
 
 # TODO: Read a title from a post.
 $title = "My blog post";
 if (file_exists($mdpath)) {
     $parser = new Parsedown();
-    $content = $parser->text($raw_content);
+    $content = $parser->text($result["content"]);
 }
 else {
-    $content = $raw_content;
+    $content = $result["content"];
 }
 
 $status = 200;
