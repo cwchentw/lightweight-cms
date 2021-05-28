@@ -36,7 +36,7 @@ render:
 
         <?php
             # TODO: Refactor it later.
-            include __DIR__ . "/../partials/header.php";
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
         ?>
     </head>
     <body>
@@ -52,7 +52,7 @@ render:
         
         <?php
             # TODO: Refactor it later.
-            include __DIR__ . "/../partials/footer.php"
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php"
         ?>
     </body>
 </html>

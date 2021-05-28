@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/../setting.php";
+
 function parsePage($page) {
     $result = array();
 
@@ -32,9 +34,6 @@ function parsePage($page) {
     return $result;
 }
 
-# TODO: Refactor it later.
-define("CONTENT_DIRECTORY", "content");
-
 function getPath($arr, $ext) {
     $path = "";
 
@@ -64,8 +63,8 @@ function getPath($arr, $ext) {
 function fetchContent($arr) {
     $result = "";
 
-    $html_path = getPath($arr, ".html");
-    $markdown_path = getPath($arr, ".md");
+    $html_path = getPath($arr, HTML_FILE_EXTENSION);
+    $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
 
     # Here we just set higher priority for HTML pages.
     # We may change it later.
