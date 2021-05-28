@@ -56,7 +56,6 @@ render:
         <title><?php echo $title ?></title>
 
         <?php
-            # TODO: Refactor it later.
             include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
         ?>
     </head>
@@ -67,12 +66,13 @@ render:
             </h1>
         </div>
 
+        <!-- If you want to create multi-column pages,
+               modify your layout here. -->
         <div class="container">
             <?php echo $content; ?>
         </div>
         
         <?php
-            # TODO: Refactor it later.
             include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
         ?>
     </body>
