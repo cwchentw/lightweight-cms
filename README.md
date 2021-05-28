@@ -46,6 +46,10 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
+## Notes for PHP Developers
+
+This CMS doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *wwwroot* as needed. Furthermore, your scripts can share partials in *partials* with other pages, reducing repeated code.
+
 ## Copyright
 
 Copyright (c) 2021, Michael Chen. Licensed under MIT
