@@ -34,8 +34,13 @@ $arr = parsePage("/c-programming/hello-world/");
 $mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
 $result = fetchContent($arr);
 
-# TODO: Read a title from a post.
-$title = "My blog post";
+# Get the post title.
+if ("" != $result["title"])
+    $title = $result["title"];
+else
+    $title = "My Blog Post";
+
+# Get the post content with its title removed.
 if (file_exists($mdpath)) {
     $parser = new Parsedown();
     $content = $parser->text($result["content"]);

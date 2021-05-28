@@ -59,54 +59,48 @@ function getPath($arr, $ext) {
     return $path;
 }
 
-# TODO: Test the code.
-# TODO: Merge `fetchTitle` and `fetchContent` to reduce file loading.
-function fetchTitle($arr) {
-    $title = "";
-
-    $html_path = getPath($arr, HTML_FILE_EXTENSION);
-    $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
-
-    # Here we just set higher priority for HTML pages.
-    # We may change it later.
-    if (file_exists($html_path)) {
-        $dom = new DOMDocument();
-        $dom->loadHTMLFile($html_path);
-        $titles = $dom->getElementsByTagName("h1");
-        if (isset($titles))
-            $title = $titles[0];
-    }
-    else if (file_exists($markdown_path)) {
-        $raw_content = file_get_contents($markdown_path);
-        preg_match("^# (.+)", $raw_content, $matches);
-        if (isset($matches))
-            $title = $matches[0];
-    }
-
-    return $title;
-}
-
 function fetchContent($arr) {
     $result = array();
 
+    # Initialize the fields.
+    $result["title"] = "";
+    $result["content"] = "";
+
     $html_path = getPath($arr, HTML_FILE_EXTENSION);
     $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
 
-    # Here we just set higher priority for HTML pages.
+    # Here we simply set higher priority for HTML pages.
     # We may change it later.
     if (file_exists($html_path)) {
         $raw_content = file_get_contents($html_path);
 
-        # TODO: Read title from raw content.
+        $dom = new DOMDocument();
+        $dom->loadHTML($raw_content);
+        $titles = $dom->getElementsByTagName("h1");
+        if (isset($titles)) {
+            $result["title"] = $titles[0];
 
-        $result["content"] = $raw_content;
+            # TODO: Check whether the code is correct.
+            for ($i = 0; $i < $titles->length; ++$i) {
+                $title = $titles->item($i);
+                $title->parentNode->removeChild($title);
+            }
+
+            $result["content"] = $dom->saveHTML();
+        }
+        else
+            $result["content"] = $raw_content;
     }
     else if (file_exists($markdown_path)) {
         $raw_content = file_get_contents($markdown_path);
 
-        # TODO: Read title from raw content.
-
-        $result["content"] = $raw_content;
+        preg_match("/^# (.+)/", $raw_content, $matches);
+        if (isset($matches)) {
+            $result["title"] = $matches[1];
+            $result["content"] = preg_replace("/^# (.+)/", "", $raw_content);
+        }
+        else
+            $result["content"] = $raw_content;
     }
 
     return $result;
