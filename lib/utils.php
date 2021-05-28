@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 
 function parsePage($page) {
@@ -66,6 +66,7 @@ function fetchPage($page) {
     # Initialize the fields.
     $result["title"] = "";
     $result["content"] = "";
+    $result["status"] = 404;
 
     $html_path = getPath($page, HTML_FILE_EXTENSION);
     $markdown_path = getPath($page, MARKDOWN_FILE_EXTENSION);
@@ -84,6 +85,8 @@ function fetchPage($page) {
         }
         else
             $result["content"] = $raw_content;
+
+        $result["status"] = 200;
     }
     else if (file_exists($markdown_path)) {
         $raw_content = file_get_contents($markdown_path);
@@ -95,6 +98,11 @@ function fetchPage($page) {
         }
         else
             $result["content"] = $raw_content;
+
+        $parser = new Parsedown();
+        $result["content"] = $parser->text($result["content"]);
+
+        $result["status"] = 200;
     }
 
     return $result;

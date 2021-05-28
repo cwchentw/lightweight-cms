@@ -6,6 +6,8 @@ define("SITE_LANGUAGE", "en-US");
 
 # The directory of content.
 define("CONTENT_DIRECTORY", "content");
+# The directory of layout.
+define("LAYOUT_DIRECTORY", "layout");
 # The directory of partials.
 define("PARTIALS_DIRECTORY", "partials");
 # The directory of private libraries.

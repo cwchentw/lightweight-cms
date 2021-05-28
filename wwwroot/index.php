@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
-    $title = "Bad Request Error";
-    $content = "Invalid URL";
-    $status = 400;
+    $post = array();
+    $post["title"] = "Bad Request Error";
+    $post["content"] = "Invalid URL";
+    $post["status"] = 400;
     goto render;
 }
 
@@ -16,63 +16,25 @@ $loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
 
 # Check whether the URL is dangerous.
 if (false != strpos($loc, "..")) {
-    $title = "Bad Request Error";
-    $content = "Invalid URL";
-    $status = 400;
+    $post = array();
+    $post["title"] = "Bad Request Error";
+    $post["content"] = "Invalid URL";
+    $post["status"] = 400;
     goto render;
 }
 
-$arr = parsePage($loc);
-$mdpath = getPath($loc, MARKDOWN_FILE_EXTENSION);
-$result = fetchPage($loc);
+$post = fetchPage($loc);
 
-# Get the post title.
-if ("" != $result["title"])
-    $title = $result["title"];
-else
-    $title = "My Blog Post";
-
-# Get the post content with its title removed.
-if (file_exists($mdpath)) {
-    $parser = new Parsedown();
-    $content = $parser->text($result["content"]);
+# Fallback to default title.
+if (404 == $post["status"]) {
+    $post["title"] = "Page Not Found";
+    $post["content"] = "The post doesn't exist on the website";
 }
-else {
-    $content = $result["content"];
-}
-
-$status = 200;
 
 render:
-    # pass.
-?>
+    # Currently, we use a superglobal variable to pass data.
+    # Change it later.
+    $GLOBALS["post"] = $post;
 
-<!DOCTYPE html>
-<html lang="<?php echo SITE_LANGUAGE ?>">
-    <head>
-        <title><?php echo $title ?></title>
-
-        <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
-        ?>
-    </head>
-    <body>
-        <div class="text-center">
-            <h1>
-                <?php echo $title; ?>
-            </h1>
-        </div>
-
-        <!-- If you want to create multi-column pages,
-               modify your layout here. -->
-        <div class="container">
-            <?php echo $content; ?>
-        </div>
-        
-        <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
-        ?>
-    </body>
-</html>
-
-<?php http_response_code($status); ?>
+    # Change it later.
+    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/post.php";
