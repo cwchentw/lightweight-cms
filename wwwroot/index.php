@@ -1,6 +1,11 @@
 <?php
+require_once __DIR__ . "/../vendor/autoload.php";
+
 require_once __DIR__ . '/../setting.php';
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
+
+# Remove it later.
+goto temp;
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
@@ -20,16 +25,25 @@ if (false != strpos($loc, "..")) {
     $status = 400;
     goto render;
 }
-    
-# Fetch local content.
-$arr = parsePage("/c-programming/hello-world/");
-$content = fetchContent($arr);
 
-# Display raw content.
-# TODO: Change it later.
+# Remove it later.
+temp:
+
+# Change it later.
+$arr = parsePage("/c-programming/hello-world/");
+$mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
+$raw_content = fetchContent($arr);
+
+# TODO: Read a title from a post.
 $title = "My blog post";
-$content = "Your request path is " . $_GET["page"] . "\n"
-    . "Your request content is:" . "\n". "<pre>" . $content . "</pre>";
+if (file_exists($mdpath)) {
+    $parser = new Parsedown();
+    $content = $parser->text($raw_content);
+}
+else {
+    $content = $raw_content;
+}
+
 $status = 200;
 
 render:

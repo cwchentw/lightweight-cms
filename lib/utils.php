@@ -59,7 +59,6 @@ function getPath($arr, $ext) {
     return $path;
 }
 
-# TODO: Test the code.
 function fetchContent($arr) {
     $result = "";
 
