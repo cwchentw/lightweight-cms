@@ -37,6 +37,7 @@ function parsePage($page) {
 define("CONTENT_DIRECTORY", "content");
 
 # TODO: Test the code.
+# TODO: Test the code.
 function fetchContent($arr) {
     $result = "";
 
@@ -61,7 +62,26 @@ function fetchContent($arr) {
         }
     }
     else {
-        # TODO: Implement it later.
+        $file = array_pop($arr);
+        $directory = join("/", $arr);
+
+        $html_path = __DIR__ . "/../" 
+            . CONTENT_DIRECTORY . "/"
+            . $directory
+            . $file . ".html";
+        $markdown_path = __DIR__ . "/../" 
+            . CONTENT_DIRECTORY . "/"
+            . $directory
+            . $file . ".md";
+
+        # Here we just set higher priority for HTML pages.
+        # We may change it later.
+        if (file_exists($html_path)) {
+            $result = file_get_contents($html_path);
+        }
+        else if (file_exists($markdown_path)) {
+            $result = file_get_contents($markdown_path);
+        }
     }
 
     return $result;
