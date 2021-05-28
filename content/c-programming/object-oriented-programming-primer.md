@@ -87,3 +87,70 @@ extern "C" {
 }
 #endif
 ```
+
+```c
+/* point.c */
+#include <assert.h>
+#include <math.h>
+#include <stdlib.h>
+#include "point.h"
+
+struct point_t {
+    double x;
+    double y;
+};
+
+point_t * point_zero(void)
+{
+    return point_new(0.0, 0.0);
+}
+
+point_t * point_new(double x, double y)
+{
+    point_t *self = \
+        (point_t *) malloc(sizeof(point_t));
+    if (!self)
+        return self;
+
+    point_set_x(self, x);
+    point_set_y(self, y);
+
+    return self;
+}
+
+void point_delete(void *self)
+{
+    if (!self)
+        return;
+
+    free(self);
+}
+
+double point_x(point_t *self)
+{
+    assert(self);
+
+    return self->x;
+}
+
+double point_y(point_t *self)
+{
+    assert(self);
+
+    return self->y;
+}
+
+double point_distance_between(point_t *p, point_t *q)
+{
+    assert(p && q);
+
+    double dx = point_x(p) - point_x(q);
+    double dy = point_y(p) - point_y(q);
+
+    return sqrt(dx * dx + dy * dy);
+}
+```
+
+## README
+
+C lacks built-in supports to object-oriented programming.
