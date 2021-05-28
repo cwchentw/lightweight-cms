@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../setting.php";
 
 function parsePage($page) {
     $result = array();

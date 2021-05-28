@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../setting.php';
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
@@ -19,10 +20,16 @@ if (false != strpos($loc, "..")) {
     $status = 400;
     goto render;
 }
+    
+# Fetch local content.
+$arr = parsePage("/c-programming/hello-world/");
+$content = fetchContent($arr);
 
-# A dummu blog post.
+# Display raw content.
+# TODO: Change it later.
 $title = "My blog post";
-$content = "Your request page is " . $_GET["page"];
+$content = "Your request path is " . $_GET["page"] . "\n"
+    . "Your request content is:" . "\n". "<pre>" . $content . "</pre>";
 $status = 200;
 
 render:
