@@ -34,7 +34,10 @@ render:
     <head>
         <title><?php echo $title ?></title>
 
-        <?php include __DIR__ . "/../partials/header.php"; ?>
+        <?php
+            # TODO: Refactor it later.
+            include __DIR__ . "/../partials/header.php";
+        ?>
     </head>
     <body>
         <div class="text-center">
@@ -47,7 +50,10 @@ render:
             <?php echo $content; ?>
         </div>
         
-        <?php include __DIR__ . "/../partials/footer.php" ?>
+        <?php
+            # TODO: Refactor it later.
+            include __DIR__ . "/../partials/footer.php"
+        ?>
     </body>
 </html>
 
