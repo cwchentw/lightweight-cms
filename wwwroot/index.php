@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../setting.php';
+
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
     $title = "Bad Request Error";
@@ -28,7 +30,7 @@ render:
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
         <title><?php echo $title ?></title>
 
