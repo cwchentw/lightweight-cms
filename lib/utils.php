@@ -34,7 +34,8 @@ function parsePage($page) {
     return $result;
 }
 
-function getPath($arr, $ext) {
+function getPath($page, $ext) {
+    $arr = parsePage($page);
     $path = "";
 
     $len = count($arr);
@@ -59,15 +60,15 @@ function getPath($arr, $ext) {
     return $path;
 }
 
-function fetchContent($arr) {
+function fetchPage($page) {
     $result = array();
 
     # Initialize the fields.
     $result["title"] = "";
     $result["content"] = "";
 
-    $html_path = getPath($arr, HTML_FILE_EXTENSION);
-    $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
+    $html_path = getPath($page, HTML_FILE_EXTENSION);
+    $markdown_path = getPath($page, MARKDOWN_FILE_EXTENSION);
 
     # Here we simply set higher priority for HTML pages.
     # We may change it later.

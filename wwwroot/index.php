@@ -23,8 +23,8 @@ if (false != strpos($loc, "..")) {
 }
 
 $arr = parsePage($loc);
-$mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
-$result = fetchContent($arr);
+$mdpath = getPath($loc, MARKDOWN_FILE_EXTENSION);
+$result = fetchPage($loc);
 
 # Get the post title.
 if ("" != $result["title"])
