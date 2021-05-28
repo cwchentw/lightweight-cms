@@ -4,7 +4,7 @@
 
 This article illustrates simulated classes and objects in pure C.
 
-## Synopsis
+## Example
 
 ```c
 /* main.c */
