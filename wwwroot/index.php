@@ -31,13 +31,21 @@ render:
 <html>
     <head>
         <title><?php echo $title ?></title>
+
+        <?php include __DIR__ . "/../partials/header.php"; ?>
     </head>
     <body>
-        <h1><?php echo $title; ?></h1>
+        <div class="text-center">
+            <h1>
+                <?php echo $title; ?>
+            </h1>
+        </div>
 
-        <div>
+        <div class="container">
             <?php echo $content; ?>
         </div>
+        
+        <?php include __DIR__ . "/../partials/footer.php" ?>
     </body>
 </html>
 
