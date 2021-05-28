@@ -153,4 +153,4 @@ double point_distance_between(point_t *p, point_t *q)
 
 ## README
 
-C lacks built-in supports to object-oriented programming.
+C lacks built-in supports to object-oriented programming. Therefore, we simulate classes and objects with C struct.
