@@ -59,6 +59,33 @@ function getPath($arr, $ext) {
     return $path;
 }
 
+# TODO: Test the code.
+# TODO: Merge `fetchTitle` and `fetchContent` to reduce file loading.
+function fetchTitle($arr) {
+    $title = "";
+
+    $html_path = getPath($arr, HTML_FILE_EXTENSION);
+    $markdown_path = getPath($arr, MARKDOWN_FILE_EXTENSION);
+
+    # Here we just set higher priority for HTML pages.
+    # We may change it later.
+    if (file_exists($html_path)) {
+        $dom = new DOMDocument();
+        $dom->loadHTMLFile($html_path);
+        $titles = $dom->getElementsByTagName("h1");
+        if (isset($titles))
+            $title = $titles[0];
+    }
+    else if (file_exists($markdown_path)) {
+        $raw_content = file_get_contents($markdown_path);
+        preg_match("^# (.+)", $raw_content, $matches);
+        if (isset($matches))
+            $title = $matches[0];
+    }
+
+    return $title;
+}
+
 function fetchContent($arr) {
     $result = "";
 
