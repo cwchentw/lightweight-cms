@@ -14,13 +14,13 @@ Markdown-based content management system powered by PHP.
 Clone the repo:
 
 ```
-$ git clone https://github.com/cwchentw/mdcms.git
+$ git clone https://github.com/cwchentw/mdcms.git mysite
 ```
 
-Change your working directory to the root of the repo:
+Change your working directory to the root of the cloned repo:
 
 ```
-$ cd mdcms
+$ cd mysite
 ```
 
 (Optional) Install Composer:
@@ -29,13 +29,22 @@ $ cd mdcms
 $ sh scripts/install-composer
 ```
 
-Install dependencies:
+Install dependencies with Composer:
 
 ```
 $ composer install
 ```
 
-(Pending)
+Remove all sample articles in *content*, adding your awesome ones.
+
+Deploy the cloned repo to a web hosting service supporting PHP 7. Set the configuration of the web server accordingly.
+
+(Optional) Save the cloned repo to another remote repo:
+
+```
+$ git remote set-url origin https://example.com/user/mysite.git
+$ git push -u origin master
+```
 
 ## Copyright
 
