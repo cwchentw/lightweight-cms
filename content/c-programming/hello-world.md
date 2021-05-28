@@ -4,7 +4,7 @@
 
 This article demonstrates a Hello World program in C.
 
-## Synopsis
+## Example
 
 ```c
 /* Include the standard I/O library. */
