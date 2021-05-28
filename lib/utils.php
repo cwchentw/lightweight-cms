@@ -4,6 +4,10 @@
 function parsePage($page) {
     $result = array();
 
+    # Reject invalid page.
+    if ("/" != substr($page, 0, 1))
+        return $result;
+
     $len = strlen($page);
     $i = 0;
     while ($i < $len) {
