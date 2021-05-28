@@ -4,7 +4,7 @@
 function parsePage($page) {
     $result = array();
 
-    # Reject invalid page.
+    # Reject invalid pages.
     if ("/" != substr($page, 0, 1))
         return $result;
 
@@ -13,11 +13,16 @@ function parsePage($page) {
     while ($i < $len) {
         if ("/" == substr($page, $i, 1)) {
             $j = $i + 1;
+
             while ($j < $len && "/" != substr($page, $j, 1))
                 ++$j;
+
             $part = substr($page, $i+1, $j-$i-1);
+
+            # Discard trailing empty strings.
             if ("" != $part)
                 array_push($result, $part);
+
             $i = $j;
         }
         else {
