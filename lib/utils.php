@@ -78,7 +78,7 @@ function fetchContent($arr) {
         # Therefore, we don't use a HTML parser.
         preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
         if (isset($matches)) {
-            $result["title"] = $matches[0];
+            $result["title"] = $matches[1];
             $result["content"] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
         }
         else
