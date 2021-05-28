@@ -73,7 +73,7 @@ render:
         
         <?php
             # TODO: Refactor it later.
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php"
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
         ?>
     </body>
 </html>
