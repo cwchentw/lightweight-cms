@@ -12,8 +12,7 @@ if (!isset($_GET["page"])) {
 }
 
 # Get page location in the ?page query param.
-# FIXME: Correct $loc.
-$loc = filter_input(INPUT_GET, $_GET["page"], FILTER_SANITIZE_STRING);
+$loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
 
 # Check whether the URL is dangerous.
 if (false != strpos($loc, "..")) {
@@ -23,8 +22,7 @@ if (false != strpos($loc, "..")) {
     goto render;
 }
 
-# FIXME: Substitute correct `$loc` for raw `$_GET["page"]`.
-$arr = parsePage($_GET["page"]);
+$arr = parsePage($loc);
 $mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
 $result = fetchContent($arr);
 
