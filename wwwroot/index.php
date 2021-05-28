@@ -1,11 +1,7 @@
 <?php
 require_once __DIR__ . "/../vendor/autoload.php";
-
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
-
-# Remove it later.
-goto temp;
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
@@ -16,6 +12,7 @@ if (!isset($_GET["page"])) {
 }
 
 # Get page location in the ?page query param.
+# FIXME: Correct $loc.
 $loc = filter_input(INPUT_GET, $_GET["page"], FILTER_SANITIZE_STRING);
 
 # Check whether the URL is dangerous.
@@ -26,11 +23,8 @@ if (false != strpos($loc, "..")) {
     goto render;
 }
 
-# Remove it later.
-temp:
-
-# Change it later.
-$arr = parsePage("/c-programming/hello-world/");
+# FIXME: Substitute correct `$loc` for raw `$_GET["page"]`.
+$arr = parsePage($_GET["page"]);
 $mdpath = getPath($arr, MARKDOWN_FILE_EXTENSION);
 $result = fetchContent($arr);
 

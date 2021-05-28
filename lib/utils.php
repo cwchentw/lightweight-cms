@@ -74,19 +74,12 @@ function fetchContent($arr) {
     if (file_exists($html_path)) {
         $raw_content = file_get_contents($html_path);
 
-        $dom = new DOMDocument();
-        $dom->loadHTML($raw_content);
-        $titles = $dom->getElementsByTagName("h1");
-        if (isset($titles)) {
-            $result["title"] = $titles[0];
-
-            # TODO: Check whether the code is correct.
-            for ($i = 0; $i < $titles->length; ++$i) {
-                $title = $titles->item($i);
-                $title->parentNode->removeChild($title);
-            }
-
-            $result["content"] = $dom->saveHTML();
+        # `$raw_content` is not a full HTML document.
+        # Therefore, we don't use a HTML parser.
+        preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
+        if (isset($matches)) {
+            $result["title"] = $matches[0];
+            $result["content"] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
         }
         else
             $result["content"] = $raw_content;
