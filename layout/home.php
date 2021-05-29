@@ -29,23 +29,35 @@ $status = 200;
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <h2>Sections</h2>
-            <ul>
-                <?php
-                    foreach ($sections as $section)
-                        echo "<li><a href=\"/" . $section[MDCMS_LINK_PATH] . "/\">"
-                            . $section[MDCMS_LINK_TITLE] . "</a></li>";
-                ?>
-            </ul>
+            <?php
+                # Add section(s) if any exist.
+                if (isset($sections) && count($sections) > 0) {
+                    echo "<h2>Sections</h2>";
 
-            <h2>Pages</h2>
-            <ul>
-                <?php
+                    echo "<ul>";
+
+                    foreach ($sections as $section)
+                        echo "<li><a href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                          . $section[MDCMS_LINK_TITLE] . "</a></li>";
+
+                    echo "</ul>";
+                }
+            ?>
+
+            <?php
+                # Add page(s) if any exist.
+                if (isset($pages) && count($pages) > 0) {
+                    echo "<h2>Pages</h2>";
+
+                    echo "<ul>";
+
                     foreach ($pages as $page)
-                        echo "<li><a href=\"/" . $page[MDCMS_LINK_PATH] . "\">"
+                        echo "<li><a href=\"" . $page[MDCMS_LINK_PATH] . "\">"
                             . $page[MDCMS_LINK_TITLE] . "</a></li>";
-                ?>
-            </ul>
+
+                    echo "</ul>";
+                }
+            ?>
         </div>
         
         <?php

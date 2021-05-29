@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/const.php";
+require_once __DIR__ . "/page.php";
 
 function isHomePage($page) {
     return "/" == $page;
@@ -28,9 +29,7 @@ function getSections($page) {
         if (is_dir($path)) {
             $d = array();
 
-            $d[MDCMS_LINK_PATH] =
-                substr($page, 0, -1)  # Remove a trailing slash.
-                . $file;
+            $d[MDCMS_LINK_PATH] = $page . $file . "/";
 
             $index_path = $path . "/" . SECTION_INDEX;
 
@@ -95,13 +94,13 @@ function getPages($page) {
             $f = array();
 
             # Remove file extensions.
-            $f[MDCMS_LINK_PATH] = pathinfo($file, PATHINFO_FILENAME);
+            $f[MDCMS_LINK_PATH] =
+                $page . pathinfo($file, PATHINFO_FILENAME) . "/";
 
             # Get the title of the page.
-            $t = pathinfo($file, PATHINFO_FILENAME);
-            $t = preg_replace("/-+/", " ", $t);
-            $t = ucwords($t);  # Capitalize a title.
-            $f[MDCMS_LINK_TITLE] = $t;
+            # If the commands cost too many system resources, change it.
+            $p = readPage($f[MDCMS_LINK_PATH]);
+            $f[MDCMS_LINK_TITLE] = $p[MDCMS_POST_TITLE];
 
             array_push($result, $f);
         }

@@ -42,6 +42,8 @@ render:
     }
     else if (isSection($loc)) {
         $GLOBALS[MDCMS_SECTION] = getSection($loc);
+        $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
+        $GLOBALS[MDCMS_PAGES] = getPages($loc);
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . LIST_LAYOUT;
     }
     else {
