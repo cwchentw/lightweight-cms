@@ -43,6 +43,7 @@ render:
     }
     # Render a home page.
     else if (isHomePage($loc)) {
+        $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
         $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
         $GLOBALS[MDCMS_PAGES] = getPages($loc);
 
@@ -50,6 +51,7 @@ render:
     }
     # Render a section page.
     else if (isSection($loc)) {
+        $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
         $GLOBALS[MDCMS_SECTION] = getSection($loc);
         $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
         $GLOBALS[MDCMS_PAGES] = getPages($loc);

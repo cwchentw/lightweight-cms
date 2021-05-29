@@ -12,6 +12,8 @@ define("SITE_AUTHOR", "mdcms");
 # Set the language of rendered HTML pages.
 # Currently, we only support websites of single language.
 define("SITE_LANGUAGE", "en-US");
+# Set the text of the index page of breadcrumbs.
+define("SITE_BREADCRUMB_HOME", "Home");
 
 # A flag to scan application directory.
 define("SCAN_APPLICATION_DIRECTORY", false);

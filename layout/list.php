@@ -34,6 +34,10 @@ $pages = $GLOBALS[MDCMS_PAGES];
                modify your layout here. -->
         <div class="container">
             <?php
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
+            ?>
+
+            <?php
             if (isset($section[MDCMS_SECTION_CONTENT])
                 && "" != $section[MDCMS_SECTION_CONTENT])
                 echo $section[MDCMS_SECTION_CONTENT];

@@ -191,3 +191,66 @@ function getSection($page) {
 
     return $result;
 }
+
+function getBreadcrumb($page) {
+    $result = array();
+
+    # Add the link to home.
+    $d = array();
+
+    $d[MDCMS_LINK_PATH] = "/";
+    $d[MDCMS_LINK_TITLE] = SITE_BREADCRUMB_HOME;
+
+    array_push($result, $d);
+
+    if ("/" == $page)
+        return $result;
+
+    $arr = parsePage($page);
+    $len = count($arr);
+    for ($i = 0; $i < $len; ++$i) {
+        $prev = $result[$i][MDCMS_LINK_PATH];
+
+        $path = __DIR__
+            . "/../" . CONTENT_DIRECTORY
+            . $prev . "/" . $arr[$i];
+        $html_path = __DIR__
+            . "/../" . CONTENT_DIRECTORY
+            . $prev . "/" . $arr[$i] . HTML_FILE_EXTENSION;
+        $markdown_path = __DIR__
+            . "/../" . CONTENT_DIRECTORY
+            . $prev . "/" . $arr[$i] . HTML_FILE_EXTENSION;
+
+        $d = array();
+        if (is_dir($path)) {
+            $d[MDCMS_LINK_PATH] = $prev . "/" . $arr[$i];
+
+            $index_path = $path . "/" . SECTION_INDEX;
+
+            # If a section index exists, extract data from it.
+            if (file_exists($index_path)) {
+                $c = file_get_contents($index_path);
+
+                preg_match("/^# (.+)/", $c, $matches);
+                if (isset($matches))
+                    $d[MDCMS_LINK_TITLE] = $matches[1];
+            }
+            # Otherwise, extract data from the directory name.
+            else {
+                $t = preg_replace("/\/|-+/", " ", $arr[$i]);
+                $t = ucwords($t);  # Capitalize a title.
+                $d[MDCMS_SECTION_TITLE] = $t;
+            }
+
+            array_push($result, $d);
+        }
+        else if (file_exists($html_path)) {
+            # Implement it later.
+        }
+        else if (file_exists($markdown_path)) {
+            # Implement it later.
+        }
+    }
+
+    return $result;
+}

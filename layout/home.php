@@ -35,6 +35,10 @@ $status = 200;  # HTTP 200 OK.
                modify your layout here. -->
         <div class="container">
             <?php
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
+            ?>
+
+            <?php
             # Add section(s) if any exist.
             if (isset($sections) && count($sections) > 0) {
                 echo "<h2>Sections</h2>";
