@@ -5,7 +5,12 @@
 
 define("MDCMS_SECTIONS", "sections");
 define("MDCMS_PAGES", "pages");
+define("MDCMS_SECTION", "section");
 define("MDCMS_POST", "post");
+
+define("MDCMS_SECTION_TITLE", "title");
+define("MDCMS_SECTION_CONTENT", "content");
+define("MDCMS_SECTION_STATUS", "status");
 
 define("MDCMS_POST_TITLE", "title");
 define("MDCMS_POST_CONTENT", "content");

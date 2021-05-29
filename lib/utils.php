@@ -236,8 +236,9 @@ function getSection($page) {
     $result = array();
 
     # Initialize some data.
-    $result["title"] = "";
-    $result["content"] = "";
+    $result[MDCMS_SECTION_TITLE] = "";
+    $result[MDCMS_SECTION_CONTENT] = "";
+    $result[MDCMS_SECTION_STATUS] = 200;  # HTTP Status.
 
     $index_path = __DIR__ . "/../" . CONTENT_DIRECTORY
         . "/" . $page . SECTION_INDEX;
@@ -247,17 +248,17 @@ function getSection($page) {
 
         preg_match("/^# (.+)/", $c, $matches);
         if (isset($matches))
-            $result["title"] = $matches[1];
+            $result[MDCMS_SECTION_TITLE] = $matches[1];
 
         $c = preg_replace("/^# (.+)/", "", $c);
 
         $parser = new Parsedown();
-        $result["content"] = $parser->text($c);
+        $result[MDCMS_SECTION_CONTENT] = $parser->text($c);
     }
     else {
         $t = preg_replace("/\/|-+/", " ", $page);
         $t = ucwords($t);  # Capitalize a title.
-        $result["title"] = $t;
+        $result[MDCMS_SECTION_TITLE] = $t;
     }
 
     return $result;

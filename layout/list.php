@@ -1,16 +1,16 @@
 <?php
 require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Receive global data here.
-$section = $GLOBALS["section"];
-$status = 200;
+$section = $GLOBALS[MDCMS_SECTION];
 ?>
 
 
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
-        <title><?php echo $section["title"] ?></title>
+        <title><?php echo $section[MDCMS_SECTION_TITLE] ?></title>
 
         <?php
             include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
@@ -18,17 +18,16 @@ $status = 200;
     </head>
     <body>
         <div class="text-center">
-            <h1>
-                <?php echo $section["title"]; ?>
-            </h1>
+            <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
         </div>
 
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
             <?php
-                if (isset($section["content"]) && "" != $section["content"])
-                    echo $section["content"];
+                if (isset($section[MDCMS_SECTION_CONTENT])
+                    && "" != $section[MDCMS_SECTION_CONTENT])
+                    echo $section[MDCMS_SECTION_CONTENT];
             ?>
 
             <p>Pending a list.</p>
@@ -40,4 +39,4 @@ $status = 200;
     </body>
 </html>
 
-<?php http_response_code($status); ?>
+<?php http_response_code($section[MDCMS_SECTION_STATUS]); ?>
