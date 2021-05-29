@@ -28,7 +28,7 @@ render:
         # Currently, we use a superglobal variable to pass data.
         $GLOBALS["post"] = $post;
 
-        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/post.php";
+        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
     else {
         $post = fetchPage($loc);
@@ -42,5 +42,5 @@ render:
         # Currently, we use a superglobal variable to pass data.
         $GLOBALS["post"] = $post;
 
-        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/post.php";
+        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }

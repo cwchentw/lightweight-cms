@@ -4,6 +4,9 @@
 # Currently, we only support websites in single language.
 define("SITE_LANGUAGE", "en-US");
 
+# The layout of posts.
+define("POST_LAYOUT", "post.php");
+
 # The directory of content.
 define("CONTENT_DIRECTORY", "content");
 # The directory of layout.
