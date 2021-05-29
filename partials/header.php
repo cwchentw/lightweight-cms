@@ -7,7 +7,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- highlight.js CSS -->
-<!-- TODO: Select a highlight.js theme by users. -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/railscasts.min.css"
     integrity="sha512-0UdQ2subH1uPQAASCGB83KophEAoaJd6ii3D1jKEZ8YMnP7W3dGh3Pn3Pf8P5zKvX+T8Ltp+kY0ABON0mUqP3w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />

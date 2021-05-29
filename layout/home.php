@@ -36,7 +36,6 @@ $status = 200;  # HTTP 200 OK.
         <div class="container">
             <?php
             # Add section(s) if any exist.
-            # TODO: Check it later.
             if (isset($sections) && count($sections) > 0) {
                 echo "<h2>Sections</h2>";
 

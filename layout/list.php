@@ -59,7 +59,6 @@ $pages = $GLOBALS[MDCMS_PAGES];
 
             <?php
             # Add page(s) if any exist.
-            # TODO: Check it later.
             if (isset($pages) && count($pages) > 0) {
                 echo "<h2>Articles</h2>";
 
