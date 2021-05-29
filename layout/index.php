@@ -12,6 +12,8 @@ $status = 200;
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
         <title><?php echo SITE_NAME; ?></title>
+        <meta name="description" content="<?php echo SITE_DESCRIPTION ?>">
+        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
         <?php
             include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";

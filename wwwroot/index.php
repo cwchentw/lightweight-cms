@@ -3,7 +3,7 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Remove it later.
-$loc = "/c-programming/hello-world/";
+$loc = "/";
 goto render;
 
 # Check whether the ?page query is set.
