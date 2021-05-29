@@ -15,7 +15,7 @@ define("SITE_LANGUAGE", "en-US");
 # If either is modified, modify the project accordingly as well.
 
 # The layout of index page.
-define("INDEX_LAYOUT", "index.php");
+define("INDEX_LAYOUT", "home.php");
 # The layout of lists.
 define("LIST_LAYOUT", "list.php");
 # The layout of posts.
