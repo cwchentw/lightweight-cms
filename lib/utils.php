@@ -34,6 +34,10 @@ function parsePage($page) {
     return $result;
 }
 
+function isHomePage($page) {
+    return "/" == $page;
+}
+
 function getPath($page, $ext) {
     $arr = parsePage($page);
     $path = "";

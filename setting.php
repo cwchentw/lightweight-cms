@@ -1,9 +1,14 @@
 <?php
 
+# Set the name of the website.
+define("SITE_NAME", "mdcms Sample Site");
+# Set the description of the website.
+define("SITE_DESCRIPTION", "A Markdown-based Content Management System Powered by PHP");
 # Set the language of rendered HTML pages.
-# Currently, we only support websites in single language.
 define("SITE_LANGUAGE", "en-US");
 
+# The layout of index page.
+define("INDEX_LAYOUT", "index.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
 

@@ -30,6 +30,11 @@ render:
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
+    else if (isHomePage($loc)) {
+        # Pass required variables here.
+
+        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
+    }
     else {
         $post = fetchPage($loc);
 
