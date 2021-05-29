@@ -33,8 +33,8 @@ $status = 200;
             <ul>
                 <?php
                     foreach ($sections as $section)
-                        echo "<li><a href=\"/" . $section["path"] . "/\">"
-                            . $section["title"] . "</a></li>";
+                        echo "<li><a href=\"/" . $section[MDCMS_LINK_PATH] . "/\">"
+                            . $section[MDCMS_LINK_TITLE] . "</a></li>";
                 ?>
             </ul>
 
@@ -42,8 +42,8 @@ $status = 200;
             <ul>
                 <?php
                     foreach ($pages as $page)
-                        echo "<li><a href=\"/" . $page["path"] . "\">"
-                            . $page["title"] . "</a></li>";
+                        echo "<li><a href=\"/" . $page[MDCMS_LINK_PATH] . "\">"
+                            . $page[MDCMS_LINK_TITLE] . "</a></li>";
                 ?>
             </ul>
         </div>

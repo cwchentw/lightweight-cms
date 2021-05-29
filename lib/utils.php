@@ -129,11 +129,11 @@ function getSections() {
         if (is_dir($path)) {
             $d = array();
 
-            $d["path"] = $file;
+            $d[MDCMS_LINK_PATH] = $file;
 
             $t = preg_replace("/-+/", " ", $file);
             $t = ucwords($t);  # Capitalize a title.
-            $d["title"] = $t;
+            $d[MDCMS_LINK_TITLE] = $t;
 
             array_push($result, $d);
         }
@@ -152,11 +152,11 @@ function getSections() {
         if (is_dir($path)) {
             $d = array();
 
-            $d["path"] = $file;
+            $d[MDCMS_LINK_PATH] = $file;
 
             $t = preg_replace("/-+/", " ", $file);
             $t = ucwords($t);  # Capitalize a title.
-            $d["title"] = $t;
+            $d[MDCMS_LINK_TITLE] = $t;
 
             array_push($result, $d);
         }
@@ -184,13 +184,13 @@ function getPages() {
             $f = array();
 
             # Remove file extensions.
-            $f["path"] = pathinfo($file, PATHINFO_FILENAME);
+            $f[MDCMS_LINK_PATH] = pathinfo($file, PATHINFO_FILENAME);
 
             # Get the title of the page.
             $t = pathinfo($file, PATHINFO_FILENAME);
             $t = preg_replace("/-+/", " ", $t);
             $t = ucwords($t);  # Capitalize a title.
-            $f["title"] = $t;
+            $f[MDCMS_LINK_TITLE] = $t;
 
             array_push($result, $f);
         }
@@ -213,13 +213,13 @@ function getPages() {
             $f = array();
 
             # It is not a pretty URL. Keep its file extension *as is*.
-            $f["path"] = $file;
+            $f[MDCMS_LINK_PATH] = $file;
 
             # Get the title of the page.
             $t = pathinfo($file, PATHINFO_FILENAME);
             $t = preg_replace("/-+/", " ", $t);
             $t = ucwords($t);  # Capitalize a title.
-            $f["title"] = $t;
+            $f[MDCMS_LINK_TITLE] = $t;
 
             array_push($result, $f);
         }

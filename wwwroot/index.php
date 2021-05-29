@@ -3,7 +3,7 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Remove it later.
-$loc = "/about/";
+$loc = "/";
 goto render;
 
 # Check whether the ?page query is set.
@@ -45,8 +45,8 @@ render:
 
         # HTTP 404 Page.
         if (404 == $post[MDCMS_POST_STATUS]) {
-            $post["title"] = "Page Not Found";
-            $post["content"] = "The post doesn't exist on the website";
+            $post[MDCMS_POST_TITLE] = "Page Not Found";
+            $post[MDCMS_POST_CONTENT] = "The post doesn't exist on the website";
         }
 
         # Currently, we use a superglobal variable to pass data.
