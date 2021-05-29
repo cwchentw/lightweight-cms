@@ -26,7 +26,7 @@ $ cd mysite
 (Optional) Install Composer:
 
 ```
-$ sh scripts/install-composer
+$ sh scripts/install-composer $HOME/bin
 ```
 
 Install dependencies with Composer:
