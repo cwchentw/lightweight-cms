@@ -4,9 +4,9 @@ require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 $post = $GLOBALS[MDCMS_POST];
 
-$title = $post["title"];
-$content = $post["content"];
-$status = $post["status"];
+$title = $post[MDCMS_POST_TITLE];
+$content = $post[MDCMS_POST_CONTENT];
+$status = $post[MDCMS_POST_STATUS];
 ?>
 
 

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/const.php";
 
 function parsePage($page) {
     $result = array();
@@ -68,9 +69,9 @@ function readPage($page) {
     $result = array();
 
     # Initialize the fields.
-    $result["title"] = "";
-    $result["content"] = "";
-    $result["status"] = 404;
+    $result[MDCMS_POST_TITLE] = "";
+    $result[MDCMS_POST_CONTENT] = "";
+    $result[MDCMS_POST_STATUS] = 404;
 
     $html_path = getPath($page, HTML_FILE_EXTENSION);
     $markdown_path = getPath($page, MARKDOWN_FILE_EXTENSION);
@@ -84,29 +85,29 @@ function readPage($page) {
         # Therefore, we don't use a HTML parser.
         preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
         if (isset($matches)) {
-            $result["title"] = $matches[1];
-            $result["content"] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
+            $result[MDCMS_POST_TITLE] = $matches[1];
+            $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
         }
         else
-            $result["content"] = $raw_content;
+            $result[MDCMS_POST_CONTENT] = $raw_content;
 
-        $result["status"] = 200;
+        $result[MDCMS_POST_STATUS] = 200;
     }
     else if (file_exists($markdown_path)) {
         $raw_content = file_get_contents($markdown_path);
 
         preg_match("/^# (.+)/", $raw_content, $matches);
         if (isset($matches)) {
-            $result["title"] = $matches[1];
-            $result["content"] = preg_replace("/^# (.+)/", "", $raw_content);
+            $result[MDCMS_POST_TITLE] = $matches[1];
+            $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $raw_content);
         }
         else
-            $result["content"] = $raw_content;
+            $result[MDCMS_POST_CONTENT] = $raw_content;
 
         $parser = new Parsedown();
-        $result["content"] = $parser->text($result["content"]);
+        $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
 
-        $result["status"] = 200;
+        $result[MDCMS_POST_STATUS] = 200;
     }
 
     return $result;
