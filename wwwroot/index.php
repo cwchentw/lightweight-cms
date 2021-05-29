@@ -60,6 +60,7 @@ render:
     }
     # Render a post.
     else {
+        $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
         $post = readPage($loc);
 
         # Fallback to a HTTP 404 page if no valid post.

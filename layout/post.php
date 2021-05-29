@@ -31,6 +31,10 @@ $post = $GLOBALS[MDCMS_POST];
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
+            <?php
+            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
+            ?>
+
             <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
         
