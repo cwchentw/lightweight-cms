@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
-# Receive global data here.
+# Take global data.
 $section = $GLOBALS[MDCMS_SECTION];
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $pages = $GLOBALS[MDCMS_PAGES];
@@ -13,9 +13,10 @@ $pages = $GLOBALS[MDCMS_PAGES];
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
         <title><?php echo $section[MDCMS_SECTION_TITLE] ?></title>
+        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
         <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
         ?>
     </head>
     <body>
@@ -27,44 +28,44 @@ $pages = $GLOBALS[MDCMS_PAGES];
                modify your layout here. -->
         <div class="container">
             <?php
-                if (isset($section[MDCMS_SECTION_CONTENT])
-                    && "" != $section[MDCMS_SECTION_CONTENT])
-                    echo $section[MDCMS_SECTION_CONTENT];
+            if (isset($section[MDCMS_SECTION_CONTENT])
+                && "" != $section[MDCMS_SECTION_CONTENT])
+                echo $section[MDCMS_SECTION_CONTENT];
             ?>
 
             <?php
-                # Add section(s) if any exist.
-                if (isset($sections) && count($sections) > 0) {
-                    echo "<h2>Sections</h2>";
+            # Add section(s) if any exist.
+            if (isset($sections) && count($sections) > 0) {
+                echo "<h2>Sections</h2>";
 
-                    echo "<ul>";
+                echo "<ul>";
 
-                    foreach ($sections as $section)
-                        echo "<li><a href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                          . $section[MDCMS_LINK_TITLE] . "</a></li>";
+                foreach ($sections as $section)
+                    echo "<li><a href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                        . $section[MDCMS_LINK_TITLE] . "</a></li>";
 
-                    echo "</ul>";
-                }
+                echo "</ul>";
+            }
             ?>
 
             <?php
-                # Add page(s) if any exist.
-                if (isset($pages) && count($pages) > 0) {
-                    echo "<h2>Pages</h2>";
+            # Add page(s) if any exist.
+            if (isset($pages) && count($pages) > 0) {
+                echo "<h2>Pages</h2>";
 
-                    echo "<ul>";
+                echo "<ul>";
 
-                    foreach ($pages as $page)
-                        echo "<li><a href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                            . $page[MDCMS_LINK_TITLE] . "</a></li>";
+                foreach ($pages as $page)
+                    echo "<li><a href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                        . $page[MDCMS_LINK_TITLE] . "</a></li>";
 
-                    echo "</ul>";
-                }
+                echo "</ul>";
+            }
             ?>
         </div>
         
         <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
         ?>
     </body>
 </html>

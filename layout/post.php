@@ -2,8 +2,10 @@
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
+# Take global data.
 $post = $GLOBALS[MDCMS_POST];
 
+# Extract post data.
 $title = $post[MDCMS_POST_TITLE];
 $content = $post[MDCMS_POST_CONTENT];
 $status = $post[MDCMS_POST_STATUS];
@@ -14,16 +16,15 @@ $status = $post[MDCMS_POST_STATUS];
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
         <title><?php echo $title ?></title>
+        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
         <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
         ?>
     </head>
     <body>
         <div class="text-center">
-            <h1>
-                <?php echo $title; ?>
-            </h1>
+            <h1><?php echo $title; ?></h1>
         </div>
 
         <!-- If you want to create multi-column pages,
@@ -33,7 +34,7 @@ $status = $post[MDCMS_POST_STATUS];
         </div>
         
         <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
         ?>
     </body>
 </html>
