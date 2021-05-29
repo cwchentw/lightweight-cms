@@ -111,3 +111,33 @@ function readPage($page) {
 
     return $result;
 }
+
+# TODO: Test the code.
+function getSections() {
+    $result = array();
+
+    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY;
+    $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
+
+    foreach ($files as $file) {
+        if ("." == $file)
+            continue;
+        else if (".." == $file)
+            continue;
+
+        $path = $content_directory . "/" . $file;
+        if (is_dir($path)) {
+            $d = array();
+
+            $d["path"] = $file;
+
+            $t = preg_replace("/-+/", " ", $file);
+            $t = ucwords($t);  # Capitalize a title.
+            $d["title"] = $t;
+
+            array_push($result, $d);
+        }
+    }
+
+    return $result;
+}

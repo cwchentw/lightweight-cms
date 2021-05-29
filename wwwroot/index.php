@@ -3,7 +3,7 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
 
 # Remove it later.
-$loc = "/c-programming/hello-world/";
+$loc = "/";
 goto render;
 
 # Check whether the ?page query is set.
@@ -35,7 +35,7 @@ render:
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
     else if (isHomePage($loc)) {
-        # Pass required variables here.
+        $GLOBALS["sections"] = getSections();
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }

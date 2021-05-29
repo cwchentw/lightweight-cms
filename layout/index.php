@@ -1,5 +1,8 @@
 <?php
 require_once __DIR__ . "/../setting.php";
+
+$sections = $GLOBALS["sections"];
+$status = 200;
 ?>
 
 
@@ -23,7 +26,13 @@ require_once __DIR__ . "/../setting.php";
                modify your layout here. -->
         <div class="container">
             <h2>Sections</h2>
-            <p>Pending.</p>
+            <ul>
+                <?php
+                    foreach ($sections as $section)
+                        echo "<li><a href=\"/" . $section["path"] . "/\">"
+                            . $section["title"] . "</a></li>";
+                ?>
+            </ul>
 
             <h2>Pages</h2>
             <p>Pending.</p>
