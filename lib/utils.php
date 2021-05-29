@@ -211,8 +211,7 @@ function getPages() {
         if (is_file($path)) {
             $f = array();
 
-            # Remove file extensions.
-            $f["path"] = pathinfo($file, PATHINFO_FILENAME);
+            $f["path"] = $file;
 
             # Get the title of the page.
             $t = pathinfo($file, PATHINFO_FILENAME);

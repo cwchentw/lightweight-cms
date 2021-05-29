@@ -40,7 +40,7 @@ $status = 200;
             <ul>
                 <?php
                     foreach ($pages as $page)
-                        echo "<li><a href=\"/" . $page["path"] . "/\">"
+                        echo "<li><a href=\"/" . $page["path"] . "\">"
                             . $page["title"] . "</a></li>";
                 ?>
             </ul>
