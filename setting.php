@@ -21,6 +21,9 @@ define("LIST_LAYOUT", "list.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
 
+# The index files used by sections.
+define("SECTION_INDEX", "_index.md");
+
 # The directory of the content.
 define("CONTENT_DIRECTORY", "content");
 # The directory of the layouts.

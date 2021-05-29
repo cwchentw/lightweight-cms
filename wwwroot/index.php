@@ -41,6 +41,7 @@ render:
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }
     else if (isSection($loc)) {
+        $GLOBALS["section"] = getSection($loc);
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . LIST_LAYOUT;
     }
     else {

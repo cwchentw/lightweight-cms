@@ -231,3 +231,34 @@ function getPages() {
 
     return $result;
 }
+
+function getSection($page) {
+    $result = array();
+
+    # Initialize some data.
+    $result["title"] = "";
+    $result["content"] = "";
+
+    $index_path = __DIR__ . "/../" . CONTENT_DIRECTORY
+        . "/" . $page . SECTION_INDEX;
+
+    if (file_exists($index_path)) {
+        $c = file_get_contents($index_path);
+
+        preg_match("/^# (.+)/", $c, $matches);
+        if (isset($matches))
+            $result["title"] = $matches[1];
+
+        $c = preg_replace("/^# (.+)/", "", $c);
+
+        $parser = new Parsedown();
+        $result["content"] = $parser->text($c);
+    }
+    else {
+        $t = preg_replace("/\/|-+/", " ", $page);
+        $t = ucwords($t);  # Capitalize a title.
+        $result["title"] = $t;
+    }
+
+    return $result;
+}

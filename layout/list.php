@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../setting.php";
 
 # Receive global data here.
-$title = "Section List";
+$section = $GLOBALS["section"];
 $status = 200;
 ?>
 
@@ -10,7 +10,7 @@ $status = 200;
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
-        <title><?php echo $title ?></title>
+        <title><?php echo $section["title"] ?></title>
 
         <?php
             include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
@@ -19,14 +19,19 @@ $status = 200;
     <body>
         <div class="text-center">
             <h1>
-                <?php echo $title; ?>
+                <?php echo $section["title"]; ?>
             </h1>
         </div>
 
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <p>Pending</p>
+            <?php
+                if (isset($section["content"]) && "" != $section["content"])
+                    echo $section["content"];
+            ?>
+
+            <p>Pending a list.</p>
         </div>
         
         <?php
