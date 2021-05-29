@@ -211,6 +211,7 @@ function getPages() {
         if (is_file($path)) {
             $f = array();
 
+            # It is not a pretty URL. Keep its file extension *as is*.
             $f["path"] = $file;
 
             # Get the title of the page.
