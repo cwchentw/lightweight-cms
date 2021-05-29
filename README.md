@@ -50,6 +50,10 @@ $ git push -u origin master
 
 This CMS doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *wwwroot* as needed. Furthermore, your scripts can share partials in *partials* with other pages, reducing repeated code.
 
+## See Also
+
+The project is inspired by [Cristy94/markdown-blog](https://github.com/Cristy94/markdown-blog). Nonetheless, we don't copy and paste code from there but write everything from scratch.
+
 ## Copyright
 
 Copyright (c) 2021, Michael Chen. Licensed under MIT
