@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/const.php";
 
-$sections = $GLOBALS["sections"];
-$pages = $GLOBALS["pages"];
+$sections = $GLOBALS[MDCMS_SECTIONS];
+$pages = $GLOBALS[MDCMS_PAGES];
 $status = 200;
 ?>
 

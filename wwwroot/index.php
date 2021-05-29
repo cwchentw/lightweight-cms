@@ -1,9 +1,10 @@
 <?php
 require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/const.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
 
 # Remove it later.
-$loc = "/";
+$loc = "/c-programming/hello-world/";
 goto render;
 
 # Check whether the ?page query is set.
@@ -35,8 +36,8 @@ render:
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
     else if (isHomePage($loc)) {
-        $GLOBALS["sections"] = getSections();
-        $GLOBALS["pages"] = getPages();
+        $GLOBALS[MDCMS_SECTIONS] = getSections();
+        $GLOBALS[MDCMS_PAGES] = getPages();
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }
@@ -50,7 +51,7 @@ render:
         }
 
         # Currently, we use a superglobal variable to pass data.
-        $GLOBALS["post"] = $post;
+        $GLOBALS[MDCMS_POST] = $post;
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }

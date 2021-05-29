@@ -1,7 +1,8 @@
 <?php
-# Currently, we receive $post from a global variable.
-# Change it later.
-$post = $GLOBALS["post"];
+require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/const.php";
+
+$post = $GLOBALS[MDCMS_POST];
 
 $title = $post["title"];
 $content = $post["content"];
