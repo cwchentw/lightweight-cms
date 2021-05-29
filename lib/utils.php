@@ -40,14 +40,14 @@ function isHomePage($page) {
 
 function getPath($page, $ext) {
     $arr = parsePage($page);
-    $path = "";
+    $result = "";
 
     $len = count($arr);
     if (0 == $len) {
         # Pass.
     }
     else if (1 == $len) {
-        $path = __DIR__ . "/../" 
+        $result = __DIR__ . "/../"
             . CONTENT_DIRECTORY . "/"
             . $arr[0] . $ext;
     }
@@ -55,16 +55,16 @@ function getPath($page, $ext) {
         $file = array_pop($arr);
         $directory = join("/", $arr);
 
-        $path = __DIR__ . "/../" 
+        $result = __DIR__ . "/../"
             . CONTENT_DIRECTORY . "/"
             . $directory . "/"
             . $file . $ext;
     }
 
-    return $path;
+    return $result;
 }
 
-function fetchPage($page) {
+function readPage($page) {
     $result = array();
 
     # Initialize the fields.

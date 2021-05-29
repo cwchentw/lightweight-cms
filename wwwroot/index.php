@@ -2,6 +2,10 @@
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
 
+# Remove it later.
+$loc = "/c-programming/hello-world/";
+goto render;
+
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
     $post = array();
@@ -36,9 +40,9 @@ render:
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }
     else {
-        $post = fetchPage($loc);
+        $post = readPage($loc);
 
-        # HTTP 404.
+        # HTTP 404 Page.
         if (404 == $post["status"]) {
             $post["title"] = "Page Not Found";
             $post["content"] = "The post doesn't exist on the website";
