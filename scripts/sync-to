@@ -36,4 +36,4 @@ rsync -rvh --delete \
     --exclude composer.lock \
     --exclude LICENSE \
     --exclude README.md \
-    "$src" "$dest";
+    "$src/" "$dest/";
