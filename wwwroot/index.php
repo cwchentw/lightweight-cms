@@ -3,15 +3,15 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Remove it later.
-$loc = "/";
+$loc = "/about/";
 goto render;
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
     $post = array();
-    $post["title"] = "Bad Request Error";
-    $post["content"] = "Invalid URL";
-    $post["status"] = 400;
+    $post[MDCMS_POST_TITLE] = "Bad Request Error";
+    $post[MDCMS_POST_CONTENT] = "Invalid URL";
+    $post[MDCMS_POST_STATUS] = 400;
     goto render;
 }
 
@@ -21,16 +21,16 @@ $loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
 # Check whether the URL is dangerous.
 if (false != strpos($loc, "..")) {
     $post = array();
-    $post["title"] = "Bad Request Error";
-    $post["content"] = "Invalid URL";
-    $post["status"] = 400;
+    $post[MDCMS_POST_TITLE] = "Bad Request Error";
+    $post[MDCMS_POST_CONTENT] = "Invalid URL";
+    $post[MDCMS_POST_STATUS] = 400;
     goto render;
 }
 
 render:
     if (isset($post) && 200 != $post["status"]) {
         # Currently, we use a superglobal variable to pass data.
-        $GLOBALS["post"] = $post;
+        $GLOBALS[MDCMS_POST] = $post;
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
@@ -44,7 +44,7 @@ render:
         $post = readPage($loc);
 
         # HTTP 404 Page.
-        if (404 == $post["status"]) {
+        if (404 == $post[MDCMS_POST_STATUS]) {
             $post["title"] = "Page Not Found";
             $post["content"] = "The post doesn't exist on the website";
         }
