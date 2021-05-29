@@ -44,8 +44,10 @@ $pages = $GLOBALS[MDCMS_PAGES];
                 echo "<div class=\"list-group\">";
 
                 foreach ($sections as $section)
-                    echo "<a class=\"list-group-item\" href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                        . $section[MDCMS_LINK_TITLE] . "</a>";
+                    echo "<a class=\"list-group-item\" "
+                        . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                        . $section[MDCMS_LINK_TITLE]
+                        . "</a>";
 
                 echo "</div>";
             }
@@ -60,14 +62,16 @@ $pages = $GLOBALS[MDCMS_PAGES];
                 echo "<div class=\"list-group\">";
 
                 foreach ($pages as $page)
-                    echo "<a class=\"list-group-item\" href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                        . $page[MDCMS_LINK_TITLE] . "</a>";
+                    echo "<a class=\"list-group-item\" "
+                        . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                        . $page[MDCMS_LINK_TITLE]
+                        . "</a>";
 
                 echo "</div>";
             }
             ?>
         </div>
-        
+
         <?php
         include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
         ?>

@@ -39,8 +39,10 @@ $status = 200;  # HTTP 200 OK.
                 echo "<div class=\"list-group\">";
 
                 foreach ($sections as $section)
-                    echo "<a class=\"list-group-item\" href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                        . $section[MDCMS_LINK_TITLE] . "</a>";
+                    echo "<a class=\"list-group-item\" "
+                        . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                        . $section[MDCMS_LINK_TITLE]
+                        . "</a>";
 
                 echo "</div>";
             }
@@ -55,8 +57,10 @@ $status = 200;  # HTTP 200 OK.
                 echo "<div class=\"list-group\">";
 
                 foreach ($pages as $page)
-                    echo "<a class=\"list-group-item\" href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                        . $page[MDCMS_LINK_TITLE] . "</a>";
+                    echo "<a class=\"list-group-item\" "
+                        . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                        . $page[MDCMS_LINK_TITLE]
+                        . "</a>";
 
                 echo "</div>";
             }
