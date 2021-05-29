@@ -37,31 +37,33 @@ $pages = $GLOBALS[MDCMS_PAGES];
 
             <?php
             # Add section(s) if any exist.
+            # TODO: Check it later.
             if (isset($sections) && count($sections) > 0) {
                 echo "<h2>Sections</h2>";
 
-                echo "<ul>";
+                echo "<div class=\"list-group\">";
 
                 foreach ($sections as $section)
-                    echo "<li><a href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                        . $section[MDCMS_LINK_TITLE] . "</a></li>";
+                    echo "<a class=\"list-group-item\" href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                        . $section[MDCMS_LINK_TITLE] . "</a>";
 
-                echo "</ul>";
+                echo "</div>";
             }
             ?>
 
             <?php
             # Add page(s) if any exist.
+            # TODO: Check it later.
             if (isset($pages) && count($pages) > 0) {
                 echo "<h2>Pages</h2>";
 
-                echo "<ul>";
+                echo "<div class=\"list-group\">";
 
                 foreach ($pages as $page)
-                    echo "<li><a href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                        . $page[MDCMS_LINK_TITLE] . "</a></li>";
+                    echo "<a class=\"list-group-item\" href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                        . $page[MDCMS_LINK_TITLE] . "</a>";
 
-                echo "</ul>";
+                echo "</div>";
             }
             ?>
         </div>
