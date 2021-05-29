@@ -20,6 +20,8 @@ define("LAYOUT_DIRECTORY", "layout");
 define("PARTIALS_DIRECTORY", "partials");
 # The directory of private libraries.
 define("LIBRARY_DIRECTORY", "lib");
+# The directory of the application.
+define("APPLICATION_DIRECTORY", "wwwroot");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");

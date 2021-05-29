@@ -120,7 +120,30 @@ function getSections() {
     $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
-        # Omit private directories.
+        # Skip private directories.
+        if ("." == substr($file, 0, 1))
+            continue;
+
+        $path = $content_directory . "/" . $file;
+        if (is_dir($path)) {
+            $d = array();
+
+            $d["path"] = $file;
+
+            $t = preg_replace("/-+/", " ", $file);
+            $t = ucwords($t);  # Capitalize a title.
+            $d["title"] = $t;
+
+            array_push($result, $d);
+        }
+    }
+
+    # Scan custom directories added in the application directory by users of mdcms.
+    $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
+    $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
+
+    foreach ($files as $file) {
+        # Skip private directories.
         if ("." == substr($file, 0, 1))
             continue;
 
@@ -153,6 +176,35 @@ function getPages() {
         if ("." == substr($file, 0, 1))
             continue;
         else if ("_" == substr($file, 0, 1))
+            continue;
+
+        $path = $content_directory . "/" . $file;
+        if (is_file($path)) {
+            $f = array();
+
+            # Remove file extensions.
+            $f["path"] = pathinfo($file, PATHINFO_FILENAME);
+
+            # Get the title of the page.
+            $t = pathinfo($file, PATHINFO_FILENAME);
+            $t = preg_replace("/-+/", " ", $t);
+            $t = ucwords($t);  # Capitalize a title.
+            $f["title"] = $t;
+
+            array_push($result, $f);
+        }
+    }
+
+    $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
+    $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
+
+    foreach ($files as $file) {
+        # Omit private files.
+        if ("." == substr($file, 0, 1))
+            continue;
+
+        # Omit the index script.
+        if ("index.php" == $file)
             continue;
 
         $path = $content_directory . "/" . $file;
