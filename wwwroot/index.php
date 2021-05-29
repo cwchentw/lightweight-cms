@@ -47,7 +47,7 @@ render:
         $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
         $GLOBALS[MDCMS_PAGES] = getPages($loc);
 
-        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
+        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . HOME_LAYOUT;
     }
     # Render a section page.
     else if (isSection($loc)) {

@@ -22,7 +22,7 @@ define("SCAN_APPLICATION_DIRECTORY", false);
 # If either is modified, modify the project accordingly as well.
 
 # The layout of an index page.
-define("INDEX_LAYOUT", "home.php");
+define("HOME_LAYOUT", "home.php");
 # The layout of sections.
 define("LIST_LAYOUT", "list.php");
 # The layout of posts.
