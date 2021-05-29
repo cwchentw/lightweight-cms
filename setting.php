@@ -16,6 +16,8 @@ define("SITE_LANGUAGE", "en-US");
 
 # The layout of index page.
 define("INDEX_LAYOUT", "index.php");
+# The layout of lists.
+define("LIST_LAYOUT", "list.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
 

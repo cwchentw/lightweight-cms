@@ -3,7 +3,7 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Remove it later.
-$loc = "/";
+$loc = "/c-programming/";
 goto render;
 
 # Check whether the ?page query is set.
@@ -39,6 +39,9 @@ render:
         $GLOBALS[MDCMS_PAGES] = getPages();
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
+    }
+    else if (isSection($loc)) {
+        require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . LIST_LAYOUT;
     }
     else {
         $post = readPage($loc);

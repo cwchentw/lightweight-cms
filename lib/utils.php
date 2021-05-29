@@ -39,6 +39,12 @@ function isHomePage($page) {
     return "/" == $page;
 }
 
+function isSection($page) {
+    $path = __DIR__ . "/../" . CONTENT_DIRECTORY . "/" . $page;
+
+    return is_dir($path);
+}
+
 function getPath($page, $ext) {
     $arr = parsePage($page);
     $result = "";
@@ -113,7 +119,6 @@ function readPage($page) {
     return $result;
 }
 
-# TODO: Test the code.
 function getSections() {
     $result = array();
 
@@ -165,7 +170,6 @@ function getSections() {
     return $result;
 }
 
-# TODO: Test the code.
 function getPages() {
     $result = array();
 
