@@ -14,6 +14,9 @@ function isSection($page) {
     return is_dir($path);
 }
 
+# Nested sections are supported. Nonetheless, it is not recommended
+#  because of SEO. Instead, two layers of web pages are purposed,
+#  like "/section-title/article-title/".
 function getSections($page) {
     $result = array();
 
