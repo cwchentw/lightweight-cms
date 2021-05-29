@@ -23,6 +23,10 @@ $status = 200;  # HTTP 200 OK.
         ?>
     </head>
     <body>
+        <?php
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
+        ?>
+
         <div class="text-center">
             <h1><?php echo SITE_NAME; ?></h1>
         </div>
@@ -42,24 +46,6 @@ $status = 200;  # HTTP 200 OK.
                     echo "<a class=\"list-group-item\" "
                         . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
                         . $section[MDCMS_LINK_TITLE]
-                        . "</a>";
-
-                echo "</div>";
-            }
-            ?>
-
-            <?php
-            # Add page(s) if any exist.
-            # TODO: Check it later.
-            if (isset($pages) && count($pages) > 0) {
-                echo "<h2>Pages</h2>";
-
-                echo "<div class=\"list-group\">";
-
-                foreach ($pages as $page)
-                    echo "<a class=\"list-group-item\" "
-                        . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                        . $page[MDCMS_LINK_TITLE]
                         . "</a>";
 
                 echo "</div>";

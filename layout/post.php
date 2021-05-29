@@ -20,6 +20,10 @@ $post = $GLOBALS[MDCMS_POST];
         ?>
     </head>
     <body>
+        <?php
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
+        ?>
+
         <div class="text-center">
             <h1><?php echo $post[MDCMS_POST_TITLE]; ?></h1>
         </div>

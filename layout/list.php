@@ -22,6 +22,10 @@ $pages = $GLOBALS[MDCMS_PAGES];
         ?>
     </head>
     <body>
+        <?php
+        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
+        ?>
+
         <div class="text-center">
             <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
         </div>
@@ -57,7 +61,7 @@ $pages = $GLOBALS[MDCMS_PAGES];
             # Add page(s) if any exist.
             # TODO: Check it later.
             if (isset($pages) && count($pages) > 0) {
-                echo "<h2>Pages</h2>";
+                echo "<h2>Articles</h2>";
 
                 echo "<div class=\"list-group\">";
 
