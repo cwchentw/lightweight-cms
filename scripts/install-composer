@@ -31,4 +31,4 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62
 php composer-setup.php --install-dir="$prefix" --filename=composer
 php -r "unlink('composer-setup.php');"
 
-echo "Add $HOME/bin to PATH variable to use composer";
+echo "Add $prefix to PATH variable to use composer";
