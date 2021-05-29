@@ -13,10 +13,10 @@ function isSection($page) {
     return is_dir($path);
 }
 
-function getSections() {
+function getSections($page = "/") {
     $result = array();
 
-    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY;
+    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
     $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -24,15 +24,26 @@ function getSections() {
         if ("." == substr($file, 0, 1))
             continue;
 
-        $path = $content_directory . "/" . $file;
+        $path = $content_directory . $file;
         if (is_dir($path)) {
             $d = array();
 
-            $d[MDCMS_LINK_PATH] = $file;
+            $d[MDCMS_LINK_PATH] = substr($page, 0, -1) . $file;
 
-            $t = preg_replace("/-+/", " ", $file);
-            $t = ucwords($t);  # Capitalize a title.
-            $d[MDCMS_LINK_TITLE] = $t;
+            $index_path = $path . "/" . SECTION_INDEX;
+
+            if (file_exists($index_path)) {
+                $c = file_get_contents($index_path);
+
+                preg_match("/^# (.+)/", $c, $matches);
+                if (isset($matches))
+                    $d[MDCMS_LINK_TITLE] = $matches[1];
+            }
+            else {
+                $t = preg_replace("/\/|-+/", " ", $file);
+                $t = ucwords($t);  # Capitalize a title.
+                $d[MDCMS_SECTION_TITLE] = $t;
+            }
 
             array_push($result, $d);
         }
@@ -64,14 +75,14 @@ function getSections() {
     return $result;
 }
 
-function getPages() {
+function getPages($page = "/") {
     $result = array();
 
-    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY;
+    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
     $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
-        # Omit private files.
+        # Skip private files.
         if ("." == substr($file, 0, 1))
             continue;
         else if ("_" == substr($file, 0, 1))
