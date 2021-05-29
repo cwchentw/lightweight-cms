@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/const.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $pages = $GLOBALS[MDCMS_PAGES];

@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/const.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/utils.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Remove it later.
 $loc = "/c-programming/hello-world/";
