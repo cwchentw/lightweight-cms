@@ -18,14 +18,10 @@ $status = 200;  # HTTP 200 OK.
         <meta name="description" content="<?php echo SITE_DESCRIPTION ?>">
         <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
-        ?>
+        <?php includePartials("header.php"); ?>
     </head>
     <body>
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
-        ?>
+        <?php includePartials("navbar.php"); ?>
 
         <div class="text-center">
             <h1><?php echo SITE_NAME; ?></h1>
@@ -34,9 +30,7 @@ $status = 200;  # HTTP 200 OK.
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
-            ?>
+            <?php includePartials("breadcrumb.php"); ?>
 
             <?php
             # Add section(s) if any exist.

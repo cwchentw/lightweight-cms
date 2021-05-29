@@ -17,14 +17,10 @@ $pages = $GLOBALS[MDCMS_PAGES];
         <title><?php echo $section[MDCMS_SECTION_TITLE] ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
-        ?>
+        <?php includePartials("header.php"); ?>
     </head>
     <body>
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
-        ?>
+        <?php includePartials("navbar.php"); ?>
 
         <div class="text-center">
             <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
@@ -33,9 +29,7 @@ $pages = $GLOBALS[MDCMS_PAGES];
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
-            ?>
+            <?php includePartials("breadcrumb.php"); ?>
 
             <?php
             if (isset($section[MDCMS_SECTION_CONTENT])

@@ -15,14 +15,10 @@ $post = $GLOBALS[MDCMS_POST];
         <title><?php echo $post[MDCMS_POST_TITLE] ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/header.php";
-        ?>
+        <?php includePartials("header.php"); ?>
     </head>
     <body>
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/navbar.php";
-        ?>
+        <?php includePartials("navbar.php"); ?>
 
         <div class="text-center">
             <h1><?php echo $post[MDCMS_POST_TITLE]; ?></h1>
@@ -31,9 +27,7 @@ $post = $GLOBALS[MDCMS_POST];
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <?php
-            include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/breadcrumb.php";
-            ?>
+            <?php includePartials("breadcrumb.php"); ?>
 
             <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
