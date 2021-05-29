@@ -120,9 +120,8 @@ function getSections() {
     $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
-        if ("." == $file)
-            continue;
-        else if (".." == $file)
+        # Omit private directories.
+        if ("." == substr($file, 0, 1))
             continue;
 
         $path = $content_directory . "/" . $file;
@@ -136,6 +135,40 @@ function getSections() {
             $d["title"] = $t;
 
             array_push($result, $d);
+        }
+    }
+
+    return $result;
+}
+
+# TODO: Test the code.
+function getPages() {
+    $result = array();
+
+    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY;
+    $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
+
+    foreach ($files as $file) {
+        # Omit private files.
+        if ("." == substr($file, 0, 1))
+            continue;
+        else if ("_" == substr($file, 0, 1))
+            continue;
+
+        $path = $content_directory . "/" . $file;
+        if (is_file($path)) {
+            $f = array();
+
+            # Remove file extensions.
+            $f["path"] = pathinfo($file, PATHINFO_FILENAME);
+
+            # Get the title of the page.
+            $t = pathinfo($file, PATHINFO_FILENAME);
+            $t = preg_replace("/-+/", " ", $t);
+            $t = ucwords($t);  # Capitalize a title.
+            $f["title"] = $t;
+
+            array_push($result, $f);
         }
     }
 

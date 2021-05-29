@@ -36,6 +36,7 @@ render:
     }
     else if (isHomePage($loc)) {
         $GLOBALS["sections"] = getSections();
+        $GLOBALS["pages"] = getPages();
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }

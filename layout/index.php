@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../setting.php";
 
 $sections = $GLOBALS["sections"];
+$pages = $GLOBALS["pages"];
 $status = 200;
 ?>
 
@@ -35,7 +36,13 @@ $status = 200;
             </ul>
 
             <h2>Pages</h2>
-            <p>Pending.</p>
+            <ul>
+                <?php
+                    foreach ($pages as $page)
+                        echo "<li><a href=\"/" . $page["path"] . "/\">"
+                            . $page["title"] . "</a></li>";
+                ?>
+            </ul>
         </div>
         
         <?php
