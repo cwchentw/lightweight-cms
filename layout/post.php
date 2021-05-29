@@ -6,18 +6,13 @@ require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
-
-# Extract post data.
-$title = $post[MDCMS_POST_TITLE];
-$content = $post[MDCMS_POST_CONTENT];
-$status = $post[MDCMS_POST_STATUS];
 ?>
 
 
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
-        <title><?php echo $title ?></title>
+        <title><?php echo $post[MDCMS_POST_TITLE] ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
         <?php
@@ -26,13 +21,13 @@ $status = $post[MDCMS_POST_STATUS];
     </head>
     <body>
         <div class="text-center">
-            <h1><?php echo $title; ?></h1>
+            <h1><?php echo $post[MDCMS_POST_TITLE]; ?></h1>
         </div>
 
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
-            <?php echo $content; ?>
+            <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
         
         <?php
@@ -41,4 +36,4 @@ $status = $post[MDCMS_POST_STATUS];
     </body>
 </html>
 
-<?php http_response_code($status); ?>
+<?php http_response_code($post[MDCMS_POST_STATUS]); ?>
