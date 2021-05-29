@@ -3,9 +3,8 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
-# Remove it later.
-$loc = "/";
-goto render;
+# TODO: Check whether `$_SERVER["REQUEST_URI"]` works well.
+goto uri;
 
 # Check whether the ?page query is set.
 if (!isset($_GET["page"])) {
@@ -16,8 +15,14 @@ if (!isset($_GET["page"])) {
     goto render;
 }
 
+# TODO: Check it later.
+uri:
+
 # Filter the page parameter.
-$loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
+#$loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
+
+# TODO: Check it later.
+$loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
 # Check whether the URL is dangerous.
 if (false != strpos($loc, "..")) {
