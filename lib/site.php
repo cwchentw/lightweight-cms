@@ -4,10 +4,13 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
+
 function isHomePage($page) {
     return "/" == $page;
 }
 
+# The function doesn't distinguish between top sections
+#  and nested ones.
 function isSection($page) {
     $path = __DIR__ . "/../" . CONTENT_DIRECTORY . "/" . $page;
 
@@ -24,7 +27,7 @@ function getSections($page) {
     $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
-        # Skip private directories.
+        # Skip private directories and files.
         if ("." == substr($file, 0, 1))
             continue;
 
@@ -32,10 +35,12 @@ function getSections($page) {
         if (is_dir($path)) {
             $d = array();
 
+            # Set the link path.
             $d[MDCMS_LINK_PATH] = $page . $file . "/";
 
             $index_path = $path . "/" . SECTION_INDEX;
 
+            # If a section index exists, extract data from it.
             if (file_exists($index_path)) {
                 $c = file_get_contents($index_path);
 
@@ -43,6 +48,7 @@ function getSections($page) {
                 if (isset($matches))
                     $d[MDCMS_LINK_TITLE] = $matches[1];
             }
+            # Otherwise, extract data from the directory name.
             else {
                 $t = preg_replace("/\/|-+/", " ", $file);
                 $t = ucwords($t);  # Capitalize a title.
@@ -53,7 +59,12 @@ function getSections($page) {
         }
     }
 
-    # Scan custom directories added in the application directory by users of mdcms.
+    # Skip to scan the application directory.
+    if (!SCAN_APPLICATION_DIRECTORY)
+        return $result;
+
+    # Scan custom directories added in the application directory
+    #  by users of mdcms as well.
     $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
     $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
 
@@ -68,7 +79,7 @@ function getSections($page) {
 
             $d[MDCMS_LINK_PATH] = $file;
 
-            $t = preg_replace("/-+/", " ", $file);
+            $t = preg_replace("/\/|-+/", " ", $file);
             $t = ucwords($t);  # Capitalize a title.
             $d[MDCMS_LINK_TITLE] = $t;
 
@@ -109,15 +120,21 @@ function getPages($page) {
         }
     }
 
+    # Skip to scan the application directory.
+    if (!SCAN_APPLICATION_DIRECTORY)
+        return $result;
+
+    # Scan custom pages added in the application directory
+    #  by users of mdcms as well.
     $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
     $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
-        # Omit private files.
+        # Skip private directories and files.
         if ("." == substr($file, 0, 1))
             continue;
 
-        # Omit the index script.
+        # Skip the index script.
         if ("index.php" == $file)
             continue;
 
@@ -144,14 +161,15 @@ function getPages($page) {
 function getSection($page) {
     $result = array();
 
-    # Initialize some data.
+    # Initialize the data of a section.
     $result[MDCMS_SECTION_TITLE] = "";
     $result[MDCMS_SECTION_CONTENT] = "";
-    $result[MDCMS_SECTION_STATUS] = 200;  # HTTP Status.
+    $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
     $index_path = __DIR__ . "/../" . CONTENT_DIRECTORY
         . "/" . $page . SECTION_INDEX;
 
+    # If a section index exists, extract data from it.
     if (file_exists($index_path)) {
         $c = file_get_contents($index_path);
 
@@ -164,6 +182,7 @@ function getSection($page) {
         $parser = new Parsedown();
         $result[MDCMS_SECTION_CONTENT] = $parser->text($c);
     }
+    # Otherwise, extract data from the directory name.
     else {
         $t = preg_replace("/\/|-+/", " ", $page);
         $t = ucwords($t);  # Capitalize a title.

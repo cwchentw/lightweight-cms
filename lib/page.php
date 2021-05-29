@@ -3,6 +3,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/const.php";
 
+
 function parsePage($page) {
     $result = array();
 
@@ -10,21 +11,25 @@ function parsePage($page) {
     if ("/" != substr($page, 0, 1))
         return $result;
 
+    # Parse a `$page` while a while loop.
     $len = strlen($page);
     $i = 0;
     while ($i < $len) {
         if ("/" == substr($page, $i, 1)) {
             $j = $i + 1;
 
+            # Iterate until next "/" or the end of `$page`.
             while ($j < $len && "/" != substr($page, $j, 1))
                 ++$j;
 
+            # Extract a part of `$page`.
             $part = substr($page, $i+1, $j-$i-1);
 
             # Discard trailing empty strings.
             if ("" != $part)
                 array_push($result, $part);
 
+            # Reset the counter.
             $i = $j;
         }
         else {
@@ -36,9 +41,9 @@ function parsePage($page) {
 }
 
 function getPath($page, $ext) {
-    $arr = parsePage($page);
     $result = "";
 
+    $arr = parsePage($page);
     $len = count($arr);
     if (0 == $len) {
         # Pass.
@@ -64,7 +69,7 @@ function getPath($page, $ext) {
 function readPage($page) {
     $result = array();
 
-    # Initialize the fields.
+    # Initialize the fields of a post.
     $result[MDCMS_POST_TITLE] = "";
     $result[MDCMS_POST_CONTENT] = "";
     $result[MDCMS_POST_STATUS] = 404;
@@ -73,21 +78,23 @@ function readPage($page) {
     $markdown_path = getPath($page, MARKDOWN_FILE_EXTENSION);
 
     # Here we simply set higher priority for HTML pages.
-    # We may change it later.
+    #  We may change it later.
     if (file_exists($html_path)) {
         $raw_content = file_get_contents($html_path);
 
         # `$raw_content` is not a full HTML document.
-        # Therefore, we don't use a HTML parser.
+        # Therefore, we don't use a HTML parser but some regex pattern.
         preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
         if (isset($matches)) {
             $result[MDCMS_POST_TITLE] = $matches[1];
+
+            # Remove <h1>-level titles from the content.
             $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
         }
         else
             $result[MDCMS_POST_CONTENT] = $raw_content;
 
-        $result[MDCMS_POST_STATUS] = 200;
+        $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
     else if (file_exists($markdown_path)) {
         $raw_content = file_get_contents($markdown_path);
@@ -95,15 +102,19 @@ function readPage($page) {
         preg_match("/^# (.+)/", $raw_content, $matches);
         if (isset($matches)) {
             $result[MDCMS_POST_TITLE] = $matches[1];
+
+            # Remove a <h1>-level title from the content.
+            # Here we assume there is only one <h1> title per document.
             $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $raw_content);
         }
         else
             $result[MDCMS_POST_CONTENT] = $raw_content;
 
+        # Convert the Markdown document into a HTML document.
         $parser = new Parsedown();
         $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
 
-        $result[MDCMS_POST_STATUS] = 200;
+        $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
 
     return $result;

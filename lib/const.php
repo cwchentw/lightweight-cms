@@ -1,7 +1,8 @@
 <?php
 # Unlike the constants in setting.php, it won't help much to
-#  modify the constants here. They merely serve as unique symbols
+#  modify these constants. They merely serve as unique symbols
 #  in the whole program.
+
 
 define("MDCMS_SECTIONS", "sections");
 define("MDCMS_PAGES", "pages");

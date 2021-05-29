@@ -1,4 +1,6 @@
 <?php
+# The project configuration file. Keep its name *as is*.
+
 
 # Set the name of the website.
 define("SITE_NAME", "mdcms Sample Site");
@@ -11,12 +13,15 @@ define("SITE_AUTHOR", "mdcms");
 # Currently, we only support websites of single language.
 define("SITE_LANGUAGE", "en-US");
 
+# A flag to scan application directory.
+define("SCAN_APPLICATION_DIRECTORY", false);
+
 # Mostly, you don't require to modify anything below.
 # If either is modified, modify the project accordingly as well.
 
-# The layout of index page.
+# The layout of an index page.
 define("INDEX_LAYOUT", "home.php");
-# The layout of lists.
+# The layout of sections.
 define("LIST_LAYOUT", "list.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");

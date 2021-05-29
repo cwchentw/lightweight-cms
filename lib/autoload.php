@@ -1,17 +1,22 @@
 <?php
 # Currently, it is an autoload.php of a poor man.
-# Change it if needed.
+#  Change it if needed.
 
-$dir = __DIR__;
 
-$libraries = scandir($dir);
+# Get current working directory of the script.
+$cwd = __DIR__;
 
+# Scan all files in the directory.
+$libraries = scandir($cwd);
+
+# Currently, we merely iterate over the first layer of
+#  the directory. Recursive scanning is not supported yet.
 foreach ($libraries as $library) {
-    # Skip private directories.
+    # Skip private directories and files.
     if ("." == substr($library, 0, 1))
         continue;
 
-    # Skip itself.
+    # Skip the script itself.
     if ("autoload.php" == $library)
         continue;
 

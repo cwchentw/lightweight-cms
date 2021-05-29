@@ -1,11 +1,13 @@
 <?php
+# The layout of a home page.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+
 
 # Take global data.
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $pages = $GLOBALS[MDCMS_PAGES];
-$status = 200;
+$status = 200;  # HTTP 200 OK.
 ?>
 
 

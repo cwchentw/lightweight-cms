@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Chech whether PHP is available on your system.
-if ! command -v php --version 2>&1 >/dev/null;
+if ! command -v php -v 2>&1 >/dev/null;
 then
-    echo "No PHP on the system" >2;
+    echo "No PHP on the system" >&2;
     exit 1;
 fi
 
@@ -11,7 +11,7 @@ fi
 if ! [ -d "$HOME/bin" ];
 then
     mkdir -p "$HOME/bin" || (
-        echo "Fails to create the directory $HOME/bin";
+        echo "Fails to create the directory $HOME/bin" >&2;
         exit 1;
     )
 fi
