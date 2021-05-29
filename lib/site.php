@@ -13,7 +13,7 @@ function isSection($page) {
     return is_dir($path);
 }
 
-function getSections($page = "/") {
+function getSections($page) {
     $result = array();
 
     $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
@@ -28,7 +28,9 @@ function getSections($page = "/") {
         if (is_dir($path)) {
             $d = array();
 
-            $d[MDCMS_LINK_PATH] = substr($page, 0, -1) . $file;
+            $d[MDCMS_LINK_PATH] =
+                substr($page, 0, -1)  # Remove a trailing slash.
+                . $file;
 
             $index_path = $path . "/" . SECTION_INDEX;
 
@@ -75,7 +77,7 @@ function getSections($page = "/") {
     return $result;
 }
 
-function getPages($page = "/") {
+function getPages($page) {
     $result = array();
 
     $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;

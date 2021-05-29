@@ -35,8 +35,8 @@ render:
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
     }
     else if (isHomePage($loc)) {
-        $GLOBALS[MDCMS_SECTIONS] = getSections();
-        $GLOBALS[MDCMS_PAGES] = getPages();
+        $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
+        $GLOBALS[MDCMS_PAGES] = getPages($loc);
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . INDEX_LAYOUT;
     }
