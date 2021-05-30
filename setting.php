@@ -3,7 +3,9 @@
 
 
 # Set the name of the website.
-define("SITE_NAME", "mdcms Sample Site");
+define("SITE_NAME", "mdcms");
+# Set the short name of the website.
+define("SITE_SHORT_NAME", "mdcms");
 # Set the description of the website.
 define("SITE_DESCRIPTION", "A Markdown-based Content Management System Powered by PHP");
 # Set the author of the website.
