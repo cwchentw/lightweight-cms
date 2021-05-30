@@ -1,5 +1,8 @@
 #!/bin/sh
-# TODO: Test the script.
+#
+# Sync the local repo to a production environment.
+#  Unrequired directories and files are skipped.
+
 
 # Check whether `rsync(1)` is available.
 if ! command -v rsync -h 2>&1 >/dev/null;
@@ -8,7 +11,7 @@ then
     exit 1;
 fi
 
-# Get a destination.
+# Get some destination.
 dest=$1;
 if [ -z "$dest" ];
 then
@@ -23,12 +26,13 @@ then
     exit 1;
 fi
 
-# Get the source.
+# Get the root path of the repo.
 cwd="$(dirname $0)";
 src="${cwd}/.."
 
 # Sync between the source and the destination.
-# Files on the distination may be deleted. Don't edit them.
+#  Files on the distination may be deleted.
+#  Don't edit them.
 rsync -rvh --delete \
     --exclude ".git*" \
     --exclude scripts \

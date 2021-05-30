@@ -1,5 +1,7 @@
 #!/bin/sh
-# TODO: Test the code.
+#
+# Download Composer with single command.
+
 
 # Chech whether PHP is available on your system.
 if ! command -v php -v 2>&1 >/dev/null;
