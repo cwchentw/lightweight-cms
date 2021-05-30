@@ -1,0 +1,37 @@
+{
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development gulp --gulpfile=build/build.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production gulp --gulpfile=build/build.js",
+    "watch": "npm run development && gulp watch --gulpfile=build/build.js",
+    "flow": "flow"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-flow": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "browser-sync": "^2.26.14",
+    "cross-env": "^5.2.1",
+    "del": "^4.1.1",
+    "eslint-plugin-compat": "^3.8.0",
+    "flow-bin": "^0.102.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-stylelint": "^9.0.0",
+    "gulp-uglify": "^3.0.2",
+    "isdev": "^1.0.1",
+    "marked": "^2.0.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended": "^2.2.0"
+  }
+}

@@ -32,8 +32,10 @@ src="${cwd}/.."
 rsync -rvh --delete \
     --exclude ".git*" \
     --exclude scripts \
-    --exclude composer.json \
-    --exclude composer.lock \
-    --exclude LICENSE \
-    --exclude README.md \
+    --exclude composer.json --exclude composer.lock \
+    --exclude LICENSE --exclude README.md --exclude TODO.md \
+    --exclude package.json --exclude package-lock.json --exclude node_modules \
+    --exclude .browserlistrc --exclude .stylelintrc \
+    --exclude .eslintrc --exclude .flowconfig \
+    --exclude assets --exclude build --exclude static \
     "$src/" "$dest/";

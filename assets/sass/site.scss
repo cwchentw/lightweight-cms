@@ -1,0 +1,23 @@
+/* Common English fonts. */
+$sansSerif: Arial, Helvetica, sans-serif;
+$serif: "Times New Roman", Times, serif;
+$monospace: Consolas, "Lucida Console", Monaco, monospace;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $sansSerif;
+}
+
+p,
+div {
+    font-family: $serif;
+}
+
+pre,
+code {
+    font-family: $monospace;
+}
