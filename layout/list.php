@@ -45,7 +45,7 @@ $pages = $GLOBALS[MDCMS_PAGES];
             ?>
 
             <?php
-            # Add section(s) if any exist.
+            # Add section(s) if any exists.
             # TODO: Check it later.
             if (isset($sections) && count($sections) > 0) {
                 echo "<h2>Sections</h2>";
@@ -63,7 +63,7 @@ $pages = $GLOBALS[MDCMS_PAGES];
             ?>
 
             <?php
-            # Add page(s) if any exist.
+            # Add page(s) if any exists.
             if (isset($pages) && count($pages) > 0) {
                 echo "<h2>Articles</h2>";
 

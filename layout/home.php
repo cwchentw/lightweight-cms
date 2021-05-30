@@ -32,8 +32,12 @@ $status = 200;  # HTTP 200 OK.
         <div class="container">
             <?php includePartials("breadcrumb.php"); ?>
 
+            <h2>Synopsis</h2>
+
+            <p><?php echo SITE_DESCRIPTION ?></p>
+
             <?php
-            # Add section(s) if any exist.
+            # Add section(s) if any exists.
             if (isset($sections) && count($sections) > 0) {
                 echo "<h2>Sections</h2>";
 
