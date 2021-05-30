@@ -74,41 +74,41 @@ function readPage($page) {
     $result[MDCMS_POST_CONTENT] = "";
     $result[MDCMS_POST_STATUS] = 404;
 
-    $html_path = getPath($page, HTML_FILE_EXTENSION);
-    $markdown_path = getPath($page, MARKDOWN_FILE_EXTENSION);
+    $htmlPath = getPath($page, HTML_FILE_EXTENSION);
+    $markdownPath = getPath($page, MARKDOWN_FILE_EXTENSION);
 
     # Here we simply set higher priority for HTML pages.
     #  We may change it later.
-    if (file_exists($html_path)) {
-        $raw_content = file_get_contents($html_path);
+    if (file_exists($htmlPath)) {
+        $rawContent = file_get_contents($htmlPath);
 
-        # `$raw_content` is not a full HTML document.
+        # `$rawContent` is not a full HTML document.
         # Therefore, we don't use a HTML parser but some regex pattern.
-        preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
+        preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches);
         if (isset($matches)) {
             $result[MDCMS_POST_TITLE] = $matches[1];
 
             # Remove <h1>-level titles from the content.
-            $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $raw_content);
+            $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $rawContent);
         }
         else
-            $result[MDCMS_POST_CONTENT] = $raw_content;
+            $result[MDCMS_POST_CONTENT] = $rawContent;
 
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
-    else if (file_exists($markdown_path)) {
-        $raw_content = file_get_contents($markdown_path);
+    else if (file_exists($markdownPath)) {
+        $rawContent = file_get_contents($markdownPath);
 
-        preg_match("/^# (.+)/", $raw_content, $matches);
+        preg_match("/^# (.+)/", $rawContent, $matches);
         if (isset($matches)) {
             $result[MDCMS_POST_TITLE] = $matches[1];
 
             # Remove a <h1>-level title from the content.
             # Here we assume there is only one <h1> title per document.
-            $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $raw_content);
+            $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $rawContent);
         }
         else
-            $result[MDCMS_POST_CONTENT] = $raw_content;
+            $result[MDCMS_POST_CONTENT] = $rawContent;
 
         # Convert the Markdown document into a HTML document.
         $parser = new Parsedown();

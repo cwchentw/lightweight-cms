@@ -1,0 +1,14 @@
+#!/bin/sh
+
+target=$1;
+
+if [ -z "$target" ];
+then
+    echo "No valid target" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+base="${cwd}/.."
+
+"${base}/vendor/bin/phpmd" "$target" text cleancode,controversial,design,naming,unusedcode
