@@ -19,8 +19,8 @@ fi
 # Create a directory if it doesn't exist.
 if ! [ -d "$prefix" ];
 then
-    mkdir -p "$HOME/bin" || (
-        echo "Fails to create the directory $HOME/bin" >&2;
+    mkdir -p "$prefix" || (
+        echo "Fails to create the directory $prefix" >&2;
         exit 1;
     )
 fi
