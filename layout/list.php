@@ -29,13 +29,13 @@ $pages = $GLOBALS[MDCMS_PAGES];
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div class="text-center">
-            <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
-        </div>
-
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
+            <div class="text-center">
+                <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
+            </div>
+
             <?php includePartials("breadcrumb.php"); ?>
 
             <?php

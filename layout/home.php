@@ -23,13 +23,13 @@ $status = 200;  # HTTP 200 OK.
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div class="text-center">
-            <h1><?php echo SITE_NAME; ?></h1>
-        </div>
-
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
         <div class="container">
+            <div class="text-center">
+                <h1><?php echo SITE_NAME; ?></h1>
+            </div>
+
             <?php includePartials("breadcrumb.php"); ?>
 
             <h2>Synopsis</h2>

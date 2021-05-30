@@ -3,6 +3,31 @@ $sansSerif: Arial, Helvetica, sans-serif;
 $serif: "Times New Roman", Times, serif;
 $monospace: Consolas, "Lucida Console", Monaco, monospace;
 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+
+    background-color: #F7F7F5;
+
+    > .container {
+        min-height: 100%;
+        padding-top: 10pt;
+        padding-bottom: 10pt;
+
+        background-color:  white;
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+}
+
 h1,
 h2,
 h3,
@@ -14,6 +39,7 @@ h6 {
 
 p,
 div {
+    font-size: 13pt;
     font-family: $serif;
 }
 
