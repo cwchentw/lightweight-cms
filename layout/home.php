@@ -50,9 +50,7 @@ $status = 200;  # HTTP 200 OK.
             ?>
         </div>
         
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
-        ?>
+        <?php includePartials("footer.php"); ?>
     </body>
 </html>
 

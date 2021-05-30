@@ -32,9 +32,7 @@ $post = $GLOBALS[MDCMS_POST];
             <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
         
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
-        ?>
+        <?php includePartials("footer.php"); ?>
     </body>
 </html>
 

@@ -73,9 +73,7 @@ $pages = $GLOBALS[MDCMS_PAGES];
             ?>
         </div>
 
-        <?php
-        include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/footer.php";
-        ?>
+        <?php includePartials("footer.php"); ?>
     </body>
 </html>
 
