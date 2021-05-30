@@ -18,7 +18,6 @@ if (false != strpos($loc, "..")) {
 render:
     # Render an error page.
     if (isset($post) && 200 != $post["status"]) {
-        # Currently, we use a superglobal variable to pass data.
         $GLOBALS[MDCMS_POST] = $post;
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
@@ -53,7 +52,6 @@ render:
                 . "Visit our <a href=\"/\">home</a> instead.";
         }
 
-        # Currently, we use a superglobal variable to pass data.
         $GLOBALS[MDCMS_POST] = $post;
 
         require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
