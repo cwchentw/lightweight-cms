@@ -4,10 +4,32 @@ Markdown-based content management system powered by PHP.
 
 ## System Requirements
 
-* PHP 7
-* mbstring extension of PHP
-* [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
-* Composer (only for development)
+### PHP
+
+* Production
+  * PHP 7.2 or above
+  * mbstring extension of PHP
+  * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
+* Development
+  * [Composer](https://getcomposer.org)
+  * [PHPMD](https://phpmd.org) (only for linting)
+
+### Web
+
+* Production
+  * A [modern browser](https://browsehappy.com) like Chrome or Firefox
+  * [Bootstrap 5](https://getbootstrap.com)
+  * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
+  * (Optional) [highlight.js](https://highlightjs.org)
+* Development
+  * Node.js
+  * [Gulp](https://gulpjs.com/)
+  * [Sass](https://sass-lang.com/)
+  * [Autoprefixer](https://github.com/postcss/autoprefixer)
+  * [stylelint](https://stylelint.io/)
+  * [Babel](https://babeljs.io/)
+  * [Flow](https://flow.org/en/)
+  * [ESLint](https://eslint.org/)
 
 ## Usage
 
@@ -35,11 +57,33 @@ Install dependencies with Composer:
 $ composer install
 ```
 
-Remove all sample articles in *content*, adding your awesome ones.
+(Optional) Install the dependencies related to web development with Node.js:
 
-Deploy the cloned repo to a web hosting service supporting PHP 7. Set the configuration of the web server accordingly.
+```
+$ npm install
+```
 
-(Optional) Save the cloned repo to another remote repo:
+If you don't require to write CSS or JavaScript, skip the step.
+
+Remove all sample posts in *content*, adding your awesome ones.
+
+(Optional) Build assets for production environments:
+
+```
+$ npm run prod
+```
+
+Deploy the cloned repo to a web hosting service supporting PHP 7:
+
+```
+$ sudo sh scripts/sync-to /path/to/www
+```
+
+If you update your local repo, repeat the command to update the code in your production environment.
+
+Set the configuration of the web server accordingly. [Here](/scripts/nginx.conf) is a sample Nginx configuration.
+
+(Optional) Save the local repo to another remote repo:
 
 ```
 $ git remote set-url origin https://example.com/user/mysite.git
