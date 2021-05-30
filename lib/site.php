@@ -23,26 +23,26 @@ function isSection($page) {
 function getSections($page) {
     $result = array();
 
-    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
-    $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
+    $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
+    $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
         # Skip private directories and files.
         if ("." == substr($file, 0, 1))
             continue;
 
-        $path = $content_directory . $file;
+        $path = $contentDirectory . $file;
         if (is_dir($path)) {
             $d = array();
 
             # Set the link path.
             $d[MDCMS_LINK_PATH] = $page . $file . "/";
 
-            $index_path = $path . "/" . SECTION_INDEX;
+            $indexPage = $path . "/" . SECTION_INDEX;
 
             # If a section index exists, extract data from it.
-            if (file_exists($index_path)) {
-                $c = file_get_contents($index_path);
+            if (file_exists($indexPage)) {
+                $c = file_get_contents($indexPage);
 
                 preg_match("/^# (.+)/", $c, $matches);
                 if (isset($matches))
@@ -65,15 +65,15 @@ function getSections($page) {
 
     # Scan custom directories added in the application directory
     #  by users of mdcms as well.
-    $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
-    $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
+    $applicationDirectory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
+    $files = scandir($applicationDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
         # Skip private directories.
         if ("." == substr($file, 0, 1))
             continue;
 
-        $path = $content_directory . "/" . $file;
+        $path = $contentDirectory . "/" . $file;
         if (is_dir($path)) {
             $d = array();
 
@@ -93,8 +93,8 @@ function getSections($page) {
 function getPages($page) {
     $result = array();
 
-    $content_directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
-    $files = scandir($content_directory, SCANDIR_SORT_ASCENDING);
+    $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
+    $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
         # Skip private files.
@@ -103,7 +103,7 @@ function getPages($page) {
         else if ("_" == substr($file, 0, 1))
             continue;
 
-        $path = $content_directory . "/" . $file;
+        $path = $contentDirectory . "/" . $file;
         if (is_file($path)) {
             $f = array();
 
@@ -126,8 +126,8 @@ function getPages($page) {
 
     # Scan custom pages added in the application directory
     #  by users of mdcms as well.
-    $application_directory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
-    $files = scandir($application_directory, SCANDIR_SORT_ASCENDING);
+    $applicationDirectory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
+    $files = scandir($applicationDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
         # Skip private directories and files.
@@ -138,7 +138,7 @@ function getPages($page) {
         if ("index.php" == $file)
             continue;
 
-        $path = $content_directory . "/" . $file;
+        $path = $contentDirectory . "/" . $file;
         if (is_file($path)) {
             $f = array();
 
@@ -166,12 +166,12 @@ function getSection($page) {
     $result[MDCMS_SECTION_CONTENT] = "";
     $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
-    $index_path = __DIR__ . "/../" . CONTENT_DIRECTORY
+    $indexPage = __DIR__ . "/../" . CONTENT_DIRECTORY
         . "/" . $page . SECTION_INDEX;
 
     # If a section index exists, extract data from it.
-    if (file_exists($index_path)) {
-        $c = file_get_contents($index_path);
+    if (file_exists($indexPage)) {
+        $c = file_get_contents($indexPage);
 
         preg_match("/^# (.+)/", $c, $matches);
         if (isset($matches))
@@ -214,11 +214,11 @@ function getBreadcrumb($page) {
         $path = __DIR__
             . "/../" . CONTENT_DIRECTORY
             . $prev . $arr[$i];
-        $html_path = __DIR__
+        $htmlPath = __DIR__
             . "/../" . CONTENT_DIRECTORY
             . $prev
             . $arr[$i] . HTML_FILE_EXTENSION;
-        $markdown_path = __DIR__
+        $markdownPath = __DIR__
             . "/../" . CONTENT_DIRECTORY
             . $prev
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
@@ -227,11 +227,11 @@ function getBreadcrumb($page) {
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
         if (is_dir($path)) {
-            $index_path = $path . "/" . SECTION_INDEX;
+            $indexPage = $path . "/" . SECTION_INDEX;
 
             # If a section index exists, extract data from it.
-            if (file_exists($index_path)) {
-                $c = file_get_contents($index_path);
+            if (file_exists($indexPage)) {
+                $c = file_get_contents($indexPage);
 
                 preg_match("/^# (.+)/", $c, $matches);
                 if (isset($matches))
@@ -246,12 +246,12 @@ function getBreadcrumb($page) {
 
             array_push($result, $d);
         }
-        else if (file_exists($html_path)) {
-            $raw_content = file_get_contents($html_path);
+        else if (file_exists($htmlPath)) {
+            $rawContent = file_get_contents($htmlPath);
 
-            # `$raw_content` is not a full HTML document.
+            # `$rawContent` is not a full HTML document.
             # Therefore, we don't use a HTML parser but some regex pattern.
-            preg_match("/<h1[^>]*>(.+)<\/h1>/", $raw_content, $matches);
+            preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches);
 
             # Extract a title from a document.
             if (isset($matches)) {
@@ -266,8 +266,8 @@ function getBreadcrumb($page) {
 
             array_push($result, $d);
         }
-        else if (file_exists($markdown_path)) {
-            $c = file_get_contents($markdown_path);
+        else if (file_exists($markdownPath)) {
+            $c = file_get_contents($markdownPath);
 
             preg_match("/^# (.+)/", $c, $matches);
 
