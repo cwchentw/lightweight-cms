@@ -223,7 +223,6 @@ function getBreadcrumb($page) {
             . $prev
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
 
-        print_r($html_path);
         $d = array();
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
