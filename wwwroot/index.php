@@ -3,25 +3,7 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
-# TODO: Check whether `$_SERVER["REQUEST_URI"]` works well.
-goto uri;
-
-# Check whether the ?page query is set.
-if (!isset($_GET["page"])) {
-    $post = array();
-    $post[MDCMS_POST_TITLE] = "Bad Request Error";
-    $post[MDCMS_POST_CONTENT] = "Invalid URL";
-    $post[MDCMS_POST_STATUS] = 400;
-    goto render;
-}
-
-# TODO: Check it later.
-uri:
-
-# Filter the page parameter.
-#$loc = filter_input(INPUT_GET, "page", FILTER_SANITIZE_URL);
-
-# TODO: Check it later.
+# Filter the input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
 # Check whether the URL is dangerous.
