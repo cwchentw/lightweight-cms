@@ -17,6 +17,13 @@ $pages = $GLOBALS[MDCMS_PAGES];
         <title><?php echo $section[MDCMS_SECTION_TITLE] ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR ?>">
 
+        <!-- Most section pages are merely an intermediate document
+              to posts. They seldom benefit SEO. You may safely block
+              sections from crawlings of search engine bots.  -->
+        <!--
+        <meta name="robots" content="noindex, follow">
+        -->
+
         <?php includePartials("header.php"); ?>
     </head>
     <body>
