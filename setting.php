@@ -26,7 +26,7 @@ define("SCAN_APPLICATION_DIRECTORY", false);
 # The layout of an index page.
 define("HOME_LAYOUT", "home.php");
 # The layout of sections.
-define("LIST_LAYOUT", "section.php");
+define("SECTION_LAYOUT", "section.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
 
