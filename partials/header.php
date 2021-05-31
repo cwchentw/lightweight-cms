@@ -1,11 +1,16 @@
+<?php
+require_once __DIR__ . "/../setting.php";
+?>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Configuration for an installable web application.
       A part of PWA (progressive web application).  -->
-<!--
-<link rel="manifest" href="/manifest.json">
--->
+<?php
+if (IS_PWA)
+    echo "<link rel=\"manifest\" href=\"/manifest.json\">";
+?>
 
 <!-- Twitter Bootstrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"

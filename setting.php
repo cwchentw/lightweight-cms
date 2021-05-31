@@ -17,8 +17,15 @@ define("SITE_LANGUAGE", "en-US");
 # Set the text of the index page of breadcrumbs.
 define("SITE_BREADCRUMB_HOME", "Home");
 
-# A flag to scan application directory.
+
+# These flags will switch on or off optional features.
+
+# Scan application directory.
 define("SCAN_APPLICATION_DIRECTORY", false);
+# Add supports to PWA (progressive web application).
+# You need to make a manifest.json with our ./scripts/manifest script manually.
+define("IS_PWA", false);
+
 
 # Mostly, you don't require to modify anything below.
 # If either is modified, modify the project accordingly as well.
