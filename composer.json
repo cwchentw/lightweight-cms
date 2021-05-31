@@ -14,6 +14,7 @@
         "erusev/parsedown-extra": "^0.8.1"
     },
     "require-dev": {
-        "phpmd/phpmd": "^2.10"
+        "phpmd/phpmd": "^2.10",
+        "squizlabs/php_codesniffer": "*"
     }
 }
