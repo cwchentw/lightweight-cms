@@ -46,6 +46,12 @@ Change your working directory to the root of the cloned repo:
 $ cd mysite
 ```
 
+On openSUSE, install the following packages before installing Composer:
+
+```
+$ sudo zypper install php7-openssl php7-phar php7-zlib
+```
+
 (Optional) Install Composer:
 
 ```
