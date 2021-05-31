@@ -33,7 +33,7 @@ define("POST_LAYOUT", "post.php");
 # The index files used by sections.
 define("SECTION_INDEX", "_index.md");
 
-# The directory of the content.
+# The directory of posts.
 define("CONTENT_DIRECTORY", "content");
 # The directory of the layouts.
 define("LAYOUT_DIRECTORY", "layout");
@@ -43,6 +43,8 @@ define("PARTIALS_DIRECTORY", "partials");
 define("LIBRARY_DIRECTORY", "lib");
 # The directory of the application.
 define("APPLICATION_DIRECTORY", "wwwroot");
+# The directory of public files.
+define("PUBLIC_DIRECTORY", "public");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");
