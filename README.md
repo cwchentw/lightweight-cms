@@ -12,6 +12,7 @@ Markdown-based content management system powered by PHP.
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
 * Development
   * [Composer](https://getcomposer.org)
+  * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (only for linting)
   * [PHPMD](https://phpmd.org) (only for linting)
 
 ### Web
@@ -48,7 +49,7 @@ $ cd mysite
 (Optional) Install Composer:
 
 ```
-$ sh scripts/install-composer $HOME/bin
+$ ./scripts/install-composer $HOME/bin
 ```
 
 Install dependencies with Composer:
@@ -76,7 +77,7 @@ $ npm run prod
 Deploy the cloned repo to a web hosting service supporting PHP 7:
 
 ```
-$ sudo sh scripts/sync-to /path/to/www
+$ sudo ./scripts/sync-to /path/to/www
 ```
 
 If you update your local repo, repeat the command to update the code in your production environment.
