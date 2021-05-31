@@ -24,7 +24,7 @@ define("SITE_BREADCRUMB_HOME", "Home");
 define("SCAN_APPLICATION_DIRECTORY", false);
 # Add supports to PWA (progressive web application).
 # You need to make a manifest.json with our ./scripts/manifest script manually.
-define("IS_PWA", false);
+define("ENABLE_PWA", false);
 
 
 # Mostly, you don't require to modify anything below.

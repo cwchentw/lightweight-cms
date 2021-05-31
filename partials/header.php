@@ -8,7 +8,7 @@ require_once __DIR__ . "/../setting.php";
 <!-- Configuration for an installable web application.
       A part of PWA (progressive web application).  -->
 <?php
-if (IS_PWA)
+if (ENABLE_PWA)
     echo "<link rel=\"manifest\" href=\"/manifest.json\">";
 ?>
 
