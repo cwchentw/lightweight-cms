@@ -20,12 +20,11 @@ define("SITE_BREADCRUMB_HOME", "Home");
 
 # These flags will switch on or off optional features.
 
-# Scan application directory.
-define("SCAN_APPLICATION_DIRECTORY", false);
 # Add supports to PWA (progressive web application).
 # You need to make a manifest.json with our ./scripts/manifest script manually.
 define("ENABLE_PWA", false);
-
+# Scan application directory.
+define("SCAN_APPLICATION_DIRECTORY", false);
 
 # Mostly, you don't require to modify anything below.
 # If either is modified, modify the project accordingly as well.

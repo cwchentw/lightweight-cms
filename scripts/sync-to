@@ -30,6 +30,12 @@ fi
 cwd="$(dirname $0)";
 src="${cwd}/.."
 
+# Copy static files.
+cp -pr "$src/static/"* "$src/public" || (
+    echo "Unable to copy static files to the public directory" >&2;
+    exit 1;
+)
+
 # Sync between the source and the destination.
 #  Files on the distination may be deleted.
 #  Don't edit them.

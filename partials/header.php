@@ -21,3 +21,11 @@ if (ENABLE_PWA)
 <link rel="stylesheet" href="/css/site.css">
 
 <!-- Add more style sheets here. -->
+
+<!-- A service worker, a JavaScript script, runs in the background
+      to enrich user experiences under offline and slow network.
+      A part of PWA (progressive web application). -->
+<?php
+if (ENABLE_PWA)
+    echo "<script src=\"/register-service-worker.js\"></script>";
+?>
