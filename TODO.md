@@ -1,7 +1,8 @@
 # TODO
 
-* (Feature) Add support to sitemap.xml
-* (Feature) Add support to open graphs
-* (Feature) Add support to share buttons
-* (Feature) Add support to ToC (table of contents) per post
+* (Feature) sitemap.xml
+* (Feature) Open graphs
+* (Feature) Share buttons
+* (Feature) ToC (table of contents) per post
+* (Feature) Word count
 * (Feature) Order site posts.
