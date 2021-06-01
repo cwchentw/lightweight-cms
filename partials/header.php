@@ -5,12 +5,11 @@ require_once __DIR__ . "/../setting.php";
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Configuration for an installable web application.
-      A part of PWA (progressive web application).  -->
-<?php
-if (ENABLE_PWA)
-    echo "<link rel=\"manifest\" href=\"/manifest.json\">";
-?>
+<!-- Configuration for an installable web application. -->
+<!-- TODO: Test the code. -->
+<?php if (ENABLE_PWA): ?>
+<link rel="manifest" href="/manifest.json">
+<?php endif; ?>
 
 <!-- Reduce inconsistency between browsers. -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -36,9 +35,8 @@ if (ENABLE_PWA)
 <!-- Add more style sheets here. -->
 
 <!-- A service worker, a JavaScript script, runs in the background
-      to enrich user experiences under offline and slow network.
-      A part of PWA (progressive web application). -->
-<?php
-if (ENABLE_PWA)
-    echo "<script src=\"/register-service-worker.js\"></script>";
-?>
+      to enrich user experiences under offline and slow network. -->
+<!-- TODO: Test the code. -->
+<?php if (ENABLE_PWA): ?>
+<script src="/register-service-worker.js"></script>
+<?php endif; ?>
