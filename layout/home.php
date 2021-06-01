@@ -12,11 +12,11 @@ $status = 200;  # HTTP 200 OK.
 
 
 <!DOCTYPE html>
-<html lang="<?php echo SITE_LANGUAGE ?>">
+<html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
         <title><?php echo SITE_NAME; ?></title>
-        <meta name="description" content="<?php echo SITE_DESCRIPTION ?>">
-        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
+        <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
+        <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <?php includePartials("header.php"); ?>
     </head>
@@ -34,7 +34,7 @@ $status = 200;  # HTTP 200 OK.
 
             <h2>Synopsis</h2>
 
-            <p><?php echo SITE_DESCRIPTION ?></p>
+            <p><?php echo SITE_DESCRIPTION; ?></p>
 
             <?php
             # Add section(s) if any exists.
