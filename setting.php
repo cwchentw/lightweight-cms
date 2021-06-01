@@ -26,6 +26,8 @@ define("ENABLE_PWA", false);
 # Add support to hightlight.js
 # Currently, the theme of hightlight.js is fixed.
 define("ENABLE_CODE_HIGHTLIGHT", false);
+# Block search engine bots on sections.
+define("BLOCK_BOT", false);
 # Scan application directory.
 define("SCAN_APPLICATION_DIRECTORY", false);
 
