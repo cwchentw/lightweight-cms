@@ -29,10 +29,10 @@ require_once __DIR__ . "/../setting.php";
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 <?php endif; ?>
 
+<!-- Add more style sheets here. -->
+
 <!-- Site-specific style sheet -->
 <link rel="stylesheet" href="/css/site.css">
-
-<!-- Add more style sheets here. -->
 
 <!-- A service worker, a JavaScript script, runs in the background
       to enrich user experiences under offline and slow network. -->

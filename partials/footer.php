@@ -16,7 +16,7 @@ require __DIR__ . "/../setting.php";
 <script>hljs.highlightAll();</script>
 <?php endif; ?>
 
+<!-- Add more scripts here. -->
+
 <!-- Site-specific scripts -->
 <script src="/js/site.js"></script>
-
-<!-- Add more scripts here. -->
