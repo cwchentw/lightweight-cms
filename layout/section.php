@@ -14,8 +14,8 @@ $pages = $GLOBALS[MDCMS_PAGES];
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
-        <title><?php echo $section[MDCMS_SECTION_TITLE] ?></title>
-        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
+        <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
+        <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <!-- Most section pages merely work as intermediate documents
               to posts. They seldom benefit SEO. You may safely block

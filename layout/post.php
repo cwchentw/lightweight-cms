@@ -12,8 +12,8 @@ $post = $GLOBALS[MDCMS_POST];
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE ?>">
     <head>
-        <title><?php echo $post[MDCMS_POST_TITLE] ?></title>
-        <meta name="author" content="<?php echo SITE_AUTHOR ?>">
+        <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
+        <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <?php includePartials("header.php"); ?>
     </head>
