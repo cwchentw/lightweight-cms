@@ -5,4 +5,5 @@
 * (Feature) Share buttons
 * (Feature) ToC (table of contents) per post
 * (Feature) Word count
-* (Feature) Order site posts.
+* (Feature) Order site posts
+* (Feature) Excerpts ~ 250 characters
