@@ -23,6 +23,9 @@ define("SITE_BREADCRUMB_HOME", "Home");
 # Add supports to PWA (progressive web application).
 # You need to make a manifest.json with our ./scripts/manifest script manually.
 define("ENABLE_PWA", false);
+# Add support to hightlight.js
+# Currently, the theme of hightlight.js is fixed.
+define("ENABLE_CODE_HIGHTLIGHT", false);
 # Scan application directory.
 define("SCAN_APPLICATION_DIRECTORY", false);
 

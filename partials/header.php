@@ -22,6 +22,14 @@ if (ENABLE_PWA)
     integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- highlight.js CSS -->
+<!-- TODO: Test the code. -->
+<?php if (ENABLE_CODE_HIGHTLIGHT): ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/railscasts.min.css"
+        integrity="sha512-0UdQ2subH1uPQAASCGB83KophEAoaJd6ii3D1jKEZ8YMnP7W3dGh3Pn3Pf8P5zKvX+T8Ltp+kY0ABON0mUqP3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<?php endif; ?>
+
 <!-- Site-specific style sheet -->
 <link rel="stylesheet" href="/css/site.css">
 
