@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+
+/* Remove it later. */
+print_r(getAllLinks("/c-programming"));
