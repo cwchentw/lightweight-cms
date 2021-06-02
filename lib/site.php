@@ -305,11 +305,7 @@ function getPageFromPath($path) {
 }
 
 /* TODO: Test the code. */
-function readHTMLLink($page) {
-    $result = array();
-
-    $result[MDCMS_LINK_PATH] = $page;
-
+function getHTMLPathFromPage($page) {
     $path = __DIR__
         . "/../" . CONTENT_DIRECTORY
         . "/" . $page;
@@ -318,7 +314,16 @@ function readHTMLLink($page) {
     if ("/" == substr($path, strlen($path)-1, 1))
         $path = substr($path, 0, strlen($path)-1);
 
-    $htmlPath = $path . HTML_FILE_EXTENSION;
+    return $path . HTML_FILE_EXTENSION;
+}
+
+/* TODO: Test the code. */
+function readHTMLLink($page) {
+    $result = array();
+
+    $result[MDCMS_LINK_PATH] = $page;
+
+    $htmlPath = getHTMLPathFromPage($page);
 
     $rawContent = file_get_contents($htmlPath);
 
