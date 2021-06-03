@@ -509,9 +509,7 @@ function getAllLinks($page) {
 
                 foreach ($subfiles as $subfile) {
                     /* Skip private files. */
-                    if ("." == $subfile)
-                        continue;
-                    else if (".." == $subfile)
+                    if ("." == substr($subfile, 0, 1))
                         continue;
                     else if ("_" == substr($subfile, 0, 1))
                         continue;
