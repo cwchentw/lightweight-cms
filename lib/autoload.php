@@ -15,6 +15,8 @@ foreach ($libraries as $library) {
     # Skip private directories and files.
     if ("." == substr($library, 0, 1))
         continue;
+    else if ("_" == substr($library, 0, 1))
+        continue;
 
     # Skip the script itself.
     if ("autoload.php" == $library)
