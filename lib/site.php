@@ -145,7 +145,9 @@ function getPages($page)
             # Get the title of the page.
             # If the commands cost too many system resources, change it.
             $post = readPage($link[MDCMS_LINK_PATH]);
-            $link[MDCMS_LINK_TITLE] = $post[MDCMS_POST_TITLE];
+
+            foreach ($post as $key => $value)
+                $link[$key] = $value;
 
             array_push($result, $link);
         }

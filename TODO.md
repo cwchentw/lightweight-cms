@@ -4,5 +4,4 @@
 * (Feature) Share buttons
 * (Feature) ToC (table of contents) per post
 * (Feature) Order site posts
-* (Feature) Excerpts ~ 250 characters
 * (Feature) External link for SEO

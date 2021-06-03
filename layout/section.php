@@ -68,15 +68,18 @@ $pages = $GLOBALS[MDCMS_PAGES];
             if (isset($pages) && count($pages) > 0) {
                 echo "<h2>Articles</h2>";
 
-                echo "<div class=\"list-group\">";
+                foreach ($pages as $page) {
+                    echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
 
-                foreach ($pages as $page)
-                    echo "<a class=\"list-group-item\" "
+                    echo "<p>" . $page[MDCMS_POST_EXCERPT] . " ";
+
+                    echo "<a class=\"btn btn-primary btn-sm\" "
                         . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                        . $page[MDCMS_LINK_TITLE]
+                        . "Read More"
                         . "</a>";
 
-                echo "</div>";
+                    echo "</p>";
+                }
             }
             ?>
         </div>

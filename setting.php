@@ -19,6 +19,9 @@ define("SITE_LANGUAGE", "en-US");
 # Set the text of the index page of breadcrumbs.
 define("SITE_BREADCRUMB_HOME", "Home");
 
+# The upper limit of word count of excerpts.
+# It should be less than the upper limit of a tweet of Twitter.
+define("EXCERPT_THRESHOLD", 240);
 
 # These flags will switch on or off optional features.
 
