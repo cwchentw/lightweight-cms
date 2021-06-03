@@ -11,7 +11,8 @@
     ],
     "require": {
         "erusev/parsedown": "^1.7",
-        "erusev/parsedown-extra": "^0.8.1"
+        "erusev/parsedown-extra": "^0.8.1",
+        "pagerange/metaparsedown": "^1.0"
     },
     "require-dev": {
         "phpmd/phpmd": "^2.10",

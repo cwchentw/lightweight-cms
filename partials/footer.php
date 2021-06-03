@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../setting.php";
 ?>
 
 <!-- Native JavaScript for Bootstrap -->

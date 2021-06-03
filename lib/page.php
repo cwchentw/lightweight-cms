@@ -3,6 +3,8 @@ require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/const.php";
 
+use Pagerange\Markdown\MetaParsedown;
+
 
 function parsePage($page) {
     $result = array();
@@ -99,16 +101,34 @@ function readPage($page) {
     else if (file_exists($markdownPath)) {
         $rawContent = file_get_contents($markdownPath);
 
-        preg_match("/^# (.+)/", $rawContent, $matches);
-        if (isset($matches)) {
-            $result[MDCMS_POST_TITLE] = $matches[1];
+        $metaParser = new MetaParsedown();
+
+        # Extract metadata from a content.
+        $metadata = $metaParser->meta($rawContent);
+
+        # Strip metadata from a content.
+        $stripedContent = $metaParser->stripMeta($rawContent);
+
+        if (isset($metadata["title"])) {
+            $result[MDCMS_POST_TITLE] = $metadata["title"];
 
             # Remove a <h1>-level title from the content.
             # Here we assume there is only one <h1> title per document.
-            $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $rawContent);
+            $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $stripedContent);
         }
-        else
-            $result[MDCMS_POST_CONTENT] = $rawContent;
+        else {
+            preg_match("/^# (.+)/", $stripedContent, $matches);
+
+            if (isset($matches)) {
+                $result[MDCMS_POST_TITLE] = $matches[1];
+
+                # Remove a <h1>-level title from the content.
+                # Here we assume there is only one <h1> title per document.
+                $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $stripedContent);
+            }
+            else
+                $result[MDCMS_POST_CONTENT] = $stripedContent;
+        }
 
         # Convert the Markdown document into a HTML document.
         $parser = new Parsedown();
