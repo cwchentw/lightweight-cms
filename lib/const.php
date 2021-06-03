@@ -19,3 +19,4 @@ define("MDCMS_POST_STATUS", "status");
 
 define("MDCMS_LINK_TITLE", "title");
 define("MDCMS_LINK_PATH", "path");
+define("MDCMS_LINK_MTIME", "mtime");

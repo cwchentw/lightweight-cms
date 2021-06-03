@@ -37,6 +37,8 @@ function readHTMLLink($page) {
 
     $htmlPath = getHTMLPathFromPage($page);
 
+    $result[MDCMS_LINK_MTIME] = filemtime($htmlPath);
+
     $rawContent = file_get_contents($htmlPath);
 
     # `$rawContent` is not a full HTML document.
@@ -74,6 +76,8 @@ function readMarkdownLink($page) {
 
     $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
 
+    $result[MDCMS_LINK_MTIME] = filemtime($markdownPath);
+
     $rawContent = file_get_contents($markdownPath);
 
     preg_match("/^# (.+)/", $rawContent, $matches);
@@ -105,6 +109,8 @@ function readDirectoryLink($page) {
     $indexPath = $path . "/" . SECTION_INDEX;
 
     if (file_exists($indexPath)) {
+        $result[MDCMS_LINK_MTIME] = filemtime($indexPath);
+
         $rawContent = file_get_contents($indexPath);
 
         preg_match("/^# (.+)/", $rawContent, $matches);
@@ -118,6 +124,8 @@ function readDirectoryLink($page) {
     }
     else {
     extract_title_from_page:
+        $result[MDCMS_LINK_MTIME] = stat($path)["mtime"];
+
         $title = preg_replace("/\//", "", $page);
         $title = preg_replace("/-+/", " ", $title);
         $title = ucwords($title);  # Capitalize a title.
