@@ -6,3 +6,4 @@
 * (Feature) Word count
 * (Feature) Order site posts
 * (Feature) Excerpts ~ 250 characters
+* (Feature) External link for SEO
