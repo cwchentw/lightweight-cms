@@ -307,6 +307,19 @@ function getAllLinks($page) {
 
     # Add all valid directories and files into the queue.
     if (isHome($page)) {
+        # A home page itself is a special page.
+        {
+            $link = array();
+
+            $link[MDCMS_LINK_PATH] = $page;
+            $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
+
+            $indexPath = __DIR__ . "/../" . LAYOUT_DIRECTORY . "/". HOME_LAYOUT;
+            $link[MDCMS_LINK_MTIME] = filemtime($indexPath);
+
+            array_push($result, $link);
+        }
+
         $contentDirectory =
             __DIR__ . "/../" . CONTENT_DIRECTORY;
         $files = scandir($contentDirectory);
