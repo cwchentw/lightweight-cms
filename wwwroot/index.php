@@ -27,7 +27,7 @@ else if (isManifest($loc)) {
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . MANIFEST_LAYOUT;
 }
 # Render a home page.
-else if (isHomePage($loc)) {
+else if (isHome($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
     $GLOBALS[MDCMS_PAGES] = getPages($loc);

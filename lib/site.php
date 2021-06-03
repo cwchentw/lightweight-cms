@@ -7,7 +7,7 @@ require_once __DIR__ . "/page.php";
 require_once __DIR__ . "/_site.php";
 
 
-function isHomePage($page) {
+function isHome($page) {
     return "/" == $page;
 }
 
@@ -302,7 +302,7 @@ function getAllLinks($page) {
     $pages = array();
 
     # Add all valid directories and files into the queue.
-    if (isHomePage($page)) {
+    if (isHome($page)) {
         $contentDirectory =
             __DIR__ . "/../" . CONTENT_DIRECTORY;
         $files = scandir($contentDirectory);
