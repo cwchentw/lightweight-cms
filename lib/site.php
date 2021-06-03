@@ -9,21 +9,25 @@ require_once __DIR__ . "/_site.php";
 use Pagerange\Markdown\MetaParsedown;
 
 
-function isHome($page) {
+function isHome($page)
+{
     return "/" == $page;
 }
 
-function isManifest($page) {
+function isManifest($page)
+{
     return "/manifest.json" == $page;
 }
 
-function isSitemap($page) {
+function isSitemap($page)
+{
     return "/sitemap.xml" == $page;
 }
 
 # The function doesn't distinguish between top sections
 #  and nested ones.
-function isSection($page) {
+function isSection($page)
+{
     $path = __DIR__ . "/../" . CONTENT_DIRECTORY . "/" . $page;
 
     return is_dir($path);
@@ -32,7 +36,8 @@ function isSection($page) {
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/article-title/".
-function getSections($page) {
+function getSections($page)
+{
     $result = array();
 
     $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
@@ -115,7 +120,8 @@ function getSections($page) {
     return $result;
 }
 
-function getPages($page) {
+function getPages($page)
+{
     $result = array();
 
     $directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
@@ -183,7 +189,8 @@ function getPages($page) {
     return $result;
 }
 
-function getSection($page) {
+function getSection($page)
+{
     $result = array();
 
     # Initialize the data of a section.
@@ -217,7 +224,8 @@ function getSection($page) {
     return $result;
 }
 
-function getBreadcrumb($page) {
+function getBreadcrumb($page)
+{
     $result = array();
 
     # Add the link to home.
@@ -315,7 +323,8 @@ function getBreadcrumb($page) {
 }
 
 /* TODO: Test the code. */
-function getAllLinks($page) {
+function getAllLinks($page)
+{
     $result = array();
 
     $pages = array();

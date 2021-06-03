@@ -6,7 +6,8 @@ require_once __DIR__ . "/const.php";
 use Pagerange\Markdown\MetaParsedown;
 
 
-function parsePage($page) {
+function parsePage($page)
+{
     $result = array();
 
     # Reject invalid pages.
@@ -42,7 +43,8 @@ function parsePage($page) {
     return $result;
 }
 
-function getPath($page, $ext) {
+function getPath($page, $ext)
+{
     $result = "";
 
     $arr = parsePage($page);
@@ -68,7 +70,8 @@ function getPath($page, $ext) {
     return $result;
 }
 
-function readPage($page) {
+function readPage($page)
+{
     $result = array();
 
     # Initialize the fields of a post.

@@ -1,7 +1,8 @@
 <?php
 # Private functions used by site.php.
 
-function getPageFromPath($path) {
+function getPageFromPath($path)
+{
     $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY;
     $page = substr($path, strlen($contentDirectory));
 
@@ -17,7 +18,8 @@ function getPageFromPath($path) {
 }
 
 /* TODO: Test the code. */
-function getHTMLPathFromPage($page) {
+function getHTMLPathFromPage($page)
+{
     $path = __DIR__
         . "/../" . CONTENT_DIRECTORY
         . "/" . $page;
@@ -30,7 +32,8 @@ function getHTMLPathFromPage($page) {
 }
 
 /* TODO: Test the code. */
-function readHTMLLink($page) {
+function readHTMLLink($page)
+{
     $result = array();
 
     $result[MDCMS_LINK_PATH] = $page;
@@ -61,7 +64,8 @@ function readHTMLLink($page) {
 }
 
 /* TODO: Test the code. */
-function readMarkdownLink($page) {
+function readMarkdownLink($page)
+{
     $result = array();
 
     $result[MDCMS_LINK_PATH] = $page;
@@ -98,7 +102,8 @@ function readMarkdownLink($page) {
 }
 
 /* TODO: Test the code. */
-function readDirectoryLink($page) {
+function readDirectoryLink($page)
+{
     $result = array();
 
     $result[MDCMS_LINK_PATH] = $page;
@@ -123,7 +128,7 @@ function readDirectoryLink($page) {
             goto extract_title_from_page;
     }
     else {
-    extract_title_from_page:
+        extract_title_from_page:
         $result[MDCMS_LINK_MTIME] = stat($path)["mtime"];
 
         $title = preg_replace("/\//", "", $page);
@@ -136,11 +141,13 @@ function readDirectoryLink($page) {
 }
 
 /* TODO: Test the code. */
-function isHTMLFile($path) {
+function isHTMLFile($path)
+{
     return strpos($path, HTML_FILE_EXTENSION) > 0;
 }
 
 /* TODO: Test the code. */
-function isMarkdownFile($path) {
+function isMarkdownFile($path)
+{
     return strpos($path, MARKDOWN_FILE_EXTENSION) > 0;
 }
