@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 /* A manifest.json generator for mdcms. */
 require_once __DIR__ . "/../setting.php";
@@ -93,7 +92,11 @@ $json["icons"] = array();
     } 
 }
 
+header('Content-Type: application/json');
+
 $output = json_encode($json, JSON_UNESCAPED_SLASHES);
+echo $output;
+/*
 $publicDir = __DIR__ . "/../" . PUBLIC_DIRECTORY;
 $manifestPath = $publicDir . "/" . "manifest.json";
 
@@ -108,3 +111,4 @@ if (!file_put_contents($manifestPath, $output)) {
     fwrite(STDERR, "Unable to write manifest.json\n");
     exit(1);
 }
+*/

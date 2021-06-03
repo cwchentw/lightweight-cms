@@ -40,6 +40,8 @@ define("HOME_LAYOUT", "home.php");
 define("SECTION_LAYOUT", "section.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
+# The layout of manifest.json
+define("MANIFEST_LAYOUT", "manifest.php");
 
 # The index files used by sections.
 define("SECTION_INDEX", "_index.md");

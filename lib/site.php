@@ -9,6 +9,10 @@ function isHomePage($page) {
     return "/" == $page;
 }
 
+function isManifest($page) {
+    return "/manifest.json" == $page;
+}
+
 # The function doesn't distinguish between top sections
 #  and nested ones.
 function isSection($page) {

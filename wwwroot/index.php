@@ -22,6 +22,10 @@ if (isset($post) && 200 != $post["status"]) {
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
 }
+# Render manifest.json
+else if (isManifest($loc)) {
+    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . MANIFEST_LAYOUT;
+}
 # Render a home page.
 else if (isHomePage($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
