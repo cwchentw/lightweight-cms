@@ -6,6 +6,8 @@ require_once __DIR__ . "/page.php";
 # Private libraries.
 require_once __DIR__ . "/_site.php";
 
+use Pagerange\Markdown\MetaParsedown;
+
 
 function isHome($page) {
     return "/" == $page;
@@ -43,29 +45,42 @@ function getSections($page) {
 
         $path = $contentDirectory . $file;
         if (is_dir($path)) {
-            $d = array();
+            $link = array();
 
             # Set the link path.
-            $d[MDCMS_LINK_PATH] = $page . $file . "/";
+            $link[MDCMS_LINK_PATH] = $page . $file . "/";
 
             $indexPage = $path . "/" . SECTION_INDEX;
 
             # If a section index exists, extract data from it.
             if (file_exists($indexPage)) {
-                $c = file_get_contents($indexPage);
+                $rawContent = file_get_contents($indexPage);
 
-                preg_match("/^# (.+)/", $c, $matches);
-                if (isset($matches))
-                    $d[MDCMS_LINK_TITLE] = $matches[1];
+                $metaParser = new MetaParsedown();
+
+                $metadata = $metaParser->meta($rawContent);
+                $stripedContent = $metaParser->stripMeta($rawContent);
+
+                if (isset($metadata["title"])) {
+                    $link[MDCMS_LINK_TITLE] = $metadata["title"];
+                }
+                else {
+                    preg_match("/^# (.+)/", $stripedContent, $matches);
+                    if (isset($matches))
+                        $link[MDCMS_LINK_TITLE] = $matches[1];
+                    else
+                        goto extract_title_from_page;
+                }
             }
             # Otherwise, extract data from the directory name.
             else {
+            extract_title_from_page:
                 $t = preg_replace("/\/|-+/", " ", $file);
                 $t = ucwords($t);  # Capitalize a title.
-                $d[MDCMS_SECTION_TITLE] = $t;
+                $link[MDCMS_SECTION_TITLE] = $t;
             }
 
-            array_push($result, $d);
+            array_push($result, $link);
         }
     }
 
