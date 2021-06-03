@@ -2,6 +2,8 @@
 # The project configuration file. Keep its name *as is*.
 
 
+# The base URL of the site.
+define("SITE_BASE_URL", "https://example.com");
 # Set the name of the website.
 define("SITE_NAME", "mdcms");
 # Set the short name of the website.
