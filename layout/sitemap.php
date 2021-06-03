@@ -1,14 +1,12 @@
-#!/usr/bin/env php
 <?php
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
-header( "content-type: application/xml; charset=ISO-8859-15" );
-
 $xml = new DOMDocument("1.0", "UTF-8");
 
-$xml->formatOutput = true;
+# Pretty printing is not required because sitemap.xml is read by machines.
+#$xml->formatOutput = true;
 
 $urlset = $xml->createElement("urlset");
 $urlset->setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
@@ -35,4 +33,6 @@ foreach ($links as $link) {
 
 $xml->appendChild($urlset);
 
-echo $xml->saveXML() . "\n";
+# Render sitemap.xml
+header( "content-type: application/xml; charset=ISO-8859-15" );
+echo $xml->saveXML();

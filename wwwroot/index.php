@@ -26,7 +26,11 @@ if (isset($post) && 200 != $post["status"]) {
 else if (isManifest($loc)) {
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . MANIFEST_LAYOUT;
 }
-# Render a home page.
+# Render sitemap.xml
+else if (isSitemap($loc)) {
+    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . SITEMAP_LAYOUT;
+}
+# Render the home page.
 else if (isHome($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);

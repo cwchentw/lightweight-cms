@@ -44,6 +44,8 @@ define("SECTION_LAYOUT", "section.php");
 define("POST_LAYOUT", "post.php");
 # The layout of manifest.json
 define("MANIFEST_LAYOUT", "manifest.php");
+# The layout of sitemap.xml
+define("SITEMAP_LAYOUT", "sitemap.php");
 
 # The index files used by sections.
 define("SECTION_INDEX", "_index.md");

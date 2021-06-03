@@ -92,23 +92,6 @@ $json["icons"] = array();
     } 
 }
 
+# Render manifest.json
 header('Content-Type: application/json');
-
-$output = json_encode($json, JSON_UNESCAPED_SLASHES);
-echo $output;
-/*
-$publicDir = __DIR__ . "/../" . PUBLIC_DIRECTORY;
-$manifestPath = $publicDir . "/" . "manifest.json";
-
-if (!is_dir($publicDir)) {
-    if (!mkdir($publicDir)) {
-        fwrite(STDERR, "Unable to create the public directory\n");
-        exit(1);
-    }
-}
-
-if (!file_put_contents($manifestPath, $output)) {
-    fwrite(STDERR, "Unable to write manifest.json\n");
-    exit(1);
-}
-*/
+echo json_encode($json, JSON_UNESCAPED_SLASHES);
