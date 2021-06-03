@@ -118,8 +118,8 @@ function getSections($page) {
 function getPages($page) {
     $result = array();
 
-    $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
-    $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
+    $directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
+    $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
         # Skip private files.
@@ -128,20 +128,20 @@ function getPages($page) {
         else if ("_" == substr($file, 0, 1))
             continue;
 
-        $path = $contentDirectory . "/" . $file;
+        $path = $directory . "/" . $file;
         if (is_file($path)) {
-            $f = array();
+            $link = array();
 
             # Remove file extensions.
-            $f[MDCMS_LINK_PATH] =
+            $link[MDCMS_LINK_PATH] =
                 $page . pathinfo($file, PATHINFO_FILENAME) . "/";
 
             # Get the title of the page.
             # If the commands cost too many system resources, change it.
-            $p = readPage($f[MDCMS_LINK_PATH]);
-            $f[MDCMS_LINK_TITLE] = $p[MDCMS_POST_TITLE];
+            $post = readPage($link[MDCMS_LINK_PATH]);
+            $link[MDCMS_LINK_TITLE] = $post[MDCMS_POST_TITLE];
 
-            array_push($result, $f);
+            array_push($result, $link);
         }
     }
 
