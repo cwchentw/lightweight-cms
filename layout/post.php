@@ -29,6 +29,11 @@ $post = $GLOBALS[MDCMS_POST];
 
             <?php includePartials("breadcrumb.php"); ?>
 
+            <div class="alert alert-info" role="alert">
+                There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> words in the post.
+                It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 200); ?> minutes to read.
+            </div>
+
             <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
 

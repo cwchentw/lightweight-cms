@@ -99,6 +99,28 @@ function readPage($page)
         else
             $result[MDCMS_POST_CONTENT] = $rawContent;
 
+        # TODO: Test the code.
+        preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
+        if (isset($matches)) {
+            $text = "";
+
+            for ($i = 0; $i < count($matches[1]); ++$i) {
+                # Reduce multiple spaces into single space.
+                $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
+                $text .= $paragraph;
+
+                if ($i < count($matches[1]) - 1)
+                    $text .= " ";
+            }
+
+            $words = explode(" ", $text);
+            # Currently, we only count words for English articles.
+            # TODO: Count words for posts in other languages.
+            $result[MDCMS_POST_WORD_COUNT] = count($words);
+        }
+        else
+            $result[MDCMS_POST_WORD_COUNT] = 0;
+
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
     else if (file_exists($markdownPath)) {
@@ -136,6 +158,28 @@ function readPage($page)
         # Convert the Markdown document into a HTML document.
         $parser = new Parsedown();
         $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
+
+        # TODO: Test the code.
+        preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
+        if (isset($matches)) {
+            $text = "";
+
+            for ($i = 0; $i < count($matches[1]); ++$i) {
+                # Reduce multiple spaces into single space.
+                $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
+                $text .= $paragraph;
+
+                if ($i < count($matches[1]) - 1)
+                    $text .= " ";
+            }
+
+            $words = explode(" ", $text);
+            # Currently, we only count words for English articles.
+            # TODO: Count words for posts in other languages.
+            $result[MDCMS_POST_WORD_COUNT] = count($words);
+        }
+        else
+            $result[MDCMS_POST_WORD_COUNT] = 0;
 
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
