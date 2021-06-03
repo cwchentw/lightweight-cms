@@ -433,68 +433,105 @@ function isMarkdownFile($path) {
 function getAllLinks($page) {
     $result = array();
 
-    /* We cannot tell what `$page` is by its path. */
-    $path = __DIR__
-        . "/../" . CONTENT_DIRECTORY
-        . $page;
-    $dirpath = $path;
-    if ("/" != substr($dirpath, strlen($dirpath)-1, 1))
-        $dirpath .= "/";
-    $htmlPath = $path . HTML_FILE_EXTENSION;
-    $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
+    $pages = array();
 
-    /* `$path` is a HTML file. */
-    if (file_exists($htmlPath)) {
-        array_push($result, readHTMLLink($page));
-    }
-    /* `$path` is a Markdown file. */
-    else if (file_exists($markdownPath)) {
-        array_push($result, readMarkdownLink($page));
-    }
-    /* `$path` is a directory. */
-    else if (is_dir($dirpath)) {
-        $dirs = array();
-
-        array_push($dirs, $dirpath);
-
+    # Add all valid directories and files into the queue.
+    if (isHomePage($page)) {
         $contentDirectory =
             __DIR__ . "/../" . CONTENT_DIRECTORY;
-        while (count($dirs) > 0) {
-            /* Pop out the directory. */
-            $dir = array_shift($dirs);
+        $files = scandir($contentDirectory);
 
-            /* Convert from path to page. */
-            $page = getPageFromPath($dir);
+        foreach ($files as $file) {
+            # Skip private files.
+            if ("." == substr($file, 0, 1))
+                continue;
+            else if ("_" == substr($file, 0, 1))
+                continue;
 
-            $link = readDirectoryLink($page);
-            array_push($result, $link);
+            $path = $contentDirectory . "/" . $file;
+            if (is_dir($path)
+                || isHTMLFile($path)
+                || isMarkdownFile($path))
+            {
+                $page = getPageFromPath($path);
+                array_push($pages, $page);
+            }
+            else {
+                # Ignore everything else.
+            }
+        }
+    }
+    # Add itself into the queue.
+    else {
+        array_push($pages, $page);
+    }
 
-            $subfiles = scandir($dir, SCANDIR_SORT_ASCENDING);
+    while (count($pages) > 0) {
+        $_page = array_shift($pages);
 
-            foreach ($subfiles as $subfile) {
-                /* Skip private files. */
-                if ("." == $subfile)
-                    continue;
-                else if (".." == $subfile)
-                    continue;
-                else if ("_" == substr($subfile, 0, 1))
-                    continue;
+        /* We cannot tell what `$page` is by its path. */
+        $path = __DIR__
+            . "/../" . CONTENT_DIRECTORY
+            . $_page;
+        $dirpath = $path;
+        if ("/" != substr($dirpath, strlen($dirpath)-1, 1))
+            $dirpath .= "/";
+        $htmlPath = $path . HTML_FILE_EXTENSION;
+        $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
 
-                $subpath = $dir . $subfile;
+        /* `$path` is a HTML file. */
+        if (file_exists($htmlPath)) {
+            array_push($result, readHTMLLink($page));
+        }
+        /* `$path` is a Markdown file. */
+        else if (file_exists($markdownPath)) {
+            array_push($result, readMarkdownLink($page));
+        }
+        /* `$path` is a directory. */
+        else if (is_dir($dirpath)) {
+            $dirs = array();
 
-                if (is_dir($subpath)) {
-                    array_push($dirs, $subfile);
-                }
-                else if (isHTMLFile($subpath)) {
-                    $subpage = getPageFromPath($subpath);
-                    array_push($result, readHTMLLink($subpage));
-                }
-                else if (isMarkdownFile($subpath)) {
-                    $subpage = getPageFromPath($subpath);
-                    array_push($result, readMarkdownLink($subpage));
-                }
-                else {
-                    /* Ignore everything else. */
+            array_push($dirs, $dirpath);
+
+            $contentDirectory =
+                __DIR__ . "/../" . CONTENT_DIRECTORY;
+            while (count($dirs) > 0) {
+                /* Pop out the directory. */
+                $dir = array_shift($dirs);
+
+                /* Convert from path to page. */
+                $page = getPageFromPath($dir);
+
+                $link = readDirectoryLink($page);
+                array_push($result, $link);
+
+                $subfiles = scandir($dir, SCANDIR_SORT_ASCENDING);
+
+                foreach ($subfiles as $subfile) {
+                    /* Skip private files. */
+                    if ("." == $subfile)
+                        continue;
+                    else if (".." == $subfile)
+                        continue;
+                    else if ("_" == substr($subfile, 0, 1))
+                        continue;
+
+                    $subpath = $dir . $subfile;
+
+                    if (is_dir($subpath)) {
+                        array_push($dirs, $subfile);
+                    }
+                    else if (isHTMLFile($subpath)) {
+                        $subpage = getPageFromPath($subpath);
+                        array_push($result, readHTMLLink($subpage));
+                    }
+                    else if (isMarkdownFile($subpath)) {
+                        $subpage = getPageFromPath($subpath);
+                        array_push($result, readMarkdownLink($subpage));
+                    }
+                    else {
+                        /* Ignore everything else. */
+                    }
                 }
             }
         }
