@@ -1,6 +1,12 @@
 # mdcms
 
-Markdown-based content management system powered by PHP.
+A Markdown-based dynamic website generator powered by PHP.
+
+## Why not another Static Site Generator?
+
+There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
+
+Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a mix of a blog and web application. mdcms combines the best of two worlds - a dynamic website with Markdown files as contents.
 
 ## System Requirements
 
@@ -10,6 +16,7 @@ Markdown-based content management system powered by PHP.
   * PHP 7.2 or above
   * mbstring extension of PHP
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
+  * [MetaParsedown](https://github.com/pagerange/metaparsedown)
 * Development
   * [Composer](https://getcomposer.org)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (only for linting)
@@ -58,19 +65,19 @@ $ sudo zypper install php7-openssl php7-phar php7-zlib
 $ ./scripts/install-composer $HOME/bin
 ```
 
-Install dependencies with Composer:
+Install the dependencies of mdcms with Composer:
 
 ```
 $ composer install
 ```
 
-(Optional) Install the dependencies related to web development with Node.js:
+(Optional) Install the dependencies related to the front end of your site with Node.js:
 
 ```
 $ npm install
 ```
 
-If you don't require to write CSS or JavaScript, skip the step.
+If you don't require to write custom CSS or JavaScript code, skip the step.
 
 Remove all sample posts in *content*, adding your awesome ones.
 
@@ -80,15 +87,15 @@ Remove all sample posts in *content*, adding your awesome ones.
 $ npm run prod
 ```
 
-Deploy the cloned repo to a web hosting service supporting PHP 7:
+Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```
-$ sudo ./scripts/sync-to /path/to/www
+$ ./scripts/sync-to /path/to/www
 ```
 
-If you update your local repo, repeat the command to update the code in your production environment.
+If you update anything locally, repeat the command to update your change in a production environment.
 
-Set the configuration of the web server accordingly. [Here](/scripts/nginx.conf) is a sample Nginx configuration.
+Set the configuration of a web server accordingly. [Here](/scripts/nginx.conf) is a sample Nginx configuration.
 
 (Optional) Save the local repo to another remote repo:
 
@@ -99,7 +106,7 @@ $ git push -u origin master
 
 ## Notes for PHP Developers
 
-This CMS doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *wwwroot* as needed. Furthermore, your scripts can share partials in *partials* with other pages, reducing repeated code.
+The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *wwwroot* as needed. Furthermore, your scripts can share partials in *partials* with other web pages, reducing repeated code.
 
 ## See Also
 
