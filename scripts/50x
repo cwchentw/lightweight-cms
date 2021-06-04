@@ -5,7 +5,7 @@
 cwd=$(dirname $0);
 root="${cwd}/..";
 public="${root}/public";
-scripts="${root}/scripts";
+scripts="$cwd";
 
 if ! [ -d "$public" ];
 then
