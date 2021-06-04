@@ -1,5 +1,5 @@
 <?php
-# A 50x error page generator of mdcms.
+# A HTTP status 50x error page generator of mdcms.
 #
 # A 50x.html should be static because some error occurs unexpectedly.
 #  In such case, a dynamic page won't render well.

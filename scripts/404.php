@@ -1,10 +1,10 @@
 <?php
-# A 50x error page generator of mdcms.
+# A HTTP status 404 error page generator of mdcms.
 #
-# A 50x.html should be static because some error occurs unexpectedly.
-#  In such case, a dynamic page won't render well.
+# A 404.html may be either static or dynamic. Here we create a static one.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+
 
 $post = array();
 
