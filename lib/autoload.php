@@ -1,5 +1,5 @@
 <?php
-# An autoload.php script of a poor man.
+# A home-made autoload.php script.
 
 
 # Get current working directory of the script.

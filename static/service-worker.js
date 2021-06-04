@@ -1,3 +1,9 @@
+/* A service worker script.
+
+   Such script are seldom changed. Therefore, we place it
+    in a static directory. */
+
+
 var CACHE_VERSION = 'version1';
 var OFFLINE_URL = 'offline.html';
 

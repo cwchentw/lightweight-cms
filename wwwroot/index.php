@@ -1,4 +1,5 @@
 <?php
+# The router of mdcms.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
@@ -34,7 +35,7 @@ else if (isSitemap($loc)) {
 else if (isHome($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_PAGES] = getPosts($loc);
+    $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . HOME_LAYOUT;
 }
@@ -43,7 +44,7 @@ else if (isSection($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTION] = getSection($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_PAGES] = getPosts($loc);
+    $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . SECTION_LAYOUT;
 }

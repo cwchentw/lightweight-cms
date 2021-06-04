@@ -1,10 +1,13 @@
 #!/bin/sh
+#
+# Lint PHP scripts with PHPMD.
+
 
 target=$1;
 
 if [ -z "$target" ];
 then
-    echo "No valid target" >&2;
+    echo "No valid PHP script" >&2;
     exit 1;
 fi
 

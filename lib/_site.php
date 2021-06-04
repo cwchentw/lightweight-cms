@@ -1,6 +1,7 @@
 <?php
 # Private functions used by site.php.
 
+
 function getPageFromPath($path)
 {
     $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY;

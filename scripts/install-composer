@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Download Composer with single command.
+# Download and install Composer with single command.
 
 
 # Chech whether PHP is available on your system.

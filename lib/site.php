@@ -1,37 +1,15 @@
 <?php
+# Site related functions.
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/const.php";
+require_once __DIR__ . "/utils.php";
 require_once __DIR__ . "/page.php";
 # Private libraries.
 require_once __DIR__ . "/_site.php";
 
 use Pagerange\Markdown\MetaParsedown;
 
-
-function isHome($page)
-{
-    return "/" == $page;
-}
-
-function isManifest($page)
-{
-    return "/manifest.json" == $page;
-}
-
-function isSitemap($page)
-{
-    return "/sitemap.xml" == $page;
-}
-
-# The function doesn't distinguish between top sections
-#  and nested ones.
-function isSection($page)
-{
-    $path = __DIR__ . "/../" . CONTENT_DIRECTORY . "/" . $page;
-
-    return is_dir($path);
-}
 
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,

@@ -1,4 +1,5 @@
 <?php
+# The layout of the header of a site.
 require_once __DIR__ . "/../setting.php";
 ?>
 

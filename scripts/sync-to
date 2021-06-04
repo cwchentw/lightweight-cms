@@ -36,9 +36,11 @@ cp -pr "$src/static/"* "$src/public" || (
     exit 1;
 )
 
-# Sync between the source and the destination.
-#  Files on the distination may be deleted.
-#  Don't edit them.
+# Sync directories and files between the source
+#  and the destination.
+#
+# Directories and files on the distination may be deleted.
+#  Don't edit them on production environments.
 rsync -rvh --delete \
     --exclude ".git*" \
     --exclude scripts \

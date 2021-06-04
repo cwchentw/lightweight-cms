@@ -1,11 +1,13 @@
 <?php
+# The constants used in mdcms.
+#
 # Unlike the constants in setting.php, it won't help much to
 #  modify these constants. They merely serve as unique symbols
 #  in the whole program.
 
 
 define("MDCMS_SECTIONS", "sections");
-define("MDCMS_PAGES", "pages");
+define("MDCMS_POSTS", "posts");
 define("MDCMS_SECTION", "section");
 define("MDCMS_POST", "post");
 

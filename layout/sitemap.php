@@ -1,4 +1,5 @@
 <?php
+# The sitemap.xml generator of mdcms.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
