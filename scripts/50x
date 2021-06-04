@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# A utility script to generate a 50x.html for mdcms.
+
+cwd=$(dirname $0);
+root="${cwd}/..";
+public="${root}/public";
+scripts="${root}/scripts";
+
+if ! [ -d "$public" ];
+then
+    mkdir -p "$public" || (
+        echo "Unable to create a public directory" >&2;
+        exit 1;
+    )
+fi
+
+php "${scripts}/50x.php" > "$public/50x.html" || (
+    echo "Unable to create a 50x.html" >&2;
+    exit 1;
+)
