@@ -50,18 +50,17 @@ else if (isSection($loc)) {
 }
 # Render a post.
 else {
-    $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $post = readPost($loc);
 
-    # Fallback to a HTTP 404 page if no valid post.
+    # Redirect to a static 404.html.
+    # TODO: Test the code.
     if (404 == $post[MDCMS_POST_STATUS]) {
-        $post[MDCMS_POST_TITLE] = "Page Not Found";
-        $post[MDCMS_POST_CONTENT]
-            = "The post doesn't exist on the site. "
-            . "Visit our <a href=\"/\">home</a> instead.";
+        header("Location: " . "/404.html");
+        die();
     }
 
     $GLOBALS[MDCMS_POST] = $post;
+    $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
 }
