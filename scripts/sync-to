@@ -28,10 +28,23 @@ fi
 
 # Get the root path of the repo.
 cwd="$(dirname $0)";
-src="${cwd}/.."
+src="${cwd}/..";
+static="${src}/static";
+public="${src}/public";
+scripts="$cwd";
+
+# Create 404.html
+."${scripts}/404" || (
+    exit $?;
+)
+
+# Create 50x.html
+."${scripts}/505" || (
+    exit $?;
+)
 
 # Copy static files.
-cp -pr "$src/static/"* "$src/public" || (
+cp -pr "${static}/"* "$public" || (
     echo "Unable to copy static files to the public directory" >&2;
     exit 1;
 )
