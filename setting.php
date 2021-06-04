@@ -7,7 +7,7 @@
 # The base URL of a site without a trailing slash.
 define("SITE_BASE_URL", "https://example.com");
 # The full name of a site.
-define("SITE_NAME", "mdcms");
+define("SITE_NAME", "mdcms (Markdown Content Management System)");
 # The short name of a site.
 define("SITE_SHORT_NAME", "mdcms");
 # A concise description of a site.
