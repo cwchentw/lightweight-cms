@@ -90,7 +90,7 @@ $ npm run prod
 Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```
-$ ./scripts/sync-to /path/to/www
+$ sudo ./scripts/sync-to /path/to/www
 ```
 
 If you update anything locally, repeat the command to update your change in a production environment.
