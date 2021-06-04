@@ -6,6 +6,7 @@
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
+
 $post = array();
 
 $post[MDCMS_POST_TITLE] = "Internal Server Error";

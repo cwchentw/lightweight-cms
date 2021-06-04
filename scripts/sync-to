@@ -11,7 +11,7 @@ then
     exit 1;
 fi
 
-# Get some destination.
+# Get a destination.
 dest=$1;
 if [ -z "$dest" ];
 then
@@ -52,7 +52,7 @@ cp -pr "${static}/"* "$public" || (
 # Sync directories and files between the source
 #  and the destination.
 #
-# Directories and files on the distination may be deleted.
+# Directories and files on the destination may be deleted.
 #  Don't edit them on production environments.
 rsync -rvh --delete \
     --exclude ".git*" \
