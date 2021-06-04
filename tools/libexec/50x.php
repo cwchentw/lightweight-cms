@@ -3,8 +3,9 @@
 #
 # A 50x.html should be static because some error occurs unexpectedly.
 #  In such case, a dynamic page won't render well.
-require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+$rootDirectory = __DIR__ . "/../..";
+require_once $rootDirectory . "/setting.php";
+require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
 $post = array();
@@ -36,4 +37,4 @@ $breadcrumb = array();
 $_GLOBALS[MDCMS_POST] = $post;
 $_GLOBALS["breadcrumb"] = $breadcrumb;
 
-require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
+require $rootDirectory  . "/" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;

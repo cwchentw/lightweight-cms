@@ -28,20 +28,23 @@ fi
 
 # Get the root path of the repo.
 cwd="$(dirname $0)";
-src="${cwd}/..";
-static="${src}/static";
-public="${src}/public";
-scripts="$cwd";
+root="${cwd}/../..";
+static="${root}/static";
+public="${root}/public";
+bin="$cwd";
 
 # Create 404.html
-."${scripts}/404" || (
+."${bin}/404" || (
     exit $?;
 )
 
 # Create 50x.html
-."${scripts}/505" || (
+."${bin}/505" || (
     exit $?;
 )
+
+# Create assets.
+#npm install
 
 # Copy static files.
 cp -pr "${static}/"* "$public" || (
@@ -56,11 +59,10 @@ cp -pr "${static}/"* "$public" || (
 #  Don't edit them on production environments.
 rsync -rvh --delete \
     --exclude ".git*" \
-    --exclude scripts \
+    --exclude tools --exclude assets --exclude build --exclude static \
     --exclude composer.json --exclude composer.lock \
     --exclude LICENSE --exclude README.md --exclude TODO.md \
     --exclude package.json --exclude package-lock.json --exclude node_modules \
     --exclude .browserlistrc --exclude .stylelintrc \
     --exclude .eslintrc --exclude .flowconfig \
-    --exclude assets --exclude build --exclude static \
-    "$src/" "$dest/";
+    "$root/" "$dest/";

@@ -62,7 +62,7 @@ $ sudo zypper install php7-openssl php7-phar php7-zlib
 (Optional) Install Composer:
 
 ```
-$ ./scripts/install-composer $HOME/bin
+$ ./tools/bin/install-composer $HOME/bin
 ```
 
 Install the dependencies of mdcms with Composer:
@@ -90,12 +90,12 @@ $ npm run prod
 Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```
-$ sudo ./scripts/sync-to /path/to/www
+$ sudo ./tools/bin/sync-to /path/to/www
 ```
 
 If you update anything locally, repeat the command to update your change in a production environment.
 
-Set the configuration of a web server accordingly. [Here](/scripts/nginx.conf) is a sample Nginx configuration.
+Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration.
 
 (Optional) Save the local repo to another remote repo:
 

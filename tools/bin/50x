@@ -2,10 +2,12 @@
 #
 # A utility script to generate a 50x.html for mdcms.
 
+
 cwd=$(dirname $0);
-root="${cwd}/..";
+root="${cwd}/../..";
+libexec="${cwd}/../libexec";
 public="${root}/public";
-scripts="$cwd";
+
 
 if ! [ -d "$public" ];
 then
@@ -15,7 +17,7 @@ then
     )
 fi
 
-php "${scripts}/50x.php" > "$public/50x.html" || (
+php "${libexec}/50x.php" > "$public/50x.html" || (
     echo "Unable to create a 50x.html" >&2;
     exit 1;
 )

@@ -12,6 +12,6 @@ then
 fi
 
 cwd=$(dirname $0);
-base="${cwd}/.."
+base="${cwd}/../.."
 
 "${base}/vendor/bin/phpmd" "$target" text cleancode,controversial,design,naming,unusedcode
