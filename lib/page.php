@@ -70,7 +70,7 @@ function getPath($page, $ext)
     return $result;
 }
 
-function readPage($page)
+function readPost($page)
 {
     $result = array();
 

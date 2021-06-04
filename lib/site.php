@@ -120,7 +120,7 @@ function getSections($page)
     return $result;
 }
 
-function getPages($page)
+function getPosts($page)
 {
     $result = array();
 
@@ -144,7 +144,7 @@ function getPages($page)
 
             # Get the title of the page.
             # If the commands cost too many system resources, change it.
-            $post = readPage($link[MDCMS_LINK_PATH]);
+            $post = readPost($link[MDCMS_LINK_PATH]);
 
             foreach ($post as $key => $value)
                 $link[$key] = $value;

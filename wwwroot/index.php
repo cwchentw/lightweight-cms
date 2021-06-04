@@ -34,7 +34,7 @@ else if (isSitemap($loc)) {
 else if (isHome($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_PAGES] = getPages($loc);
+    $GLOBALS[MDCMS_PAGES] = getPosts($loc);
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . HOME_LAYOUT;
 }
@@ -43,14 +43,14 @@ else if (isSection($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTION] = getSection($loc);
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_PAGES] = getPages($loc);
+    $GLOBALS[MDCMS_PAGES] = getPosts($loc);
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . SECTION_LAYOUT;
 }
 # Render a post.
 else {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
-    $post = readPage($loc);
+    $post = readPost($loc);
 
     # Fallback to a HTTP 404 page if no valid post.
     if (404 == $post[MDCMS_POST_STATUS]) {
