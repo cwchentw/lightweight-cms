@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Lint PHP scripts with PHP Code Sniffer
+
+
+target=$1;
+
+if [ -z "$target" ];
+then
+    echo "No valid target" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+base="${cwd}/../..";
+tools="${cwd}/..";
+bin="${tools}/bin";
+etc="${tools}/etc";
+
+"${base}/vendor/bin/phpcs" --standard="${etc}/phpcs.xml" "$target";
