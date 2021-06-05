@@ -42,7 +42,9 @@ $pages = $GLOBALS[MDCMS_POSTS];
             <?php
             if (isset($section[MDCMS_SECTION_CONTENT])
                 && "" != $section[MDCMS_SECTION_CONTENT])
+            {
                 echo $section[MDCMS_SECTION_CONTENT];
+            }
             ?>
 
             <?php
@@ -53,11 +55,12 @@ $pages = $GLOBALS[MDCMS_POSTS];
 
                 echo "<div class=\"list-group\">";
 
-                foreach ($sections as $section)
+                foreach ($sections as $section) {
                     echo "<a class=\"list-group-item\" "
                         . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
                         . $section[MDCMS_LINK_TITLE]
                         . "</a>";
+                }
 
                 echo "</div>";
             }

@@ -23,8 +23,9 @@ function getSections($page)
 
     foreach ($files as $file) {
         # Skip private directories and files.
-        if ("." == substr($file, 0, 1))
+        if ("." == substr($file, 0, 1)) {
             continue;
+        }
 
         $path = $contentDirectory . $file;
         if (is_dir($path)) {
@@ -49,10 +50,12 @@ function getSections($page)
                 }
                 else {
                     preg_match("/^# (.+)/", $stripedContent, $matches);
-                    if (isset($matches))
+                    if (isset($matches)) {
                         $link[MDCMS_LINK_TITLE] = $matches[1];
-                    else
+                    }
+                    else {
                         goto extract_title_from_page;
+                    }
                 }
             }
             # Otherwise, extract data from the directory name.
@@ -68,8 +71,9 @@ function getSections($page)
     }
 
     # Skip to scan the application directory.
-    if (!SCAN_APPLICATION_DIRECTORY)
+    if (!SCAN_APPLICATION_DIRECTORY) {
         return $result;
+    }
 
     # Scan custom directories added in the application directory
     #  by users of mdcms as well.
@@ -78,8 +82,9 @@ function getSections($page)
 
     foreach ($files as $file) {
         # Skip private directories.
-        if ("." == substr($file, 0, 1))
+        if ("." == substr($file, 0, 1)) {
             continue;
+        }
 
         $path = $contentDirectory . "/" . $file;
         if (is_dir($path)) {
@@ -107,10 +112,12 @@ function getPosts($page)
 
     foreach ($files as $file) {
         # Skip private files.
-        if ("." == substr($file, 0, 1))
+        if ("." == substr($file, 0, 1)) {
             continue;
-        else if ("_" == substr($file, 0, 1))
+        }
+        else if ("_" == substr($file, 0, 1)) {
             continue;
+        }
 
         $path = $directory . "/" . $file;
         if (is_file($path)) {
@@ -124,16 +131,18 @@ function getPosts($page)
             # If the commands cost too many system resources, change it.
             $post = readPost($link[MDCMS_LINK_PATH]);
 
-            foreach ($post as $key => $value)
+            foreach ($post as $key => $value) {
                 $link[$key] = $value;
+            }
 
             array_push($result, $link);
         }
     }
 
     # Skip to scan the application directory.
-    if (!SCAN_APPLICATION_DIRECTORY)
+    if (!SCAN_APPLICATION_DIRECTORY) {
         return $result;
+    }
 
     # Scan custom pages added in the application directory
     #  by users of mdcms as well.
@@ -142,12 +151,14 @@ function getPosts($page)
 
     foreach ($files as $file) {
         # Skip private directories and files.
-        if ("." == substr($file, 0, 1))
+        if ("." == substr($file, 0, 1)) {
             continue;
+        }
 
         # Skip the index script.
-        if ("index.php" == $file)
+        if ("index.php" == $file) {
             continue;
+        }
 
         $path = $applicationDirectory . "/" . $file;
         if (is_file($path)) {
@@ -186,8 +197,9 @@ function getSection($page)
         $c = file_get_contents($indexPage);
 
         preg_match("/^# (.+)/", $c, $matches);
-        if (isset($matches))
+        if (isset($matches)) {
             $result[MDCMS_SECTION_TITLE] = $matches[1];
+        }
 
         $c = preg_replace("/^# (.+)/", "", $c);
 
@@ -216,8 +228,9 @@ function getBreadcrumb($page)
 
     array_push($result, $d);
 
-    if ("/" == $page)
+    if ("/" == $page) {
         return $result;
+    }
 
     $arr = parsePage($page);
     $len = count($arr);
@@ -247,8 +260,9 @@ function getBreadcrumb($page)
                 $c = file_get_contents($indexPage);
 
                 preg_match("/^# (.+)/", $c, $matches);
-                if (isset($matches))
+                if (isset($matches)) {
                     $d[MDCMS_LINK_TITLE] = $matches[1];
+                }
             }
             # Otherwise, extract data from the directory name.
             else {
@@ -330,10 +344,12 @@ function getAllLinks($page)
 
         foreach ($files as $file) {
             # Skip private files.
-            if ("." == substr($file, 0, 1))
+            if ("." == substr($file, 0, 1)) {
                 continue;
-            else if ("_" == substr($file, 0, 1))
+            }
+            else if ("_" == substr($file, 0, 1)) {
                 continue;
+            }
 
             $path = $contentDirectory . "/" . $file;
             if (is_dir($path)
@@ -361,8 +377,9 @@ function getAllLinks($page)
             . "/../" . CONTENT_DIRECTORY
             . $currentPage;
         $dirpath = $path;
-        if ("/" != substr($dirpath, strlen($dirpath)-1, 1))
+        if ("/" != substr($dirpath, strlen($dirpath)-1, 1)) {
             $dirpath .= "/";
+        }
         $htmlPath = $path . HTML_FILE_EXTENSION;
         $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
 
@@ -396,10 +413,12 @@ function getAllLinks($page)
 
                 foreach ($subfiles as $subfile) {
                     /* Skip private files. */
-                    if ("." == substr($subfile, 0, 1))
+                    if ("." == substr($subfile, 0, 1)) {
                         continue;
-                    else if ("_" == substr($subfile, 0, 1))
+                    }
+                    else if ("_" == substr($subfile, 0, 1)) {
                         continue;
+                    }
 
                     $subpath = $dir . $subfile;
 

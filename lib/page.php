@@ -12,8 +12,9 @@ function parsePage($page)
     $result = array();
 
     # Reject invalid pages.
-    if ("/" != substr($page, 0, 1))
+    if ("/" != substr($page, 0, 1)) {
         return $result;
+    }
 
     # Parse a `$page` while a while loop.
     $len = strlen($page);
@@ -23,15 +24,17 @@ function parsePage($page)
             $j = $i + 1;
 
             # Iterate until next "/" or the end of `$page`.
-            while ($j < $len && "/" != substr($page, $j, 1))
+            while ($j < $len && "/" != substr($page, $j, 1)) {
                 ++$j;
+            }
 
             # Extract a part of `$page`.
             $part = substr($page, $i+1, $j-$i-1);
 
             # Discard trailing empty strings.
-            if ("" != $part)
+            if ("" != $part) {
                 array_push($result, $part);
+            }
 
             # Reset the counter.
             $i = $j;
@@ -97,8 +100,9 @@ function readPost($page)
             # Remove <h1>-level titles from the content.
             $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $rawContent);
         }
-        else
+        else {
             $result[MDCMS_POST_CONTENT] = $rawContent;
+        }
 
         # TODO: Test the code.
         preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
@@ -110,8 +114,9 @@ function readPost($page)
                 $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
                 $text .= $paragraph;
 
-                if ($i < count($matches[1]) - 1)
+                if ($i < count($matches[1]) - 1) {
                     $text .= " ";
+                }
             }
 
             $words = explode(" ", $text);
@@ -121,13 +126,16 @@ function readPost($page)
 
             $excerpt = "";
             for ($i = 0; $i < count($words); ++$i) {
-                if (strlen($excerpt) <= EXCERPT_THRESHOLD)
+                if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
                     $excerpt .= $words[$i];
-                else
+                }
+                else {
                     break;
+                }
 
-                if ($i < count($words) - 1)
+                if ($i < count($words) - 1) {
                     $excerpt .= " ";
+                }
             }
 
             $result[MDCMS_POST_EXCERPT] = $excerpt;
@@ -167,8 +175,9 @@ function readPost($page)
                 # Here we assume there is only one <h1> title per document.
                 $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $stripedContent);
             }
-            else
+            else {
                 $result[MDCMS_POST_CONTENT] = $stripedContent;
+            }
         }
 
         # Convert the Markdown document into a HTML document.
@@ -185,8 +194,9 @@ function readPost($page)
                 $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
                 $text .= $paragraph;
 
-                if ($i < count($matches[1]) - 1)
+                if ($i < count($matches[1]) - 1) {
                     $text .= " ";
+                }
             }
 
             $words = explode(" ", $text);
@@ -196,13 +206,16 @@ function readPost($page)
 
             $excerpt = "";
             for ($i = 0; $i < count($words); ++$i) {
-                if (strlen($excerpt) <= EXCERPT_THRESHOLD)
+                if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
                     $excerpt .= $words[$i];
-                else
+                }
+                else {
                     break;
+                }
 
-                if ($i < count($words) - 1)
+                if ($i < count($words) - 1) {
                     $excerpt .= " ";
+                }
             }
 
             $result[MDCMS_POST_EXCERPT] = $excerpt;

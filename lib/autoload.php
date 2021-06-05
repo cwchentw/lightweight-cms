@@ -21,17 +21,20 @@ while (count($dirs) > 0) {
     # Iterate over the layer of directories and files.
     foreach ($libraries as $library) {
         # Skip private directories and files.
-        if ("." == substr($library, 0, 1))
+        if ("." == substr($library, 0, 1)) {
             continue;
-        else if ("_" == substr($library, 0, 1))
+        }
+        else if ("_" == substr($library, 0, 1)) {
             continue;
+        }
 
         # Skip the script itself.
         #
         # Currently, we simply ignore all autoload.php
         #  in our library. We may change it later.
-        if ("autoload.php" == $library)
+        if ("autoload.php" == $library) {
             continue;
+        }
 
         $path = $dir . "/" . $library;
 
@@ -39,7 +42,8 @@ while (count($dirs) > 0) {
             # Push a subdirectory into the queue.
             array_push($dirs, $path);
         }
-        else if ("php" == pathinfo($path)["extension"])
+        else if ("php" == pathinfo($path)["extension"]) {
             require_once $path;
+        }
     }
 }

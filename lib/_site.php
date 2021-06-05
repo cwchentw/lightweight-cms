@@ -8,12 +8,14 @@ function getPageFromPath($path)
     $page = substr($path, strlen($contentDirectory));
 
     $fileParts = pathinfo($page);
-    if (isset($fileParts["extension"]))
+    if (isset($fileParts["extension"])) {
         $page = substr($page, 0, -(strlen($fileParts["extension"])+1));
+    }
 
-    /* Add a trailing "/" if no any. */
-    if ("/" != substr($page, strlen($page)-1, 1))
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($page, strlen($page)-1, 1)) {
         $page .= "/";
+    }
 
     return $page;
 }
@@ -26,8 +28,9 @@ function getHTMLPathFromPage($page)
         . "/" . $page;
 
     /* Remove a trailing "/" */
-    if ("/" == substr($path, strlen($path)-1, 1))
+    if ("/" == substr($path, strlen($path)-1, 1)) {
         $path = substr($path, 0, strlen($path)-1);
+    }
 
     return $path . HTML_FILE_EXTENSION;
 }
@@ -76,8 +79,9 @@ function readMarkdownLink($page)
         . "/" . $page;
 
     /* Remove a trailing "/" */
-    if ("/" == substr($path, strlen($path)-1, 1))
+    if ("/" == substr($path, strlen($path)-1, 1)) {
         $path = substr($path, 0, strlen($path)-1);
+    }
 
     $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
 
@@ -122,11 +126,13 @@ function readDirectoryLink($page)
         preg_match("/^# (.+)/", $rawContent, $matches);
 
         # Extract a title from a document.
-        if (isset($matches))
+        if (isset($matches)) {
             $result[MDCMS_LINK_TITLE] = $matches[1];
+        }
         # If no title in the above document, extract a title from a path.
-        else
+        else {
             goto extract_title_from_page;
+        }
     }
     else {
         extract_title_from_page:

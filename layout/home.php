@@ -43,11 +43,12 @@ $status = 200;  # HTTP 200 OK.
 
                 echo "<div class=\"list-group\">";
 
-                foreach ($sections as $section)
+                foreach ($sections as $section) {
                     echo "<a class=\"list-group-item\" "
                         . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
                         . $section[MDCMS_LINK_TITLE]
                         . "</a>";
+                }
 
                 echo "</div>";
             }
