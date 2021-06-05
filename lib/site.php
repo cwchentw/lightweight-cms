@@ -149,7 +149,7 @@ function getPosts($page)
         if ("index.php" == $file)
             continue;
 
-        $path = $contentDirectory . "/" . $file;
+        $path = $applicationDirectory . "/" . $file;
         if (is_file($path)) {
             $f = array();
 
@@ -354,12 +354,12 @@ function getAllLinks($page)
     }
 
     while (count($pages) > 0) {
-        $_page = array_shift($pages);
+        $currentPage = array_shift($pages);
 
         /* We cannot tell what `$page` is by its path. */
         $path = __DIR__
             . "/../" . CONTENT_DIRECTORY
-            . $_page;
+            . $currentPage;
         $dirpath = $path;
         if ("/" != substr($dirpath, strlen($dirpath)-1, 1))
             $dirpath .= "/";
