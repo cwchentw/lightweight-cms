@@ -3,6 +3,7 @@
 <ruleset name="Custom Standard">
     <rule ref="PEAR">
         <exclude name="PEAR.Commenting.InlineComment"/>
+        <exclude name="PEAR.Commenting.FunctionComment"/>
         <exclude name="PEAR.Commenting.FileComment"/>
         <exclude name="PEAR.ControlStructures.ControlSignature"/>
         <exclude name="PEAR.Files.IncludingFile"/>

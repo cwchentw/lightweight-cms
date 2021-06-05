@@ -10,4 +10,5 @@ bin="${tools}/bin";
 for source in `find . -path ./vendor -prune -false -o -name "*.php"`;
 do
     "${bin}/phpmd" "$source";
+    "${bin}/phpcs" "$source";
 done;
