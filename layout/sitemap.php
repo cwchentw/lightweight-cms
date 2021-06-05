@@ -21,7 +21,7 @@ foreach ($links as $link) {
     $loc = $xml->createElement("loc", $url);
     $node->appendChild($loc);
 
-    $mtime = $xml->createElement("lastmod", date ("Y-m-d", $link[MDCMS_LINK_MTIME]));
+    $mtime = $xml->createElement("lastmod", date("Y-m-d", $link[MDCMS_LINK_MTIME]));
     $node->appendChild($mtime);
 
     # Currently, we simply hard code the frequency of document change.
@@ -35,5 +35,5 @@ foreach ($links as $link) {
 $xml->appendChild($urlset);
 
 # Render sitemap.xml
-header( "content-type: application/xml; charset=ISO-8859-15" );
+header("content-type: application/xml; charset=ISO-8859-15");
 echo $xml->saveXML();

@@ -57,7 +57,7 @@ function getSections($page)
             }
             # Otherwise, extract data from the directory name.
             else {
-            extract_title_from_page:
+                extract_title_from_page:
                 $t = preg_replace("/\/|-+/", " ", $file);
                 $t = ucwords($t);  # Capitalize a title.
                 $link[MDCMS_SECTION_TITLE] = $t;
@@ -117,8 +117,8 @@ function getPosts($page)
             $link = array();
 
             # Remove file extensions.
-            $link[MDCMS_LINK_PATH] =
-                $page . pathinfo($file, PATHINFO_FILENAME) . "/";
+            $link[MDCMS_LINK_PATH]
+                = $page . pathinfo($file, PATHINFO_FILENAME) . "/";
 
             # Get the title of the page.
             # If the commands cost too many system resources, change it.
@@ -324,8 +324,8 @@ function getAllLinks($page)
             array_push($result, $link);
         }
 
-        $contentDirectory =
-            __DIR__ . "/../" . CONTENT_DIRECTORY;
+        $contentDirectory
+            = __DIR__ . "/../" . CONTENT_DIRECTORY;
         $files = scandir($contentDirectory);
 
         foreach ($files as $file) {
@@ -380,8 +380,8 @@ function getAllLinks($page)
 
             array_push($dirs, $dirpath);
 
-            $contentDirectory =
-                __DIR__ . "/../" . CONTENT_DIRECTORY;
+            $contentDirectory
+                = __DIR__ . "/../" . CONTENT_DIRECTORY;
             while (count($dirs) > 0) {
                 /* Pop out the directory. */
                 $dir = array_shift($dirs);
