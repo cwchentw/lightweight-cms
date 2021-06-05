@@ -19,8 +19,8 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [MetaParsedown](https://github.com/pagerange/metaparsedown)
 * Development
   * [Composer](https://getcomposer.org)
-  * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (only for linting)
-  * [PHPMD](https://phpmd.org) (only for linting)
+  * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
+  * [PHPMD](https://phpmd.org) (for linting)
 
 ### Web
 
@@ -93,11 +93,11 @@ Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
-If you update anything locally, repeat the command to update your change in a production environment.
+If you modify anything locally, repeat the command to update your change in a production environment.
 
 Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration.
 
-(Optional) Save the local repo to another remote repo:
+(Optional) Save the local repo to a remote site:
 
 ```
 $ git remote set-url origin https://example.com/user/mysite.git
