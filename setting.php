@@ -76,7 +76,7 @@ define("LAYOUT_DIRECTORY", "layout");
 # The directory of the partials.
 define("PARTIALS_DIRECTORY", "partials");
 # The directory of the internal libraries of mdcms.
-define("LIBRARY_DIRECTORY", "lib");
+define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
 define("APPLICATION_DIRECTORY", "wwwroot");
 # The directory of public files.
