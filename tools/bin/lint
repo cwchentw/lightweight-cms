@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Utility script to lint all PHP scripts with PHPMD.
+# TODO: Add PHP Code Sniffer.
+
+cwd=$(dirname $0);
+tools="${cwd}/..";
+bin="${tools}/bin";
+
+for source in `find . -path ./vendor -prune -false -o -name "*.php"`;
+do
+    "${bin}/phpmd" "$source";
+done;
