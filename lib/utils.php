@@ -8,11 +8,6 @@ function isHome($page)
     return "/" == $page;
 }
 
-function isManifest($page)
-{
-    return "/manifest.json" == $page;
-}
-
 function isSitemap($page)
 {
     return "/sitemap.xml" == $page;

@@ -1,6 +1,6 @@
 <?php
 # The manifest.json generator of mdcms.
-require_once __DIR__ . "/../setting.php";
+require_once __DIR__ . "/../../setting.php";
 
 
 /* Adjust these parameters as needed. */
