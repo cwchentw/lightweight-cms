@@ -38,6 +38,8 @@ define("EXCERPT_THRESHOLD", 240);
 
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", false);
+# Enable ToC (Table of Contents).
+define("ENABLE_TOC", false);
 # Enable the support to hightlight.js
 # Currently, the theme of hightlight.js is hard coded.
 define("ENABLE_CODE_HIGHTLIGHT", false);
