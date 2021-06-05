@@ -12,6 +12,8 @@ then
 fi
 
 cwd=$(dirname $0);
-base="${cwd}/../.."
+root="${cwd}/../..";
+tools="${cwd}/..";
+etc="${tools}/etc";
 
-"${base}/vendor/bin/phpmd" "$target" text cleancode,controversial,design,naming,unusedcode
+"${root}/vendor/bin/phpmd" "$target" text "${etc}/phpmd.xml";
