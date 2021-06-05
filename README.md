@@ -2,6 +2,10 @@
 
 A Markdown-based dynamic website generator powered by PHP.
 
+## Warning
+
+mdcms is still experimental.
+
 ## Why not another Static Site Generator?
 
 There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
