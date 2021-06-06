@@ -49,6 +49,10 @@ define("ENABLE_CODE_HIGHTLIGHT", false);
 #
 # Such action is optional but recommended for SEO.
 define("BLOCK_BOT", false);
+# Prevent search engine bots from following external sites.
+#
+# Such actions are merely for SEO. Not good for a health Web.
+define("NO_FOLLOW_EXTERNAL_LINK", false);
 # Scan application directory.
 #
 # By default, mdcms only scans sections and posts

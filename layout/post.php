@@ -6,20 +6,6 @@ require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
-
-if (ENABLE_TOC) {
-    # Add id for each subtitle.
-    $post[MDCMS_POST_CONTENT]
-        = preg_replace_callback(
-            "/<h2>(.+)<\/h2>/",
-            function ($matches) {
-                $id = preg_replace("/[ ]+/", "-", $matches[1]);
-                $id = strtolower($id);
-                return "<h2 id=\"" . $id . "\">" . $matches[1] . "</h2>";
-            },
-            $post[MDCMS_POST_CONTENT]);
-    $GLOBALS[MDCMS_POST] = $post;
-}
 ?>
 
 
