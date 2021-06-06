@@ -14,15 +14,30 @@ if (isset($matches)) {
         array_push($subtitles, $subtitle);
     }
 }
+
+$URI = "";
+# The script is called from the Web.
+if (isset($_SERVER["REQUEST_URI"])) {
+    $URI = $_SERVER["REQUEST_URI"];
+}
+# The script is called from CLI.
+else if (isset($GLOBALS["file"])){
+    $URI = "/" . basename($GLOBALS["file"], ".php") . HTML_FILE_EXTENSION;
+}
+# Fallback to the root path.
+else {
+    $URI = "/";
+}
 ?>
 <div id="table-of-contents">
     <div class="text-center">Table of Contents</div>
     <ul>
         <?php
+
         foreach ($subtitles as $subtitle) {
             echo "<li>";
 
-            echo "<a href=\"" . $_SERVER["REQUEST_URI"] . "#" . $subtitle["id"] . "\">";
+            echo "<a href=\"" . $URI  . "#" . $subtitle["id"] . "\">";
             echo $subtitle["title"];        
             echo "</a>";
 
@@ -30,7 +45,7 @@ if (isset($matches)) {
         }
         ?>
         <!-- FIXME: Check the rendered URL. -->
-        <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#top">Back to Top</a></li>
+        <li><a href="<?php echo $URI; ?>#top">Back to Top</a></li>
         <li><a href="/">Back to Home</a></li>
     </ul>
 </div>

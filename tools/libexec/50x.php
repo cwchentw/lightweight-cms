@@ -6,6 +6,7 @@
 $rootDirectory = __DIR__ . "/../..";
 require_once $rootDirectory . "/setting.php";
 require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
 $post = array();
@@ -34,7 +35,8 @@ $breadcrumb = array();
     array_push($breadcrumb, $link);
 }
 
-$_GLOBALS[MDCMS_POST] = $post;
-$_GLOBALS["breadcrumb"] = $breadcrumb;
+$GLOBALS[MDCMS_POST] = $post;
+$GLOBALS["breadcrumb"] = $breadcrumb;
+$GLOBALS["file"] = __FILE__;
 
-require $rootDirectory  . "/" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
+loadPost();

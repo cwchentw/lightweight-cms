@@ -66,13 +66,6 @@ define("SCAN_APPLICATION_DIRECTORY", false);
 # Mostly, you don't require to modify anything below.
 # If either is modified, modify the project accordingly as well.
 
-# The layout of an index page.
-define("HOME_LAYOUT", "home.php");
-# The layout of sections.
-define("SECTION_LAYOUT", "section.php");
-# The layout of posts.
-define("POST_LAYOUT", "post.php");
-
 # The index files used by sections.
 define("SECTION_INDEX", "_index.md");
 
