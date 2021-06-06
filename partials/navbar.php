@@ -30,7 +30,9 @@ require_once __DIR__ . "/../setting.php";
             <li><a class="dropdown-item" href="#">Facebook Fans Page (Pending)</a></li>
             <li><a class="dropdown-item" href="#">Facebook Group (Pending)</a></li>
             <li><a class="dropdown-item" href="#">Twitter (Pending)</a></li>
-            <li><a class="dropdown-item" href="https://github.com/cwchentw/mdcms" target="_blank">GitHub</a></li>
+            <li><a class="dropdown-item"
+                  href="https://github.com/cwchentw/mdcms"
+                  target="_blank" rel="noopener nofollow">GitHub</a></li>
           </ul>
         </li>
             </ul>

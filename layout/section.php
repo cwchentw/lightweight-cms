@@ -32,7 +32,7 @@ $pages = $GLOBALS[MDCMS_POSTS];
 
         <!-- If you want to create multi-column pages,
                modify your layout here. -->
-        <div class="container">
+        <div id="main-content" class="container">
             <div class="text-center">
                 <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
             </div>
