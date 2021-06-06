@@ -11,7 +11,8 @@ This article illustrates the basic usage of mdcms. Some details are omitted for 
 * Production environment
   * GNU/Linux
   * PHP 7.2 or above
-  * mbstring extension of PHP
+  * FastCGI Process Manager (FPM)
+  * mbstring extension
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
   * [MetaParsedown](https://github.com/pagerange/metaparsedown)
 * Development environment
