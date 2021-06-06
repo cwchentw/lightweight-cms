@@ -56,7 +56,7 @@ $pages = $GLOBALS[MDCMS_POSTS];
                     if (isset($sections) && count($sections) > 0) {
                         echo "<h2>Sections</h2>";
 
-                        echo "<div class=\"list-group\">";
+                        echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
 
                         foreach ($sections as $section) {
                             echo "<a class=\"list-group-item\" "

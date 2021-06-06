@@ -23,36 +23,71 @@ $status = 200;  # HTTP 200 OK.
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <!-- If you want to create multi-column pages,
-               modify your layout here. -->
-        <div class="container">
+        <div id="main-content" class="container">
             <div class="text-center">
                 <h1><?php echo SITE_NAME; ?></h1>
             </div>
 
-            <?php includePartials("breadcrumb.php"); ?>
+            <div class="row">
+                <!-- TODO: Adjust it later. -->
+                <div class="col-lg-9 col-xs-12">
+                    <?php includePartials("breadcrumb.php"); ?>
 
-            <h2>Synopsis</h2>
+                    <?php
+                    if (isset($section[MDCMS_SECTION_CONTENT])
+                        && "" != $section[MDCMS_SECTION_CONTENT])
+                    {
+                        echo $section[MDCMS_SECTION_CONTENT];
+                    }
+                    ?>
 
-            <p><?php echo SITE_DESCRIPTION; ?></p>
+                    <?php
+                    # Add section(s) if any exists.
+                    # TODO: Check it later.
+                    if (isset($sections) && count($sections) > 0) {
+                        echo "<h2>Sections</h2>";
 
-            <?php
-            # Add section(s) if any exists.
-            if (isset($sections) && count($sections) > 0) {
-                echo "<h2>Sections</h2>";
+                        echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
 
-                echo "<div class=\"list-group\">";
+                        foreach ($sections as $section) {
+                            echo "<a class=\"list-group-item\" "
+                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                                . $section[MDCMS_LINK_TITLE]
+                                . "</a>";
+                        }
 
-                foreach ($sections as $section) {
-                    echo "<a class=\"list-group-item\" "
-                        . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                        . $section[MDCMS_LINK_TITLE]
-                        . "</a>";
-                }
+                        echo "</div>";
+                    }
+                    ?>
 
-                echo "</div>";
-            }
-            ?>
+                    <?php
+                    # Add page(s) if any exists.
+                    if (isset($pages) && count($pages) > 0) {
+                        echo "<h2>Articles</h2>";
+
+                        foreach ($pages as $page) {
+                            echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
+
+                            echo "<p>" . $page[MDCMS_POST_EXCERPT] . " ";
+
+                            echo "<a class=\"btn btn-primary btn-sm\" "
+                                . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                                . "Read More"
+                                . "</a>";
+
+                            echo "</p>";
+                        }
+                    }
+                    ?>
+                </div>
+
+                <!-- TODO: Adjust it later. -->
+                <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
+                    <aside>
+                        <?php includePartials("sideInfo.php"); ?>
+                    </aside>
+                </div>
+            </div>
         </div>
         
         <?php includePartials("footer.php"); ?>
