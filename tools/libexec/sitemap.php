@@ -1,7 +1,7 @@
 <?php
 # The sitemap.xml generator of mdcms.
-require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once __DIR__ . "/../../setting.php";
+require_once __DIR__ . "/../../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
 $xml = new DOMDocument("1.0", "UTF-8");
@@ -35,5 +35,4 @@ foreach ($links as $link) {
 $xml->appendChild($urlset);
 
 # Render sitemap.xml
-header("content-type: application/xml; charset=ISO-8859-15");
 echo $xml->saveXML();

@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# A utility script to generate a sitemap.xml for mdcms.
+
+
+cwd=$(dirname $0);
+root="${cwd}/../..";
+libexec="${cwd}/../libexec";
+public="${root}/public";
+
+if ! [ -d "$public" ];
+then
+    mkdir -p "$public" || (
+        echo "Unable to create a public directory" >&2;
+        exit 1;
+    )
+fi
+
+php "${libexec}/sitemap.php" > "$public/sitemap.xml" || (
+    echo "Unable to create a sitemap.xml" >&2;
+    exit 1;
+)

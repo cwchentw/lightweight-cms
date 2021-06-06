@@ -150,11 +150,11 @@ function readDirectoryLink($page)
 /* TODO: Test the code. */
 function isHTMLFile($path)
 {
-    return strpos($path, HTML_FILE_EXTENSION) > 0;
+    return strpos($path, HTML_FILE_EXTENSION);
 }
 
 /* TODO: Test the code. */
 function isMarkdownFile($path)
 {
-    return strpos($path, MARKDOWN_FILE_EXTENSION) > 0;
+    return strpos($path, MARKDOWN_FILE_EXTENSION);
 }

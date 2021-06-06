@@ -48,6 +48,11 @@ bin="$cwd";
     exit $?;
 )
 
+# Create sitemap.xml
+"${bin}/sitemap" || (
+    exit $?;
+)
+
 # Create assets.
 #npm install
 

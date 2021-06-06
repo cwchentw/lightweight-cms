@@ -23,10 +23,6 @@ if (isset($post) && 200 != $post["status"]) {
 
     require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
 }
-# Render sitemap.xml
-else if (isSitemap($loc)) {
-    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . SITEMAP_LAYOUT;
-}
 # Render the home page.
 else if (isHome($loc)) {
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);

@@ -8,11 +8,6 @@ function isHome($page)
     return "/" == $page;
 }
 
-function isSitemap($page)
-{
-    return "/sitemap.xml" == $page;
-}
-
 # The function doesn't distinguish between top sections
 #  and nested ones.
 function isSection($page)

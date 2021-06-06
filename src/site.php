@@ -352,15 +352,17 @@ function getAllLinks($page)
             }
 
             $path = $contentDirectory . "/" . $file;
-            if (is_dir($path)
-                || isHTMLFile($path)
-                || isMarkdownFile($path))
-            {
+            if (is_dir($path)) {
                 $page = getPageFromPath($path);
                 array_push($pages, $page);
             }
-            else {
-                # Ignore everything else.
+            else if (isHTMLFile($path)) {
+                $page = getPageFromPath($path);
+                array_push($result, readHTMLLink($page));
+            }
+            else if (isMarkdownFile($path)) {
+                $page = getPageFromPath($path);
+                array_push($result, readMarkdownLink($page));
             }
         }
     }
