@@ -10,7 +10,7 @@ mdcms is still experimental.
 
 There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
 
-Website owners prefer flat files over relational databases. Furthermore, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. mdcms combines the best of two worlds - a dynamic website with Markdown files as contents.
+Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. mdcms combines the best of two worlds - a dynamic website with Markdown files as contents.
 
 ## System Requirements
 
