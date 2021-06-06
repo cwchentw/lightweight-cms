@@ -107,6 +107,10 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
+## Usage for Theme Creators
+
+(Pending)
+
 ## Usage for Developers
 
 You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send back your contributions to us.
@@ -129,7 +133,7 @@ Install all dependencies with Composer:
 $ composer install
 ```
 
-Modify mdcms in any way you like as long as it still workable.
+Modify mdcms in any way you like as long as it still runs smoothly. You don't require to remove sample posts in *content* directory. In contrary, they serve as ready sample data to see whether your changes work.
 
 You should lint your modification with the following script:
 
