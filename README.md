@@ -75,21 +75,7 @@ Install the dependencies of mdcms with Composer:
 $ composer install --no-dev
 ```
 
-(Optional) Install the dependencies related to the front end of your site with Node.js:
-
-```
-$ npm install
-```
-
-If you don't require to write custom CSS or JavaScript code, skip the step.
-
 Remove all sample posts in *content*, adding your awesome ones.
-
-(Optional) Build assets for production environments:
-
-```
-$ npm run prod
-```
 
 Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
