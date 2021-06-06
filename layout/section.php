@@ -77,7 +77,7 @@ $pages = $GLOBALS[MDCMS_POSTS];
                         foreach ($pages as $page) {
                             echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
 
-                            echo "<p>" . $page[MDCMS_POST_EXCERPT] . " ";
+                            echo "<p style=\"margin-bottom: 30pt;\">" . $page[MDCMS_POST_EXCERPT] . " ";
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
                                 . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"

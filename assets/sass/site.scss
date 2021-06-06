@@ -13,16 +13,6 @@ html {
 .container {
     width: 100%;
     max-width: 1440px;
-
-    padding-left: 7%;
-    padding-right: 7%;
-}
-
-@media screen and (max-width: $phone-max-width) {
-    .container {
-        padding-left: unset;
-        padding-right: unset;
-    }
 }
 
 body {
