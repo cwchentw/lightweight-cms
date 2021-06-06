@@ -72,7 +72,7 @@ $ ./tools/bin/install-composer $HOME/bin
 Install the dependencies of mdcms with Composer:
 
 ```
-$ composer install
+$ composer install --no-dev
 ```
 
 (Optional) Install the dependencies related to the front end of your site with Node.js:
