@@ -2,7 +2,7 @@
 
 ## Prologue
 
-This article illustrates the basic usage of mdcms. Some details are omitted for brevity, we will introduce which in other posts.
+This article illustrates the basic usage of mdcms. Some details are omitted for brevity. We will introduce them in other posts.
 
 ## System Requirements
 
