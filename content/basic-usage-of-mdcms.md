@@ -19,6 +19,8 @@ This article illustrates the basic usage of mdcms. Some details are omitted for 
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org/) (for linting)
 
+We develop mdcms on openSUSE Leap mostly. Any major GNU/Linux distribution should suffice to host a mdcms-based website.
+
 If you are not interested in developing mdcms itself, you still require Composer to install other dependency packages for mdcms.
 
 ### Front End
