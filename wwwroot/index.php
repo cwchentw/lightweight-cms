@@ -4,7 +4,10 @@ require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 # TODO: Load plugins.
 require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
+# TODO: Load Xdebug on a development environment.
 
+
+# TODO: Check essential variables on a development environment.
 
 # Filter the input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
