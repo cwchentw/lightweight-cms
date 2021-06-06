@@ -17,6 +17,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 ### PHP
 
 * Production
+  * GNU/Linux
   * PHP 7.2 or above
   * FastCGI Process Manager (FPM)
   * mbstring extension
