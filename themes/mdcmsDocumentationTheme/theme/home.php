@@ -47,7 +47,7 @@ $status = 200;  # HTTP 200 OK.
                     <?php
                     # Add page(s) if any exists.
                     if (isset($pages) && count($pages) > 0) {
-                        echo "<h2>Documentation</h2>";
+                        echo "<h2>Articles</h2>";
 
                         foreach ($pages as $page) {
                             echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
@@ -68,7 +68,7 @@ $status = 200;  # HTTP 200 OK.
                     # Add section(s) if any exists.
                     # TODO: Check it later.
                     if (isset($sections) && count($sections) > 0) {
-                        echo "<h2>Reference</h2>";
+                        echo "<h2>Sections</h2>";
 
                         echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
 
