@@ -9,7 +9,7 @@ $post = $GLOBALS[MDCMS_POST];
 $subtitles = array();
 preg_match_all("/<h2 id=\"([^\"]+)\">([^<]+)<\/h2>/", $post[MDCMS_POST_CONTENT], $matches);
 if (isset($matches)) {
-    for ($i = 0; $i < count($matches); ++$i) {
+    for ($i = 0; $i < count($matches[1]); ++$i) {
         $subtitle = array();
 
         $subtitle["id"] = $matches[1][$i];
