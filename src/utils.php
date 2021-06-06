@@ -16,8 +16,3 @@ function isSection($page)
 
     return is_dir($path);
 }
-
-function includePartials($partial)
-{
-    include __DIR__ . "/../" . PARTIALS_DIRECTORY . "/" . $partial;
-}

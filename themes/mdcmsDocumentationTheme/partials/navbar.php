@@ -1,9 +1,3 @@
-<?php
-# The layout of the navbar of a site.
-require_once __DIR__ . "/../setting.php";
-?>
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="/"><?php echo SITE_SHORT_NAME; ?></a>

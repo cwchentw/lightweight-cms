@@ -1,8 +1,3 @@
-<?php
-# The layout of the header of a site.
-require_once __DIR__ . "/../setting.php";
-?>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,7 +17,7 @@ require_once __DIR__ . "/../setting.php";
     integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<?php if (ENABLE_CODE_HIGHTLIGHT): ?>
+<?php if (null != ENABLE_CODE_HIGHTLIGHT && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/railscasts.min.css"
         integrity="sha512-0UdQ2subH1uPQAASCGB83KophEAoaJd6ii3D1jKEZ8YMnP7W3dGh3Pn3Pf8P5zKvX+T8Ltp+kY0ABON0mUqP3w=="
@@ -36,7 +31,7 @@ require_once __DIR__ . "/../setting.php";
 
 <!-- Add more site-specific style sheets here. -->
 
-<?php if (ENABLE_PWA): ?>
+<?php if (null != ENABLE_PWA && ENABLE_PWA): ?>
 <!-- A service worker, a JavaScript script, runs in the background
       to enrich user experiences under offline and slow network. -->
 <!-- TODO: Test the code. -->

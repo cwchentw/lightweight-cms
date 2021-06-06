@@ -2,6 +2,7 @@
 # The router of mdcms.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
 # Filter the input URI.
@@ -21,7 +22,9 @@ render:
 if (isset($post) && 200 != $post["status"]) {
     $GLOBALS[MDCMS_POST] = $post;
 
-    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
+    # TODO: Create a mock breadcrumb.
+
+    loadLayout(POST_LAYOUT);
 }
 # Render the home page.
 else if (isHome($loc)) {
@@ -29,7 +32,7 @@ else if (isHome($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
     $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
-    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . HOME_LAYOUT;
+    loadLayout(HOME_LAYOUT);
 }
 # Render a section page.
 else if (isSection($loc)) {
@@ -38,7 +41,7 @@ else if (isSection($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
     $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
-    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . SECTION_LAYOUT;
+    loadLayout(SECTION_LAYOUT);
 }
 # Render a post.
 else {
@@ -54,5 +57,5 @@ else {
     $GLOBALS[MDCMS_POST] = $post;
     $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
 
-    require __DIR__ . "/../" . LAYOUT_DIRECTORY . "/" . POST_LAYOUT;
+    loadLayout(POST_LAYOUT);
 }

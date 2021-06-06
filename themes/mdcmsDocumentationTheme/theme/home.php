@@ -1,4 +1,12 @@
 <?php
+# The layout of the home page of a site.
+#
+# This is one mandatory layout for a mdcms theme.
+
+# Require a private utility script.
+require_once __DIR__ . "/../src/utils.php";
+
+
 # Take global data.
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $pages = $GLOBALS[MDCMS_POSTS];

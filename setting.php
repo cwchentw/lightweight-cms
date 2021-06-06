@@ -23,6 +23,8 @@ define("SITE_AUTHOR", "mdcms");
 #  You may require two or more sets of layouts and
 #  some modifications on the router of mdcms for such site.
 define("SITE_LANGUAGE", "en-US");
+# The theme of a mdcms-based site.
+define("SITE_THEME", "mdcmsDocumentationTheme");
 # The text of the home page on breadcrumbs.
 define("SITE_BREADCRUMB_HOME", "Home");
 
@@ -52,6 +54,7 @@ define("BLOCK_BOT_ON_SECTION", true);
 # Prevent search engine bots from following external sites.
 #
 # Such actions are merely for SEO. Not good for a health Web.
+# FIXME: Some links fails to change.
 define("NO_FOLLOW_EXTERNAL_LINK", true);
 # Scan application directory.
 #
@@ -69,10 +72,6 @@ define("HOME_LAYOUT", "home.php");
 define("SECTION_LAYOUT", "section.php");
 # The layout of posts.
 define("POST_LAYOUT", "post.php");
-# The layout of manifest.json
-define("MANIFEST_LAYOUT", "manifest.php");
-# The layout of sitemap.xml
-define("SITEMAP_LAYOUT", "sitemap.php");
 
 # The index files used by sections.
 define("SECTION_INDEX", "_index.md");
@@ -83,7 +82,7 @@ define("SECTION_INDEX", "_index.md");
 #  instead of this.
 define("CONTENT_DIRECTORY", "mdcmsDocumentation");
 # The directory of the layouts.
-define("LAYOUT_DIRECTORY", "layout");
+define("THEME_DIRECTORY", "themes");
 # The directory of the partials.
 define("PARTIALS_DIRECTORY", "partials");
 # The directory of the internal libraries of mdcms.

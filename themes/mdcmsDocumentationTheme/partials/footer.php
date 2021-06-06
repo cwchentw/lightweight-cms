@@ -1,8 +1,3 @@
-<?php
-# The layout of the footer of a site.
-require_once __DIR__ . "/../setting.php";
-?>
-
 <!-- Native JavaScript for Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/3.0.15/bootstrap-native.min.js"
     integrity="sha512-ui7r9OLlcZJsUe16m7uoiyX9wBdbLds3zB5WCtlV+Sp+2U/wFFhGbp8Q4BfPbFEb0iBG07LsCvHDVySlVmgJAw=="
@@ -21,7 +16,7 @@ require_once __DIR__ . "/../setting.php";
 <!-- Initialize some variables used in our JavaScript program.
       Set them before calling site-specific scripts. -->
 <script>
-    var enableFixedSidebar = <?php if (ENABLE_FIXED_SIDEBAR) { echo "true"; } else { echo "false"; } ?>;
+    var enableFixedSidebar = <?php if (null != ENABLE_FIXED_SIDEBAR && ENABLE_FIXED_SIDEBAR) { echo "true"; } else { echo "false"; } ?>;
 </script>
 
 <!-- A site-specific script -->
