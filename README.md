@@ -83,7 +83,7 @@ Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
-If you modify anything locally, repeat the command to update your change in a production environment.
+If you modify anything locally, repeat the above command to update your changes in a production environment.
 
 Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration.
 
