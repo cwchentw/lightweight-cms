@@ -48,9 +48,9 @@ else {
     $post = readPost($loc);
 
     # Redirect to a static 404.html.
-    # TODO: Test the code.
     if (404 == $post[MDCMS_POST_STATUS]) {
-        header("Location: " . "/404.html");
+        # FIXME: Wrong redirection.
+        header("Location: " . "404.html");
         die();
     }
 

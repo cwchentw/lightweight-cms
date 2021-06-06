@@ -12,6 +12,7 @@ $xml = new DOMDocument("1.0", "UTF-8");
 $urlset = $xml->createElement("urlset");
 $urlset->setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
 
+# FIXME: No nested sections and posts.
 $links = getAllLinks("/");
 
 foreach ($links as $link) {
