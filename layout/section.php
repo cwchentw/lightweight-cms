@@ -17,11 +17,10 @@ $pages = $GLOBALS[MDCMS_POSTS];
         <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
+        <?php if (BLOCK_BOT_ON_SECTION): ?>
         <!-- Most section pages merely work as intermediate documents
               to posts. They seldom benefit SEO. You may safely block
               sections from crawlings of search engine bots.  -->
-        <!-- TODO: Test the code. -->
-        <?php if (BLOCK_BOT): ?>
         <meta name="robots" content="noindex, follow">
         <?php endif; ?>
 

@@ -48,7 +48,7 @@ define("ENABLE_CODE_HIGHTLIGHT", false);
 # Block search engine bots on sections.
 #
 # Such action is optional but recommended for SEO.
-define("BLOCK_BOT", false);
+define("BLOCK_BOT_ON_SECTION", false);
 # Prevent search engine bots from following external sites.
 #
 # Such actions are merely for SEO. Not good for a health Web.
