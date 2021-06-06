@@ -3,8 +3,26 @@ $sansSerif: Arial, Helvetica, sans-serif;
 $serif: "Times New Roman", Times, serif;
 $monospace: Consolas, "Lucida Console", Monaco, monospace;
 
+$large-screen-width: 1000pt;
+$phone-max-width: 550pt;
+
 html {
     height: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+@media screen and (max-width: $phone-max-width) {
+    .container {
+        padding-left: unset;
+        padding-right: unset;
+    }
 }
 
 body {
@@ -37,13 +55,75 @@ h6 {
     font-family: $serif;
 }
 
+h2 {
+    padding-left: 5pt;
+    padding-bottom: 2pt;
+    border-bottom: 2px solid lightslategray;
+
+    /* Disable icons before subtitles. */
+    /*
+    &:before {
+        content: url(/img/c-36x36.png);
+        padding-right: 3pt;
+    }
+    */
+
+    &:after {
+        margin: 0 0 0 20px;
+    }
+}
+
 p,
 div {
-    font-size: 16pt;
+    font-size: 17pt;
     font-family: $sansSerif;
+}
+
+@media screen and (max-width: $phone-max-width) {
+    p,
+    div {
+        font-size: 16pt;
+    }
+}
+
+@media screen and (min-width: $large-screen-width) {
+    p {
+        padding-left: 5%;
+        padding-right: 9%;
+    }
 }
 
 pre,
 code {
     font-family: $monospace;
+}
+
+@media screen and (min-width: $large-screen-width) {
+    pre,
+    table {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+}
+
+#table-of-contents {
+    width: 220pt;
+
+    padding: 1em;
+
+    margin-top: 5pt;
+
+    background-color: #F0F5F5; /* Zircon series color. */
+
+    ul {
+        list-style-type: none;
+        padding-left: 3pt;
+        padding-right: 3pt;
+    }
+}
+
+@media screen and (max-width: $phone-max-width) {
+    #table-of-contents {
+        display: none;
+    }
 }

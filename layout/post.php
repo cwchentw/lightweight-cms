@@ -34,27 +34,40 @@ if (ENABLE_TOC) {
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <!-- If you want to create multi-column pages,
-               modify your layout here. -->
         <div id="main-content" class="container">
             <div class="text-center">
                 <h1><?php echo $post[MDCMS_POST_TITLE]; ?></h1>
             </div>
 
-            <?php includePartials("breadcrumb.php"); ?>
+            <div class="row">
+                <!-- TODO: Adjust it later. -->
+                <div class="col-lg-9 col-xs-12">
+                    <article>
+                        <?php includePartials("breadcrumb.php"); ?>
 
-            <div class="alert alert-info" role="alert">
-                There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> words in the post.
-                It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 200); ?> minutes to read.
+                        <div class="alert alert-info" role="alert">
+                                There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> words in the post.
+                                It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 200); ?> minutes to read.
+                        </div>
+
+                        <?php echo $post[MDCMS_POST_CONTENT]; ?>
+                    </article>
+                </div>
+
+                <!-- TODO: Adjust it later. -->
+                <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
+                    <aside>
+                        <?php
+                        if (ENABLE_TOC) {
+                            includePartials("toc.php");
+                        }
+                        else {
+                            # TODO: Add a sidebar.
+                        }
+                        ?>
+                    </aside>
+                </div>
             </div>
-
-            <?php
-            if (ENABLE_TOC) {
-                includePartials("toc.php");
-            }
-            ?>
-
-            <?php echo $post[MDCMS_POST_CONTENT]; ?>
         </div>
 
         <?php includePartials("footer.php"); ?>

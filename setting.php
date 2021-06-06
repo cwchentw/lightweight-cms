@@ -40,6 +40,8 @@ define("EXCERPT_THRESHOLD", 240);
 define("ENABLE_PWA", false);
 # Enable ToC (Table of Contents).
 define("ENABLE_TOC", false);
+# Enable fixed sidebar.
+define("ENABLE_FIXED_SIDEBAR", false);
 # Enable the support to hightlight.js
 # Currently, the theme of hightlight.js is hard coded.
 define("ENABLE_CODE_HIGHTLIGHT", false);
