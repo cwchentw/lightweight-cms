@@ -109,4 +109,42 @@ $ git push -u origin master
 
 ## Usage for Developers
 
-You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send your contributions to us.
+You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send back your contributions to us.
+
+Create a fork of mdcms on GitHub, clone the forked repo:
+
+```shell
+$ git clone https://github.com/user/mdcms.git
+```
+
+Change your working directory to the root of the cloned repo:
+
+```shell
+$ cd mdcms
+```
+
+Install all dependencies with Composer:
+
+```
+$ composer install
+```
+
+Modify mdcms in any way you like as long as it still workable.
+
+You should lint your modification with the following script:
+
+```
+$ ./tools/bin/lint
+```
+
+The script calls PHP Code Sniffer and PHPMD with modified rule sets. Our coding convention is not totally set yet.
+
+Push back your modification to the forked repo:
+
+```
+$ git push https://github.com/user/mdcms.git
+```
+
+Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted. We may still modify mdcms according to your intention.
+
+If you are busy, send us [an issue](https://github.com/cwchentw/mdcms/issues) instead.
