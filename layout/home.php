@@ -1,9 +1,4 @@
 <?php
-# The layout of the home page of a site.
-require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
-
-
 # Take global data.
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $pages = $GLOBALS[MDCMS_POSTS];

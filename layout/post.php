@@ -1,9 +1,4 @@
 <?php
-# The layout of posts.
-require_once __DIR__ . "/../setting.php";
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
-
-
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
 ?>
