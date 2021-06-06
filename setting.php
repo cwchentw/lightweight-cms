@@ -39,7 +39,7 @@ define("EXCERPT_THRESHOLD", 240);
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", false);
 # Enable ToC (Table of Contents).
-define("ENABLE_TOC", false);
+define("ENABLE_TOC", true);
 # Enable fixed sidebar.
 define("ENABLE_FIXED_SIDEBAR", false);
 # Enable the support to hightlight.js

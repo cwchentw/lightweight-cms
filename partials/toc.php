@@ -34,7 +34,7 @@ if (isset($matches)) {
         }
         ?>
         <!-- FIXME: Check the rendered URL. -->
-        <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#main-content">Back to Top</a></li>
+        <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#top">Back to Top</a></li>
         <li><a href="/">Back to Home</a></li>
     </ul>
 </div>

@@ -23,14 +23,14 @@ $status = 200;  # HTTP 200 OK.
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div id="main-content" class="container">
+        <div id="top" class="container">
             <div class="text-center">
                 <h1><?php echo SITE_NAME; ?></h1>
             </div>
 
             <div class="row">
                 <!-- TODO: Adjust it later. -->
-                <div class="col-lg-9 col-xs-12">
+                <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php includePartials("breadcrumb.php"); ?>
 
                     <?php

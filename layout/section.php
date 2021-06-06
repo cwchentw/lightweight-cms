@@ -30,16 +30,14 @@ $pages = $GLOBALS[MDCMS_POSTS];
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <!-- If you want to create multi-column pages,
-               modify your layout here. -->
-        <div id="main-content" class="container">
+        <div id="top" class="container">
             <div class="text-center">
                 <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
             </div>
 
             <div class="row">
                 <!-- TODO: Adjust it later. -->
-                <div class="col-lg-9 col-xs-12">
+                <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php includePartials("breadcrumb.php"); ?>
 
                     <?php
@@ -75,16 +73,16 @@ $pages = $GLOBALS[MDCMS_POSTS];
                         echo "<h2>Articles</h2>";
 
                         foreach ($pages as $page) {
-                            echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
+                            echo "<article style=\"margin-bottom: 30pt;\">";
+                                echo "<h3>" . $page[MDCMS_POST_TITLE] . "</h3>";
 
-                            echo "<p style=\"margin-bottom: 30pt;\">" . $page[MDCMS_POST_EXCERPT] . " ";
-
-                            echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
-                                . "Read More"
-                                . "</a>";
-
-                            echo "</p>";
+                                echo "<p>" . $page[MDCMS_POST_EXCERPT] . " ";
+                                    echo "<a class=\"btn btn-primary btn-sm\" "
+                                        . "href=\"" . $page[MDCMS_LINK_PATH] . "\">"
+                                        . "Read More"
+                                        . "</a>";
+                                echo "</p>";
+                            echo "</article>";
                         }
                     }
                     ?>

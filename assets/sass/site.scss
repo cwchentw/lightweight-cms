@@ -102,7 +102,14 @@ code {
     padding-bottom: 0.5rem;
 }
 
-#table-of-contents {
+@media screen and (min-width: $large-screen-width) {
+    #main-content {
+        padding-left: 8%;
+        padding-right: 6%;
+    }
+}
+
+#side-info, #table-of-contents {
     width: 220pt;
 
     padding: 1em;
@@ -119,7 +126,7 @@ code {
 }
 
 @media screen and (max-width: $phone-max-width) {
-    #table-of-contents {
+    #side-info, #table-of-contents {
         display: none;
     }
 }
