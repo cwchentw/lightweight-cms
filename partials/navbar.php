@@ -14,7 +14,7 @@ require_once __DIR__ . "/../setting.php";
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarSiteInfo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Info
+            Site Info
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarSiteInfo">
             <li><a class="dropdown-item" href="/about/">About the Site</a></li>
@@ -24,7 +24,7 @@ require_once __DIR__ . "/../setting.php";
         </li>
                 <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarMedia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Media
+            Social Media
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarMedia">
             <li><a class="dropdown-item" href="#">Facebook Fans Page (Pending)</a></li>

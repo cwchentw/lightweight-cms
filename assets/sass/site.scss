@@ -106,6 +106,12 @@ code {
     }
 }
 
+.navbar {
+    /* Remove the styles set by Bootstrap 5. */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 #table-of-contents {
     width: 220pt;
 
