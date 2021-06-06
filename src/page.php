@@ -242,7 +242,8 @@ function readPost($page)
                     $id = strtolower($id);
                     return "<h2 id=\"" . $id . "\">" . $matches[1] . "</h2>";
                 },
-                $result[MDCMS_POST_CONTENT]);
+                $result[MDCMS_POST_CONTENT]
+            );
     }
 
     # Prevent search engine bots from following links.
@@ -268,7 +269,8 @@ function readPost($page)
                         . "rel=\"noopener nofollow\">"
                         . $title . "</a>";
                 },
-                $result[MDCMS_POST_CONTENT]);
+                $result[MDCMS_POST_CONTENT]
+            );
     }
 
     return $result;

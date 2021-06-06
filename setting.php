@@ -31,28 +31,28 @@ define("SITE_BREADCRUMB_HOME", "Home");
 
 # The upper limit of word count of excerpts.
 # It should be less than the upper limit of a tweet of Twitter.
-define("EXCERPT_THRESHOLD", 240);
+define("EXCERPT_THRESHOLD", 140);
 
 
 # These flags will switch on or off optional features.
 
 # Enable the supports to PWA (progressive web application).
-define("ENABLE_PWA", false);
+define("ENABLE_PWA", true);
 # Enable ToC (Table of Contents).
 define("ENABLE_TOC", true);
 # Enable fixed sidebar.
-define("ENABLE_FIXED_SIDEBAR", false);
+define("ENABLE_FIXED_SIDEBAR", true);
 # Enable the support to hightlight.js
 # Currently, the theme of hightlight.js is hard coded.
-define("ENABLE_CODE_HIGHTLIGHT", false);
+define("ENABLE_CODE_HIGHTLIGHT", true);
 # Block search engine bots on sections.
 #
 # Such action is optional but recommended for SEO.
-define("BLOCK_BOT_ON_SECTION", false);
+define("BLOCK_BOT_ON_SECTION", true);
 # Prevent search engine bots from following external sites.
 #
 # Such actions are merely for SEO. Not good for a health Web.
-define("NO_FOLLOW_EXTERNAL_LINK", false);
+define("NO_FOLLOW_EXTERNAL_LINK", true);
 # Scan application directory.
 #
 # By default, mdcms only scans sections and posts
@@ -78,7 +78,10 @@ define("SITEMAP_LAYOUT", "sitemap.php");
 define("SECTION_INDEX", "_index.md");
 
 # The directory of sections and posts.
-define("CONTENT_DIRECTORY", "content");
+#
+# You should use a general directory name like *content*
+#  instead of this.
+define("CONTENT_DIRECTORY", "mdcmsDocumentation");
 # The directory of the layouts.
 define("LAYOUT_DIRECTORY", "layout");
 # The directory of the partials.
