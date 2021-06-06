@@ -38,10 +38,11 @@ while (count($dirs) > 0) {
 
         $path = $dir . "/" . $library;
 
+        # Push a subdirectory into the queue.
         if (is_dir($path)) {
-            # Push a subdirectory into the queue.
             array_push($dirs, $path);
         }
+        # Load a PHP script.
         else if ("php" == pathinfo($path)["extension"]) {
             require_once $path;
         }
