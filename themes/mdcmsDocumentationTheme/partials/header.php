@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- TODO: Test the code. -->
-<?php if (ENABLE_PWA): ?>
+<?php if (null != ENABLE_PWA && ENABLE_PWA): ?>
 <!-- Configuration for an installable web application. -->
 <link rel="manifest" href="/manifest.json">
 <?php endif; ?>

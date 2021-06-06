@@ -83,8 +83,6 @@ define("SECTION_INDEX", "_index.md");
 define("CONTENT_DIRECTORY", "mdcmsDocumentation");
 # The directory of the layouts.
 define("THEME_DIRECTORY", "themes");
-# The directory of the partials.
-define("PARTIALS_DIRECTORY", "partials");
 # The directory of the internal libraries of mdcms.
 define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
