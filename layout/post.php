@@ -62,7 +62,7 @@ if (ENABLE_TOC) {
                             includePartials("toc.php");
                         }
                         else {
-                            # TODO: Add a sidebar.
+                            includePartials("sideInfo.php");
                         }
                         ?>
                     </aside>
