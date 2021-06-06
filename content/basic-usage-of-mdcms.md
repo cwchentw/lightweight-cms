@@ -145,6 +145,6 @@ Push back your modification to the forked repo:
 $ git push https://github.com/user/mdcms.git
 ```
 
-Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted. We may still modify mdcms according to your intention.
+Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted, we may still modify mdcms according to your intention.
 
 If you are busy, send us [an issue](https://github.com/cwchentw/mdcms/issues) instead.
