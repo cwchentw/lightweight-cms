@@ -77,10 +77,7 @@ define("POST_LAYOUT", "post.php");
 define("SECTION_INDEX", "_index.md");
 
 # The directory of sections and posts.
-#
-# You should use a general directory name like *content*
-#  instead of this.
-define("CONTENT_DIRECTORY", "mdcmsDocumentation");
+define("CONTENT_DIRECTORY", "content");
 # The directory of the layouts.
 define("THEME_DIRECTORY", "themes");
 # The directory of the internal libraries of mdcms.
