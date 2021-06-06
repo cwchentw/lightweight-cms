@@ -40,3 +40,71 @@ If you are not interested in developing mdcms itself, you still require Composer
 
 Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove these development tools and configurations, adding your own. They are independent of mdcms itself.
 
+## Usage for End Users
+
+You will be an owner of an awesome content website. It is not of your interest to develop mdcms itself.
+
+Clone mdcms to a local repo and rename it:
+
+```shell
+$ git clone https://github.com/cwchentw/mdcms.git mysite
+```
+
+Change your working directory to the root of the cloned repo:
+
+```shell
+$ cd mysite
+```
+
+(Optional) Install Composer:
+
+```shell
+$ ./tools/bin/install-composer /path/to/prefix
+```
+
+By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
+
+Install the dependency packages for mdcms:
+
+```
+$ composer install --no-dev
+```
+
+(Optional) Install the front end related development tools of with Node.js:
+
+```
+$ npm install
+```
+
+If you don't require to write custom CSS or JavaScript code, skip the step.
+
+Remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
+
+(Optional) Build assets for production environments:
+
+```
+$ npm run prod
+```
+
+This command assumes a production environment, being going to build and minimize all assets.
+
+Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
+
+```
+$ sudo ./tools/bin/sync-to /path/to/www
+```
+
+If you modify anything locally, repeat the command to update your change in a production environment.
+
+Set the configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration.
+
+(Optional) Save the local repo to a remote site:
+
+```
+$ git remote set-url origin https://example.com/user/mysite.git
+$ git push -u origin master
+```
+
+## Usage for Developers
+
+You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send your contributions to us.
