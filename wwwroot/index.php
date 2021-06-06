@@ -2,6 +2,7 @@
 # The router of mdcms.
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+# TODO: Load plugins.
 require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
