@@ -76,7 +76,7 @@ define("THEME_DIRECTORY", "themes");
 # The directory of the internal libraries of mdcms.
 define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
-define("APPLICATION_DIRECTORY", "wwwroot");
+define("APPLICATION_DIRECTORY", "www");
 # The directory of public files.
 define("PUBLIC_DIRECTORY", "public");
 
