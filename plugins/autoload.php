@@ -8,7 +8,7 @@ $pluginLoader = __DIR__ . "/" . __FILE__;
 # Scan all files in the directory.
 $libraries = scandir(__DIR__);
 
-# We only scan the first layer of directories.
+# We only scan the first layer of this directory.
 foreach ($libraries as $library) {
     # Skip private directories and files.
     if ("." == substr($library, 0, 1)) {
