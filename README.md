@@ -102,7 +102,7 @@ The website generator doesn't merely work as pseudo static websites. Instead, yo
 
 ## See Also
 
-The project is inspired by [Cristy94/markdown-blog](https://github.com/Cristy94/markdown-blog). Nonetheless, we don't copy and paste code from there but write everything from scratch.
+The project is inspired by [Cristy94/markdown-blog](https://github.com/Cristy94/markdown-blog). Nonetheless, we don't copy and paste code there but write everything from scratch.
 
 ## Copyright
 
