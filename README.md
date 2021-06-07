@@ -47,7 +47,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 
 ## Usage
 
-Clone the repo:
+Clone the repo locally:
 
 ```
 $ git clone https://github.com/cwchentw/mdcms.git mysite
@@ -98,7 +98,7 @@ $ git push -u origin master
 
 ## Notes for PHP Developers
 
-The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *wwwroot* as needed. Furthermore, your scripts can share partials in *partials* with other web pages, reducing repeated code.
+The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *www* as needed. Furthermore, your scripts can share partials scripts in *partials* with other web pages, reducing repeated code.
 
 ## See Also
 
