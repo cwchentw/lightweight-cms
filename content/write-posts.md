@@ -4,7 +4,7 @@
 
 As an owner of an awesome content website, you cannot wait to write posts. This article illustrates how to write posts on mdcms-based sites.
 
-## Choose an Programming Editor
+## Choose a Programming Editor
 
 Markdowns represents a simple and lightweight markup language without programming logic. Any programming editor will suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among programmers and suitable for Markdown as well.
 
@@ -21,6 +21,14 @@ https://example.com/section/post/
 ```
 
 Such URL will map to either *content/section/post.md* or *content/section/post.html*.
+
+Nested sections are allowed as well. Here shows a pseudo URL with such sections:
+
+```
+https://example.com/section/subsection/post/
+```
+
+Such URL will map to either *content/section/subsection/post.md* or *content/section/subsection/post.html*.
 
 ## Write Markdown Posts
 
