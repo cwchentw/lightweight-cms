@@ -208,9 +208,10 @@ function getSection($page)
     }
     # Otherwise, extract data from the directory name.
     else {
-        $t = preg_replace("/\/|-+/", " ", $page);
-        $t = ucwords($t);  # Capitalize a title.
-        $result[MDCMS_SECTION_TITLE] = $t;
+        $pages = parsePage($page);
+        $title = preg_replace("/\/|-+/", " ", array_pop($pages));
+        $title = ucwords($title);  # Capitalize a title.
+        $result[MDCMS_SECTION_TITLE] = $title;
     }
 
     return $result;
