@@ -112,7 +112,11 @@ $ git push -u origin master
 
 (Pending)
 
-## Usage for Developers
+## Usage for Plugin Developers
+
+(Pending)
+
+## Usage for Contributors
 
 You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send back your contributions to us.
 
