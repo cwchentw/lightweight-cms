@@ -12,6 +12,8 @@ Markdowns represents a simple and lightweight markup language without programmin
 
 Posts are saved in a content directory, which default is *content*. You may change the name of a content directory with **CONTENT_DIRECTORY** the variable in *setting.php*.
 
+The file formats of posts in mdcms sites are either Markdown or HTML.
+
 ## The Relationship between Posts and URLs
 
 Because mdcms is a flat file based content management system, the URLs in a mdcms site map to the directories and files in a content directory directly. Here represents a pseudo URL:
