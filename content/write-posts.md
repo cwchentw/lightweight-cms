@@ -14,7 +14,7 @@ Posts are saved in a content directory, which default is *content*. You may chan
 
 ## The Relationship between Posts and URLs
 
-Because mdcms is a flat file based content management system, the URLs in a mdcms site map to the files in a content directory directly. Here represents a pseudo URL:
+Because mdcms is a flat file based content management system, the URLs in a mdcms site map to the directories and files in a content directory directly. Here represents a pseudo URL:
 
 ```
 https://example.com/section/post/
