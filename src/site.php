@@ -332,6 +332,7 @@ function getAllLinks($page)
             $link[MDCMS_LINK_PATH] = $page;
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
+            # FIXME: Unable to get mtime.
             $indexPath = __DIR__ . "/../" . LAYOUT_DIRECTORY . "/". HOME_LAYOUT;
             $link[MDCMS_LINK_MTIME] = filemtime($indexPath);
 
