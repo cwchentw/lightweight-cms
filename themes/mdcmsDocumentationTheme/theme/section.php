@@ -51,25 +51,6 @@ $pages = $GLOBALS[MDCMS_POSTS];
                     ?>
 
                     <?php
-                    # Add section(s) if any exists.
-                    # TODO: Check it later.
-                    if (isset($sections) && count($sections) > 0) {
-                        echo "<h2>Sections</h2>";
-
-                        echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
-
-                        foreach ($sections as $section) {
-                            echo "<a class=\"list-group-item\" "
-                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                                . $section[MDCMS_LINK_TITLE]
-                                . "</a>";
-                        }
-
-                        echo "</div>";
-                    }
-                    ?>
-
-                    <?php
                     # Add page(s) if any exists.
                     if (isset($pages) && count($pages) > 0) {
                         echo "<h2>Articles</h2>";
@@ -86,6 +67,24 @@ $pages = $GLOBALS[MDCMS_POSTS];
                                 echo "</p>";
                             echo "</article>";
                         }
+                    }
+                    ?>
+
+                    <?php
+                    # Add section(s) if any exists.
+                    if (isset($sections) && count($sections) > 0) {
+                        echo "<h2>Sections</h2>";
+
+                        echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
+
+                        foreach ($sections as $section) {
+                            echo "<a class=\"list-group-item\" "
+                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                                . $section[MDCMS_LINK_TITLE]
+                                . "</a>";
+                        }
+
+                        echo "</div>";
                     }
                     ?>
                 </div>

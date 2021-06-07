@@ -3,7 +3,6 @@
     integrity="sha512-ui7r9OLlcZJsUe16m7uoiyX9wBdbLds3zB5WCtlV+Sp+2U/wFFhGbp8Q4BfPbFEb0iBG07LsCvHDVySlVmgJAw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- TODO: Check it later. -->
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"
@@ -17,7 +16,6 @@
 <!-- Initialize some variables used in our JavaScript program.
       Set them before calling site-specific scripts. -->
 <?php
-# TODO: Check it later.
 # The variable will be a JavaScript string.
 $enableFixedSidebar = "false";
 if (!is_null(ENABLE_FIXED_SIDEBAR) && ENABLE_FIXED_SIDEBAR) {

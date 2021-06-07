@@ -49,7 +49,6 @@ $post = $GLOBALS[MDCMS_POST];
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php
-                        # TODO: Check it later.
                         if (!is_null(ENABLE_TOC) && ENABLE_TOC) {
                             includePartials("toc.php");
                         }

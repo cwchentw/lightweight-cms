@@ -1,8 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- TODO: Test the code. -->
-<?php if (null != ENABLE_PWA && ENABLE_PWA): ?>
+<?php if (!is_null(ENABLE_PWA) && ENABLE_PWA): ?>
 <!-- Configuration for an installable web application. -->
 <link rel="manifest" href="/manifest.json">
 <?php endif; ?>
@@ -31,9 +30,8 @@
 
 <!-- Add more site-specific style sheets here. -->
 
-<?php if (null != ENABLE_PWA && ENABLE_PWA): ?>
+<?php if (!is_null(ENABLE_PWA) && ENABLE_PWA): ?>
 <!-- A service worker, a JavaScript script, runs in the background
       to enrich user experiences under offline and slow network. -->
-<!-- TODO: Test the code. -->
 <script src="/register-service-worker.js"></script>
 <?php endif; ?>

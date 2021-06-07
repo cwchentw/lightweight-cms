@@ -316,7 +316,7 @@ function getBreadcrumb($page)
     return $result;
 }
 
-/* TODO: Test the code. */
+/* FIXME: Some links are not shown correctly. */
 function getAllLinks($page)
 {
     $result = array();

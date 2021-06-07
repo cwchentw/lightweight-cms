@@ -46,7 +46,6 @@ $status = 200;  # HTTP 200 OK.
 
                     <?php
                     # Add post(s) if any exists.
-                    # TODO: Check it later.
                     if (isset($posts) && count($posts) > 0) {
                         echo "<h2>Articles</h2>";
 
@@ -67,7 +66,6 @@ $status = 200;  # HTTP 200 OK.
 
                     <?php
                     # Add section(s) if any exists.
-                    # TODO: Check it later.
                     if (isset($sections) && count($sections) > 0) {
                         echo "<h2>Sections</h2>";
 

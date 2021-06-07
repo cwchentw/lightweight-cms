@@ -1,5 +1,7 @@
 # TODO
 
+* (Bug) Fix sitemap.xml
+* (Bug) Fix the page for HTTP status 404
 * (Feature) Order site posts
 * (Feature) Add front matter to HTML. See [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * (Feature) Load plugins
