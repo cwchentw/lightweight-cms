@@ -1,4 +1,4 @@
-# Write Posts on mdcms
+# Write Posts on mdcms Sites
 
 ## Prologue
 
