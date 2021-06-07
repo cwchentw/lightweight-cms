@@ -6,4 +6,4 @@ This directory places the theme(s) of mdcms. If you want to establish a new them
 
 ## For Theme Creators
 
-Create an independent repo for your own theme. Later, integrate your theme into mdcms as a Git submodule. If you alter the main repo of mdcms, your modifications will be rejected.
+Create an independent repo for your own theme. You may copy *default* theme as a template. Later, integrate your theme into mdcms as a Git submodule. If you alter the main repo of mdcms, your modifications will be rejected.
