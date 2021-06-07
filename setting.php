@@ -71,8 +71,10 @@ define("SECTION_INDEX", "_index.md");
 
 # The directory of sections and posts.
 define("CONTENT_DIRECTORY", "content");
-# The directory of the layouts.
+# The directory of themes.
 define("THEME_DIRECTORY", "themes");
+# The directory of plugins.
+define("PLUGIN_DIRECTORY", "plugins");
 # The directory of the internal libraries of mdcms.
 define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
