@@ -1,4 +1,4 @@
-# Theme(s) of mdcms.
+# Theme(s) for mdcms.
 
 ## For End Users
 
