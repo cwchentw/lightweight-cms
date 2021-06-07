@@ -51,15 +51,44 @@ else if (isSection($loc)) {
 else {
     $post = readPost($loc);
 
-    # Redirect to a static 404.html.
+    # If HTTP status 404, generate a page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
-        # FIXME: Wrong redirection.
-        header("Location: " . "404.html");
-        die();
-    }
+        # Mutate `$post` to generate a new page.
+        $post = array();
 
-    $GLOBALS[MDCMS_POST] = $post;
-    $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
+        $post[MDCMS_POST_TITLE] = "Page Not Found";
+        $post[MDCMS_POST_CONTENT] = "The page doesn't exist on our server.";
+        $post[MDCMS_POST_STATUS] = 404;
+        $post[MDCMS_POST_WORD_COUNT] = 7;
+
+        # Create mock breadcrumbs.
+        $breadcrumb = array();
+
+        {
+            $link = array();
+
+            $link[MDCMS_LINK_PATH] = "/";
+            $link[MDCMS_LINK_TITLE] = SITE_BREADCRUMB_HOME;
+
+            array_push($breadcrumb, $link);
+        }
+
+        {
+            $link = array();
+
+            $link[MDCMS_LINK_TITLE] = "Page Not Found";
+
+            array_push($breadcrumb, $link);
+        }
+
+        $GLOBALS[MDCMS_POST] = $post;
+        $GLOBALS["breadcrumb"] = $breadcrumb;
+    }
+    # Load a normal page.
+    else {
+        $GLOBALS[MDCMS_POST] = $post;
+        $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
+    }
 
     loadPost();
 }
