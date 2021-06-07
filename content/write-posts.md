@@ -26,6 +26,16 @@ Such URL will map to either *content/section/post.md* or *content/section/post.h
 
 The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by mdcms is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used on the online editor of GitHub.
 
+Here shows a pseudo Markdown post:
+
+```markdown
+# A Markdown Post
+
+A paragraph with some text.
+
+Another paragraph with some text.
+```
+
 Because of limited page size, we won't repeat the syntax of GFM here. Refer to its official spec for more.
 
 ## Write HTML Posts
@@ -60,4 +70,4 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
  
 ## Write Titles for Posts
 
-If you write a title in a post, the title will render on the rendered page. In contrary, if there is no title in a post, mdcms will generate one according to the file name of the post.
+If you write a title in a post, the title will bed rendered on the web page. In contrary, if there is no title in a post, mdcms will generate one dynamically according to the file name of the post.
