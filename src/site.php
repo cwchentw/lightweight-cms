@@ -333,8 +333,8 @@ function getAllLinks($page)
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
             # FIXME: Unable to get mtime.
-            $indexPath = __DIR__ . "/../" . LAYOUT_DIRECTORY . "/". HOME_LAYOUT;
-            $link[MDCMS_LINK_MTIME] = filemtime($indexPath);
+            $indexPath = __DIR__ . "/../" . CONTENT_DIRECTORY;
+            $link[MDCMS_LINK_MTIME] = stat($indexPath)["mtime"];
 
             array_push($result, $link);
         }
@@ -396,49 +396,41 @@ function getAllLinks($page)
         }
         /* `$path` is a directory. */
         else if (is_dir($dirpath)) {
-            $dirs = array();
+            /* Convert from path to page. */
+            $page = getPageFromPath($dirpath);
+            $link = readDirectoryLink($page);
+            array_push($result, $link);
 
-            array_push($dirs, $dirpath);
+            $subfiles = scandir($dirpath, SCANDIR_SORT_ASCENDING);
 
-            $contentDirectory
-                = __DIR__ . "/../" . CONTENT_DIRECTORY;
-            while (count($dirs) > 0) {
-                /* Pop out the directory. */
-                $dir = array_shift($dirs);
+            foreach ($subfiles as $subfile) {
+                # Skip private files.
+                if ("." == substr($subfile, 0, 1)) {
+                    continue;
+                }
+                else if ("_" == substr($subfile, 0, 1)) {
+                    continue;
+                }
 
-                /* Convert from path to page. */
-                $page = getPageFromPath($dir);
+                $subpath = $dirpath . $subfile;
 
-                $link = readDirectoryLink($page);
-                array_push($result, $link);
-
-                $subfiles = scandir($dir, SCANDIR_SORT_ASCENDING);
-
-                foreach ($subfiles as $subfile) {
-                    /* Skip private files. */
-                    if ("." == substr($subfile, 0, 1)) {
-                        continue;
-                    }
-                    else if ("_" == substr($subfile, 0, 1)) {
-                        continue;
-                    }
-
-                    $subpath = $dir . $subfile;
-
-                    if (is_dir($subpath)) {
-                        array_push($dirs, $subfile);
-                    }
-                    else if (isHTMLFile($subpath)) {
-                        $subpage = getPageFromPath($subpath);
-                        array_push($result, readHTMLLink($subpage));
-                    }
-                    else if (isMarkdownFile($subpath)) {
-                        $subpage = getPageFromPath($subpath);
-                        array_push($result, readMarkdownLink($subpage));
-                    }
-                    else {
-                        /* Ignore everything else. */
-                    }
+                # Load a directory.
+                if (is_dir($subpath)) {
+                    array_push($pages, getPageFromPath($subpath));
+                }
+                # Load a HTML file.
+                else if (isHTMLFile($subpath)) {
+                    $subpage = getPageFromPath($subpath);
+                    array_push($result, readHTMLLink($subpage));
+                }
+                # Load a Markdown file.
+                else if (isMarkdownFile($subpath)) {
+                    $subpage = getPageFromPath($subpath);
+                    array_push($result, readMarkdownLink($subpage));
+                }
+                # Ignore everything else.
+                else {
+                    # Pass.
                 }
             }
         }

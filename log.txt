@@ -1,0 +1,217 @@
+
+> @ prod /home/ubuntu/environment/mdcms/themes/default
+> npm run production
+
+
+> @ production /home/ubuntu/environment/mdcms/themes/default
+> cross-env NODE_ENV=production gulp --gulpfile=build/build.js
+
+[06:56:52] Working directory changed to ~/environment/mdcms/themes/default/build
+[06:56:54] Using gulpfile ~/environment/mdcms/themes/default/build/build.js
+[06:56:54] Starting 'default'...
+[06:56:54] Starting 'sass'...
+[06:56:54] Starting 'javascript'...
+[06:56:54] Starting 'font'...
+[06:56:54] Starting 'image'...
+[06:56:54] Starting 'static'...
+[06:56:54] Starting 'sass:clean'...
+[06:56:54] Starting 'javascript:clean'...
+[06:56:54] Starting 'font:clean'...
+[06:56:54] Starting 'image:clean'...
+[06:56:54] Starting 'static:copy'...
+[06:56:54] Finished 'font:clean' after 53 ms
+[06:56:54] Starting 'font:build'...
+[06:56:54] Finished 'static:copy' after 106 ms
+[06:56:54] Finished 'static' after 112 ms
+[06:56:54] Finished 'font:build' after 50 ms
+[06:56:54] Finished 'font' after 123 ms
+[06:56:54] Finished 'sass:clean' after 168 ms
+[06:56:54] Starting 'sass:lint'...
+[06:56:54] Finished 'javascript:clean' after 175 ms
+[06:56:54] Starting 'javascript:lint'...
+[06:56:54] Finished 'image:clean' after 238 ms
+[06:56:54] Starting 'image:build'...
+[06:56:55] Finished 'javascript:lint' after 859 ms
+[06:56:55] Starting 'javascript:build'...
+[06:56:56] Finished 'javascript:build' after 828 ms
+[06:56:56] Finished 'javascript' after 1.88 s
+[06:56:56] Finished 'sass:lint' after 2.03 s
+[06:56:56] Starting 'sass:build'...
+[06:56:56] Finished 'sass:build' after 446 ms
+[06:56:56] Finished 'sass' after 2.66 s
+[06:57:04] gulp-imagemin: Minified 19 images (saved 44.4 kB - 15.3%)
+[06:57:04] Finished 'image:build' after 11 s
+[06:57:04] Finished 'image' after 11 s
+[06:57:04] Finished 'default' after 11 s
+sending incremental file list
+log.txt
+setting.php
+skipping non-regular file "vendor/bin/yaml-lint"
+content/about.md
+content/basic-usage.md
+content/samples/_index.md
+content/samples/c-programming/hello-world.md
+content/samples/c-programming/object-oriented-programming-primer.md
+content/samples/cpp-programming/_index.md
+content/samples/cpp-programming/hello-world.html
+plugins/autoload.php
+public/50x.html
+public/manifest.json
+public/register-service-worker.js
+public/service-worker.js
+public/sitemap.xml
+public/css/site.css
+public/img/share-buttons/evernote-32x32.png
+public/img/share-buttons/evernote-48x48.png
+public/img/share-buttons/evernote.png
+public/img/share-buttons/facebook-24x24.png
+public/img/share-buttons/facebook-32x32.png
+public/img/share-buttons/facebook-48x48.png
+public/img/share-buttons/facebook.png
+public/img/share-buttons/github-32x32.png
+public/img/share-buttons/github-48x48.png
+public/img/share-buttons/github.png
+public/img/share-buttons/gmail-32x32.png
+public/img/share-buttons/gmail-48x48.png
+public/img/share-buttons/gmail.png
+public/img/share-buttons/line.me-32x32.png
+public/img/share-buttons/line.me-48x48.png
+public/img/share-buttons/line.me.png
+public/img/share-buttons/linkedin-32x32.png
+public/img/share-buttons/linkedin-48x48.png
+public/img/share-buttons/linkedin.png
+public/img/share-buttons/mail-32x32.png
+public/img/share-buttons/mail-48x48.png
+public/img/share-buttons/mail.png
+public/img/share-buttons/plurk-48x48.png
+public/img/share-buttons/plurk.png
+public/img/share-buttons/skype-32x32.png
+public/img/share-buttons/skype-48x48.png
+public/img/share-buttons/skype.png
+public/img/share-buttons/twitter-24x24.png
+public/img/share-buttons/twitter-32x32.png
+public/img/share-buttons/twitter-48x48.png
+public/img/share-buttons/twitter.png
+public/img/share-buttons/yahoo-32x32.png
+public/img/share-buttons/yahoo-48x48.png
+public/img/share-buttons/yahoo.png
+public/js/site.js
+src/_site.php
+src/autoload.php
+src/const.php
+src/page.php
+src/site.php
+src/utils.php
+themes/default/autoload.php
+themes/default/partials/breadcrumb.php
+themes/default/partials/footer.php
+themes/default/partials/header.php
+themes/default/partials/navbar.php
+themes/default/partials/sideInfo.php
+themes/default/partials/toc.php
+themes/default/public/css/site.css
+themes/default/public/img/share-buttons/evernote-32x32.png
+themes/default/public/img/share-buttons/evernote-48x48.png
+themes/default/public/img/share-buttons/evernote.png
+themes/default/public/img/share-buttons/facebook-24x24.png
+themes/default/public/img/share-buttons/facebook-32x32.png
+themes/default/public/img/share-buttons/facebook-48x48.png
+themes/default/public/img/share-buttons/facebook.png
+themes/default/public/img/share-buttons/github-32x32.png
+themes/default/public/img/share-buttons/github-48x48.png
+themes/default/public/img/share-buttons/github.png
+themes/default/public/img/share-buttons/gmail-32x32.png
+themes/default/public/img/share-buttons/gmail-48x48.png
+themes/default/public/img/share-buttons/gmail.png
+themes/default/public/img/share-buttons/line.me-32x32.png
+themes/default/public/img/share-buttons/line.me-48x48.png
+themes/default/public/img/share-buttons/line.me.png
+themes/default/public/img/share-buttons/linkedin-32x32.png
+themes/default/public/img/share-buttons/linkedin-48x48.png
+themes/default/public/img/share-buttons/linkedin.png
+themes/default/public/img/share-buttons/mail-32x32.png
+themes/default/public/img/share-buttons/mail-48x48.png
+themes/default/public/img/share-buttons/mail.png
+themes/default/public/img/share-buttons/plurk-48x48.png
+themes/default/public/img/share-buttons/plurk.png
+themes/default/public/img/share-buttons/skype-32x32.png
+themes/default/public/img/share-buttons/skype-48x48.png
+themes/default/public/img/share-buttons/skype.png
+themes/default/public/img/share-buttons/twitter-24x24.png
+themes/default/public/img/share-buttons/twitter-32x32.png
+themes/default/public/img/share-buttons/twitter-48x48.png
+themes/default/public/img/share-buttons/twitter.png
+themes/default/public/img/share-buttons/yahoo-32x32.png
+themes/default/public/img/share-buttons/yahoo-48x48.png
+themes/default/public/img/share-buttons/yahoo.png
+themes/default/public/js/site.js
+themes/default/src/utils.php
+themes/default/theme/home.php
+themes/default/theme/post.php
+themes/default/theme/section.php
+vendor/autoload.php
+vendor/composer/ClassLoader.php
+vendor/composer/InstalledVersions.php
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_files.php
+vendor/composer/autoload_namespaces.php
+vendor/composer/autoload_psr4.php
+vendor/composer/autoload_real.php
+vendor/composer/autoload_static.php
+vendor/composer/installed.json
+vendor/composer/installed.php
+vendor/composer/platform_check.php
+vendor/erusev/parsedown-extra/.travis.yml
+vendor/erusev/parsedown-extra/LICENSE.txt
+vendor/erusev/parsedown-extra/ParsedownExtra.php
+vendor/erusev/parsedown-extra/phpunit.xml.dist
+vendor/erusev/parsedown-extra/test/ParsedownExtraTest.php
+vendor/erusev/parsedown-extra/test/TestParsedown.php
+vendor/erusev/parsedown-extra/test/data/abbreviation.html
+vendor/erusev/parsedown-extra/test/data/abbreviation.md
+vendor/erusev/parsedown-extra/test/data/compound_footnote.html
+vendor/erusev/parsedown-extra/test/data/compound_footnote.md
+vendor/erusev/parsedown-extra/test/data/definition_list.html
+vendor/erusev/parsedown-extra/test/data/definition_list.md
+vendor/erusev/parsedown-extra/test/data/footnote.html
+vendor/erusev/parsedown-extra/test/data/footnote.md
+vendor/erusev/parsedown-extra/test/data/markdown_inside_markup.html
+vendor/erusev/parsedown-extra/test/data/markdown_inside_markup.md
+vendor/erusev/parsedown-extra/test/data/special_attributes.html
+vendor/erusev/parsedown-extra/test/data/special_attributes.md
+vendor/erusev/parsedown/LICENSE.txt
+vendor/erusev/parsedown/Parsedown.php
+vendor/pagerange/metaparsedown/phpunit.xml
+vendor/pagerange/metaparsedown/src/MetaParsedown.php
+vendor/pagerange/metaparsedown/src/ParserNotFoundException.php
+vendor/pagerange/metaparsedown/src/Parsers/ParserInterface.php
+vendor/pagerange/metaparsedown/src/Parsers/YamlParser.php
+vendor/pagerange/metaparsedown/tests/MetaParsedownTest.php
+vendor/pagerange/metaparsedown/tests/YamlParserTest.php
+vendor/pagerange/metaparsedown/tests/fixtures/bad_frontmatter.md
+vendor/pagerange/metaparsedown/tests/fixtures/broken_frontmatter.md
+vendor/pagerange/metaparsedown/tests/fixtures/good_frontmatter.md
+vendor/pagerange/metaparsedown/tests/fixtures/no_meta.md
+vendor/symfony/deprecation-contracts/CHANGELOG.md
+vendor/symfony/deprecation-contracts/function.php
+vendor/symfony/polyfill-ctype/Ctype.php
+vendor/symfony/polyfill-ctype/bootstrap.php
+vendor/symfony/polyfill-ctype/bootstrap80.php
+vendor/symfony/yaml/CHANGELOG.md
+vendor/symfony/yaml/Dumper.php
+vendor/symfony/yaml/Escaper.php
+vendor/symfony/yaml/Inline.php
+vendor/symfony/yaml/Parser.php
+vendor/symfony/yaml/Unescaper.php
+vendor/symfony/yaml/Yaml.php
+vendor/symfony/yaml/Command/LintCommand.php
+vendor/symfony/yaml/Exception/DumpException.php
+vendor/symfony/yaml/Exception/ExceptionInterface.php
+vendor/symfony/yaml/Exception/ParseException.php
+vendor/symfony/yaml/Exception/RuntimeException.php
+vendor/symfony/yaml/Resources/bin/yaml-lint
+vendor/symfony/yaml/Tag/TaggedValue.php
+www/index.php
+
+sent 880.90K bytes  received 3.33K bytes  1.77M bytes/sec
+total size is 868.01K  speedup is 0.98

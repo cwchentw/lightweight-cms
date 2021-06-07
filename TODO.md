@@ -1,6 +1,5 @@
 # TODO
 
-* (Bug) Fix sitemap.xml
 * (Bug) Fix wrong titles on nested sections
 * (Feature) Order site posts
 * (Feature) Add front matter to HTML. See [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
