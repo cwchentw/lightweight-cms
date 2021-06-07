@@ -255,7 +255,7 @@ function readPost($page)
                     $href = $matches[1];
 
                     # Do nothing on local links.
-                    if (!str_starts_with($href, "http")) {
+                    if ("http" != substr($href, 0, 4)) {
                         return $matches[0];
                     }
 
