@@ -8,6 +8,20 @@ As a future owner of an awesome content website, you cannot wait to write posts.
 
 Markdowns represents a simple and lightweight markup language without programming logic. Any programming editor will suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among programmers and suitable for Markdown as well.
 
+## Save Posts
+
+Posts are saved in a content directory, which default is *content*. You may change the name of a content directory with **CONTENT_DIRECTORY** the variable in *setting.php*.
+
+## The Relationship between Posts and URLs
+
+Because mdcms is a flat file based content management system, the URLs in a mdcms site map to the files in a content directory directly. Here represents a pseudo URL:
+
+```
+https://example.com/section/post/
+```
+
+Such URL will map to either *content/section/post.md* or *content/section/post.html*.
+
 ## Write Markdown Posts
 
 The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by mdcms is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used on the online editor of GitHub.
@@ -44,3 +58,6 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
  
  Because mdcms renders web pages for you, you don't require to write everything from scratch.
  
+## Write Titles for Posts
+
+If you write a title in a post, the title will render on the rendered page. In contrary, if there is no title in a post, mdcms will generate one according to the file name of the post.
