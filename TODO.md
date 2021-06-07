@@ -5,7 +5,6 @@
 * (Feature) Add front matter to HTML. See [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * (Feature) Load plugins
 * (Project) Refactor all theme related stuffs into the theme directory
-* (Project) Rename current theme as *default*
 * (Theme) Open graphs
 * (Theme) Share buttons
 * (Theme) External link for SEO

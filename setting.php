@@ -24,7 +24,7 @@ define("SITE_AUTHOR", "mdcms");
 #  some modifications on the router of mdcms for such site.
 define("SITE_LANGUAGE", "en-US");
 # The theme of a mdcms-based site.
-define("SITE_THEME", "mdcmsDocumentationTheme");
+define("SITE_THEME", "default");
 # The text of the home page on breadcrumbs.
 define("SITE_BREADCRUMB_HOME", "Home");
 
