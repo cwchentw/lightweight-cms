@@ -8,24 +8,6 @@ $rootDirectory = __DIR__ . "/../..";
 require_once $rootDirectory . "/setting.php";
 
 
-# Check whether the page is the home page of a site.
-function isHome($page)
-{
-    return "/" == $page;
-}
-
-# Check whether the page is a section.
-#
-# The function doesn't distinguish between top sections
-#  and nested ones.
-function isSection($page)
-{
-    $rootDirectory = __DIR__ . "/../..";
-    $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $page;
-
-    return is_dir($path);
-}
-
 # Copy directories and files recursively.
 #
 # Call it within a `try ... catch ...` block because the task may fail.
