@@ -1,22 +1,21 @@
 <?php
-namespace mdcms\Theme;
 
 
 function loadHome()
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . "/..";
     require $rootDirectory . "/theme/home.php";
 }
 
 function loadSection()
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . "/..";
     require $rootDirectory . "/theme/section.php";
 }
 
 function loadPost()
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . "/..";
     require $rootDirectory . "/theme/post.php";
 }
 
@@ -24,7 +23,7 @@ function loadAssets($dest)
 {
     # Save the path of old working directory.
     $oldDirectory = getcwd();
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . "/..";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
