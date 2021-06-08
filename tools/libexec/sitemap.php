@@ -1,18 +1,21 @@
 <?php
 # The sitemap.xml generator of mdcms.
+
+# Get global setting.
 require_once __DIR__ . "/../../setting.php";
+
+# Load required library.
 require_once __DIR__ . "/../../" . LIBRARY_DIRECTORY . "/autoload.php";
 
 
 $xml = new DOMDocument("1.0", "UTF-8");
 
-# Pretty printing is not required because sitemap.xml is read by machines.
+# Pretty printing is not required because sitemap.xml is read by search engine bots.
 #$xml->formatOutput = true;
 
 $urlset = $xml->createElement("urlset");
 $urlset->setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
 
-# FIXME: No nested sections and posts.
 $links = getAllLinks("/");
 
 foreach ($links as $link) {
