@@ -65,9 +65,12 @@ This theme adapts Sass and Babel as the front end stacks. Assets need compilatio
 ```php
 function loadAssets($dest)
 {
+    # Save the path of old working directory.
     $oldDirectory = getcwd();
 
+    # Move to theme directory.
     if (!chdir(__DIR__)) {
+        # Move back to old working directory.
         chdir($oldDirectory);
         throw new Exception("Unable to change working directory to theme directory");
     }
@@ -75,6 +78,7 @@ function loadAssets($dest)
     # We don't update NPM packages because they are merely for build automation.
     if (!(file_exists("node_modules") && is_dir("node_modules"))) {
         if (!system("npm install")) {
+            # Move back to old working directory.
             chdir($oldDirectory);
             throw new Exception("Unable to install NPM packages");
         }
@@ -82,6 +86,7 @@ function loadAssets($dest)
 
     # Compile assets.
     if (!system("npm run prod")) {
+        # Move back to old working directory.
         chdir($oldDirectory);
         throw new Exception("Unable to compile assets");
     }
@@ -89,13 +94,17 @@ function loadAssets($dest)
     # Copy assets recursively.
     try {
         $publicDirectory = __DIR__ . "/public";
+        # xCopy is a utility function in mdcms.
+        #  It will copy directories and files recursively.
         xCopy($publicDirectory, $dest);
     }
     catch (Exception $e) {
+        # Move back to old working directory.
         chdir($oldDirectory);
         throw $e;
     }
 
+    # Move back to old working directory.
     chdir($oldDirectory);
 }
 ```
