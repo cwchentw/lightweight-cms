@@ -17,7 +17,9 @@ function isSection($page)
     return is_dir($path);
 }
 
-# TODO: Check it later.
+# Copy directories and files recursively.
+#
+# Call it within a `try ... catch ...` block because the task may fail.
 function xCopy($src, $dst)
 {
     if (!is_dir($dst)) {
