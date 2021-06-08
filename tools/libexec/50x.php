@@ -3,12 +3,19 @@
 #
 # A 50x.html should be static because some error occurs unexpectedly.
 #  In such case, a dynamic page won't render well.
+
+# Get the absolute path of a local mdcms.
 $rootDirectory = __DIR__ . "/../..";
+
+# Get global setting.
 require_once $rootDirectory . "/setting.php";
+
+# Load required libraries.
 require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
 require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
+# Create a post dynamically.
 $post = array();
 
 $post[MDCMS_POST_TITLE] = "Internal Server Error";
@@ -16,6 +23,7 @@ $post[MDCMS_POST_CONTENT] = "Some error occurs on our server";
 $post[MDCMS_POST_STATUS] = 500;
 $post[MDCMS_POST_WORD_COUNT] = 6;
 
+# Create a breadcrumb dynamically.
 $breadcrumb = array();
 
 {
@@ -35,6 +43,7 @@ $breadcrumb = array();
     array_push($breadcrumb, $link);
 }
 
+# Pass global variables to the layout of a post.
 $GLOBALS[MDCMS_POST] = $post;
 $GLOBALS["breadcrumb"] = $breadcrumb;
 $GLOBALS["file"] = __FILE__;
