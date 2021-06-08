@@ -1,8 +1,4 @@
 <?php
-# Currently, use use the same namespace as our private library.
-# Remove it later.
-namespace mdcms;
-
 # The router of mdcms.
 
 require_once __DIR__ . "/../setting.php";
@@ -37,25 +33,25 @@ if (isset($post) && 200 != $post["status"]) {
     \mdcms\Theme\loadPost();
 }
 # Render the home page.
-else if (isHome($loc)) {
-    $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_POSTS] = getPosts($loc);
+else if (\mdcms\isHome($loc)) {
+    $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \mdcms\getSections($loc);
+    $GLOBALS[MDCMS_POSTS] = \mdcms\getPosts($loc);
 
     \mdcms\Theme\loadHome();
 }
 # Render a section page.
-else if (isSection($loc)) {
-    $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTION] = getSection($loc);
-    $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
-    $GLOBALS[MDCMS_POSTS] = getPosts($loc);
+else if (\mdcms\isSection($loc)) {
+    $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_SECTION] = \mdcms\getSection($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \mdcms\getSections($loc);
+    $GLOBALS[MDCMS_POSTS] = \mdcms\getPosts($loc);
 
     \mdcms\Theme\loadSection();
 }
 # Render a post.
 else {
-    $post = readPost($loc);
+    $post = \mdcms\readPost($loc);
 
     # If HTTP status 404, generate a page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
@@ -93,7 +89,7 @@ else {
     # Load a normal page.
     else {
         $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
+        $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
     }
 
     \mdcms\Theme\loadPost();
