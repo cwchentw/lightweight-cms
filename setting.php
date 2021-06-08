@@ -15,7 +15,7 @@ define("SITE_DESCRIPTION", "A Markdown-based Dynamic Website Generator Powered b
 # The principal author of a site.
 #
 # If there are multiple authors in a site,
-#  set the author of a specific post in its metadata.
+#  set the author of a specific post in its front matter.
 define("SITE_AUTHOR", "mdcms");
 # The language of rendered HTML pages.
 #
@@ -23,7 +23,7 @@ define("SITE_AUTHOR", "mdcms");
 #  You may require two or more sets of layouts and
 #  some modifications on the router of mdcms for such site.
 define("SITE_LANGUAGE", "en-US");
-# The theme of a mdcms-based site.
+# The theme of a site.
 define("SITE_THEME", "default");
 # The text of the home page on breadcrumbs.
 define("SITE_BREADCRUMB_HOME", "Home");
@@ -31,8 +31,9 @@ define("SITE_BREADCRUMB_HOME", "Home");
 
 # The parameters of a site.
 
-# The upper limit of word count of excerpts.
-# It should be less than the upper limit of a tweet of Twitter.
+# The upper limit of the word count of a dynamically generated description.
+#
+# It should be less than the upper limit of that of a tweet of Twitter.
 define("EXCERPT_THRESHOLD", 140);
 
 
@@ -40,9 +41,9 @@ define("EXCERPT_THRESHOLD", 140);
 
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", true);
-# Enable ToC (Table of Contents).
+# Enable a ToC (Table of Contents) on the sidebar of posts.
 define("ENABLE_TOC", true);
-# Enable fixed sidebar.
+# Enable a fixed sidebar.
 define("ENABLE_FIXED_SIDEBAR", true);
 # Enable the support to hightlight.js
 # Currently, the theme of hightlight.js is hard coded.
