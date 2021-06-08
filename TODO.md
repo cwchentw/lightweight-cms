@@ -5,9 +5,10 @@
 * (Feature) Order site posts
 * (Feature) Add front matter to HTML. See [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * (Feature) Pagination on sections
-* (Feature) Redirecting links
+* (Feature) Redirecting link(s)
 * (Project) Rename **MDCMS_POST_EXCERPT** as **MOCMS_POST_DESCRIPTION**
 * (Project) Refactor PHP scripts in private library
+* (Project) Set a blacklist for plugin(s)
 * (Theme) Refactor the navbar by detecting social media accounts
 * (Theme) Open graphs
 * (Theme) Share buttons
