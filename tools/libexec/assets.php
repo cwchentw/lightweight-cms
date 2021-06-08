@@ -1,6 +1,5 @@
 <?php
 # An asset loader.
-#
 
 # Get the absolute path of a local mdcms.
 $rootDirectory = __DIR__ . "/../..";
