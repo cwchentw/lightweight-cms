@@ -1,6 +1,7 @@
 <?php
 
 # Get the root path of default theme of mdcms.
+global $rootDirectory;
 $rootDirectory = __DIR__ . "/..";
 
 
