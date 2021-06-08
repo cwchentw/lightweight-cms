@@ -1,10 +1,15 @@
 <?php
 namespace mdcms;
-# Pages related functions.
+# Pages related function(s).
 
+# Get the root path of mdcms.
 $rootDirectory = __DIR__ . "/../..";
+
+# Load third-party libraries.
 require_once $rootDirectory . "/vendor/autoload.php";
+# Get global setting.
 require_once $rootDirectory . "/setting.php";
+# Load a local library.
 require_once __DIR__ . "/const.php";
 
 

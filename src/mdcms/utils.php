@@ -2,6 +2,7 @@
 namespace mdcms;
 # Utility functions for mdcms.
 
+# Get the root path of mdcms.
 $rootDirectory = __DIR__ . "/../..";
 
 # Get global setting.
