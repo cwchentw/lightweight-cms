@@ -48,4 +48,4 @@ $GLOBALS[MDCMS_POST] = $post;
 $GLOBALS["breadcrumb"] = $breadcrumb;
 $GLOBALS["file"] = __FILE__;
 
-loadPost();
+\mdcms\Theme\loadPost();

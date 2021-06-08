@@ -34,7 +34,7 @@ if (isset($post) && 200 != $post["status"]) {
 
     # TODO: Create a mock breadcrumb.
 
-    loadPost();
+    \mdcms\Theme\loadPost();
 }
 # Render the home page.
 else if (isHome($loc)) {
@@ -42,7 +42,7 @@ else if (isHome($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
     $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
-    loadHome();
+    \mdcms\Theme\loadHome();
 }
 # Render a section page.
 else if (isSection($loc)) {
@@ -51,7 +51,7 @@ else if (isSection($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = getSections($loc);
     $GLOBALS[MDCMS_POSTS] = getPosts($loc);
 
-    loadSection();
+    \mdcms\Theme\loadSection();
 }
 # Render a post.
 else {
@@ -96,5 +96,5 @@ else {
         $GLOBALS["breadcrumb"] = getBreadcrumb($loc);
     }
 
-    loadPost();
+    \mdcms\Theme\loadPost();
 }
