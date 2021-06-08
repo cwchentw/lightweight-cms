@@ -3,6 +3,7 @@ namespace mdcms\Core;
 # Private functions used by site.php.
 
 # Get the root path of mdcms.
+global $rootDirectory;
 $rootDirectory = __DIR__ . "/../../..";
 
 function getPageFromPath($path)
