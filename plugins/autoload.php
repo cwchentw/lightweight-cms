@@ -1,8 +1,8 @@
 <?php
-# A home-made autoload.php script.
+# The main loader for plugin(s).
 
 
-# The path of the loader itself.
+# The path of the main loader itself.
 $pluginLoader = __DIR__ . "/" . __FILE__;
 
 # Scan all files in the directory.
@@ -18,6 +18,8 @@ foreach ($libraries as $library) {
         continue;
     }
 
+    # TODO: Filter out blacklisted plugin(s).
+
     $path = __DIR__ . "/" . $library;
 
     # Skip the script itself.
@@ -26,7 +28,10 @@ foreach ($libraries as $library) {
     }
 
     if (is_dir($path)) {
+        # autoload.php at the root path of a plugin is mandatory.
         $loader = $path . "/autoloader.php";
+
+        # Load the plugin.
         require_once $loader;
     }
     # Ignore everything else.
