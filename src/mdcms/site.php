@@ -334,6 +334,8 @@ function getAllLinks($page)
 
     # Add all valid directories and files into the queue.
     if (isHome($page)) {
+        $rootDirectory = __DIR__ . "/../..";
+
         # A home page itself is a special page.
         {
             $link = array();
@@ -342,15 +344,13 @@ function getAllLinks($page)
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
             # FIXME: Unable to get mtime.
-            $rootDirectory = __DIR__ . "/../..";
             $indexPath = $rootDirectory . "/" . CONTENT_DIRECTORY;
             $link[MDCMS_LINK_MTIME] = stat($indexPath)["mtime"];
 
             array_push($result, $link);
         }
 
-        $contentDirectory
-            = __DIR__ . "/../" . CONTENT_DIRECTORY;
+        $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
         $files = scandir($contentDirectory);
 
         foreach ($files as $file) {

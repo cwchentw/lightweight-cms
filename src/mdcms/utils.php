@@ -38,14 +38,14 @@ function xCopy($src, $dst)
         if (!mkdir($dst, 0755, true)) {
             # We may find a better exception for this event.
             # TODO: Refactor it later.
-            throw new Exception("Unable to create directory: " . $dst . "\n");
+            throw new \Exception("Unable to create directory: " . $dst . "\n");
         }
     }
 
     # Open the handle of destination directory.
     $dir = opendir($src);
     if (!$dir) {
-        throw new Exception("Unable to open directory: " . $src . "\n");
+        throw new \Exception("Unable to open directory: " . $src . "\n");
     }
 
     while(false !== ($file = readdir($dir)) ) {
@@ -70,7 +70,7 @@ function xCopy($src, $dst)
   
                     # We may find a better exception for this event.
                     # TODO: Refactor it later.
-                    throw new Exception("Unable to create file: " . $dst . "/" . $file . "\n");
+                    throw new \Exception("Unable to create file: " . $dst . "/" . $file . "\n");
                 }
             }
         }
