@@ -2,4 +2,4 @@
 # The main PHP script for a mdcms theme.
 
 
-require_once __DIR__ . "/src/loader.php";
+require_once __DIR__ . "/src/mdcms/Theme/loader.php";

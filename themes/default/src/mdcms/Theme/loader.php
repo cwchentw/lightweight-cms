@@ -4,24 +4,24 @@ namespace mdcms\Theme;
 
 function loadHome()
 {
-    require __DIR__ . "/../theme/" . "home.php";
+    require __DIR__ . "/../../../theme/" . "home.php";
 }
 
 function loadSection()
 {
-    require __DIR__ . "/../theme/" . "section.php";
+    require __DIR__ . "/../../../theme/" . "section.php";
 }
 
 function loadPost()
 {
-    require __DIR__ . "/../theme/" . "post.php";
+    require __DIR__ . "/../../../theme/" . "post.php";
 }
 
 function loadAssets($dest)
 {
     # Save the path of old working directory.
     $oldDirectory = getcwd();
-    $rootDirectory = __DIR__ . "/..";
+    $rootDirectory = __DIR__ . "/../../..";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
