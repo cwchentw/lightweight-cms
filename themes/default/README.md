@@ -18,7 +18,7 @@ The project structure of a mdcms theme is very liberal. The only mandatory file 
 
 There are only four mandatory functions in such *autoload.php*:
 
-* `loadHome()`: Load the layout of the home page
+* `loadHome()`: Load the layout of the home page of a site
 * `loadSection()`: Load the layout of sections
 * `loadPost()`: Load the layout of posts
 * `loadAssets($dest)`: Load assets
