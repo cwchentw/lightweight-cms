@@ -1,21 +1,24 @@
 <?php
 
+# Get the root path of default theme of mdcms.
+$rootDirectory = __DIR__ . "/..";
+
 
 function loadHome()
 {
-    $rootDirectory = __DIR__ . "/..";
+    global $rootDirectory;
     require $rootDirectory . "/theme/home.php";
 }
 
 function loadSection()
 {
-    $rootDirectory = __DIR__ . "/..";
+    global $rootDirectory;
     require $rootDirectory . "/theme/section.php";
 }
 
 function loadPost()
 {
-    $rootDirectory = __DIR__ . "/..";
+    global $rootDirectory;
     require $rootDirectory . "/theme/post.php";
 }
 
@@ -23,7 +26,8 @@ function loadAssets($dest)
 {
     # Save the path of old working directory.
     $oldDirectory = getcwd();
-    $rootDirectory = __DIR__ . "/..";
+
+    global $rootDirectory;
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
