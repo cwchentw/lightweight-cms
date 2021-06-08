@@ -4,17 +4,20 @@ namespace mdcms\Theme;
 
 function loadHome()
 {
-    require __DIR__ . "/../../../theme/" . "home.php";
+    $rootDirectory = __DIR__ . "/../../..";
+    require $rootDirectory . "/theme/home.php";
 }
 
 function loadSection()
 {
-    require __DIR__ . "/../../../theme/" . "section.php";
+    $rootDirectory = __DIR__ . "/../../..";
+    require $rootDirectory . "/theme/section.php";
 }
 
 function loadPost()
 {
-    require __DIR__ . "/../../../theme/" . "post.php";
+    $rootDirectory = __DIR__ . "/../../..";
+    require $rootDirectory . "/theme/post.php";
 }
 
 function loadAssets($dest)
