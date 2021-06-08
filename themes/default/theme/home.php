@@ -45,6 +45,16 @@ $status = 200;  # HTTP 200 OK.
                     ?>
 
                     <?php
+                    # Show a fallback message if no any subsection and post.
+                    if ((!isset($sections) && !isset($posts))
+                        || ((isset($sections) && 0 == count($sections))
+                            && (isset($posts) && 0 == count($posts))))
+                    {
+                        echo "<p>No content available yet.</p>";
+                    }
+                    ?>
+
+                    <?php
                     # Add post(s) if any exists.
                     if (isset($posts) && count($posts) > 0) {
                         echo "<h2>Articles</h2>";

@@ -53,7 +53,6 @@ $posts = $GLOBALS[MDCMS_POSTS];
 
                     <?php
                     # Show a fallback message if no any subsection and post.
-                    # TODO: Test the code.
                     if ((!isset($sections) && !isset($posts))
                         || ((isset($sections) && 0 == count($sections))
                             && (isset($posts) && 0 == count($posts))))
