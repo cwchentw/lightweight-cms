@@ -1,12 +1,14 @@
 <?php
 # The manifest.json generator of mdcms.
+
+# Load global setting.
 require_once __DIR__ . "/../../setting.php";
 
 
-/* Adjust these parameters as needed. */
+# Adjust these parameters as needed.
 $backgroundColor = "#6C757D";
 $themeColor = "#6C757D";
-/* The text of some languages displays right-to-left. */
+# The text of some languages displays right-to-left.
 $languageDirection = "ltr";
 $image = "logo";
 $imageExtension = ".png";
