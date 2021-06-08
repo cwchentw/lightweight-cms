@@ -25,7 +25,7 @@ There are only four mandatory functions in such *autoload.php*:
 
 ### `loadHome()` Function
 
-Here shows a sample code:
+The function doesn't accept any parameter. Theme creators are responsible to load the layout of the home page of a site properly. Here shows a sample code:
 
 ```php
 function loadHome()
@@ -34,11 +34,9 @@ function loadHome()
 }
 ```
 
-mdcms doesn't know your project structure. You are responsible to load a layout correctly.
-
 ### `loadSection()` Function
 
-Here shows a sample code:
+In a similar fashion, the function doesn't accept any parameter. Here shows a sample code:
 
 ```php
 function loadSection()
