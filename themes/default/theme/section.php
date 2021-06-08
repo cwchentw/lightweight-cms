@@ -43,10 +43,22 @@ $posts = $GLOBALS[MDCMS_POSTS];
                     <?php includePartials("breadcrumb.php"); ?>
 
                     <?php
+                    # Show an optional section content if it exists.
                     if (isset($section[MDCMS_SECTION_CONTENT])
                         && "" != $section[MDCMS_SECTION_CONTENT])
                     {
                         echo $section[MDCMS_SECTION_CONTENT];
+                    }
+                    ?>
+
+                    <?php
+                    # Show a fallback message if no any subsection and post.
+                    # TODO: Test the code.
+                    if ((!isset($sections) && !isset($posts))
+                        || ((isset($sections) && 0 == count($sections))
+                            && (isset($posts) && 0 == count($posts))))
+                    {
+                        echo "<p>No content available yet.</p>";
                     }
                     ?>
 
