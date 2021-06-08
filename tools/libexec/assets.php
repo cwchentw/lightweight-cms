@@ -15,7 +15,7 @@ require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autol
 
 try {
     $publicDirectory = $rootDirectory . "/public";
-    \mdcms\Theme\loadAssets($publicDirectory);
+    loadAssets($publicDirectory);
 }
 catch (Exception $e) {
     echo $e->getMessage() . "\n";
