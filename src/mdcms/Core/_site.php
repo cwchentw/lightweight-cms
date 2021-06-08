@@ -2,10 +2,12 @@
 namespace mdcms\Core;
 # Private functions used by site.php.
 
+# Get the root path of mdcms.
+$rootDirectory = __DIR__ . "/../../..";
 
 function getPageFromPath($path)
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    global $rootDirectory;
     $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
     $page = substr($path, strlen($contentDirectory));
 
@@ -25,7 +27,7 @@ function getPageFromPath($path)
 /* TODO: Test the code. */
 function getHTMLPathFromPage($page)
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    global $rootDirectory;
     $path = $rootDirectory
         . "/" . CONTENT_DIRECTORY
         . "/" . $page;
@@ -77,7 +79,7 @@ function readMarkdownLink($page)
 
     $result[MDCMS_LINK_PATH] = $page;
 
-    $rootDirectory = __DIR__ . "/../../..";
+    global $rootDirectory;
     $path = $rootDirectory
         . "/" . CONTENT_DIRECTORY
         . "/" . $page;
@@ -117,7 +119,7 @@ function readDirectoryLink($page)
 
     $result[MDCMS_LINK_PATH] = $page;
 
-    $rootDirectory = __DIR__ . "/../../..";
+    global $rootDirectory;
     $path = $rootDirectory
         . "/" . CONTENT_DIRECTORY
         . "/" . $page;
