@@ -54,7 +54,7 @@ function loadAssets($dest)
         $publicDirectory = $rootDirectory . "/public";
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.
-        \mdcms\xCopy($publicDirectory, $dest);
+        \mdcms\Core\xCopy($publicDirectory, $dest);
     }
     catch (Exception $e) {
         # Move back to old working directory.

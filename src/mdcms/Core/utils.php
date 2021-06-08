@@ -1,9 +1,9 @@
 <?php
-namespace mdcms;
+namespace mdcms\Core;
 # Utility functions for mdcms.
 
 # Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../..";
+$rootDirectory = __DIR__ . "/../../..";
 
 # Get global setting.
 require_once $rootDirectory . "/setting.php";

@@ -1,9 +1,9 @@
 <?php
-namespace mdcms;
+namespace mdcms\Core;
 # Site related functions.
 
 # Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../..";
+$rootDirectory = __DIR__ . "/../../..";
 
 # Load third-party libraries.
 require_once $rootDirectory . "/vendor/autoload.php";
@@ -25,7 +25,7 @@ function getSections($page)
 {
     $result = array();
 
-    $rootDirectory = __DIR__ . "/../..";
+    $rootDirectory = __DIR__ . "/../../..";
     $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
@@ -115,7 +115,7 @@ function getPosts($page)
 {
     $result = array();
 
-    $rootDirectory = __DIR__ . "/../..";
+    $rootDirectory = __DIR__ . "/../../..";
     $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
@@ -210,7 +210,7 @@ function getBreadcrumb($page)
     for ($i = 0; $i < $len; ++$i) {
         $prev = $result[$i][MDCMS_LINK_PATH];
 
-        $rootDirectory = __DIR__ . "/../..";
+        $rootDirectory = __DIR__ . "/../../..";
         $path = $rootDirectory
             . "/" . CONTENT_DIRECTORY
             . $prev . $arr[$i];
@@ -299,7 +299,7 @@ function getAllLinks($page)
 
     # Add all valid directories and files into the queue.
     if (isHome($page)) {
-        $rootDirectory = __DIR__ . "/../..";
+        $rootDirectory = __DIR__ . "/../../..";
 
         # A home page itself is a special page.
         {
@@ -351,7 +351,7 @@ function getAllLinks($page)
         $currentPage = array_shift($pages);
 
         /* We cannot tell what `$page` is by its path. */
-        $rootDirectory = __DIR__ . "/../..";
+        $rootDirectory = __DIR__ . "/../../..";
         $path = $rootDirectory
             . "/" . CONTENT_DIRECTORY
             . $currentPage;

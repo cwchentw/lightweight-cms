@@ -1,5 +1,5 @@
 <?php
-namespace mdcms;
+namespace mdcms\Core;
 # The constants used in mdcms.
 #
 # Unlike the constants in setting.php, it won't help much to

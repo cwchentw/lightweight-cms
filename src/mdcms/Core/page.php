@@ -1,9 +1,9 @@
 <?php
-namespace mdcms;
+namespace mdcms\Core;
 # Pages related function(s).
 
 # Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../..";
+$rootDirectory = __DIR__ . "/../../..";
 
 # Load third-party libraries.
 require_once $rootDirectory . "/vendor/autoload.php";
@@ -25,7 +25,7 @@ function isHome($page)
 #  and nested ones.
 function isSection($page)
 {
-    $rootDirectory = __DIR__ . "/../..";
+    $rootDirectory = __DIR__ . "/../../..";
     $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $page;
 
     return is_dir($path);
@@ -77,7 +77,7 @@ function getPath($page, $ext)
 
     $arr = parsePage($page);
     $len = count($arr);
-    $rootDirectory = __DIR__ . "/../..";
+    $rootDirectory = __DIR__ . "/../../..";
     if (0 == $len) {
         # Pass.
     }

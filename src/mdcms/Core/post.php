@@ -1,9 +1,9 @@
 <?php
-namespace mdcms;
+namespace mdcms\Core;
 # Post related function(s).
 
 # Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../..";
+$rootDirectory = __DIR__ . "/../../..";
 
 # Load third-party libraries.
 require_once $rootDirectory . "/vendor/autoload.php";

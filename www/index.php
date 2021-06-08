@@ -33,25 +33,25 @@ if (isset($post) && 200 != $post["status"]) {
     \mdcms\Theme\loadPost();
 }
 # Render the home page.
-else if (\mdcms\isHome($loc)) {
-    $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\getSections($loc);
-    $GLOBALS[MDCMS_POSTS] = \mdcms\getPosts($loc);
+else if (\mdcms\Core\isHome($loc)) {
+    $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
 
     \mdcms\Theme\loadHome();
 }
 # Render a section page.
-else if (\mdcms\isSection($loc)) {
-    $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTION] = \mdcms\getSection($loc);
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\getSections($loc);
-    $GLOBALS[MDCMS_POSTS] = \mdcms\getPosts($loc);
+else if (\mdcms\Core\isSection($loc)) {
+    $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_SECTION] = \mdcms\Core\getSection($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
 
     \mdcms\Theme\loadSection();
 }
 # Render a post.
 else {
-    $post = \mdcms\readPost($loc);
+    $post = \mdcms\Core\readPost($loc);
 
     # If HTTP status 404, generate a page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
@@ -89,7 +89,7 @@ else {
     # Load a normal page.
     else {
         $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS["breadcrumb"] = \mdcms\getBreadcrumb($loc);
+        $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
     }
 
     \mdcms\Theme\loadPost();
