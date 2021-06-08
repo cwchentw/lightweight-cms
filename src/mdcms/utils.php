@@ -1,8 +1,11 @@
 <?php
+namespace mdcms;
 # Utility functions for mdcms.
 
+$rootDirectory = __DIR__ . "/../..";
+
 # Get global setting.
-require_once __DIR__ . "/../setting.php";
+require_once $rootDirectory . "/setting.php";
 
 
 # Check whether the page is the home page of a site.
@@ -17,7 +20,8 @@ function isHome($page)
 #  and nested ones.
 function isSection($page)
 {
-    $path = __DIR__ . "/../" . CONTENT_DIRECTORY . "/" . $page;
+    $rootDirectory = __DIR__ . "/../..";
+    $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $page;
 
     return is_dir($path);
 }

@@ -1,7 +1,10 @@
 <?php
+namespace mdcms;
 # Pages related functions.
-require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../setting.php";
+
+$rootDirectory = __DIR__ . "/../..";
+require_once $rootDirectory . "/vendor/autoload.php";
+require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 
 use Pagerange\Markdown\MetaParsedown;
@@ -53,11 +56,12 @@ function getPath($page, $ext)
 
     $arr = parsePage($page);
     $len = count($arr);
+    $rootDirectory = __DIR__ . "/../..";
     if (0 == $len) {
         # Pass.
     }
     else if (1 == $len) {
-        $result = __DIR__ . "/../"
+        $result = $rootDirectory . "/"
             . CONTENT_DIRECTORY . "/"
             . $arr[0] . $ext;
     }
@@ -65,7 +69,7 @@ function getPath($page, $ext)
         $file = array_pop($arr);
         $directory = join("/", $arr);
 
-        $result = __DIR__ . "/../"
+        $result = $rootDirectory . "/"
             . CONTENT_DIRECTORY . "/"
             . $directory . "/"
             . $file . $ext;
@@ -181,7 +185,7 @@ function readPost($page)
         }
 
         # Convert the Markdown document into a HTML document.
-        $parser = new Parsedown();
+        $parser = new \Parsedown();
         $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
 
         # TODO: Test the code.

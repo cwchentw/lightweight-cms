@@ -1,7 +1,11 @@
 <?php
+namespace mdcms;
 # Site related functions.
-require_once __DIR__ . "/../vendor/autoload.php";
-require_once __DIR__ . "/../setting.php";
+
+$rootDirectory = __DIR__ . "/../..";
+
+require_once $rootDirectory . "/vendor/autoload.php";
+require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/utils.php";
 require_once __DIR__ . "/page.php";
@@ -18,7 +22,8 @@ function getSections($page)
 {
     $result = array();
 
-    $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
+    $rootDirectory = __DIR__ . "/../..";
+    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -27,7 +32,7 @@ function getSections($page)
             continue;
         }
 
-        $path = $contentDirectory . $file;
+        $path = $contentDirectory . "/" . $file;
         if (is_dir($path)) {
             $link = array();
 
@@ -107,7 +112,8 @@ function getPosts($page)
 {
     $result = array();
 
-    $directory = __DIR__ . "/../" . CONTENT_DIRECTORY . $page;
+    $rootDirectory = __DIR__ . "/../..";
+    $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -189,7 +195,8 @@ function getSection($page)
     $result[MDCMS_SECTION_CONTENT] = "";
     $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
-    $indexPage = __DIR__ . "/../" . CONTENT_DIRECTORY
+    $rootDirectory = __DIR__ . "/../..";
+    $indexPage = $rootDirectory . "/" . CONTENT_DIRECTORY
         . "/" . $page . SECTION_INDEX;
 
     # If a section index exists, extract data from it.
@@ -203,7 +210,7 @@ function getSection($page)
 
         $c = preg_replace("/^# (.+)/", "", $c);
 
-        $parser = new Parsedown();
+        $parser = new \Parsedown();
         $result[MDCMS_SECTION_CONTENT] = $parser->text($c);
     }
     # Otherwise, extract data from the directory name.
@@ -238,15 +245,16 @@ function getBreadcrumb($page)
     for ($i = 0; $i < $len; ++$i) {
         $prev = $result[$i][MDCMS_LINK_PATH];
 
-        $path = __DIR__
-            . "/../" . CONTENT_DIRECTORY
+        $rootDirectory = __DIR__ . "/../..";
+        $path = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
             . $prev . $arr[$i];
-        $htmlPath = __DIR__
-            . "/../" . CONTENT_DIRECTORY
+        $htmlPath = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
             . $prev
             . $arr[$i] . HTML_FILE_EXTENSION;
-        $markdownPath = __DIR__
-            . "/../" . CONTENT_DIRECTORY
+        $markdownPath = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
             . $prev
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
 
@@ -334,7 +342,8 @@ function getAllLinks($page)
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
             # FIXME: Unable to get mtime.
-            $indexPath = __DIR__ . "/../" . CONTENT_DIRECTORY;
+            $rootDirectory = __DIR__ . "/../..";
+            $indexPath = $rootDirectory . "/" . CONTENT_DIRECTORY;
             $link[MDCMS_LINK_MTIME] = stat($indexPath)["mtime"];
 
             array_push($result, $link);
@@ -377,8 +386,9 @@ function getAllLinks($page)
         $currentPage = array_shift($pages);
 
         /* We cannot tell what `$page` is by its path. */
-        $path = __DIR__
-            . "/../" . CONTENT_DIRECTORY
+        $rootDirectory = __DIR__ . "/../..";
+        $path = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
             . $currentPage;
         $dirpath = $path;
         if ("/" != substr($dirpath, strlen($dirpath)-1, 1)) {

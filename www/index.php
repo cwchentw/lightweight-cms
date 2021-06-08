@@ -1,12 +1,17 @@
 <?php
+# Currently, use use the same namespace as our private library.
+# Remove it later.
+namespace mdcms;
+
 # The router of mdcms.
 
 require_once __DIR__ . "/../setting.php";
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
 require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
-# TODO: Load Xdebug on a development environment.
 
+
+# TODO: Load Xdebug on a development environment.
 
 # TODO: Check essential variables on a development environment.
 

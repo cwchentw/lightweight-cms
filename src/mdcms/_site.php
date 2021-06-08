@@ -1,10 +1,12 @@
 <?php
+namespace mdcms;
 # Private functions used by site.php.
 
 
 function getPageFromPath($path)
 {
-    $contentDirectory = __DIR__ . "/../" . CONTENT_DIRECTORY;
+    $rootDirectory = __DIR__ . "/../..";
+    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
     $page = substr($path, strlen($contentDirectory));
 
     $fileParts = pathinfo($page);
@@ -23,8 +25,9 @@ function getPageFromPath($path)
 /* TODO: Test the code. */
 function getHTMLPathFromPage($page)
 {
-    $path = __DIR__
-        . "/../" . CONTENT_DIRECTORY
+    $rootDirectory = __DIR__ . "/../..";
+    $path = $rootDirectory
+        . "/" . CONTENT_DIRECTORY
         . "/" . $page;
 
     /* Remove a trailing "/" */
@@ -74,8 +77,9 @@ function readMarkdownLink($page)
 
     $result[MDCMS_LINK_PATH] = $page;
 
-    $path = __DIR__
-        . "/../" . CONTENT_DIRECTORY
+    $rootDirectory = __DIR__ . "/../..";
+    $path = $rootDirectory
+        . "/" . CONTENT_DIRECTORY
         . "/" . $page;
 
     /* Remove a trailing "/" */
@@ -113,8 +117,9 @@ function readDirectoryLink($page)
 
     $result[MDCMS_LINK_PATH] = $page;
 
-    $path = __DIR__
-        . "/../" . CONTENT_DIRECTORY
+    $rootDirectory = __DIR__ . "/../..";
+    $path = $rootDirectory
+        . "/" . CONTENT_DIRECTORY
         . "/" . $page;
     $indexPath = $path . "/" . SECTION_INDEX;
 
