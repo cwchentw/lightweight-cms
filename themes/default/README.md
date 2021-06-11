@@ -68,11 +68,14 @@ function loadAssets($dest)
     # Save the path of old working directory.
     $oldDirectory = getcwd();
 
+    global $rootDirectory;
+
     # Move to theme directory.
-    if (!chdir(__DIR__)) {
+    if (!chdir($rootDirectory)) {
         # Move back to old working directory.
         chdir($oldDirectory);
-        throw new Exception("Unable to change working directory to theme directory");
+
+        throw new \Exception("Unable to change working directory to theme directory");
     }
 
     # We don't update NPM packages because they are merely for build automation.
@@ -80,27 +83,34 @@ function loadAssets($dest)
         if (!system("npm install")) {
             # Move back to old working directory.
             chdir($oldDirectory);
-            throw new Exception("Unable to install NPM packages");
+
+            throw new \Exception("Unable to install NPM packages");
         }
     }
 
     # Compile assets.
+    #
+    # Not every theme invoke the same command to compile assets.
+    #  Modify it according to your own situation.
     if (!system("npm run prod")) {
         # Move back to old working directory.
         chdir($oldDirectory);
-        throw new Exception("Unable to compile assets");
+
+        throw new \Exception("Unable to compile assets");
     }
 
     # Copy assets recursively.
     try {
-        $publicDirectory = __DIR__ . "/public";
+        $publicDirectory = $rootDirectory . "/public";
+
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.
-        xCopy($publicDirectory, $dest);
+        \mdcms\Core\xCopy($publicDirectory, $dest);
     }
     catch (Exception $e) {
         # Move back to old working directory.
         chdir($oldDirectory);
+
         throw $e;
     }
 
