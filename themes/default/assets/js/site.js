@@ -45,7 +45,11 @@ function fixedSidebar () {
             return navigator.userAgent.match(/IEMobile/i);
         },
         any: function any() {
-            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+            return isMobile.Android()
+                || isMobile.BlackBerry()
+                || isMobile.iOS()
+                || isMobile.Opera()
+                || isMobile.Windows();
         }
     };
 
@@ -53,19 +57,29 @@ function fixedSidebar () {
     if (isMobile.any())
         return;
 
-    /* Fixed sidebar on large screens. */
     var windowWidth = window.outerWidth || document.body.clientWidth;
-    var fixedSidebar = document.getElementById("fixed-sidebar");
 
-    if (windowWidth >= 992)
+    var fixedSidebar = document.getElementById("fixed-sidebar");
+    if (!fixedSidebar)
+        return;
+
+    /* Sizes in Bootstrap. */
+    let pageWidthMedium = 992;
+
+    /* Enable fixed sidebars on large screens. */
+    if (windowWidth >= pageWidthMedium)
     {
-        /* TODO: Check the code. */
         let width;
+        /* The width here is arbitrary. Because the maximal width
+            of our containers is 1440. If you set a different maximal
+            width for containers, it may not work properly. */
         if (windowWidth > 1440) {
             let w = 1440;
             let dw = Math.floor((windowWidth - w) / 2);
             width = Math.floor(dw + w * 9 / 12);
         }
+        /* The width here is arbitrary. We set it by our previous
+            experience. Change it if it doesn't work for your. */
         else if (windowWidth >= 1140) {
             width = Math.floor(windowWidth * 9 / 12);
         }
@@ -75,19 +89,29 @@ function fixedSidebar () {
 
         fixedSidebar.style.position = "fixed";
 
+        /* The height of the top navbar. */
         let navbarHeight = document.getElementById("navbarSupportedContent").clientHeight
+        /* The height of the <h1> title of a page. */
         let headerHeight = document.getElementsByTagName("h1")[0].clientHeight;
 
-        if (window.scrollY > navbarHeight + headerHeight)
+        /* The sidebar scrolls below both the navbar and the <h1> title. */
+        if (window.scrollY > navbarHeight + headerHeight) {
             fixedSidebar.style.top = "0";
-        else if (window.scrollY > navbarHeight)
+        }
+        /* The sidebar scrolls below the navbar but above the <h1> title. */
+        else if (window.scrollY > navbarHeight) {
             fixedSidebar.style.top = `${headerHeight}pt`;
-        else
+        }
+        else {
             fixedSidebar.style.top = `${navbarHeight + headerHeight}pt`;
+        }
 
         fixedSidebar.style.left = `${width}`.toString() + "px";
+
+        /* Set an high z index arbitrarily. */
         fixedSidebar.style.zIndex = "100000";
     }
+    /* Otherwise, don't set fixed sidebars. */
     else {
         fixedSidebar.style.position = "relative";
         fixedSidebar.style.top = "";
