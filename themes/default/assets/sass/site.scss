@@ -1,6 +1,9 @@
-/* Common English fonts. */
-$sansSerif: Arial, Helvetica, sans-serif;
+/* We utilize safe English fonts to save page loading time. */
+/* Fonts for titles. */
 $serif: "Times New Roman", Times, serif;
+/* Fonts for everywhere except titles and code. */
+$sans-serif: Arial, Helvetica, sans-serif;
+/* Fonts for code. */
 $monospace: Consolas, "Lucida Console", Monaco, monospace;
 
 $large-screen-width: 1000pt;
@@ -66,7 +69,7 @@ h2 {
 p,
 div {
     font-size: 17pt;
-    font-family: $sansSerif;
+    font-family: $sans-serif;
 }
 
 @media screen and (max-width: $phone-max-width) {
