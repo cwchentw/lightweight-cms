@@ -7,7 +7,7 @@ $sans-serif: Arial, Helvetica, sans-serif;
 $monospace: Consolas, "Lucida Console", Monaco, monospace;
 
 $large-screen-width: 1000pt;
-$phone-max-width: 550pt;
+$phone-width: 550pt;
 
 html {
     height: 100%;
@@ -72,7 +72,7 @@ div {
     font-family: $sans-serif;
 }
 
-@media screen and (max-width: $phone-max-width) {
+@media screen and (max-width: $phone-width) {
     p,
     div {
         font-size: 16pt;
@@ -128,7 +128,7 @@ code {
     }
 }
 
-@media screen and (max-width: $phone-max-width) {
+@media screen and (max-width: $phone-width) {
     #side-info, #table-of-contents {
         display: none;
     }
