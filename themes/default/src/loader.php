@@ -1,4 +1,6 @@
 <?php
+# Don't add any namespace in a mdcms theme. Instead,
+#  let mdcms load global functions.
 
 # Get the root path of default theme of mdcms.
 global $rootDirectory;
@@ -34,6 +36,7 @@ function loadAssets($dest)
     if (!chdir($rootDirectory)) {
         # Move back to old working directory.
         chdir($oldDirectory);
+
         throw new \Exception("Unable to change working directory to theme directory");
     }
 
@@ -42,20 +45,26 @@ function loadAssets($dest)
         if (!system("npm install")) {
             # Move back to old working directory.
             chdir($oldDirectory);
+
             throw new \Exception("Unable to install NPM packages");
         }
     }
 
     # Compile assets.
+    #
+    # Not every theme invoke the same command to compile assets.
+    #  Modify it according to your own situation.
     if (!system("npm run prod")) {
         # Move back to old working directory.
         chdir($oldDirectory);
+
         throw new \Exception("Unable to compile assets");
     }
 
     # Copy assets recursively.
     try {
         $publicDirectory = $rootDirectory . "/public";
+
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.
         \mdcms\Core\xCopy($publicDirectory, $dest);
@@ -63,6 +72,7 @@ function loadAssets($dest)
     catch (Exception $e) {
         # Move back to old working directory.
         chdir($oldDirectory);
+
         throw $e;
     }
 
