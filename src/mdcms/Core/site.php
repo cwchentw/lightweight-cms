@@ -1,5 +1,6 @@
 <?php
 namespace mdcms\Core;
+
 # Site related functions.
 
 # Get the root path of mdcms.
@@ -20,7 +21,7 @@ use Pagerange\Markdown\MetaParsedown;
 
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
-#  like "/section-title/article-title/".
+#  like "/section-title/post-title/".
 function getSections($page)
 {
     $result = array();
@@ -290,7 +291,6 @@ function getBreadcrumb($page)
     return $result;
 }
 
-/* FIXME: Some links are not shown correctly. */
 function getAllLinks($page)
 {
     $result = array();
@@ -301,7 +301,7 @@ function getAllLinks($page)
     if (isHome($page)) {
         $rootDirectory = __DIR__ . "/../../..";
 
-        # A home page itself is a special page.
+        # The home page itself is a special page.
         {
             $link = array();
 
