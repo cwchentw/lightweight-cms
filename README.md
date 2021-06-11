@@ -18,9 +18,10 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 
 * Production
   * GNU/Linux
+  * A web server like Apache or Nginx
   * PHP 7.2 or above
-  * FastCGI Process Manager (FPM)
-  * mbstring extension
+  * FastCGI Process Manager (FPM) of PHP
+  * mbstring extension of PHP
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
   * [MetaParsedown](https://github.com/pagerange/metaparsedown)
 * Development
