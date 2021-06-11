@@ -60,7 +60,7 @@ function loadPost()
 
 This function accepts one parameter, which presents a destination path to copy assets.
 
-This theme adapts Sass and Babel as the front end stacks. Assets need compilation before deploying to a production environment. In this sample code, we call NPM to compile assets and copy their outputs recursively to a destination set by mdcms:
+This theme adapts Sass and Babel as the front end stacks. Such assets need compilation before deploying to a production environment. In this sample code, we call NPM to compile assets and copy their outputs recursively to a destination directory set by mdcms:
 
 ```php
 function loadAssets($dest)
