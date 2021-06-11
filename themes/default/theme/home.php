@@ -10,9 +10,9 @@ require_once __DIR__ . "/../src/utils.php";
 # Take global data.
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $posts = $GLOBALS[MDCMS_POSTS];
-$status = 200;  # HTTP 200 OK.
+# The HTTP status of the home page is always HTTP 200 OK.
+$status = 200;
 ?>
-
 
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
@@ -32,7 +32,7 @@ $status = 200;  # HTTP 200 OK.
             </div>
 
             <div class="row">
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php includePartials("breadcrumb.php"); ?>
 
@@ -45,7 +45,7 @@ $status = 200;  # HTTP 200 OK.
                     ?>
 
                     <?php
-                    # Show a fallback message if no any subsection and post.
+                    # Show a fallback message if no any section and post.
                     if ((!isset($sections) && !isset($posts))
                         || ((isset($sections) && 0 == count($sections))
                             && (isset($posts) && 0 == count($posts))))
@@ -93,7 +93,7 @@ $status = 200;  # HTTP 200 OK.
                     ?>                    
                 </div>
 
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php includePartials("sideInfo.php"); ?>
@@ -101,7 +101,10 @@ $status = 200;  # HTTP 200 OK.
                 </div>
             </div>
         </div>
-        
+
+        <!-- Currently, there is no footer in this theme.
+              Our footer is merely for script loading.
+              We may change it later. -->
         <?php includePartials("footer.php"); ?>
     </body>
 </html>
