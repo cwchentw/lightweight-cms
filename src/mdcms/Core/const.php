@@ -13,6 +13,7 @@ define("MDCMS_SECTIONS", "sections");
 define("MDCMS_POSTS", "posts");
 define("MDCMS_SECTION", "section");
 define("MDCMS_POST", "post");
+define("MDCMS_BREADCRUMB", "breadcrumb");
 
 
 # Section related constants.
