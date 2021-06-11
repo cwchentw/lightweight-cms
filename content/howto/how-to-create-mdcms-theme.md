@@ -132,6 +132,8 @@ There are three global variables in this layout:
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
 * `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
 
+There are two variables in ...
+
 ### Layout for Sections
 
 [the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
