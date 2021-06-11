@@ -8,7 +8,7 @@ $pluginLoader = __DIR__ . "/" . __FILE__;
 # Scan all files in the directory.
 $libraries = scandir(__DIR__);
 
-# We only scan the first layer of this directory.
+# We only scan top layer of this directory.
 foreach ($libraries as $library) {
     # Skip private directories and files.
     if ("." == substr($library, 0, 1)) {
@@ -29,7 +29,7 @@ foreach ($libraries as $library) {
 
     if (is_dir($path)) {
         # autoload.php at the root path of a plugin is mandatory.
-        $loader = $path . "/autoloader.php";
+        $loader = $path . "/autoload.php";
 
         # Load the plugin.
         require_once $loader;
