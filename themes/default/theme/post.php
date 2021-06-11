@@ -11,7 +11,6 @@ require_once __DIR__ . "/../src/utils.php";
 $post = $GLOBALS[MDCMS_POST];
 ?>
 
-
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
@@ -31,13 +30,14 @@ $post = $GLOBALS[MDCMS_POST];
             </div>
 
             <div class="row">
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php includePartials("breadcrumb.php"); ?>
 
+                    <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.
-                        It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 200); ?> minute(s) to read.
+                        It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 300); ?> minute(s) to read.
                     </div>
 
                     <main>
@@ -45,7 +45,7 @@ $post = $GLOBALS[MDCMS_POST];
                     </main>
                 </div>
 
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php
@@ -61,6 +61,9 @@ $post = $GLOBALS[MDCMS_POST];
             </div>
         </div>
 
+        <!-- Currently, there is no footer in this theme.
+              Our footer is merely for script loading.
+              We may change it later. -->
         <?php includePartials("footer.php"); ?>
     </body>
 </html>
