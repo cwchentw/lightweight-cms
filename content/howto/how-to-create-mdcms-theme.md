@@ -4,15 +4,15 @@
 
 This guide illustrates to create a mdcms theme, taking [default theme](https://github.com/cwchentw/mdcms/tree/master/themes/default) of mdcms as an instance.
 
-## Project Structure of a mdcms Theme
+## Project Structure
 
 Pending.
 
-## *autoload.php* of a mdcms Theme
+## *autoload.php*
 
 This PHP script is the only mandatory file of a mdcms theme. The script should always locate in the root path of a mdcms theme. You may implement required functions within it or load another PHP script.
 
-## Required Functions in a mdcms Theme
+## Required Functions
 
 ### `loadHome()` Function
 
