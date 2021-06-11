@@ -56,3 +56,70 @@ function loadPost()
 The function to copy assets in a theme to a destination path specified by mdcms. Unlike other functions here, it receives one parameter, which represents a destination path.
 
 [Default theme](https://github.com/cwchentw/mdcms/tree/master/themes/default) of mdcms utilize Sass and Babel as its front end stacks. Code written in the two languages requires compilation before deploying to a production environment.
+
+Here is the function used by default theme of mdcms:
+
+```php
+function loadAssets($dest)
+{
+    # Save the path of old working directory.
+    $oldDirectory = getcwd();
+
+    global $rootDirectory;
+
+    # Move to theme directory.
+    if (!chdir($rootDirectory)) {
+        # Move back to old working directory.
+        chdir($oldDirectory);
+
+        throw new \Exception("Unable to change working directory to theme directory");
+    }
+
+    # We don't update NPM packages because they are merely for build automation.
+    if (!(file_exists("node_modules") && is_dir("node_modules"))) {
+        if (!system("npm install")) {
+            # Move back to old working directory.
+            chdir($oldDirectory);
+
+            throw new \Exception("Unable to install NPM packages");
+        }
+    }
+
+    # Compile assets.
+    #
+    # Not every theme invoke the same command to compile assets.
+    #  Modify it according to your own situation.
+    if (!system("npm run prod")) {
+        # Move back to old working directory.
+        chdir($oldDirectory);
+
+        throw new \Exception("Unable to compile assets");
+    }
+
+    # Copy assets recursively.
+    try {
+        $publicDirectory = $rootDirectory . "/public";
+
+        # xCopy is a utility function in mdcms.
+        #  It will copy directories and files recursively.
+        \mdcms\Core\xCopy($publicDirectory, $dest);
+    }
+    catch (Exception $e) {
+        # Move back to old working directory.
+        chdir($oldDirectory);
+
+        throw $e;
+    }
+
+    # Move back to old working directory.
+    chdir($oldDirectory);
+}
+```
+
+You should not copy and paste the code here to your own theme. Instead, modify it according to your situation.
+
+## Miscellaneous
+
+### Avoid Namespace
+
+The rounter of mdcms views these required functions as global ones. Therefore, don't add any namespace in these functions.
