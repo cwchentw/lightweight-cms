@@ -25,6 +25,8 @@ function loadHome()
 }
 ```
 
+It is recommended to use `require` instead of `include` here because it should be an error unable to load a layout properly.
+
 ## `loadSection()` Function
 
 The necessary function to load the layout for sections of a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
