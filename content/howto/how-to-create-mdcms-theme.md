@@ -131,7 +131,7 @@ There are four global variables in this layout:
 * `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
 * `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
-* `$GLOBALS[MDCMS_BREADCRUMB]`: An array of breadcrumbs of the home page of a mdcms site
+* `$GLOBALS[MDCMS_BREADCRUMB]` (not implemented yet): An array of breadcrumbs of the home page of a mdcms site
 
 There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
 
