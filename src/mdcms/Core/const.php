@@ -1,5 +1,6 @@
 <?php
 namespace mdcms\Core;
+
 # The constants used in mdcms.
 #
 # Unlike the constants in setting.php, it won't help much to
@@ -35,5 +36,4 @@ define("MDCMS_POST_EXCERPT", "excerpt");
 # Link related constants.
 define("MDCMS_LINK_TITLE", "title");
 define("MDCMS_LINK_PATH", "path");
-# TODO: Remove it later.
 define("MDCMS_LINK_MTIME", "mtime");
