@@ -1,3 +1,9 @@
+/* The main build script of the assets of default theme
+    of mdcms.
+
+   It is not really a part of a mdcms theme. You can safely
+    delete it and write your own build script. */
+
 const fs = require('fs');
 const path = require('path');
 
@@ -7,31 +13,31 @@ const message = require('./lib/message');
 const browserSync = require('browser-sync').create();
 
 
-/* SASS Tasks */
+/* SASS related tasks */
 gulp.task('sass:build', require('./tasks/sass/build'));
 gulp.task('sass:clean', require('./tasks/sass/clean'));
 gulp.task('sass:lint', require('./tasks/sass/lint'));
 
-/* JavaScript Tasks */
+/* JavaScript related tasks */
 gulp.task('javascript:build', require('./tasks/javascript/build'));
 gulp.task('javascript:clean', require('./tasks/javascript/clean'));
 gulp.task('javascript:lint', require('./tasks/javascript/lint'));
 
-/* Font Tasks */
+/* Font related tasks */
 gulp.task('font:build', require('./tasks/font/build'));
 gulp.task('font:clean', require('./tasks/font/clean'));
 
-/* Image Tasks */
+/* Image related tasks */
 gulp.task('image:build', require('./tasks/image/build'));
 gulp.task('image:clean', require('./tasks/image/clean'));
 
-/* Static Asset Tasks */
+/* Static assets related asks */
 gulp.task('static:copy', function () {
   return gulp.src('../static/**/*')
     .pipe(gulp.dest('../public/'));
 });
 
-/* Domain Tasks */
+/* Domain tasks */
 gulp.task('sass', gulp.series('sass:clean', 'sass:lint', 'sass:build'));
 gulp.task('javascript', gulp.series('javascript:clean', 'javascript:lint', 'javascript:build'));
 gulp.task('font', gulp.series('font:clean', 'font:build'));
@@ -43,6 +49,8 @@ function reload(done) {
   done();
 }
 
+/* Live reloading while editing assets.
+    It doesn't always work well. */
 gulp.task('watch', function () {
   browserSync.init({
     open: false,
@@ -86,4 +94,5 @@ gulp.task('watch', function () {
     .on('error', message.error('WATCH: Static Assets'));
 });
 
+/* The default build task. */
 gulp.task('default', gulp.parallel('sass', 'javascript', 'font', 'image', 'static'));
