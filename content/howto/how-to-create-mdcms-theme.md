@@ -131,3 +131,7 @@ You may need features other than those in the core library of mdcms. If you need
 Here is a pseudo sample code:
 
 (Pending)
+
+### Build Scripts for Front End Assets
+
+The Gulp build scripts in default theme of mdcms is not really a part of a mdcms theme. You may delete them, adding your own build scripts for the front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
