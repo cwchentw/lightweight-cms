@@ -14,7 +14,7 @@ This theme represents a generic one, best suitable for documentation sites. You 
 
 ## For Theme Creators
 
-The project structure of a mdcms theme is very liberal. The only mandatory file is *autoload.php* in the root of a theme directory.
+The project structure of a mdcms theme is very liberal. The only mandatory file is *autoload.php* in the root path of a mdcms theme directory.
 
 There are only four mandatory functions in such *autoload.php*:
 
