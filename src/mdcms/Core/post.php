@@ -16,6 +16,7 @@ require_once __DIR__ . "/page.php";
 
 use Pagerange\Markdown\MetaParsedown;
 
+
 # The implementation is too long. We may refactor it later.
 function readPost($page)
 {
