@@ -118,8 +118,16 @@ function loadAssets($dest)
 
 You should not copy and paste the code here to your own theme. Instead, modify it according to your situation.
 
-## Miscellaneous
+## Best Practices
 
 ### Avoid Namespace
 
 The rounter of mdcms views these required functions as global ones. Therefore, don't add any namespace in these functions.
+
+### Load Third-Party Libraries
+
+You may need features other than those in the core library of mdcms. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in the root path of a mdcms theme. Furthermore, you should write code to detect and compile you dependencies automatically.
+
+Here is a pseudo sample code:
+
+(Pending)
