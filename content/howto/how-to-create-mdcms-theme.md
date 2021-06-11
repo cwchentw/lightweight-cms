@@ -126,13 +126,24 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of the home page in a mdcms theme.
 
-There are three global variables in this layout:
+There are four global variables in this layout:
 
 * `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
 * `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
+* `$GLOBALS[MDCMS_BREADCRUMB]`: An array of breadcrumbs of the home page of a mdcms site
 
-There are two variables in ...
+There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
+
+* `$section[MDCMS_LINK_TITLE]`: The title of a section
+* `$section[MDCMS_LINK_PATH]`: The link to a section
+* `$section[MDCMS_LINK_DESCRIPTION]` (not implemented yet): A brief description to a section
+
+Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]` (`$post` here):
+
+* `$post[MDCMS_LINK_TITLE]`: The title of a post
+* `$post[MDCMS_LINK_PATH]`: The link to a post
+* `$post[MDCMS_LINK_DESCRIPTION]` (not implemented yet): A brief description to a post
 
 ### Layout for Sections
 
