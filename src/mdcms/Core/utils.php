@@ -1,5 +1,6 @@
 <?php
 namespace mdcms\Core;
+
 # Utility functions for mdcms.
 
 # Get the root path of mdcms.
