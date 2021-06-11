@@ -1,9 +1,13 @@
 <?php
 # The router of mdcms.
 
+# Get global setting.
 require_once __DIR__ . "/../setting.php";
+# Load builtin libraries.
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+# Load plugin(s) if any.
 require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
+# Load a theme.
 require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
@@ -12,6 +16,7 @@ require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.
 # TODO: Check essential variables on a development environment.
 
 # Filter the input URI.
+# It may be redundant on Nginx.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
 # Check whether the URL is dangerous.
@@ -32,19 +37,22 @@ if (isset($post) && 200 != $post["status"]) {
 
     loadPost();
 }
-# Render the home page.
+# Render the home page of a site.
 else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+    # Posts not included in any section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
 
     loadHome();
 }
-# Render a section page.
+# Render a section.
 else if (\mdcms\Core\isSection($loc)) {
     $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTION] = \mdcms\Core\getSection($loc);
+    # Subsections of current section.
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+    # Posts of current section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
 
     loadSection();
@@ -53,9 +61,9 @@ else if (\mdcms\Core\isSection($loc)) {
 else {
     $post = \mdcms\Core\readPost($loc);
 
-    # If HTTP status 404, generate a page on-the-fly.
+    # If HTTP status 404, generate an error page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
-        # Mutate `$post` to generate a new page.
+        # Create a post dynamically.
         $post = array();
 
         $post[MDCMS_POST_TITLE] = "Page Not Found";
@@ -63,7 +71,7 @@ else {
         $post[MDCMS_POST_STATUS] = 404;
         $post[MDCMS_POST_WORD_COUNT] = 7;
 
-        # Create mock breadcrumbs.
+        # Create a breadcrumb dynamically.
         $breadcrumb = array();
 
         {
@@ -88,8 +96,8 @@ else {
     }
     # Load a normal page.
     else {
-        $GLOBALS[MDCMS_POST] = $post;
         $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+        $GLOBALS[MDCMS_POST] = $post;
     }
 
     loadPost();
