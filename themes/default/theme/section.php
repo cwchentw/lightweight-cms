@@ -1,6 +1,7 @@
 <?php
 # The layout of sections of a site.
 #
+# Top sections and subsections are indistinguishable in this theme.
 # This is one mandatory layout for a mdcms theme.
 
 # Require a private utility script.
@@ -12,7 +13,6 @@ $section = $GLOBALS[MDCMS_SECTION];
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $posts = $GLOBALS[MDCMS_POSTS];
 ?>
-
 
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
@@ -38,7 +38,7 @@ $posts = $GLOBALS[MDCMS_POSTS];
             </div>
 
             <div class="row">
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php includePartials("breadcrumb.php"); ?>
 
@@ -63,7 +63,6 @@ $posts = $GLOBALS[MDCMS_POSTS];
 
                     <?php
                     # Add page(s) if any exists.
-                    # TODO: Check it later.
                     if (isset($posts) && count($posts) > 0) {
                         echo "<h2>Articles</h2>";
 
@@ -101,7 +100,7 @@ $posts = $GLOBALS[MDCMS_POSTS];
                     ?>
                 </div>
 
-                <!-- TODO: Adjust it later. -->
+                <!-- TODO: Adjust the layout. -->
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php includePartials("sideInfo.php"); ?>
@@ -110,6 +109,9 @@ $posts = $GLOBALS[MDCMS_POSTS];
             </div>
         </div>
 
+        <!-- Currently, there is no footer in this theme.
+              Our footer is merely for script loading.
+              We may change it later. -->
         <?php includePartials("footer.php"); ?>
     </body>
 </html>
