@@ -1,7 +1,13 @@
 <?php
+# ToC (Table of Contents) for default theme.
+#
+# It is only applicatble to posts in mdcms sites.
+
+
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
 
+# Extract titles and ids from <h2> titles.
 $subtitles = array();
 preg_match_all("/<h2 id=\"([^\"]+)\">([^<]+)<\/h2>/", $post[MDCMS_POST_CONTENT], $matches);
 if (isset($matches)) {
@@ -29,11 +35,11 @@ else {
     $URI = "/";
 }
 ?>
+
 <div id="table-of-contents">
     <div class="text-center">Table of Contents</div>
     <ul>
         <?php
-
         foreach ($subtitles as $subtitle) {
             echo "<li>";
 
@@ -44,8 +50,10 @@ else {
             echo "</li>";
         }
         ?>
+
         <!-- FIXME: Check the rendered URL. -->
         <li><a href="<?php echo $URI; ?>#top">Back to Top</a></li>
+
         <li><a href="/">Back to Home</a></li>
     </ul>
 </div>
