@@ -1,6 +1,7 @@
 <?php
 # A private utility script.
-#  It is not included by the main loader of a mdcms theme.
+#
+# It is not included by the main loader of default theme of mdcms.
 
 
 function includePartials($partial)
