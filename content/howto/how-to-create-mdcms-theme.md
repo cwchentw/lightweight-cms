@@ -120,6 +120,26 @@ function loadAssets($dest)
 
 You should not copy and paste the code here to your own theme. Instead, modify it according to your situation.
 
+## Required Layouts
+
+### Layout for the Home Page
+
+Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of the home page in a mdcms theme.
+
+There are three global variables in this layout:
+
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
+* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
+
+### Layout for Sections
+
+[the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
+
+### Layout for Posts
+
+[the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
+
 ## Best Practices
 
 ### Avoid Namespace
