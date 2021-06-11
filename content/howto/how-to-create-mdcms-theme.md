@@ -40,6 +40,8 @@ function loadSection()
 }
 ```
 
+mdcms doesn't distinguish between top sections and nested ones. Therefore, only one function is needed here.
+
 ### `loadPost()` Function
 
 The mandatory function to load the layout for posts in a mdcms site. No parameter is needed. Here shows a sample code:
