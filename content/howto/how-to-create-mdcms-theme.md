@@ -27,7 +27,7 @@ function loadHome()
 
 ## `loadSection()` Function
 
-The necessiary function to load the layout for sections of a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
+The necessary function to load the layout for sections of a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
 
 ```php
 function loadSection()
