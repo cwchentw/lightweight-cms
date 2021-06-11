@@ -12,9 +12,11 @@ Pending.
 
 This PHP script is the only mandatory file of a mdcms theme. The script should always locate in the root path of a mdcms theme. You may implement required functions within it or load another PHP script.
 
-## `loadHome()` Function
+## Required Functions in a mdcms Theme
 
-The essential function to load the layout for the home page of a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
+### `loadHome()` Function
+
+The essential function to load the layout for the home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
 
 Here is a sample code:
 
@@ -27,9 +29,9 @@ function loadHome()
 
 It is recommended to use `require` instead of `include` here because it should be an error unable to load a layout properly.
 
-## `loadSection()` Function
+### `loadSection()` Function
 
-The necessary function to load the layout for sections of a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
+The necessary function to load the layout for sections in a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
 
 ```php
 function loadSection()
@@ -37,3 +39,20 @@ function loadSection()
     require __DIR__ . "/theme/" . "section.php";
 }
 ```
+
+### `loadPost()` Function
+
+The mandatory function to load the layout for posts in a mdcms site. No parameter is needed. Here shows a sample code:
+
+```php
+function loadPost()
+{
+    require __DIR__ . "/theme/" . "post.php";
+}
+```
+
+### `loadAssets($dest)` Function
+
+The function to copy assets in a theme to a destination path specified by mdcms. Unlike other functions here, it receives one parameter, which represents a destination path.
+
+[Default theme](https://github.com/cwchentw/mdcms/tree/master/themes/default) of mdcms utilize Sass and Babel as its front end stacks. Code written in the two languages requires compilation before deploying to a production environment.
