@@ -35,8 +35,14 @@ function fixedSidebar () {
         BlackBerry: function BlackBerry() {
             return navigator.userAgent.match(/BlackBerry/i);
         },
+        /* iPad Pro is not included. */
         iOS: function iOS() {
             return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        /* iPad Pro is desktop-like. */
+        iPadPro: function iPadPro () {
+            return /MacIntel/.test(navigator.platform)
+                && 'ontouchend' in document;
         },
         Opera: function Opera() {
             return navigator.userAgent.match(/Opera Mini/i);
@@ -48,6 +54,9 @@ function fixedSidebar () {
             return isMobile.Android()
                 || isMobile.BlackBerry()
                 || isMobile.iOS()
+                /* iPad Pro is desktop-like. Therefore, we exclude
+                    the series of tablets. */
+                /* || isMobile.iPadPro() */
                 || isMobile.Opera()
                 || isMobile.Windows();
         }
