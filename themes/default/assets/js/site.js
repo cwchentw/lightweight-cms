@@ -79,7 +79,8 @@ function fixedSidebar () {
     if (windowWidth >= pageWidthMedium)
     {
         let width;
-        /* The width here is arbitrary. Because the maximal width
+
+        /* The width here is arbitrary because the maximal width
             of our containers is 1440. If you set a different maximal
             width for containers, it may not work properly. */
         if (windowWidth > 1440) {
@@ -88,7 +89,7 @@ function fixedSidebar () {
             width = Math.floor(dw + w * 9 / 12);
         }
         /* The width here is arbitrary. We set it by our previous
-            experience. Change it if it doesn't work for your. */
+            experience. Change it if it doesn't work well for your. */
         else if (windowWidth >= 1140) {
             width = Math.floor(windowWidth * 9 / 12);
         }
@@ -120,7 +121,7 @@ function fixedSidebar () {
         /* Set an high z index arbitrarily. */
         fixedSidebar.style.zIndex = "100000";
     }
-    /* Otherwise, don't set fixed sidebars. */
+    /* Otherwise, disable fixed sidebars. */
     else {
         fixedSidebar.style.position = "relative";
         fixedSidebar.style.top = "";
