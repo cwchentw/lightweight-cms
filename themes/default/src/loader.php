@@ -2,26 +2,28 @@
 # Don't add any namespace in a mdcms theme. Instead,
 #  let mdcms load global functions.
 
-# Get the root path of default theme of mdcms.
-global $rootDirectory;
-$rootDirectory = __DIR__ . "/..";
-
 
 function loadHome()
 {
-    global $rootDirectory;
+    # Get the root path of default theme of mdcms.
+    $rootDirectory = __DIR__ . "/..";
+
     require $rootDirectory . "/theme/home.php";
 }
 
 function loadSection()
 {
-    global $rootDirectory;
+    # Get the root path of default theme of mdcms.
+    $rootDirectory = __DIR__ . "/..";
+
     require $rootDirectory . "/theme/section.php";
 }
 
 function loadPost()
 {
-    global $rootDirectory;
+    # Get the root path of default theme of mdcms.
+    $rootDirectory = __DIR__ . "/..";
+
     require $rootDirectory . "/theme/post.php";
 }
 
@@ -30,7 +32,8 @@ function loadAssets($dest)
     # Save the path of old working directory.
     $oldDirectory = getcwd();
 
-    global $rootDirectory;
+    # Get the root path of default theme of mdcms.
+    $rootDirectory = __DIR__ . "/..";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
