@@ -1,9 +1,13 @@
 <?xml version="1.0"?>
-<!-- The rule set is still experimental. -->
+<!-- The rule set is experimental. -->
 <ruleset name="Custom Standard">
+    <rule ref="PSR1">
+        <exclude name="PSR1.Files.SideEffects"/>
+    </rule>
     <rule ref="PEAR">
         <exclude name="PEAR.Commenting.InlineComment"/>
         <exclude name="PEAR.Commenting.FunctionComment"/>
+        <exclude name="PEAR.Commenting.ClassComment"/>
         <exclude name="PEAR.Commenting.FileComment"/>
         <exclude name="PEAR.ControlStructures.ControlSignature"/>
         <exclude name="PEAR.ControlStructures.MultiLineCondition"/>
