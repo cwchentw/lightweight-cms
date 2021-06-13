@@ -107,4 +107,4 @@ The project is inspired by [Cristy94/markdown-blog](https://github.com/Cristy94/
 
 ## Copyright
 
-Copyright (c) 2021, Michael Chen. Licensed under MIT
+Copyright (c) 2021 Michelle Chen. Licensed under MIT
