@@ -9,6 +9,11 @@ $monospace: Consolas, "Lucida Console", Monaco, monospace;
 $large-screen-width: 1000pt;
 $phone-width: 550pt;
 
+$navbar-color: #578583;
+$jumbotron-color: #B9AF7E;
+$sidebar-color: #F1EFE3;
+$background-color: #FFFAFA;
+
 html {
     height: 100%;
 }
@@ -100,9 +105,58 @@ code {
 }
 
 .navbar {
-    /* Remove the styles set by Bootstrap 5. */
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    background-color: $navbar-color;
+
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    .container {
+        background-color: $navbar-color;
+        color: $background-color;
+    }
+}
+
+.navbar-nav .nav-item.dropdown a {
+    color: $background-color;
+}
+  
+.navbar-nav .nav-item.dropdown.show a {
+    color: $background-color;
+}
+
+.navbar-nav .dropdown-menu.show li .dropdown-item {
+    color: $navbar-color;
+}
+
+.jumbotron {
+    background-color: $jumbotron-color;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-bottom: 0;
+
+    .container {
+        width: 80%;
+        max-width: 1400px;
+        background-color: $jumbotron-color;
+
+        h1 {
+            color: $background-color;
+        }
+
+        .breadcrumb {
+            background-color: $jumbotron-color;
+
+            .breadcrumb-item {
+                color: $background-color;
+
+                a {
+                    color: $background-color;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: $large-screen-width) {
@@ -119,7 +173,7 @@ code {
 
     margin-top: 5pt;
 
-    background-color: #F0F5F5; /* Zircon series color. */
+    background-color: #F6EEE3;
 
     ul {
         list-style-type: none;

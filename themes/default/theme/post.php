@@ -22,18 +22,20 @@ $post = $GLOBALS[MDCMS_POST];
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div id="top" class="container">
-            <div class="text-center">
+        <div id="top" class="jumbotron">
+            <div class="container">
                 <header>
                     <h1><?php echo $post[MDCMS_POST_TITLE]; ?></h1>
                 </header>
-            </div>
 
+                <?php includePartials("breadcrumb.php"); ?>
+            </div>
+        </div>
+
+        <div class="container">
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php includePartials("breadcrumb.php"); ?>
-
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.
