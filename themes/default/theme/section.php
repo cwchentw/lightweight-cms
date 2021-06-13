@@ -32,11 +32,17 @@ $posts = $GLOBALS[MDCMS_POSTS];
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div id="top" class="container">
-            <div class="text-center">
-                <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
-            </div>
+        <div id="top" class="jumbotron">
+            <div class="container">
+                <header>
+                    <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
+                </header>
 
+                <?php includePartials("breadcrumb.php"); ?>
+            </div>
+        </div>
+
+        <div id="top" class="container">
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
