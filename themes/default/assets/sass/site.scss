@@ -1,8 +1,10 @@
 /* We utilize safe English fonts to save page loading time. */
 /* Fonts for titles. */
+$head-font: "DS Gabriele";
+$title-font: "Playfair Display";
 $serif: "Times New Roman", Times, serif;
 /* Fonts for everywhere except titles and code. */
-$sans-serif: Arial, Helvetica, sans-serif;
+$sans-serif: Roboto, Arial, Helvetica, sans-serif;
 /* Fonts for code. */
 $monospace: Consolas, "Lucida Console", Monaco, monospace;
 
@@ -13,6 +15,15 @@ $navbar-color: #578583;
 $jumbotron-color: #B9AF7E;
 $sidebar-color: #F1EFE3;
 $background-color: #FFFAFA;
+
+@font-face {
+    font-family: $head-font;
+    src: url("/font/dsgabriele.woff") format("woff");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 html {
     height: 100%;
@@ -44,13 +55,16 @@ body {
     }
 }
 
-h1,
+h1 {
+    font-family: $head-font, $title-font, $serif;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: $serif;
+    font-family: $title-font, $serif;
 }
 
 h2 {
@@ -143,6 +157,7 @@ code {
 
         h1 {
             color: $background-color;
+            font-family: $head-font, $title-font, $serif;
         }
 
         .breadcrumb {
