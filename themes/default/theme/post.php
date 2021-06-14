@@ -42,9 +42,11 @@ $post = $GLOBALS[MDCMS_POST];
                         It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 300); ?> minute(s) to read.
                     </div>
 
+                    <?php includePartials("shareButtons.php"); ?>
+
                     <main>
                         <?php echo $post[MDCMS_POST_CONTENT]; ?>
-                    </main>
+                    </main>                    
                 </div>
 
                 <!-- TODO: Adjust the layout. -->
