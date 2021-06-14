@@ -1,6 +1,16 @@
 # Deploy a mdcms Site with Nginx
 
+## Prologue
+
 ## Install Required Packages
+
+### Ubuntu
+
+Pending.
+
+### CentOS
+
+Pending.
 
 ### openSUSE
 
@@ -11,6 +21,10 @@ $ sudo zypper install nginx php7 php-fpm
 ```shell
 $ sudo zypper install php-phar php-openssl php-mbstring
 ```
+
+## Set FastCGI Process Manager (FPM)
+
+Pending.
 
 ## Configure Nginx
 
@@ -113,3 +127,17 @@ $ sudo systemctl start php-fpm
 ```shell
 $ sudo systemctl start nginx
 ```
+
+## Set Firewalls
+
+### Ubuntu
+
+Pending.
+
+### CentOS
+
+Pending.
+
+### openSUSE
+
+Pending.
