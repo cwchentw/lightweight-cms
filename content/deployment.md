@@ -28,6 +28,10 @@ $ sudo dnf install nginx php php-fpm
 $ sudo dnf install php-json php-xml php-mbstring
 ```
 
+```shell
+$ sudo dnf install nodejs npm
+```
+
 ### openSUSE
 
 ```shell
