@@ -114,10 +114,14 @@ div {
 a {
     color: blue;
 
-    &.image-link {
+    &.img-link {
         text-decoration: none;
         border: 0 none;
         padding-right: 0.01em;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
@@ -200,14 +204,6 @@ code {
     #main-content {
         padding-left: 8%;
         padding-right: 6%;
-    }
-}
-
-.img-link {
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: none;
     }
 }
 
