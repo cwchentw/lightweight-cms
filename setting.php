@@ -16,7 +16,7 @@ define("SITE_DESCRIPTION", "A Markdown-based Dynamic Website Generator Powered b
 #
 # If there are multiple authors in a site,
 #  set the author of a specific post in its front matter.
-define("SITE_AUTHOR", "mdcms");
+define("SITE_AUTHOR", "Michelle Chen");
 # The copyright of the site.
 define("SITE_COPYRIGHT", "Copyright (c) 2021 Michelle Chen. Licensed under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener nofollow\">CC BY</a>.");
 # The language of rendered HTML pages.
