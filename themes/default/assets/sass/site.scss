@@ -60,6 +60,18 @@ body {
 h1 {
     color: $text-font-color;
     font-family: $head-font, $title-font, $serif;
+
+    display: table;
+
+    img, span {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.center {
+    margin: auto;
+    width: 50%;
 }
 
 h2,
@@ -76,13 +88,10 @@ h2 {
     padding-bottom: 2pt;
     border-bottom: 2px solid lightslategray;
 
-    /* Disable icons before subtitles. */
-    /*
     &:before {
-        content: url(/img/c-36x36.png);
+        content: url(/img/logo-36x36.png);
         padding-right: 3pt;
     }
-    */
 
     &:after {
         margin: 0 0 0 20px;

@@ -27,8 +27,17 @@ $status = 200;
         <?php includePartials("navbar.php"); ?>
 
         <div id="top" class="container">
-            <div class="text-center">
-                <h1><?php echo SITE_NAME; ?></h1>
+
+            <div class="center">
+                <header>
+                    <h1>
+                        <img src="/img/logo-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+
+                        <span>
+                            <?php echo SITE_NAME; ?>
+                        </span>
+                    </h1>
+                </header>
             </div>
 
             <div class="row">

@@ -35,7 +35,13 @@ $posts = $GLOBALS[MDCMS_POSTS];
         <div id="top" class="jumbotron">
             <div class="container">
                 <header>
-                    <h1><?php echo $section[MDCMS_SECTION_TITLE]; ?></h1>
+                    <h1>
+                        <img src="/img/logo-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+
+                        <span>
+                            <?php echo $section[MDCMS_SECTION_TITLE]; ?>
+                        </span>
+                    </h1>
                 </header>
 
                 <?php includePartials("breadcrumb.php"); ?>
