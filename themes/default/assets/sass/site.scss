@@ -188,12 +188,32 @@ code {
 
     margin-top: 5pt;
 
+    border-radius: 16px;
+
     background-color: #F6EEE3;
 
     ul {
         list-style-type: none;
         padding-left: 3pt;
         padding-right: 3pt;
+    }
+}
+
+.toc-item {
+    text-decoration: none;
+    font-size: 0.9em;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.toc-link {
+    text-decoration: none;
+    font-size: 0.75em;
+
+    &:hover {
+        text-decoration: none;
     }
 }
 

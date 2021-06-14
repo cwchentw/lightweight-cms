@@ -43,7 +43,7 @@ else {
         foreach ($subtitles as $subtitle) {
             echo "<li>";
 
-            echo "<a href=\"" . $URI  . "#" . $subtitle["id"] . "\">";
+            echo "<a href=\"" . $URI  . "#" . $subtitle["id"] . "\" class=\"toc-item\">";
             echo $subtitle["title"];        
             echo "</a>";
 
@@ -52,8 +52,8 @@ else {
         ?>
 
         <!-- FIXME: Check the rendered URL. -->
-        <li><a href="<?php echo $URI; ?>#top">Back to Top</a></li>
+        <li><a href="<?php echo $URI; ?>#top" class="toc-link">Back to Top</a></li>
 
-        <li><a href="/">Back to Home</a></li>
+        <li><a href="/" class="toc-link">Back to Home</a></li>
     </ul>
 </div>

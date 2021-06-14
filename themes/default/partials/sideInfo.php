@@ -8,9 +8,9 @@
     </a>
 
     <ul>
-        <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#top">Back to Top</a></li>
+        <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#top" class="toc-link">Back to Top</a></li>
         <?php if ("/" != $_SERVER["REQUEST_URI"]): ?>
-        <li><a href="/">Back to Home</a></li>
+        <li><a href="/" class="toc-link">Back to Home</a></li>
         <?php endif; ?>
     </ul>
 </div>
