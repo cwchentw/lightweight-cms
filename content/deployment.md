@@ -153,10 +153,24 @@ $ sudo systemctl start nginx
 
 ## Set Firewalls
 
-### Firewalld
+### firewalld
 
-Pending.
+```shell
+$ firewall-cmd --permanent --zone=public --add-port=80/tcp
+$ firewall-cmd --permanent --zone=public --add-port=443/tcp
+```
 
-### IPtables
+```shell
+$ firewall-cmd --reload
+```
 
-Pending.
+### iptables
+
+```shell
+$ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+$ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+```
+
+```shell
+$ sudo iptables-save > /etc/iptables/rules.v4
+```
