@@ -42,6 +42,10 @@ $ sudo zypper install nginx php7 php-fpm
 $ sudo zypper install php-phar php-openssl php-mbstring
 ```
 
+```shell
+$ sudo zypper install nodejs14 npm14
+```
+
 ## Set FastCGI Process Manager (FPM)
 
 Listen to socket ...
