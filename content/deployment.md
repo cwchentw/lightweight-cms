@@ -6,7 +6,17 @@
 
 ### Ubuntu
 
-Pending.
+```shell
+$ sudo apt install nginx php php-fpm
+```
+
+```shell
+$ sudo apt install php-xml php-mbstring
+```
+
+```shell
+$ sudo apt install nodejs npm
+```
 
 ### CentOS
 
@@ -70,24 +80,7 @@ server {
     #  separate assets in distinct `location` blocks.
     #
     location ~ \.(css|js|json|xml|jpg|jpeg|png|gif|woff|woff2)$ {
-        root  /srv/www/mdcms/public/;
-    }
-
-    # Route to all URLs except assets.
-    location / {
-        root  /srv/www/mdcms/www/;
-
-        # Try local files first. If none is matched,
-        #  rewrite the URL to our index script.
-        try_files $uri $uri.php $uri.html $uri.htm @rewrite;
-    }
-
-    # Redirect all URLs to our index script.
-    #
-    # Currently, we don't handle URL parameters at all.
-    #
-    location @rewrite {
-        rewrite ^(.+)$ /index.php;
+        root  /var/www/mdcms/public/;
     }
 
     # You should always prepare a HTTP 404 page
@@ -108,18 +101,35 @@ server {
     #  Therefore, it is static.
     #
     location /50x.html {
-        root  /srv/www/mdcms/public/;
+        root  /var/www/mdcms/public/;
+    }
+
+    # Route to all URLs except assets.
+    location / {
+        root  /var/www/mdcms/www/;
+
+        # Try local files first. If none is matched,
+        #  rewrite the URL to our index script.
+        try_files $uri $uri.php $uri.html $uri.htm @rewrite;
+    }
+
+    # Redirect all URLs to our index script.
+    #
+    # Currently, we don't handle URL parameters at all.
+    #
+    location @rewrite {
+        rewrite ^(.+)$ /index.php;
     }
 
     # Pass PHP scripts to a FastCGI server.
     #  In this case, php-fpm.
     location ~ \.php$ {
-        root           /srv/www/mdcms/www/;
+        root           /var/www/mdcms/www/;
 
         # Listen to a local server.
-        fastcgi_pass   127.0.0.1:9000;
+        #fastcgi_pass   127.0.0.1:9000;
         # Listen to a socket.
-        #fastcgi_pass  unix:/run/php-fpm/www.sock;
+        fastcgi_pass   unix:/run/php-fpm/www.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 
