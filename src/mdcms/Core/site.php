@@ -198,7 +198,7 @@ function getBreadcrumb($page)
     $d = array();
 
     $d[MDCMS_LINK_PATH] = "/";
-    $d[MDCMS_LINK_TITLE] = SITE_BREADCRUMB_HOME;
+    $d[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
 
     array_push($result, $d);
 

@@ -34,8 +34,6 @@ $status = 200;
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php includePartials("breadcrumb.php"); ?>
-
                     <?php
                     if (isset($section[MDCMS_SECTION_CONTENT])
                         && "" != $section[MDCMS_SECTION_CONTENT])

@@ -46,8 +46,6 @@ $posts = $GLOBALS[MDCMS_POSTS];
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php includePartials("breadcrumb.php"); ?>
-
                     <?php
                     # Show an optional section content if it exists.
                     if (isset($section[MDCMS_SECTION_CONTENT])

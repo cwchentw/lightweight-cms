@@ -25,8 +25,7 @@ define("SITE_AUTHOR", "mdcms");
 define("SITE_LANGUAGE", "en-US");
 # The theme of a site.
 define("SITE_THEME", "default");
-# The text of the home page on breadcrumbs.
-define("SITE_BREADCRUMB_HOME", "Home");
+
 
 
 # Social Media
@@ -46,6 +45,8 @@ define("GITHUB", "cwchentw/mdcms");
 
 # The parameters of a site.
 
+# The text of the home page on breadcrumbs.
+define("BREADCRUMB_HOME", "Index Page");
 # The upper limit of the word count of a dynamically generated description.
 #
 # It should be less than the upper limit of that of a tweet of Twitter.

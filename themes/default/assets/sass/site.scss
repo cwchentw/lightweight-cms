@@ -168,6 +168,12 @@ code {
 
                 a {
                     color: $background-color;
+
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }

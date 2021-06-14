@@ -78,7 +78,7 @@ else {
             $link = array();
 
             $link[MDCMS_LINK_PATH] = "/";
-            $link[MDCMS_LINK_TITLE] = SITE_BREADCRUMB_HOME;
+            $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
 
             array_push($breadcrumb, $link);
         }
