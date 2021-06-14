@@ -15,7 +15,7 @@ $ sudo dnf install nginx php php-fpm
 ```
 
 ```shell
-$ sudo dnf install php-json php-mbstring
+$ sudo dnf install php-json php-xml php-mbstring
 ```
 
 ### openSUSE
@@ -30,7 +30,11 @@ $ sudo zypper install php-phar php-openssl php-mbstring
 
 ## Set FastCGI Process Manager (FPM)
 
-Pending.
+Listen to socket ...
+
+```
+listen = /run/php-fpm/www.sock
+```
 
 ## Configure Nginx
 
@@ -112,7 +116,10 @@ server {
     location ~ \.php$ {
         root           /srv/www/mdcms/www/;
 
-        fastcgi_pass   127.0.0.1:9000;  # The default port of php-fpm.
+        # Listen to a local server.
+        fastcgi_pass   127.0.0.1:9000;
+        # Listen to a socket.
+        #fastcgi_pass  unix:/run/php-fpm/www.sock;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 
@@ -136,14 +143,10 @@ $ sudo systemctl start nginx
 
 ## Set Firewalls
 
-### Ubuntu
+### Firewalld
 
 Pending.
 
-### CentOS
-
-Pending.
-
-### openSUSE
+### IPtables
 
 Pending.
