@@ -39,7 +39,7 @@ if (isset($post) && 200 != $post["status"]) {
 }
 # Render the home page of a site.
 else if (\mdcms\Core\isHome($loc)) {
-    $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
     # Posts not included in any section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
@@ -48,7 +48,7 @@ else if (\mdcms\Core\isHome($loc)) {
 }
 # Render a section.
 else if (\mdcms\Core\isSection($loc)) {
-    $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTION] = \mdcms\Core\getSection($loc);
     # Subsections of current section.
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
@@ -92,11 +92,11 @@ else {
         }
 
         $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS["breadcrumb"] = $breadcrumb;
+        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
     }
     # Load a normal page.
     else {
-        $GLOBALS["breadcrumb"] = \mdcms\Core\getBreadcrumb($loc);
+        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
         $GLOBALS[MDCMS_POST] = $post;
     }
 

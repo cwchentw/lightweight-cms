@@ -45,7 +45,7 @@ $breadcrumb = array();
 
 # Pass global variables to the layout of a post.
 $GLOBALS[MDCMS_POST] = $post;
-$GLOBALS["breadcrumb"] = $breadcrumb;
+$GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
 $GLOBALS["file"] = __FILE__;
 
 loadPost();

@@ -6,7 +6,7 @@
 
 
 # Take global data.
-$breadcrumb = $GLOBALS["breadcrumb"];
+$breadcrumb = $GLOBALS[MDCMS_BREADCRUMB];
 ?>
 
 <nav aria-label="breadcrumb">
