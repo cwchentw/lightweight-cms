@@ -10,7 +10,13 @@ Pending.
 
 ### CentOS
 
-Pending.
+```shell
+$ sudo dnf install nginx php php-fpm
+```
+
+```shell
+$ sudo dnf install php-json php-mbstring
+```
 
 ### openSUSE
 
