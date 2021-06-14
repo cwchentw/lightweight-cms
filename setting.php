@@ -17,6 +17,8 @@ define("SITE_DESCRIPTION", "A Markdown-based Dynamic Website Generator Powered b
 # If there are multiple authors in a site,
 #  set the author of a specific post in its front matter.
 define("SITE_AUTHOR", "mdcms");
+# The copyright of the site.
+define("SITE_COPYRIGHT", "");
 # The language of rendered HTML pages.
 #
 # mdcms is not designed for a multi-language site.

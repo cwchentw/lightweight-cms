@@ -98,6 +98,8 @@ $status = 200;
                     </aside>
                 </div>
             </div>
+
+            <?php includePartials("copyright.php"); ?>
         </div>
 
         <!-- Currently, there is no footer in this theme.

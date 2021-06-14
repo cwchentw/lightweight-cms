@@ -61,6 +61,8 @@ $post = $GLOBALS[MDCMS_POST];
                     </aside>
                 </div>
             </div>
+
+            <?php includePartials("copyright.php"); ?>
         </div>
 
         <!-- Currently, there is no footer in this theme.
