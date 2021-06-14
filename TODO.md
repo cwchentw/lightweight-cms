@@ -12,5 +12,6 @@
 * (Project) Move `getBreadcrumb($page)` to *page.php*
 * (Theme) Refactor the navbar by detecting social media accounts
 * (Theme) Open graphs
-* (Theme) Share buttons
+* (Theme) Modify the icon of GitHub
+* (Theme) Create a set of social media icons
 * (Plugin) Add Google Analytics as a demonstration

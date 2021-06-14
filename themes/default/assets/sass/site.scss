@@ -181,6 +181,14 @@ code {
     }
 }
 
+.img-link {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 #side-info, #table-of-contents {
     width: 220pt;
 

@@ -21,12 +21,37 @@
             Social Media
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarMedia">
-            <li><a class="dropdown-item" href="#">Facebook Fans Page (Pending)</a></li>
-            <li><a class="dropdown-item" href="#">Facebook Group (Pending)</a></li>
-            <li><a class="dropdown-item" href="#">Twitter (Pending)</a></li>
+            <?php if (!is_null(FACEBOOK) && "" != FACEBOOK): ?>
+            <!-- The link to Facebook (personal account or fan page). -->
             <li><a class="dropdown-item"
-                  href="https://github.com/cwchentw/mdcms"
-                  target="_blank" rel="noopener nofollow">GitHub</a></li>
+                  href="https://facebook.com/<?php echo FACEBOOK; ?>"
+                  target="_blank" rel="noopener nofollow">Facebook</a>
+            </li>
+            <?php endif; ?>
+
+            <?php if (!is_null(FACEBOOK_GROUP) && "" != FACEBOOK_GROUP): ?>
+            <!-- The link to Facebook group. -->
+            <li><a class="dropdown-item"
+                  href="https://facebook.com/groups/<?php echo FACEBOOK_GROUP; ?>"
+                  target="_blank" rel="noopener nofollow">Facebook Group</a>
+            </li>
+            <?php endif; ?>
+
+            <?php if (!is_null(TWITTER) && "" != TWITTER): ?>
+            <!-- The link to Twitter. -->
+            <li><a class="dropdown-item"
+                  href="https://twitter.com/<?php echo TWITTER; ?>"
+                  target="_blank" rel="noopener nofollow">Twitter</a>
+            </li>
+            <?php endif; ?>
+
+            <?php if (!is_null(GITHUB) && "" != GITHUB): ?>
+            <!-- The link to GitHub. -->
+            <li><a class="dropdown-item"
+                  href="https://github.com/<?php echo GITHUB; ?>"
+                  target="_blank" rel="noopener nofollow">GitHub</a>
+            </li>
+            <?php endif; ?>
           </ul>
         </li>
             </ul>

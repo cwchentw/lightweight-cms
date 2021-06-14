@@ -29,6 +29,21 @@ define("SITE_THEME", "default");
 define("SITE_BREADCRUMB_HOME", "Home");
 
 
+# Social Media
+
+# Facebook account or Facebook fan page.
+define("FACEBOOK", "");
+# Facebook group.
+define("FACEBOOK_GROUP", "");
+# Twitter account.
+define("TWITTER", "");
+# GitHub project.
+#
+# If it is a repo, it should be in the form of `user/project`.
+#  In contrary, if it is a user, it should be the user name.
+define("GITHUB", "cwchentw/mdcms");
+
+
 # The parameters of a site.
 
 # The upper limit of the word count of a dynamically generated description.
