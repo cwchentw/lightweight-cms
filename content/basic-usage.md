@@ -10,9 +10,10 @@ This article illustrates the basic usage of mdcms. Some details are omitted for 
 
 * Production environment
   * GNU/Linux
+  * A web server like Apache or Nginx
   * PHP 7.2 or above
-  * FastCGI Process Manager (FPM)
-  * mbstring extension
+  * FastCGI Process Manager (FPM) of PHP
+  * mbstring extension of PHP
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
   * [MetaParsedown](https://github.com/pagerange/metaparsedown)
 * Development environment
@@ -20,7 +21,7 @@ This article illustrates the basic usage of mdcms. Some details are omitted for 
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org/) (for linting)
 
-We develop mdcms on openSUSE Leap mostly. Any major GNU/Linux distribution should suffice to host a mdcms-based website.
+We develop mdcms on openSUSE Leap mostly. Any major GNU/Linux distribution should suffice to host a mdcms site.
 
 If you are not interested in developing mdcms itself, you still require Composer to install other dependency packages for mdcms.
 
@@ -45,7 +46,7 @@ Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript
 
 ## Usage for End Users
 
-You will be an owner of an awesome content website. It is not of your interest to develop mdcms itself.
+You are a would-be owner of an awesome content website. It is not of your interest to develop mdcms itself.
 
 Clone mdcms to a local repo and rename it:
 
@@ -62,7 +63,7 @@ $ cd mysite
 (Optional) Install Composer:
 
 ```shell
-$ ./tools/bin/install-composer /path/to/prefix
+$ ./tools/bin/install-composer path/to/prefix
 ```
 
 By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
@@ -73,23 +74,7 @@ Install the dependency packages for mdcms:
 $ composer install --no-dev
 ```
 
-(Optional) Install the front end related development tools of with Node.js:
-
-```
-$ npm install
-```
-
-If you don't require to write custom CSS or JavaScript code, skip the step.
-
 Remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
-
-(Optional) Build assets for production environments:
-
-```
-$ npm run prod
-```
-
-This command assumes a production environment, being going to build and minimize all assets.
 
 Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
