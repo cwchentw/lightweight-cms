@@ -41,7 +41,7 @@ Files in the root of mdcms are configurations and documentation. You don't need 
 
 Here we note the actions you should undertake for a safe update:
 
-* Create a directory for your posts other than *content*
+* Create a directory for your posts other than *content* directory
 * Copy *themes/default* to a new location
 
 The posts in *content* directory are the documentation for mdcms. We may alter posts there to reflect the changes we make for mdcms. Therefore, you should store your posts to a location other than *content* directory, setting *setting.php* accordingly to prevent unintentional changes on your content.
