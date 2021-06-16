@@ -3,7 +3,6 @@
 * (Bug) Some external links don't change as expeced
 * (Feature) Optional *_index.md* for the home page of a site
 * (Feature) Order site posts
-* (Feature) Add front matter to HTML. See [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * (Feature) Pagination on sections
 * (Feature) Redirecting link(s)
 * (Project) Refactor PHP scripts in private library

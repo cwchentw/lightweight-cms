@@ -15,6 +15,7 @@ require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
 use Pagerange\Markdown\MetaParsedown;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
 # The implementation is too long. We may refactor it later.
@@ -35,20 +36,39 @@ function readPost($page)
     if (file_exists($htmlPath)) {
         $rawContent = file_get_contents($htmlPath);
 
-        # `$rawContent` is not a full HTML document.
-        # Therefore, we don't use a HTML parser but some regex pattern.
-        preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches);
-        if (isset($matches)) {
-            $result[MDCMS_POST_TITLE] = $matches[1];
+        $object = YamlFrontMatter::parse($rawContent);
 
-            # Remove <h1>-level titles from the content.
-            $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $rawContent);
+        $metadata = $object->matter();
+
+        $stripedContent = $object->body();
+
+        if (isset($metadata["title"])) {
+            $result[MDCMS_POST_TITLE] = $metadata["title"];
+
+            # We have received a title from the metadata of a post.
+            #  Therefore, we remove <h1>-level titles from the content.
+            $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $stripedContent);
         }
         else {
-            $result[MDCMS_POST_CONTENT] = $rawContent;
+            # `$stripedContent` is not a full HTML document.
+            # Therefore, we don't use a HTML parser but some regex pattern.
+            preg_match("/<h1[^>]*>(.+)<\/h1>/", $stripedContent, $matches);
+            if (isset($matches)) {
+                $result[MDCMS_POST_TITLE] = $matches[1];
+
+                # Remove <h1>-level titles from the content.
+                $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $stripedContent);
+            }
+            else {
+                $pages = parsePage($page);
+                $title = preg_replace("/\/|-+/", " ", array_pop($pages));
+                $title = ucwords($title);  # Capitalize a title.
+                $result[MDCMS_SECTION_TITLE] = $title;
+                $result[MDCMS_POST_CONTENT] = $stripedContent;
+            }
         }
 
-        # TODO: Test the code.
+        # Extract an excerpt from a post.
         preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
         if (isset($matches)) {
             $text = "";

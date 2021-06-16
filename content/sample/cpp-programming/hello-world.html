@@ -1,8 +1,14 @@
+---
+title: Write a Hello World Program in C++
+---
 <!-- A full HTML document is not required here. You merely have to
       fill contents between a pair of `<body>` tags here.  -->
 
-<!-- A <h1> level title is highly recommended. -->
+<!-- We set our title in the metadata region. A h1-level title here
+      become unnecessary. -->
+<!--
 <h1>Hello World in C++</h1>
+-->
 
 <h2>Prologue</h2>
 <p>This article demonstrates a Hello World program in C++.</p>
@@ -11,12 +17,12 @@
 <pre>
     <code class="language-cpp">
 /* Include the standard I/O library. */
-#include &#60;iostream&#62; <!-- <iostream> -->
+#include &#60;iostream&#62;  <!-- Escape `<` and `>` here. -->
 
 /* Main function of C++ programs. */
 int main(void)
 {
-    /* Print out some text to stdandard out. */
+    /* Print out some text to stdandard output. */
     std::cout &#60;&#60; "Hello World" &#60;&#60; std::endl;
               <!-- << -->              <!-- << -->
     /* Return a program status. */
