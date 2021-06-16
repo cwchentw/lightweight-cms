@@ -47,3 +47,15 @@ Here we note the actions you should undertake for a safe update:
 The posts in *content* directory are the documentation for mdcms. We may alter posts there to reflect the changes we make for mdcms. Therefore, you should store your posts to a location other than *content* directory, setting *setting.php* accordingly to prevent unintentional changes on your content.
 
 Similiarly, the theme located in *themes/default* are the builtin theme for mdcms. We may change layouts, styles or widgets there. If you would modify anything for your need, you should create a copy of default theme of mdcms to a new location, adding your modifications there. Remember to set *setting.php* to reflect your change.
+
+## Stick to Specific Version of mdcms
+
+*Not implemented yet*
+
+You may stick to specific version of mdcms to avoid unintentional change. Here we invoke a pseudo command:
+
+```shell
+$ git pull https://github.com/cwchentw/mdcms.git 1.0
+```
+
+mdcms is still experimental and envolving currently. We may announce some specific version to maintain if we think mdcms is mature enough.
