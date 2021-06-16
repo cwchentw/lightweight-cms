@@ -2,20 +2,22 @@
 
 ## Prologue
 
-As most software, mdcms envolves with time. You may want to upgrade mdcms to receive new features or bug fixes. This guide demonstrates the process, explaining the rationale as well.
+As most software, mdcms envolves with time. You may want to upgrade mdcms for new features or bug fixes. This guide demonstrates the process, explaining the rationale as well.
 
 ## Synopsis
 
-Here are pseudo commands to upgrade mdcms:
+Here are two-step pseudo commands to upgrade your mdcms repo:
 
 ```shell
 $ cd path/to/your/mdcms/site
 $ git pull https://github.com/cwchentw/mdcms.git
 ```
 
-Technically, you merge your mdcms snapshot with the master branch of mdcms repo. We will indicate what you should be aware in the following text.
+Technically, you merge your mdcms snapshot with the master branch of mdcms repo. In the following text, we will indicate what you should be aware.
 
 ## No Upgrade at all
+
+The upgradation is not mandatory. You may keep publishing your posts without any upgradation as long as your site runs smoothly.
 
 ## Things You should not Touch mostly
 
