@@ -96,16 +96,22 @@ $posts = $GLOBALS[MDCMS_POSTS];
                     if (isset($sections) && count($sections) > 0) {
                         echo "<h2>Sections</h2>";
 
-                        echo "<div class=\"list-group\" style=\"margin-bottom: 30pt;\">";
-
                         foreach ($sections as $section) {
-                            echo "<a class=\"list-group-item\" "
-                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
-                                . $section[MDCMS_LINK_TITLE]
-                                . "</a>";
-                        }
+                            echo "<h3>" . $section[MDCMS_SECTION_TITLE] . "</h3>";
 
-                        echo "</div>";
+                            echo "<p>";
+
+                            if ("" != $section[MDCMS_SECTION_EXCERPT]) {
+                                echo $section[MDCMS_SECTION_EXCERPT];
+                            }
+
+                            echo "<a class=\"btn btn-primary btn-sm\" "
+                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                                . "Read More"
+                                . "</a>";
+
+                            echo "</p>";
+                        }
                     }
                     ?>
                 </div>
