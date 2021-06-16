@@ -45,3 +45,5 @@ Here we note the actions you should undertake for a safe update:
 * Copy *themes/default* to a new location
 
 The posts in *content* directory are the documentation for mdcms. We may alter posts there to reflect the changes we make for mdcms. Therefore, you should store your posts to a location other than *content* directory, setting *setting.php* accordingly to prevent unintentional changes on your content.
+
+Similiarly, the theme located in *themes/default* are the builtin theme for mdcms. We may change layouts, styles or widgets there. If you would modify anything for your need, you should create a copy of default theme of mdcms to a new location, adding your modifications there. Remember to set *setting.php* to reflect your change.
