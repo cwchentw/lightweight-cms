@@ -25,9 +25,13 @@ Some site owners modify their mdcms repos substantially. In such case, such meas
 
 ## Things You should not Touch mostly
 
+If you are going to upgrade mdcms, you should not modify these things mostly:
+
 * *www/index.php*
 * All things under *src*
 * All things at the root path **except** *setting.php*
+
+*www/index.php* works as the router of mdcms, which matches between URLs and the corresponding post files on your web server. Modifying it improperly may cause a defunct mdcms site.
 
 ## Things You should Do before Update
 
