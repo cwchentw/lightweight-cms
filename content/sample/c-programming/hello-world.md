@@ -1,4 +1,6 @@
-# Hello World in C
+---
+title: Write a Hello World Program in C
+---
 
 ## Prologue
 

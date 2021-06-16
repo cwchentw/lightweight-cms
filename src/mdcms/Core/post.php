@@ -122,8 +122,8 @@ function readPost($page)
         # Strip metadata from a content.
         $stripedContent = $metaParser->stripMeta($rawContent);
 
-        if (isset($metadata["title"])) {
-            $result[MDCMS_POST_TITLE] = $metadata["title"];
+        if (isset($metadata[METADATA_TITLE])) {
+            $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # Remove a <h1>-level title from the content.
             # Here we assume there is only one <h1> title per document.
