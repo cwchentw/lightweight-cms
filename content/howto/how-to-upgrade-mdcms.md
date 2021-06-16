@@ -29,7 +29,7 @@ Some site owners modify their mdcms repos substantially. In such case, such meas
 * All things under *src*
 * All things at the root path **except** *setting.php*
 
-## Things You should Modify before Update
+## Things You should Do before Update
 
-* Create a directory other than *content*
+* Create a directory for your content other than *content*
 * Copy *themes/default* to a new location
