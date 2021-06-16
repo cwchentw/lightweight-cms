@@ -1,8 +1,12 @@
-# How to Update mdcms
+# How to Upgrade mdcms
 
 ## Prologue
 
+As most software, mdcms envolves with time. You may want to upgrade mdcms to receive new features or bug fix. This guide demonstrates the process, explaining the rationale as well.
+
 ## Synopsis
+
+Here are pseudo commands to upgrade mdcms:
 
 ```shell
 $ cd path/to/your/mdcms/site
