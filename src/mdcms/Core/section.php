@@ -14,6 +14,7 @@ require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
+use Pagerange\Markdown\MetaParsedown;
 
 function getSection($page)
 {
@@ -26,28 +27,86 @@ function getSection($page)
 
     $rootDirectory = __DIR__ . "/../../..";
     $indexPage = $rootDirectory . "/" . CONTENT_DIRECTORY
-        . "/" . $page . SECTION_INDEX;
+        . $page . "/" . SECTION_INDEX;
 
     # If a section index exists, extract data from it.
     if (file_exists($indexPage)) {
-        $c = file_get_contents($indexPage);
+        $rawContent = file_get_contents($indexPage);
 
-        preg_match("/^# (.+)/", $c, $matches);
-        if (isset($matches)) {
-            $result[MDCMS_SECTION_TITLE] = $matches[1];
+        $metaParser = new MetaParsedown();
+
+        $metadata = $metaParser->meta($rawContent);
+        $stripedContent = $metaParser->stripMeta($rawContent);
+
+        if (isset($metadata["title"]) && "" != $metadata["title"]) {
+            $result[MDCMS_SECTION_TITLE] = $metadata["title"];
+
+            $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
+
+            $parser = new \Parsedown();
+            $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
         }
+        else {
+            preg_match("/^# (.+)/", $stripedContent, $matches);
+            if ("" != $matches[1]) {
+                $result[MDCMS_SECTION_TITLE] = $matches[1];
 
-        $c = preg_replace("/^# (.+)/", "", $c);
+                $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
 
-        $parser = new \Parsedown();
-        $result[MDCMS_SECTION_CONTENT] = $parser->text($c);
+                $parser = new \Parsedown();
+                $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
+            }
+            else {
+                $parser = new \Parsedown();
+                $result[MDCMS_SECTION_CONTENT] = $parser->text($rawContent);
+
+                goto extract_title_from_page;
+            }
+        }
     }
     # Otherwise, extract data from the directory name.
     else {
+        extract_title_from_page:
         $pages = parsePage($page);
         $title = preg_replace("/\/|-+/", " ", array_pop($pages));
         $title = ucwords($title);  # Capitalize a title.
         $result[MDCMS_SECTION_TITLE] = $title;
+    }
+
+    preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_SECTION_CONTENT], $matches);
+    if (isset($matches)) {
+        $text = "";
+
+        for ($i = 0; $i < count($matches[1]); ++$i) {
+            # Reduce multiple spaces into single space.
+            $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
+            $text .= $paragraph;
+
+            if ($i < count($matches[1]) - 1) {
+                $text .= " ";
+            }
+        }
+
+        $words = explode(" ", $text);
+
+        $excerpt = "";
+        for ($i = 0; $i < count($words); ++$i) {
+            if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
+                $excerpt .= $words[$i];
+            }
+            else {
+                break;
+            }
+
+            if ($i < count($words) - 1) {
+                $excerpt .= " ";
+            }
+        }
+
+        $result[MDCMS_SECTION_EXCERPT] = $excerpt;
+    }
+    else {
+        $result[MDCMS_SECTION_EXCERPT] = "";
     }
 
     return $result;

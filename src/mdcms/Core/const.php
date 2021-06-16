@@ -22,6 +22,7 @@ define("MDCMS_SECTION_CONTENT", "content");
 define("MDCMS_SECTION_STATUS", "status");
 # TODO: Refactor some code.
 define("MDCMS_SECTION_MTIME", "mtime");
+define("MDCMS_SECTION_EXCERPT", "excerpt");
 
 
 # Post related constants.

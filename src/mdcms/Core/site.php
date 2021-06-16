@@ -12,6 +12,7 @@ require_once $rootDirectory . "/vendor/autoload.php";
 require_once $rootDirectory . "/setting.php";
 # Load local libraries.
 require_once __DIR__ . "/const.php";
+require_once __DIR__ . "/section.php";
 require_once __DIR__ . "/page.php";
 # Load a private library.
 require_once __DIR__ . "/_site.php";
@@ -38,44 +39,19 @@ function getSections($page)
 
         $path = $contentDirectory . "/" . $file;
         if (is_dir($path)) {
-            $link = array();
-
-            # Set the link path.
-            $link[MDCMS_LINK_PATH] = $page . $file . "/";
-
-            $indexPage = $path . "/" . SECTION_INDEX;
-
-            # If a section index exists, extract data from it.
-            if (file_exists($indexPage)) {
-                $rawContent = file_get_contents($indexPage);
-
-                $metaParser = new MetaParsedown();
-
-                $metadata = $metaParser->meta($rawContent);
-                $stripedContent = $metaParser->stripMeta($rawContent);
-
-                if (isset($metadata["title"])) {
-                    $link[MDCMS_LINK_TITLE] = $metadata["title"];
-                }
-                else {
-                    preg_match("/^# (.+)/", $stripedContent, $matches);
-                    if (isset($matches)) {
-                        $link[MDCMS_LINK_TITLE] = $matches[1];
-                    }
-                    else {
-                        goto extract_title_from_page;
-                    }
-                }
+            $section = null;
+            # Get top section(s).
+            if ("/" == $page) {
+                $section = getSection("/" . $file);
+                $section[MDCMS_LINK_PATH] = "/" . $file . "/";
             }
-            # Otherwise, extract data from the directory name.
+            # Get subsection(s) of a section.
             else {
-                extract_title_from_page:
-                $t = preg_replace("/\/|-+/", " ", $file);
-                $t = ucwords($t);  # Capitalize a title.
-                $link[MDCMS_SECTION_TITLE] = $t;
+                $section = getSection($page . $file);
+                $section[MDCMS_LINK_PATH] = $page . $file . "/";
             }
 
-            array_push($result, $link);
+            array_push($result, $section);
         }
     }
 
