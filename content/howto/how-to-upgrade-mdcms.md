@@ -19,7 +19,9 @@ In the following text, we will indicate what you should be aware to avoid code c
 
 ## No Upgrade at all
 
-The upgradation is not mandatory. You may keep publishing your posts without any upgradation as long as your site runs smoothly.
+The process is optional. You may keep publishing your posts without any upgradation as long as your site runs smoothly.
+
+Some site owners modify their mdcms repos substantially. In such case, such measure may introduce more problems than improvement.
 
 ## Things You should not Touch mostly
 
