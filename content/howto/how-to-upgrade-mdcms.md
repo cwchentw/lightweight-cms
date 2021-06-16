@@ -2,7 +2,7 @@
 
 ## Prologue
 
-As most software, mdcms envolves with time. You may want to upgrade mdcms to receive new features or bug fix. This guide demonstrates the process, explaining the rationale as well.
+As most software, mdcms envolves with time. You may want to upgrade mdcms to receive new features or bug fixes. This guide demonstrates the process, explaining the rationale as well.
 
 ## Synopsis
 
@@ -13,7 +13,9 @@ $ cd path/to/your/mdcms/site
 $ git pull https://github.com/cwchentw/mdcms.git
 ```
 
-## No Update at all
+Technically, you merge your mdcms snapshot with the master branch of mdcms repo. We will indicate what you should be aware in the following text.
+
+## No Upgrade at all
 
 ## Things You should not Touch mostly
 
