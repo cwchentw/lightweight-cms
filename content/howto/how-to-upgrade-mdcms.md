@@ -33,6 +33,10 @@ If you are going to upgrade mdcms, you should not modify these things mostly:
 
 *www/index.php* works as the router of mdcms, which matches between URLs and the corresponding post files on your web server. Modifying it improperly may cause a defunct mdcms site.
 
+*src* places the core library of mdcms. Unless you want to contribute to mdcms itself, you don't need to change anything here.
+
+Files in the root of mdcms are configurations and documentation. You don't need to alter anything here except *setting.php* for a usable mdcms site.
+
 ## Things You should Do before Update
 
 * Create a directory for your posts other than *content*
