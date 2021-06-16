@@ -42,8 +42,8 @@ function readPost($page)
 
         $stripedContent = $object->body();
 
-        if (isset($metadata["title"])) {
-            $result[MDCMS_POST_TITLE] = $metadata["title"];
+        if (isset($metadata[METADATA_TITLE])) {
+            $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # We have received a title from the metadata of a post.
             #  Therefore, we remove <h1>-level titles from the content.
