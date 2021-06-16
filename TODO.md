@@ -10,7 +10,6 @@
 * (Project) Set a blacklist for plugin(s)
 * (Project) Move `getBreadcrumb($page)` to *page.php*
 * (Project) Create an icon generator
-* (Theme) Refactor the navbar by detecting social media accounts
 * (Theme) Open graphs
 * (Theme) Modify the icon of GitHub
 * (Theme) Create a set of social media icons

@@ -20,6 +20,14 @@ require_once __DIR__ . "/_site.php";
 use Pagerange\Markdown\MetaParsedown;
 
 
+function hasSocialMedia()
+{
+    return !("" == FACEBOOK
+        && "" == FACEBOOK_GROUP
+        && "" == TWITTER
+        && "" == GITHUB); 
+}
+
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/post-title/".
