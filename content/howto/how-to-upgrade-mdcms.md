@@ -13,7 +13,9 @@ $ cd path/to/your/mdcms/site
 $ git pull https://github.com/cwchentw/mdcms.git
 ```
 
-Technically, you merge your mdcms snapshot with the master branch of mdcms repo. In the following text, we will indicate what you should be aware.
+Technically, you merge your mdcms snapshot with the master branch of mdcms repo. Git will manage the process without manual intervention unless there are any conflict between the codes of the two repositories.
+
+In the following text, we will indicate what you should be aware to avoid code conflicts.
 
 ## No Upgrade at all
 
