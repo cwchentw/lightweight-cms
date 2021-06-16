@@ -195,6 +195,10 @@ code {
             .breadcrumb-item {
                 color: $background-color;
 
+                &::before {
+                    color: unset;
+                }
+
                 a {
                     color: $background-color;
 
