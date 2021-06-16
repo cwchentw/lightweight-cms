@@ -31,5 +31,5 @@ Some site owners modify their mdcms repos substantially. In such case, such meas
 
 ## Things You should Do before Update
 
-* Create a directory for your content other than *content*
+* Create a directory for your posts other than *content*
 * Copy *themes/default* to a new location
