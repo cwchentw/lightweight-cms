@@ -80,6 +80,14 @@ function readPost($page)
             $result[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
         }
 
+        # Set the mtime of a post.
+        if (!is_null($metadata[METADATA_MTIME]) && "" != $metadata[METADATA_MTIME]) {
+            $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
+        }
+        else {
+            $result[MDCMS_POST_MTIME] = filemtime($htmlPath);
+        }
+
         # Extract an excerpt from a post.
         preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
         if (isset($matches)) {
@@ -162,6 +170,14 @@ function readPost($page)
         }
         else {
             $result[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
+        }
+
+        # Set the mtime of a post.
+        if (!is_null($metadata[METADATA_MTIME]) && "" != $metadata[METADATA_MTIME]) {
+            $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
+        }
+        else {
+            $result[MDCMS_POST_MTIME] = filemtime($markdownPath);
         }
 
         # Convert the Markdown document into a HTML document.

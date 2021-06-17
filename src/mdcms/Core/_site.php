@@ -98,7 +98,6 @@ function readMarkdownLink($page)
 
     preg_match("/^# (.+)/", $rawContent, $matches);
 
-    print_r($matches);
     # Extract a title from a document.
     if (array_key_exists("1", $matches)) {
         $result[MDCMS_LINK_TITLE] = $matches[1];

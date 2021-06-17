@@ -46,6 +46,10 @@ $post = $GLOBALS[MDCMS_POST];
                         The author of the post is <?php echo $post[MDCMS_POST_AUTHOR]; ?>.
                     </div>
 
+                    <div class="alert alert-secondary" role="alert">
+                        Last modified date is <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?>.
+                    </div>
+
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.

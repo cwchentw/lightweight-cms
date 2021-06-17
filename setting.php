@@ -105,6 +105,8 @@ define("PUBLIC_DIRECTORY", "public");
 define("METADATA_TITLE", "title");
 # The field of the author of a post.
 define("METADATA_AUTHOR", "author");
+# The mtime (last modified time) of a post.
+define("METADATA_MTIME", "mtime");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");
