@@ -1,5 +1,6 @@
 ---
 title: Write a Hello World Program in C
+mtime: 2021/6/17
 ---
 
 ## Prologue
@@ -21,6 +22,16 @@ int main(void)
     /* Return a program status. */
     return 0;
 }
+```
+
+## Compilation
+
+Here is a pseudo command to compile and run C code:
+
+```shell
+$ gcc -o program source.c
+$ ./program
+Hello World
 ```
 
 ## README
