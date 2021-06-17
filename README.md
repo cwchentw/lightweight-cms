@@ -23,6 +23,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * FastCGI Process Manager (FPM) of PHP
   * mbstring extension of PHP
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
+  * [MetaParsedown](https://github.com/pagerange/metaparsedown)
   * [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * Development
   * [Composer](https://getcomposer.org)
