@@ -9,6 +9,8 @@ This guide illustrates to create a mdcms theme, taking [default theme](https://g
 
 ## Project Structure
 
+Here we list the project structure of *default* theme of mdcms:
+
 ```shell
 $ cd path/to/themes/default
 $ tree --dirsfirst -a -L 1
@@ -30,6 +32,10 @@ $ tree --dirsfirst -a -L 1
 ├── README.md
 └── .stylelintrc
 ```
+
+*assets* directory places front end assets. In this theme, the directory includes [Babel](https://babeljs.io/) and [Scss](https://sass-lang.com/) code.
+
+Babel code is vanilla JavaScript. Nevertheless, we still transcompile it for compatibility with older browsers. In contrary, Sass code is unusable before compiling to corresponding CSS one.
 
 ## *autoload.php*
 
