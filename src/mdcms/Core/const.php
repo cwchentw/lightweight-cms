@@ -27,6 +27,7 @@ define("MDCMS_SECTION_EXCERPT", "excerpt");
 
 # Post related constants.
 define("MDCMS_POST_TITLE", "title");
+define("MDCMS_POST_AUTHOR", "author");
 define("MDCMS_POST_CONTENT", "content");
 define("MDCMS_POST_STATUS", "status");
 # TODO: Refactor some code.

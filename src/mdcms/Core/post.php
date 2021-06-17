@@ -14,8 +14,8 @@ require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
-use Pagerange\Markdown\MetaParsedown;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
+use \Pagerange\Markdown\MetaParsedown;
+use \Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
 # The implementation is too long. We may refactor it later.
@@ -26,6 +26,7 @@ function readPost($page)
     # Initialize the fields of a post.
     $result[MDCMS_POST_TITLE] = "";
     $result[MDCMS_POST_CONTENT] = "";
+    $result[MDCMS_POST_AUTHOR] = "";
     $result[MDCMS_POST_STATUS] = 404;
 
     $htmlPath = getPath($page, HTML_FILE_EXTENSION);
@@ -69,6 +70,14 @@ function readPost($page)
                 $result[MDCMS_POST_TITLE] = $title;
                 $result[MDCMS_POST_CONTENT] = $stripedContent;
             }
+        }
+
+        # Set the author of a post.
+        if (!is_null($metadata[METADATA_AUTHOR]) && "" != $metadata[METADATA_AUTHOR]) {
+            $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
+        }
+        else {
+            $result[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
         }
 
         # Extract an excerpt from a post.
@@ -145,6 +154,14 @@ function readPost($page)
             else {
                 $result[MDCMS_POST_CONTENT] = $stripedContent;
             }
+        }
+
+        # Set the author of a post.
+        if (!is_null($metadata[METADATA_AUTHOR]) && "" != $metadata[METADATA_AUTHOR]) {
+            $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
+        }
+        else {
+            $result[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
         }
 
         # Convert the Markdown document into a HTML document.

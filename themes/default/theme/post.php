@@ -42,6 +42,10 @@ $post = $GLOBALS[MDCMS_POST];
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
+                    <div class="alert alert-primary" role="alert">
+                        The author of the post is <?php echo $post[MDCMS_POST_AUTHOR]; ?>.
+                    </div>
+
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.

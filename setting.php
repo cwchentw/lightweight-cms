@@ -101,8 +101,10 @@ define("APPLICATION_DIRECTORY", "www");
 # The directory of public files.
 define("PUBLIC_DIRECTORY", "public");
 
-# The field of the title in a post.
+# The field of the title of a section or a post.
 define("METADATA_TITLE", "title");
+# The field of the author of a post.
+define("METADATA_AUTHOR", "author");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");
