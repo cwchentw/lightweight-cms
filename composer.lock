@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8545248fa9a27b3b2c6232747a028c6b",
+    "content-hash": "a0a9cb9746cf06a9b16ca5f6763a58c3",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -106,60 +106,6 @@
                 "source": "https://github.com/erusev/parsedown-extra/tree/0.8.x"
             },
             "time": "2019-12-30T23:20:37+00:00"
-        },
-        {
-            "name": "pagerange/metaparsedown",
-            "version": "1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pagerange/metaparsedown.git",
-                "reference": "d3e6e24e683bd968bfc6eca9f26376397ac4eaf1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pagerange/metaparsedown/zipball/d3e6e24e683bd968bfc6eca9f26376397ac4eaf1",
-                "reference": "d3e6e24e683bd968bfc6eca9f26376397ac4eaf1",
-                "shasum": ""
-            },
-            "require": {
-                "erusev/parsedown": "^1.7.4",
-                "erusev/parsedown-extra": "^0.8.1",
-                "symfony/yaml": "^3.3 || ^4.0 || ^5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Pagerange\\Markdown\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steve George",
-                    "email": "steve@pagerange.com"
-                }
-            ],
-            "description": "Adds ability to have meta data in markdown files parsed by eursev/parsedown or eruseve/parsedown-extra",
-            "keywords": [
-                "markdown",
-                "markdown-extra",
-                "meta",
-                "pagerange",
-                "parsedown",
-                "parsedown-extra",
-                "yaml"
-            ],
-            "support": {
-                "issues": "https://github.com/pagerange/metaparsedown/issues",
-                "source": "https://github.com/pagerange/metaparsedown/tree/master"
-            },
-            "time": "2020-07-31T16:27:36+00:00"
         },
         {
             "name": "spatie/yaml-front-matter",

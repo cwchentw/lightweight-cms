@@ -17,8 +17,6 @@ require_once __DIR__ . "/page.php";
 # Load a private library.
 require_once __DIR__ . "/_site.php";
 
-use Pagerange\Markdown\MetaParsedown;
-
 
 function hasSocialMedia()
 {
@@ -212,63 +210,21 @@ function getBreadcrumb($page)
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
         if (is_dir($path)) {
-            $indexPage = $path . "/" . SECTION_INDEX;
-
-            # If a section index exists, extract data from it.
-            if (file_exists($indexPage)) {
-                $c = file_get_contents($indexPage);
-
-                preg_match("/^# (.+)/", $c, $matches);
-                if (isset($matches)) {
-                    $d[MDCMS_LINK_TITLE] = $matches[1];
-                }
-            }
-            # Otherwise, extract data from the directory name.
-            else {
-                $t = preg_replace("/\/|-+/", " ", $arr[$i]);
-                $t = ucwords($t);  # Capitalize a title.
-                $d[MDCMS_SECTION_TITLE] = $t;
-            }
-
-            array_push($result, $d);
+            $section = getSection($prev . $arr[$i]);
+            $section[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            array_push($result, $section);
         }
         else if (file_exists($htmlPath)) {
-            $rawContent = file_get_contents($htmlPath);
+            $post = readPost($prev . $arr[$i]);
+            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
-            # `$rawContent` is not a full HTML document.
-            # Therefore, we don't use a HTML parser but some regex pattern.
-            preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches);
-
-            # Extract a title from a document.
-            if (isset($matches)) {
-                $d[MDCMS_POST_TITLE] = $matches[1];
-            }
-            # If no title in the above document, extract a title from a path.
-            else {
-                $t = preg_replace("/-+/", " ", $arr[$i]);
-                $t = ucwords($t);  # Capitalize a title.
-                $d[MDCMS_LINK_TITLE] = $t;
-            }
-
-            array_push($result, $d);
+            array_push($result, $post);
         }
         else if (file_exists($markdownPath)) {
-            $c = file_get_contents($markdownPath);
+            $post = readPost($prev . $arr[$i]);
+            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
-            preg_match("/^# (.+)/", $c, $matches);
-
-            # Extract a title from a document.
-            if (isset($matches)) {
-                $d[MDCMS_LINK_TITLE] = $matches[1];   
-            }
-            # If no title in the above document, extract a title from a path.
-            else {
-                $t = preg_replace("/-+/", " ", $arr[$i]);
-                $t = ucwords($t);  # Capitalize a title.
-                $d[MDCMS_LINK_TITLE] = $t;
-            }
-
-            array_push($result, $d);
+            array_push($result, $post);
         }
     }
 

@@ -14,7 +14,6 @@ require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
-use Pagerange\Markdown\MetaParsedown;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
@@ -36,10 +35,13 @@ function readPost($page)
     if (file_exists($htmlPath)) {
         $rawContent = file_get_contents($htmlPath);
 
+        # Parse raw content.
         $object = YamlFrontMatter::parse($rawContent);
 
+        # Extract metadata from a post.
         $metadata = $object->matter();
 
+        # Strip metadata from a post.
         $stripedContent = $object->body();
 
         if (isset($metadata[METADATA_TITLE])) {
@@ -114,13 +116,14 @@ function readPost($page)
     else if (file_exists($markdownPath)) {
         $rawContent = file_get_contents($markdownPath);
 
-        $metaParser = new MetaParsedown();
+        # Parse raw content.
+        $object = YamlFrontMatter::parse($rawContent);
 
-        # Extract metadata from a content.
-        $metadata = $metaParser->meta($rawContent);
+        # Extract metadata from a post.
+        $metadata = $object->matter();
 
-        # Strip metadata from a content.
-        $stripedContent = $metaParser->stripMeta($rawContent);
+        # Strip metadata from a post.
+        $stripedContent = $object->body();
 
         if (isset($metadata[METADATA_TITLE])) {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];

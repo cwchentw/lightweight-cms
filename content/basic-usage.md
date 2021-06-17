@@ -15,7 +15,7 @@ This article illustrates the basic usage of mdcms. Some details are omitted for 
   * FastCGI Process Manager (FPM) of PHP
   * mbstring extension of PHP
   * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
-  * [MetaParsedown](https://github.com/pagerange/metaparsedown)
+  * [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
 * Development environment
   * [Composer](https://getcomposer.org/)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)

@@ -14,7 +14,7 @@ require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
-use Pagerange\Markdown\MetaParsedown;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 function getSection($page)
 {
@@ -33,10 +33,14 @@ function getSection($page)
     if (file_exists($indexPage)) {
         $rawContent = file_get_contents($indexPage);
 
-        $metaParser = new MetaParsedown();
+        # Parse raw content.
+        $object = YamlFrontMatter::parse($rawContent);
 
-        $metadata = $metaParser->meta($rawContent);
-        $stripedContent = $metaParser->stripMeta($rawContent);
+        # Extract metadata from a post.
+        $metadata = $object->matter();
+
+        # Strip metadata from a post.
+        $stripedContent = $object->body();
 
         if (isset($metadata["title"]) && "" != $metadata["title"]) {
             $result[MDCMS_SECTION_TITLE] = $metadata["title"];
