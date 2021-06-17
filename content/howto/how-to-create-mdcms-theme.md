@@ -6,7 +6,27 @@ This guide illustrates to create a mdcms theme, taking [default theme](https://g
 
 ## Project Structure
 
-Pending.
+```shell
+$ cd path/to/themes/default
+$ tree --dirsfirst -a -L 1
+.
+├── assets
+├── build
+├── node_modules
+├── partials
+├── public
+├── src
+├── theme
+├── autoload.php
+├── .browserlistrc
+├── .eslintrc
+├── .flowconfig
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+└── .stylelintrc
+```
 
 ## *autoload.php*
 
