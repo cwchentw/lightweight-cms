@@ -169,9 +169,17 @@ Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]`
 
 [the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
 
+* `$GLOBALS[MDCMS_SECTION]`
+* `$GLOBALS[MDCMS_SECTIONS]`
+* `$GLOBALS[MDCMS_POSTS]`
+* `$GLOBALS[MDCMS_BREADCRUMB]`
+
 ### Layout for Posts
 
 [the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
+
+* `$GLOBALS[MDCMS_POST]`
+* `$GLOBALS[MDCMS_BREADCRUMB]`
 
 ## Best Practices
 
