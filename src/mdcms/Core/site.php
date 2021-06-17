@@ -48,12 +48,12 @@ function getSections($page)
             $section = null;
             # Get top section(s).
             if ("/" == $page) {
-                $section = getSection("/" . $file);
+                $section = readSection("/" . $file);
                 $section[MDCMS_LINK_PATH] = "/" . $file . "/";
             }
             # Get subsection(s) of a section.
             else {
-                $section = getSection($page . $file);
+                $section = readSection($page . $file);
                 $section[MDCMS_LINK_PATH] = $page . $file . "/";
             }
 
@@ -210,7 +210,7 @@ function getBreadcrumb($page)
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
         if (is_dir($path)) {
-            $section = getSection($prev . $arr[$i]);
+            $section = readSection($prev . $arr[$i]);
             $section[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
             array_push($result, $section);
         }

@@ -16,7 +16,7 @@ require_once __DIR__ . "/page.php";
 
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
-function getSection($page)
+function readSection($page)
 {
     $result = array();
 
