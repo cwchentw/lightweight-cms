@@ -153,18 +153,6 @@ There are four global variables in this layout:
 * `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
 * `$GLOBALS[MDCMS_BREADCRUMB]`: An array of breadcrumbs of the home page of a mdcms site
 
-There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
-
-* `$section[MDCMS_LINK_PATH]`: The link to a section
-* `$section[MDCMS_SECTION_TITLE]`: The title of a section
-* `$section[MDCMS_SECTION_EXCERPT]`: A brief description to a section
-
-Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]` (`$post` here):
-
-* `$post[MDCMS_LINK_PATH]`: The link to a post
-* `$post[MDCMS_POST_TITLE]`: The title of a post
-* `$post[MDCMS_POST_EXCERPT]`: A brief description to a post
-
 ### Layout for Sections
 
 [the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
@@ -174,12 +162,42 @@ Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]`
 * `$GLOBALS[MDCMS_POSTS]`
 * `$GLOBALS[MDCMS_BREADCRUMB]`
 
+Variables in a section (`$section` here):
+
+* `$section[MDCMS_SECTION_TITLE]`
+* `$section[MDCMS_SECTION_CONTENT]`
+* `$section[MDCMS_SECTION_META]` (not implemented yet)
+
 ### Layout for Posts
 
 [the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
 
 * `$GLOBALS[MDCMS_POST]`
 * `$GLOBALS[MDCMS_BREADCRUMB]`
+
+Variables in a post (`$post` here):
+
+* `$post[MDCMS_POST_TITLE]`
+* `$post[MDCMS_POST_CONTENT]`
+* `$post[MDCMS_POST_AUTHOR]` (not implemented yet)
+* `$post[MDCMS_POST_MTIME]` (not implemented yet)
+* `$post[MDCMS_POST_META]` (not implemented yet)
+
+### Variables in an Element of Sections
+
+There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
+
+* `$section[MDCMS_LINK_PATH]`: The link to a section
+* `$section[MDCMS_SECTION_TITLE]`: The title of a section
+* `$section[MDCMS_SECTION_EXCERPT]`: A brief description to a section
+
+### Variables in an Element of Posts
+
+Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]` (`$post` here):
+
+* `$post[MDCMS_LINK_PATH]`: The link to a post
+* `$post[MDCMS_POST_TITLE]`: The title of a post
+* `$post[MDCMS_POST_EXCERPT]`: A brief description to a post
 
 ## Best Practices
 
