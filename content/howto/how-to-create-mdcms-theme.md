@@ -17,9 +17,7 @@ $ tree --dirsfirst -a -L 1
 .
 ├── assets
 ├── build
-├── node_modules
 ├── partials
-├── public
 ├── src
 ├── theme
 ├── autoload.php
@@ -33,9 +31,13 @@ $ tree --dirsfirst -a -L 1
 └── .stylelintrc
 ```
 
-*assets* directory places front end assets. In this theme, the directory includes [Babel](https://babeljs.io/) and [Scss](https://sass-lang.com/) code.
+*assets* directory places front end assets. In *default* theme, the directory includes [Babel](https://babeljs.io/) and [Scss](https://sass-lang.com/) code.
 
 Babel code is vanilla JavaScript. Nevertheless, we still transcompile it for compatibility with older browsers. In contrary, Sass code is unusable before compiling to corresponding CSS one.
+
+*build* directory composes of Gulp build scripts. If you want to employ other build automation system, you require to write your own.
+
+*theme* and *partials* are the layout of *default* theme. To simplify the code base, these layouts are written in PHP instead of other template language.
 
 ## *autoload.php*
 
