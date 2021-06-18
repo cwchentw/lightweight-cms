@@ -29,7 +29,7 @@ https://example.com/section/post/
 
 Such URL will map to either *content/section/post.md* or *content/section/post.html*.
 
-Nested sections are allowed as well. Here shows a pseudo URL with such sections:
+Nested sections for a post are allowed as well. Here shows a pseudo URL with such a post:
 
 ```
 https://example.com/section/subsection/post/
