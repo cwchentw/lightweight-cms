@@ -124,7 +124,7 @@ server {
     #  to hide sensitive system information.
     #
     # We redirect all URLs to our index script
-    #  and generate 404.html dynamically.
+    #  and generate a 404.html dynamically.
     #
     #error_page  404              /404.html;
 
@@ -134,7 +134,7 @@ server {
 
     # Route to 50x.html.
     #
-    # The page is prerendered by our custom scripts.
+    # The page is prerendered by our custom script.
     #  Therefore, it is static.
     #
     location /50x.html {
@@ -159,7 +159,6 @@ server {
     }
 
     # Pass PHP scripts to a FastCGI server.
-    #  In this case, php-fpm.
     location ~ \.php$ {
         root           /var/www/mdcms/www/;
 
@@ -167,6 +166,7 @@ server {
         #fastcgi_pass   127.0.0.1:9000;
         # Listen to a socket.
         fastcgi_pass   unix:/run/php-fpm/www.sock;
+
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
 
