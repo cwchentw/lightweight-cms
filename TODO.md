@@ -7,6 +7,7 @@
 * (Feature) Order site posts
 * (Feature) Pagination on sections and posts
 * (Feature) Redirecting link(s)
+* (Feature) Add an offline.html generator
 * (Project) Copy *www/index.php* to *public* on deployment
 * (Project) Refactor PHP scripts in private library
 * (Project) Set a blacklist for plugin(s)
