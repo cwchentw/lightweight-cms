@@ -4,28 +4,28 @@
 
 # Information of a site.
 
-# The base URL of a site without a trailing slash.
+# Base URL of a site without a trailing slash.
 define("SITE_BASE_URL", "https://example.com");
-# The full name of a site.
+# Full name of a site.
 define("SITE_NAME", "Markdown Content Management System");
-# The short name of a site.
+# Short name of a site.
 define("SITE_SHORT_NAME", "mdcms");
 # A concise description of a site.
 define("SITE_DESCRIPTION", "A Markdown-based Dynamic Website Generator Powered by PHP");
-# The principal author of a site.
+# Principal author of a site.
 #
 # If there are multiple authors in a site,
 #  set the author of a specific post in its front matter.
 define("SITE_AUTHOR", "Michelle Chen");
-# The copyright of the site.
+# Copyright text of a site.
 define("SITE_COPYRIGHT", "Copyright (c) 2021 Michelle Chen. Licensed under CC BY 4.0.");
-# The language of rendered HTML pages.
+# Language of rendered HTML pages.
 #
 # mdcms is not designed for a multi-language site.
 #  You may require two or more sets of layouts and
-#  some modifications on the router of mdcms for such site.
+#  some modifications on router of mdcms for such a site.
 define("SITE_LANGUAGE", "en-US");
-# The theme of a site.
+# Theme of a site.
 define("SITE_THEME", "default");
 
 
@@ -38,7 +38,7 @@ define("FACEBOOK", "");
 define("FACEBOOK_GROUP", "");
 # Twitter account.
 define("TWITTER", "");
-# GitHub project.
+# GitHub user or project.
 #
 # If it is a project, it should be in the form of `user/project`.
 #  In contrary, if it is a user, it should be the user name.
@@ -59,12 +59,12 @@ define("EXCERPT_THRESHOLD", 140);
 
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", true);
-# Enable a ToC (Table of Contents) on the sidebar of posts.
+# Enable a ToC (Table of Contents) on sidebars of posts.
 define("ENABLE_TOC", true);
-# Enable a fixed sidebar.
+# Enable fixed sidebars.
 define("ENABLE_FIXED_SIDEBAR", true);
 # Enable the support to hightlight.js
-# Currently, the theme of hightlight.js is hard coded.
+#  Currently, the theme of hightlight.js is hard coded.
 define("ENABLE_CODE_HIGHTLIGHT", true);
 # Block search engine bots on sections.
 #
@@ -83,7 +83,7 @@ define("SCAN_APPLICATION_DIRECTORY", false);
 
 
 # Mostly, you don't require to modify anything below.
-# If either is modified, modify the project accordingly as well.
+# If either is modified, change your project accordingly as well.
 
 # The index files used by home page and sections.
 define("SECTION_INDEX", "_index.md");
