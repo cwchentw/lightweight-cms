@@ -5,7 +5,7 @@ mtime: 2021/6/18
 
 ## Prologue
 
-As an owner of an awesome content website, you cannot wait to write posts. This article illustrates how to write posts on mdcms-based sites.
+As a would-be owner of an awesome content website, you cannot wait to write and publish posts. This article illustrates how to write posts on mdcms-based sites.
 
 ## Choose a Programming Editor
 
