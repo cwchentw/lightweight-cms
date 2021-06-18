@@ -1,9 +1,9 @@
-# Private Library of mdcms
+# Internal Library of mdcms
 
 ## For End Users
 
-This directory places the private library of mdcms. Almost entirely, you don't require to modify anything here to use mdcms.
+This directory places internal library of mdcms. Almost entirely, you don't require to modify anything here to use mdcms.
 
-## For Developers
+## For Contributors
 
-If you want to alter anything here, create a fork of mdcms and edit code over the forked repo. Later, you can push back your modifications and send us a pull request.
+If you want to alter anything here, create a fork of mdcms on GitHub and add your modification over the forked repo. You may push back your modifications and, optionally, send us a pull request.
