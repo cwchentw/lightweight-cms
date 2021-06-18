@@ -7,7 +7,7 @@ mtime: 2021/6/9
 
 This article illustrates simulated classes and objects in pure C.
 
-## An External Program to Call C Objects
+## External Program to Call C Objects
 
 ```c
 /* main.c */
