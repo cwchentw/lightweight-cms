@@ -126,4 +126,4 @@ Here are exposed fields of front matters:
 
 They are not hard coded but adjustable in *setting.php*.
 
-In addition, all fields in front matters are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
+In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
