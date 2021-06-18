@@ -1,8 +1,8 @@
 <?php
 # Breadcrumb(s) of a page.
 #
-# This layout is applicable to all pages
-#  - the home page, sections and posts.
+# This layout is applicable to all pages in mdcms sites
+#  - home page, sections and posts.
 
 
 # Take global data.
