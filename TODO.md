@@ -17,3 +17,5 @@
 * (Theme) Modify the icon of GitHub
 * (Theme) Create a set of social media icons
 * (Plugin) Add Google Analytics as a demonstration
+* (Plugin) Refactor word count to a plugin
+* (Plugin) Add a word count for CJK pages
