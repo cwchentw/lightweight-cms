@@ -47,6 +47,8 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [Flow](https://flow.org/en/)
   * [ESLint](https://eslint.org/)
 
+The dependencies mentioned here are based on *default* theme of mdcms. If you adapt another theme, your dependencies of the Web may vary.
+
 ## Usage
 
 Clone the repo locally:
