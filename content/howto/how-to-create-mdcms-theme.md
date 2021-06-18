@@ -1,6 +1,6 @@
 ---
 title: How to Create a mdcms Theme
-mtime: 2021/6/17
+mtime: 2021/6/18
 ---
 
 ## Prologue
@@ -37,17 +37,21 @@ Babel code is vanilla JavaScript. Nevertheless, we still transcompile it for com
 
 *build* directory composes of Gulp build scripts. If you want to employ other build automation system, you require to write your own.
 
-*theme* and *partials* are the layout of *default* theme. To simplify the code base, these layouts are written in PHP instead of other template language.
+*theme* and *partials* are layouts of *default* theme. To simplify the code base, these layouts are written in PHP instead of other template language.
+
+*src* are small PHP scripts used by this theme. Mandatory functions for a mdcms theme are included in these scripts as well.
+
+*.browserlistrc*, *.eslintrc*, *.flowconfig* and *.stylelintrc* are configurations for front end assets of *default* theme.
 
 ## *autoload.php*
 
-This PHP script is the only mandatory file of a mdcms theme. The script should always locate in the root path of a mdcms theme. You may implement required functions within it or load another PHP script.
+This PHP script is the only mandatory file of a mdcms theme. The script should always locate in the root path of a mdcms theme. You may either implement required functions within it or load another PHP script.
 
 ## Required Functions
 
 ### `loadHome()` Function
 
-The essential function to load the layout for the home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
+The essential function to load the layout for home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
 
 Here is a sample code:
 
@@ -88,9 +92,9 @@ function loadPost()
 
 The function to copy assets in a theme to a destination path specified by mdcms. Unlike other functions here, it receives one parameter, which represents a destination path.
 
-[Default theme](https://github.com/cwchentw/mdcms/tree/master/themes/default) of mdcms utilize Sass and Babel as its front end stacks. Code written in the two languages requires compilation before deploying to a production environment.
+*Default* theme of mdcms utilize Sass and Babel as its front end stacks. Code written in the two languages requires compilation before deploying to production environments.
 
-Here is the function used by default theme of mdcms:
+Here is the function used by *default* theme of mdcms:
 
 ```php
 function loadAssets($dest)
@@ -155,59 +159,63 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 ### Layout for the Home Page
 
-Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of the home page in a mdcms theme.
+Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of home page in a mdcms theme.
 
 There are four global variables in this layout:
 
 * `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
 * `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
-* `$GLOBALS[MDCMS_BREADCRUMB]`: An array of breadcrumbs of the home page of a mdcms site
+* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a mdcms site
 
 ### Layout for Sections
 
-[the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
+Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php) of sections in a mdcms theme.
 
-* `$GLOBALS[MDCMS_SECTION]`
-* `$GLOBALS[MDCMS_SECTIONS]`
-* `$GLOBALS[MDCMS_POSTS]`
-* `$GLOBALS[MDCMS_BREADCRUMB]`
+There are four global variables in this layout:
 
-Variables in a section (`$section` here):
+* `$GLOBALS[MDCMS_SECTION]`: Current section.
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections.
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section.
+* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section.
 
-* `$section[MDCMS_SECTION_TITLE]`
-* `$section[MDCMS_SECTION_CONTENT]`
-* `$section[MDCMS_SECTION_META]` (not implemented yet)
+Variables in a subsection (`$section` here):
+
+* `$section[MDCMS_SECTION_TITLE]`: Title of a subsection
+* `$section[MDCMS_SECTION_CONTENT]`: Optional content of a subsection
+* `$section[MDCMS_SECTION_META]` (not implemented yet): exposed metadata of a subsection
 
 ### Layout for Posts
 
-[the layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
+Here represents [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php) of posts in a mdcms theme.
 
-* `$GLOBALS[MDCMS_POST]`
-* `$GLOBALS[MDCMS_BREADCRUMB]`
+There are two variables in this layout:
 
-Variables in a post (`$post` here):
+* `$GLOBALS[MDCMS_POST]`: Current post
+* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current post
 
-* `$post[MDCMS_POST_TITLE]`
-* `$post[MDCMS_POST_CONTENT]`
-* `$post[MDCMS_POST_AUTHOR]` (not implemented yet)
-* `$post[MDCMS_POST_MTIME]` (not implemented yet)
-* `$post[MDCMS_POST_META]` (not implemented yet)
+Variables in this post (`$post` here):
+
+* `$post[MDCMS_POST_TITLE]`: Title of current post
+* `$post[MDCMS_POST_CONTENT]`: HTML content of current post
+* `$post[MDCMS_POST_AUTHOR]`: Author of current post
+* `$post[MDCMS_POST_MTIME]`: Last modified time of current post
+* `$post[MDCMS_POST_META]` (not implemented yet): exposed metadata of current post
 
 ### Variables in an Element of Sections
 
 There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
 
-* `$section[MDCMS_LINK_PATH]`: The link to a section
-* `$section[MDCMS_SECTION_TITLE]`: The title of a section
+* `$section[MDCMS_LINK_PATH]`: Link to a section
+* `$section[MDCMS_SECTION_TITLE]`: Title of a section
 * `$section[MDCMS_SECTION_EXCERPT]`: A brief description to a section
 
 ### Variables in an Element of Posts
 
 Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]` (`$post` here):
 
-* `$post[MDCMS_LINK_PATH]`: The link to a post
-* `$post[MDCMS_POST_TITLE]`: The title of a post
+* `$post[MDCMS_LINK_PATH]`: Link to a post
+* `$post[MDCMS_POST_TITLE]`: Title of a post
 * `$post[MDCMS_POST_EXCERPT]`: A brief description to a post
 
 ## Best Practices
