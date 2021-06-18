@@ -1,8 +1,8 @@
-# The Default Theme for mdcms
+# Default Theme for mdcms
 
 ## Synopsis
 
-This is the default theme for mdcms. In addition, it serves as a template to create other themes.
+This is *default* theme for mdcms. In addition, it serves as a template to create other themes.
 
 ## Warning
 
@@ -10,22 +10,22 @@ As mdcms itself, this theme is experimental as well. If you want to create a new
 
 ## For End Users
 
-This theme represents a generic one, best suitable for documentation sites. You can safely keep the theme *as is*. If you want to alter anything here, create a new theme by copying this directory to a new location or there may be conflicts when you update mdcms with Git.
+This theme represents a generic one, best suitable for documentation sites. You can safely keep this theme *as is*. If you want to alter anything here, create a new theme by copying this directory to a new location or there may be code conflicts when you update mdcms with Git.
 
 ## For Theme Creators
 
 The project structure of a mdcms theme is very liberal. The only mandatory file is *autoload.php* in the root path of a mdcms theme directory.
 
-There are only four mandatory functions in a mdcms theme:
+There are only four mandatory functions in a mdcms theme currently:
 
-* `loadHome()`: Load the layout of the home page of a site
-* `loadSection()`: Load the layout of sections
-* `loadPost()`: Load the layout of posts
+* `loadHome()`: Load a layout of home page of a site
+* `loadSection()`: Load a layout of sections
+* `loadPost()`: Load a layout of posts
 * `loadAssets($dest)`: Load assets
 
 ### `loadHome()` Function
 
-The function doesn't accept any parameter. Theme creators are responsible to load the layout of the home page of a site properly. Here shows a sample code:
+The function doesn't accept any parameter. Theme creators are responsible to load a layout of home page of a site properly. Here shows a sample code:
 
 ```php
 function loadHome()
@@ -58,7 +58,7 @@ function loadPost()
 
 ### `loadAssets($dest)` Function
 
-This function accepts one parameter, which presents a destination path to copy assets.
+This function accepts one parameter, which represents a destination path to copy assets.
 
 This theme adapts Sass and Babel as the front end stacks. Such assets need compilation before deploying to a production environment. In this sample code, we call NPM to compile assets and copy their outputs recursively to a destination directory set by mdcms:
 
@@ -120,4 +120,4 @@ function loadAssets($dest)
 ```
 If you write vanilla CSS and JavaScript code, you don't require to call NPM in advance. Simply copy assets to a destination.
 
-In contrary, if you utilize another CSS and/or JavaScript stack(s) like Less and TypeScript, you have to implement your own build automation scripts as well.
+In contrary, if you utilize another front end stack(s) like Less and TypeScript, you have to implement your own build automation scripts as well.
