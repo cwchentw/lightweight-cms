@@ -1,4 +1,7 @@
-# Write Posts on mdcms Sites
+---
+title: Write Posts on mdcms Sites
+mtime: 2021/6/18
+---
 
 ## Prologue
 
@@ -83,8 +86,6 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 If you write a title in a post, the title will be rendered on the web page *as is*. In contrary, if there is no title in a post, mdcms will generate one dynamically according to the file name of the post.
 
 ## Front Matters of Posts
-
-*Not implemented yet*
 
 Front matters are optional YAML text regions in the top of posts, either Markdown or HTML ones. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
 
