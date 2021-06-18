@@ -85,7 +85,7 @@ define("SCAN_APPLICATION_DIRECTORY", false);
 # Mostly, you don't require to modify anything below.
 # If either is modified, modify the project accordingly as well.
 
-# The index files used by sections.
+# The index files used by home page and sections.
 define("SECTION_INDEX", "_index.md");
 
 # The directory of sections and posts.
@@ -101,12 +101,14 @@ define("APPLICATION_DIRECTORY", "www");
 # The directory of public files.
 define("PUBLIC_DIRECTORY", "public");
 
-# The field of the title of a section or a post.
+# Title of a section or a post.
 define("METADATA_TITLE", "title");
-# The field of the author of a post.
+# Author of a post.
 define("METADATA_AUTHOR", "author");
-# The mtime (last modified time) of a post.
+# mtime (last modified time) of a post.
 define("METADATA_MTIME", "mtime");
+# Weight of a post.
+define("METADATA_WEIGHT", "weight");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");
