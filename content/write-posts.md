@@ -58,7 +58,7 @@ Because of limited page size, we won't repeat the syntax of GFM here. Refer to i
 In addition to writing Markdown posts, you can write vanilla HTML posts as well. When writing such posts, don't write full HTML pages:
 
 ```html
-<!-- Don't write a full HTML page. -->
+<!-- DON'T write a full HTML page. -->
 <!DOCTYPE>
 <html>
 <head>
@@ -67,7 +67,9 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 <body>
   <h1>A HTML Post</h1>
 
-  <p>Some text here</p>
+  <p>A paragraph with some text.</p>
+
+  <p>Another paragraph with some text.</p>
 </body>
 </html>
 ```
@@ -75,7 +77,7 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
  Instead, write which between a pair of `<body>` tags:
  
  ```html
-<!-- Write content between <body> tags. -->
+<!-- Write content between <body> tags instead. -->
 <h1>A HTML Post</h1>
 
 <p>A paragraph with some text.</p>
