@@ -107,8 +107,8 @@ Here represents a Markdown post with a front matter:
 ---
 title: A Markdown Post
 author: Michelle Chen
+mtime: 2021/06/08
 description: A concise description for a post
-date: 2021-06-08
 ---
 
 A paragraph with some text.
