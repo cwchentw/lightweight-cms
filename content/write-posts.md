@@ -92,7 +92,7 @@ Because mdcms renders web pages for you, you don't require to write everything f
 You may write title of a post in the following region (by precedence):
 
 * `title` field in front matter of a post
-* `<h1>` tag in a post
+* `<h1>` tag equivalent in a post
 * File name
 
 If there is no title in a post, mdcms will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
