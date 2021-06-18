@@ -8,6 +8,7 @@
 * (Feature) Pagination on sections and posts
 * (Feature) Redirecting link(s)
 * (Feature) Add an offline.html generator
+* (Feature) Add `SITE_PREFIX`
 * (Project) Refactor PHP scripts in private library
 * (Project) Set a blacklist for plugin(s)
 * (Project) Move `getBreadcrumb($page)` to *page.php*
