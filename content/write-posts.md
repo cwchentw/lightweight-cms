@@ -122,6 +122,7 @@ Here are exposed fields of front matters:
 * `author`
 * `mtime`
 * `description` (not implemented yet)
+* `weight` (not implemented yet)
 
 They are not hard coded but adjustable in *setting.php*.
 
