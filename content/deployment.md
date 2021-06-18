@@ -81,6 +81,13 @@ listen = /run/php-fpm/www.sock
 
 This is what you will set in your Nginx configuration.
 
+### openSUSE
+
+```shell
+$ sudo cp /etc/php7/fpm/php-fpm.conf.default /etc/php7/fpm/php-fpm.conf
+$ sudo cp /etc/php7/fpm/php-fpm.d/www.conf.default /etc/php7/fpm/php-fpm.d/www.conf
+```
+
 ## Configure Nginx
 
 Here we list a heavily-commented Nginx sample configuration:
@@ -172,9 +179,6 @@ server {
 
         include        fastcgi_params;
     }
-
-    # Include other configurations.
-    include vhosts.d/*.conf;
 }
 ```
 

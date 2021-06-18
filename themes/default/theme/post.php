@@ -42,13 +42,17 @@ $post = $GLOBALS[MDCMS_POST];
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
+                    <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
                     <div class="alert alert-primary" role="alert">
-                        The author of the post is <?php echo $post[MDCMS_POST_AUTHOR]; ?>.
+                        Author of this post is <?php echo $post[MDCMS_POST_AUTHOR]; ?>.
                     </div>
+                    <?php endif; ?>
 
+                    <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
                     <div class="alert alert-secondary" role="alert">
                         Last modified date is <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?>.
                     </div>
+                    <?php endif; ?>
 
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
