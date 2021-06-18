@@ -78,18 +78,26 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 <!-- Write content between <body> tags. -->
 <h1>A HTML Post</h1>
 
-<p>Some text here</p>
+<p>A paragraph with some text.</p>
+
+<p>Another paragraph with some text.</p>
  ```
  
- Because mdcms renders web pages for you, you don't require to write everything from scratch.
+Because mdcms renders web pages for you, you don't require to write everything from scratch.
  
 ## Write Titles for Posts
 
-If you write a title in a post, the title will be rendered on the web page *as is*. In contrary, if there is no title in a post, mdcms will generate one dynamically according to the file name of the post.
+You may write title of a post in the following region (by precedence):
+
+* `title` field in front matter of a post
+* `<h1>` tag in a post
+* File name
+
+If there is no title in a post, mdcms will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
 
 ## Front Matters of Posts
 
-Front matters are optional YAML text regions in the top of posts, either Markdown or HTML ones. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
+Front matters are optional YAML text regions in top of posts, either Markdown or HTML ones. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
 
 Here represents a Markdown post with a front matter:
 
@@ -105,3 +113,14 @@ A paragraph with some text.
 
 Another paragraph with some text.
 ```
+
+Here are exposed fields of front matters:
+
+* `title`
+* `author`
+* `mtime`
+* `description` (not implemented yet)
+
+They are not hard coded but adjustable in *setting.php*.
+
+In addition, all fields in front matters are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
