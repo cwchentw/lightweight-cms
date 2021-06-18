@@ -12,8 +12,8 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarSiteInfo">
                     <li><a class="dropdown-item" href="/about/">About the Site</a></li>
-                    <li><a class="dropdown-item" href="#">Terms and Conditions (Pending)</a></li>
-                    <li><a class="dropdown-item" href="#">Privacy Policy (Pending)</a></li>
+                    <li><a class="dropdown-item" href="#">Terms and Conditions</a></li>
+                    <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
                   </ul>
                 </li>
                 <?php if (\mdcms\Core\hasSocialMedia()): ?>
