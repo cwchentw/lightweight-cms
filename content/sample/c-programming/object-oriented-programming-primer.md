@@ -7,7 +7,7 @@ mtime: 2021/6/9
 
 This article illustrates simulated classes and objects in pure C.
 
-## Example
+## An External Program to Use C Objects
 
 ```c
 /* main.c */
@@ -68,6 +68,8 @@ ERROR_MAIN:
 }
 ```
 
+## External Interface of a C Object
+
 ```c
 /* point.h */
 #pragma once
@@ -90,6 +92,8 @@ extern "C" {
 }
 #endif
 ```
+
+## Internal Implementation of a C Object
 
 ```c
 /* point.c */
