@@ -15,6 +15,9 @@ require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autol
 
 try {
     $publicDirectory = $rootDirectory . "/public";
+
+    # `loadAssets($dest)` is a function
+    #  implemented by a mdcms theme.
     loadAssets($publicDirectory);
 }
 catch (Exception $e) {
