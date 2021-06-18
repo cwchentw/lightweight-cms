@@ -83,6 +83,8 @@ This is what you will set in your Nginx configuration.
 
 ## Configure Nginx
 
+Here we list a heavily-commented Nginx sample configuration:
+
 ```nginx
 # A sample Nginx configuration for mdcms-based sites.
 #
