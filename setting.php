@@ -2,7 +2,7 @@
 # The project configuration file. Keep its name *as is*.
 
 
-# The information of a site.
+# Information of a site.
 
 # The base URL of a site without a trailing slash.
 define("SITE_BASE_URL", "https://example.com");
@@ -30,7 +30,7 @@ define("SITE_THEME", "default");
 
 
 
-# Social Media
+# Social media for a site.
 
 # Facebook account or Facebook fan page.
 define("FACEBOOK", "");
@@ -40,14 +40,14 @@ define("FACEBOOK_GROUP", "");
 define("TWITTER", "");
 # GitHub project.
 #
-# If it is a repo, it should be in the form of `user/project`.
+# If it is a project, it should be in the form of `user/project`.
 #  In contrary, if it is a user, it should be the user name.
 define("GITHUB", "cwchentw/mdcms");
 
 
-# The parameters of a site.
+# Parameters of a site.
 
-# The text of the home page on breadcrumbs.
+# The text of home page on breadcrumbs.
 define("BREADCRUMB_HOME", "Index Page");
 # The upper limit of the word count of a dynamically generated description.
 #
@@ -55,7 +55,7 @@ define("BREADCRUMB_HOME", "Index Page");
 define("EXCERPT_THRESHOLD", 140);
 
 
-# These flags will switch on or off optional features.
+# Optional features in a site.
 
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", true);
