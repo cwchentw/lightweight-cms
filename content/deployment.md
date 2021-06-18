@@ -1,18 +1,29 @@
-# Deploy a mdcms Site with Nginx
+---
+title: Deploy a mdcms Site with Nginx
+mtime: 2021/6/18
+---
 
 ## Prologue
+
+This article demonstrates the whole process to deploy a mdcms site with Nginx on GNU/Linux.
 
 ## Install Required Packages
 
 ### Ubuntu
 
+Invoke this command to install a mininal Nginx and PHP combination:
+
 ```shell
 $ sudo apt install nginx php php-fpm
 ```
 
+Invoke this command to install packages for Composer:
+
 ```shell
 $ sudo apt install php-xml php-mbstring
 ```
+
+If you utilize *default* theme of mdcms, invoke this command as well:
 
 ```shell
 $ sudo apt install nodejs npm
@@ -20,13 +31,19 @@ $ sudo apt install nodejs npm
 
 ### CentOS
 
+Run the following command to install a Nginx and PHP combo:
+
 ```shell
 $ sudo dnf install nginx php php-fpm
 ```
 
+Run this command to install packages for Composer:
+
 ```shell
 $ sudo dnf install php-json php-xml php-mbstring
 ```
+
+Run this command as well if you utilize *default* theme of mdcms:
 
 ```shell
 $ sudo dnf install nodejs npm
@@ -34,25 +51,35 @@ $ sudo dnf install nodejs npm
 
 ### openSUSE
 
+Run this command for a bare Nginx and PHP based solution:
+
 ```shell
 $ sudo zypper install nginx php7 php-fpm 
 ```
+
+Run the command to install packages for Composer:
 
 ```shell
 $ sudo zypper install php-phar php-openssl php-mbstring
 ```
 
+Run the command if you use *default* theme of mdcms:
+
 ```shell
 $ sudo zypper install nodejs14 npm14
 ```
 
-## Set FastCGI Process Manager (FPM)
+## Set PHP Pool of FastCGI Process Manager (FPM)
 
-Listen to socket ...
+You FPM package should set a default PHP pool for you on installation. Don't modify these configurations unless you know what you do. A wrongly configured FPM may result in a defunct service.
+
+Check `listen` field of your PHP pool. You will see something like this:
 
 ```
 listen = /run/php-fpm/www.sock
 ```
+
+This is what you will set in your Nginx configuration.
 
 ## Configure Nginx
 
