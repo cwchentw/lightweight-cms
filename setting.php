@@ -1,5 +1,5 @@
 <?php
-# The project configuration file. Keep its name *as is*.
+# Project configuration file. Keep its name *as is*.
 
 
 # Information of a site.
