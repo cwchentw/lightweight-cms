@@ -1,8 +1,9 @@
 <?php
 # A HTTP status 50x error page generator of mdcms.
 #
-# A 50x.html should be static because some error occurs unexpectedly.
-#  In such case, a dynamic page won't render well.
+# A 50x.html should be always static because some error
+#  occurs unexpectedly. In such case, a PHP-based dynamic page
+#  won't render well.
 
 # Get the absolute path of a local mdcms.
 $rootDirectory = __DIR__ . "/../..";
@@ -23,7 +24,7 @@ $post[MDCMS_POST_CONTENT] = "Some error occurs on our server";
 $post[MDCMS_POST_STATUS] = 500;
 $post[MDCMS_POST_WORD_COUNT] = 6;
 
-# Create a breadcrumb dynamically.
+# Create breadcrumbs dynamically.
 $breadcrumb = array();
 
 {
