@@ -2,7 +2,7 @@
 
 ## Prologue
 
-This article illustrates the basic usage of mdcms. Some details are omitted for brevity. We will introduce them in other posts.
+This article illustrates basic usage of mdcms. Some details are omitted for brevity. We will introduce them in other posts.
 
 ## System Requirements
 
@@ -30,6 +30,7 @@ If you are not interested in developing mdcms itself, you still require Composer
 
 * Production environment
   * A [modern browser](https://browsehappy.com/) like Chrome and Firefox
+  * [Normalize.css](https://necolas.github.io/normalize.css/)
   * [Bootstrap 5](https://getbootstrap.com/)
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
   * (Optional) [highlight.js](https://highlightjs.org/)
