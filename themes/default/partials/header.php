@@ -1,5 +1,5 @@
 <?php
-# The header of default theme.
+# Header of a mdcms theme.
 #
 # The PHP script includes stuffs within `<head>` tags.
 ?>
