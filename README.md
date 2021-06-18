@@ -34,6 +34,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 
 * Production
   * A [modern browser](https://browsehappy.com) like Chrome or Firefox
+  * [Normalize.css](https://necolas.github.io/normalize.css/)
   * [Bootstrap 5](https://getbootstrap.com)
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
   * (Optional) [highlight.js](https://highlightjs.org)
