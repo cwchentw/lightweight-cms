@@ -1,8 +1,8 @@
 <?php
-# The footer of a mdcms theme.
+# Footer of a mdcms theme.
 #
 # Currently, there is no real footer part in rendered pages.
-#  The PHP script is merely for Javascript program loading.
+#  This PHP script is merely for Javascript program loading.
 ?>
 
 <!-- Native JavaScript for Bootstrap -->
