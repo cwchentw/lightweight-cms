@@ -218,20 +218,16 @@ Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]`
 * `$post[MDCMS_POST_TITLE]`: Title of a post
 * `$post[MDCMS_POST_EXCERPT]`: A brief description to a post
 
-## Best Practices
+## Best Practices to Write a mdcms Theme
 
 ### Avoid Namespace
 
-The rounter of mdcms views these required functions as global ones. Therefore, don't add any namespace in these functions.
+Rounter of mdcms views these required functions as global ones. Therefore, don't add any namespace in required  functions.
 
 ### Load Third-Party Libraries
 
 You may need features other than those in the core library of mdcms. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in the root path of a mdcms theme. Furthermore, you should write code to detect and compile you dependencies automatically.
 
-Here is a pseudo sample code:
-
-(Pending)
-
 ### Build Scripts for Front End Assets
 
-The Gulp build scripts in default theme of mdcms is not really a part of a mdcms theme. You may delete them, adding your own build scripts for the front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
+The Gulp build scripts in *default* theme of mdcms is not a required part of a mdcms theme. You may delete them, adding your own build scripts for front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
