@@ -16,11 +16,12 @@ This theme represents a generic one, best suitable for documentation sites. You 
 
 The project structure of a mdcms theme is very liberal. The only mandatory file is *autoload.php* in the root path of a mdcms theme directory.
 
-There are only four mandatory functions in a mdcms theme currently:
+There are only five mandatory functions in a mdcms theme currently:
 
-* `loadHome()`: Load a layout of home page of a site
+* `loadHome()`: Load a layout of home page
 * `loadSection()`: Load a layout of sections
 * `loadPost()`: Load a layout of posts
+* `loadPage()`: Load a layout of pages
 * `loadAssets($dest)`: Load assets
 
 ### `loadHome()` Function
@@ -53,6 +54,19 @@ Here is an example:
 function loadPost()
 {
     require __DIR__ . "/theme/" . "post.php";
+}
+```
+
+### `loadPage()` Function
+
+*Not implemented yet*
+
+Here is an example:
+
+```php
+function loadPage()
+{
+    require __DIR__ . "/theme/" . "page.php";
 }
 ```
 
