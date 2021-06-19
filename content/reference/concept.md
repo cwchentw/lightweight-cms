@@ -17,12 +17,12 @@ Web programmers typically arrange layout of a home page differently from that of
 
 ## Sections
 
-Section pages in a mdcms site are intermediate pages from a home page to posts. Most sections are purely functional. There is no substantial information for visitors in these pages.
+Sections or section pages in a mdcms site are in-between pages from a home page to posts. Most sections are purely functional. There is no substantial information for visitors in these pages.
 
-Because sections are merely intermediaries to posts, some web programmers set `noindex` meta tag in them, which is an optional flag in mdcms.
+Because sections merely serve as intermediaries to posts, some web programmers set `noindex` meta tag in them for SEO, which is an optional flag in mdcms.
 
 ## Posts
 
-Posts work as real information conveyors in a mdcms site. It is abundant and relevant information that makes content websites great. Good content benefits SEO as well.
+Posts or post pages work as real information conveyors in a mdcms site. It is abundant and relevant information that makes content websites great. Good content in such sites benefits SEO as well.
 
 In addition to content in posts, mdcms provides metadata for each post like a title, an author, modified time and an excerpt of a post. These metadata are accessible in its layout.
