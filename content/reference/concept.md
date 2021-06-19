@@ -9,6 +9,14 @@ mdcms stands for a flat-file based content management system powered by PHP. The
 
 This article introduces concepts related to mdcms.
 
-## Home Page in a mdcms Site
+## Home Page
 
-Home page in a mdcms site is a special web page that a dedicated layout is utilized. ...
+A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page conveys visitors general impression about a site and directs them to desired information ideally.
+
+Web programmers typically arrange layout of a home page differently from that of section pages. Therefore, they are separated in mdcms.
+
+## Sections
+
+Section pages in a mdcms site are intermediate pages from a home page to posts. Most sections are purely functional. There is no substantial information for visitors in these pages.
+
+Because sections are merely intermediaries to posts, some web programmers set `noindex` meta tag in them, which is an optional flag in mdcms.
