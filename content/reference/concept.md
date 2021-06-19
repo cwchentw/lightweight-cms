@@ -38,3 +38,9 @@ In addition to content in posts, mdcms provides metadata for each post like a ti
 Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
 
 In mdcms, a breadcrumb is an array of links from a home page to current page.
+
+## Table of Contents
+
+A ToC (Table of Contents) serves as an intrapage navigator for a post. Post readers can easily scroll to desired section in a post with this widget.
+
+In mdcms, a ToC composes of dynamically-generated intrapage links to `<h2>`-level titles.
