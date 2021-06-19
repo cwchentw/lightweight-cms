@@ -85,7 +85,7 @@ If you don't want to update your mdcms snapshot, you may safely remove all sampl
 
 Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-update-mdcms/).
 
-Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
+[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```
 $ sudo ./tools/bin/sync-to /path/to/www
@@ -111,12 +111,13 @@ You should create an independent repo for your mdcms theme. Follow [this guide](
 Assume your mdcms theme is ready. Add your theme to your mdcms copy as a Git submodule:
 
 ```shell
-$ git submodule add https://example.com/user/mytheme.git themes/mytheme
+$ git submodule add https://example.com/user/myTheme.git themes/myTheme
 ```
 
-Later, update your change(s) to your mdcms repo if any:
+Later, initialize and update your change(s) to your mdcms repo if any:
 
 ```
+$ git submodule init
 $ git submodule update
 ```
 
@@ -127,12 +128,13 @@ You should create an independent repo for your mdcms plugin.
 Assume your mdcms plugin is ready. Add your plugin to your mdcms copy as a Git submodule:
 
 ```shell
-$ git submodule add https://example.com/user/myplugin.git plugins/myplugin
+$ git submodule add https://example.com/user/myPlugin.git plugins/myPlugin
 ```
 
-Later, update your change(s) to your mdcms repo if any:
+Later, initialize and update your change(s) to your mdcms repo if any:
 
 ```
+$ git submodule init
 $ git submodule update
 ```
 
@@ -140,13 +142,13 @@ $ git submodule update
 
 You, as a PHP programmer, are interested in developing mdcms itself. You may keep your modifications privately or send back your contributions to us.
 
-Create a fork of mdcms on GitHub, clone the forked repo:
+Create a fork of mdcms on GitHub, cloning the forked repo:
 
 ```shell
 $ git clone https://github.com/user/mdcms.git
 ```
 
-Change your working directory to the root of the cloned repo:
+Change your working directory to root path of the cloned repo:
 
 ```shell
 $ cd mdcms
