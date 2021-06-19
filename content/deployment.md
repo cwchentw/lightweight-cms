@@ -201,12 +201,18 @@ If any of your configuration is wrong, these services will fail to start. Trace 
 
 ## Set Firewalls
 
+You have to open ports for web service to accept external network connections. Default port for HTTP is 80 while that for HTTPs is 443.
+
 ### firewalld
+
+Invoke the following commands to open related ports:
 
 ```shell
 $ firewall-cmd --permanent --zone=public --add-port=80/tcp
 $ firewall-cmd --permanent --zone=public --add-port=443/tcp
 ```
+
+Reload firewalld to make your changes effective:
 
 ```shell
 $ firewall-cmd --reload
@@ -214,10 +220,14 @@ $ firewall-cmd --reload
 
 ### iptables
 
+Invoke the following commands to open related ports:
+
 ```shell
 $ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 $ sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```
+
+Save current iptables rules persistently:
 
 ```shell
 $ sudo iptables-save > /etc/iptables/rules.v4
