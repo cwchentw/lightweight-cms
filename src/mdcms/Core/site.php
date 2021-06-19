@@ -61,6 +61,8 @@ function getSections($page)
         }
     }
 
+    usort($result, $GLOBALS[SORT_SECTION_CALLBACK]);
+
     # Skip to scan the application directory.
     if (!SCAN_APPLICATION_DIRECTORY) {
         return $result;

@@ -18,6 +18,7 @@ define("MDCMS_BREADCRUMB", "breadcrumb");
 
 # Section related constants.
 define("MDCMS_SECTION_TITLE", "title");
+define("MDCMS_SECTION_WEIGHT", "weight");
 define("MDCMS_SECTION_CONTENT", "content");
 define("MDCMS_SECTION_STATUS", "status");
 # TODO: Refactor some code.

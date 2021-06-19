@@ -115,6 +115,38 @@ define("HTML_FILE_EXTENSION", ".html");
 # The extension of Markdown files.
 define("MARKDOWN_FILE_EXTENSION", ".md");
 
+# Callback to sort sections.
+define("SORT_SECTION_CALLBACK", "sort-section-callback");
+$GLOBALS[SORT_SECTION_CALLBACK] = function ($a, $b) {
+    if (array_key_exists(MDCMS_SECTION_WEIGHT, $a)
+        && array_key_exists(MDCMS_SECTION_WEIGHT, $b))
+    {
+        $wa = $a[MDCMS_SECTION_WEIGHT];
+        $wb = $b[MDCMS_SECTION_WEIGHT];
+
+        if ($wa < $wb) {
+            return -1;
+        }
+        else if ($wa == $wb) {
+            return 0;
+        }
+        else {
+            return 1;
+        }
+    }
+
+    if (array_key_exists(MDCMS_SECTION_TITLE, $a)
+        && array_key_exists(MDCMS_SECTION_TITLE, $b))
+    {
+        $ta = $a[MDCMS_SECTION_TITLE];
+        $tb = $b[MDCMS_SECTION_TITLE];
+
+        return strcasecmp($ta, $tb);
+    }
+
+    return 0;
+};
+
 # Callback to sort posts.
 define("SORT_POST_CALLBACK", "sort-post-callback");
 $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
