@@ -1,6 +1,7 @@
 ---
 title: Deploy a mdcms Site with Nginx
 mtime: 2021/6/19
+weight: 4
 ---
 
 ## Prologue
