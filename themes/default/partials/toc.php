@@ -36,7 +36,7 @@ else {
 }
 ?>
 
-<div id="table-of-contents">
+<div id="toc">
     <div class="text-center">Table of Contents</div>
     <ul>
         <?php

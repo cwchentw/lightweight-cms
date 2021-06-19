@@ -235,7 +235,7 @@ code {
     padding-left: 3pt;
 }
 
-#side-info, #table-of-contents {
+#side-info, #toc {
     width: 220pt;
 
     padding: 1em;
@@ -272,7 +272,7 @@ code {
 }
 
 @media screen and (max-width: $phone-width) {
-    #side-info, #table-of-contents {
+    #side-info, #toc {
         display: none;
     }
 }
