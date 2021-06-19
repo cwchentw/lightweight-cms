@@ -16,7 +16,7 @@ $ cd path/to/your/mdcms/site
 $ git pull https://github.com/cwchentw/mdcms.git
 ```
 
-Technically, you merge your mdcms snapshot with master branch of mdcms repo. Git will manage the process without manual intervention unless there are any conflict between the codes of the two repositories.
+Technically, you merge your mdcms snapshot with master branch of mdcms repo. Git will manage the process without manual intervention unless there are any conflict between codes of the two repositories.
 
 In the following text, we will indicate what you should be aware to avoid code conflicts.
 
@@ -34,11 +34,11 @@ If you are going to upgrade mdcms, you should not modify these things mostly:
 * All things under *src*
 * All things at the root path **except** *setting.php*
 
-*www/index.php* works as router of mdcms, which matches between URLs and the corresponding post file on your web server. Modifying it improperly may result in a defunct mdcms site.
+*www/index.php* works as router of mdcms, which matches between a URL and corresponding post file on your web server. Modifying it improperly may result in a defunct mdcms site.
 
 *src* places core library of mdcms. Unless you want to contribute to mdcms itself, you don't need to change anything here.
 
-Files in the root of mdcms are configurations and documents. You don't need to alter anything here except *setting.php* for a usable mdcms site.
+Files located in root path of mdcms are configurations and documents. You don't need to alter anything here except *setting.php* for a usable mdcms site.
 
 ## Things You should Do for Safe Update
 
@@ -47,9 +47,9 @@ Here we note the actions you should undertake for a safe update:
 * Create a directory for your posts other than *content* directory
 * Copy *themes/default* to a new location
 
-The posts in *content* directory are documentation for mdcms. We may alter posts there to reflect the changes we make for mdcms. Therefore, you should store your posts to a location other than *content* directory, setting *setting.php* accordingly to prevent unintentional changes on your content.
+Posts in *content* directory are documentation for mdcms. We may alter posts there to reflect changes we make for mdcms. Therefore, you should store your own posts to a location other than *content* directory, setting *setting.php* accordingly to prevent unintentional changes on your content.
 
-Similiarly, the theme located in *themes/default* are the builtin theme for mdcms. We may change layouts, styles or widgets there. If you would modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there. Remember to set *setting.php* to reflect your change.
+Similiarly, the theme located in *themes/default* are builtin theme for mdcms. We may change layouts, styles or widgets there. If you desire to modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there. Remember to set *setting.php* to reflect your change.
 
 ## Stick to Specific Version of mdcms
 
