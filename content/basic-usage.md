@@ -48,7 +48,7 @@ If you are not interested in developing mdcms itself, you still require Composer
 
 These dependencies are for *default* theme of mdcms. If you utilize another mdcms theme, your dependencies may vary.
 
-Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove these development tools and configurations, adding your own. They are independent of mdcms itself.
+Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove these front end stacks, adding your own. They are independent of mdcms itself.
 
 ## Usage for End Users
 
