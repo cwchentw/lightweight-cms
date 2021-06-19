@@ -1,4 +1,7 @@
-# Basic Usage of mdcms
+---
+title: Basic Usage of mdcms
+mtime: 2021/6/19
+---
 
 ## Prologue
 
@@ -127,7 +130,7 @@ Install all dependencies with Composer:
 $ composer install
 ```
 
-Modify mdcms in any way you like as long as it still runs smoothly. You don't require to remove sample posts in *content* directory. In contrary, they serve as ready sample data to see whether your changes work.
+Modify mdcms in any way you like as long as it still runs smoothly. You don't require to remove any post in *content* directory. They serve as sample data to see whether your changes work.
 
 You should lint your modification with the following script:
 
