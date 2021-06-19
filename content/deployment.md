@@ -1,5 +1,5 @@
 ---
-title: Deploy a mdcms Site with Nginx
+title: Deploy a mdcms Site to Nginx
 mtime: 2021/6/19
 weight: 4
 ---
