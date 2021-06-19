@@ -104,6 +104,10 @@ $ git push -u origin master
 
 ## Usage for Theme Creators
 
+You should create a independent repo for your mdcms theme. Follow [this guide](/howto/how-to-create-mdcms-theme/) to create a theme.
+
+Assume your mdcms theme is ready. Add your theme to your mdcms copy with Git:
+
 (Pending)
 
 ## Usage for Plugin Developers
