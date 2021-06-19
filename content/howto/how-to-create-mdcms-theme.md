@@ -9,7 +9,7 @@ This guide illustrates to create a mdcms theme, taking [default theme](https://g
 
 ## Project Structure
 
-Here we list the project structure of *default* theme of mdcms:
+Here we list project structure of *default* theme of mdcms:
 
 ```shell
 $ cd path/to/themes/default
@@ -31,7 +31,7 @@ $ tree --dirsfirst -a -L 1
 └── .stylelintrc
 ```
 
-*assets* directory places front end assets. In *default* theme, the directory includes [Babel](https://babeljs.io/) and [Scss](https://sass-lang.com/) code.
+*assets* directory places front end assets of a mdcms theme. In *default* theme, the directory includes [Babel](https://babeljs.io/) and [Scss](https://sass-lang.com/) code.
 
 Babel code is vanilla JavaScript. Nevertheless, we still transcompile it for compatibility with older browsers. In contrary, Sass code is unusable before compiling to corresponding CSS one.
 
@@ -43,9 +43,11 @@ Babel code is vanilla JavaScript. Nevertheless, we still transcompile it for com
 
 *.browserlistrc*, *.eslintrc*, *.flowconfig* and *.stylelintrc* are configurations for front end assets of *default* theme.
 
+None of these are mandatory for a mdcms theme. The only required file is *autoload.php* in root path of a mdcms theme. See next section for more information.
+
 ## *autoload.php*
 
-This PHP script is the only mandatory file of a mdcms theme. The script should always locate in the root path of a mdcms theme. You may either implement required functions within it or load another PHP script.
+Project structure of a mdcms is very liberal. This PHP script is the only mandatory file for a mdcms theme. The script should always locate in root path of a mdcms theme. You may either implement required functions within it or load another PHP script.
 
 ## Required Functions
 
