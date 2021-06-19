@@ -8,6 +8,24 @@ This is *default* theme for mdcms. In addition, it serves as a template to creat
 
 As mdcms itself, this theme is experimental as well. If you want to create a new theme for mdcms, refer here to see whether any modification occurs.
 
+## System Requirements
+
+* Production environment
+  * A [modern browser](https://browsehappy.com/) like Chrome and Firefox
+  * [Normalize.css](https://necolas.github.io/normalize.css/)
+  * [Bootstrap 5](https://getbootstrap.com/)
+  * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
+  * (Optional) [highlight.js](https://highlightjs.org/)
+* Development environment
+  * Node.js
+  * [Gulp](https://gulpjs.com/)
+  * [Sass](https://sass-lang.com/)
+  * [Autoprefixer](https://github.com/postcss/autoprefixer)
+  * [stylelint](https://stylelint.io/)
+  * [Babel](https://babeljs.io/)
+  * [Flow](https://flow.org/en/)
+  * [ESLint](https://eslint.org/)
+
 ## For End Users
 
 This theme represents a generic one, best suitable for documentation sites. You can safely keep this theme *as is*. If you want to alter anything here, create a new theme by copying this directory to a new location or there may be code conflicts when you update mdcms with Git.
