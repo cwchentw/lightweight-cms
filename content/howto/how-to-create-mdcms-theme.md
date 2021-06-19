@@ -47,13 +47,13 @@ None of these are mandatory for a mdcms theme. The only required file is *autolo
 
 ## *autoload.php*
 
-Project structure of a mdcms is very liberal. This PHP script is the only mandatory file for a mdcms theme. The script should always locate in root path of a mdcms theme. You may either implement required functions within it or load another PHP script.
+Project structure of a mdcms theme is very liberal. *autoload.php* is the only mandatory file for a mdcms theme. The script should always be located in root path of a mdcms theme. You may either implement required functions within it or load another PHP script.
 
-## Required Functions
+## Required Functions in a mdcms Theme
 
 ### `loadHome()` Function
 
-The essential function to load layout for home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
+The essential function to load layout for home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for home page properly.
 
 Here is a sample code:
 
@@ -180,7 +180,7 @@ There are four global variables in this layout:
 
 * `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
-* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A text of optional content of the home page of a mdcms site
+* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A string of optional content of home page of a mdcms site
 * `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a mdcms site
 
 ### Layout for Sections
@@ -189,16 +189,10 @@ Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/d
 
 There are four global variables in this layout:
 
-* `$GLOBALS[MDCMS_SECTION]`: Current section.
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections.
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section.
-* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section.
-
-Variables in a subsection (`$section` here):
-
-* `$section[MDCMS_SECTION_TITLE]`: Title of a subsection
-* `$section[MDCMS_SECTION_CONTENT]`: Optional content of a subsection
-* `$section[MDCMS_SECTION_META]` (not implemented yet): exposed metadata of a subsection
+* `$GLOBALS[MDCMS_SECTION]`: Current section
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section
+* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section
 
 ### Layout for Posts
 
@@ -245,8 +239,8 @@ Rounter of mdcms views these required functions as global ones. Therefore, don't
 
 ### Load Third-Party Libraries
 
-You may need features other than those in the core library of mdcms. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in the root path of a mdcms theme. Furthermore, you should write code to detect and compile you dependencies automatically.
+You may need features other than those in the core library of mdcms. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in root path of a mdcms theme. Furthermore, you should write code to detect and compile you dependencies automatically.
 
 ### Build Scripts for Front End Assets
 
-Gulp build scripts in *default* theme of mdcms is not a required part of a mdcms theme. You may delete them, adding your own build scripts for front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
+Gulp build scripts in *default* theme of mdcms is not a required part of a mdcms theme. You may delete them, adding your build scripts for front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
