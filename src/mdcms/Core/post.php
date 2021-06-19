@@ -88,6 +88,11 @@ function readPost($page)
             $result[MDCMS_POST_MTIME] = filemtime($htmlPath);
         }
 
+        # Set weight of a post if any.
+        if (array_key_exists(METADATA_WEIGHT, $metadata)) {
+            $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
+        }
+
         # Extract an excerpt from a post.
         preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
         if (isset($matches)) {
@@ -178,6 +183,11 @@ function readPost($page)
         }
         else {
             $result[MDCMS_POST_MTIME] = filemtime($markdownPath);
+        }
+
+        # Set weight of a post if any.
+        if (array_key_exists(METADATA_WEIGHT, $metadata)) {
+            $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
         # Convert the Markdown document into a HTML document.

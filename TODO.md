@@ -4,7 +4,6 @@
 * (Feature) Export metadata of sections
 * (Feature) Export metadata of posts
 * (Feature) Optional *_index.md* for the home page of a site
-* (Feature) Order site posts
 * (Feature) Pagination on sections and posts
 * (Feature) Redirecting link(s)
 * (Feature) Add an offline.html generator

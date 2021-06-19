@@ -29,6 +29,7 @@ define("MDCMS_SECTION_EXCERPT", "excerpt");
 define("MDCMS_POST_TITLE", "title");
 define("MDCMS_POST_AUTHOR", "author");
 define("MDCMS_POST_MTIME", "mtime");
+define("MDCMS_POST_WEIGHT", "weight");
 define("MDCMS_POST_CONTENT", "content");
 define("MDCMS_POST_STATUS", "status");
 # TODO: Refactor some code.

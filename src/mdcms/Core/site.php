@@ -131,6 +131,8 @@ function getPosts($page)
         }
     }
 
+    usort($result, $GLOBALS[SORT_POST_CALLBACK]);
+
     # Skip to scan the application directory.
     if (!SCAN_APPLICATION_DIRECTORY) {
         return $result;
