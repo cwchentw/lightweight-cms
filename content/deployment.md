@@ -1,6 +1,6 @@
 ---
 title: Deploy a mdcms Site with Nginx
-mtime: 2021/6/18
+mtime: 2021/6/19
 ---
 
 ## Prologue
@@ -69,11 +69,11 @@ Run the command if you use *default* theme of mdcms:
 $ sudo zypper install nodejs14 npm14
 ```
 
-## Set PHP Pool of FastCGI Process Manager (FPM)
+## Set a PHP Pool of FastCGI Process Manager
 
-You FPM package should set a default PHP pool for you on installation. Don't modify these configurations unless you know what you do. A wrongly configured FPM may result in a defunct service.
+Your package of FastCGI Process Manager (FPM) should set a default PHP pool on installation. Don't modify these configurations unless you know what you do. A wrongly configured FPM may result in a defunct service.
 
-Check `listen` field of your PHP pool. You will see something like this:
+Check `listen` field of configuration of system PHP pool. You will see something like this:
 
 ```
 listen = /run/php-fpm/www.sock
@@ -81,7 +81,7 @@ listen = /run/php-fpm/www.sock
 
 This is what you will set in your Nginx configuration.
 
-### openSUSE
+On openSUSE, no active configuration is ready by default. Simply copy default configurations provided by php-fpm package from openSUSE:
 
 ```shell
 $ sudo cp /etc/php7/fpm/php-fpm.conf.default /etc/php7/fpm/php-fpm.conf
