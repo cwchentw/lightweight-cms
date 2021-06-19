@@ -11,7 +11,7 @@ This article introduces concepts related to mdcms.
 
 ## Router
 
-Router is the hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
+Router is hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
 
 Users of mdcms seldom require to edit this script by themselves.
 
