@@ -106,9 +106,17 @@ $ git push -u origin master
 
 You should create a independent repo for your mdcms theme. Follow [this guide](/howto/how-to-create-mdcms-theme/) to create a theme.
 
-Assume your mdcms theme is ready. Add your theme to your mdcms copy with Git:
+Assume your mdcms theme is ready. Add your theme to your mdcms copy as a Git submodule:
 
-(Pending)
+```shell
+$ git submodule add https://example.com/user/mytheme.git themes/mytheme
+```
+
+Later, update your change(s) to your mdcms repo if any:
+
+```
+$ git submodule update
+```
 
 ## Usage for Plugin Developers
 
