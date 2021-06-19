@@ -1,6 +1,6 @@
-# mdcms (Markdown Content Management System)
+# Markdown Content Management System
 
-A Markdown-based dynamic website generator powered by PHP.
+mdcms (Markdown Content Management System) is a Markdown-based dynamic website generator powered by PHP.
 
 ## Warning
 
