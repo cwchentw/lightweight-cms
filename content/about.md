@@ -1,6 +1,7 @@
 ---
 title: About mdcms
 mtime: 2021/6/19
+weight: 1
 ---
 
 [Markdown Content Management System](https://github.com/cwchentw/mdcms) represents a Markdown-based dynamic website generator powered by PHP.
