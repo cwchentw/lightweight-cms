@@ -50,6 +50,7 @@ else if (\mdcms\Core\isHome($loc)) {
 # Render a section.
 else if (\mdcms\Core\isSection($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+    # Current section.
     $GLOBALS[MDCMS_SECTION] = \mdcms\Core\readSection($loc);
     # Subsections of current section.
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
