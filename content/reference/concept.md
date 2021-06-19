@@ -33,6 +33,12 @@ Posts or post pages work as real information conveyors in a mdcms site. It is ab
 
 In addition to content in posts, mdcms provides metadata for each post like a title, an author, modified time and an excerpt of a post. These metadata are accessible in its layout.
 
+## Error Pages
+
+Error pages only show when some errors occur. Common errors include HTTP 404 (page not found) and HTTP 50x (internal server error). Web programmers should not rely on builtin error pages provided by web servers because sensitive server information leaked in those pages.
+
+In mdcms, HTTP 404 pages are generated dynamically when site users visit some non-existing pages on a mdcms site. In contrary, HTTP 50x pages are always static because PHP may fail to render properly in such situations.
+
 ## Breadcrumbs
 
 Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
