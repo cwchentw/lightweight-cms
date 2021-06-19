@@ -51,7 +51,7 @@ This PHP script is the only mandatory file of a mdcms theme. The script should a
 
 ### `loadHome()` Function
 
-The essential function to load the layout for home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
+The essential function to load layout for home page in a mdcms site. It receives no parameter. Theme creators are responsible to load a layout for a home page properly.
 
 Here is a sample code:
 
@@ -66,7 +66,7 @@ It is recommended to use `require` instead of `include` here because it should b
 
 ### `loadSection()` Function
 
-The necessary function to load the layout for sections in a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
+The necessary function to load layout for sections in a mdcms site. In a similiar fashion, it receives no parameter. Here shows an example:
 
 ```php
 function loadSection()
@@ -79,12 +79,25 @@ mdcms doesn't distinguish between top sections and nested ones. Therefore, only 
 
 ### `loadPost()` Function
 
-The mandatory function to load the layout for posts in a mdcms site. No parameter is needed. Here shows a sample code:
+The mandatory function to load layout for posts in a mdcms site. No parameter is needed. Here shows a sample code:
 
 ```php
 function loadPost()
 {
     require __DIR__ . "/theme/" . "post.php";
+}
+```
+
+### `loadPage()` Function
+
+*Not implemented yet*
+
+The mandatory function to load layout for pages in a mdcms site. No parameter is needed. Here shows a sample code:
+
+```php
+function loadPost()
+{
+    require __DIR__ . "/theme/" . "page.php";
 }
 ```
 
@@ -157,7 +170,7 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 ## Required Layouts
 
-### Layout for the Home Page
+### Layout for Home Page
 
 Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of home page in a mdcms theme.
 
@@ -201,6 +214,10 @@ Variables in this post (`$post` here):
 * `$post[MDCMS_POST_AUTHOR]`: Author of current post
 * `$post[MDCMS_POST_MTIME]`: Last modified time of current post
 * `$post[MDCMS_POST_META]` (not implemented yet): exposed metadata of current post
+
+### Layout for Pages
+
+Pending.
 
 ### Variables in an Element of Sections
 
