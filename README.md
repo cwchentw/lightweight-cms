@@ -69,7 +69,7 @@ $ cd mysite
 $ ./tools/bin/install-composer $HOME/bin
 ```
 
-Install the dependencies of mdcms with Composer:
+Install dependencies of mdcms with Composer:
 
 ```
 $ composer install --no-dev
