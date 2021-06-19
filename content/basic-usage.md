@@ -89,9 +89,11 @@ Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
-If you modify anything locally, repeat the command to update your change in a production environment.
+Internally, the script calls `rsync(1)` to synchronize your mdcms site on a production environment. Therefore, you may set your target path to a remote server.
 
-Set the configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a mdcms site.
+If you modify anything locally, repeat the command to update your change(s) in a production environment.
+
+Set configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a mdcms site.
 
 (Optional) Save the local repo to a remote site:
 
