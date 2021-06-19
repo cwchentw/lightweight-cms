@@ -197,6 +197,8 @@ In a similar fashion, start a Nginx web server:
 $ sudo systemctl start nginx
 ```
 
+If any of your configuration is wrong, these services will fail to start. Trace those error messages and debug it accordingly.
+
 ## Set Firewalls
 
 ### firewalld
