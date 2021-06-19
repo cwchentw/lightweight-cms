@@ -123,7 +123,6 @@ Here are exposed fields of front matters:
 * `mtime`
 * `description` (not implemented yet)
 * `weight` (not implemented yet)
-* `layout` (not implemented yet)
 
 They are not hard coded but adjustable in *setting.php*.
 
