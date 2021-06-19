@@ -10,7 +10,7 @@ As a would-be owner of an awesome content website, you cannot wait to write and 
 
 ## Choose a Programming Editor
 
-Markdowns represents a simple and lightweight markup language without programming logic. Any programming editor will suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among programmers and suitable for Markdown as well.
+Markdowns represents a simple and lightweight markup language without programming logic. Any programming editor will suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown as well.
 
 ## Save Posts
 
@@ -18,7 +18,7 @@ Posts are saved in a content directory, which default is *content*. You may chan
 
 If you are going to upgrade your mdcms snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
 
-The file formats of posts in mdcms sites are Markdown and HTML.
+Valid file formats of posts in mdcms sites are Markdown and HTML.
 
 ## The Relationship between Posts and URLs
 
@@ -40,7 +40,7 @@ Such URL will map to either *content/section/subsection/post.md* or *content/sec
 
 ## Write Markdown Posts
 
-The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by mdcms is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used on the online editor of GitHub.
+The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by mdcms is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used by online editor of GitHub.
 
 Here shows a pseudo Markdown post:
 
@@ -52,7 +52,7 @@ A paragraph with some text.
 Another paragraph with some text.
 ```
 
-Because of limited page size, we won't repeat the syntax of GFM here. Refer to its official spec for more.
+Because of limited page size, we won't repeat syntax of GFM here. Refer to its official spec for more information.
 
 ## Write HTML Posts
 
@@ -78,7 +78,7 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
  Instead, write which between a pair of `<body>` tags:
  
  ```html
-<!-- Write content between <body> tags instead. -->
+<!-- Write which between <body> tags instead. -->
 <h1>A HTML Post</h1>
 
 <p>A paragraph with some text.</p>
@@ -125,6 +125,6 @@ Here are exposed fields of front matters:
 * `description` (not implemented yet)
 * `weight` (not implemented yet)
 
-They are not hard coded but adjustable in *setting.php*.
+Those fields are not hard coded but adjustable in *setting.php*.
 
 In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
