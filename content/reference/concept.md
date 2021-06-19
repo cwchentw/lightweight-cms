@@ -32,3 +32,9 @@ Because sections merely serve as intermediaries to posts, some web programmers s
 Posts or post pages work as real information conveyors in a mdcms site. It is abundant and relevant information that makes content websites great. Good content in such sites benefits SEO as well.
 
 In addition to content in posts, mdcms provides metadata for each post like a title, an author, modified time and an excerpt of a post. These metadata are accessible in its layout.
+
+## Breadcrumbs
+
+Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
+
+In mdcms, a breadcrumb is an array of links from a home page to current page.
