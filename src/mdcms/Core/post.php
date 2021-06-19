@@ -13,6 +13,7 @@ require_once $rootDirectory . "/setting.php";
 # Load local libraries.
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
+require_once __DIR__ . "/utils.php";
 
 
 # The implementation is too long. We may refactor it later.
@@ -45,9 +46,7 @@ function readPost($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_TITLE, $metadata))
-        {
+        if (isValidField($metadata, METADATA_TITLE)) {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # We have received a title from the metadata of a post.
@@ -74,10 +73,7 @@ function readPost($page)
         }
 
         # Set the author of a post.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_AUTHOR, $metadata)
-            && "" != $metadata[METADATA_AUTHOR])
-        {
+        if (isValidField($metadata, METADATA_AUTHOR)) {
             $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
         }
         else {
@@ -85,10 +81,7 @@ function readPost($page)
         }
 
         # Set the mtime of a post.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_MTIME, $metadata)
-            && "" != $metadata[METADATA_MTIME])
-        {
+        if (isValidField($metadata, METADATA_MTIME)) {
             $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
         }
         else {
@@ -96,9 +89,7 @@ function readPost($page)
         }
 
         # Set weight of a post if any.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_WEIGHT, $metadata))
-        {
+        if (isValidField($metadata, METADATA_WEIGHT)) {
             $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
@@ -158,9 +149,7 @@ function readPost($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_TITLE, $metadata))
-        {
+        if (isValidField($metadata, METADATA_TITLE)) {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # Remove a <h1>-level title from the content.
@@ -183,10 +172,7 @@ function readPost($page)
         }
 
         # Set the author of a post.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_AUTHOR, $metadata)
-            && "" != $metadata[METADATA_AUTHOR])
-        {
+        if (isValidField($metadata, METADATA_AUTHOR)) {
             $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
         }
         else {
