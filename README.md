@@ -57,7 +57,7 @@ Clone the repo locally:
 $ git clone https://github.com/cwchentw/mdcms.git mysite
 ```
 
-Change your working directory to the root of the cloned repo:
+Change your working directory to root of the cloned repo:
 
 ```
 $ cd mysite
@@ -79,17 +79,17 @@ If you don't want to update your mdcms snapshot, you may safely remove all sampl
 
 Instead, if you are going to update your mdcms copy, follow [this guide](/content/howto/how-to-upgrade-mdcms.md).
 
-Deploy the cloned repo to a web hosting service supporting PHP 7.2 or above:
+[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
-If you modify anything locally, repeat the above command to update your changes in a production environment.
+If you modify anything locally, repeat the above command to update your change(s) in a production environment.
 
-Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration.
+Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration to run mdcms sites.
 
-(Optional) Save the local repo to a remote site:
+(Optional) Save your local repo to a remote site:
 
 ```
 $ git remote set-url origin https://example.com/user/mysite.git
@@ -98,7 +98,7 @@ $ git push -u origin master
 
 ## Notes for PHP Developers
 
-The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *www* as needed. Furthermore, your scripts can share partials scripts in *partials* with other web pages, reducing repeated code.
+The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *www* directory as needed. Furthermore, your scripts can share layouts and partials with other web pages in a mdcms site, reducing repeated code.
 
 ## See Also
 
