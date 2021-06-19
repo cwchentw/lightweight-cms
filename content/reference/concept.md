@@ -62,3 +62,7 @@ In mdcms, a ToC composes of dynamically-generated intrapage links to `<h2>`-leve
 Sidebars are informative fillers in all pages except posts. There is no fixed rule on what web programmers should put in sidebars. They may be a brief description to a site, promotion campaigns to some products or recommended links to popular posts.
 
 Currently, sidebars in *default* theme of mdcms show concise descriptions to a mdcms site.
+
+## The Bottom Line
+
+This article illustrates concepts to both general content websites and mdcms. If you are unfamiliar to web programming, this page may give you a mind roadmap to mdcms.
