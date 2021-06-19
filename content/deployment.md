@@ -185,9 +185,13 @@ server {
 
 ## Start Related Services
 
+Assume your configurations are ready. Start system FPM service:
+
 ```shell
 $ sudo systemctl start php-fpm
 ```
+
+In a similar fashion, start a Nginx web server:
 
 ```shell
 $ sudo systemctl start nginx
