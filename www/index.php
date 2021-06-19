@@ -1,9 +1,9 @@
 <?php
-# The router of mdcms.
+# Router of mdcms.
 
 # Get global setting.
 require_once __DIR__ . "/../setting.php";
-# Load builtin libraries.
+# Load builtin library
 require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
 # Load plugin(s) if any.
 require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
@@ -37,7 +37,7 @@ if (isset($post) && 200 != $post["status"]) {
 
     loadPost();
 }
-# Render the home page of a site.
+# Render home page of a mdcms site.
 else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
@@ -46,6 +46,7 @@ else if (\mdcms\Core\isHome($loc)) {
 
     loadHome();
 }
+# TODO: Render a page.
 # Render a section.
 else if (\mdcms\Core\isSection($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
