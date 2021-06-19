@@ -21,9 +21,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * A web server like Apache or Nginx
   * PHP 7.2 or above
   * FastCGI Process Manager (FPM) of PHP
-  * [Parsedown](https://github.com/erusev/parsedown) and [Parsedown Extra](https://github.com/erusev/parsedown-extra)
-  * [MetaParsedown](https://github.com/pagerange/metaparsedown)
-  * [yaml-front-matter](https://github.com/spatie/yaml-front-matter)
+  * [FrontYAML](https://github.com/mnapoli/FrontYAML)
 * Development
   * [Composer](https://getcomposer.org)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)

@@ -14,9 +14,6 @@ require_once $rootDirectory . "/setting.php";
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/page.php";
 
-use \Pagerange\Markdown\MetaParsedown;
-use \Spatie\YamlFrontMatter\YamlFrontMatter;
-
 
 # The implementation is too long. We may refactor it later.
 function readPost($page)
@@ -37,16 +34,20 @@ function readPost($page)
     if (file_exists($htmlPath)) {
         $rawContent = file_get_contents($htmlPath);
 
+        $parser = new \Mni\FrontYAML\Parser();
+
         # Parse raw content.
-        $object = YamlFrontMatter::parse($rawContent);
+        $document = $parser->parse($rawContent, false);
 
         # Extract metadata from a post.
-        $metadata = $object->matter();
+        $metadata = $document->getYAML();
 
         # Strip metadata from a post.
-        $stripedContent = $object->body();
+        $stripedContent = $document->getContent();
 
-        if (isset($metadata[METADATA_TITLE])) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_TITLE, $metadata))
+        {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # We have received a title from the metadata of a post.
@@ -73,7 +74,10 @@ function readPost($page)
         }
 
         # Set the author of a post.
-        if (!is_null($metadata[METADATA_AUTHOR]) && "" != $metadata[METADATA_AUTHOR]) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_AUTHOR, $metadata)
+            && "" != $metadata[METADATA_AUTHOR])
+        {
             $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
         }
         else {
@@ -81,7 +85,10 @@ function readPost($page)
         }
 
         # Set the mtime of a post.
-        if (!is_null($metadata[METADATA_MTIME]) && "" != $metadata[METADATA_MTIME]) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_MTIME, $metadata)
+            && "" != $metadata[METADATA_MTIME])
+        {
             $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
         }
         else {
@@ -89,7 +96,9 @@ function readPost($page)
         }
 
         # Set weight of a post if any.
-        if (array_key_exists(METADATA_WEIGHT, $metadata)) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_WEIGHT, $metadata))
+        {
             $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
@@ -139,15 +148,19 @@ function readPost($page)
     else if (file_exists($markdownPath)) {
         $rawContent = file_get_contents($markdownPath);
 
-        $mp = new MetaParsedown(); 
+        $parser = new \Mni\FrontYAML\Parser();
+
+        $document = $parser->parse($rawContent);
 
         # Extract metadata from a post.
-        $metadata = $mp->meta($rawContent);
+        $metadata = $document->getYAML();
 
         # Strip metadata from a post.
-        $stripedContent = $mp->stripMeta($rawContent);
+        $stripedContent = $document->getContent();
 
-        if (isset($metadata[METADATA_TITLE])) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_TITLE, $metadata))
+        {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
             # Remove a <h1>-level title from the content.
@@ -170,7 +183,10 @@ function readPost($page)
         }
 
         # Set the author of a post.
-        if (!is_null($metadata[METADATA_AUTHOR]) && "" != $metadata[METADATA_AUTHOR]) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_AUTHOR, $metadata)
+            && "" != $metadata[METADATA_AUTHOR])
+        {
             $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
         }
         else {
@@ -178,7 +194,10 @@ function readPost($page)
         }
 
         # Set the mtime of a post.
-        if (!is_null($metadata[METADATA_MTIME]) && "" != $metadata[METADATA_MTIME]) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_MTIME, $metadata)
+            && "" != $metadata[METADATA_MTIME])
+        {
             $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
         }
         else {
@@ -186,7 +205,9 @@ function readPost($page)
         }
 
         # Set weight of a post if any.
-        if (array_key_exists(METADATA_WEIGHT, $metadata)) {
+        if (!is_null($metadata)
+            && array_key_exists(METADATA_WEIGHT, $metadata))
+        {
             $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 

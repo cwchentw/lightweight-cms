@@ -10,10 +10,7 @@
         }
     ],
     "require": {
-        "erusev/parsedown": "^1.7",
-        "erusev/parsedown-extra": "^0.8.1",
-        "spatie/yaml-front-matter": "^2.0",
-        "pagerange/metaparsedown": "^1.0"
+        "mnapoli/front-yaml": "^1.8"
     },
     "require-dev": {
         "phpmd/phpmd": "^2.10",
