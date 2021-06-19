@@ -70,7 +70,7 @@ $ ./tools/bin/install-composer path/to/prefix
 
 By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
 
-Install the dependency packages for mdcms:
+Install dependency packages for mdcms:
 
 ```
 $ composer install --no-dev
@@ -88,7 +88,7 @@ $ sudo ./tools/bin/sync-to /path/to/www
 
 If you modify anything locally, repeat the command to update your change in a production environment.
 
-Set the configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration.
+Set the configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a mdcms site.
 
 (Optional) Save the local repo to a remote site:
 
