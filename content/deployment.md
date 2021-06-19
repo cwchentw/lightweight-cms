@@ -6,7 +6,7 @@ weight: 4
 
 ## Prologue
 
-This article demonstrates the whole process to deploy a mdcms site with Nginx on GNU/Linux.
+This article demonstrates the whole process to deploy a mdcms site to a Nginx web server on GNU/Linux.
 
 ## Install Required Packages
 
