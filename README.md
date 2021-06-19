@@ -57,7 +57,7 @@ Clone the repo locally:
 $ git clone https://github.com/cwchentw/mdcms.git mysite
 ```
 
-Change your working directory to root of the cloned repo:
+Change your working directory to root path of the cloned repo:
 
 ```
 $ cd mysite
