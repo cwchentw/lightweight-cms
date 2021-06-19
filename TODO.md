@@ -13,6 +13,7 @@
 * (Project) Set a blacklist for plugin(s)
 * (Project) Move `getBreadcrumb($page)` to *page.php*
 * (Project) Create an icon generator
+* (Theme) Add layout of pages
 * (Theme) Open graphs
 * (Theme) Modify the icon of GitHub
 * (Theme) Create a set of social media icons
