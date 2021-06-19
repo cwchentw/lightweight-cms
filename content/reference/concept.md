@@ -17,7 +17,7 @@ Users of mdcms seldom require to edit this script by themselves.
 
 ## Home Page
 
-A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates visitors general impression about a site and directs them to desired information ideally.
+A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates general impression about a site and directs  to desired information ideally.
 
 Web programmers typically arrange layout of a home page differently from that of section pages. Therefore, they are separated in mdcms.
 
