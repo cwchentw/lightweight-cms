@@ -1,6 +1,7 @@
 ---
 title: Basic Usage of mdcms
 mtime: 2021/6/19
+weight: 2
 ---
 
 ## Prologue
