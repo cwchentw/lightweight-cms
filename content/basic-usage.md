@@ -130,7 +130,7 @@ Install all dependencies with Composer:
 $ composer install
 ```
 
-Modify mdcms in any way you like as long as it still runs smoothly. You don't require to remove any post in *content* directory. They serve as sample data to see whether your changes work.
+Modify mdcms in any way you like as long as it still runs smoothly. You don't require to remove any post in *content* directory. They serve as sample data to see whether your change(s) work.
 
 You should lint your modification with the following script:
 
@@ -138,9 +138,9 @@ You should lint your modification with the following script:
 $ ./tools/bin/lint
 ```
 
-The script calls PHP Code Sniffer and PHPMD with modified rule sets. Our coding convention is not totally set yet.
+The script calls both PHP Code Sniffer and PHPMD with modified rule sets. Our coding convention is not totally set yet.
 
-Push back your modification to the forked repo:
+Push back your modification(s) to the forked repo:
 
 ```
 $ git push https://github.com/user/mdcms.git
