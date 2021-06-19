@@ -5,9 +5,13 @@ mtime: 2021/6/19
 
 ## Synposis
 
-mdcms stands for a flat-file based content management system powered by PHP. The software maps incoming URLs to corresponding post files on a web server. Because content of mdcms sites are stored in flat files, there is no relational database involved in such sites.
+mdcms stands for a flat-file based content management system powered by PHP. The software maps incoming URLs to corresponding directories or post files on a web server. Because content of mdcms sites are stored in flat files, there is no relational database involved in such sites.
 
 This article introduces concepts related to mdcms.
+
+## Router
+
+Router is the hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
 
 ## Home Page
 
