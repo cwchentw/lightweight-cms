@@ -120,7 +120,19 @@ $ git submodule update
 
 ## Usage for Plugin Developers
 
-(Pending)
+You should create an independent repo for your mdcms plugin.
+
+Assume your mdcms plugin is ready. Add your plugin to your mdcms copy as a Git submodule:
+
+```shell
+$ git submodule add https://example.com/user/myplugin.git plugins/myplugin
+```
+
+Later, update your change(s) to your mdcms repo if any:
+
+```
+$ git submodule update
+```
 
 ## Usage for Contributors
 
