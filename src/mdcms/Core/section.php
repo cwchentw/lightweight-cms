@@ -1,21 +1,20 @@
 <?php
 namespace mdcms\Core;
-
 # Section related function(s).
 
-# Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../../..";
-
-# Load third-party libraries.
-require_once $rootDirectory . "/vendor/autoload.php";
-# Get global setting.
-require_once $rootDirectory . "/setting.php";
-# Load local libraries.
-require_once __DIR__ . "/const.php";
-require_once __DIR__ . "/uri.php";
 
 function readSection($page)
 {
+    $rootDirectory = __DIR__ . "/../../..";
+    # Load third-party libraries.
+    require_once $rootDirectory . "/vendor/autoload.php";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load local scripts.
+    require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/uri.php";
+    require_once __DIR__ . "/utils.php";
+
     $result = array();
 
     # Initialize the data of a section.
@@ -23,7 +22,6 @@ function readSection($page)
     $result[MDCMS_SECTION_CONTENT] = "";
     $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
-    $rootDirectory = __DIR__ . "/../../..";
     $indexPage = $rootDirectory . "/" . CONTENT_DIRECTORY
         . $page . "/" . SECTION_INDEX;
 
