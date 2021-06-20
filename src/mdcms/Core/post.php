@@ -1,24 +1,23 @@
 <?php
 namespace mdcms\Core;
-
 # Post related function(s).
-
-# Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../../..";
-
-# Load third-party libraries.
-require_once $rootDirectory . "/vendor/autoload.php";
-# Get global setting.
-require_once $rootDirectory . "/setting.php";
-# Load local libraries.
-require_once __DIR__ . "/const.php";
-require_once __DIR__ . "/uri.php";
-require_once __DIR__ . "/utils.php";
 
 
 # The implementation is too long. We may refactor it later.
 function readPost($page)
 {
+    # Get the root path of mdcms.
+    $rootDirectory = __DIR__ . "/../../..";
+
+    # Load third-party libraries.
+    require_once $rootDirectory . "/vendor/autoload.php";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load local libraries.
+    require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/uri.php";
+    require_once __DIR__ . "/utils.php";
+
     $result = array();
 
     # Initialize the fields of a post.
