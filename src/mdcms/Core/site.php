@@ -177,7 +177,7 @@ function getPosts($page)
     return $result;
 }
 
-function getBreadcrumb($page)
+function getBreadcrumb($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
     # Get global setting.
@@ -199,11 +199,11 @@ function getBreadcrumb($page)
 
     array_push($result, $d);
 
-    if ("/" == $page) {
+    if ("/" == $uri) {
         return $result;
     }
 
-    $arr = parseURI($page);
+    $arr = parseURI($uri);
     $len = count($arr);
     for ($i = 0; $i < $len; ++$i) {
         $prev = $result[$i][MDCMS_LINK_PATH];
