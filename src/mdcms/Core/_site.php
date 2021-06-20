@@ -139,7 +139,7 @@ function readDirectoryLink($page)
         preg_match("/^# (.+)/", $rawContent, $matches);
 
         # Extract a title from a document.
-        if (isset($matches)) {
+        if (array_key_exists(1, $matches)) {
             $result[MDCMS_LINK_TITLE] = $matches[1];
         }
         # If no title in the above document, extract a title from a path.

@@ -171,7 +171,7 @@ function readPost($page)
             }
         }
 
-        # Set the author of a post.
+        # Set author of a post.
         if (isValidField($metadata, METADATA_AUTHOR)) {
             $result[MDCMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
         }
@@ -179,11 +179,8 @@ function readPost($page)
             $result[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
         }
 
-        # Set the mtime of a post.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_MTIME, $metadata)
-            && "" != $metadata[METADATA_MTIME])
-        {
+        # Set mtime of a post.
+        if (isValidField($metadata, METADATA_MTIME)) {
             $result[MDCMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
         }
         else {
@@ -191,9 +188,7 @@ function readPost($page)
         }
 
         # Set weight of a post if any.
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_WEIGHT, $metadata))
-        {
+        if (isValidField($metadata, METADATA_WEIGHT)) {
             $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 

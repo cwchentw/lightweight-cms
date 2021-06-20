@@ -41,17 +41,12 @@ function readSection($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
-        if (!is_null($metadata)
-            && array_key_exists(METADATA_WEIGHT, $metadata))
-        {
+        if (isValidField($metadata, METADATA_WEIGHT)) {
             $result[MDCMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
-        if (!is_null($metadata)
-            && array_key_exists("title", $metadata)
-            && "" != $metadata["title"])
-        {
-            $result[MDCMS_SECTION_TITLE] = $metadata["title"];
+        if (isValidField($metadata, METADATA_WEIGHT)) {
+            $result[MDCMS_SECTION_TITLE] = $metadata[METADATA_TITLE];
 
             $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
 
