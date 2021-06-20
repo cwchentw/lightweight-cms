@@ -64,7 +64,7 @@ function readPost($page)
                 $result[MDCMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $stripedContent);
             }
             else {
-                $pages = parsePage($page);
+                $pages = parseURI($page);
                 $title = preg_replace("/\/|-+/", " ", array_pop($pages));
                 $title = ucwords($title);  # Capitalize a title.
                 $result[MDCMS_POST_TITLE] = $title;

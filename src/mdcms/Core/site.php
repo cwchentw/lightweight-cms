@@ -192,7 +192,7 @@ function getBreadcrumb($page)
         return $result;
     }
 
-    $arr = parsePage($page);
+    $arr = parseURI($page);
     $len = count($arr);
     for ($i = 0; $i < $len; ++$i) {
         $prev = $result[$i][MDCMS_LINK_PATH];

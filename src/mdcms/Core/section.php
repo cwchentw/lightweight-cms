@@ -74,7 +74,7 @@ function readSection($page)
     # Otherwise, extract data from the directory name.
     else {
         extract_title_from_page:
-        $pages = parsePage($page);
+        $pages = parseURI($page);
         $title = preg_replace("/\/|-+/", " ", array_pop($pages));
         $title = ucwords($title);  # Capitalize a title.
         $result[MDCMS_SECTION_TITLE] = $title;
