@@ -1,25 +1,14 @@
 <?php
 namespace mdcms\Core;
-
 # Site related functions.
-
-# Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../../..";
-
-# Load third-party libraries.
-require_once $rootDirectory . "/vendor/autoload.php";
-# Get global setting.
-require_once $rootDirectory . "/setting.php";
-# Load local libraries.
-require_once __DIR__ . "/const.php";
-require_once __DIR__ . "/section.php";
-require_once __DIR__ . "/uri.php";
-# Load a private library.
-require_once __DIR__ . "/_site.php";
 
 
 function hasSocialMedia()
 {
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+
     return !("" == FACEBOOK
         && "" == FACEBOOK_GROUP
         && "" == TWITTER
@@ -31,9 +20,15 @@ function hasSocialMedia()
 #  like "/section-title/post-title/".
 function getSections($page)
 {
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load local scripts.
+    require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/section.php";
+
     $result = array();
 
-    $rootDirectory = __DIR__ . "/../../..";
     $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
@@ -98,9 +93,15 @@ function getSections($page)
 
 function getPosts($page)
 {
-    $result = array();
-
     $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load local scripts.
+    require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/post.php";
+
+    $result = array();
+    
     $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
@@ -178,6 +179,16 @@ function getPosts($page)
 
 function getBreadcrumb($page)
 {
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load a local script.
+    require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/uri.php";
+    require_once __DIR__ . "/post.php";
+    # Load a private script.
+    require_once __DIR__ . "/_site.php";
+
     $result = array();
 
     # Add the link to home.
@@ -237,6 +248,14 @@ function getBreadcrumb($page)
 
 function getAllLinks($page)
 {
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    # Load a local script.
+    require_once __DIR__ . "/const.php";
+    # Load a private script.
+    require_once __DIR__ . "/_site.php";
+
     $result = array();
 
     $pages = array();
