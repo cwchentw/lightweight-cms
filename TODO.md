@@ -10,12 +10,9 @@
 * (Feature) Add `SITE_PREFIX`
 * (Project) Refactor PHP scripts in private library
 * (Project) Set a blacklist for plugin(s)
-* (Project) Move `getBreadcrumb($page)` to *page.php*
 * (Project) Create an icon generator
-* (Theme) Add layout of pages
 * (Theme) Open graphs
 * (Theme) Modify the icon of GitHub
-* (Theme) Create a set of social media icons
-* (Plugin) Add Google Analytics as a demonstration
+* (Plugin) Add Google Analytics
 * (Plugin) Refactor word count to a plugin
 * (Plugin) Add a word count for CJK pages
