@@ -18,7 +18,7 @@ function hasSocialMedia()
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/post-title/".
-function getSections($page)
+function getSections($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
     # Get global setting.
@@ -29,7 +29,7 @@ function getSections($page)
 
     $result = array();
 
-    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
+    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $uri;
     $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -42,14 +42,14 @@ function getSections($page)
         if (is_dir($path)) {
             $section = null;
             # Get top section(s).
-            if ("/" == $page) {
+            if ("/" == $uri) {
                 $section = readSection("/" . $file);
                 $section[MDCMS_LINK_PATH] = "/" . $file . "/";
             }
             # Get subsection(s) of a section.
             else {
-                $section = readSection($page . $file);
-                $section[MDCMS_LINK_PATH] = $page . $file . "/";
+                $section = readSection($uri . $file);
+                $section[MDCMS_LINK_PATH] = $uri . $file . "/";
             }
 
             array_push($result, $section);
