@@ -1,17 +1,6 @@
 <?php
 namespace mdcms\Core;
-
-# Pages related function(s).
-
-# Get the root path of mdcms.
-$rootDirectory = __DIR__ . "/../../..";
-
-# Load third-party libraries.
-require_once $rootDirectory . "/vendor/autoload.php";
-# Get global setting.
-require_once $rootDirectory . "/setting.php";
-# Load a local library.
-require_once __DIR__ . "/const.php";
+# URIs related functions.
 
 
 # Check whether the page is the home page of a site.
@@ -27,6 +16,9 @@ function isHome($uri)
 function isSection($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+
     $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $uri;
 
     return is_dir($path);
@@ -78,7 +70,11 @@ function getPath($uri, $ext)
 
     $arr = parseURI($uri);
     $len = count($arr);
+
     $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+
     if (0 == $len) {
         # Pass.
     }
