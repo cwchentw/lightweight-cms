@@ -13,7 +13,7 @@ require_once $rootDirectory . "/setting.php";
 # Load local libraries.
 require_once __DIR__ . "/const.php";
 require_once __DIR__ . "/section.php";
-require_once __DIR__ . "/page.php";
+require_once __DIR__ . "/uri.php";
 # Load a private library.
 require_once __DIR__ . "/_site.php";
 

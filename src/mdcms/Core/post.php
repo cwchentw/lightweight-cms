@@ -12,7 +12,7 @@ require_once $rootDirectory . "/vendor/autoload.php";
 require_once $rootDirectory . "/setting.php";
 # Load local libraries.
 require_once __DIR__ . "/const.php";
-require_once __DIR__ . "/page.php";
+require_once __DIR__ . "/uri.php";
 require_once __DIR__ . "/utils.php";
 
 
