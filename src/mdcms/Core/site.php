@@ -15,7 +15,7 @@ function hasSocialMedia()
         && "" == GITHUB); 
 }
 
-function getAllLinks($page)
+function getAllLinks($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
     # Get global setting.
@@ -30,14 +30,14 @@ function getAllLinks($page)
     $pages = array();
 
     # Add all valid directories and files into the queue.
-    if (isHome($page)) {
+    if (isHome($uri)) {
         $rootDirectory = __DIR__ . "/../../..";
 
         # The home page itself is a special page.
         {
             $link = array();
 
-            $link[MDCMS_LINK_PATH] = $page;
+            $link[MDCMS_LINK_PATH] = $uri;
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
             # FIXME: Unable to get mtime.
@@ -76,7 +76,7 @@ function getAllLinks($page)
     }
     # Add itself into the queue.
     else {
-        array_push($pages, $page);
+        array_push($pages, $uri);
     }
 
     while (count($pages) > 0) {
@@ -96,11 +96,11 @@ function getAllLinks($page)
 
         /* `$path` is a HTML file. */
         if (file_exists($htmlPath)) {
-            array_push($result, readHTMLLink($page));
+            array_push($result, readHTMLLink($uri));
         }
         /* `$path` is a Markdown file. */
         else if (file_exists($markdownPath)) {
-            array_push($result, readMarkdownLink($page));
+            array_push($result, readMarkdownLink($uri));
         }
         /* `$path` is a directory. */
         else if (is_dir($dirpath)) {
