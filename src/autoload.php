@@ -28,15 +28,12 @@ while (count($dirs) > 0) {
             continue;
         }
 
+        $path = $dir . "/" . $library;
+
         # Skip the script itself.
-        #
-        # Currently, we simply ignore all autoload.php
-        #  in our library. We may change it later.
-        if ("autoload.php" == $library) {
+        if (__FILE__ == $path) {
             continue;
         }
-
-        $path = $dir . "/" . $library;
 
         # Push a subdirectory into the queue.
         if (is_dir($path)) {
