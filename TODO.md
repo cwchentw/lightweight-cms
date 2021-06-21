@@ -3,7 +3,6 @@
 * (Bug) Some external links don't change as expeced
 * (Feature) Optional *_index.md* for the home page of a site
 * (Feature) Pagination on sections and posts
-* (Feature) Redirecting link(s)
 * (Feature) Add an offline.html generator
 * (Feature) Add `SITE_PREFIX`
 * (Project) Refactor PHP scripts in private library

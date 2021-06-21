@@ -61,6 +61,21 @@ else if (\mdcms\Core\isSection($loc)) {
 }
 # Render a post.
 else {
+    foreach (REDIRECT_LIST as $redirect) {
+        if (count($redirect) < 2) {
+            continue;
+        }
+
+        if ($redirect[0] == $loc) {
+            $status = 302;
+            if (!is_null($redirect[2])) {
+                $status = $redirect[2];
+            }
+
+            header("Location: {$redirect[1]}", true, $status);
+        }
+    }
+
     $post = \mdcms\Core\readPost($loc);
 
     # If HTTP status 404, generate an error page on-the-fly.
