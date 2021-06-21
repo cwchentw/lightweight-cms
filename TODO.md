@@ -9,7 +9,6 @@
 * (Feature) Add an offline.html generator
 * (Feature) Add `SITE_PREFIX`
 * (Project) Refactor PHP scripts in private library
-* (Project) Set a blacklist for plugin(s)
 * (Project) Create an icon generator
 * (Theme) Open graphs
 * (Theme) Modify the icon of GitHub
