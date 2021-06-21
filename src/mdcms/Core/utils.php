@@ -3,13 +3,6 @@ namespace mdcms\Core;
 # Utility functions for mdcms.
 
 
-function isValidField($array, $key)
-{
-    return !is_null($array)
-        && array_key_exists($key, $array)
-        && "" != $array[$key];
-}
-
 # Copy directories and files recursively.
 #
 # Call it within a `try ... catch ...` block because the task may fail.
