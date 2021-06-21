@@ -46,7 +46,7 @@ function readSection($page)
             $result[MDCMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
-        if (isValidField($metadata, METADATA_WEIGHT)) {
+        if (isValidField($metadata, METADATA_TITLE)) {
             $result[MDCMS_SECTION_TITLE] = $metadata[METADATA_TITLE];
 
             $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
@@ -55,11 +55,11 @@ function readSection($page)
             $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
         }
         else {
-            preg_match("/^# (.+)/", $stripedContent, $matches);
+            preg_match("/<h1>(.+)<\/h1>/", $stripedContent, $matches);
             if ("" != $matches[1]) {
                 $result[MDCMS_SECTION_TITLE] = $matches[1];
 
-                $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
+                $stripedContent = preg_replace("/<h1>(.+)<\/h1>/", "", $stripedContent);
 
                 $parser = new \Parsedown();
                 $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
