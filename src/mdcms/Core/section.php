@@ -14,6 +14,8 @@ function readSection($page)
     require_once __DIR__ . "/const.php";
     require_once __DIR__ . "/uri.php";
     require_once __DIR__ . "/utils.php";
+    # Load a private script.
+    require_once __DIR__ . "/_uri.php";
 
     $result = array();
 

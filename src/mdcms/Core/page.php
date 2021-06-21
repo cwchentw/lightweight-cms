@@ -174,8 +174,9 @@ function getBreadcrumb($uri)
     require_once __DIR__ . "/const.php";
     require_once __DIR__ . "/uri.php";
     require_once __DIR__ . "/post.php";
-    # Load a private script.
+    # Load private scripts.
     require_once __DIR__ . "/_site.php";
+    require_once __DIR__ . "/_uri.php";
 
     $result = array();
 
