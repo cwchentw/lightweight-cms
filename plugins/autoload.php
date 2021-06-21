@@ -2,8 +2,9 @@
 # The main loader for plugin(s).
 
 
-# The path of the main loader itself.
-$pluginLoader = __DIR__ . "/" . __FILE__;
+$rootDirectory = __DIR__ . "/..";
+# Load global setting.
+require_once $rootDirectory . "/setting.php";
 
 # Scan all files in the directory.
 $libraries = scandir(__DIR__);
@@ -18,12 +19,15 @@ foreach ($libraries as $library) {
         continue;
     }
 
-    # TODO: Filter out blacklisted plugin(s).
+    # Pass plugin in the black list.
+    if (in_array($library, PLUGIN_BLACKLIST)) {
+        continue;
+    }
 
     $path = __DIR__ . "/" . $library;
 
     # Skip the script itself.
-    if ($pluginLoader == $path) {
+    if (__FILE__ == $path) {
         continue;
     }
 

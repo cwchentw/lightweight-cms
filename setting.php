@@ -47,6 +47,8 @@ define("GITHUB", "cwchentw/mdcms");
 
 # Parameters of a site.
 
+# Black list of plugins.
+define("PLUGIN_BLACKLIST", []);
 # The text of home page on breadcrumbs.
 define("BREADCRUMB_HOME", "Index Page");
 # The upper limit of the word count of a dynamically generated description.
