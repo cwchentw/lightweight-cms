@@ -42,6 +42,9 @@ function readSection($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
+        # Expose metadata of a section. No matter it is empty or not.
+        $result[MDCMS_SECTION_META] = $metadata;
+
         if (isValidField($metadata, METADATA_WEIGHT)) {
             $result[MDCMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
@@ -74,6 +77,9 @@ function readSection($page)
     }
     # Otherwise, extract data from the directory name.
     else {
+        # Dummy metadata of a section.
+        $result[MDCMS_SECTION_META] = array();
+
         extract_title_from_page:
         $pages = parseURI($page);
         $title = preg_replace("/\/|-+/", " ", array_pop($pages));

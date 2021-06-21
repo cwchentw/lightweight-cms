@@ -48,6 +48,9 @@ function readPost($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
+        # Expose metadata of a post. No matter it is empty or not.
+        $result[MDCMS_POST_META] = $metadata;
+
         if (isValidField($metadata, METADATA_TITLE)) {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
@@ -150,6 +153,9 @@ function readPost($page)
 
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
+
+        # Expose metadata of a post. No matter it is empty or not.
+        $result[MDCMS_POST_META] = $metadata;
 
         if (isValidField($metadata, METADATA_TITLE)) {
             $result[MDCMS_POST_TITLE] = $metadata[METADATA_TITLE];
