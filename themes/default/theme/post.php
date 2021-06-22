@@ -17,6 +17,7 @@ $post = $GLOBALS[MDCMS_POST];
         <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
+        <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
     </head>
     <body>
@@ -26,7 +27,7 @@ $post = $GLOBALS[MDCMS_POST];
             <div class="container">
                 <header>
                     <h1>
-                        <img src="/img/logo-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                         <span>
                             <?php echo $post[MDCMS_POST_TITLE]; ?>

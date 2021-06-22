@@ -27,6 +27,7 @@ $posts = $GLOBALS[MDCMS_POSTS];
         <meta name="robots" content="noindex, follow">
         <?php endif; ?>
 
+        <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
     </head>
     <body>
@@ -36,7 +37,7 @@ $posts = $GLOBALS[MDCMS_POSTS];
             <div class="container">
                 <header>
                     <h1>
-                        <img src="/img/logo-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                         <span>
                             <?php echo $section[MDCMS_SECTION_TITLE]; ?>

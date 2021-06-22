@@ -21,6 +21,7 @@ $status = 200;
         <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
+        <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
     </head>
     <body>
@@ -31,7 +32,7 @@ $status = 200;
             <div class="center">
                 <header>
                     <h1>
-                        <img src="/img/logo-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                         <span>
                             <?php echo SITE_NAME; ?>

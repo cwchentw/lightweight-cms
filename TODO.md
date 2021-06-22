@@ -7,7 +7,6 @@
 * (Feature) Add `SITE_PREFIX`
 * (Project) Refactor PHP scripts in private library
 * (Project) Create an icon generator
-* (Theme) Open graphs
 * (Theme) Modify the icon of GitHub
 * (Plugin) Add Google Analytics
 * (Plugin) Refactor word count to a plugin

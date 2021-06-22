@@ -10,7 +10,7 @@ $backgroundColor = "#6C757D";
 $themeColor = "#6C757D";
 # The text of some languages displays right-to-left.
 $languageDirection = "ltr";
-$image = "logo";
+$image = SITE_LOGO;
 $imageExtension = ".png";
 $imageType = "image/png";
 $imagePath = "/img";

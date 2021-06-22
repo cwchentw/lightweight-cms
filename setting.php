@@ -27,7 +27,8 @@ define("SITE_COPYRIGHT", "Copyright (c) 2021 Michelle Chen. Licensed under CC BY
 define("SITE_LANGUAGE", "en-US");
 # Theme of a site.
 define("SITE_THEME", "default");
-
+# Logo of a site.
+define("SITE_LOGO", "logo");
 
 
 # Social media for a site.
