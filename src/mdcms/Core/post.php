@@ -269,57 +269,8 @@ function readPost($page)
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK) {
         $baseURL = SITE_BASE_URL;
-        $input = $result[MDCMS_POST_CONTENT];
-        $perl_program = <<<PERL
-# Receive input from PHP program.
-my \$input = <<'END';
-$input
-END
-
-# Replace external links globally.
-# FIXME: Unable to replace multiple links in the same line.
-\$input =~ s{<a href=\"(.+?)\">(.+)</a>}{
-    substr(\$1, 0, 4) != "http" ? \$1
-    : index(\$1, "$baseURL") >= 0 ? \$1
-    : "<a href=\"\$1\" target=\"_blank\" rel=\"noopener nofollow\">\$2</a>"}ge;
-
-# Print modified input to STDOUT.
-print \$input;
-PERL;
-
-        $descriptorspec = array(
-            0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
-            1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
-            2 => array("pipe", "w") // stderr is a file to write to
-        );
-
-        # Create a process to call Perl.
-        $process = proc_open("perl", $descriptorspec, $pipes);
-
-        if (is_resource($process)) {
-            # Write our program to STDIN.
-            fwrite($pipes[0], $perl_program);
-            fclose($pipes[0]);
-
-            # Receive output from STDOUT.
-            $output = stream_get_contents($pipes[1]);
-            fclose($pipes[1]);
-
-            # Receive error message from STDERR.
-            $error = stream_get_contents($pipes[2]);
-            fclose($pipes[2]);
-
-            # Only for debugging.
-            #echo $error . "\n";
-
-            $result[MDCMS_POST_CONTENT] = $output;
-            #echo $output;
-
-            $return_value =  proc_close($process);
-
-            # Only for debugging.
-            #echo "return value: {$return_value}" . "\n";
-        }
+        $output = noFollowLinks($result[MDCMS_POST_CONTENT]);
+        $result[MDCMS_POST_CONTENT] = $output;
     }
 
     return $result;
