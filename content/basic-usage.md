@@ -18,6 +18,7 @@ This article illustrates basic usage of mdcms. Some details are omitted for brev
   * PHP 7.2 or above
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
+  * (Optional) Perl (for global replacement)
 * Development environment
   * [Composer](https://getcomposer.org/)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)

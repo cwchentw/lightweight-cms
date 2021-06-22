@@ -1,6 +1,5 @@
 # TODO
 
-* (Bug) Some external links don't change as expeced
 * (Feature) Optional *_index.md* for the home page of a site
 * (Feature) Pagination on sections and posts
 * (Feature) Add an offline.html generator
