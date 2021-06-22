@@ -268,7 +268,6 @@ function readPost($page)
 
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK) {
-        $baseURL = SITE_BASE_URL;
         $output = noFollowLinks($result[MDCMS_POST_CONTENT]);
         $result[MDCMS_POST_CONTENT] = $output;
     }

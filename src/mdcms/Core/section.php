@@ -123,5 +123,13 @@ function readSection($page)
         $result[MDCMS_SECTION_EXCERPT] = "";
     }
 
+    # Prevent search engine bots from following links.
+    if (NO_FOLLOW_EXTERNAL_LINK
+        && array_key_exists(MDCMS_SECTION_CONTENT, $result))
+    {
+        $output = noFollowLinks($result[MDCMS_SECTION_CONTENT]);
+        $result[MDCMS_SECTION_CONTENT] = $output;
+    }
+
     return $result;
 }
