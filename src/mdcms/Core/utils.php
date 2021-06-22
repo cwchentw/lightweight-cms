@@ -57,11 +57,11 @@ function xCopy($src, $dst)
     closedir($dir);
 }
 
-# Disable search engines from following links.
+# Disallow search engines from following links.
 #
-# Internally, the functional calls Perl instead of utilizing
+# Internally, the function calls Perl instead of utilizing
 #  regex of PHP because the latter is unable to replace patterns
-#  globally.
+#  globally with callbacks.
 function noFollowLinks($content)
 {
     $rootDirectory = __DIR__ . "/../../..";
@@ -77,7 +77,9 @@ END
 
 # Replace external links globally.
 \$input =~ s{<a href=\"(.+?)\">(.+?)</a>}{
+    # Skip local URIs.
     index(\$1, "http") < 0 ? "<a href=\"\$1\">\$2</a>"
+    # Skip URIs of same domain.
     : index(\$1, "$baseURL") == 0 ? "<a href=\"\$1\">\$2</a>"
     : "<a href=\"\$1\" target=\"_blank\" rel=\"noopener nofollow\">\$2</a>"}ge;
 
@@ -86,10 +88,10 @@ print \$input;
 PERL;
 
     $descriptorspec = array(
-        0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
-        1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
-        2 => array("pipe", "w")   // stderr is a pipe that the child will write to
-        );
+        0 => array("pipe", "r"),  # stdin is a pipe that the child will read from
+        1 => array("pipe", "w"),  # stdout is a pipe that the child will write to
+        2 => array("pipe", "w")   # stderr is a pipe that the child will write to
+    );
 
     # Create a process to call Perl.
     $process = proc_open("perl", $descriptorspec, $pipes);
