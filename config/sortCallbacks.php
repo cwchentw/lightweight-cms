@@ -5,6 +5,7 @@
 # Callback to sort sections.
 define("SORT_SECTION_CALLBACK", "sort-section-callback");
 $GLOBALS[SORT_SECTION_CALLBACK] = function ($a, $b) {
+    # Sort two sections by their weights.
     if (array_key_exists(MDCMS_SECTION_WEIGHT, $a)
         && array_key_exists(MDCMS_SECTION_WEIGHT, $b))
     {
@@ -22,6 +23,7 @@ $GLOBALS[SORT_SECTION_CALLBACK] = function ($a, $b) {
         }
     }
 
+    # Sort two sections by their titles.
     if (array_key_exists(MDCMS_SECTION_TITLE, $a)
         && array_key_exists(MDCMS_SECTION_TITLE, $b))
     {
@@ -31,12 +33,14 @@ $GLOBALS[SORT_SECTION_CALLBACK] = function ($a, $b) {
         return strcasecmp($ta, $tb);
     }
 
+    # They are equal, which is seldom the case.
     return 0;
 };
 
 # Callback to sort posts.
 define("SORT_POST_CALLBACK", "sort-post-callback");
 $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
+    # Sort two posts by their weights.
     if (array_key_exists(MDCMS_POST_WEIGHT, $a)
         && array_key_exists(MDCMS_POST_WEIGHT, $b))
     {
@@ -54,6 +58,9 @@ $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
         }
     }
 
+    # Sort two posts by their modified time.
+    #  Your should always set a mtime in metadata
+    #  region of posts.
     if (array_key_exists(MDCMS_POST_MTIME, $a)
         && array_key_exists(MDCMS_POST_MTIME, $b))
     {
@@ -71,6 +78,7 @@ $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
         }
     }
 
+    # Sort two posts by their titles.
     if (array_key_exists(MDCMS_POST_TITLE, $a)
         && array_key_exists(MDCMS_POST_TITLE, $b))
     {
@@ -80,5 +88,6 @@ $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
         return strcasecmp($ta, $tb);
     }
 
+    # They are equal, which is seldom the case.
     return 0;
 };
