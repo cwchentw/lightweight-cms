@@ -61,7 +61,7 @@ $ sudo zypper install nginx php7 php7-fpm
 Run the command to install packages for Composer:
 
 ```shell
-$ sudo zypper install php7-phar php7-openssl php7-mbstring
+$ sudo zypper install php7-phar php7-openssl php7-mbstring php7-zlib
 ```
 
 Run the command if you use *default* theme of mdcms:

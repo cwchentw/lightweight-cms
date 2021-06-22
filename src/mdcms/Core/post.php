@@ -268,29 +268,58 @@ function readPost($page)
 
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK) {
-        $result[MDCMS_POST_CONTENT]
-            = preg_replace_callback(
-                "/<a href=\"([^\"]+)\">(.+)<\/a>/",
-                function ($matches) {
-                    $href = $matches[1];
+        $baseURL = SITE_BASE_URL;
+        $input = $result[MDCMS_POST_CONTENT];
+        $perl_program = <<<PERL
+# Receive input from PHP program.
+my \$input = <<'END';
+$input
+END
 
-                    # Do nothing on local links.
-                    if ("http" != substr($href, 0, 4)) {
-                        return $matches[0];
-                    }
+# Replace external links globally.
+# FIXME: Unable to replace multiple links in the same line.
+\$input =~ s{<a href=\"(.+?)\">(.+)</a>}{
+    substr(\$1, 0, 4) != "http" ? \$1
+    : index(\$1, "$baseURL") >= 0 ? \$1
+    : "<a href=\"\$1\" target=\"_blank\" rel=\"noopener nofollow\">\$2</a>"}ge;
 
-                    # Do nothing on the links of the same domain.
-                    if (strpos($href, SITE_BASE_URL)) {
-                        return $matches[0];
-                    }
+# Print modified input to STDOUT.
+print \$input;
+PERL;
 
-                    $title = $matches[2];
-                    return "<a href=\"" . $href . "\" target=\"_blank\""
-                        . "rel=\"noopener nofollow\">"
-                        . $title . "</a>";
-                },
-                $result[MDCMS_POST_CONTENT]
-            );
+        $descriptorspec = array(
+            0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+            1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+            2 => array("pipe", "w") // stderr is a file to write to
+        );
+
+        # Create a process to call Perl.
+        $process = proc_open("perl", $descriptorspec, $pipes);
+
+        if (is_resource($process)) {
+            # Write our program to STDIN.
+            fwrite($pipes[0], $perl_program);
+            fclose($pipes[0]);
+
+            # Receive output from STDOUT.
+            $output = stream_get_contents($pipes[1]);
+            fclose($pipes[1]);
+
+            # Receive error message from STDERR.
+            $error = stream_get_contents($pipes[2]);
+            fclose($pipes[2]);
+
+            # Only for debugging.
+            #echo $error . "\n";
+
+            $result[MDCMS_POST_CONTENT] = $output;
+            #echo $output;
+
+            $return_value =  proc_close($process);
+
+            # Only for debugging.
+            #echo "return value: {$return_value}" . "\n";
+        }
     }
 
     return $result;
