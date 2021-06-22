@@ -17,7 +17,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 ### Back End
 
 * Production
-  * GNU/Linux
+  * GNU/Linux is recommended
   * A web server like Apache or Nginx
   * PHP 7.2 or above
   * FastCGI Process Manager (FPM) of PHP

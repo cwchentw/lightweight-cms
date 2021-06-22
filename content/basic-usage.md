@@ -13,7 +13,7 @@ This article illustrates basic usage of mdcms. Some details are omitted for brev
 ### Back End
 
 * Production environment
-  * GNU/Linux
+  * GNU/Linux is recommended
   * A web server like Apache or Nginx
   * PHP 7.2 or above
   * FastCGI Process Manager (FPM) of PHP
@@ -51,6 +51,8 @@ These dependencies are for *default* theme of mdcms. If you utilize another mdcm
 Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of mdcms itself.
 
 ## Usage for End Users
+
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/how-to-run-mdcms-on-windows/).
 
 You are a would-be owner of an awesome content website. It is not of your interest to develop mdcms itself.
 
