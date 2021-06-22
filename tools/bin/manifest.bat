@@ -1,5 +1,5 @@
 @echo off
-rem A utility script to generate a sitemap.xml for mdcms.
+rem A utility script to generate a manifest.json for mdcms.
 
 
 rem Check whether PHP is available on the system.
@@ -25,8 +25,8 @@ if not exist %public% (
     )
 )
 
-rem Create a sitemap.xml.
-php %libexec%\sitemap.php > %public%\sitemap.xml || (
-    echo Unable to create a sitemap.xml >&2
+rem Create a manifest.json.
+php %libexec%\manifest.php > %public%\manifest.json || (
+    echo Unable to create a manifest.json >&2
     exit 1
 )
