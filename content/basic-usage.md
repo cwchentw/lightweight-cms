@@ -82,7 +82,7 @@ $ composer install --no-dev
 
 If you don't want to update your mdcms snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-update-mdcms/).
+Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
 [Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 7.2 or above:
 

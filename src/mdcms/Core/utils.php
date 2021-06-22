@@ -77,8 +77,8 @@ END
 
 # Replace external links globally.
 \$input =~ s{<a href=\"(.+?)\">(.+?)</a>}{
-    substr(\$1, 0, 4) != "http" ? \$1
-    : index(\$1, "$baseURL") >= 0 ? \$1
+    index(\$1, "http") < 0 ? "<a href=\"\$1\">\$2</a>"
+    : index(\$1, "$baseURL") == 0 ? "<a href=\"\$1\">\$2</a>"
     : "<a href=\"\$1\" target=\"_blank\" rel=\"noopener nofollow\">\$2</a>"}ge;
 
 # Print modified input to STDOUT.
