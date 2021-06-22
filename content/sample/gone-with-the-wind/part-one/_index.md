@@ -1,4 +1,4 @@
 ---
-title: Part I of Gone with Wind
+title: Part I of Gone with the Wind
 author: Margaret Mitchell
 ---

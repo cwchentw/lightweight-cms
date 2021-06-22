@@ -1,5 +1,5 @@
 ---
-title: Gone With The Wind
+title: Gone with the Wind
 author: Margaret Mitchell
 ---
 
