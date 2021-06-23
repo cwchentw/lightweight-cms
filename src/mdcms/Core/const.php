@@ -1,7 +1,7 @@
 <?php
 namespace mdcms\Core;
 
-# The constants used in mdcms.
+# Constants used in mdcms.
 #
 # Unlike the constants in setting.php, it won't help much to
 #  modify these constants. They merely serve as unique symbols
