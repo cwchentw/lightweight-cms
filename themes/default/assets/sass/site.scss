@@ -40,7 +40,7 @@ body {
     height: 100%;
     margin: 0px;
 
-    background-color: #F7F7F5;
+    background-color: white;
 
     > .container {
         min-height: 100%;
@@ -48,8 +48,6 @@ body {
         padding-bottom: 10pt;
 
         background-color:  white;
-
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
         @media screen and (max-width: 768px) {
             width: 100%;
@@ -189,6 +187,29 @@ code {
             font-family: $head-font, $title-font, $serif;
         }
 
+        .post-info {
+            width: 88%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20pt;
+        }
+
+        .author {
+            color: $background-color;
+            background-color: $jumbotron-color;
+
+            font-size: 0.85em;
+            font-family: $title-font, $serif;
+        }
+
+        .last-modified-time {
+            color: $background-color;
+            background-color: $jumbotron-color;
+
+            font-size: 0.85em;
+            font-family: $title-font, $serif;
+        }
+
         .breadcrumb {
             background-color: $jumbotron-color;
 
@@ -209,6 +230,15 @@ code {
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: $phone-width) {
+    .jumbotron {
+        .post-info {
+            width: 95%;
+            margin-bottom: 10pt;
         }
     }
 }

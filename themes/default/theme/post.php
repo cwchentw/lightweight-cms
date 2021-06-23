@@ -35,6 +35,15 @@ $post = $GLOBALS[MDCMS_POST];
                     </h1>
                 </header>
 
+                <div class="post-info">
+                    <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
+                    <span class="author">Written by <?php echo $post[MDCMS_POST_AUTHOR]; ?>.</span>
+                    <?php endif; ?>
+                
+                    <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
+                    <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?></span>
+                    <?php endif; ?>
+                </div>
                 <?php includePartials("breadcrumb.php"); ?>
             </div>
         </div>
@@ -43,18 +52,6 @@ $post = $GLOBALS[MDCMS_POST];
             <div class="row">
                 <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
-                    <div class="alert alert-primary" role="alert">
-                        Author of this post is <?php echo $post[MDCMS_POST_AUTHOR]; ?>.
-                    </div>
-                    <?php endif; ?>
-
-                    <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
-                    <div class="alert alert-secondary" role="alert">
-                        Last modified date is <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?>.
-                    </div>
-                    <?php endif; ?>
-
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.
