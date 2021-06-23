@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# A utility script to load personal assets.
+
+
+cwd=$(dirname $0);
+root="${cwd}/../..";
+libexec="${cwd}/../libexec";
+public="${root}/public";
+
+
+if ! [ -d "$public" ];
+then
+    mkdir -p "$public" || (
+        echo "Unable to create a public directory" >&2;
+        exit 1;
+    )
+fi
+
+php "${libexec}/personalAssets.php" || (
+    exit 1;
+)

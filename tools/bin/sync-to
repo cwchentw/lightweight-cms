@@ -54,6 +54,11 @@ bin="$cwd";
     exit $?;
 )
 
+# Load personal assets.
+"${bin}/personalAssets" || (
+    exit $?;
+)
+
 # Create assets.
 #npm install
 

@@ -72,7 +72,9 @@ Install `rsync(1)` for Windows:
 
 ### Install MAMP
 
-Pending.
+MAMP shows some welcome message on startup:
+
+<img src="/img/howto/mamp-welcome.png" alt="Welcome message of MAMP installer" class="img-fluid" />
 
 ## Usage
 

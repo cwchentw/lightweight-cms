@@ -1,5 +1,6 @@
 const del = require('del');
 
 module.exports = function () {
-    return del('../public/css/**/*', { force: true });
+    /* Set file lists to delete. */
+    return del([], { force: true });
 };
