@@ -81,6 +81,7 @@ END
     index(\$1, "http") < 0 ? "<a href=\"\$1\">\$2</a>"
     # Skip URIs of same domain.
     : index(\$1, "$baseURL") == 0 ? "<a href=\"\$1\">\$2</a>"
+    # Prevent search engines from following links.
     : "<a href=\"\$1\" target=\"_blank\" rel=\"noopener nofollow\">\$2</a>"}ge;
 
 # Print modified input to STDOUT.
