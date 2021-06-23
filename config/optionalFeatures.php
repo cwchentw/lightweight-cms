@@ -18,7 +18,6 @@ define("BLOCK_BOT_ON_SECTION", true);
 # Prevent search engine bots from following external sites.
 #
 # Such actions are merely for SEO. Not good for a health Web.
-# FIXME: Some links fails to change.
 define("NO_FOLLOW_EXTERNAL_LINK", true);
 # Scan application directory.
 #
