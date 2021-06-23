@@ -1,6 +1,6 @@
 ---
 title: Concepts of mdcms
-mtime: 2021/6/19
+mtime: 2021/6/23
 ---
 
 ## Synposis
@@ -15,53 +15,69 @@ Router is hub of a mdcms site. It receives requests from a web server (Apache or
 
 Users of mdcms seldom require to edit this script by themselves.
 
-## Home Page
+## Pages
+
+### Home Page
 
 A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates general impression about a site and directs  to desired information ideally.
 
 Web programmers typically arrange layout of a home page differently from that of section pages. Therefore, they are separated in mdcms.
 
-## Sections
+### Sections
 
 Sections or section pages in a mdcms site are in-between pages from a home page to posts. Most sections are purely functional. There is no substantial information for visitors in these pages.
 
 Because sections merely serve as intermediaries to posts, some web programmers set `noindex` meta tag in them for SEO, which is an optional flag in mdcms.
 
-## Posts
+### Posts
 
 Posts or post pages work as real information conveyors in a mdcms site. It is abundant and relevant information that makes content websites great. Good content in such sites benefits SEO as well.
 
 In addition to content in posts, mdcms provides metadata for each post like a title, an author, modified time and an excerpt of a post. These metadata are accessible in its layout.
 
-## Custom Pages
+### Custom Pages
 
 *Not implemented yet*
 
 Pending.
 
-## Error Pages
+### Error Pages
 
 Error pages only show when some errors occur. Common errors include HTTP 404 (page not found) and HTTP 50x (internal server error). Web programmers should not rely on builtin error pages provided by web servers because sensitive server information leaked in those pages.
 
 In mdcms, HTTP 404 pages are generated dynamically when site users visit some non-existing pages on a mdcms site. In contrary, HTTP 50x pages are always static because PHP may fail to render properly in such situations.
 
-## Breadcrumbs
+## Widgets
+
+### Navbars
+
+Pending.
+
+### Breadcrumbs
 
 Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
 
 In mdcms, a breadcrumb is an array of links from a home page to current page.
 
-## Table of Contents
+### Table of Contents
 
 A ToC (Table of Contents) serves as an intrapage navigator for a post. Post readers can easily scroll to desired section in a post with this widget.
 
 In mdcms, a ToC composes of dynamically-generated intrapage links to `<h2>`-level titles.
 
-## Sidebars
+### Sidebars
 
 Sidebars are informative fillers in all pages except posts. There is no fixed rule on what web programmers should put in sidebars. They may be a brief description to a site, promotion campaigns to some products or recommended links to popular posts.
 
 Currently, sidebars in *default* theme of mdcms show concise descriptions to a mdcms site.
+
+## Themes
+
+Pending.
+
+## Assets
+
+Pending.
 
 ## The Bottom Line
 
