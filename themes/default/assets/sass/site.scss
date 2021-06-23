@@ -184,7 +184,20 @@ code {
 
         h1 {
             color: $background-color;
-            font-family: $head-font, $title-font, $serif;
+            font-family: $head-font, $title-font, $serif;            
+        }
+
+        .title {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .subtitle {
+            color: $background-color;
+            background-color: $jumbotron-color;
+
+            font-size: 0.9em;
+            font-family: $title-font, $serif;
         }
 
         .post-info {

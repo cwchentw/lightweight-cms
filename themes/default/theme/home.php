@@ -27,41 +27,37 @@ $status = 200;
     <body>
         <?php includePartials("navbar.php"); ?>
 
-        <div id="top" class="container">
-
-            <div class="center">
+        <div id="top" class="jumbotron">
+            <div class="container">
                 <header>
-                    <h1>
-                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                    <h1 class="title">
+                        <img src="/img/<?php echo SITE_LOGO; ?>-128x128.png" alt="<?php echo SITE_NAME; ?>" style="margin-right: 10px;" />
 
                         <span>
                             <?php echo SITE_NAME; ?>
                         </span>
                     </h1>
+
+                    <div class="text-center subtitle"><?php echo SITE_DESCRIPTION; ?></div>
                 </header>
             </div>
+        </div>
 
-            <div class="row">
-                <!-- TODO: Adjust the layout. -->
-                <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php
-                    if (isset($section[MDCMS_SECTION_CONTENT])
-                        && "" != $section[MDCMS_SECTION_CONTENT])
-                    {
-                        echo $section[MDCMS_SECTION_CONTENT];
-                    }
-                    ?>
+        <div id="top" class="container">
+            <!-- TODO: Adjust the layout. -->
+            <div id="main-content">
+                <?php
+                # Show a fallback message if no any section and post.
+                if ((!isset($sections) && !isset($posts))
+                    || ((isset($sections) && 0 == count($sections))
+                        && (isset($posts) && 0 == count($posts))))
+                {
+                    echo "<p>No content available yet.</p>";
+                }
+                ?>
 
-                    <?php
-                    # Show a fallback message if no any section and post.
-                    if ((!isset($sections) && !isset($posts))
-                        || ((isset($sections) && 0 == count($sections))
-                            && (isset($posts) && 0 == count($posts))))
-                    {
-                        echo "<p>No content available yet.</p>";
-                    }
-                    ?>
-
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
                     <?php
                     # Add post(s) if any exists.
                     if (isset($posts) && count($posts) > 0) {
@@ -81,7 +77,9 @@ $status = 200;
                         }
                     }
                     ?>
+                    </div>
 
+                    <div class="col-md-6 col-sm-12">
                     <?php
                     # Add section(s) if any exists.
                     if (isset($sections) && count($sections) > 0) {
@@ -104,14 +102,8 @@ $status = 200;
                             echo "</p>";
                         }
                     }
-                    ?>                    
-                </div>
-
-                <!-- TODO: Adjust the layout. -->
-                <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
-                    <aside>
-                        <?php includePartials("sideInfo.php"); ?>
-                    </aside>
+                    ?> 
+                    </div>             
                 </div>
             </div>
 
