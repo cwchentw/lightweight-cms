@@ -4,6 +4,7 @@
 * (Feature) Pagination on sections and posts
 * (Feature) Add an offline.html generator
 * (Feature) Add `SITE_PREFIX`
+* (Project) Add personal asset loader on Unix
 * (Project) Refactor PHP scripts in private library
 * (Project) Create an icon generator
 * (Theme) Modify the icon of GitHub

@@ -52,8 +52,13 @@ call %bin%\sitemap.bat || (
     exit /b %ERRORLEVEL%
 )
 
-rem Load assets.
+rem Load theme assets.
 call %bin%\assets.bat || (
+    exit /b %ERRORLEVEL%
+)
+
+rem Load personal assets.
+call %bin%\personalAssets.bat || (
     exit /b %ERRORLEVEL%
 )
 

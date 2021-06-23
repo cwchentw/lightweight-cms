@@ -19,6 +19,8 @@ define("BLOCK_BOT_ON_SECTION", true);
 #
 # Such actions are merely for SEO. Not good for a health Web.
 define("NO_FOLLOW_EXTERNAL_LINK", true);
+# Load personal assets.
+define("LOAD_PERSONAL_ASSETS", true);
 # Scan application directory.
 #
 # By default, mdcms only scans sections and posts
