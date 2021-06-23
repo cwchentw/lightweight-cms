@@ -1,11 +1,11 @@
 ---
-title: How to Run a mdcms Site on Windows
+title: How to Run mdcms Sites on Windows
 mtime: 2021/6/23
 ---
 
 ## Prologue
 
-Pending.
+Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates to run mdcms sites on Windows.
 
 ## System Requirements
 
@@ -48,13 +48,23 @@ Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript
 
 ### Install Command-Line Tools
 
+Install [Chocolatey](https://chocolatey.org) first, which is a package manager for Windows used to install other software.
+
+Install PHP:
+
 ```shell
 > choco install php --version=7.4.20
 ```
 
+At time of our writing, many GNU/Linux distributions still provide PHP 7 rather than PHP 8. Therefore, we install PHP 7 intentionally.
+
+Install Composer, a package manager for PHP:
+
 ```shell
 > choco install composer
 ```
+
+Install `rsync(1)` for Windows:
 
 ```shell
 > choco install rsync
@@ -66,21 +76,39 @@ Pending.
 
 ## Usage
 
+Clone mdcms locally and rename it:
+
 ```shell
 > git clone https://github.com/cwchentw/mdcms.git mysite
 ```
+
+Change working directory to root path of the cloned repo:
 
 ```shell
 > cd mysite
 ```
 
+Install dependencies for mdcms:
+
 ```shell
 > composer install --no-dev
 ```
 
+Development tools like PHP Code Sniffer mean to lint code, which are not required to run mdcms sites.
+
+If you don't want to update your mdcms snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
+
+Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
+
+Copy your mdcms snapshot to MAMP document directory:
+
 ```shell
 > .\tools\bin\sync-to.bat C:\MAMP\mdcms
 ```
+
+If you alter anything in your mdcms site, you have to repeat the above command to reflect your change on development environment.
+
+(Optional) Save your mdcms repo to a remote site:
 
 ```shell
 > git remote set-url origin https://example.com/user/mysite.git
