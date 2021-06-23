@@ -46,8 +46,43 @@ Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript
 
 ## Build a Development Environment for mdcms
 
+### Install Command-Line Tools
+
+```shell
+> choco install php --version=7.4.20
+```
+
+```shell
+> choco install composer
+```
+
+```shell
+> choco install rsync
+```
+
+### Install MAMP
+
 Pending.
 
 ## Usage
 
-Pending.
+```shell
+> git clone https://github.com/cwchentw/mdcms.git mysite
+```
+
+```shell
+> cd mysite
+```
+
+```shell
+> composer install --no-dev
+```
+
+```shell
+> .\tools\bin\sync-to.bat C:\MAMP\mdcms
+```
+
+```shell
+> git remote set-url origin https://example.com/user/mysite.git
+> git push -u origin master
+```
