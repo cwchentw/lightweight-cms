@@ -50,6 +50,8 @@ The dependencies mentioned here are based on *default* theme of mdcms. If you ad
 
 ## Usage
 
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/content/howto/how-to-run-mdcms-on-windows.md).
+
 Clone the repo locally:
 
 ```
@@ -98,10 +100,6 @@ $ git push -u origin master
 ## Notes for PHP Developers
 
 The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *www* directory as needed. Furthermore, your scripts can share layouts and partials with other web pages in a mdcms site, reducing repeated code.
-
-## See Also
-
-The project is inspired by [Cristy94/markdown-blog](https://github.com/Cristy94/markdown-blog). Nonetheless, we don't copy and paste code there but write everything from scratch.
 
 ## Copyright
 
