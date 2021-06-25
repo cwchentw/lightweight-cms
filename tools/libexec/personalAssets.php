@@ -7,6 +7,8 @@ $rootDirectory = __DIR__ . "/../..";
 
 # Load global setting.
 require_once $rootDirectory . "/setting.php";
+# Load private library.
+require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
 
 if (!LOAD_PERSONAL_ASSETS) {
     exit(0);
