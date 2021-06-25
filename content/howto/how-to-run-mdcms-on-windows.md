@@ -72,9 +72,41 @@ Install `rsync(1)` for Windows:
 
 ### Install Laragon
 
-MAMP shows some welcome message on startup:
+Download installer of Laragon from its [official website](https://laragon.org). Doubly click the installer to install Laragon.
 
-<img src="/img/howto/mamp-welcome.png" alt="Welcome message of MAMP installer" class="img-fluid" />
+Select the lauguage shown during installation:
+
+<p><img src="/img/howto/laragon-select-setup-language.png" alt="Select the language shown during Laragon installation" class="img-fluid" /></p>
+
+Select destination location to install Laragon:
+
+<p><img src="/img/howto/laragon-select-destination-location.png" alt="Select destination location to install Laragon" class="img-fluid" /></p>
+
+Select additional settings if needed:
+
+<p><img src="/img/howto/laragon-select-additional-settings.png" alt="Select additional settings to install Laragon" class="img-fluid" /></p>
+
+We don't need these settings. Therefore, we unselect all.
+
+Check all settings before install Laragon:
+
+<p><img src="/img/howto/laragon-ready-to-install.png" alt="Select additional settings to install Laragon" class="img-fluid" /></p>
+
+The installation is done:
+
+<p><img src="/img/howto/laragon-completing-setup-wizard.png" alt="Select additional settings to install Laragon" class="img-fluid" /></p>
+
+Enable required services:
+
+<p><img src="/img/howto/laragon-set-services-and-ports.png" alt="Select additional settings to install Laragon" class="img-fluid" /></p>
+
+We substitute Apache with Nginx here. If you don't need MySQL now, disable it temporarily.
+
+You may encounter some warning from Windows Defender (a builtin firewall for Windows):
+
+<p><img src="/img/howto/laragon-windows-defender-nginx.png" alt="Select additional settings to install Laragon" class="img-fluid" /></p>
+
+Simply enable it. We don't use Laragon on production environments, stopping all services after development.
 
 Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/windows/nginx.conf) is a sample configuration.
 
