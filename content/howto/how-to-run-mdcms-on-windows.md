@@ -5,7 +5,7 @@ mtime: 2021/6/23
 
 ## Prologue
 
-Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates to run mdcms sites on Windows.
+Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run mdcms sites on Windows.
 
 ## System Requirements
 
@@ -70,11 +70,13 @@ Install `rsync(1)` for Windows:
 > choco install rsync
 ```
 
-### Install MAMP
+### Install Laragon
 
 MAMP shows some welcome message on startup:
 
 <img src="/img/howto/mamp-welcome.png" alt="Welcome message of MAMP installer" class="img-fluid" />
+
+Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/windows/nginx.conf) is a sample configuration.
 
 ## Usage
 
@@ -102,10 +104,10 @@ If you don't want to update your mdcms snapshot, you may safely remove all sampl
 
 Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
-Copy your mdcms snapshot to MAMP document directory:
+Copy your mdcms snapshot to Laragon document directory:
 
 ```shell
-> .\tools\bin\sync-to.bat C:\MAMP\mdcms
+> .\tools\bin\sync-to.bat C:\Laragon\www\mdcms
 ```
 
 If you alter anything in your mdcms site, you have to repeat the above command to reflect your change on development environment.
