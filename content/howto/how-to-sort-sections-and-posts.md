@@ -17,7 +17,7 @@ callback(mixed $a, mixed $b): int
 
 By this way, users of `usort` function can sort stuffs by their needs without reinventing sorting algorithms.
 
-mdcms call `usort` internally to sort sections and posts. By modifying the sorting callables used by mdcms, mdcms users can write their sorting routines without ...
+mdcms call `usort` internally to sort sections and posts. By modifying sorting callables used by mdcms, mdcms users can write their sorting routines without altering other mdcms code.
 
 ### Common Properties used for Sorting Posts
 
