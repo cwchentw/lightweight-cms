@@ -40,6 +40,10 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 See [this article](/howto/how-to-manage-assets/) for more information related to asset management in mdcms.
 
+## *build* Directory
+
+Pending.
+
 ## *www* Directory
 
 *www* directory places back end PHP scripts of mdcms on production environments. Currently, there is only a script in this directory - *index.php*, which is router of mdcms.
