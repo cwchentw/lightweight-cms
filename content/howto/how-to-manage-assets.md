@@ -33,6 +33,10 @@ SCSS sheets are stored in *assets/sass*.
 
 ECMAScript 6+ introduces many convenient features to improve code quality of JavaScript. However, they are unrecognized and unusable on older browsers. Babel transcompiles ES6+ code to corresponding ES5 one for browser compatibility.
 
+Original Babel keeps the same type system of Javascript. Flow enhances Babel code by adding type checking.
+
+Babel scripts are stored in *assets/js*.
+
 ### Images
 
 ### Fonts
