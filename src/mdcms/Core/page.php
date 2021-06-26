@@ -79,7 +79,7 @@ function getSections($uri)
     return $result;
 }
 
-function getPosts($page)
+function getPosts($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
     # Get global setting.
@@ -90,7 +90,7 @@ function getPosts($page)
 
     $result = array();
     
-    $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $page;
+    $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $uri;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -108,7 +108,7 @@ function getPosts($page)
 
             # Remove file extensions.
             $link[MDCMS_LINK_PATH]
-                = $page . pathinfo($file, PATHINFO_FILENAME) . "/";
+                = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
 
             # Get the title of the page.
             # If the commands cost too many system resources, change it.
