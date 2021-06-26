@@ -36,12 +36,6 @@ Posts or post pages work as real information conveyors in a mdcms site. It is ab
 
 In addition to content in posts, mdcms provides metadata for each post like a title, an author, modified time and an excerpt of a post. These metadata are accessible in its layout.
 
-### Custom Pages
-
-*Not implemented yet*
-
-Pending.
-
 ### Error Pages
 
 Error pages only show when some errors occur. Common errors include HTTP 404 (page not found) and HTTP 50x (internal server error). Web programmers should not rely on builtin error pages provided by web servers because sensitive server information leaked in those pages.
