@@ -1,5 +1,5 @@
 ---
-title: How to Manage Personal Assets in mdcms
+title: How to Manage Assets in mdcms
 mtime: 2021/6/26
 ---
 
