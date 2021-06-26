@@ -21,7 +21,11 @@ If your asset doesn't require processing or compiling before sending to front en
 
 Many front end languages are invented to improve original front end technologies. They are HTML template languages, CSS preprocessors and JavaScript transcompilers.
 
+The section introduces builtin front end stacks used by mdcms.
+
 ### SCSS
+
+SCSS represent a variant of Sass. Sass syntax resembles Ruby code, which is elegant and pretty but not compatible with CSS. To address this issue, SCSS syntax becomes a strict superset of CSS intentionally.
 
 ### Babel plus Flow
 
