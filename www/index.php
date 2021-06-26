@@ -50,6 +50,20 @@ else if (\mdcms\Core\isHome($loc)) {
 
     loadHome();
 }
+# Render a page of home page of a mdcms site.
+else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
+    $homeURI = "/";
+    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
+    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($homeURI);
+    # Posts not included in any section.
+    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($homeURI);
+
+    preg_match("/^\/(\d+)\/$/s", $loc, $matches);
+    $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($homeURI, $matches[1]);
+
+    # TODO: Load HTTP satus 404 page if no post in this page.
+    loadHome();
+}
 # TODO: Render a page.
 # Render a section.
 else if (\mdcms\Core\isSection($loc)) {

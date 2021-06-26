@@ -9,6 +9,17 @@ function isHome($uri)
     return "/" == $uri;
 }
 
+function isPageInHome($uri)
+{
+    preg_match("/^\/(\d+)\/$/s", $uri, $matches);
+
+    if (isset($matches)) {
+        return true;
+    }
+
+    return false;
+}
+
 # Check whether the page is a section.
 #
 # The function doesn't distinguish between top sections
