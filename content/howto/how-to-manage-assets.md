@@ -1,6 +1,6 @@
 ---
 title: How to Manage Personal Assets in mdcms
-mtime: 2021/6/23
+mtime: 2021/6/26
 ---
 
 ## Prologue
