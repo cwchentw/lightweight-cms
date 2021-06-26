@@ -48,4 +48,12 @@ Users of mdmcs don't require to alter anything there mostly unless you want to c
 
 ## *src* Directory
 
+*src* directory hoards internal library of mdcms. Users of mdcms don't need to change anything there unless you want to contribute to mdcms itself.
+
+## *tools* Directory
+
+*tools* directory stores utility scripts for mdcms. We implement utility scripts in POSIX shell on Unix and those in Batch on Windows. You don't need to alter anything there. If you found any problem in those scripts, send us [an issue](https://github.com/cwchentw/mdcms/issues).
+
+## Stuffs in Root Path of mdcms
+
 Pending.
