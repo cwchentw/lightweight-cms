@@ -22,6 +22,14 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 *config* directory stores site settings. We split mdcms settings into multiple PHP scripts for easier management. *setting.php* works as a loader to site settings.
 
+## *themes* Directory
+
+Pending.
+
+## *plugins* Directory
+
+Pending.
+
 ## *static* Directory
 
 *static* directory keeps static files. They will be sent to client environments without any modification.
@@ -31,3 +39,11 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 *assets* directory stows assets for front end. Unlike things in *static* directory, stuffs in *assets* require processing or compiling before senting to client environments.
 
 See [this article](/howto/how-to-manage-assets/) for more information related to asset management in mdcms.
+
+## *www* Directory
+
+Pending.
+
+## *src* Directory
+
+Pending.
