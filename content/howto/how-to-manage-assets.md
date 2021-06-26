@@ -54,3 +54,5 @@ Themes may bring their front stacks in addition to those used by mdcms sites. Th
 Currently, you have to edit such lists in *build* scripts. We may change it later.
 
 ## Use Your Own Front End Stacks
+
+If you are not satisfied with builtin front end stacks, you may introduce your own. Nevertheless, you require to write your own build scripts to manage assets.
