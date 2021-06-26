@@ -31,7 +31,7 @@ Fields in `$GLOBALS[MDCMS_POST]` (`$post` here):
 * `$post[MDCMS_POST_CONTENT]`: HTML content of current post
 * `$post[MDCMS_POST_AUTHOR]`: Author of current post
 * `$post[MDCMS_POST_MTIME]`: Last modified time of current post
-* `$post[MDCMS_POST_META]` (not implemented yet): exposed metadata of current post
+* `$post[MDCMS_POST_META]`: exposed metadata of current post
 
 ## Variables in an Element of Sections
 
