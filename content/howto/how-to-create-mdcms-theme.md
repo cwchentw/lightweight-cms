@@ -90,19 +90,6 @@ function loadPost()
 }
 ```
 
-### `loadPage()` Function
-
-*Not implemented yet*
-
-The mandatory function to load layout for pages in a mdcms site. No parameter is needed. Here shows a sample code:
-
-```php
-function loadPost()
-{
-    require __DIR__ . "/theme/" . "page.php";
-}
-```
-
 ### `loadAssets($dest)` Function
 
 The function to copy assets in a theme to a destination path specified by mdcms. Unlike other functions here, it receives one parameter, which represents a destination path.
