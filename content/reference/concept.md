@@ -1,6 +1,6 @@
 ---
 title: Concepts of mdcms
-mtime: 2021/6/23
+mtime: 2021/6/26
 weight: 1
 ---
 
@@ -74,12 +74,12 @@ Currently, sidebars in *default* theme of mdcms show concise descriptions to a m
 
 ## Themes
 
-Pending.
+A theme composes of a set of layouts used by a mdcms site to render web pages. By utilizing themes in mdcms sites, web programmers save time to write each page manually and mdcms sites own consistent looking among pages.
 
 ## Assets
 
-Pending.
+Assets are stuffs used in front end like CSS sheets, JavaScript scripts, fonts, images and audios. There are dozens of front end languages to improve original front end technologies. mdcms adapts SCSS and Babel because these languages are compatible with CSS and JavaScript.
 
 ## The Bottom Line
 
-This article illustrates concepts to both general content websites and mdcms. If you are unfamiliar to web programming, this page may give you a mind roadmap to mdcms.
+This article illustrates concepts to mdcms. If you are unfamiliar to web programming, this page may give you a mind roadmap to both mdcms and content websites in general.
