@@ -6,9 +6,9 @@ weight: 2
 
 ## Prologue
 
-Pending.
+This article illustrates project structure of mdcms to give its users a roadmap to mdcms.
 
-## A Bird View of mdcms
+## Bird View of mdcms
 
 Pending.
 
@@ -42,7 +42,9 @@ See [this article](/howto/how-to-manage-assets/) for more information related to
 
 ## *build* Directory
 
-Pending.
+*Experimental*
+
+*build* directory places Gulp build scripts for builtin front end stacks used by mdcms. You may need to modify lists of directories and files to delete. We may change this situation later.
 
 ## *www* Directory
 
@@ -60,4 +62,4 @@ Users of mdmcs don't require to alter anything there mostly unless you want to c
 
 ## Stuffs in Root Path of mdcms
 
-Pending.
+They are documentation for mdcms and configurations for build scripts. You don't need to alter anything there.
