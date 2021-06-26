@@ -24,3 +24,7 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 ## *static* Directory
 
 *static* directory keeps static files. They will be sent to client environments without any modification.
+
+## *assets* Directory
+
+*assets* directory stows assets for front end.
