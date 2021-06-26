@@ -1,11 +1,11 @@
 ---
-title: How to Run mdcms Sites on Windows
+title: How to Run mdcms on Windows
 mtime: 2021/6/26
 ---
 
 ## Prologue
 
-Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run mdcms sites on Windows.
+Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run mdcms on Windows.
 
 ## System Requirements
 
@@ -70,6 +70,8 @@ Install `rsync(1)` for Windows:
 > choco install rsync
 ```
 
+(Optional) Install Perl from either [ActivePerl](https://www.activestate.com/products/perl/) or [Strawberry Perl](https://strawberryperl.com/).
+
 ### Install Laragon
 
 Download installer of Laragon from its [official website](https://laragon.org). Doubly click the installer to install Laragon.
@@ -130,7 +132,7 @@ Install dependencies for mdcms:
 > composer install --no-dev
 ```
 
-Development tools like PHP Code Sniffer mean to lint code, which are not required to run mdcms sites.
+Development tools like PHP Code Sniffer mean to lint code, which are not required to run mdcms.
 
 If you don't want to update your mdcms snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
@@ -142,7 +144,7 @@ Copy your mdcms snapshot to Laragon document directory:
 > .\tools\bin\sync-to.bat C:\Laragon\www\mdcms
 ```
 
-If you alter anything in your mdcms site, you have to repeat the above command to reflect your change on development environment.
+If you alter anything in your mdcms site, repeat the above command to reflect your change on development environment.
 
 (Optional) Save your mdcms repo to a remote site:
 
