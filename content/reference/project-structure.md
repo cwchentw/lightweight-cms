@@ -42,7 +42,9 @@ See [this article](/howto/how-to-manage-assets/) for more information related to
 
 ## *www* Directory
 
-Pending.
+*www* directory places back end PHP scripts of mdcms on production environments. Currently, there is only a script in this directory - *index.php*, which is router of mdcms.
+
+Users of mdmcs don't require to alter anything there mostly unless you want to contribute to mdcms itself.
 
 ## *src* Directory
 
