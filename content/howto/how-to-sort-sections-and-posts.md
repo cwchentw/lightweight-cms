@@ -19,6 +19,8 @@ By this way, users of `usort` function can sort stuffs by their needs without re
 
 mdcms call `usort` internally to sort sections and posts. By modifying sorting callables used by mdcms, mdcms users can write their sorting routines without altering other mdcms code.
 
+## Sort Posts
+
 ### Common Properties used for Sorting Posts
 
 * `title`
