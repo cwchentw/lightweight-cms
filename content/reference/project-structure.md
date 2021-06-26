@@ -27,4 +27,6 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 ## *assets* Directory
 
-*assets* directory stows assets for front end.
+*assets* directory stows assets for front end. Unlike things in *static* directory, stuffs in *assets* require processing or compiling before senting to client environments.
+
+See [this article](/howto/how-to-manage-assets/) for more information related to asset management in mdcms.
