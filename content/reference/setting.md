@@ -14,7 +14,9 @@ mdcms is still experimental and envolving. Those settings may change without war
 
 ## Project Settings vs Theme Settings
 
-Pending.
+There are two categories settings in mdcms. Project settings are used by mdcms itself while theme settings used by mdcms themes.
+
+You should not remove project settings because either internal library or utility scripts of mdcms rely on those constants to work properly. In contrary, theme settings are optional. Current theme settings are used by *default* theme of mdcms. You may use a different set of theme settings in another mdcms theme.
 
 ## Site Information
 
@@ -77,3 +79,4 @@ Pending.
 
 ## Add Your Own Settings
 
+Pending.
