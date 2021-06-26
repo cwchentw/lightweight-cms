@@ -58,7 +58,7 @@ call %bin%\assets.bat || (
 )
 
 rem Load personal assets.
-call %bin%\personalAssets.bat || (
+call %bin%\siteAssets.bat || (
     exit /b %ERRORLEVEL%
 )
 

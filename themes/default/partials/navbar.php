@@ -1,3 +1,17 @@
+<?php
+function hasSocialMedia()
+{
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+
+    return !("" == FACEBOOK
+        && "" == FACEBOOK_GROUP
+        && "" == TWITTER
+        && "" == GITHUB);
+}
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="/"><?php echo SITE_SHORT_NAME; ?></a>
@@ -16,7 +30,7 @@
                     <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
                   </ul>
                 </li>
-                <?php if (\mdcms\Core\hasSocialMedia()): ?>
+                <?php if (hasSocialMedia()): ?>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarMedia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Social Media

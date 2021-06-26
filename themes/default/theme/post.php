@@ -9,6 +9,23 @@ require_once __DIR__ . "/../src/utils.php";
 
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
+
+# Add id for each subtitle if none.
+if (ENABLE_TOC) {
+    $post[MDCMS_POST_CONTENT]
+        = preg_replace_callback(
+            "/<h2>(.+?)<\/h2>/",
+            function ($matches) {
+                $id = preg_replace("/<(.+?)>/", "", $matches[1]);
+                $id = preg_replace("/[ ]+/", "-", $id);
+                $id = strtolower($id);
+                return "<h2 id=\"" . $id . "\">" . $matches[1] . "</h2>";
+            },
+            $post[MDCMS_POST_CONTENT]
+        );
+
+    $GLOBALS[MDCMS_POST] = $post;
+}
 ?>
 
 <!DOCTYPE html>

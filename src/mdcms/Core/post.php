@@ -252,20 +252,6 @@ function readPost($page)
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
 
-    # Add id for each subtitle if none.
-    if (ENABLE_TOC) {
-        $result[MDCMS_POST_CONTENT]
-            = preg_replace_callback(
-                "/<h2>(.+)<\/h2>/",
-                function ($matches) {
-                    $id = preg_replace("/[ ]+/", "-", $matches[1]);
-                    $id = strtolower($id);
-                    return "<h2 id=\"" . $id . "\">" . $matches[1] . "</h2>";
-                },
-                $result[MDCMS_POST_CONTENT]
-            );
-    }
-
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK) {
         $output = noFollowLinks($result[MDCMS_POST_CONTENT]);

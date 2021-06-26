@@ -26,6 +26,6 @@ if not exist %public% (
 )
 
 rem Load personal assets.
-php %libexec%\personalAssets.php || (
+php %libexec%\siteAssets.php || (
     exit /b %ERRORLEVEL%
 )

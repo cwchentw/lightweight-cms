@@ -17,6 +17,6 @@ then
     )
 fi
 
-php "${libexec}/personalAssets.php" || (
+php "${libexec}/siteAssets.php" || (
     exit 1;
 )

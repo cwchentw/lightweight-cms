@@ -20,15 +20,15 @@ You should not remove project settings because either internal library or utilit
 
 ## Site Information
 
-* `SITE_BASE_URL`: Base URL of a site
-* `SITE_NAME`: Full name of a site
-* `SITE_SHORT_NAME`: Short name of a site
-* `SITE_DESCRIPTION`: A concise description of a site
-* `SITE_AUTHOR`: Principle author of a site
-* `SITE_COPYRIGHT`: Copyright text of a site
-* `SITE_LANGUAGE`: Language code used in a site. Look up a valid language code [here](https://r12a.github.io/app-subtags/)
-* `SITE_THEME`: Theme used by a site
-* `SITE_LOGO`: File name of site logo without size suffix and file extension. Default file format of site logo is `image/png`
+* `SITE_BASE_URL` (project): Base URL of a site
+* `SITE_NAME` (project): Full name of a site
+* `SITE_SHORT_NAME` (project): Short name of a site
+* `SITE_DESCRIPTION` (project): A concise description of a site
+* `SITE_AUTHOR` (project): Principle author of a site
+* `SITE_COPYRIGHT` (theme): Copyright text of a site
+* `SITE_LANGUAGE` (project): Language code used in a site. Look up a valid language code [here](https://r12a.github.io/app-subtags/)
+* `SITE_THEME` (project): Theme used by a site
+* `SITE_LOGO` (project): File name of site logo without size suffix and file extension. Default file format of site logo is `image/png`
 
 ## Social Media
 
@@ -41,7 +41,7 @@ You should not remove project settings because either internal library or utilit
 
 * `REDIRECT_LIST` (project): A list of redirecting rules
 * `PLUGIN_BLACKLIST` (project): A blacklist to prevent plugin(s) from loading
-* `BREADCRUMB_HOME` (theme): Text used by home page on breadcrumbs
+* `BREADCRUMB_HOME` (project): Text used by home page on breadcrumbs
 * `EXCERPT_THRESHOLD` (project): Text amount for an excerpt of a post
 
 ## Optioal Features of mdcms
@@ -51,9 +51,9 @@ You should not remove project settings because either internal library or utilit
 * `ENABLE_FIXED_SIDEBAR` (theme): Enable fixed sidebars
 * `ENABLE_CODE_HIGHTLIGHT` (theme): Enable code highlighting powered by [hightlightjs](https://highlightjs.org/)
 * `BLOCK_BOT_ON_SECTION` (theme): Prevent search engine bots from crawling sections
-* `NO_FOLLOW_EXTERNAL_LINK` (theme): Prevent search engine bots from following external links
-* `LOAD_PERSONAL_ASSETS` (project, deprecated): Enable to load site assets
-* `SCAN_APPLICATION_DIRECTORY` (project, deprecated): Scan *www* directory for sections and pages
+* `NO_FOLLOW_EXTERNAL_LINK` (project): Prevent search engine bots from following external links
+* `LOAD_SITE_ASSETS` (project): Enable to load site assets
+* `SCAN_APPLICATION_DIRECTORY` (project): Scan *www* directory for sections and pages
 
 ## Sorting Callbacks
 

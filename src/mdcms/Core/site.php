@@ -3,18 +3,6 @@ namespace mdcms\Core;
 # Site related functions.
 
 
-function hasSocialMedia()
-{
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-
-    return !("" == FACEBOOK
-        && "" == FACEBOOK_GROUP
-        && "" == TWITTER
-        && "" == GITHUB); 
-}
-
 function getAllLinks($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
