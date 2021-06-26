@@ -5,7 +5,7 @@ mtime: 2021/6/26
 
 ## Prologue
 
-mdcms implements algorithms to sort sections and posts.
+mdcms implements builtin algorithms to sort sections and posts. They should be usable for general conditions. Nevertheless, you may need your own algorithms for sorting of sections and posts. This article illustrates to write your own sorting algorithms.
 
 ## Sort Posts
 
