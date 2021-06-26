@@ -23,12 +23,17 @@ mdcms call `usort` internally to sort sections and posts. By modifying sorting c
 
 ### Common Properties used for Sorting Posts
 
-* `title`
-* `author`
-* `mtime`
-* `weight`
+Here we list common properties of posts used for sorting:
+
+* `title`: title of a post
+* `author`: author of a post
+* `ctime` (not implemented): created time of a post
+* `mtime`: last modified time of a post
+* `weight`: a user-defined value for sorting
 
 ### Sample Code
+
+Here we show builtin sorting routine used by mdcms to sort posts:
 
 ```php
 # Callback to sort posts.
@@ -91,11 +96,18 @@ $GLOBALS[SORT_POST_CALLBACK] = function ($a, $b) {
 
 ### Common Properties used for Sorting Sections
 
-* `title`
-* `mtime`
-* `weight`
+Here we list common properties of sections for sorting:
+
+* `title`: title of a section
+* `ctime` (not implemented): created time of a section
+* `mtime`: last modifiled time of a section
+* `weight`: a user-defined value for sorting
+
+Sections in mdcms are merely intermediaries to posts. Authors of sections don't make much sense.
 
 ### Sample Code
+
+Here we show builtin sorting routine used by mdcms to sort sections:
 
 ```php
 # Callback to sort sections.
