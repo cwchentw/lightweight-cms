@@ -11,9 +11,7 @@ function isHome($uri)
 
 function isPageInHome($uri)
 {
-    preg_match("/^\/(\d+)\/$/s", $uri, $matches);
-
-    if (isset($matches)) {
+    if (preg_match("/^\/(\d+)\/$/", $uri, $matches)) {
         return true;
     }
 
@@ -33,4 +31,13 @@ function isSection($uri)
     $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $uri;
 
     return is_dir($path);
+}
+
+function isPageInSection($uri)
+{
+    if (preg_match("/^\/(.+)\/(\d+)\/$/", $uri, $matches)) {
+        return isSection("/" . $matches[1] . "/");
+    }
+
+    return false;
 }
