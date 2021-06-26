@@ -1,11 +1,11 @@
 ---
-title: How to Write Sort Callbacks
-mtime: 2021/6/22
+title: How to Sort Sections and Posts
+mtime: 2021/6/26
 ---
 
 ## Prologue
 
-Pending.
+mdcms implements algorithms to sort sections and posts.
 
 ## Sort Posts
 
