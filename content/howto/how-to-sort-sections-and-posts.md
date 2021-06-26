@@ -103,7 +103,7 @@ Here we list common properties of sections for sorting:
 * `mtime`: last modifiled time of a section
 * `weight`: a user-defined value for sorting
 
-Sections in mdcms are merely intermediaries to posts. Authors of sections don't make much sense.
+Sections in mdcms are merely intermediaries to posts. Authors of sections don't make much sense mostly.
 
 ### Sample Code
 
