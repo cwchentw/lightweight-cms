@@ -1,6 +1,6 @@
 ---
 title: How to Create a mdcms Theme
-mtime: 2021/6/19
+mtime: 2021/6/26
 ---
 
 ## Prologue
@@ -172,64 +172,13 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 ## Required Layouts
 
-### Layout for Home Page
+Here we list sample layouts used in mdcms themes:
 
-Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php) of home page in a mdcms theme.
+* Layout for [home page](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php)
+* Layout for [sections](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
+* Layout for [posts](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
 
-There are four global variables in this layout:
-
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
-* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A string of optional content of home page of a mdcms site
-* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a mdcms site
-
-### Layout for Sections
-
-Here is [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php) of sections in a mdcms theme.
-
-There are four global variables in this layout:
-
-* `$GLOBALS[MDCMS_SECTION]`: Current section
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section
-* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section
-
-### Layout for Posts
-
-Here represents [a sample layout](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php) of posts in a mdcms theme.
-
-There are two variables in this layout:
-
-* `$GLOBALS[MDCMS_POST]`: Current post
-* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current post
-
-Variables in this post (`$post` here):
-
-* `$post[MDCMS_POST_TITLE]`: Title of current post
-* `$post[MDCMS_POST_CONTENT]`: HTML content of current post
-* `$post[MDCMS_POST_AUTHOR]`: Author of current post
-* `$post[MDCMS_POST_MTIME]`: Last modified time of current post
-* `$post[MDCMS_POST_META]` (not implemented yet): exposed metadata of current post
-
-### Layout for Pages
-
-Pending.
-
-### Variables in an Element of Sections
-
-There are three variables in each element of `$GLOBALS[MDCMS_SECTIONS]` (`$section` here):
-
-* `$section[MDCMS_LINK_PATH]`: Link to a section
-* `$section[MDCMS_SECTION_TITLE]`: Title of a section
-* `$section[MDCMS_SECTION_EXCERPT]`: A brief description to a section
-
-### Variables in an Element of Posts
-
-Similiarly, there are three variables in each element of `$GLOBALS[MDCMS_POSTS]` (`$post` here):
-
-* `$post[MDCMS_LINK_PATH]`: Link to a post
-* `$post[MDCMS_POST_TITLE]`: Title of a post
-* `$post[MDCMS_POST_EXCERPT]`: A brief description to a post
+Check exposed variables in these layouts [here](/reference/variable-in-layout/).
 
 ## Best Practices to Write a mdcms Theme
 
