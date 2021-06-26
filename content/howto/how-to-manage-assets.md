@@ -15,6 +15,8 @@ Theme assets are managed by theme creators. You should keep them *as is* unless 
 
 ## Keep It in a Static Directionary
 
+If your asset doesn't require processing or compiling before sending to front end, keep it in *static* directory. Those kept in *static* directory will be copied the same way to client environments.
+
 ## Keep It in an Asset Directionary
 
 ### SCSS
