@@ -1,6 +1,6 @@
 ---
 title: Write Posts on mdcms Sites
-mtime: 2021/6/18
+mtime: 2021/6/26
 weight: 3
 ---
 
@@ -128,3 +128,9 @@ Here are exposed fields of front matters:
 Those fields are not hard coded but adjustable in *setting.php*.
 
 In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
+
+## (Optional) Add Contents for Sections
+
+Sections in mdcms intend for intermediaries to posts merely. They seldom benefit site SEO. Nevertheless, you may still add content for sections as needed.
+
+Contents for sections are written in *_index.md*. Write it as ordinary Markdown posts.
