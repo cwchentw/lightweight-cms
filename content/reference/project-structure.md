@@ -20,7 +20,7 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 ## *setting.php* and *config* Directory
 
-*config* directory stores site settings. We split mdcms settings into multiple PHP scripts for easier management. *setting.php* works as a loader to site settings.
+*config* directory stores site settings. We split mdcms settings into multiple PHP scripts for easier management. *setting.php* works as a loader to those settings.
 
 ## *themes* Directory
 
@@ -38,7 +38,7 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 *assets* directory stows assets for front end. Unlike things in *static* directory, stuffs in *assets* require processing or compiling before senting to client environments.
 
-See [this article](/howto/how-to-manage-assets/) for more information related to asset management in mdcms.
+See [this article](/howto/how-to-manage-assets/) for information related to asset management in mdcms.
 
 ## *build* Directory
 
@@ -48,7 +48,7 @@ See [this article](/howto/how-to-manage-assets/) for more information related to
 
 ## *www* Directory
 
-*www* directory places back end PHP scripts of mdcms on production environments. Currently, there is only a script in this directory - *index.php*, which is router of mdcms.
+*www* directory places back end PHP scripts of mdcms on production environments. Currently, there is only a script in this directory - *index.php*, which is the router of mdcms.
 
 Users of mdmcs don't require to alter anything there mostly unless you want to contribute to mdcms itself.
 
@@ -58,8 +58,8 @@ Users of mdmcs don't require to alter anything there mostly unless you want to c
 
 ## *tools* Directory
 
-*tools* directory stores utility scripts for mdcms. We implement utility scripts in POSIX shell on Unix and those in Batch on Windows. You don't need to alter anything there. If you found any problem in those scripts, send us [an issue](https://github.com/cwchentw/mdcms/issues).
+*tools* directory stores utility scripts for mdcms. We implement utility scripts in POSIX shell on Unix and those in Batch on Windows. You don't need to alter anything there.
 
 ## Stuffs in Root Path of mdcms
 
-They are documentation for mdcms and configurations for build scripts. You don't need to alter anything there.
+They are documentation for mdcms and configurations for build scripts for assets. You don't need to alter anything there.
