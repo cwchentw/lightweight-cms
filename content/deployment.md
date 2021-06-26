@@ -180,6 +180,11 @@ server {
 
         include        fastcgi_params;
     }
+
+    # Disallow access to Apache configuration files.
+    location ~ /\.ht {
+        deny all;
+    }
 }
 ```
 
