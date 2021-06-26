@@ -27,7 +27,11 @@ The section introduces builtin front end stacks used by mdcms.
 
 SCSS represent a variant of Sass. Sass syntax resembles Ruby code, which is elegant and pretty but not compatible with CSS. To address this issue, SCSS syntax becomes a strict superset of CSS intentionally.
 
+SCSS sheets are stored in *assets/sass*.
+
 ### Babel plus Flow
+
+ECMAScript 6+ introduces many convenient features to improve code quality of JavaScript. However, they are unrecognized and unusable on older browsers. Babel transcompiles ES6+ code to corresponding ES5 one for browser compatibility.
 
 ### Images
 
