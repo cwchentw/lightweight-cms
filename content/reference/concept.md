@@ -6,13 +6,13 @@ weight: 1
 
 ## Synposis
 
-mdcms stands for a flat-file based content management system powered by PHP. The software bridges between incoming URLs and corresponding directories or files on a web server. Because content of mdcms sites are stored in flat files, there is no relational database involved in such sites.
+mdcms stands for a flat-file based content management system powered by PHP. The software bridges between incoming URLs and corresponding directories or files on a web server. Because contents of mdcms sites are stored in flat files, there is no relational database involved in such sites.
 
 This article introduces concepts related to mdcms.
 
 ## Router
 
-Router is hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
+A router is a hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
 
 Users of mdcms seldom require to edit this script by themselves.
 
@@ -20,15 +20,15 @@ Users of mdcms seldom require to edit this script by themselves.
 
 ### Home Page
 
-A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates general impression about a site and directs  to desired information ideally.
+A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates general impression about a site and directs users to desired information ideally.
 
-Web programmers typically arrange layout of a home page differently from that of section pages. Therefore, they are separated in mdcms.
+Web programmers arrange layout of a home page differently from that of section pages mostly. Therefore, their layouts are separated in mdcms.
 
 ### Sections
 
 Sections or section pages in a mdcms site are in-between pages from a home page to posts. Most sections are purely functional. There is no substantial information for visitors in these pages.
 
-Because sections merely serve as intermediaries to posts, some web programmers set `noindex` meta tag in them for SEO, which is an optional flag in mdcms.
+Because sections merely serve as intermediaries to posts, they seldom benefit site SEO. Some web programmers set `noindex` meta tag in them to reduce SEO penalties, which is an optional feature in mdcms.
 
 ### Posts
 
@@ -52,7 +52,7 @@ Pending.
 
 Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
 
-In mdcms, a breadcrumb is an array of links from a home page to current page.
+In mdcms, breadcrumbs of a page is an array of links from a home page to current page.
 
 ### Table of Contents
 
