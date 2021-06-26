@@ -1,5 +1,6 @@
 # TODO
 
+* (Bug) ToC items errors on some posts like [this](/content/reference/project-structure.md)
 * (Feature) Optional *_index.md* for the home page of a site
 * (Feature) Pagination on sections and posts
 * (Feature) Add an offline.html generator
