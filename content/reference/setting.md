@@ -1,0 +1,73 @@
+---
+title: Settings for mdcms
+mtime: 2021/6/26
+weight: 3
+---
+
+## Prologue
+
+Pending.
+
+## Note
+
+mdcms is still experimental and envolving. Those settings may change without warning.
+
+## Site Information
+
+* `SITE_BASE_URL`
+* `SITE_NAME`
+* `SITE_SHORT_NAME`
+* `SITE_DESCRIPTION`
+* `SITE_AUTHOR`
+* `SITE_COPYRIGHT`
+* `SITE_LANGUAGE`
+* `SITE_THEME`
+* `SITE_LOGO`
+
+## Social Media
+
+* `FACEBOOK`
+* `FACEBOOK_GROUP`
+* `TWITTER`
+* `GITHUB`
+
+## Site Parameters
+
+* `REDIRECT_LIST`
+* `PLUGIN_BLACKLIST`
+* `BREADCRUMB_HOME`
+* `EXCERPT_THRESHOLD`
+
+## Optioal Features of mdcms
+
+* `ENABLE_PWA`
+* `ENABLE_TOC`
+* `ENABLE_FIXED_SIDEBAR`
+* `ENABLE_CODE_HIGHTLIGHT`
+* `BLOCK_BOT_ON_SECTION`
+* `NO_FOLLOW_EXTERNAL_LINK`
+* `LOAD_PERSONAL_ASSETS` (deprecated)
+* `SCAN_APPLICATION_DIRECTORY` (deprecated)
+
+## Sorting Callbacks
+
+* `$GLOBALS[SORT_SECTION_CALLBACK]`
+* `$GLOBALS[SORT_POST_CALLBACK]`
+
+## Internal Parameters
+
+* `SECTION_INDEX`
+* `CONTENT_DIRECTORY`
+* `THEME_DIRECTORY`
+* `PLUGIN_DIRECTORY`
+* `ASSET_DIRECTORY`
+* `LIBRARY_DIRECTORY`
+* `APPLICATION_DIRECTORY`
+* `PUBLIC_DIRECTORY`
+* `METADATA_TITLE`
+* `METADATA_AUTHOR`
+* `METADATA_MTIME`
+* `METADATA_WEIGHT`
+* `HTML_FILE_EXTENSION`
+* `MARKDOWN_FILE_EXTENSION`
+
