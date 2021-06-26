@@ -6,18 +6,20 @@ weight: 4
 
 ## Prologue
 
+Pending.
+
 ## Variables Exposed in Home Page
 
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a mdcms site
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a mdcms site
-* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet): A string of optional content of home page of a mdcms site
-* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a mdcms site
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a site, which may be empty
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a site, which may be empty
+* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet):(Optional) HTML content of home page of a site
+* `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a site
 
 ## Variables Exposed in a Section
 
 * `$GLOBALS[MDCMS_SECTION]`: Current section
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections, which may be empty
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section, which may be empty
 * `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section
 
 Fields in `$GLOBALS[MDCMS_SECTION]` (`$section` here):
@@ -39,13 +41,13 @@ Fields in `$GLOBALS[MDCMS_POST]` (`$post` here):
 * `$post[MDCMS_POST_MTIME]`: Last modified time of current post
 * `$post[MDCMS_POST_META]`: exposed metadata of current post
 
-## Variables in an Element of Sections
+## Variables in an Element of Subsections of a Section
 
 * `$section[MDCMS_LINK_PATH]`: Link to a section
 * `$section[MDCMS_SECTION_TITLE]`: Title of a section
-* `$section[MDCMS_SECTION_EXCERPT]`: A brief description to a section
+* `$section[MDCMS_SECTION_EXCERPT]`: (Optional) A brief description to a section
 
-## Variables in an Element of Posts
+## Variables in an Element of Posts of a Section
 
 * `$post[MDCMS_LINK_PATH]`: Link to a post
 * `$post[MDCMS_POST_TITLE]`: Title of a post
