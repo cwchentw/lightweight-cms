@@ -24,11 +24,11 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 ## *themes* Directory
 
-Pending.
+*themes* directory saves theme(s) for mdcms. There is at least one *default* theme for mdcms users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-mdcms-theme/).
 
 ## *plugins* Directory
 
-Pending.
+*plugins* directory saves plugin(s) for mdcms. Currently, there is no plugin inside. We and community contributors will add more in the future.
 
 ## *static* Directory
 
