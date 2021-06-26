@@ -11,3 +11,4 @@
 * (Plugin) Add Google Analytics
 * (Plugin) Refactor word count to a plugin
 * (Plugin) Add a word count for CJK pages
+* (Document) Check project settings and theme settings
