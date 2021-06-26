@@ -11,6 +11,14 @@ mdcms owns builtin algorithms to sort sections and posts. They should be feasibl
 
 [usort](https://www.php.net/manual/en/function.usort.php) delegates its sorting algorithm to a callable (callback) fulfilling such interface:
 
+```php
+callback(mixed $a, mixed $b): int
+```
+
+By this way, users of `usort` function can sort stuffs by their needs without reinventing sorting algorithms.
+
+mdcms call `usort` internally to sort sections and posts. By modifying the sorting callables used by mdcms, mdcms users can write their sorting routines without ...
+
 ### Common Properties used for Sorting Posts
 
 * `title`
