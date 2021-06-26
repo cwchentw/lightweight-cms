@@ -5,7 +5,7 @@ mtime: 2021/6/26
 
 ## Prologue
 
-In web programming, assets compose of which are placed in front end such as CSS sheets, JavaScript scripts, images and audios. This article discusses asset management is mdcms sites.
+In web programming, assets compose of which are placed in front end such as CSS sheets, JavaScript scripts, fonts, images and audios. This article discusses asset management is mdcms sites.
 
 ## Theme Assets vs Site Assets
 
