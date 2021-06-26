@@ -20,6 +20,12 @@ weight: 4
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section
 * `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section
 
+Fields in `$GLOBALS[MDCMS_SECTION]` (`$section` here):
+
+* `$section[MDCMS_SECTION_TITLE]`: Title of current section
+* `$section[MDCMS_SECTION_CONTENT]`: (Optional) HTML content of current section
+* `$section[MDCMS_SECTION_META]`: exposed metadata of current section
+
 ## Variables Exposed in a Post
 
 * `$GLOBALS[MDCMS_POST]`: Current post
