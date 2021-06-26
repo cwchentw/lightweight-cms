@@ -10,11 +10,11 @@ As a would-be owner of an awesome content website, you cannot wait to write and 
 
 ## Choose a Programming Editor
 
-Markdowns represents a simple and lightweight markup language without programming logic. Any programming editor will suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown as well.
+Markdown represents a simple and lightweight markup language without programming logic. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown as well.
 
 ## Save Posts
 
-Posts are saved in a content directory, which default is *content*. You may change the name of a content directory with **CONTENT_DIRECTORY** the variable in *setting.php*.
+Posts are saved in a content directory, which default is *content*.
 
 If you are going to upgrade your mdcms snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
 
