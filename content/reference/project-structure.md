@@ -19,7 +19,7 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 ## *setting.php* and *config* Directory
 
-*config* directory stores site settings. We split mdcms settings into multiple PHP scripts for management. *setting.php* works as a loader to site settings.
+*config* directory stores site settings. We split mdcms settings into multiple PHP scripts for easier management. *setting.php* works as a loader to site settings.
 
 ## *static* Directory
 
