@@ -10,6 +10,9 @@ require_once __DIR__ . "/../src/utils.php";
 # Take global data.
 $sections = $GLOBALS[MDCMS_SECTIONS];
 $posts = $GLOBALS[MDCMS_POSTS];
+if (POST_PER_PAGE > 0) {
+    $postsPerPage = $GLOBALS[MDCMS_POST_PER_PAGE];
+}
 # The HTTP status of the home page is always HTTP 200 OK.
 $status = 200;
 ?>
@@ -60,20 +63,43 @@ $status = 200;
                     <div class="col-md-6 col-sm-12">
                     <?php
                     # Add post(s) if any exists.
-                    if (isset($posts) && count($posts) > 0) {
-                        echo "<h2>Articles</h2>";
 
-                        foreach ($posts as $post) {
-                            echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                    # Posts in a page of a series of pages.
+                    if (POST_PER_PAGE > 0) {
+                        if (isset($postsPerPage) && count($postsPerPage) > 0) {
+                            echo "<h2>Articles</h2>";
 
-                            echo "<p>" . $post[MDCMS_POST_EXCERPT] . " ";
+                            foreach ($postsPerPage as $post) {
+                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                            echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
-                                . "Read More"
-                                . "</a>";
+                                echo "<p>" . $post[MDCMS_POST_EXCERPT] . " ";
 
-                            echo "</p>";
+                                echo "<a class=\"btn btn-primary btn-sm\" "
+                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                    . "Read More"
+                                    . "</a>";
+
+                                echo "</p>";
+                            }
+                        }
+                    }
+                    # All posts.
+                    else {
+                        if (isset($posts) && count($posts) > 0) {
+                            echo "<h2>Articles</h2>";
+
+                            foreach ($posts as $post) {
+                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+
+                                echo "<p>" . $post[MDCMS_POST_EXCERPT] . " ";
+
+                                echo "<a class=\"btn btn-primary btn-sm\" "
+                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                    . "Read More"
+                                    . "</a>";
+
+                                echo "</p>";
+                            }
                         }
                     }
                     ?>

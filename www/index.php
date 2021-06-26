@@ -43,6 +43,10 @@ else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
     # Posts not included in any section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
+    # First page in a series of pages.
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($loc, 0);
+    }
 
     loadHome();
 }
@@ -56,6 +60,10 @@ else if (\mdcms\Core\isSection($loc)) {
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
     # Posts of current section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
+    # First page in a series of pages.
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($loc, 0);
+    }
 
     loadSection();
 }

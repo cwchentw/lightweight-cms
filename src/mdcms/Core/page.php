@@ -165,6 +165,28 @@ function getPosts($uri)
     return $result;
 }
 
+function getPostsPerPage($uri, $page)
+{
+    $result = getPosts($uri);
+
+    # Discard some post(s) if pagination is on.
+    if (POST_PER_PAGE > 0) {
+        # Discard previous post(s).
+        $prevCount = 0;
+        while (count($result) > 0 && $prevCount < $page * POST_PER_PAGE) {
+            array_shift($result);
+            $prevCount += 1;
+        }
+
+        # Discard next post(s).
+        while (count($result) > POST_PER_PAGE) {
+            array_pop($result);
+        }
+    }
+
+    return $result;
+}
+
 function getBreadcrumb($uri)
 {
     $rootDirectory = __DIR__ . "/../../..";
