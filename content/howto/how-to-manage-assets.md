@@ -19,6 +19,8 @@ If your asset doesn't require processing or compiling before sending to front en
 
 ## Keep It in an Asset Directionary
 
+Many front end languages are invented to improve original front end technologies. They are HTML template languages, CSS preprocessors and JavaScript transcompilers.
+
 ### SCSS
 
 ### Babel plus Flow
@@ -26,3 +28,5 @@ If your asset doesn't require processing or compiling before sending to front en
 ### Images
 
 ### Fonts
+
+## Use Your Own Front End Stacks
