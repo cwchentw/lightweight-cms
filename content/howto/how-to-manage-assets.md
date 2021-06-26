@@ -39,6 +39,18 @@ Babel scripts are stored in *assets/js*.
 
 ### Images
 
+Images are mininized to save bandwidth. They are stored in *assets/img*.
+
 ### Fonts
+
+Fonts are copied *as is*. We keeps them in *asset* directory just for management. They are stored in *assets/font*.
+
+## Set Directories and Files to Delete
+
+*Experimental*
+
+Themes may bring their front stacks in addition to those used by mdcms sites. Therefore, you should not delete all assets under *public* while processing or compiling assets. Instead, you should set a list of directories and files to delete during asset building.
+
+Currently, you have to edit such lists in *build* scripts. We may change it later.
 
 ## Use Your Own Front End Stacks
