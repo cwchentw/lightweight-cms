@@ -62,7 +62,7 @@ Clone mdcms to a local repo and rename it:
 $ git clone https://github.com/cwchentw/mdcms.git mysite
 ```
 
-Change your working directory to the root of the cloned repo:
+Change your working directory to root path of the cloned repo:
 
 ```shell
 $ cd mysite
