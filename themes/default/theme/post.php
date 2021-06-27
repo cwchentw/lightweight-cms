@@ -44,6 +44,13 @@ if (ENABLE_TOC) {
         <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
+        <?php if (array_key_exists(MDCMS_POST_META, $post)
+                  && array_key_exists("noindex", $post[MDCMS_POST_META])
+                  && $post[MDCMS_POST_META]["noindex"]): ?>
+            <!-- Some functional post doesn't benefit SEO.  -->
+            <meta name="robots" content="noindex, follow">
+        <?php endif; ?>
+
         <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
     </head>
