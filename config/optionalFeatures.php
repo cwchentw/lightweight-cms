@@ -27,4 +27,4 @@ define("LOAD_SITE_ASSETS", true);
 #  in the content directory.
 define("SCAN_APPLICATION_DIRECTORY", false);
 # Google Analytics tracker.
-define("GOOGLE_ANALYTICS_ID", "");
+define("GOOGLE_ANALYTICS_ID", "UA-105146581-5");
