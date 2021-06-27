@@ -16,13 +16,14 @@ else {
 }
 
 $description = null;
-if (!is_null($post) && array_key_exists(MDCMS_POST_EXCERPT, $post)) {
-    $description = $post[MDCMS_POST_EXCERPT];
+if (!is_null($post)) {
+    $description = \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]);
 }
-else if (!is_null($section) && array_key_exists(MDCMS_SECTION_EXCERPT, $section)) {
-    $description = $section[MDCMS_SECTION_EXCERPT];
+else if (!is_null($section)) {
+    $description = \mdcms\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
 }
-else {
+
+if ("" == $description) {
     $description = SITE_DESCRIPTION;
 }
 ?>

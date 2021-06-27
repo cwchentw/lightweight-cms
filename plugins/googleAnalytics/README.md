@@ -20,7 +20,6 @@ $googleAnalyticsID = "";
 if ("" != $googleAnalyticsID) {
     echo \mdcms\Plugin\googleAnalytics($googleAnalyticsID);
 }
-?>
 ```
 
 ## Copyright

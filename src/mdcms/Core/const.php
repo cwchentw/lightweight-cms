@@ -19,12 +19,11 @@ define("MDCMS_BREADCRUMB", "breadcrumb");
 
 # Section related constants.
 define("MDCMS_SECTION_TITLE", "title");
+define("MDCMS_SECTION_MTIME", "mtime");
 define("MDCMS_SECTION_WEIGHT", "weight");
 define("MDCMS_SECTION_META", "meta");
 define("MDCMS_SECTION_CONTENT", "content");
 define("MDCMS_SECTION_STATUS", "status");
-define("MDCMS_SECTION_MTIME", "mtime");
-define("MDCMS_SECTION_EXCERPT", "excerpt");
 
 
 # Post related constants.
@@ -35,7 +34,6 @@ define("MDCMS_POST_WEIGHT", "weight");
 define("MDCMS_POST_META", "meta");
 define("MDCMS_POST_CONTENT", "content");
 define("MDCMS_POST_STATUS", "status");
-define("MDCMS_POST_EXCERPT", "excerpt");
 
 
 # Link related constants.

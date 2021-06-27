@@ -47,7 +47,6 @@ Fields in an element of subsections of a section (`$section` here):
 
 * `$section[MDCMS_LINK_PATH]`: Link to a section
 * `$section[MDCMS_SECTION_TITLE]`: Title of a section
-* `$section[MDCMS_SECTION_EXCERPT]`: (Optional) A brief description to a section
 
 ## Variables in an Element of Posts of a Section
 
@@ -55,4 +54,3 @@ Fields in an element of posts of a section (`$post` here):
 
 * `$post[MDCMS_LINK_PATH]`: Link to a post
 * `$post[MDCMS_POST_TITLE]`: Title of a post
-* `$post[MDCMS_POST_EXCERPT]`: A brief description to a post

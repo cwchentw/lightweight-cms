@@ -2,6 +2,7 @@
 namespace mdcms\Plugin;
 # Generate an excerpt from western European text.
 
+
 function excerpt($content)
 {
     $projectDirectory = __DIR__ . "/../../..";

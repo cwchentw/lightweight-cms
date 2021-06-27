@@ -87,41 +87,6 @@ function readSection($page)
         $result[MDCMS_SECTION_TITLE] = $title;
     }
 
-    if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_SECTION_CONTENT], $matches)) {
-        $text = "";
-
-        for ($i = 0; $i < count($matches[1]); ++$i) {
-            # Reduce multiple spaces into single space.
-            $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
-            $text .= $paragraph;
-
-            if ($i < count($matches[1]) - 1) {
-                $text .= " ";
-            }
-        }
-
-        $words = explode(" ", $text);
-
-        $excerpt = "";
-        for ($i = 0; $i < count($words); ++$i) {
-            if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
-                $excerpt .= $words[$i];
-            }
-            else {
-                break;
-            }
-
-            if ($i < count($words) - 1) {
-                $excerpt .= " ";
-            }
-        }
-
-        $result[MDCMS_SECTION_EXCERPT] = $excerpt;
-    }
-    else {
-        $result[MDCMS_SECTION_EXCERPT] = "";
-    }
-
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK
         && array_key_exists(MDCMS_SECTION_CONTENT, $result))
