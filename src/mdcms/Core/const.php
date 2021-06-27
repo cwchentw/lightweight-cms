@@ -35,7 +35,6 @@ define("MDCMS_POST_WEIGHT", "weight");
 define("MDCMS_POST_META", "meta");
 define("MDCMS_POST_CONTENT", "content");
 define("MDCMS_POST_STATUS", "status");
-define("MDCMS_POST_WORD_COUNT", "word-count");
 define("MDCMS_POST_EXCERPT", "excerpt");
 
 

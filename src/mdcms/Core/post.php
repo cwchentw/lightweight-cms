@@ -112,9 +112,6 @@ function readPost($page)
             }
 
             $words = explode(" ", $text);
-            # Currently, we only count words for English articles.
-            # TODO: Count words for posts in other languages.
-            $result[MDCMS_POST_WORD_COUNT] = count($words);
 
             $excerpt = "";
             for ($i = 0; $i < count($words); ++$i) {
@@ -133,7 +130,6 @@ function readPost($page)
             $result[MDCMS_POST_EXCERPT] = $excerpt;
         }
         else {
-            $result[MDCMS_POST_WORD_COUNT] = 0;
             $result[MDCMS_POST_EXCERPT] = "";
         }
 
@@ -218,9 +214,6 @@ function readPost($page)
             }
 
             $words = explode(" ", $text);
-            # Currently, we only count words for English articles.
-            # TODO: Count words for posts in other languages.
-            $result[MDCMS_POST_WORD_COUNT] = count($words);
 
             $excerpt = "";
             for ($i = 0; $i < count($words); ++$i) {
@@ -239,7 +232,6 @@ function readPost($page)
             $result[MDCMS_POST_EXCERPT] = $excerpt;
         }
         else {
-            $result[MDCMS_POST_WORD_COUNT] = 0;
             $result[MDCMS_POST_EXCERPT] = "";
         }
 

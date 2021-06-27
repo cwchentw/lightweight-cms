@@ -123,7 +123,6 @@ else {
         $post[MDCMS_POST_CONTENT] = "The page doesn't exist on our server.";
         $post[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
         $post[MDCMS_POST_STATUS] = 404;
-        $post[MDCMS_POST_WORD_COUNT] = 7;
 
         # Create a breadcrumb dynamically.
         $breadcrumb = array();

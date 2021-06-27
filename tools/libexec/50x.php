@@ -25,7 +25,6 @@ $post = array();
 $post[MDCMS_POST_TITLE] = "Internal Server Error";
 $post[MDCMS_POST_CONTENT] = "Some error occurs on our server";
 $post[MDCMS_POST_STATUS] = 500;
-$post[MDCMS_POST_WORD_COUNT] = 6;
 
 # Create breadcrumbs dynamically.
 $breadcrumb = array();

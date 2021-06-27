@@ -10,6 +10,9 @@ require_once __DIR__ . "/../src/utils.php";
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
 
+$wordCount = \mdcms\Plugin\wordCount($post[MDCMS_POST_CONTENT]);
+$readTime = \mdcms\Plugin\readTime($wordCount);
+
 # Add id for each subtitle if none.
 if (ENABLE_TOC) {
     $post[MDCMS_POST_CONTENT]
@@ -77,8 +80,8 @@ if (ENABLE_TOC) {
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
-                        There are <?php echo $post[MDCMS_POST_WORD_COUNT]; ?> word(s) in the post.
-                        It will take <?php echo ceil($post[MDCMS_POST_WORD_COUNT] / 300); ?> minute(s) to read.
+                        There are <?php echo $wordCount; ?> word(s) in the post.
+                        It will take <?php echo $readTime; ?> minute(s) to read.
                     </div>
 
                     <?php includePartials("shareButtons.php"); ?>
