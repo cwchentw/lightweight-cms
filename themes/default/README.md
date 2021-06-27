@@ -153,3 +153,7 @@ function loadAssets($dest)
 If you write vanilla CSS and JavaScript code, you don't require to call NPM in advance. Simply copy assets to a destination.
 
 In contrary, if you utilize another front end stack(s) like Less and TypeScript, you have to implement your own build automation scripts as well.
+
+## Copyright
+
+Copyright (c) Michelle Chen. Licensed under MIT
