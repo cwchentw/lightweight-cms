@@ -20,6 +20,13 @@ if (POST_PER_PAGE > 0) {
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
+        <?php
+        if ("" != GOOGLE_ANALYTICS_ID) {
+            echo "<!-- Google Analytics -->";
+            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+        }
+        ?>
+
         <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 

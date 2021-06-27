@@ -13,6 +13,9 @@ require_once $rootDirectory . "/setting.php";
 
 # Load required libraries.
 require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
+# Load plugin(s) if any.
+require_once $rootDirectory . "/" . PLUGIN_DIRECTORY . "/autoload.php";
+# Load site theme.
 require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 

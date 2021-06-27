@@ -20,6 +20,13 @@ $status = 200;
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
+        <?php
+        if ("" != GOOGLE_ANALYTICS_ID) {
+            echo "<!-- Google Analytics -->";
+            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+        }
+        ?>
+
         <title><?php echo SITE_NAME; ?></title>
         <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">

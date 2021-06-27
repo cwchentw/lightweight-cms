@@ -26,3 +26,5 @@ define("LOAD_SITE_ASSETS", true);
 # By default, mdcms only scans sections and posts
 #  in the content directory.
 define("SCAN_APPLICATION_DIRECTORY", false);
+# Google Analytics tracker.
+define("GOOGLE_ANALYTICS_ID", "");

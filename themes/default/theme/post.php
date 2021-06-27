@@ -31,6 +31,13 @@ if (ENABLE_TOC) {
 <!DOCTYPE html>
 <html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
+        <?php
+        if ("" != GOOGLE_ANALYTICS_ID) {
+            echo "<!-- Google Analytics -->";
+            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+        }
+        ?>
+
         <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
