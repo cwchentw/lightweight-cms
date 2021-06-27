@@ -12,7 +12,9 @@ define("REDIRECT_LIST", [
 # Black list of plugins.
 define("PLUGIN_BLACKLIST", []);
 # Post amount per page (home page and sections).
-define("POST_PER_PAGE", 0);
+#
+# To disable pagination, set it to `0`.
+define("POST_PER_PAGE", 5);
 # The text of home page on breadcrumbs.
 define("BREADCRUMB_HOME", "Index Page");
 # The upper limit of the word count of a dynamically generated description.
