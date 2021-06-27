@@ -96,6 +96,8 @@ if (POST_PER_PAGE > 0) {
                                 echo "</p>";
                             }
                         }
+
+                        includePartials("pagination.php");
                     }
                     # All posts.
                     else {

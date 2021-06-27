@@ -82,6 +82,8 @@ $status = 200;
                                 echo "</p>";
                             }
                         }
+
+                        includePartials("pagination.php");
                     }
                     # All posts.
                     else {

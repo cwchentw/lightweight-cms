@@ -60,6 +60,10 @@ Breadcrumbs works as navigation schemes for visitors from current page (either a
 
 In mdcms, breadcrumbs of a page is an array of links from a home page to current page.
 
+### Pagination
+
+Pending.
+
 ### Table of Contents
 
 A ToC (Table of Contents) serves as an intrapage navigator for a post. Post readers can easily scroll to desired section in a post with this widget.
