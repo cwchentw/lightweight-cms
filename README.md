@@ -97,6 +97,10 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
+## Documentation
+
+Visit our [official website](https://mdcms.org), which is a live demonstration of mdcms itself.
+
 ## Notes for PHP Developers
 
 The website generator doesn't merely work as pseudo static websites. Instead, you may add more PHP scripts to *www* directory as needed. Furthermore, your scripts can share layouts and partials with other web pages in a mdcms site, reducing repeated code.
