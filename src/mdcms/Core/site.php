@@ -57,14 +57,30 @@ function getAllLinks($uri)
                 $link = readHTMLLink($uri);
                 $link[MDCMS_LINK_PATH] = $uri;
                 $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
-                array_push($result, $link);
+
+                # Skip functional posts.
+                # TODO: We may change it later.
+                if (!(array_key_exists(MDCMS_POST_META, $link)
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META]))
+                {
+                    array_push($result, $link);
+                }
             }
             else if (isMarkdownFile($path)) {
                 $uri = getPageFromPath($path);
                 $link = readMarkdownLink($uri);
                 $link[MDCMS_LINK_PATH] = $uri;
                 $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
-                array_push($result, $link);
+
+                # Skip functional posts.
+                # TODO: We may change it later.
+                if (!(array_key_exists(MDCMS_POST_META, $link)
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META]))
+                {
+                    array_push($result, $link);
+                }
             }
         }
     }
@@ -93,14 +109,30 @@ function getAllLinks($uri)
             $uri = getPageFromPath($path);
             $link = readHTMLLink($uri);
             $link[MDCMS_LINK_PATH] = $uri;
-            array_push($result, $link);
+
+            # Skip functional posts.
+            # TODO: We may change it later.
+            if (!(array_key_exists(MDCMS_POST_META, $link)
+                && array_key_exists("noindex", $link[MDCMS_POST_META])
+                && $link[MDCMS_POST_META]))
+            {
+                array_push($result, $link);
+            }
         }
         /* `$path` is a Markdown file. */
         else if (file_exists($markdownPath)) {
             $uri = getPageFromPath($path);
             $link = readMarkdownLink($uri);
             $link[MDCMS_LINK_PATH] = $uri;
-            array_push($result, $link);
+
+            # Skip functional posts.
+            # TODO: We may change it later.
+            if (!(array_key_exists(MDCMS_POST_META, $link)
+                && array_key_exists("noindex", $link[MDCMS_POST_META])
+                && $link[MDCMS_POST_META]))
+            {
+                array_push($result, $link);
+            }
         }
         /* `$path` is a directory. */
         else if (is_dir($dirpath)) {
@@ -136,7 +168,15 @@ function getAllLinks($uri)
                     $link = readHTMLLink($uri);
                     $link[MDCMS_LINK_PATH] = $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
-                    array_push($result, $link);
+
+                    # Skip functional posts.
+                    # TODO: We may change it later.
+                    if (!(array_key_exists(MDCMS_POST_META, $link)
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META]))
+                    {
+                        array_push($result, $link);
+                    }
                 }
                 # Load a Markdown file.
                 else if (isMarkdownFile($subpath)) {
@@ -144,7 +184,15 @@ function getAllLinks($uri)
                     $link = readMarkdownLink($uri);
                     $link[MDCMS_LINK_PATH] = $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
-                    array_push($result, $link);
+
+                    # Skip functional posts.
+                    # TODO: We may change it later.
+                    if (!(array_key_exists(MDCMS_POST_META, $link)
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META]))
+                    {
+                        array_push($result, $link);
+                    }
                 }
                 # Ignore everything else.
                 else {
