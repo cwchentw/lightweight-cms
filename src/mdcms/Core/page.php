@@ -3,6 +3,37 @@ namespace mdcms\Core;
 # Functions for all pages.
 
 
+function getHomeContent()
+{
+    $rootDirectory = __DIR__ . "/../../..";
+    # Get global setting.
+    require_once $rootDirectory . "/setting.php";
+    require_once $rootDirectory . "/vendor/autoload.php";
+
+    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
+    $indexPage = $contentDirectory . "/" . SECTION_INDEX;
+
+    $result = "";
+
+    if (file_exists($indexPage)) {
+        $rawContent = file_get_contents($indexPage);
+
+        $parser = new \Mni\FrontYAML\Parser();
+
+        $document = $parser->parse($rawContent);
+
+        # Discard metadata from index page.
+        #$metadata = $document->getYAML();
+
+        # Strip metadata from index page.
+        $stripedContent = $document->getContent();
+
+        $result .= $stripedContent;
+    }
+
+    return $result;
+}
+
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/post-title/".

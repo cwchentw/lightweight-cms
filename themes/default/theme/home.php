@@ -56,6 +56,14 @@ $status = 200;
         <div id="top" class="container">
             <div id="main-content">
                 <?php
+                # Show home content if it is not empty.
+                $homeContent = \mdcms\Core\getHomeContent();
+                if ("" != $homeContent) {
+                    echo $homeContent;
+                }
+                ?>
+
+                <?php
                 # Show a fallback message if no any section and post.
                 if ((!isset($sections) && !isset($posts))
                     || ((isset($sections) && 0 == count($sections))

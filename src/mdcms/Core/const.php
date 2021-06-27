@@ -12,6 +12,9 @@ namespace mdcms\Core;
 define("MDCMS_SECTIONS", "sections");
 define("MDCMS_POSTS", "posts");
 define("MDCMS_POST_PER_PAGE", "post-per-page");
+
+
+# Page related constants.
 define("MDCMS_SECTION", "section");
 define("MDCMS_POST", "post");
 define("MDCMS_BREADCRUMB", "breadcrumb");
