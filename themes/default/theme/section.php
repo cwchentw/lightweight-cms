@@ -54,7 +54,6 @@ if (POST_PER_PAGE > 0) {
 
         <div id="top" class="container">
             <div class="row">
-                <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php
                     # Show an optional section content if it exists.
@@ -145,7 +144,6 @@ if (POST_PER_PAGE > 0) {
                     ?>
                 </div>
 
-                <!-- TODO: Adjust the layout. -->
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php includePartials("sideInfo.php"); ?>

@@ -61,8 +61,7 @@ function readPost($page)
         else {
             # `$stripedContent` is not a full HTML document.
             # Therefore, we don't use a HTML parser but some regex pattern.
-            preg_match("/<h1[^>]*>(.+)<\/h1>/", $stripedContent, $matches);
-            if (isset($matches)) {
+            if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $stripedContent, $matches)) {
                 $result[MDCMS_POST_TITLE] = $matches[1];
 
                 # Remove <h1>-level titles from the content.
@@ -99,8 +98,7 @@ function readPost($page)
         }
 
         # Extract an excerpt from a post.
-        preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
-        if (isset($matches)) {
+        if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches)) {
             $text = "";
 
             for ($i = 0; $i < count($matches[1]); ++$i) {
@@ -165,9 +163,7 @@ function readPost($page)
             $result[MDCMS_POST_CONTENT] = preg_replace("/^# (.+)/", "", $stripedContent);
         }
         else {
-            preg_match("/^# (.+)/", $stripedContent, $matches);
-
-            if (isset($matches)) {
+            if (preg_match("/^# (.+)/", $stripedContent, $matches)) {
                 $result[MDCMS_POST_TITLE] = $matches[1];
 
                 # Remove a <h1>-level title from the content.
@@ -204,9 +200,7 @@ function readPost($page)
         $parser = new \Parsedown();
         $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
 
-        # TODO: Test the code.
-        preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches);
-        if (isset($matches)) {
+        if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches)) {
             $text = "";
 
             for ($i = 0; $i < count($matches[1]); ++$i) {

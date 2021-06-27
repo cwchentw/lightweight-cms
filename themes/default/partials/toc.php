@@ -9,8 +9,7 @@ $post = $GLOBALS[MDCMS_POST];
 
 # Extract titles and ids from <h2> titles.
 $subtitles = array();
-preg_match_all("/<h2 id=\"([^\"]+)\">(.+?)<\/h2>/", $post[MDCMS_POST_CONTENT], $matches);
-if (isset($matches)) {
+if (preg_match_all("/<h2 id=\"([^\"]+)\">(.+?)<\/h2>/", $post[MDCMS_POST_CONTENT], $matches)) {
     for ($i = 0; $i < count($matches[1]); ++$i) {
         $subtitle = array();
 

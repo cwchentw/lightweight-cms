@@ -11,10 +11,6 @@ require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
 require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
 
 
-# TODO: Load Xdebug on a development environment.
-
-# TODO: Check essential variables on a development environment.
-
 # Filter the input URI.
 # It may be redundant on Nginx.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);

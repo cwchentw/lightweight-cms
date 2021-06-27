@@ -67,7 +67,6 @@ if (ENABLE_TOC) {
 
         <div class="container">
             <div class="row">
-                <!-- TODO: Adjust the layout. -->
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
@@ -82,7 +81,6 @@ if (ENABLE_TOC) {
                     </main>                    
                 </div>
 
-                <!-- TODO: Adjust the layout. -->
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php

@@ -24,7 +24,6 @@ function getPageFromPath($path)
     return $page;
 }
 
-/* TODO: Test the code. */
 function getHTMLPathFromPage($page)
 {
     # Get the root path of mdcms.
@@ -42,7 +41,6 @@ function getHTMLPathFromPage($page)
     return $path . HTML_FILE_EXTENSION;
 }
 
-/* TODO: Test the code. */
 function readHTMLLink($page)
 {
     $result = array();
@@ -57,10 +55,9 @@ function readHTMLLink($page)
 
     # `$rawContent` is not a full HTML document.
     # Therefore, we don't use a HTML parser but some regex pattern.
-    preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches);
-
-        # Extract a title from a document.
-    if (isset($matches)) {
+    #
+    # Extract a title from a document.
+    if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches)) {
         $result[MDCMS_POST_TITLE] = $matches[1];
     }
     # If no title in the above document, extract a title from a path.
@@ -74,7 +71,6 @@ function readHTMLLink($page)
     return $result;
 }
 
-/* TODO: Test the code. */
 function readMarkdownLink($page)
 {
     $result = array();
@@ -99,10 +95,8 @@ function readMarkdownLink($page)
 
     $rawContent = file_get_contents($markdownPath);
 
-    preg_match("/^# (.+)/", $rawContent, $matches);
-
     # Extract a title from a document.
-    if (array_key_exists("1", $matches)) {
+    if (preg_match("/^# (.+)/", $rawContent, $matches)) {
         $result[MDCMS_LINK_TITLE] = $matches[1];
     }
     # If no title in the above document, extract a title from a path.
@@ -116,7 +110,6 @@ function readMarkdownLink($page)
     return $result;
 }
 
-/* TODO: Test the code. */
 function readDirectoryLink($page)
 {
     $result = array();
@@ -136,10 +129,8 @@ function readDirectoryLink($page)
 
         $rawContent = file_get_contents($indexPath);
 
-        preg_match("/^# (.+)/", $rawContent, $matches);
-
         # Extract a title from a document.
-        if (array_key_exists(1, $matches)) {
+        if (preg_match("/^# (.+)/", $rawContent, $matches)) {
             $result[MDCMS_LINK_TITLE] = $matches[1];
         }
         # If no title in the above document, extract a title from a path.
@@ -160,13 +151,11 @@ function readDirectoryLink($page)
     return $result;
 }
 
-/* TODO: Test the code. */
 function isHTMLFile($path)
 {
     return strpos($path, HTML_FILE_EXTENSION);
 }
 
-/* TODO: Test the code. */
 function isMarkdownFile($path)
 {
     return strpos($path, MARKDOWN_FILE_EXTENSION);

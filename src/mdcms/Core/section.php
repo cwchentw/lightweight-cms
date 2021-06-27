@@ -87,8 +87,7 @@ function readSection($page)
         $result[MDCMS_SECTION_TITLE] = $title;
     }
 
-    preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_SECTION_CONTENT], $matches);
-    if (isset($matches)) {
+    if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_SECTION_CONTENT], $matches)) {
         $text = "";
 
         for ($i = 0; $i < count($matches[1]); ++$i) {

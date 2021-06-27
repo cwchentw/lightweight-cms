@@ -47,7 +47,6 @@ $status = 200;
         </div>
 
         <div id="top" class="container">
-            <!-- TODO: Adjust the layout. -->
             <div id="main-content">
                 <?php
                 # Show a fallback message if no any section and post.
