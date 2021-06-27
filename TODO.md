@@ -4,9 +4,7 @@
 * (Feature) Add an offline.html generator
 * (Feature) Add `SITE_PREFIX`
 * (Project) Load HTTP status 404 page if page is not valid
-* (Project) Refactor PHP scripts in private library
 * (Project) Create an icon generator
-* (Theme) Update list to delete for *default* theme
 * (Theme) Modify the icon of GitHub
 * (Plugin) Add Google Analytics
 * (Plugin) Refactor word count to a plugin
