@@ -53,12 +53,18 @@ function getAllLinks($uri)
                 array_push($pages, $page);
             }
             else if (isHTMLFile($path)) {
-                $page = getPageFromPath($path);
-                array_push($result, readHTMLLink($page));
+                $uri = getPageFromPath($path);
+                $link = readHTMLLink($uri);
+                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+                array_push($result, $link);
             }
             else if (isMarkdownFile($path)) {
-                $page = getPageFromPath($path);
-                array_push($result, readMarkdownLink($page));
+                $uri = getPageFromPath($path);
+                $link = readMarkdownLink($uri);
+                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+                array_push($result, $link);
             }
         }
     }
@@ -84,18 +90,28 @@ function getAllLinks($uri)
 
         /* `$path` is a HTML file. */
         if (file_exists($htmlPath)) {
-            array_push($result, readHTMLLink($uri));
+            $uri = getPageFromPath($path);
+            $link = readHTMLLink($uri);
+            $link[MDCMS_LINK_PATH] = $uri;
+            array_push($result, $link);
         }
         /* `$path` is a Markdown file. */
         else if (file_exists($markdownPath)) {
-            array_push($result, readMarkdownLink($uri));
+            $uri = getPageFromPath($path);
+            $link = readMarkdownLink($uri);
+            $link[MDCMS_LINK_PATH] = $uri;
+            array_push($result, $link);
         }
         /* `$path` is a directory. */
         else if (is_dir($dirpath)) {
             /* Convert from path to page. */
-            $page = getPageFromPath($dirpath);
-            $link = readDirectoryLink($page);
-            array_push($result, $link);
+            if (!BLOCK_BOT_ON_SECTION) {
+                $uri = getPageFromPath($dirpath);
+                $link = readDirectoryLink($uri);
+                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_MTIME] = stat($dirpath)["mtime"];
+                array_push($result, $link);
+            }
 
             $subfiles = scandir($dirpath, SCANDIR_SORT_ASCENDING);
 
@@ -116,13 +132,19 @@ function getAllLinks($uri)
                 }
                 # Load a HTML file.
                 else if (isHTMLFile($subpath)) {
-                    $subpage = getPageFromPath($subpath);
-                    array_push($result, readHTMLLink($subpage));
+                    $uri = getPageFromPath($subpath);
+                    $link = readHTMLLink($uri);
+                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+                    array_push($result, $link);
                 }
                 # Load a Markdown file.
                 else if (isMarkdownFile($subpath)) {
-                    $subpage = getPageFromPath($subpath);
-                    array_push($result, readMarkdownLink($subpage));
+                    $uri = getPageFromPath($subpath);
+                    $link = readMarkdownLink($uri);
+                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+                    array_push($result, $link);
                 }
                 # Ignore everything else.
                 else {

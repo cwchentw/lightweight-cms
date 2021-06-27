@@ -41,114 +41,25 @@ function getHTMLPathFromPage($page)
     return $path . HTML_FILE_EXTENSION;
 }
 
-function readHTMLLink($page)
+function readHTMLLink($uri)
 {
-    $result = array();
+    require_once __DIR__ . "/post.php";
 
-    $result[MDCMS_LINK_PATH] = $page;
-
-    $htmlPath = getHTMLPathFromPage($page);
-
-    $result[MDCMS_LINK_MTIME] = filemtime($htmlPath);
-
-    $rawContent = file_get_contents($htmlPath);
-
-    # `$rawContent` is not a full HTML document.
-    # Therefore, we don't use a HTML parser but some regex pattern.
-    #
-    # Extract a title from a document.
-    if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $rawContent, $matches)) {
-        $result[MDCMS_POST_TITLE] = $matches[1];
-    }
-    # If no title in the above document, extract a title from a path.
-    else {
-        $title = preg_replace("/\//", "", $page);
-        $title = preg_replace("/-+/", " ", $title);
-        $title = ucwords($title);  # Capitalize a title.
-        $result[MDCMS_LINK_TITLE] = $title;
-    }
-
-    return $result;
+    return readPost($uri);
 }
 
-function readMarkdownLink($page)
+function readMarkdownLink($uri)
 {
-    $result = array();
+    require_once __DIR__ . "/post.php";
 
-    $result[MDCMS_LINK_PATH] = $page;
-
-    # Get the root path of mdcms.
-    $rootDirectory = __DIR__ . "/../../..";
-
-    $path = $rootDirectory
-        . "/" . CONTENT_DIRECTORY
-        . "/" . $page;
-
-    /* Remove a trailing "/" */
-    if ("/" == substr($path, strlen($path)-1, 1)) {
-        $path = substr($path, 0, strlen($path)-1);
-    }
-
-    $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
-
-    $result[MDCMS_LINK_MTIME] = filemtime($markdownPath);
-
-    $rawContent = file_get_contents($markdownPath);
-
-    # Extract a title from a document.
-    if (preg_match("/^# (.+)/", $rawContent, $matches)) {
-        $result[MDCMS_LINK_TITLE] = $matches[1];
-    }
-    # If no title in the above document, extract a title from a path.
-    else {
-        $title = preg_replace("/\//", "", $page);
-        $title = preg_replace("/-+/", " ", $title);
-        $title = ucwords($title);  # Capitalize a title.
-        $result[MDCMS_LINK_TITLE] = $title;
-    }
-
-    return $result;
+    return readPost($uri);
 }
 
-function readDirectoryLink($page)
+function readDirectoryLink($uri)
 {
-    $result = array();
+    require_once __DIR__ . "/section.php";
 
-    $result[MDCMS_LINK_PATH] = $page;
-
-    # Get the root path of mdcms.
-    $rootDirectory = __DIR__ . "/../../..";
-
-    $path = $rootDirectory
-        . "/" . CONTENT_DIRECTORY
-        . "/" . $page;
-    $indexPath = $path . "/" . SECTION_INDEX;
-
-    if (file_exists($indexPath)) {
-        $result[MDCMS_LINK_MTIME] = filemtime($indexPath);
-
-        $rawContent = file_get_contents($indexPath);
-
-        # Extract a title from a document.
-        if (preg_match("/^# (.+)/", $rawContent, $matches)) {
-            $result[MDCMS_LINK_TITLE] = $matches[1];
-        }
-        # If no title in the above document, extract a title from a path.
-        else {
-            goto extract_title_from_page;
-        }
-    }
-    else {
-        extract_title_from_page:
-        $result[MDCMS_LINK_MTIME] = stat($path)["mtime"];
-
-        $title = preg_replace("/\//", "", $page);
-        $title = preg_replace("/-+/", " ", $title);
-        $title = ucwords($title);  # Capitalize a title.
-        $result[MDCMS_LINK_TITLE] = $title;
-    }
-
-    return $result;
+    return readSection($uri);
 }
 
 function isHTMLFile($path)
