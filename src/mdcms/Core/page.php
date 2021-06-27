@@ -112,16 +112,18 @@ function getSections($uri)
 
 function getPosts($uri)
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..";
     # Get global setting.
     require_once $rootDirectory . "/setting.php";
     # Load local scripts.
     require_once __DIR__ . "/const.php";
     require_once __DIR__ . "/post.php";
+    require_once __DIR__ . "/customPage.php";
 
     $result = array();
-    
-    $directory = $rootDirectory . "/" . CONTENT_DIRECTORY . $uri;
+
+    $modifiedURI = preg_replace("/\//", DIRECTORY_SEPARATOR, $uri);
+    $directory = $rootDirectory . DIRECTORY_SEPARATOR . CONTENT_DIRECTORY . $modifiedURI;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -133,7 +135,7 @@ function getPosts($uri)
             continue;
         }
 
-        $path = $directory . "/" . $file;
+        $path = $directory . $file;
         if (is_file($path)) {
             $link = array();
 
@@ -141,9 +143,14 @@ function getPosts($uri)
             $link[MDCMS_LINK_PATH]
                 = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
 
-            # Get the title of the page.
-            # If the commands cost too many system resources, change it.
-            $post = readPost($link[MDCMS_LINK_PATH]);
+            # Get information of a post.
+            # TODO: If the commands cost too many system resources, change it.
+            if ("php" == pathinfo($path)["extension"]) {
+                $post = readCustomPage($link[MDCMS_LINK_PATH]);
+            }
+            else {
+                $post = readPost($link[MDCMS_LINK_PATH]);
+            }
 
             foreach ($post as $key => $value) {
                 $link[$key] = $value;

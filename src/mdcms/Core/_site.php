@@ -71,3 +71,8 @@ function isMarkdownFile($path)
 {
     return strpos($path, MARKDOWN_FILE_EXTENSION);
 }
+
+function isPHPFile($path)
+{
+    return strpos($path, ".php");
+}

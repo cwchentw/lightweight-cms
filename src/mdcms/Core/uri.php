@@ -41,3 +41,12 @@ function isPageInSection($uri)
 
     return false;
 }
+
+function isCustomPage($uri)
+{
+    require_once __DIR__ . "/_uri.php";
+
+    $path = getPath($uri, ".php");
+
+    return file_exists($path);
+}

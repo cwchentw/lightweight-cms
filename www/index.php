@@ -95,6 +95,10 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
     # TODO: Load HTTP satus 404 page if no post in this page.
     loadSection();
 }
+# Render a custom page.
+else if (\mdcms\Core\isCustomPage($loc)) {
+    \mdcms\Core\loadCustomPage($loc);
+}
 # Render a post.
 else {
     foreach (REDIRECT_LIST as $redirect) {

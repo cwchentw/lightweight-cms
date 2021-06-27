@@ -8,8 +8,9 @@ function getAllLinks($uri)
     $rootDirectory = __DIR__ . "/../../..";
     # Get global setting.
     require_once $rootDirectory . "/setting.php";
-    # Load a local script.
+    # Load local scripts.
     require_once __DIR__ . "/const.php";
+    require_once __DIR__ . "/customPage.php";
     # Load a private script.
     require_once __DIR__ . "/_site.php";
 
@@ -82,6 +83,21 @@ function getAllLinks($uri)
                     array_push($result, $link);
                 }
             }
+            else if (isPHPFile($path)) {
+                $uri = getPageFromPath($path);
+                $link = readCustomPage($uri);
+                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+
+                # Skip functional posts.
+                # TODO: We may change it later.
+                if (!(array_key_exists(MDCMS_POST_META, $link)
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META]))
+                {
+                    array_push($result, $link);
+                }
+            }
         }
     }
     # Add itself into the queue.
@@ -103,6 +119,7 @@ function getAllLinks($uri)
         }
         $htmlPath = $path . HTML_FILE_EXTENSION;
         $markdownPath = $path . MARKDOWN_FILE_EXTENSION;
+        $phpPath = $path . ".php";
 
         /* `$path` is a HTML file. */
         if (file_exists($htmlPath)) {
@@ -124,6 +141,21 @@ function getAllLinks($uri)
             $uri = getPageFromPath($path);
             $link = readMarkdownLink($uri);
             $link[MDCMS_LINK_PATH] = $uri;
+
+            # Skip functional posts.
+            # TODO: We may change it later.
+            if (!(array_key_exists(MDCMS_POST_META, $link)
+                && array_key_exists("noindex", $link[MDCMS_POST_META])
+                && $link[MDCMS_POST_META]))
+            {
+                array_push($result, $link);
+            }
+        }
+        else if (file_exists($phpPath)) {
+            $uri = getPageFromPath($phpPath);
+            $link = readCustomPage($uri);
+            $link[MDCMS_LINK_PATH] = $uri;
+            $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
             # Skip functional posts.
             # TODO: We may change it later.
@@ -185,6 +217,21 @@ function getAllLinks($uri)
                     $link[MDCMS_LINK_PATH] = $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
+                    # Skip functional posts.
+                    # TODO: We may change it later.
+                    if (!(array_key_exists(MDCMS_POST_META, $link)
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META]))
+                    {
+                        array_push($result, $link);
+                    }
+                }
+                else if (isPHPFile($subpath)) {
+                    $uri = getPageFromPath($subpath);
+                    $link = readCustomPage($uri);
+                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
+    
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(array_key_exists(MDCMS_POST_META, $link)
