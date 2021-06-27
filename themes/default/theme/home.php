@@ -78,7 +78,7 @@ $status = 200;
                             foreach ($postsPerPage as $post) {
                                 echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                                echo "<p>" . $post[MDCMS_POST_EXCERPT] . " ";
+                                echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
                                     . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
@@ -99,7 +99,7 @@ $status = 200;
                             foreach ($posts as $post) {
                                 echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                                echo "<p>" . $post[MDCMS_POST_EXCERPT] . " ";
+                                echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
                                     . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
@@ -124,8 +124,9 @@ $status = 200;
 
                             echo "<p>";
 
-                            if ("" != $section[MDCMS_SECTION_EXCERPT]) {
-                                echo $section[MDCMS_SECTION_EXCERPT];
+                            $sectionExcerpt = \mdcms\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                            if ("" != $sectionExcerpt) {
+                                echo $sectionExcerpt;
                             }
 
                             echo "<a class=\"btn btn-primary btn-sm\" "

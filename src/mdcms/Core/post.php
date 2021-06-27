@@ -97,42 +97,6 @@ function readPost($page)
             $result[MDCMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
-        # Extract an excerpt from a post.
-        if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches)) {
-            $text = "";
-
-            for ($i = 0; $i < count($matches[1]); ++$i) {
-                # Reduce multiple spaces into single space.
-                $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
-                $text .= $paragraph;
-
-                if ($i < count($matches[1]) - 1) {
-                    $text .= " ";
-                }
-            }
-
-            $words = explode(" ", $text);
-
-            $excerpt = "";
-            for ($i = 0; $i < count($words); ++$i) {
-                if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
-                    $excerpt .= $words[$i];
-                }
-                else {
-                    break;
-                }
-
-                if ($i < count($words) - 1) {
-                    $excerpt .= " ";
-                }
-            }
-
-            $result[MDCMS_POST_EXCERPT] = $excerpt;
-        }
-        else {
-            $result[MDCMS_POST_EXCERPT] = "";
-        }
-
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
     else if (file_exists($markdownPath)) {
@@ -195,45 +159,6 @@ function readPost($page)
         # Convert the Markdown document into a HTML document.
         $parser = new \Parsedown();
         $result[MDCMS_POST_CONTENT] = $parser->text($result["content"]);
-
-        if (preg_match_all("/<p[^>]*>(.+)<\/p>/", $result[MDCMS_POST_CONTENT], $matches)) {
-            $text = "";
-
-            for ($i = 0; $i < count($matches[1]); ++$i) {
-                # Reduce multiple spaces into single space.
-                $paragraph = preg_replace("/[ ]+/", " ", $matches[1][$i]);
-
-                # Remove all HTML tags inside.
-                $paragraph = strip_tags($paragraph);
-
-                $text .= $paragraph;
-
-                if ($i < count($matches[1]) - 1) {
-                    $text .= " ";
-                }
-            }
-
-            $words = explode(" ", $text);
-
-            $excerpt = "";
-            for ($i = 0; $i < count($words); ++$i) {
-                if (strlen($excerpt) <= EXCERPT_THRESHOLD) {
-                    $excerpt .= $words[$i];
-                }
-                else {
-                    break;
-                }
-
-                if ($i < count($words) - 1) {
-                    $excerpt .= " ";
-                }
-            }
-
-            $result[MDCMS_POST_EXCERPT] = $excerpt;
-        }
-        else {
-            $result[MDCMS_POST_EXCERPT] = "";
-        }
 
         $result[MDCMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
