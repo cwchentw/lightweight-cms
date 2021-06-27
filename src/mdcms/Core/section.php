@@ -43,7 +43,13 @@ function readSection($page)
         $stripedContent = $document->getContent();
 
         # Expose metadata of a section. No matter it is empty or not.
-        $result[MDCMS_SECTION_META] = $metadata;
+        # Expose metadata of a section. No matter it is empty or not.
+        if (!is_null($metadata)) {
+            $result[MDCMS_POST_META] = $metadata;
+        }
+        else {
+            $result[MDCMS_POST_META] = array();
+        }
 
         if (isValidField($metadata, METADATA_WEIGHT)) {
             $result[MDCMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
