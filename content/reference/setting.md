@@ -6,17 +6,17 @@ weight: 3
 
 ## Prologue
 
-Pending.
+Settings in mdcms work as parameters to modify mdcms sites. This article illustrates those settings.
 
 ## Note
 
-mdcms is still experimental and envolving. Those settings may change without warning.
+mdcms is still *experimental and envolving*. Those settings may change without warning.
 
-## Project Settings vs Theme Settings
+## Project Settings, Theme Settings and Plugin Settings
 
-There are two categories settings in mdcms. Project settings are used by mdcms itself while theme settings used by mdcms themes.
+There are three categories of settings in mdcms. Project settings are used by mdcms itself, theme settings used by mdcms themes and plugin settings used by mdcms plugins.
 
-You should not remove project settings because either internal library or utility scripts of mdcms rely on those constants to work properly. In contrary, theme settings are optional. Current theme settings are used by *default* theme of mdcms. You may use a different set of theme settings in another mdcms theme.
+You should not remove project settings because either internal library or utility scripts of mdcms rely on those constants to work properly. In contrary, theme settings and plugin settings are optional. Current theme settings are used by *default* theme of mdcms. You may use a different set of theme settings in another mdcms theme.
 
 ## Site Information
 
@@ -30,6 +30,8 @@ You should not remove project settings because either internal library or utilit
 * `SITE_THEME` (project): Theme used by a site
 * `SITE_LOGO` (project): File name of site logo without size suffix and file extension. Default file format of site logo is `image/png`
 
+`SITE_AUTHOR` is default author of a mdcms site. You may set a author of a post other than `SITE_AUTHOR` in its metadata.
+
 ## Social Media
 
 * `FACEBOOK` (theme): Personal Facebook account or Facebook fan page
@@ -42,7 +44,7 @@ You should not remove project settings because either internal library or utilit
 * `REDIRECT_LIST` (project): A list of redirecting rules
 * `PLUGIN_BLACKLIST` (project): A blacklist to prevent plugin(s) from loading
 * `BREADCRUMB_HOME` (project): Text used by home page on breadcrumbs
-* `EXCERPT_THRESHOLD` (project): Text amount for an excerpt of a post
+* `EXCERPT_THRESHOLD` (plugin): Text amount for an excerpt of a post
 
 ## Optioal Features of mdcms
 
@@ -53,7 +55,6 @@ You should not remove project settings because either internal library or utilit
 * `BLOCK_BOT_ON_SECTION` (theme): Prevent search engine bots from crawling sections
 * `NO_FOLLOW_EXTERNAL_LINK` (project): Prevent search engine bots from following external links
 * `LOAD_SITE_ASSETS` (project): Enable to load site assets
-* `SCAN_APPLICATION_DIRECTORY` (project): Scan *www* directory for sections and pages
 
 ## Sorting Callbacks
 

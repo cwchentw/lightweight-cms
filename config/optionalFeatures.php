@@ -21,10 +21,5 @@ define("BLOCK_BOT_ON_SECTION", true);
 define("NO_FOLLOW_EXTERNAL_LINK", true);
 # Load personal assets.
 define("LOAD_SITE_ASSETS", true);
-# Scan application directory.
-#
-# By default, mdcms only scans sections and posts
-#  in the content directory.
-define("SCAN_APPLICATION_DIRECTORY", false);
 # Google Analytics tracker.
 define("GOOGLE_ANALYTICS_ID", "UA-105146581-5");

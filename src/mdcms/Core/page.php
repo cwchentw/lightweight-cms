@@ -77,36 +77,6 @@ function getSections($uri)
 
     usort($result, $GLOBALS[SORT_SECTION_CALLBACK]);
 
-    # Skip to scan the application directory.
-    if (!SCAN_APPLICATION_DIRECTORY) {
-        return $result;
-    }
-
-    # Scan custom directories added in the application directory
-    #  by users of mdcms as well.
-    $applicationDirectory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
-    $files = scandir($applicationDirectory, SCANDIR_SORT_ASCENDING);
-
-    foreach ($files as $file) {
-        # Skip private directories.
-        if ("." == substr($file, 0, 1)) {
-            continue;
-        }
-
-        $path = $contentDirectory . "/" . $file;
-        if (is_dir($path)) {
-            $d = array();
-
-            $d[MDCMS_LINK_PATH] = $file;
-
-            $t = preg_replace("/\/|-+/", " ", $file);
-            $t = ucwords($t);  # Capitalize a title.
-            $d[MDCMS_LINK_TITLE] = $t;
-
-            array_push($result, $d);
-        }
-    }
-
     return $result;
 }
 
@@ -168,44 +138,6 @@ function getPosts($uri)
     }
 
     usort($result, $GLOBALS[SORT_POST_CALLBACK]);
-
-    # Skip to scan the application directory.
-    if (!SCAN_APPLICATION_DIRECTORY) {
-        return $result;
-    }
-
-    # Scan custom pages added in the application directory
-    #  by users of mdcms as well.
-    $applicationDirectory = __DIR__ . "/../" . APPLICATION_DIRECTORY;
-    $files = scandir($applicationDirectory, SCANDIR_SORT_ASCENDING);
-
-    foreach ($files as $file) {
-        # Skip private directories and files.
-        if ("." == substr($file, 0, 1)) {
-            continue;
-        }
-
-        # Skip the index script.
-        if ("index.php" == $file) {
-            continue;
-        }
-
-        $path = $applicationDirectory . "/" . $file;
-        if (is_file($path)) {
-            $f = array();
-
-            # It is not a pretty URL. Keep its file extension *as is*.
-            $f[MDCMS_LINK_PATH] = $file;
-
-            # Get the title of the page.
-            $t = pathinfo($file, PATHINFO_FILENAME);
-            $t = preg_replace("/-+/", " ", $t);
-            $t = ucwords($t);  # Capitalize a title.
-            $f[MDCMS_LINK_TITLE] = $t;
-
-            array_push($result, $f);
-        }
-    }
 
     return $result;
 }
