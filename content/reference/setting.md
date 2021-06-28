@@ -61,9 +61,18 @@ You should not remove project settings because either internal library or utilit
 * `$GLOBALS[SORT_SECTION_CALLBACK]` (project): Callback used to sort sections
 * `$GLOBALS[SORT_POST_CALLBACK]` (project): Callback used to sort posts
 
+See [this article](/howto/how-to-sort-sections-and-posts/) for information on writing sorting callbacks for sections and posts.
+
 ## Internal Parameters
 
+mdcms is flexible by design. Although these internal settings are seldom modified by end users, you may modify them to fit your own need.
+
+### Related to Index Files of Sections
+
 * `SECTION_INDEX` (project): Posts for sections
+
+### Related to Project Structures
+
 * `CONTENT_DIRECTORY` (project): Path of *content* directory
 * `THEME_DIRECTORY` (project): Path of *themes* directory
 * `PLUGIN_DIRECTORY` (project): Path of *plugins* directory
@@ -71,13 +80,19 @@ You should not remove project settings because either internal library or utilit
 * `LIBRARY_DIRECTORY` (project): Path of *src* directory
 * `APPLICATION_DIRECTORY` (project): Path of *www* directory
 * `PUBLIC_DIRECTORY` (project): Path of *public* directory
+
+### Related to Metadata of Sections and Posts
+
 * `METADATA_TITLE` (project): Field of titles in metadata
 * `METADATA_AUTHOR` (project): Field of authors in metadata
 * `METADATA_MTIME` (project): Field of last modified time in metadata
 * `METADATA_WEIGHT` (project): Field of user-defined values for sorting in metadata
+
+### Related to File Extenions of Posts
+
 * `HTML_FILE_EXTENSION` (project): File extension used for HTML pages
 * `MARKDOWN_FILE_EXTENSION` (project): File extension used for Markdown pages
 
 ## Add Your Own Settings
 
-Pending.
+In addition to current settings used by mdcms, you may add you own as needed.
