@@ -55,7 +55,7 @@ bin="$cwd";
 )
 
 # Load personal assets.
-"${bin}/siteAssets" || (
+"${bin}/site-assets" || (
     exit $?;
 )
 
