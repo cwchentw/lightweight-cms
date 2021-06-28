@@ -1,39 +1,34 @@
 <?php
 # Router of mdcms.
 
-# Get global setting.
-require_once __DIR__ . "/../setting.php";
-# Load builtin library
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . $sep . "..";
+# Load global settings.
+require_once $rootDirectory . $sep . "setting.php";
+# Load builtin library.
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 # Load plugin(s) if any.
-require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 # Load a theme.
-require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
+require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
-# Filter the input URI.
-# It may be redundant on Nginx.
+# Filter input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
-# Check whether the URL is dangerous.
+# Render an error page for bad URLs.
 if (false != strpos($loc, "..")) {
-    $post = array();
-    $post[MDCMS_POST_TITLE] = "Bad Request Error";
-    $post[MDCMS_POST_CONTENT] = "Invalid URL";
-    $post[MDCMS_POST_STATUS] = 400;
-    goto render;
-}
+    $post = \mdcms\Core\errorPage(
+        "Bad Request Error",
+        "Invalid URL",
+        400
+    );
 
-render:
-# Render an error page.
-if (isset($post) && 200 != $post["status"]) {
-    $GLOBALS[MDCMS_POST] = $post;
-
-    # TODO: Create a mock breadcrumb.
+    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Bad Request Error");
 
     loadPost();
 }
-# Render home page of a mdcms site.
+# Render a home page.
 else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
@@ -46,7 +41,7 @@ else if (\mdcms\Core\isHome($loc)) {
 
     loadHome();
 }
-# Render a page of home page of a mdcms site.
+# Render a page of home page.
 else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
@@ -121,32 +116,14 @@ else {
     # If HTTP status 404, generate an error page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
         # Create a post dynamically.
-        $post = array();
-
-        $post[MDCMS_POST_TITLE] = "Page Not Found";
-        $post[MDCMS_POST_CONTENT] = "The page doesn't exist on our server.";
-        $post[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
-        $post[MDCMS_POST_STATUS] = 404;
+        $post = \mdcms\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
 
         # Create a breadcrumb dynamically.
-        $breadcrumb = array();
-
-        {
-            $link = array();
-
-            $link[MDCMS_LINK_PATH] = "/";
-            $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
-
-            array_push($breadcrumb, $link);
-        }
-
-        {
-            $link = array();
-
-            $link[MDCMS_LINK_TITLE] = "Page Not Found";
-
-            array_push($breadcrumb, $link);
-        }
+        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
 
         $GLOBALS[MDCMS_POST] = $post;
         $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
