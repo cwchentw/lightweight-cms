@@ -6,7 +6,7 @@ weight: 3
 
 ## Prologue
 
-As a would-be owner of an awesome content website, you cannot wait to write and publish posts. This article illustrates how to write posts on mdcms-based sites.
+As a would-be owner of an awesome content website, you cannot wait to write and publish posts for your site. This article illustrates how to write posts on mdcms-based sites.
 
 ## Choose a Programming Editor
 
@@ -122,12 +122,11 @@ Here are exposed fields of front matters:
 * `title`
 * `author`
 * `mtime`
-* `description` (not implemented yet)
-* `weight` (not implemented yet)
+* `weight`
 
 Those fields are not hard coded but adjustable in *setting.php*.
 
-In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]` (not implemented yet).
+In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]`.
 
 ## (Optional) Add Contents for Sections
 

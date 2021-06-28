@@ -86,7 +86,14 @@ $status = 200;
                             foreach ($postsPerPage as $post) {
                                 echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                                echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                if (!is_null($post[MDCMS_POST_META])
+                                    && array_key_exists("description", $post[MDCMS_POST_META]))
+                                {
+                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                }
+                                else {
+                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
                                     . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
@@ -107,7 +114,14 @@ $status = 200;
                             foreach ($posts as $post) {
                                 echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                                echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                if (!is_null($post[MDCMS_POST_META])
+                                    && array_key_exists("description", $post[MDCMS_POST_META]))
+                                {
+                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                }
+                                else {
+                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
                                     . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
