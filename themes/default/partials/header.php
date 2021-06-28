@@ -6,6 +6,13 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#578583"/>
+
+<!-- icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="/img/<?php echo SITE_LOGO; ?>-192x192.png">
+
+<!-- Reuse same icon for Safari -->
+<link rel="apple-touch-icon" href="/img/<?php echo SITE_LOGO; ?>-192x192.png">
 
 <?php if (!is_null(ENABLE_PWA) && ENABLE_PWA): ?>
 <!-- Configuration for an installable web application. -->
