@@ -121,32 +121,14 @@ else {
     # If HTTP status 404, generate an error page on-the-fly.
     if (404 == $post[MDCMS_POST_STATUS]) {
         # Create a post dynamically.
-        $post = array();
-
-        $post[MDCMS_POST_TITLE] = "Page Not Found";
-        $post[MDCMS_POST_CONTENT] = "The page doesn't exist on our server.";
-        $post[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
-        $post[MDCMS_POST_STATUS] = 404;
+        $post = \mdcms\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
 
         # Create a breadcrumb dynamically.
-        $breadcrumb = array();
-
-        {
-            $link = array();
-
-            $link[MDCMS_LINK_PATH] = "/";
-            $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
-
-            array_push($breadcrumb, $link);
-        }
-
-        {
-            $link = array();
-
-            $link[MDCMS_LINK_TITLE] = "Page Not Found";
-
-            array_push($breadcrumb, $link);
-        }
+        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
 
         $GLOBALS[MDCMS_POST] = $post;
         $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
