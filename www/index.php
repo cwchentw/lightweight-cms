@@ -1,17 +1,19 @@
 <?php
 # Router of mdcms.
 
-# Get global setting.
-require_once __DIR__ . "/../setting.php";
-# Load builtin library
-require_once __DIR__ . "/../" . LIBRARY_DIRECTORY . "/autoload.php";
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . $sep . "..";
+# Load global settings.
+require_once $rootDirectory . $sep . "setting.php";
+# Load builtin library.
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 # Load plugin(s) if any.
-require_once __DIR__ . "/../" . PLUGIN_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 # Load a theme.
-require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
+require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
-# Filter the input URI.
+# Filter input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
 # Render an error page for bad URLs.
