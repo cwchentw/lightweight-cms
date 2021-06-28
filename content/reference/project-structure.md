@@ -10,7 +10,41 @@ This article illustrates project structure of mdcms to give its users a roadmap 
 
 ## Bird View of mdcms
 
-Pending.
+Here we browse project structure of mdcms with `tree(1)`:
+
+```shell
+$ tree -a -L 1 -F
+.
+├── assets/
+├── .browserlistrc
+├── build/
+├── composer.json
+├── composer.lock
+├── config/
+├── content/
+├── .eslintrc
+├── .flowconfig
+├── .git/
+├── .gitignore
+├── LICENSE
+├── node_modules/
+├── package.json
+├── package-lock.json
+├── plugins/
+├── public/
+├── README.md
+├── setting.php
+├── src/
+├── static/
+├── .stylelintrc
+├── themes/
+├── TODO.md
+├── tools/
+├── vendor/
+└── www/
+```
+
+We will introduce them in the following text.
 
 ## *content* Directory
 
