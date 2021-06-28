@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# Run a mdcms site locally with builtin web server of PHP.
+
+
+# Get an address.
+address=$1;
+if [ -z "$address" ];
+then
+    address="localhost:5000";
+fi
+
+# Get the root path of the repo.
+cwd="$(dirname $0)";
+root="${cwd}/../..";
+www="${root}/www";
+static="${root}/static";
+public="${root}/public";
+bin="$cwd";
+
+# Create 50x.html
+"${bin}/50x" || (
+    exit $?;
+)
+
+# Create manifest.json
+"${bin}/manifest" || (
+    exit $?;
+)
+
+# Create sitemap.xml
+"${bin}/sitemap" || (
+    exit $?;
+)
+
+# Load assets.
+"${bin}/assets" || (
+    exit $?;
+)
+
+# Load personal assets.
+"${bin}/siteAssets" || (
+    exit $?;
+)
+
+# Create assets.
+#npm install
+
+# Copy static files.
+cp -pr "${static}/"* "$public" || (
+    echo "Unable to copy static files to the public directory" >&2;
+    exit 1;
+)
+
+# Copy router of mdcms.
+cp -pr "${www}/index.php" "$public" || (
+    echo "Unable to copy router of mdmcs to public directory" >&2;
+    exit 1;
+)
+
+# Run a mdcms site locally.
+echo "Run a mdcms site locally. Press ctrl + c to stop the server."
+php -S "$address" -t "$public";

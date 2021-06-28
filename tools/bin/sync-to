@@ -68,6 +68,9 @@ cp -pr "${static}/"* "$public" || (
     exit 1;
 )
 
+# Remove router of mdcms.
+rm -f "${public}/index.php";
+
 # Sync directories and files between the source
 #  and the destination.
 #
