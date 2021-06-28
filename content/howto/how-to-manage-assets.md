@@ -25,7 +25,7 @@ The section introduces builtin front end stacks used by mdcms.
 
 ### SCSS
 
-SCSS represent a variant of Sass. Sass syntax resembles Ruby code, which is elegant and pretty but not compatible with CSS. To address this issue, SCSS syntax becomes a strict superset of CSS intentionally.
+SCSS represent a variant of Sass. Original Sass syntax intentionally resembles Ruby code, which is elegant and pretty but not compatible with CSS. To address this issue, SCSS syntax becomes a strict superset of CSS.
 
 SCSS sheets are stored in *assets/sass*.
 
@@ -43,7 +43,7 @@ Images are mininized to save bandwidth. They are stored in *assets/img*.
 
 ### Fonts
 
-Fonts are copied *as is*. We keeps them in *asset* directory just for management. They are stored in *assets/font*.
+Fonts are copied *as is*. We keeps them in *asset* directory just for easier management. They are stored in *assets/font*.
 
 ## Set Directories and Files to Delete
 
