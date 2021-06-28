@@ -86,6 +86,12 @@ If you don't want to update your mdcms snapshot, you may safely remove all sampl
 
 Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
+You can run a mdcms site locally with builtin web server of PHP:
+
+```
+$ sudo ./tools/bin/serve
+```
+
 [Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 7.2 or above:
 
 ```

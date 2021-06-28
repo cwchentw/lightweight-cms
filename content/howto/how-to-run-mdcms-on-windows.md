@@ -138,7 +138,13 @@ If you don't want to update your mdcms snapshot, you may safely remove all sampl
 
 Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
-Copy your mdcms snapshot to Laragon document directory:
+You can run a mdcms site locally with builtin web server of PHP:
+
+```
+$ .\tools\bin\serve.bat
+```
+
+Alternatively, if you want to simulate a production environment, copy your mdcms snapshot to Laragon document directory:
 
 ```shell
 > .\tools\bin\sync-to.bat C:\Laragon\www\mdcms
