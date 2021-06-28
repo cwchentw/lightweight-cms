@@ -12,28 +12,21 @@ require_once __DIR__ . "/../" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.
 
 
 # Filter the input URI.
-# It may be redundant on Nginx.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
-# Check whether the URL is dangerous.
+# Render an error page for bad URLs.
 if (false != strpos($loc, "..")) {
-    $post = array();
-    $post[MDCMS_POST_TITLE] = "Bad Request Error";
-    $post[MDCMS_POST_CONTENT] = "Invalid URL";
-    $post[MDCMS_POST_STATUS] = 400;
-    goto render;
-}
+    $post = \mdcms\Core\errorPage(
+        "Bad Request Error",
+        "Invalid URL",
+        400
+    );
 
-render:
-# Render an error page.
-if (isset($post) && 200 != $post["status"]) {
-    $GLOBALS[MDCMS_POST] = $post;
-
-    # TODO: Create a mock breadcrumb.
+    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Bad Request Error");
 
     loadPost();
 }
-# Render home page of a mdcms site.
+# Render a home page.
 else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
@@ -46,7 +39,7 @@ else if (\mdcms\Core\isHome($loc)) {
 
     loadHome();
 }
-# Render a page of home page of a mdcms site.
+# Render a page of home page.
 else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
