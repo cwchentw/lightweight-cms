@@ -124,7 +124,7 @@ server {
     #  for different assets. If the case, set
     #  separate assets in distinct `location` blocks.
     #
-    location ~ \.(css|js|json|xml|jpg|jpeg|png|gif|woff|woff2)$ {
+    location ~ \.(css|js|json|xml|txt|jpg|jpeg|png|gif|woff|woff2)$ {
         root  /var/www/mdcms/public/;
     }
 
