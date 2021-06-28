@@ -177,6 +177,6 @@ Rounter of mdcms views these required functions as global ones. Therefore, don't
 
 You may need features other than those in the core library of mdcms. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in root path of a mdcms theme. Furthermore, you should write code to detect and compile you dependencies automatically.
 
-### Build Scripts for Front End Assets
+### Write Build Scripts for Assets
 
 Gulp build scripts in *default* theme of mdcms is not a required part of a mdcms theme. You may delete them, adding your build scripts for front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
