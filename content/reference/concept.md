@@ -64,7 +64,9 @@ In mdcms, breadcrumbs of a page is an array of links from a home page to current
 
 ### Pagination
 
-Pending.
+Pagination means to scale posts by splitting posts into multiple section pages. With pagination, there won't be too many links to posts, which is bad to SEO.
+
+*Default* theme of mdmcs utilizes pagination in Bootstrap 5.
 
 ### Table of Contents
 
