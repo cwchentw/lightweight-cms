@@ -38,13 +38,13 @@ In addition to content in posts, mdcms provides metadata for each post like a ti
 
 ### Custom Pages
 
-*Not implemented yet*
+Sometimes mdcms users require to create custom pages with layouts different from those of home page, sections and posts. In mdcms, custom pages are PHP scripts in *content* directory.
 
-Pending.
+Because custom pages in a mdcms site don't rely on layouts from a mdcms theme, users have to arrange layouts in those pages by themselves.
 
 ### Error Pages
 
-Error pages only show when some errors occur. Common errors include HTTP 404 (page not found) and HTTP 50x (internal server error). Web programmers should not rely on builtin error pages provided by web servers because sensitive server information leaked in those pages.
+Error pages only show when some errors occur. Common errors include HTTP 404 (page not found) and HTTP 50x (internal server error). Web programmers should not rely on builtin error pages provided by web servers because sensitive server information is leaked in those pages.
 
 In mdcms, HTTP 404 pages are generated dynamically when site users visit some non-existing pages on a mdcms site. In contrary, HTTP 50x pages are always static because PHP may fail to render properly in such situations.
 
@@ -52,7 +52,9 @@ In mdcms, HTTP 404 pages are generated dynamically when site users visit some no
 
 ### Navbars
 
-Pending.
+Navbars in a website let site visitors navigate through a site. Many sites put both top navbars and bottom navbars on their pages. Top navbars direct site users to relevant pages within while bottom ones provide site information like terms and conditions, privacy policy, links to social media.
+
+*Default* theme of mdcms utilizes navbars in Bootstrap 5 as top navbars and doesn't provide bottom navbars.
 
 ### Breadcrumbs
 
