@@ -6,13 +6,14 @@ weight: 4
 
 ## Prologue
 
-Pending.
+This article illustrates exposed variables in mdcms layouts. They are used by mdcms themes.
 
 ## Variables Exposed in Home Page
 
-* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections of a site, which may be an empty array
-* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section of a site, which may be an empty array
-* `$GLOBALS[MDCMS_CONTENT]` (not implemented yet):(Optional) HTML content of home page of a site
+* `$GLOBALS[MDCMS_SECTIONS]`: An array of top sections, which may be an empty array
+* `$GLOBALS[MDCMS_POSTS]`: An array of posts without any section, which may be an empty array
+* `$GLOBALS[MDCMS_POST_PER_PAGE]`: (Optional) An array of posts in a page without any section if pagination is on, which may be an empty array
+* `$GLOBALS[MDCMS_CONTENT]`:(Optional) HTML content of home page of a site
 * `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of home page of a site
 
 ## Variables Exposed in a Section
@@ -20,6 +21,7 @@ Pending.
 * `$GLOBALS[MDCMS_SECTION]`: Current section
 * `$GLOBALS[MDCMS_SECTIONS]`: An array of subsections, which may be an empty array
 * `$GLOBALS[MDCMS_POSTS]`: An array of posts of current section, which may be an empty array
+* `$GLOBALS[MDCMS_POST_PER_PAGE]`: (Optional) An array of posts in a page of current section, which may be an empty array
 * `$GLOBALS[MDCMS_BREADCRUMB]`: Breadcrumbs of current section
 
 Fields in `$GLOBALS[MDCMS_SECTION]` (`$section` here):
