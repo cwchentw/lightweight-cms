@@ -114,6 +114,7 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
 }
 # Render a custom page.
 else if (\mdcms\Core\isCustomPage($loc)) {
+    $GLOBALS[MDCMS_POST] = \mdcms\Core\readCustomPage($loc);
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
 
     \mdcms\Core\loadCustomPage($loc);

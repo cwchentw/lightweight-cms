@@ -180,6 +180,7 @@ function getBreadcrumb($uri)
     require_once __DIR__ . "/const.php";
     require_once __DIR__ . "/uri.php";
     require_once __DIR__ . "/post.php";
+    require_once __DIR__ . "/customPage.php";
     # Load private scripts.
     require_once __DIR__ . "/_site.php";
     require_once __DIR__ . "/_uri.php";
@@ -222,6 +223,10 @@ function getBreadcrumb($uri)
             . "/" . CONTENT_DIRECTORY
             . $prevPath
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
+        $phpPath = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
+            . $prevPath
+            . $arr[$i] . ".php";
 
         $d = array();
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
@@ -239,6 +244,12 @@ function getBreadcrumb($uri)
         }
         else if (file_exists($markdownPath)) {
             $post = readPost($prevPath . $arr[$i]);
+            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+
+            array_push($result, $post);
+        }
+        else if (file_exists($phpPath)) {
+            $post = readCustomPage($prevPath . $arr[$i]);
             $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
