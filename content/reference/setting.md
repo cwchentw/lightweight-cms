@@ -21,6 +21,7 @@ You should not remove project settings because either internal library or utilit
 ## Site Information
 
 * `SITE_BASE_URL` (project): Base URL of a site
+* `SITE_PREFIX` (project): Prefix of a site. Used for a subsite.
 * `SITE_NAME` (project): Full name of a site
 * `SITE_SHORT_NAME` (project): Short name of a site
 * `SITE_DESCRIPTION` (project): A concise description of a site
