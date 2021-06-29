@@ -20,6 +20,8 @@ define("ASSET_DIRECTORY", "assets");
 define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
 define("APPLICATION_DIRECTORY", "www");
+# The directory of static files.
+define("STATIC_DIRECTORY", "static");
 # The directory of public files.
 define("PUBLIC_DIRECTORY", "public");
 
