@@ -29,7 +29,7 @@ int main(void)
 Here is a pseudo command to compile and run C code:
 
 ```shell
-$ gcc -o program source.c
+$ gcc -Wall -Wextra -o program source.c
 $ ./program
 Hello World
 ```
