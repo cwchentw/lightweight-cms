@@ -9,6 +9,9 @@ composer.phar
 # Public assets and files.
 /public/
 
+# Site settings.
+/tools/lib/settings.bat
+
 #### node ####
 # Logs
 logs
