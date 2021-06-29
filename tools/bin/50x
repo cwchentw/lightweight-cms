@@ -4,11 +4,22 @@
 
 
 cwd=$(dirname $0);
-root="${cwd}/../..";
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
 libexec="${cwd}/../libexec";
-public="${root}/public";
 
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
 
+# Load site settings.
+. "${lib}/settings.sh";
+
+# Create *public* directory if it doesn't exist.
 if ! [ -d "$public" ];
 then
     mkdir -p "$public" || (
@@ -17,7 +28,7 @@ then
     )
 fi
 
-php "${libexec}/50x.php" > "$public/50x.html" || (
+php "${libexec}/50x.php" > "${public}/50x.html" || (
     echo "Unable to create a 50x.html" >&2;
     exit 1;
 )

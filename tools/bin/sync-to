@@ -26,13 +26,21 @@ then
     exit 1;
 fi
 
-# Get the root path of the repo.
-cwd="$(dirname $0)";
-root="${cwd}/../..";
-static="${root}/static";
-public="${root}/public";
-bin="$cwd";
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
 
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
 
 # Create 50x.html
 "${bin}/50x" || (

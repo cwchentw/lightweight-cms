@@ -11,6 +11,7 @@ composer.phar
 
 # Site settings.
 /tools/lib/settings.bat
+/tools/lib/settings.sh
 
 #### node ####
 # Logs

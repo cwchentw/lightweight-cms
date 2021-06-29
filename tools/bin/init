@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Initialize site settings dynamically on Unix.
+
+
+cwd=$(dirname $0);
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+php "${libexec}/initForUnix.php" > "${lib}/settings.sh" || (
+    echo "Unable to generate site settings" >&2;
+    exit 1;
+)
