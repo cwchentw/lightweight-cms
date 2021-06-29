@@ -71,7 +71,14 @@ function getSections($uri)
                 $section[MDCMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
             }
 
-            array_push($result, $section);
+            # Skip functional sections.
+            # TODO: We may change it later.
+            if (!(array_key_exists(MDCMS_SECTION_META, $section)
+                && array_key_exists("noindex", $section[MDCMS_SECTION_META])
+                && $section[MDCMS_SECTION_META]["noindex"]))
+            {
+                array_push($result, $section);
+            }
         }
     }
 
