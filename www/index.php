@@ -16,6 +16,11 @@ require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep 
 # Filter input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
+if ("" != SITE_PREFIX) {
+    $origLoc = $loc;
+    $loc = substr($loc, strlen(SITE_PREFIX));
+}
+
 # Render an error page for bad URLs.
 if (false != strpos($loc, "..")) {
     $post = \mdcms\Core\errorPage(
@@ -25,6 +30,23 @@ if (false != strpos($loc, "..")) {
     );
 
     $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Bad Request Error");
+
+    loadPost();
+}
+# Render an error page if wrong site prefix.
+else if ("" != SITE_PREFIX && !\mdcms\Core\startsWith($origLoc, SITE_PREFIX)) {
+    # Create a post dynamically.
+    $post = \mdcms\Core\errorPage(
+        "Page Not Found",
+        "The page doesn't exist on our server.",
+        404
+    );
+
+    # Create a breadcrumb dynamically.
+    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+
+    $GLOBALS[MDCMS_POST] = $post;
+    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }

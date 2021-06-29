@@ -4,6 +4,8 @@
 
 # Base URL of a site without a trailing slash.
 define("SITE_BASE_URL", "https://mdcms.org");
+# Prefix of a site without a trailing slash.
+define("SITE_PREFIX", "");
 # Full name of a site.
 define("SITE_NAME", "Markdown Content Management System");
 # Short name of a site.

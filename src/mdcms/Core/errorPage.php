@@ -37,7 +37,7 @@ function errorPageBreadcrumb($title)
     {
         $link = array();
 
-        $link[MDCMS_LINK_PATH] = "/";
+        $link[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
         $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
 
         array_push($breadcrumb, $link);

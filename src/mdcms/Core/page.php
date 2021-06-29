@@ -63,12 +63,12 @@ function getSections($uri)
             # Get top section(s).
             if ("/" == $uri) {
                 $section = readSection("/" . $file);
-                $section[MDCMS_LINK_PATH] = "/" . $file . "/";
+                $section[MDCMS_LINK_PATH] = SITE_PREFIX . "/" . $file . "/";
             }
             # Get subsection(s) of a section.
             else {
                 $section = readSection($uri . $file);
-                $section[MDCMS_LINK_PATH] = $uri . $file . "/";
+                $section[MDCMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
             }
 
             array_push($result, $section);
@@ -110,16 +110,16 @@ function getPosts($uri)
             $link = array();
 
             # Remove file extensions.
-            $link[MDCMS_LINK_PATH]
-                = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
+            $origPath = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
+            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $origPath;
 
             # Get information of a post.
             # TODO: If the commands cost too many system resources, change it.
             if ("php" == pathinfo($path)["extension"]) {
-                $post = readCustomPage($link[MDCMS_LINK_PATH]);
+                $post = readCustomPage($origPath);
             }
             else {
-                $post = readPost($link[MDCMS_LINK_PATH]);
+                $post = readPost($origPath);
             }
 
             foreach ($post as $key => $value) {
@@ -182,7 +182,7 @@ function getBreadcrumb($uri)
     # Add the link to home.
     $d = array();
 
-    $d[MDCMS_LINK_PATH] = "/";
+    $d[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
     $d[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
 
     array_push($result, $d);
@@ -196,35 +196,42 @@ function getBreadcrumb($uri)
     for ($i = 0; $i < $len; ++$i) {
         $prev = $result[$i][MDCMS_LINK_PATH];
 
+        if ("" != SITE_PREFIX) {
+            $prevPath = substr($prev, strlen(SITE_PREFIX));
+        }
+        else {
+            $prevPath = $prev;
+        }
+
         $rootDirectory = __DIR__ . "/../../..";
         $path = $rootDirectory
             . "/" . CONTENT_DIRECTORY
-            . $prev . $arr[$i];
+            . $prevPath . $arr[$i];
         $htmlPath = $rootDirectory
             . "/" . CONTENT_DIRECTORY
-            . $prev
+            . $prevPath
             . $arr[$i] . HTML_FILE_EXTENSION;
         $markdownPath = $rootDirectory
             . "/" . CONTENT_DIRECTORY
-            . $prev
+            . $prevPath
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
 
         $d = array();
         $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
         if (is_dir($path)) {
-            $section = readSection($prev . $arr[$i]);
+            $section = readSection($prevPath . $arr[$i]);
             $section[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
             array_push($result, $section);
         }
         else if (file_exists($htmlPath)) {
-            $post = readPost($prev . $arr[$i]);
+            $post = readPost($prevPath . $arr[$i]);
             $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }
         else if (file_exists($markdownPath)) {
-            $post = readPost($prev . $arr[$i]);
+            $post = readPost($prevPath . $arr[$i]);
             $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);

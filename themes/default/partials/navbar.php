@@ -14,7 +14,7 @@ function hasSocialMedia()
 
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="/"><?php echo SITE_SHORT_NAME; ?></a>
+        <a class="navbar-brand" href="<?php echo SITE_PREFIX . "/"; ?>"><?php echo SITE_SHORT_NAME; ?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,9 +25,9 @@ function hasSocialMedia()
                     Site Info
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarSiteInfo">
-                    <li><a class="dropdown-item" href="/about/">About the Site</a></li>
-                    <li><a class="dropdown-item" href="/terms-and-conditions/">Terms and Conditions</a></li>
-                    <li><a class="dropdown-item" href="/privacy-policy/">Privacy Policy</a></li>
+                    <li><a class="dropdown-item" href="<?php echo SITE_PREFIX . "/about/"; ?>">About the Site</a></li>
+                    <li><a class="dropdown-item" href="<?php echo SITE_PREFIX . "/terms-and-conditions/"; ?>">Terms and Conditions</a></li>
+                    <li><a class="dropdown-item" href="<?php echo SITE_PREFIX . "/privacy-policy/"; ?>">Privacy Policy</a></li>
                   </ul>
                 </li>
                 <?php if (hasSocialMedia()): ?>

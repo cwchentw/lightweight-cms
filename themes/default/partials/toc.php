@@ -53,6 +53,6 @@ else {
         <!-- FIXME: Check the rendered URL. -->
         <li><a href="<?php echo $URI; ?>#top" class="toc-link">Back to Top</a></li>
 
-        <li><a href="/" class="toc-link">Back to Home</a></li>
+        <li><a href="<?php echo SITE_PREFIX . "/"; ?>" class="toc-link">Back to Home</a></li>
     </ul>
 </div>

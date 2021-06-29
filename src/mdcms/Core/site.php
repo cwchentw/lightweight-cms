@@ -26,7 +26,7 @@ function getAllLinks($uri)
         {
             $link = array();
 
-            $link[MDCMS_LINK_PATH] = $uri;
+            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
             $link[MDCMS_LINK_TITLE] = SITE_NAME . " - " . SITE_DESCRIPTION;
 
             # FIXME: Unable to get mtime.
@@ -56,7 +56,7 @@ function getAllLinks($uri)
             else if (isHTMLFile($path)) {
                 $uri = getPageFromPath($path);
                 $link = readHTMLLink($uri);
-                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
                 # Skip functional posts.
@@ -71,7 +71,7 @@ function getAllLinks($uri)
             else if (isMarkdownFile($path)) {
                 $uri = getPageFromPath($path);
                 $link = readMarkdownLink($uri);
-                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
                 # Skip functional posts.
@@ -86,7 +86,7 @@ function getAllLinks($uri)
             else if (isPHPFile($path)) {
                 $uri = getPageFromPath($path);
                 $link = readCustomPage($uri);
-                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
                 # Skip functional posts.
@@ -125,7 +125,7 @@ function getAllLinks($uri)
         if (file_exists($htmlPath)) {
             $uri = getPageFromPath($path);
             $link = readHTMLLink($uri);
-            $link[MDCMS_LINK_PATH] = $uri;
+            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
 
             # Skip functional posts.
             # TODO: We may change it later.
@@ -140,7 +140,7 @@ function getAllLinks($uri)
         else if (file_exists($markdownPath)) {
             $uri = getPageFromPath($path);
             $link = readMarkdownLink($uri);
-            $link[MDCMS_LINK_PATH] = $uri;
+            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
 
             # Skip functional posts.
             # TODO: We may change it later.
@@ -154,7 +154,7 @@ function getAllLinks($uri)
         else if (file_exists($phpPath)) {
             $uri = getPageFromPath($phpPath);
             $link = readCustomPage($uri);
-            $link[MDCMS_LINK_PATH] = $uri;
+            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
             $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
             # Skip functional posts.
@@ -172,7 +172,7 @@ function getAllLinks($uri)
             if (!BLOCK_BOT_ON_SECTION) {
                 $uri = getPageFromPath($dirpath);
                 $link = readDirectoryLink($uri);
-                $link[MDCMS_LINK_PATH] = $uri;
+                $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[MDCMS_LINK_MTIME] = stat($dirpath)["mtime"];
                 array_push($result, $link);
             }
@@ -198,7 +198,7 @@ function getAllLinks($uri)
                 else if (isHTMLFile($subpath)) {
                     $uri = getPageFromPath($subpath);
                     $link = readHTMLLink($uri);
-                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
                     # Skip functional posts.
@@ -214,7 +214,7 @@ function getAllLinks($uri)
                 else if (isMarkdownFile($subpath)) {
                     $uri = getPageFromPath($subpath);
                     $link = readMarkdownLink($uri);
-                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
 
                     # Skip functional posts.
@@ -229,7 +229,7 @@ function getAllLinks($uri)
                 else if (isPHPFile($subpath)) {
                     $uri = getPageFromPath($subpath);
                     $link = readCustomPage($uri);
-                    $link[MDCMS_LINK_PATH] = $uri;
+                    $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
     
                     # Skip functional posts.
