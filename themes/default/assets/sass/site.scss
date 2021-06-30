@@ -260,6 +260,19 @@ code {
     }
 }
 
+/* Safari.
+   Ref: https://codepen.io/jeffclayton/pen/cbCsi
+*/
+@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
+    .jumbotron {
+        .container {
+            .subtitle {
+                font-style: italic;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: $phone-width) {
     .jumbotron {
         .post-info {
