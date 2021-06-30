@@ -7,7 +7,7 @@ mtime: 2021/6/30
 
 This article illustrates the usage of our utility scripts on Unix-equivalent systems.
 
-## How to Run mdcms Sites Locally without Apache or Nginx
+## Run mdcms Sites Locally without Apache or Nginx
 
 Traditionally, PHP programmers install either Apache or Nginx to run PHP scripts locally. Nonetheless, it is not easy for beginners to write correct configurations for those web servers. With our utility script, you don't need to set up a local web server to run PHP scripts.
 
@@ -31,7 +31,7 @@ $ sudo ./tools/bin/serve
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
 
-## How to Synchonize Content on a Production Environment
+## Synchonize Content on a Production Environment
 
 Invoke this command to update your change(s) on a production environment:
 
@@ -47,7 +47,7 @@ $ sudo ./tools/bin/sync-to /path/to/www
 
 Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything on your production environment.
 
-## How to Update Site Settings after Changing Project Structure
+## Update Site Settings after Changing Project Structure
 
 Invoke this command to update site settings each time you change project structure of your mdcms repo:
 
