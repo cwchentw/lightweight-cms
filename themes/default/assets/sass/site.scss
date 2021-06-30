@@ -145,9 +145,13 @@ a {
     }
 }
 
+/* Fix wrapping issue on Apple mobile devices. */
 pre,
-code {
+code,
+textarea {
     font-family: $monospace;
+    white-space: pre;
+    word-wrap: normal;
 }
 
 @media screen and (min-width: $large-screen-width) {
