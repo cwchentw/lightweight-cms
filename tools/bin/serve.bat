@@ -24,7 +24,7 @@ set libexec=%cwd%..\libexec
 
 rem Generate site settings if it doesn't exist.
 if not exist %lib%\settings.bat (
-    %bin%\init.bat || (
+    call %bin%\init.bat || (
         exit /b %ERRORLEVEL%
     )
 )
