@@ -2,7 +2,7 @@
 /* Fonts for titles. */
 $head-font: "DS Gabriele";
 $title-font: "Playfair Display";
-$serif: "Times New Roman", Times, serif;
+$serif: Palatino, "Times New Roman", Times, serif;
 /* Fonts for everywhere except titles and code. */
 $sans-serif: Roboto, Arial, Helvetica, sans-serif;
 /* Fonts for code. */
@@ -79,6 +79,19 @@ h5,
 h6 {
     color: $text-font-color;
     font-family: $title-font, $serif;
+}
+
+/* Safari.
+   Ref: https://codepen.io/jeffclayton/pen/cbCsi
+*/
+@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-style: italic;
+    }
 }
 
 h2 {
