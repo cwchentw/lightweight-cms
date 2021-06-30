@@ -11,7 +11,7 @@ Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevert
 
 * Production environment
   * A web server like Apache or Nginx
-  * PHP 7.2 or above
+  * PHP 7.3 or above
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) Perl (for global replacement)
