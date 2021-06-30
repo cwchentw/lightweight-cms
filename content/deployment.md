@@ -21,7 +21,7 @@ $ sudo apt install nginx php php-fpm
 Invoke this command to install packages for Composer:
 
 ```shell
-$ sudo apt install php-xml php-mbstring
+$ sudo apt install php-xml php-mbstring php-zip
 ```
 
 If you utilize *default* theme of mdcms, invoke this command as well:
