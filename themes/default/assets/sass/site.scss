@@ -312,6 +312,15 @@ code {
     padding-left: 3pt;
 }
 
+/* Safari.
+   Ref: https://codepen.io/jeffclayton/pen/cbCsi
+*/
+@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
+    .info-title {
+        font-style: italic;
+    }
+}
+
 #side-info, #toc {
     width: 220pt;
 
