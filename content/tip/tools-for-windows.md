@@ -7,7 +7,7 @@ mtime: 2021/6/30
 
 This article illustrates the usage of our utility scripts on Windows family systems.
 
-## How to Run mdcms Sites Locally without IIS, Apache or Nginx
+## Run mdcms Sites Locally without IIS, Apache or Nginx
 
 Traditionally, PHP programmers install a web server to run PHP scripts locally. Nonetheless, it is not easy for beginners to write correct configurations for those web servers. With our utility script, you don't need to set up a local web server to run your PHP scripts.
 
@@ -25,7 +25,7 @@ By default, this development web server runs on http://localhost:5000. To run a 
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
 
-## How to Synchonize Content to a Production Environment
+## Synchonize Content to a Production Environment
 
 Let's say you run an local Nginx web server on [Laragon](https://laragon.org/). Run this command to update your change(s) on a production environment:
 
@@ -37,7 +37,7 @@ Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything 
 
 Keep a trailing slash on your target path. It is required for `rsync(1)` to work properly.
 
-## How to Update Site Settings after Changing Project Structure
+## Update Site Settings after Changing Project Structure
 
 Run this command to update site settings each time you change project structure of your mdcms repo:
 
@@ -47,6 +47,6 @@ Run this command to update site settings each time you change project structure 
 
 Site settings of mdmcs is recorded in PHP scripts, which are unusable in other scripting languages. To address this issue, we generate a usable settings for Batch.
 
-## Why are not Some Tools Available on Windows
+## Why are not Some Utility Scripts Available on Windows?
 
 Most PHP developers develop PHP web applications on Unix-equivalent systems. Our utility scripts for Windows intend to run mdcms sites locally on Windows, not to develop mdcms itself.
