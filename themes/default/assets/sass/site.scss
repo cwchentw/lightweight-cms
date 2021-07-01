@@ -345,7 +345,7 @@ textarea {
 
 .toc-item {
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.75em;
 
     &:hover {
         text-decoration: none;
@@ -354,15 +354,19 @@ textarea {
 
 .toc-link {
     text-decoration: none;
-    font-size: 0.75em;
+    font-size: 0.65em;
 
     &:hover {
         text-decoration: none;
     }
 }
 
-@media screen and (max-width: $phone-width) {
-    #side-info, #toc {
+@media screen and (max-width: $large-screen-width) {
+    .toc-item {
         display: none;
+    }
+
+    .toc-link {
+        font-size: 0.85em;
     }
 }
