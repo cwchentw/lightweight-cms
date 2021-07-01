@@ -23,7 +23,7 @@ $ brew install composer
 $ brew install node
 </code></pre>
 
-<pre id="run-on-macos" style="display: none;"><code class="shell">$ git clont https://github.com/cwchentw/mdcms.git mysite
+<pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
 $ ./tools/bin/serve
 </code></pre>
@@ -37,7 +37,7 @@ $ sudo apt install build-essential
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install node
 </code></pre>
 
-<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clont https://github.com/cwchentw/mdcms.git mysite
+<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
 $ ./tools/bin/install-composer $HOME/bin
 $ ./tools/bin/serve
