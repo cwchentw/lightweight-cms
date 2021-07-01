@@ -11,7 +11,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 > choco install python2
 </code></pre>
 
-<p class="install-on-windows" style="display: none;">Install <a href="https://aka.ms/vs/15/release/vs_buildtools.exe">Build Tools for Visual Studio 2017</a></p>
+<p class="install-on-windows" style="display: none;">Install Visual C++ from <a href="https://aka.ms/vs/15/release/vs_buildtools.exe">Build Tools for Visual Studio 2017</a></p>
 
 <pre id="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
 > cd mysite
