@@ -37,7 +37,6 @@ $ ./tools/bin/serve
 </code></pre>
 
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
-$ nvm install node
 </code></pre>
 
 <p class="install-on-ubuntu" style="display: none;">For <i>default</i> theme of mdcms:</p>
