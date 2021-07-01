@@ -7,11 +7,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 <pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
 > choco install composer
-</code></pre>
-
-<p class="install-on-windows" style="display: none;">For <i>default</i> theme of mdcms:</p>
-
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install nodejs
+> choco install nodejs
 > choco install python2
 </code></pre>
 
@@ -24,11 +20,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 <pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
 $ brew install composer
-</code></pre>
-
-<p class="install-on-macos" style="display: none;">For <i>default</i> theme of mdcms:</p>
-
-<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install node
+$ brew install node
 </code></pre>
 
 <pre id="run-on-macos" style="display: none;"><code class="shell">$ git clont https://github.com/cwchentw/mdcms.git mysite
@@ -37,14 +29,12 @@ $ ./tools/bin/serve
 </code></pre>
 
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
+$ sudo apt install build-essential
 </code></pre>
-
-<p class="install-on-ubuntu" style="display: none;">For <i>default</i> theme of mdcms:</p>
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install build-essential
-$ nvm install node
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install node
 </code></pre>
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clont https://github.com/cwchentw/mdcms.git mysite
