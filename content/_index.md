@@ -2,19 +2,33 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 *mdcms is still experimental.*
 
-<pre id="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
+<!-- Separator. -->
+<div style="padding-top: 20pt;"></div>
+
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
 > choco install composer
-> choco install nodejs
 </code></pre>
+
+<p class="install-on-windows" style="display: none;">For <i>default</i> theme of mdcms:</p>
+
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install nodejs
+> choco install python2
+</code></pre>
+
+<p class="install-on-windows" style="display: none;">Install <a href="https://aka.ms/vs/15/release/vs_buildtools.exe">Build Tools for Visual Studio 2017</a></p>
 
 <pre id="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
 > cd mysite
 > .\tools\bin\serve.bat
 </code></pre>
 
-<pre id="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
+<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
 $ brew install composer
-$ brew install node
+</code></pre>
+
+<p class="install-on-macos" style="display: none;">For <i>default</i> theme of mdcms:</p>
+
+<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install node
 </code></pre>
 
 <pre id="run-on-macos" style="display: none;"><code class="shell">$ git clont https://github.com/cwchentw/mdcms.git mysite
@@ -22,7 +36,15 @@ $ cd mysite
 $ ./tools/bin/serve
 </code></pre>
 
-<pre id="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
+$ nvm install node
+</code></pre>
+
+<p class="install-on-ubuntu" style="display: none;">For <i>default</i> theme of mdcms:</p>
+
+<p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
+
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install build-essential
 $ nvm install node
 </code></pre>
 
@@ -43,15 +65,27 @@ $ ./tools/bin/serve
     }
 
     if (isWindows()) {
-        document.getElementById("install-on-windows").style.display = "inherit";
+        var installOnWindows = document.getElementsByClassName("install-on-windows");
+        for (var i = 0; i < installOnWindows.length; ++i) {
+            installOnWindows[i].style.display = "inherit";
+        }
+
         document.getElementById("run-on-windows").style.display = "inherit";
     }
     else if (isMacOS()) {
-        document.getElementById("install-on-macos").style.display = "inherit";
+        var installOnMacOS = document.getElementsByClassName("install-on-macos");
+        for (var i = 0; i < installOnMacOS.length; ++i) {
+            installOnMacOS[i].style.display = "inherit";
+        }
+
         document.getElementById("run-on-macos").style.display = "inherit";
     }
     else {
-        document.getElementById("install-on-ubuntu").style.display = "inherit";
+        var installOnUbuntu = document.getElementsByClassName("install-on-ubuntu");
+        for (var i = 0; i < installOnUbuntu.length; ++i) {
+            installOnUbuntu[i].style.display = "inherit";
+        }
+
         document.getElementById("run-on-ubuntu").style.display = "inherit";
     }
 })();
