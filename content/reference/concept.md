@@ -1,18 +1,18 @@
 ---
 title: Concepts of mdcms
-mtime: 2021/6/26
+mtime: 2021/7/3
 weight: 1
 ---
 
 ## Synposis
 
-mdcms stands for a flat-file based content management system powered by PHP. The software bridges between incoming URLs and corresponding directories or files on a web server. Because contents of mdcms sites are stored in flat files, there is no relational database involved in such sites.
+mdcms stands for a flat-file CMS (content management system) powered by PHP. The software bridges between incoming URLs and corresponding directories or files on a web server. Because contents of mdcms sites are stored in flat files, there is no relational database involved in such sites.
 
 This article introduces concepts related to mdcms.
 
 ## Router
 
-A router is a hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to corresponding directory or post file and sends responses back to the server.
+A router is a hub of a mdcms site. It receives requests from a web server (Apache or Nginx), maps a URL to a corresponding directory or a post file and sends responses back to the server.
 
 Users of mdcms seldom require to edit this script by themselves.
 
@@ -20,7 +20,7 @@ Users of mdcms seldom require to edit this script by themselves.
 
 ### Home Page
 
-A home page in a mdcms site is an unique web page that deserves a dedicated layout. Such page emanates general impression about a site and directs users to desired information ideally.
+A home page in a mdcms site is an unique web page that deserves a dedicated layout. This page emanates general impression about a site and directs users to desired information ideally.
 
 Web programmers arrange layout of a home page differently from that of section pages mostly. Therefore, their layouts are separated in mdcms.
 
@@ -58,9 +58,9 @@ Navbars in a website let site visitors navigate through a site. Many sites put b
 
 ### Breadcrumbs
 
-Breadcrumbs works as navigation schemes for visitors from current page (either a section or a post) to its home page. Although they are optional and purely functional. Such web widgets benefit SEO as well.
+Breadcrumbs work as navigation schemes for site visitors from current pages (either sections or posts) to home pages. Although they are optional and purely functional. Those web widgets benefit SEO as well.
 
-In mdcms, breadcrumbs of a page is an array of links from a home page to current page.
+In mdcms, a breadcrumb of a page is an array of links from a home page to current page.
 
 ### Pagination
 
