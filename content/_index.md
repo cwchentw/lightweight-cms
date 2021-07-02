@@ -3,7 +3,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 *mdcms is still experimental.*
 
 <!-- Separator. -->
-<div style="padding-top: 20pt;"></div>
+<div style="padding-top: 25pt;"></div>
 
 <pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
 > choco install composer
