@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# Publish a mdmcs site to a PaaS.
+
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+# Create 50x.html
+"${bin}/50x" || (
+    exit $?;
+)
+
+# Create manifest.json
+"${bin}/manifest" || (
+    exit $?;
+)
+
+# Create sitemap.xml
+"${bin}/sitemap" || (
+    exit $?;
+)
+
+# Load assets.
+"${bin}/assets" || (
+    exit $?;
+)
+
+# Load personal assets.
+"${bin}/site-assets" || (
+    exit $?;
+)
+
+# Create assets.
+#npm install
+
+# Copy static files.
+cp -pr "${static}/"* "$public" || (
+    echo "Unable to copy static files to the public directory" >&2;
+    exit 1;
+)
+
+# Copy router of mdcms.
+cp -pr "${www}/index.php" "$public" || (
+    echo "Unable to copy router of mdmcs to public directory" >&2;
+    exit 1;
+)
