@@ -3,6 +3,13 @@
 # Utility script to lint all PHP scripts with PHPMD.
 
 
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
 cwd=$(dirname $0);
 tools="${cwd}/..";
 bin="${tools}/bin";

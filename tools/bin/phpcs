@@ -3,6 +3,13 @@
 # Lint PHP scripts with PHP Code Sniffer
 
 
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
 target=$1;
 
 if [ -z "$target" ];
@@ -12,9 +19,20 @@ then
 fi
 
 cwd=$(dirname $0);
-base="${cwd}/../..";
-tools="${cwd}/..";
-bin="${tools}/bin";
-etc="${tools}/etc";
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+etc="${cwd}/../etc"
 
-"${base}/vendor/bin/phpcs" --standard="${etc}/phpcs.xml" "$target";
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+"${root}/vendor/bin/phpcs" --standard="${etc}/phpcs.xml" "$target";

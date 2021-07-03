@@ -4,8 +4,15 @@
 #  Unrequired directories and files are skipped.
 
 
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
 # Check whether `rsync(1)` is available.
-if ! command -v rsync -h 2>&1 >/dev/null;
+if ! command -v rsync 2>&1 >/dev/null;
 then
     echo "No rsync on the system" >&2;
     exit 1;

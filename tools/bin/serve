@@ -3,6 +3,13 @@
 # Run a mdcms site locally with builtin web server of PHP.
 
 
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
 # Get an address.
 address=$1;
 if [ -z "$address" ];
