@@ -8,6 +8,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 <pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
 > choco install composer
 > choco install nodejs
+> choco install rsync
 </code></pre>
 
 <pre id="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
