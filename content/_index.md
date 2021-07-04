@@ -8,10 +8,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 <pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.20
 > choco install composer
 > choco install nodejs
-> choco install python2
 </code></pre>
-
-<p class="install-on-windows" style="display: none;">Install Visual C++ from <a href="https://aka.ms/vs/15/release/vs_buildtools.exe">Build Tools for Visual Studio 2017</a></p>
 
 <pre id="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
 > cd mysite
@@ -31,7 +28,6 @@ $ ./tools/bin/serve
 </code></pre>
 
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
-$ sudo apt install build-essential
 </code></pre>
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>

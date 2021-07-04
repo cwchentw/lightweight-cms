@@ -3,7 +3,7 @@ const isdev = require('isdev');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
 const cleancss = require('gulp-clean-css');
 const prefix = require('gulp-autoprefixer');
