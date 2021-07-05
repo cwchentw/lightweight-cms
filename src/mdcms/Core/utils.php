@@ -34,12 +34,14 @@ function xCopy($src, $dst)
         throw new \Exception("Unable to open directory: " . $src . "\n");
     }
 
+    $sep = DIRECTORY_SEPARATOR;
+
     while(false !== ($file = readdir($dir)) ) {
         if (( $file != '.' ) && ( $file != '..' )) {
             # Copy a subdirectionary by a recursive call.
-            if ( is_dir($src . "/" . $file) ) {
+            if ( is_dir($src . $sep . $file) ) {
                 try {
-                    xCopy($src . "/" . $file, $dst . "/" . $file);
+                    xCopy($src . $sep . $file, $dst . $sep . $file);
                 }
                 catch (Exception $e) {
                     # Release the handle of destination directory.
@@ -50,13 +52,13 @@ function xCopy($src, $dst)
             }
             # Copy a file.
             else {
-                if (!copy($src . "/" . $file, $dst . "/" . $file)) {
+                if (!copy($src . $sep . $file, $dst . $sep . $file)) {
                     # Release the handle of destination directory.
                     closedir($dir);
   
                     # We may find a better exception for this event.
                     # TODO: Refactor it later.
-                    throw new \Exception("Unable to create file: " . $dst . "/" . $file . "\n");
+                    throw new \Exception("Unable to create file: " . $dst . $sep . $file . "\n");
                 }
             }
         }
