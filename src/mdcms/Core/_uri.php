@@ -43,33 +43,35 @@ function parseURI($uri)
     return $result;
 }
 
-function getPath($uri, $ext)
+function getPath($uri, $extension)
 {
     $result = "";
 
     $arr = parseURI($uri);
     $len = count($arr);
 
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
+    $sep = DIRECTORY_SEPARATOR;
+
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
 
     if (0 == $len) {
         # Pass.
     }
     else if (1 == $len) {
-        $result = $rootDirectory . "/"
-            . CONTENT_DIRECTORY . "/"
-            . $arr[0] . $ext;
+        $result = $rootDirectory . $sep
+            . CONTENT_DIRECTORY . $sep
+            . $arr[0] . $extension;
     }
     else {
         $file = array_pop($arr);
-        $directory = join("/", $arr);
+        $directory = join($sep, $arr);
 
-        $result = $rootDirectory . "/"
-            . CONTENT_DIRECTORY . "/"
-            . $directory . "/"
-            . $file . $ext;
+        $result = $rootDirectory . $sep
+            . CONTENT_DIRECTORY . $sep
+            . $directory . $sep
+            . $file . $extension;
     }
 
     return $result;

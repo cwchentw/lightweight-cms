@@ -44,7 +44,8 @@ function isPageInSection($uri)
 
 function isCustomPage($uri)
 {
-    require_once __DIR__ . "/_uri.php";
+    $sep = DIRECTORY_SEPARATOR;
+    require_once __DIR__ . "{$sep}_uri.php";
 
     $path = getPath($uri, ".php");
 
