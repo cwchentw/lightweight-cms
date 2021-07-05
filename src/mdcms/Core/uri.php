@@ -24,11 +24,13 @@ function isPageInHome($uri)
 #  and nested ones.
 function isSection($uri)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
+    $sep = DIRECTORY_SEPARATOR;
 
-    $path = $rootDirectory . "/" . CONTENT_DIRECTORY . "/" . $uri;
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
+
+    $path = $rootDirectory . $sep . CONTENT_DIRECTORY . $sep . str_replace("/", $sep, $uri);
 
     return is_dir($path);
 }
