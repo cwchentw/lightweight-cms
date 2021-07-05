@@ -5,18 +5,20 @@ namespace mdcms\Core;
 
 function readSection($page)
 {
-    $rootDirectory = __DIR__ . "/../../..";
+    $sep = DIRECTORY_SEPARATOR;
+
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
     # Load third-party libraries.
-    require_once $rootDirectory . "/vendor/autoload.php";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
+    require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
     # Load local scripts.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/uri.php";
-    require_once __DIR__ . "/utils.php";
+    require_once __DIR__ . "{$sep}const.php";
+    require_once __DIR__ . "{$sep}uri.php";
+    require_once __DIR__ . "{$sep}utils.php";
     # Load private scripts.
-    require_once __DIR__ . "/_uri.php";
-    require_once __DIR__ . "/_utils.php";
+    require_once __DIR__ . "{$sep}_uri.php";
+    require_once __DIR__ . "{$sep}_utils.php";
 
     $result = array();
 
@@ -25,8 +27,8 @@ function readSection($page)
     $result[MDCMS_SECTION_CONTENT] = "";
     $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
-    $indexPage = $rootDirectory . "/" . CONTENT_DIRECTORY
-        . $page . "/" . SECTION_INDEX;
+    $indexPage = $rootDirectory . $sep . CONTENT_DIRECTORY
+        . str_replace("/", $sep, $page) . $sep . SECTION_INDEX;
 
     # If a section index exists, extract data from it.
     if (file_exists($indexPage)) {

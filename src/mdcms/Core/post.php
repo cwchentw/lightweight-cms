@@ -6,20 +6,22 @@ namespace mdcms\Core;
 # The implementation is too long. We may refactor it later.
 function readPost($page)
 {
+    $sep = DIRECTORY_SEPARATOR;
+
     # Get the root path of mdcms.
-    $rootDirectory = __DIR__ . "/../../..";
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
 
     # Load third-party libraries.
-    require_once $rootDirectory . "/vendor/autoload.php";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    # Load local libraries.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/uri.php";
-    require_once __DIR__ . "/utils.php";
+    require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
+    # Load local scripts.
+    require_once __DIR__ . "{$sep}const.php";
+    require_once __DIR__ . "{$sep}uri.php";
+    require_once __DIR__ . "{$sep}utils.php";
     # Load private scripts.
-    require_once __DIR__ . "/_uri.php";
-    require_once __DIR__ . "/_utils.php";
+    require_once __DIR__ . "{$sep}_uri.php";
+    require_once __DIR__ . "{$sep}_utils.php";
 
     $result = array();
 
