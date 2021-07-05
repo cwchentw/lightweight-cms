@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": "^7.3",
         "mnapoli/front-yaml": "^1.8"
     },
     "require-dev": {
