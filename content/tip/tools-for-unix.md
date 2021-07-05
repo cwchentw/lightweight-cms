@@ -1,6 +1,6 @@
 ---
 title: Tips to Tools for Unix
-mtime: 2021/6/30
+mtime: 2021/7/5
 ---
 
 ## Synopsis
@@ -30,6 +30,24 @@ $ sudo ./tools/bin/serve
 ```
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
+
+## Deploy a mdcms Site to a PaaS
+
+Run the command to prepare your deployment:
+
+```shell
+$ ./tools/bin/publish
+```
+
+We implement this script in POSIX shell because most PaaS are based on GNU/Linux. If you choose a Windows PaaS, run this script instead:
+
+```shell
+$ .\tools\bin\publish.bat
+```
+
+These utility scripts will copy router of mdcms and assets to *public* directory, ready for further step(s) to deploy your site.
+
+See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a mdcms site to a PaaS.
 
 ## Synchonize Content on a Production Environment
 

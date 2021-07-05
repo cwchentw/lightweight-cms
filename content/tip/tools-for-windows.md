@@ -1,6 +1,6 @@
 ---
 title: Tips to Tools for Windows
-mtime: 2021/6/30
+mtime: 2021/7/5
 ---
 
 ## Synopsis
@@ -36,6 +36,24 @@ Let's say you run an local Nginx web server on [Laragon](https://laragon.org/). 
 Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything on your production environment.
 
 Keep a trailing slash on your target path. It is required for `rsync(1)` to work properly.
+
+## Deploy a mdcms Site to a PaaS
+
+Run the Unix command to prepare your deployment:
+
+```shell
+$ ./tools/bin/publish
+```
+
+We implement this script in POSIX shell because most PaaS are based on GNU/Linux. If you choose a Windows PaaS, run this script instead:
+
+```shell
+$ .\tools\bin\publish.bat
+```
+
+These utility scripts will copy router of mdcms and assets to *public* directory, ready for further step(s) to deploy your site.
+
+See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a mdcms site to a PaaS.
 
 ## Update Site Settings after Changing Project Structure
 
