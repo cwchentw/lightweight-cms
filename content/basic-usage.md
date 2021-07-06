@@ -24,7 +24,13 @@ This article illustrates basic usage of mdcms. Some details are omitted for brev
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org/) (for linting)
 
-We develop mdcms on openSUSE Leap mostly. Any major GNU/Linux distribution should suffice to host a mdcms site.
+We test mdcms against the following GNU/Linux distributions:
+
+* Ubuntu LTS 20.04
+* Rocky Linux 8.4
+* openSUSE Leap 15.3
+
+Any major GNU/Linux distro should suffice to host a mdcms site.
 
 If you are not interested in developing mdcms itself, you still require Composer to install other dependency packages for mdcms.
 
