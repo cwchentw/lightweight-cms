@@ -38,6 +38,8 @@ Run the following command to install a Nginx and PHP combo:
 $ sudo dnf install nginx php php-fpm
 ```
 
+Some CentOS still provides older PHP, which is incompatible with mdcms.
+
 Run this command to install packages for Composer:
 
 ```shell
