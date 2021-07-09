@@ -5,18 +5,21 @@
 #  occurs unexpectedly. In such case, a PHP-based dynamic page
 #  won't render well.
 
-# Get the absolute path of a local mdcms.
-$rootDirectory = __DIR__ . "/../..";
 
-# Get global setting.
-require_once $rootDirectory . "/setting.php";
+$sep = DIRECTORY_SEPARATOR;
+
+# Get the absolute path of a local mdcms.
+$rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
+
+# Load global settings.
+require_once $rootDirectory . $sep . "setting.php";
 
 # Load required libraries.
-require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 # Load plugin(s) if any.
-require_once $rootDirectory . "/" . PLUGIN_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 # Load site theme.
-require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
+require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
 # Create a post dynamically.
