@@ -26,6 +26,11 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
+# Create 404.html
+"${bin}/404" || (
+    exit $?;
+)
+
 # Create 50x.html
 "${bin}/50x" || (
     exit $?;
