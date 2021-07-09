@@ -11,7 +11,7 @@ define("SITE_NAME", "Markdown Content Management System");
 # Short name of a site.
 define("SITE_SHORT_NAME", "mdcms");
 # A concise description of a site.
-define("SITE_DESCRIPTION", "A Markdown-based Dynamic Website Generator Powered by PHP");
+define("SITE_DESCRIPTION", "A Markdown-based Flat-File CMS Powered by PHP");
 # Principal author of a site.
 #
 # If there are multiple authors in a site,

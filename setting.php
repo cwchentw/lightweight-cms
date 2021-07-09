@@ -2,20 +2,32 @@
 # Project configuration file. Keep its name *as is*.
 
 
-# Get root path of a mdcms site.
-$rootDirectory = __DIR__;
-# Get directory for configurations.
-$configDirectory = $rootDirectory . "/config";
-
 # Information of a site.
-require_once $configDirectory . "/information.php";
+readConfig("information");
 # Social media for a site.
-require_once $configDirectory . "/socialMedia.php";
+readConfig("socialMedia");
 # Parameters of a site.
-require_once $configDirectory . "/parameters.php";
+readConfig("parameters");
 # Optional features in a site.
-require_once $configDirectory . "/optionalFeatures.php";
+readConfig("optionalFeatures");
 # Sort callbacks.
-require_once $configDirectory . "/sortCallbacks.php";
+readConfig("sortCallbacks");
 # Internals of a site.
-require_once $configDirectory . "/internal.php";
+readConfig("internal");
+
+function readConfig($config)
+{
+    $sep = DIRECTORY_SEPARATOR;
+
+    $rootDirectory = __DIR__;
+    $configDirectory = $rootDirectory . $sep . "config";
+
+    $configFile = $configDirectory . $sep . $config . ".php";
+
+    if (file_exists($configFile)) {
+        require_once $configFile;
+    }
+    else {
+        require_once $configDirectory . $sep . $config . ".template.php";
+    }
+}
