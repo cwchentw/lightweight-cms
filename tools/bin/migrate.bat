@@ -75,7 +75,11 @@ sed -i "s/cwchentw\/mdcms//" %socialMediaConfig:\=/% || (
     echo /b 1
 )
 
-rem TODO: Update redirecting rules.
+set parametersConfig=%root%\config\parameters.php
+sed -i "/define(""REDIRECT_LIST""/ { N; N; N; N; N; s/define(""REDIRECT_LIST"", .*);/define(""REDIRECT_LIST"", []);/; }" %parametersConfig:\=/% || (
+    echo Unable to modify parameters.php >&2
+    echo /b 1
+)
 
 set optionalFeaturesConfig=%root%\config\optionalFeatures.php
 sed -i "s/UA-105146581-5//" %optionalFeaturesConfig:\=/% || (
