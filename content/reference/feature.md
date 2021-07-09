@@ -1,6 +1,6 @@
 ---
 title: Features of mdcms
-mtime: 2021/7/2
+mtime: 2021/7/10
 weight: 2
 ---
 
@@ -20,6 +20,7 @@ This article lists features of mdcms. Because mdcms is still *experimental and e
 * [manifest.json](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json) generator
 * Static [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
 * Dynamic [HTTP status 404](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) pages
+* [404](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404).html generator
 * [50x](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500).html generator
 * Asset management (through [Sass](https://sass-lang.com/) and [Babel](https://babeljs.io/))
 
