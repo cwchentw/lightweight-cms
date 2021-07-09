@@ -16,8 +16,6 @@ function errorPage($title, $content, $status)
 
     $post[MDCMS_POST_TITLE] = $title;
     $post[MDCMS_POST_CONTENT] = $content;
-    $post[MDCMS_POST_AUTHOR] = SITE_AUTHOR;
-    $post[MDCMS_POST_MTIME] = time();
     $post[MDCMS_POST_STATUS] = $status;
 
     return $post;
