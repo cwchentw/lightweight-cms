@@ -32,6 +32,11 @@ if not exist %lib%\settings.bat (
 rem Load site settings.
 call %lib%\settings.bat
 
+rem Create a 404.html
+call %bin%\404.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Create a 50x.html
 call %bin%\50x.bat || (
     exit /b %ERRORLEVEL%
