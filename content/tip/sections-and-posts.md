@@ -36,7 +36,7 @@ window.location.href = "/path/to/new/uri/";
 </script>
 ```
 
-Once visitors access this page, the code will direct them to a new location. Such code may be used posts or index files of sections.
+Once visitors access this page, the code will direct them to a new location. Such code may be used for posts or index files of sections.
 
 ## Use Layouts other than Sections and Posts
 
