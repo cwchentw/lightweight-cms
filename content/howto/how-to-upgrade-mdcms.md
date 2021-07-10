@@ -1,6 +1,6 @@
 ---
 title: How to Upgrade mdcms
-mtime: 2021/7/9
+mtime: 2021/7/10
 ---
 
 ## Prologue
@@ -45,34 +45,24 @@ Files located in root path of mdcms are configurations and documents. You don't 
 Here we note the actions you should undertake for a safe update:
 
 * Create a directory for your posts other than *content* directory
-* Copy *themes/default* to a new location
 * Copy configuration files
+* Copy *themes/default* to a new location
 
-Posts in *content* directory are documentation for mdcms. We may alter posts there to reflect changes we make for mdcms. Therefore, you should store your own posts to a location other than *content* directory to prevent unintentional changes on your content. Remember to alter related setting as well.
-
-Similiarly, the theme located in *themes/default* are builtin theme for mdcms. We may change layouts, styles or widgets there. If you desire to modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there Update related setting to reflect your change.
-
-Occationally, mdcms upstream repo changes its settings. To prevent unwanted modification(s) on personal configurations, copy template configurations into personal ones:
+Invoke this command to migrate local mdcms repository to a new site:
 
 ```shell
-$ cp config/information.template.php config/information.php
-$ cp config/socialMedia.template.php config/socialMedia.php
-$ cp config/parameters.template.php config/parameters.php
-$ cp config/optionalFeatures.template.php config/optionalFeatures.php
-$ cp config/sortCallbacks.template.php config/sortCallbacks.php
-$ cp config/internal.template.php config/internal.php
+$ ./tools/bin/migrate
 ```
 
-On Windows, invoke the following commands instead:
+On Windows, invoke this command instead:
 
 ```shell
-> copy config\information.template.php config\information.php
-> copy config\socialMedia.template.php config\socialMedia.php
-> copy config\parameters.template.php config\parameters.php
-> copy config\optionalFeatures.template.php config\optionalFeatures.php
-> copy config\sortCallbacks.template.php config\sortCallbacks.php
-> copy config\internal.template.php config\internal.php
+$ .\tools\bin\migrate.bat
 ```
+
+These utility scripts will create site configuration files and *posts* directory.
+
+The theme located in *themes/default* is builtin theme for mdcms. We may change layouts, styles or widgets there. If you desire to modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there Update related setting to reflect your change.
 
 ## Stick to Specific Version of mdcms
 
