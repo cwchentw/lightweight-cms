@@ -1,6 +1,6 @@
 ---
 title: How to Run mdcms on Windows
-mtime: 2021/6/26
+mtime: 2021/7/10
 ---
 
 ## Prologue
@@ -68,6 +68,12 @@ Install `rsync(1)` for Windows:
 
 ```shell
 > choco install rsync
+```
+
+Install `sed(1)` for Windows:
+
+```shell
+> choco install sed
 ```
 
 (Optional) Install Perl from either [ActivePerl](https://www.activestate.com/products/perl/) or [Strawberry Perl](https://strawberryperl.com/).

@@ -62,7 +62,7 @@ $ .\tools\bin\migrate.bat
 
 These utility scripts will create site configuration files and *posts* directory.
 
-The theme located in *themes/default* is builtin theme for mdcms. We may change layouts, styles or widgets there. If you desire to modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there Update related setting to reflect your change.
+The theme located in *themes/default* is builtin theme for mdcms. We may change layouts, styles or widgets there. If you desire to modify anything for your need, you should create a copy of *default* theme of mdcms to a new location, adding your modifications there. Update related setting to reflect your change.
 
 ## Stick to Specific Version of mdcms
 
