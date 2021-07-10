@@ -1,10 +1,10 @@
 # Markdown Content Management System
 
-mdcms (Markdown Content Management System) is a Markdown-based dynamic website generator powered by PHP.
+mdcms (Markdown Content Management System) is a Markdown-based flat-file CMS powered by PHP.
 
 ## Warning
 
-mdcms is still experimental.
+mdcms is still *experimental and evolving*.
 
 ## Why not another Static Site Generator?
 
