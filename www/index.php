@@ -74,8 +74,25 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     preg_match("/^\/(\d+)\/$/s", $loc, $matches);
     $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($homeURI, $matches[1]);
 
-    # TODO: Load HTTP satus 404 page if no post in this page.
-    loadHome();
+    # Show HTTP 404 page if no post on this page.
+    if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
+        $post = \mdcms\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
+
+        # Create a breadcrumb dynamically.
+        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+
+        $GLOBALS[MDCMS_POST] = $post;
+        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+
+        loadPost();
+    }
+    else {
+        loadHome();
+    }
 }
 # Render a section.
 else if (\mdcms\Core\isSection($loc)) {
@@ -109,8 +126,25 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
     # A page in a series of pages.
     $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($sectionURI, $page);
 
-    # TODO: Load HTTP satus 404 page if no post in this page.
-    loadSection();
+    # Show HTTP 404 page if no post on this page.
+    if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
+        $post = \mdcms\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
+
+        # Create a breadcrumb dynamically.
+        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+
+        $GLOBALS[MDCMS_POST] = $post;
+        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+
+        loadPost();
+    }
+    else {
+        loadSection();
+    }
 }
 # Render a custom page.
 else if (\mdcms\Core\isCustomPage($loc)) {
