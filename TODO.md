@@ -1,6 +1,5 @@
 # TODO
 
-* (Feature) Add an offline.html generator for Windows
 * (Feature) Enable drafts
 * (Feature) Add optional tags
 * (Project) Create an icon generator

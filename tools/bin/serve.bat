@@ -42,6 +42,11 @@ call %bin%\50x.bat || (
     exit /b %ERRORLEVEL%
 )
 
+rem Create an offline.html
+call %bin%\offline.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Create a manifest.json
 call %bin%\manifest.bat || (
     exit /b %ERRORLEVEL%
