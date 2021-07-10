@@ -106,3 +106,9 @@ touch "${root}/posts/.gitkeep" || (
     echo "Unable to create .gitkeep" >&2;
     exit 1;
 )
+
+# Regenerate site settings because project structure
+#  of local repository is changed.
+"${bin}/init" > "${lib}/settings.sh" || (
+    exit $?;
+)

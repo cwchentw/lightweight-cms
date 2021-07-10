@@ -102,3 +102,9 @@ copy /y nul "%root%\posts\.gitkeep" || (
     echo Unable to create .gitkeep >&2
     exit /b 1
 )
+
+rem Regenerate site settings because project structure
+rem  of local repository is changed.
+call %bin%\init.bat || (
+    exit /b %ERRORLEVEL%
+)
