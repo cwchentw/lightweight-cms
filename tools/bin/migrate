@@ -1,0 +1,108 @@
+#!/bin/sh
+#
+# Migrate local mdcms repository to a new site
+
+
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
+# Check whether sed is available on the system.
+if ! command -v sed 2>&1 1>/dev/null;
+then
+    echo "No sed on the system" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+# Create *public* directory if it doesn't exist.
+if ! [ -d "$public" ];
+then
+    mkdir -p "$public" || (
+        echo "Unable to create a public directory" >&2;
+        exit 1;
+    )
+fi
+
+cp "${root}/config/information.template.php" "${root}/config/information.php" || (
+    echo "Unable to copy information.php" >&2;
+    exit 1;
+)
+
+cp "${root}/config/socialMedia.template.php" "${root}/config/socialMedia.php" || (
+    echo "Unable to copy socialMedia.php" >&2;
+    exit 1;
+)
+
+cp "${root}/config/parameters.template.php" "${root}/config/parameters.php" || (
+    echo "Unable to copy parameters.php" >&2;
+    exit 1;
+)
+
+cp "${root}/config/optionalFeatures.template.php" "${root}/config/optionalFeatures.php" || (
+    echo "Unable to copy optionalFeatures.php" >&2;
+    exit 1;
+)
+
+cp "${root}/config/sortCallbacks.template.php" "${root}/config/sortCallbacks.php" || (
+    echo "Unable to copy sortCallbacks.php" >&2;
+    exit 1;
+)
+
+cp "${root}/config/internal.template.php" "${root}/config/internal.php" || (
+    echo "Unable to copy internal.php" >&2;
+    exit 1;
+)
+
+sed -i "s/mdcms.org/example.com/" "${root}/config/information.php" || (
+    echo "Unable to modify information.php" >&2;
+    exit 1;
+)
+
+sed -i "s/cwchentw\/mdcms//" "${root}/config/socialMedia.php" || (
+    echo "Unable to modify socialMedia.php" >&2;
+    exit 1;
+)
+
+sed -i "/define(\"REDIRECT_LIST\"/ { N; N; N; N; N; s/define(\"REDIRECT_LIST\", .*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
+    echo "Unable to modify parameters.php" >&2;
+    exit 1;
+)
+
+sed -i "s/UA-105146581-5//" "${root}/config/optionalFeatures.php" || (
+    echo "Unable to modify optionalFeatures.php" >&2;
+    exit 1;
+)
+
+sed -i "s/content/posts/" "${root}/config/internal.php" || (
+    echo "Unable to modify internal.php" >&2;
+    exit 1;
+)
+
+mkdir -p "${root}/posts" || (
+    echo "Unable to create post directory" >&2;
+    exit 1;
+)
+
+touch "${root}/posts/.gitkeep" || (
+    echo "Unable to create .gitkeep" >&2;
+    exit 1;
+)
