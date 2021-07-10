@@ -82,7 +82,7 @@ sed -i "s/cwchentw\/mdcms//" "${root}/config/socialMedia.php" || (
     exit 1;
 )
 
-sed -i "/define(\"REDIRECT_LIST\"/ { N; N; N; N; N; s/define(\"REDIRECT_LIST\", .*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
+sed -i "/define(/ { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )

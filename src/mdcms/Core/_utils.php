@@ -22,7 +22,7 @@ function noFollowLinks($content)
     require_once $rootDirectory . "/setting.php";
 
     $baseURL = SITE_BASE_URL;
-    $perl_program = <<<PERL
+    $perlProgram = <<<PERL
 # Receive input from PHP program.
 my \$input = <<'END';
 $content
@@ -52,7 +52,7 @@ PERL;
 
     if (is_resource($process)) {
         # Write our program to STDIN.
-        fwrite($pipes[0], $perl_program);
+        fwrite($pipes[0], $perlProgram);
         fclose($pipes[0]);
 
         # Receive output from STDOUT.
@@ -60,7 +60,7 @@ PERL;
         fclose($pipes[1]);
 
         # Receive error message from STDERR.
-        $error = stream_get_contents($pipes[2]);
+        stream_get_contents($pipes[2]);
         fclose($pipes[2]);
 
         # Only for debugging.
@@ -69,12 +69,12 @@ PERL;
         #$result[MDCMS_POST_CONTENT] = $output;
         #echo $output;
 
-        $return_value =  proc_close($process);
+        $returnValue =  proc_close($process);
 
         # Only for debugging.
-        #echo "return value: {$return_value}" . "\n";
+        #echo "return value: {$returnValue}" . "\n";
 
-        if (0 == $return_value) {
+        if (0 == $returnValue) {
             return $output;
         }
         else {

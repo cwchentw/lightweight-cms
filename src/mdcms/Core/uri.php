@@ -11,7 +11,7 @@ function isHome($uri)
 
 function isPageInHome($uri)
 {
-    if (preg_match("/^\/(\d+)\/$/", $uri, $matches)) {
+    if (preg_match("/^\/(\d+)\/$/", $uri)) {
         return true;
     }
 
