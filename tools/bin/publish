@@ -36,6 +36,11 @@ fi
     exit $?;
 )
 
+# Create offline.html
+"${bin}/offline" || (
+    exit $?;
+)
+
 # Create manifest.json
 "${bin}/manifest" || (
     exit $?;
