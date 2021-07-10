@@ -25,17 +25,17 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-eslint": "^6.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^6.2.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-sass-glob": "^1.1.0",
-    "gulp-stylelint": "^9.0.0",
+    "gulp-stylelint": "^13.0.0",
     "gulp-uglify": "^3.0.2",
     "isdev": "^1.0.1",
     "marked": "^2.0.0",
     "sass": "^1.35.1",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended": "^2.2.0"
+    "stylelint": "^13.0.0",
+    "stylelint-config-recommended": "^5.0.0"
   }
 }
