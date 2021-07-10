@@ -22,6 +22,7 @@ This article lists features of mdcms. Because mdcms is still *experimental and e
 * Dynamic [HTTP status 404](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) pages
 * [404](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404).html generator
 * [50x](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500).html generator
+* offline.html generator
 * Asset management (through [Sass](https://sass-lang.com/) and [Babel](https://babeljs.io/))
 
 ## Theme-related Features
@@ -46,3 +47,4 @@ These features are available in *default* theme:
 
 * Run sites locally without Apache or Nginx (through [builtin web server](https://www.php.net/manual/en/features.commandline.webserver.php) of PHP)
 * Synchronize content on a production environment (through `rsync(1)`)
+* Migrate a local mdcms repository to a new site
