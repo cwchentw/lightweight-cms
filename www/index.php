@@ -154,7 +154,14 @@ else if (\mdcms\Core\isCustomPage($loc)) {
     \mdcms\Core\loadCustomPage($loc);
 }
 # Render a post.
+else if (\mdcms\Core\isPost($loc)) {
+    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_POST] = \mdcms\Core\readPost($loc);
+
+    loadPost();
+}
 else {
+    # Redirect a URI.
     foreach (REDIRECT_LIST as $redirect) {
         if (count($redirect) < 2) {
             continue;
@@ -170,28 +177,19 @@ else {
         }
     }
 
-    $post = \mdcms\Core\readPost($loc);
-
     # If HTTP status 404, generate an error page on-the-fly.
-    if (404 == $post[MDCMS_POST_STATUS]) {
-        # Create a post dynamically.
-        $post = \mdcms\Core\errorPage(
-            "Page Not Found",
-            "The page doesn't exist on our server.",
-            404
-        );
+    # Create a post dynamically.
+    $post = \mdcms\Core\errorPage(
+        "Page Not Found",
+        "The page doesn't exist on our server.",
+        404
+    );
 
-        # Create a breadcrumb dynamically.
-        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+    # Create a breadcrumb dynamically.
+    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
 
-        $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
-    }
-    # Load a normal page.
-    else {
-        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
-        $GLOBALS[MDCMS_POST] = $post;
-    }
+    $GLOBALS[MDCMS_POST] = $post;
+    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }

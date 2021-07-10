@@ -53,3 +53,18 @@ function isCustomPage($uri)
 
     return file_exists($path);
 }
+
+function isPost($uri)
+{
+    $sep = DIRECTORY_SEPARATOR;
+    require_once __DIR__ . "{$sep}_uri.php";
+
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
+
+    $htmlPath = getPath($uri, HTML_FILE_EXTENSION);
+    $markdownPath = getPath($uri, MARKDOWN_FILE_EXTENSION);
+
+    return file_exists($htmlPath) || file_exists($markdownPath);
+}
