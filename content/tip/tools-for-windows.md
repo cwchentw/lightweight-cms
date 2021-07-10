@@ -1,11 +1,21 @@
 ---
-title: Tips to Tools for Windows
-mtime: 2021/7/5
+title: Tips for Tools on Windows
+mtime: 2021/7/10
 ---
 
 ## Synopsis
 
 This article illustrates the usage of our utility scripts on Windows family systems.
+
+## Migrate a Local mdcms Repository to a New Site
+
+Invoke the following command:
+
+```shell
+$ .\tools\bin\migrate.bat
+```
+
+The utility script will create site configuration files and *posts* directory.
 
 ## Run mdcms Sites Locally without IIS, Apache or Nginx
 

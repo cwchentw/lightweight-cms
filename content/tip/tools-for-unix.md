@@ -1,11 +1,21 @@
 ---
-title: Tips to Tools for Unix
-mtime: 2021/7/5
+title: Tips for Tools on Unix
+mtime: 2021/7/10
 ---
 
 ## Synopsis
 
 This article illustrates the usage of our utility scripts on Unix-equivalent systems.
+
+## Migrate a Local mdcms Repository to a New Site
+
+Invoke the following command:
+
+```shell
+$ ./tools/bin/migrate
+```
+
+The utility script will create site configuration files and *posts* directory.
 
 ## Run mdcms Sites Locally without Apache or Nginx
 
