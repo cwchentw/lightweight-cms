@@ -9,12 +9,20 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 > choco install composer
 > choco install nodejs
 > choco install rsync
+> choco install sed
 </code></pre>
 
-<pre id="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
+<pre class="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
 > cd mysite
 > composer install --no-dev
 > .\tools\bin\serve.bat
+</code></pre>
+
+<pre class="run-on-windows" style="display: none;"><code class="shell">> git remote set-url origin https://example.com/user/mysite.git
+> .\tools\bin\migrate.bat
+> git add .
+> git commit -m "Migrate to a new site"
+> git push -u origin master
 </code></pre>
 
 <pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
@@ -43,6 +51,13 @@ $ composer install --no-dev
 $ ./tools/bin/serve
 </code></pre>
 
+<pre id="run-on-unix" style="display: none;"><code class="shell">$ git remote set-url origin https://example.com/user/mysite.git
+$ ./tools/bin/migrate
+$ git add .
+$ git commit -m "Migrate to a new site"
+$ git push -u origin master
+</code></pre>
+
 <script>
 (function () {
     function isWindows () {
@@ -59,7 +74,10 @@ $ ./tools/bin/serve
             installOnWindows[i].style.display = "inherit";
         }
 
-        document.getElementById("run-on-windows").style.display = "inherit";
+        var runOnWindows = document.getElementsByClassName("run-on-windows");
+        for (var i = 0; i < runOnWindows.length; ++i) {
+            runOnWindows[i].style.display = "inherit";
+        }
     }
     else if (isMacOS()) {
         var installOnMacOS = document.getElementsByClassName("install-on-macos");
@@ -68,6 +86,7 @@ $ ./tools/bin/serve
         }
 
         document.getElementById("run-on-macos").style.display = "inherit";
+        document.getElementById("run-on-unix").style.display = "inherit";
     }
     else {
         var installOnUbuntu = document.getElementsByClassName("install-on-ubuntu");
@@ -76,6 +95,7 @@ $ ./tools/bin/serve
         }
 
         document.getElementById("run-on-ubuntu").style.display = "inherit";
+        document.getElementById("run-on-unix").style.display = "inherit";
     }
 })();
 </script>
