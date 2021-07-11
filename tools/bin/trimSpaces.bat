@@ -10,6 +10,6 @@ perl --version 2>&1 1>nul || (
 )
 
 rem Iterate over all files in the repo, trimming trailing spaces.
-for %%E in ("md", "html", "scss", "js", "php") do ^
+for %%E in ("md", "html", "scss", "js", "json", "php", "bat") do ^
 forfiles /s /m *.%%E ^
 /C "cmd /c echo @path | findstr \"public vendor node_modules\" || ( perl -i -ple \"s{\s+$}{};\" @path)"
