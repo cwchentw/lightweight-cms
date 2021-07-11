@@ -14,7 +14,6 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 <pre class="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
 > cd mysite
-> composer install --no-dev
 > .\tools\bin\serve.bat
 </code></pre>
 

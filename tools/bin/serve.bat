@@ -8,6 +8,12 @@ php --version >nul || (
     exit /b 1
 )
 
+rem Check whether Composer is available on the system.
+call composer --version >nul || (
+    echo No Composer on the system >&2
+    exit /b 1
+)
+
 set address=%1
 if "" == "%address%" (
     set address=localhost:5000
@@ -31,6 +37,13 @@ if not exist %lib%\settings.bat (
 
 rem Load site settings.
 call %lib%\settings.bat
+
+rem Download third-party PHP packages if they don't exist.
+if not exist %root%\vendor (
+    call composer install --no-dev || (
+        exit /b %ERRORLEVEL%
+    )
+)
 
 rem Create a 404.html
 call %bin%\404.bat || (
