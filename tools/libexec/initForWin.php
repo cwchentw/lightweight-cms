@@ -12,7 +12,7 @@ echo PHP_EOL;
 echo PHP_EOL;
 echo "set root=" . $rootDirectory . PHP_EOL;
 echo "set content=" . $rootDirectory . $sep . CONTENT_DIRECTORY . PHP_EOL;
-echo "set theme=" . $rootDirectory . $sep . THEME_DIRECTORY . PHP_EOL;
+echo "set theme=" . $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . PHP_EOL;
 echo "set plugin=" . $rootDirectory . $sep . PLUGIN_DIRECTORY . PHP_EOL;
 echo "set asset=" . $rootDirectory . $sep . ASSET_DIRECTORY . PHP_EOL;
 echo "set src=" . $rootDirectory . $sep . LIBRARY_DIRECTORY . PHP_EOL;

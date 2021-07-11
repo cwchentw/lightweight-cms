@@ -11,7 +11,7 @@ echo PHP_EOL;
 echo PHP_EOL;
 echo "root=" . $rootDirectory . PHP_EOL;
 echo "content=" . $rootDirectory . $sep . CONTENT_DIRECTORY . PHP_EOL;
-echo "theme=" . $rootDirectory . $sep . THEME_DIRECTORY . PHP_EOL;
+echo "theme=" . $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . PHP_EOL;
 echo "plugin=" . $rootDirectory . $sep . PLUGIN_DIRECTORY . PHP_EOL;
 echo "asset=" . $rootDirectory . $sep . ASSET_DIRECTORY . PHP_EOL;
 echo "src=" . $rootDirectory . $sep . LIBRARY_DIRECTORY . PHP_EOL;
