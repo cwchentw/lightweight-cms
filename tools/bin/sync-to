@@ -11,6 +11,13 @@ then
     exit 1;
 fi
 
+# Check whether Composer is available on the system.
+if ! command -v composer 2>&1 1>/dev/null;
+then
+    echo "No Composer on the system" >&2
+    exit 1;
+fi
+
 # Check whether `rsync(1)` is available.
 if ! command -v rsync 2>&1 >/dev/null;
 then
@@ -48,6 +55,14 @@ fi
 
 # Load site settings.
 . "${lib}/settings.sh";
+
+# Download third-party PHP packages if they don't exist.
+if ! [ -d "${root}/vendor" ];
+then
+    composer install --no-dev || (
+        exit $?;
+    )
+fi
 
 # Create 404.html
 "${bin}/404" || (

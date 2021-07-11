@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Clean downloaded code.
+
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+for dir in vendor node_modules public "${theme}/vendor" "${theme}/node_modules" "${theme}/public";
+do
+    rm -rf "$dir";
+done

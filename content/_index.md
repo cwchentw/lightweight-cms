@@ -31,7 +31,6 @@ $ brew install node
 
 <pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
-$ composer install --no-dev
 $ ./tools/bin/serve
 </code></pre>
 
@@ -46,7 +45,6 @@ $ ./tools/bin/serve
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
 $ ./tools/bin/install-composer $HOME/bin
-$ composer install --no-dev
 $ ./tools/bin/serve
 </code></pre>
 
