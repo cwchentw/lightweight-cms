@@ -75,7 +75,6 @@ sed -i "s/cwchentw\/mdcms//" %socialMediaConfig:\=/% || (
     echo /b 1
 )
 
-rem TODO: Check the code.
 set parametersConfig=%root%\config\parameters.php
 sed -i "/define(/ { N; N; N; N; N; N; N; N; s/define(.*""REDIRECT_LIST"",.*);/define(""REDIRECT_LIST"", []);/; }" %parametersConfig:\=/% || (
     echo Unable to modify parameters.php >&2
@@ -99,7 +98,7 @@ mkdir "%root%\posts" || (
     exit /b 1
 )
 
-copy /y nul "%root%\posts\.gitkeep" || (
+"%bin%\touch.bat" "%root%\posts\.gitkeep" || (
     echo Unable to create .gitkeep >&2
     exit /b 1
 )
