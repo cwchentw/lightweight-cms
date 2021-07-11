@@ -10,13 +10,6 @@ then
     exit 1;
 fi
 
-# Check whether Composer is available on the system.
-if ! command -v composer 2>&1 1>/dev/null;
-then
-    echo "No Composer on the system" >&2
-    exit 1;
-fi
-
 # Get an address.
 address=$1;
 if [ -z "$address" ];
@@ -43,6 +36,19 @@ fi
 # Download third-party PHP packages if they don't exist.
 if ! [ -d "${root}/vendor" ];
 then
+    if [ "$(id -u)" -eq 0 ];
+    then
+        echo "Install PHP packages with Composer by a normal user" >&2;
+        exit 1;
+    fi
+
+    # Check whether Composer is available on the system.
+    if ! command -v composer 2>&1 1>/dev/null;
+    then
+        echo "No Composer on the system" >&2
+        exit 1;
+    fi
+
     composer install --no-dev || (
         exit $?;
     )
