@@ -18,4 +18,4 @@ for source in `find . -path ./vendor -prune -false -o -name "*.php"`;
 do
     "${bin}/phpcs" "$source";
     "${bin}/phpmd" "$source";
-done;
+done

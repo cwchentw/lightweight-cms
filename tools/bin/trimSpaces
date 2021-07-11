@@ -1,0 +1,48 @@
+#!/bin/sh
+#
+# Trim trailing spaces with Perl.
+
+
+# Check whether Perl is available on the system.
+if ! command -v perl 2>&1 1>/dev/null;
+then
+    echo "No Perm on the system" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+for path in `find "$root" -type d \( -path "${root}/.git" \
+ -o -path "${root}/vendor" -o -path "${root}/node_modules" -o -path "${root}/public" \
+ -o -path "${theme}/vendor" -o -path "${theme}/node_modules" -o -path "${theme}/public" \) \
+ -prune -o -print`;
+do
+    case "$path" in
+    *.html|*.scss|*.js|*.json|*.php|*.bat)
+        perl -i -ple "s{\s+$}{};" "$path";
+        ;;
+    esac
+done
+
+for path in `find "${root}/tools/bin"`;
+do
+    case $(file -b --mime-type "$path") in
+    text/x-shellscript)
+        perl -i -ple "s{\s+$}{};" "$path";
+        ;;
+    esac
+done
