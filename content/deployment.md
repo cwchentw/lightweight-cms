@@ -57,7 +57,7 @@ $ sudo dnf install nodejs npm
 Run this command for a bare Nginx and PHP based solution:
 
 ```shell
-$ sudo zypper install nginx php7 php7-fpm 
+$ sudo zypper install nginx php7 php7-fpm
 ```
 
 Run the command to install packages for Composer:

@@ -73,7 +73,7 @@ if (ENABLE_TOC) {
                     <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
                     <span class="author">Written by <?php echo $post[MDCMS_POST_AUTHOR]; ?>.</span>
                     <?php endif; ?>
-                
+
                     <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
                     <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?></span>
                     <?php endif; ?>
@@ -95,7 +95,7 @@ if (ENABLE_TOC) {
 
                     <main>
                         <?php echo $post[MDCMS_POST_CONTENT]; ?>
-                    </main>                    
+                    </main>
                 </div>
 
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">

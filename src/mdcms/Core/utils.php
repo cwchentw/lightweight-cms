@@ -55,7 +55,7 @@ function xCopy($src, $dst)
                 if (!copy($src . $sep . $file, $dst . $sep . $file)) {
                     # Release the handle of destination directory.
                     closedir($dir);
-  
+
                     # We may find a better exception for this event.
                     # TODO: Refactor it later.
                     throw new \Exception("Unable to create file: " . $dst . $sep . $file . "\n");
@@ -63,7 +63,7 @@ function xCopy($src, $dst)
             }
         }
     }
- 
+
     # Release the handle of destination directory.
     closedir($dir);
 }

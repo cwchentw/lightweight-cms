@@ -76,7 +76,7 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 ```
 
  Instead, write which between a pair of `<body>` tags:
- 
+
  ```html
 <!-- Write which between <body> tags instead. -->
 <h1>A HTML Post</h1>
@@ -85,9 +85,9 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 
 <p>Another paragraph with some text.</p>
  ```
- 
+
 Because mdcms renders web pages for you, you don't require to write everything from scratch.
- 
+
 ## Write Titles for Posts
 
 You may write title of a post in the following region (by precedence):

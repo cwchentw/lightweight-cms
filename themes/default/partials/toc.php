@@ -43,7 +43,7 @@ else {
             echo "<li>";
 
             echo "<a href=\"" . $URI  . "#" . $subtitle["id"] . "\" class=\"toc-item\">";
-            echo $subtitle["title"];        
+            echo $subtitle["title"];
             echo "</a>";
 
             echo "</li>";

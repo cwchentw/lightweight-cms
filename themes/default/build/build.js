@@ -64,9 +64,9 @@ gulp.task('watch', function () {
             if (req.domain === null) {
               res.statusCode = 404;
               res.setHeader('Content-type', 'text/html');
-              let pagePath = path.join(__dirname, '..', 'public', '404.html'); 
+              let pagePath = path.join(__dirname, '..', 'public', '404.html');
               let html = fs.readFileSync(pagePath);
-              res.write(html);    
+              res.write(html);
               res.end();
 
               return res;

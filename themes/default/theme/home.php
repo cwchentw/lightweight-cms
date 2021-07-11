@@ -159,8 +159,8 @@ $status = 200;
                             echo "</p>";
                         }
                     }
-                    ?> 
-                    </div>             
+                    ?>
+                    </div>
                 </div>
             </div>
 

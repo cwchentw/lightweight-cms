@@ -90,7 +90,7 @@ $len = count($json["icons"]);
 for ($i = 0; $i < $len; ++$i) {
     $json["icons"][$i]["type"] = $imageType;
     $json["icons"][$i]["purpose"] = "any maskable";
-} 
+}
 
 # Render manifest.json
 header('Content-Type: application/json');

@@ -231,7 +231,7 @@ function getAllLinks($uri)
                     $link = readCustomPage($uri);
                     $link[MDCMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[MDCMS_LINK_MTIME] = $link[MDCMS_POST_MTIME];
-    
+
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(array_key_exists(MDCMS_POST_META, $link)
