@@ -1,6 +1,6 @@
 ---
 title: Deploy a mdcms Site to Nginx
-mtime: 2021/6/19
+mtime: 2021/7/13
 weight: 4
 ---
 
@@ -104,10 +104,10 @@ Here we list a heavily-commented Nginx sample configuration:
 
 server {
     # The port of your server.
-    listen       3000;
+    listen       443 ssl;
 
     # The domain name of your server.
-    server_name  localhost;
+    server_name  example.com;
 
     # If your Nginx serves a HTTPS site,
     #  SSL related configuration are mandatory.
@@ -115,8 +115,8 @@ server {
     # You may get a free SSL certificate at
     #   Let's Encrypt (https://letsencrypt.org/).
     #
-    #ssl_certificate     /path/to/site.crt;
-    #ssl_certificate_key /path/to/site.key;
+    ssl_certificate     /path/to/site.crt;
+    ssl_certificate_key /path/to/site.key;
     #ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
     #ssl_ciphers         HIGH:!aNULL:!MD5;
 
@@ -133,21 +133,19 @@ server {
     # You should always prepare a HTTP 404 page
     #  to hide sensitive system information.
     #
-    # We redirect all URLs to our index script
-    #  and generate a 404.html dynamically.
-    #
-    #error_page  404              /404.html;
+    error_page   404              /404.html;
 
     # In a similiar fashion, you should prepare
     #  a HTTP 50x page as well.
-    error_page  500 502 503 504   /50x.html;
+    #
+    error_page   500 502 503 504  /50x.html;
 
-    # Route to 50x.html.
+    # Route to static error pages.
     #
     # The page is prerendered by our custom script.
     #  Therefore, it is static.
     #
-    location /50x.html {
+    location ~ /(404|50x).html {
         root  /var/www/mdcms/public/;
     }
 
