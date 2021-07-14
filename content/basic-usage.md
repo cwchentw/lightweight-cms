@@ -1,6 +1,6 @@
 ---
 title: Basic Usage of mdcms
-mtime: 2021/6/19
+mtime: 2021/7/13
 weight: 2
 ---
 
@@ -185,4 +185,4 @@ $ git push https://github.com/user/mdcms.git
 
 Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted, we may still modify mdcms according to your intention.
 
-If you are busy, send us [an issue](https://github.com/cwchentw/mdcms/issues) instead.
+If you are busy, open [a dicussion](https://github.com/cwchentw/mdcms/discussions) or send us [an issue](https://github.com/cwchentw/mdcms/issues) instead.
