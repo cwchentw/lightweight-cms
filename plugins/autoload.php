@@ -1,10 +1,11 @@
 <?php
 # The main loader for plugin(s).
 
-
-$rootDirectory = __DIR__ . "/..";
-# Load global setting.
-require_once $rootDirectory . "/setting.php";
+$sep = DIRECTORY_SEPARATOR;
+# Get root path.
+$rootDirectory = __DIR__ . $sep . "..";
+# Load global settings.
+require_once $rootDirectory . $sep . "setting.php";
 
 # Scan all files in the directory.
 $libraries = scandir(__DIR__);
@@ -24,7 +25,7 @@ foreach ($libraries as $library) {
         continue;
     }
 
-    $path = __DIR__ . "/" . $library;
+    $path = __DIR__ . $sep . $library;
 
     # Skip the script itself.
     if (__FILE__ == $path) {
@@ -33,7 +34,7 @@ foreach ($libraries as $library) {
 
     if (is_dir($path)) {
         # autoload.php at the root path of a plugin is mandatory.
-        $loader = $path . "/autoload.php";
+        $loader = $path . $sep . "autoload.php";
 
         # Load the plugin.
         require_once $loader;

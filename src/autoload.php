@@ -28,7 +28,8 @@ while (count($dirs) > 0) {
             continue;
         }
 
-        $path = $dir . "/" . $library;
+        $sep = DIRECTORY_SEPARATOR;
+        $path = $dir . $sep . $library;
 
         # Skip the script itself.
         if (__FILE__ == $path) {
