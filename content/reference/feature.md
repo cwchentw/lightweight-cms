@@ -1,6 +1,6 @@
 ---
-title: Features of mdcms
-mtime: 2021/7/10
+title: Features
+mtime: 2021/7/24
 weight: 2
 ---
 
@@ -12,6 +12,7 @@ This article lists features of mdcms. Because mdcms is still *experimental and e
 
 * Markdown or HTML posts
 * Nested sections
+* Draft status
 * PHP-based custom pages
 * [Breadcrumb](https://en.wikipedia.org/wiki/Breadcrumb_navigation) (Bootstrap 5 based)
 * [Pagination](https://en.wikipedia.org/wiki/Pagination) (Bootstrap 5 based)

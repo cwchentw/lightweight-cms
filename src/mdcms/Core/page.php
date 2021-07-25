@@ -136,8 +136,10 @@ function getPosts($uri)
             # Skip functional posts.
             # TODO: We may change it later.
             if (!(array_key_exists(MDCMS_POST_META, $post)
-                && array_key_exists("noindex", $post[MDCMS_POST_META])
-                && $post[MDCMS_POST_META]["noindex"]))
+                    && array_key_exists("noindex", $post[MDCMS_POST_META])
+                    && $post[MDCMS_POST_META]["noindex"])
+                && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                    && $link[MDCMS_POST_META][METADATA_DRAFT]))
             {
                 array_push($result, $link);
             }

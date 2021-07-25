@@ -1,7 +1,7 @@
 ---
 title: Settings for mdcms
 mtime: 2021/6/26
-weight: 5
+weight: 6
 ---
 
 ## Prologue

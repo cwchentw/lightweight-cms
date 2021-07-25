@@ -1,7 +1,7 @@
 ---
 title: Frequent Asked Questions related to mdcms
 mtime: 2021/7/6
-weight: 3
+weight: 4
 ---
 
 ## Synopsis

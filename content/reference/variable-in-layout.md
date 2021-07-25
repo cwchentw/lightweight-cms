@@ -1,7 +1,7 @@
 ---
 title: Exposed Variables in Layouts
 mtime: 2021/6/26
-weight: 6
+weight: 7
 ---
 
 ## Prologue

@@ -33,6 +33,8 @@ define("METADATA_AUTHOR", "author");
 define("METADATA_MTIME", "mtime");
 # Weight of a post.
 define("METADATA_WEIGHT", "weight");
+# Draft status.
+define("METADATA_DRAFT", "draft");
 
 # The extension of HTML files.
 define("HTML_FILE_EXTENSION", ".html");

@@ -11,8 +11,9 @@ function getAllLinks($uri)
     # Load local scripts.
     require_once __DIR__ . "/const.php";
     require_once __DIR__ . "/customPage.php";
-    # Load a private script.
+    # Load private scripts.
     require_once __DIR__ . "/_site.php";
+    require_once __DIR__ . "/_utils.php";
 
     $result = array();
 
@@ -62,8 +63,10 @@ function getAllLinks($uri)
                 # Skip functional posts.
                 # TODO: We may change it later.
                 if (!(array_key_exists(MDCMS_POST_META, $link)
-                    && array_key_exists("noindex", $link[MDCMS_POST_META])
-                    && $link[MDCMS_POST_META]))
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META])
+                    && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                        && $link[MDCMS_POST_META][METADATA_DRAFT]))
                 {
                     array_push($result, $link);
                 }
@@ -77,8 +80,10 @@ function getAllLinks($uri)
                 # Skip functional posts.
                 # TODO: We may change it later.
                 if (!(array_key_exists(MDCMS_POST_META, $link)
-                    && array_key_exists("noindex", $link[MDCMS_POST_META])
-                    && $link[MDCMS_POST_META]))
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META])
+                    && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                        && $link[MDCMS_POST_META][METADATA_DRAFT]))
                 {
                     array_push($result, $link);
                 }
@@ -92,8 +97,10 @@ function getAllLinks($uri)
                 # Skip functional posts.
                 # TODO: We may change it later.
                 if (!(array_key_exists(MDCMS_POST_META, $link)
-                    && array_key_exists("noindex", $link[MDCMS_POST_META])
-                    && $link[MDCMS_POST_META]))
+                        && array_key_exists("noindex", $link[MDCMS_POST_META])
+                        && $link[MDCMS_POST_META])
+                    && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                        && $link[MDCMS_POST_META][METADATA_DRAFT]))
                 {
                     array_push($result, $link);
                 }
@@ -130,8 +137,10 @@ function getAllLinks($uri)
             # Skip functional posts.
             # TODO: We may change it later.
             if (!(array_key_exists(MDCMS_POST_META, $link)
-                && array_key_exists("noindex", $link[MDCMS_POST_META])
-                && $link[MDCMS_POST_META]))
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META])
+                && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                    && $link[MDCMS_POST_META][METADATA_DRAFT]))
             {
                 array_push($result, $link);
             }
@@ -145,8 +154,10 @@ function getAllLinks($uri)
             # Skip functional posts.
             # TODO: We may change it later.
             if (!(array_key_exists(MDCMS_POST_META, $link)
-                && array_key_exists("noindex", $link[MDCMS_POST_META])
-                && $link[MDCMS_POST_META]))
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META])
+                && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                    && $link[MDCMS_POST_META][METADATA_DRAFT]))
             {
                 array_push($result, $link);
             }
@@ -160,8 +171,10 @@ function getAllLinks($uri)
             # Skip functional posts.
             # TODO: We may change it later.
             if (!(array_key_exists(MDCMS_POST_META, $link)
-                && array_key_exists("noindex", $link[MDCMS_POST_META])
-                && $link[MDCMS_POST_META]))
+                    && array_key_exists("noindex", $link[MDCMS_POST_META])
+                    && $link[MDCMS_POST_META])
+                && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                    && $link[MDCMS_POST_META][METADATA_DRAFT]))
             {
                 array_push($result, $link);
             }
@@ -204,8 +217,10 @@ function getAllLinks($uri)
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(array_key_exists(MDCMS_POST_META, $link)
-                        && array_key_exists("noindex", $link[MDCMS_POST_META])
-                        && $link[MDCMS_POST_META]))
+                            && array_key_exists("noindex", $link[MDCMS_POST_META])
+                            && $link[MDCMS_POST_META])
+                        && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                            && $link[MDCMS_POST_META][METADATA_DRAFT]))
                     {
                         array_push($result, $link);
                     }
@@ -220,8 +235,10 @@ function getAllLinks($uri)
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(array_key_exists(MDCMS_POST_META, $link)
-                        && array_key_exists("noindex", $link[MDCMS_POST_META])
-                        && $link[MDCMS_POST_META]))
+                            && array_key_exists("noindex", $link[MDCMS_POST_META])
+                            && $link[MDCMS_POST_META])
+                        && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                            && $link[MDCMS_POST_META][METADATA_DRAFT]))
                     {
                         array_push($result, $link);
                     }
@@ -235,8 +252,10 @@ function getAllLinks($uri)
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(array_key_exists(MDCMS_POST_META, $link)
-                        && array_key_exists("noindex", $link[MDCMS_POST_META])
-                        && $link[MDCMS_POST_META]))
+                            && array_key_exists("noindex", $link[MDCMS_POST_META])
+                            && $link[MDCMS_POST_META])
+                        && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
+                            && $link[MDCMS_POST_META][METADATA_DRAFT]))
                     {
                         array_push($result, $link);
                     }
