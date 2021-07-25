@@ -73,9 +73,8 @@ function getSections($uri)
 
             # Skip functional sections.
             # TODO: We may change it later.
-            if (!(array_key_exists(MDCMS_SECTION_META, $section)
-                && array_key_exists("noindex", $section[MDCMS_SECTION_META])
-                && $section[MDCMS_SECTION_META]["noindex"]))
+            if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
+                    && $post[MDCMS_POST_META][METADATA_NOINDEX]))
             {
                 array_push($result, $section);
             }
@@ -135,9 +134,8 @@ function getPosts($uri)
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(array_key_exists(MDCMS_POST_META, $post)
-                    && array_key_exists("noindex", $post[MDCMS_POST_META])
-                    && $post[MDCMS_POST_META]["noindex"])
+            if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
+                    && $post[MDCMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
                     && $link[MDCMS_POST_META][METADATA_DRAFT]))
             {

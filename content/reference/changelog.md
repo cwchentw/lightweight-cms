@@ -13,3 +13,11 @@ Add the constant to your own *config/internal.php* if it is not set:
 ```php
 define("METADATA_DRAFT", "draft");
 ```
+
+`METADATA_NOINDEX` is added to *config/internal.template.php*.
+
+Add the constant to your own *config/internal.php* if it is not set:
+
+```php
+define("METADATA_NOINDEX", "noindex");
+```

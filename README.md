@@ -111,6 +111,7 @@ Visit our [official website](https://mdcms.org), which is a live demonstration o
 
 * 2021/07/25
   * Add `METADATA_DRAFT` in *config/internal.template.php*
+  * Add `METADATA_NOINDEX` in *config/internal.template.php*
 
 ## Copyright
 

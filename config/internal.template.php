@@ -33,6 +33,8 @@ define("METADATA_AUTHOR", "author");
 define("METADATA_MTIME", "mtime");
 # Weight of a post.
 define("METADATA_WEIGHT", "weight");
+# No index.
+define("METADATA_NOINDEX", "noindex");
 # Draft status.
 define("METADATA_DRAFT", "draft");
 

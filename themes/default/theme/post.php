@@ -45,8 +45,8 @@ if (ENABLE_TOC) {
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <?php if (array_key_exists(MDCMS_POST_META, $post)
-                  && array_key_exists("noindex", $post[MDCMS_POST_META])
-                  && $post[MDCMS_POST_META]["noindex"]): ?>
+                  && array_key_exists(METADATA_NOINDEX, $post[MDCMS_POST_META])
+                  && $post[MDCMS_POST_META][METADATA_NOINDEX]): ?>
             <!-- Some functional post doesn't benefit SEO.  -->
             <meta name="robots" content="noindex, follow">
         <?php endif; ?>
