@@ -1,6 +1,6 @@
 ---
 title: How to Run mdcms on Windows
-mtime: 2021/7/10
+mtime: 2021/7/24
 ---
 
 ## Prologue
@@ -53,7 +53,7 @@ Install [Chocolatey](https://chocolatey.org) first, which is a package manager f
 Install PHP:
 
 ```shell
-> choco install php --version=7.4.20
+> choco install php --version=7.4.21
 ```
 
 At time of our writing, many GNU/Linux distributions still provide PHP 7 rather than PHP 8. Therefore, we install PHP 7 intentionally.

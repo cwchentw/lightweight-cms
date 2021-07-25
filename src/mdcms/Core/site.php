@@ -63,7 +63,7 @@ function getAllLinks($uri)
                 # Skip functional posts.
                 # TODO: We may change it later.
                 if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
-                        && $post[MDCMS_POST_META][METADATA_NOINDEX])
+                        && $link[MDCMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
                         && $link[MDCMS_POST_META][METADATA_DRAFT]))
                 {
@@ -79,7 +79,7 @@ function getAllLinks($uri)
                 # Skip functional posts.
                 # TODO: We may change it later.
                 if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
-                        && $post[MDCMS_POST_META][METADATA_NOINDEX])
+                        && $link[MDCMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
                         && $link[MDCMS_POST_META][METADATA_DRAFT]))
                 {

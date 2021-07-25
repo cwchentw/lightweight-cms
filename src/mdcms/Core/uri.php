@@ -98,7 +98,7 @@ function isPost($uri)
         # Load private scripts.
         require_once __DIR__ . "{$sep}_utils.php";
 
-        $rawContent = file_get_contents($htmlPath);
+        $rawContent = file_get_contents($markdownPath);
 
         $parser = new \Mni\FrontYAML\Parser();
 

@@ -73,8 +73,8 @@ function getSections($uri)
 
             # Skip functional sections.
             # TODO: We may change it later.
-            if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
-                    && $post[MDCMS_POST_META][METADATA_NOINDEX]))
+            if (!(isValidField($section[MDCMS_SECTION_META], METADATA_NOINDEX)
+                    && $section[MDCMS_SECTION_META][METADATA_NOINDEX]))
             {
                 array_push($result, $section);
             }
