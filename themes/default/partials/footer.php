@@ -6,15 +6,16 @@
 ?>
 
 <!-- Native JavaScript for Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/3.0.15/bootstrap-native.min.js"
-    integrity="sha512-ui7r9OLlcZJsUe16m7uoiyX9wBdbLds3zB5WCtlV+Sp+2U/wFFhGbp8Q4BfPbFEb0iBG07LsCvHDVySlVmgJAw=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.0.3/bootstrap-native.min.js"
+    integrity="sha512-AQMIF/Dretc0m1KBmsTj0FNUeR7OZKw+DKAK+/jqrpalPQAP7ODqKJB6wHBPP6MDTKS52LYPihNa1cEpil8zaA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"
-    integrity="sha512-s+tOYYcC3Jybgr9mVsdAxsRYlGNq4mlAurOrfNuGMQ/SCofNPu92tjE7YRZCsdEtWL1yGkqk15fU/ark206YTg=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
+    integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Add more highlight.js language module(s) as needed. -->
 <script>hljs.highlightAll();</script>
 <?php endif; ?>
 
