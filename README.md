@@ -2,9 +2,84 @@
 
 mdcms (Markdown Content Management System) is a Markdown-based flat-file CMS powered by PHP.
 
+## Synopsis
+
+### Windows
+
+```shell
+> choco install php --version=7.4.23
+> choco install composer
+> choco install nodejs
+> choco install rsync
+> choco install sed
+```
+
+```shell
+> git clone https://github.com/cwchentw/mdcms.git mysite
+> cd mysite
+> .\tools\bin\serve.bat
+```
+
+```shell
+> git remote set-url origin https://example.com/user/mysite.git
+> .\tools\bin\migrate.bat
+> git add .
+> git commit -m "Migrate to a new site"
+> git push -u origin master
+```
+
+### MacOS
+
+```shell
+$ brew install php@7.4
+$ brew install composer
+$ brew install node
+```
+
+```shell
+$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ cd mysite
+$ ./tools/bin/serve
+```
+
+```shell
+$ git remote set-url origin https://example.com/user/mysite.git
+$ ./tools/bin/migrate
+$ git add .
+$ git commit -m "Migrate to a new site"
+$ git push -u origin master
+```
+
+### Ubunut
+
+```shell
+$ sudo apt install php php-xml php-mbstring php-zip
+```
+
+Install [nvm](https://github.com/nvm-sh/nvm).
+
+```shell
+$ nvm install node
+```
+
+```shell
+$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ cd mysite
+$ ./tools/bin/install-composer $HOME/bin
+$ ./tools/bin/serve
+```
+
+```shell
+$ git remote set-url origin https://example.com/user/mysite.git
+$ ./tools/bin/migrate
+$ git add .
+$ git commit -m "Migrate to a new site"
+$ git push -u origin master
+```
+
 ## Warning
 
-mdcms is still *experimental and evolving*.
+mdcms is still *experimental* and *evolving*.
 
 ## Why not another Static Site Generator?
 
@@ -102,10 +177,6 @@ Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf)
 $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
-
-## Documentation
-
-Visit our [official website](https://mdcms.org), which is a live demonstration of mdcms itself.
 
 ## Breaking Changes
 
