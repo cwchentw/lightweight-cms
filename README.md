@@ -50,7 +50,7 @@ $ git commit -m "Migrate to a new site"
 $ git push -u origin master
 ```
 
-### Ubunut
+### Ubuntu
 
 ```shell
 $ sudo apt install php php-xml php-mbstring php-zip
