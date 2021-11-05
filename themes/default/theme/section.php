@@ -28,6 +28,7 @@ if (POST_PER_PAGE > 0) {
         ?>
 
         <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
+        <!-- TODO: Specify a section author other than a site author. -->
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <?php if (BLOCK_BOT_ON_SECTION): ?>
