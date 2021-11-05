@@ -23,13 +23,18 @@ if ("" != SITE_PREFIX) {
 
 # Render an error page for bad URLs.
 if (false != strpos($loc, "..")) {
+    # Create a post dynamically.
     $post = \mdcms\Core\errorPage(
         "Bad Request Error",
         "Invalid URL",
         400
     );
 
+    # Create a breadcrumb dynamically.
     $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Bad Request Error");
+
+    $GLOBALS[MDCMS_POST] = $post;
+    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }
