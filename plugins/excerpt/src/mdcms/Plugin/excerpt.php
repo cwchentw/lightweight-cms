@@ -5,9 +5,10 @@ namespace mdcms\Plugin;
 
 function excerpt($content)
 {
-    $projectDirectory = __DIR__ . "/../../..";
-    $rootDirectory = $projectDirectory . "/../..";
-    require_once $rootDirectory . "/setting.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $projectDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    $rootDirectory = $projectDirectory . "{$sep}..{$sep}..";
+    require_once $rootDirectory . "{$sep}setting.php";
 
     $result = "";
 
