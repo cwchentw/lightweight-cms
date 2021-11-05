@@ -69,7 +69,6 @@ else if (\mdcms\Core\isHome($loc)) {
     loadHome();
 }
 # Render a page of home page.
-# TODO: Fix pagination in a home page.
 else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
@@ -77,7 +76,7 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     # Posts not included in any section.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($homeURI);
 
-    preg_match("/^\/(\d+)\/$/s", $loc, $matches);
+    preg_match("/^\/(\d+)\/$/", $loc, $matches);
     $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($homeURI, $matches[1]);
 
     # Show HTTP 404 page if no post on this page.
