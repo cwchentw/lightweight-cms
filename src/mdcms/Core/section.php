@@ -24,6 +24,7 @@ function readSection($page)
 
     # Initialize the data of a section.
     $result[MDCMS_SECTION_TITLE] = "";
+    $result[MDCMS_SECTION_AUTHOR] = "";
     $result[MDCMS_SECTION_CONTENT] = "";
     $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
@@ -93,6 +94,14 @@ function readSection($page)
         $title = preg_replace("/\/|-+/", " ", array_pop($pages));
         $title = ucwords($title);  # Capitalize a title.
         $result[MDCMS_SECTION_TITLE] = $title;
+    }
+
+    # Set the author of a section.
+    if (isValidField($metadata, METADATA_AUTHOR)) {
+        $result[MDCMS_SECTION_AUTHOR] = $metadata[METADATA_AUTHOR];
+    }
+    else {
+        $result[MDCMS_SECTION_AUTHOR] = SITE_AUTHOR;
     }
 
     # Prevent search engine bots from following links.

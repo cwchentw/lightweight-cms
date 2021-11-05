@@ -28,8 +28,7 @@ if (POST_PER_PAGE > 0) {
         ?>
 
         <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
-        <!-- TODO: Specify a section author other than a site author. -->
-        <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
+        <meta name="author" content="<?php echo $section[MDCMS_SECTION_AUTHOR]; ?>">
 
         <?php if (BLOCK_BOT_ON_SECTION): ?>
         <!-- Most section pages merely work as intermediate documents
@@ -56,6 +55,15 @@ if (POST_PER_PAGE > 0) {
                     </h1>
                 </header>
 
+                <div class="post-info">
+                    <?php if (array_key_exists(MDCMS_SECTION_AUTHOR, $section) && "" != $section[MDCMS_SECTION_AUTHOR]): ?>
+                    <span class="author">Written by <?php echo $section[MDCMS_SECTION_AUTHOR]; ?>.</span>
+                    <?php endif; ?>
+
+                    <?php if (array_key_exists(MDCMS_SECTION_MTIME, $section)): ?>
+                    <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[MDCMS_SECTION_MTIME]); ?></span>
+                    <?php endif; ?>
+                </div>
                 <?php includePartials("breadcrumb.php"); ?>
             </div>
         </div>

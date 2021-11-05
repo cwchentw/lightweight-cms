@@ -22,6 +22,7 @@ define("MDCMS_BREADCRUMB", "breadcrumb");
 
 # Section related constants.
 define("MDCMS_SECTION_TITLE", "title");
+define("MDCMS_SECTION_AUTHOR", "author");
 define("MDCMS_SECTION_MTIME", "mtime");
 define("MDCMS_SECTION_WEIGHT", "weight");
 define("MDCMS_SECTION_META", "meta");

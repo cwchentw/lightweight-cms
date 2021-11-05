@@ -1,6 +1,5 @@
 # TODO
 
-* (Feature) Specify a section author other than a site author
 * (Feature) Add tags
 * (Feature) Add RSS feed
 * (Project) Add posts by a utility script
