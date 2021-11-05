@@ -6,9 +6,10 @@ namespace mdcms\Core;
 function getPageFromPath($path)
 {
     # Get the root path of mdcms.
-    $rootDirectory = __DIR__ . "/../../..";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
 
-    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
+    $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
     $page = substr($path, strlen($contentDirectory));
 
     $fileParts = pathinfo($page);
