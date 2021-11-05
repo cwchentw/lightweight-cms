@@ -1,5 +1,6 @@
 # TODO
 
+* (Refactoring) Posts and posts per page in the router
 * (Feature) Add tags
 * (Feature) Add RSS feed
 * (Project) Add posts by a utility script
