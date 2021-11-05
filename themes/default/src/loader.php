@@ -6,25 +6,28 @@
 function loadHome()
 {
     # Get the root path of default theme of mdcms.
-    $rootDirectory = __DIR__ . "/..";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . "/theme/home.php";
+    require $rootDirectory . $sep . "theme" . $sep . "home.php";
 }
 
 function loadSection()
 {
     # Get the root path of default theme of mdcms.
-    $rootDirectory = __DIR__ . "/..";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . "/theme/section.php";
+    require $rootDirectory . $sep . "theme" . $sep . "section.php";
 }
 
 function loadPost()
 {
     # Get the root path of default theme of mdcms.
-    $rootDirectory = __DIR__ . "/..";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . "/theme/post.php";
+    require $rootDirectory . $sep . "theme" . $sep . "post.php";
 }
 
 function loadAssets($dest)
@@ -33,7 +36,8 @@ function loadAssets($dest)
     $oldDirectory = getcwd();
 
     # Get the root path of default theme of mdcms.
-    $rootDirectory = __DIR__ . "/..";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
@@ -66,7 +70,7 @@ function loadAssets($dest)
 
     # Copy assets recursively.
     try {
-        $publicDirectory = $rootDirectory . "/public";
+        $publicDirectory = $rootDirectory . $sep . "public";
 
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.

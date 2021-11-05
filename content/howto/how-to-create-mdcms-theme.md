@@ -1,6 +1,6 @@
 ---
 title: How to Create a mdcms Theme
-mtime: 2021/6/26
+mtime: 2021/11/6
 ---
 
 ## Prologue
@@ -60,8 +60,13 @@ Here is a sample code:
 ```php
 function loadHome()
 {
-    require __DIR__ . "/theme/" . "home.php";
+    # Get the root path of default theme of mdcms.
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "theme" . $sep . "home.php";
 }
+
 ```
 
 It is recommended to use `require` instead of `include` here because it should be an error unable to load a layout properly.
@@ -73,7 +78,11 @@ The necessary function to load layout for sections in a mdcms site. In a similia
 ```php
 function loadSection()
 {
-    require __DIR__ . "/theme/" . "section.php";
+    # Get the root path of default theme of mdcms.
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "theme" . $sep . "section.php";
 }
 ```
 
@@ -86,7 +95,11 @@ The mandatory function to load layout for posts in a mdcms site. No parameter is
 ```php
 function loadPost()
 {
-    require __DIR__ . "/theme/" . "post.php";
+    # Get the root path of default theme of mdcms.
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "theme" . $sep . "post.php";
 }
 ```
 
@@ -104,7 +117,9 @@ function loadAssets($dest)
     # Save the path of old working directory.
     $oldDirectory = getcwd();
 
-    global $rootDirectory;
+    # Get the root path of default theme of mdcms.
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
@@ -137,7 +152,7 @@ function loadAssets($dest)
 
     # Copy assets recursively.
     try {
-        $publicDirectory = $rootDirectory . "/public";
+        $publicDirectory = $rootDirectory . $sep . "public";
 
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.
