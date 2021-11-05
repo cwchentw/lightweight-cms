@@ -42,6 +42,7 @@ if (ENABLE_TOC) {
         ?>
 
         <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
+        <!-- TODO: Specify a post author other than a site author. -->
         <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
 
         <?php if (array_key_exists(MDCMS_POST_META, $post)
