@@ -69,6 +69,7 @@ else if (\mdcms\Core\isHome($loc)) {
     loadHome();
 }
 # Render a page of home page.
+# TODO: Fix pagination in a home page.
 else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
