@@ -3,21 +3,21 @@
 
 
 # Get the absolute path of a local mdcms.
-# TODO: Refactor the code with a directory separator.
-$rootDirectory = __DIR__ . "/../..";
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . "{$sep}..{$sep}..";
 
 # Load global setting.
-require_once $rootDirectory . "/setting.php";
+require_once $rootDirectory . $sep . "setting.php";
 # Load private library.
-require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 
 if (!LOAD_SITE_ASSETS) {
     exit(0);
 }
 
 # Get directory of personal assets.
-$assetDirectory = $rootDirectory . "/" . ASSET_DIRECTORY;
-$publicDirectory = $rootDirectory . "/" . PUBLIC_DIRECTORY;
+$assetDirectory = $rootDirectory . $sep . ASSET_DIRECTORY;
+$publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
 $hasAsset = false;
 

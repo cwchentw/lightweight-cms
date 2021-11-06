@@ -3,20 +3,20 @@
 
 
 # Get the absolute path of a local mdcms.
-# TODO: Refactor the code with a directory separator.
-$rootDirectory = __DIR__ . "/../..";
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . "{$sep}..{$sep}..";
 
 # Load global setting.
-require_once $rootDirectory . "/setting.php";
+require_once $rootDirectory . $sep . "setting.php";
 
 # Load required libraries.
-require_once $rootDirectory . "/" . LIBRARY_DIRECTORY . "/autoload.php";
-require_once $rootDirectory . "/" . PLUGIN_DIRECTORY . "/autoload.php";
-require_once $rootDirectory . "/" . THEME_DIRECTORY . "/" . SITE_THEME . "/autoload.php";
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
+require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
+require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
 try {
-    $publicDirectory = $rootDirectory . "/public";
+    $publicDirectory = $rootDirectory . $sep . "public";
 
     # `loadAssets($dest)` is a function
     #  implemented by a mdcms theme.
