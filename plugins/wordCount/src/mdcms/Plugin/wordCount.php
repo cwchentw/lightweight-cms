@@ -20,9 +20,8 @@ function wordCount($content)
             }
         }
 
+        # Currently, we only count words for articles in Western languages.
         $words = explode(" ", $text);
-        # Currently, we only count words for English articles.
-        # TODO: Count words for posts in other languages.
         $result += count($words);
     }
 
@@ -40,9 +39,8 @@ function wordCount($content)
             }
         }
 
+        # Currently, we only count words for articles in Western languages.
         $words = explode(" ", $text);
-        # Currently, we only count words for English articles.
-        # TODO: Count words for posts in other languages.
         $result += count($words);
     }
 
