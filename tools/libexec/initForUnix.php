@@ -1,5 +1,5 @@
 <?php
-# Generate site settings for shell dynamically.
+# Generate site settings for shell scripts dynamically.
 
 
 $sep = DIRECTORY_SEPARATOR;

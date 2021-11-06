@@ -1,5 +1,5 @@
 <?php
-# Generate site settings for batch dynamically.
+# Generate site settings for batch scripts dynamically.
 
 
 $sep = DIRECTORY_SEPARATOR;

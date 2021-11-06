@@ -1,8 +1,9 @@
 <?php
-# A personal asset loader.
+# The site assets loader of mdcms.
 
 
 # Get the absolute path of a local mdcms.
+# TODO: Refactor the code with a directory separator.
 $rootDirectory = __DIR__ . "/../..";
 
 # Load global setting.
