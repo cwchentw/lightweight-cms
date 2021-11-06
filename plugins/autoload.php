@@ -12,10 +12,11 @@ $libraries = scandir(__DIR__);
 
 # We only scan top layer of this directory.
 foreach ($libraries as $library) {
-    # Skip private directories and files.
+    # Skip special directories.
     if ("." == substr($library, 0, 1)) {
         continue;
     }
+    # Skip private directories and files.
     else if ("_" == substr($library, 0, 1)) {
         continue;
     }
@@ -38,9 +39,5 @@ foreach ($libraries as $library) {
 
         # Load the plugin.
         require_once $loader;
-    }
-    # Ignore everything else.
-    else {
-        # Pass.
     }
 }

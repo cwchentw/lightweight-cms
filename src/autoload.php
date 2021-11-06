@@ -20,10 +20,11 @@ while (count($dirs) > 0) {
 
     # Iterate over the layer of directories and files.
     foreach ($libraries as $library) {
-        # Skip private directories and files.
+        # Skip special directories.
         if ("." == substr($library, 0, 1)) {
             continue;
         }
+        # Skip private directories and files.
         else if ("_" == substr($library, 0, 1)) {
             continue;
         }

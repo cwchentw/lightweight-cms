@@ -5,4 +5,5 @@
 #  root path of a mdcms theme.
 
 
-require_once __DIR__ . "/src/loader.php";
+$sep = DIRECTORY_SEPARATOR;
+require_once __DIR__ . $sep . "src" . $sep . "loader.php";
