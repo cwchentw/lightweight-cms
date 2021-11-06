@@ -11,7 +11,6 @@ require_once __DIR__ . "/../src/utils.php";
 # Take global data.
 $section = $GLOBALS[MDCMS_SECTION];
 $sections = $GLOBALS[MDCMS_SECTIONS];
-# TODO: Refactor the code.
 $posts = $GLOBALS[MDCMS_POSTS];
 if (POST_PER_PAGE > 0) {
     $postsPerPage = $GLOBALS[MDCMS_POST_PER_PAGE];
