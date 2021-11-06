@@ -60,7 +60,6 @@ else if (\mdcms\Core\isHome($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
     # Posts not included in any section.
-    # TODO: Refactor the code.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
@@ -75,7 +74,6 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($homeURI);
     # Posts not included in any section.
-    # TODO: Refactor the code.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($homeURI);
 
     preg_match("/^\/(\d+)\/$/", $loc, $matches);
@@ -109,7 +107,6 @@ else if (\mdcms\Core\isSection($loc)) {
     # Subsections of current section.
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
     # Posts of current section.
-    # TODO: Refactor the code.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
@@ -130,7 +127,6 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
     # Subsections of current section.
     $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($sectionURI);
     # Posts of current section.
-    # TODO: Refactor the code.
     $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($sectionURI);
     # A page in a series of pages.
     $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($sectionURI, $page);
