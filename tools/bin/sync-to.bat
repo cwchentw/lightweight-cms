@@ -1,5 +1,5 @@
 @echo off
-rem Sync the local repo to a production environment.
+rem Sync a local mdcms repo to a production environment.
 rem  Unrequired directories and files are skipped.
 
 
@@ -88,7 +88,7 @@ call %bin%\assets.bat || (
     exit /b %ERRORLEVEL%
 )
 
-rem Load personal assets.
+rem Load site assets.
 call %bin%\site-assets.bat || (
     exit /b %ERRORLEVEL%
 )
