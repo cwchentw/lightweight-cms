@@ -1,5 +1,8 @@
 <?php
 # Loader of Google Analytics plugin.
 
-$sourceDirectory = __DIR__ . "/src";
-require_once $sourceDirectory . "/mdcms/Plugin" . "/googleAnalytics.php";
+
+$sep = DIRECTORY_SEPARATOR;
+$sourceDirectory = __DIR__ . $sep . "src";
+$prefixDirectory = $sourceDirectory . $sep . "mdcms" . $sep . "Plugin";
+require_once $prefixDirectory . $sep . "googleAnalytics.php";
