@@ -1,9 +1,13 @@
 <?php
 # The manifest.json generator of mdcms.
 
-# Load global setting.
-require_once __DIR__ . "/../../setting.php";
 
+# Get the absolute path of a local mdcms.
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
+
+# Load global settings.
+require_once $rootDirectory . $sep . "setting.php";
 
 # Adjust these parameters as needed.
 $backgroundColor = "#6C757D";

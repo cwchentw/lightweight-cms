@@ -4,9 +4,9 @@
 
 # Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
-$rootDirectory = __DIR__ . "{$sep}..{$sep}..";
+$rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
-# Load global setting.
+# Load global settings.
 require_once $rootDirectory . $sep . "setting.php";
 
 # Load required libraries.

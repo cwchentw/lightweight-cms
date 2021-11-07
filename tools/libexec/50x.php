@@ -6,9 +6,8 @@
 #  won't render well.
 
 
-$sep = DIRECTORY_SEPARATOR;
-
 # Get the absolute path of a local mdcms.
+$sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
 # Load global settings.

@@ -1,11 +1,16 @@
 <?php
 # The sitemap.xml generator of mdcms.
 
-# Get global setting.
-require_once __DIR__ . "/../../setting.php";
+
+# Get the absolute path of a local mdcms.
+$sep = DIRECTORY_SEPARATOR;
+$rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
+
+# Get global settings.
+require_once $rootDirectory . $sep . "setting.php";
 
 # Load required library.
-require_once __DIR__ . "/../../" . LIBRARY_DIRECTORY . "/autoload.php";
+require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 
 
 $xml = new DOMDocument("1.0", "UTF-8");
