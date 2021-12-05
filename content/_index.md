@@ -7,7 +7,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 <pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.23
 > choco install composer
-> choco install nodejs
+> choco install nodejs --version=16.13.1
 > choco install rsync
 > choco install sed
 </code></pre>
@@ -26,7 +26,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 
 <pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
 $ brew install composer
-$ brew install node
+$ brew install node@16
 </code></pre>
 
 <pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
@@ -39,7 +39,7 @@ $ ./tools/bin/serve
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install node
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install --lts
 </code></pre>
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
