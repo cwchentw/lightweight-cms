@@ -1,6 +1,19 @@
-# Markdown Content Management System
+# mdcms
 
-mdcms (Markdown Content Management System) is a Markdown-based flat-file CMS powered by PHP.
+mdcms, aka Markdown Content Management System, is yet another Markdown-based flat-file CMS (content management system) powered by PHP.
+
+## Features
+
+* Cross-platform
+* Web pages in Markdown, HTML and PHP
+* Draft pages
+* Nested sections
+* Breadcrumb (Bootstrap 5 based)
+* Pagination (Bootstrap 5 based)
+* Table of Contents
+* Sitemap
+* PWA (progressive web application)
+* Asset management (SCSS and Babel)
 
 ## Synopsis
 
@@ -9,7 +22,7 @@ mdcms (Markdown Content Management System) is a Markdown-based flat-file CMS pow
 ```shell
 > choco install php --version=7.4.23
 > choco install composer
-> choco install nodejs
+> choco install nodejs --version=16.13.1
 > choco install rsync
 > choco install sed
 ```
@@ -33,7 +46,7 @@ mdcms (Markdown Content Management System) is a Markdown-based flat-file CMS pow
 ```shell
 $ brew install php@7.4
 $ brew install composer
-$ brew install node
+$ brew install node@16
 ```
 
 ```shell
@@ -59,7 +72,7 @@ $ sudo apt install php php-xml php-mbstring php-zip
 Install [nvm](https://github.com/nvm-sh/nvm).
 
 ```shell
-$ nvm install node
+$ nvm install --lts
 ```
 
 ```shell
@@ -94,7 +107,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 * Production
   * GNU/Linux is recommended
   * A web server like Apache or Nginx
-  * PHP 7.3 or above
+  * PHP 7.3 or 7.4
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) Perl (for global replacement)
@@ -102,6 +115,8 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [Composer](https://getcomposer.org)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org) (for linting)
+
+PHP 8.x is neither tested nor recommended because major GNU/Linux distributions still utilize PHP 7.x mostly.
 
 ### Front End
 
@@ -112,7 +127,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
   * (Optional) [highlight.js](https://highlightjs.org)
 * Development
-  * Node.js
+  * Node.js 16.x
   * [Gulp](https://gulpjs.com/)
   * [Sass](https://sass-lang.com/)
   * [Autoprefixer](https://github.com/postcss/autoprefixer)
