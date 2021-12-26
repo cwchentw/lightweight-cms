@@ -69,7 +69,12 @@ $ git push -u origin master
 $ sudo apt install php php-xml php-mbstring php-zip
 ```
 
-Install [nvm](https://github.com/nvm-sh/nvm).
+```shell
+$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
+```
+
+Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
 $ nvm install --lts
@@ -78,7 +83,6 @@ $ nvm install --lts
 ```shell
 $ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
-$ ./tools/bin/install-composer $HOME/bin
 $ ./tools/bin/serve
 ```
 
@@ -144,25 +148,26 @@ We assume GNU/Linux as both development and production environments. If you use 
 
 Clone the repo locally:
 
-```
+```shell
 $ git clone https://github.com/cwchentw/mdcms.git mysite
 ```
 
 Change your working directory to root path of the cloned repo:
 
-```
+```shell
 $ cd mysite
 ```
 
 (Optional) Install Composer:
 
-```
-$ ./tools/bin/install-composer $HOME/bin
+```shell
+$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 ```
 
 Install dependencies of mdcms with Composer:
 
-```
+```shell
 $ composer install --no-dev
 ```
 
@@ -172,13 +177,13 @@ Instead, if you are going to update your mdcms copy, follow [this guide](/conten
 
 You can run a mdcms site locally with builtin web server of PHP:
 
-```
-$ sudo ./tools/bin/serve
+```shell
+$ ./tools/bin/serve
 ```
 
 [Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 7.3 or above:
 
-```
+```shell
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
@@ -195,6 +200,8 @@ $ git push -u origin master
 
 ## Breaking Changes
 
+* 2021/12/26
+  * Remove *tools/bin/install-composer* script
 * 2021/07/25
   * Add `METADATA_DRAFT` in *config/internal.template.php*
   * Add `METADATA_NOINDEX` in *config/internal.template.php*

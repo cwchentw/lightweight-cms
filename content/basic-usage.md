@@ -71,7 +71,8 @@ $ cd mysite
 (Optional) Install Composer:
 
 ```shell
-$ ./tools/bin/install-composer path/to/prefix
+$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 ```
 
 By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.

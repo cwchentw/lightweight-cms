@@ -37,6 +37,10 @@ $ ./tools/bin/serve
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
 </code></pre>
 
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
+</code></pre>
+
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
 
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install --lts
@@ -44,7 +48,6 @@ $ ./tools/bin/serve
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
 $ cd mysite
-$ ./tools/bin/install-composer $HOME/bin
 $ ./tools/bin/serve
 </code></pre>
 
