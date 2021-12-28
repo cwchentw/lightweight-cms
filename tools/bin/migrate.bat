@@ -81,6 +81,11 @@ sed -i "/define(/ { N; N; N; N; N; N; N; N; s/define(.*""REDIRECT_LIST"",.*);/de
     echo /b 1
 )
 
+sed -i "s/#578583//" %parametersConfig:\=/% || (
+    echo Unable to modify parameters.php >&2
+    echo /b 1
+)
+
 set optionalFeaturesConfig=%root%\config\optionalFeatures.php
 sed -i "s/UA-105146581-5//" %optionalFeaturesConfig:\=/% || (
     echo Unable to modify optionalFeatures.php >&2

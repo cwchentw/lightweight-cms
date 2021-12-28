@@ -200,6 +200,8 @@ $ git push -u origin master
 
 ## Breaking Changes
 
+* 2021/12/29
+  * Add `THEME_COLOR` in *config/parameters.template.php*
 * 2021/12/26
   * Remove *tools/bin/install-composer* script
 * 2021/07/25

@@ -24,3 +24,5 @@ define("BREADCRUMB_HOME", "Index Page");
 #
 # It should be less than the upper limit of that of a tweet of Twitter.
 define("EXCERPT_THRESHOLD", 140);
+# The theme color.
+define("THEME_COLOR", "#578583");

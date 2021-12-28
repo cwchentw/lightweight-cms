@@ -6,7 +6,9 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#578583"/>
+<?php if (!is_null(THEME_COLOR) && "" != THEME_COLOR): ?>
+<meta name="theme-color" content="<?php echo THEME_COLOR; ?>"/>
+<?php endif; ?>
 
 <!-- icon in the highest resolution we need it for -->
 <link rel="icon" sizes="192x192" href="/img/<?php echo SITE_LOGO; ?>-192x192.png">
