@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions related to mdcms
-mtime: 2021/7/6
+mtime: 2021/12/28
 weight: 4
 ---
 
@@ -28,7 +28,18 @@ We created mdcms to migrate some of our website from static sites into dynamic o
 
 PHP 7. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-We utilize PHP 7 but not PHP 8 because at the time mdcms is created, most PHP versions on major GNU/Linux distributions stay at PHP 7. We will migrate our code base to PHP 8 after most major GNU/Linux distros upgrade their PHP versions.
+We utilize PHP 7 but not PHP 8 because at the time mdcms is created, most PHP versions on major GNU/Linux distributions stay at PHP 7:
+
+|GNU/Linux Distribution|PHP Version|
+|----------------------|-----------|
+|Debian 11             |7.4.21     |
+|Ubuntu 20.04          |7.3.8      |
+|Rocky Linux 8.5       |7.2.24 (*) |
+|openSUSE Leap 15.3    |7.4.6      |
+
+*(\*) Rocky Linux 8.5 is not usable for mdcms currently.*
+
+We will migrate our code base to PHP 8 after most major GNU/Linux distros upgrade their PHP versions.
 
 ## Does mdcms Run on Windows?
 
