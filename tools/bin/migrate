@@ -72,32 +72,32 @@ cp "${root}/config/internal.template.php" "${root}/config/internal.php" || (
     exit 1;
 )
 
-sed -i "s/mdcms.org/example.com/" "${root}/config/information.php" || (
+sed -i "" "s/mdcms.org/example.com/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
-sed -i "s/cwchentw\/mdcms//" "${root}/config/socialMedia.php" || (
+sed -i "" "s/cwchentw\/mdcms//" "${root}/config/socialMedia.php" || (
     echo "Unable to modify socialMedia.php" >&2;
     exit 1;
 )
 
-sed -i "/define(/ { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
+sed -i "" "6 { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
 
-sed -i "s/#578583//" "${root}/config/parameters.php" || (
+sed -i "" "s/#578583//" "${root}/config/parameters.php" || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
 
-sed -i "s/UA-105146581-5//" "${root}/config/optionalFeatures.php" || (
+sed -i "" "s/UA-105146581-5//" "${root}/config/optionalFeatures.php" || (
     echo "Unable to modify optionalFeatures.php" >&2;
     exit 1;
 )
 
-sed -i "s/content/posts/" "${root}/config/internal.php" || (
+sed -i "" "s/content/posts/" "${root}/config/internal.php" || (
     echo "Unable to modify internal.php" >&2;
     exit 1;
 )

@@ -76,7 +76,7 @@ sed -i "s/cwchentw\/mdcms//" %socialMediaConfig:\=/% || (
 )
 
 set parametersConfig=%root%\config\parameters.php
-sed -i "/define(/ { N; N; N; N; N; N; N; N; s/define(.*""REDIRECT_LIST"",.*);/define(""REDIRECT_LIST"", []);/; }" %parametersConfig:\=/% || (
+sed -i "6 { N; N; N; N; N; N; N; N; s/define(.*""REDIRECT_LIST"",.*);/define(""REDIRECT_LIST"", []);/; }" %parametersConfig:\=/% || (
     echo Unable to modify parameters.php >&2
     echo /b 1
 )
