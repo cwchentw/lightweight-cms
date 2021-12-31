@@ -1,6 +1,6 @@
 # mdcms
 
-mdcms, aka Markdown Content Management System, is yet another Markdown-based flat-file CMS (content management system) powered by PHP.
+mdcms, aka Markdown Content Management System, is yet another Markdown-based flat-file CMS powered by PHP.
 
 ## Features
 
@@ -197,6 +197,10 @@ Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf)
 $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
+
+## Documentation
+
+See [mdcms.org](https://mdcms.org), which is a live demonstration of mdcms itself.
 
 ## Breaking Changes
 
