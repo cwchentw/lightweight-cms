@@ -214,4 +214,4 @@ See [mdcms.org](https://mdcms.org), which is a live demonstration of mdcms itsel
 
 ## Copyright
 
-Copyright (c) 2021 Michelle Chen. Licensed under MIT
+Copyright (c) 2021-2022 Michelle Chen. Licensed under MIT
