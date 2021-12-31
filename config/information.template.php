@@ -18,7 +18,7 @@ define("SITE_DESCRIPTION", "A Markdown-based Flat-File CMS Powered by PHP");
 #  set the author of a specific post in its front matter.
 define("SITE_AUTHOR", "Michelle Chen");
 # Copyright text of a site.
-define("SITE_COPYRIGHT", "Copyright (c) 2021 Michelle Chen. Licensed under CC BY 4.0.");
+define("SITE_COPYRIGHT", "Copyright (c) 2021-2022 Michelle Chen. Licensed under CC BY 4.0.");
 # Language of rendered HTML pages.
 #
 # mdcms is not designed for a multi-language site.
