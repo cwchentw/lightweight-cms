@@ -9,9 +9,6 @@ $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 # Load global settings.
 require_once $rootDirectory . $sep . "setting.php";
 
-# Adjust these parameters as needed.
-$backgroundColor = "#6C757D";
-$themeColor = "#6C757D";
 # The text of some languages displays right-to-left.
 $languageDirection = "ltr";
 $image = SITE_LOGO;
@@ -27,8 +24,8 @@ $json["name"] = SITE_NAME;
 $json["start_url"] = "/?source=pwa";
 $json["scope"] = ".";
 $json["display"] = "standalone";
-$json["background_color"] = $backgroundColor;
-$json["theme_color"] = $themeColor;
+$json["background_color"] = THEME_COLOR;
+$json["theme_color"] = THEME_COLOR;
 $json["description"] = SITE_DESCRIPTION;
 $json["dir"] = $languageDirection;
 $json["lang"] = SITE_LANGUAGE;
