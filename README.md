@@ -204,6 +204,9 @@ See [mdcms.org](https://mdcms.org), which is a live demonstration of mdcms itsel
 
 ## Breaking Changes
 
+* 2022/01/01
+  * Add `SCRIPT_DIRECTION` in *config/parameters.template.php*
+  * Add `SITE_ORIENTATION` in *config/parameters.template.php*
 * 2021/12/29
   * Add `THEME_COLOR` in *config/parameters.template.php*
 * 2021/12/26

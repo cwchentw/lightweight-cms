@@ -26,3 +26,7 @@ define("BREADCRUMB_HOME", "Index Page");
 define("EXCERPT_THRESHOLD", 140);
 # The theme color.
 define("THEME_COLOR", "#578583");
+# The script direction. Scripts in most languages are ltr (left-to-right).
+define("SCRIPT_DIRECTION", "ltr");
+# The orientation of a website or a web application.
+define("SITE_ORIENTATION", "portrait-primary");

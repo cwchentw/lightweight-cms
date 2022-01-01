@@ -10,7 +10,6 @@ $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 require_once $rootDirectory . $sep . "setting.php";
 
 # The text of some languages displays right-to-left.
-$languageDirection = "ltr";
 $image = SITE_LOGO;
 $imageExtension = ".png";
 $imageType = "image/png";
@@ -27,9 +26,9 @@ $json["display"] = "standalone";
 $json["background_color"] = THEME_COLOR;
 $json["theme_color"] = THEME_COLOR;
 $json["description"] = SITE_DESCRIPTION;
-$json["dir"] = $languageDirection;
+$json["dir"] = SCRIPT_DIRECTION;
 $json["lang"] = SITE_LANGUAGE;
-$json["orientation"] = "portrait-primary";
+$json["orientation"] = SITE_ORIENTATION;
 
 $json["icons"] = array();
 
