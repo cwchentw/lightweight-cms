@@ -44,7 +44,6 @@ If you are not interested in developing mdcms itself, you still require Composer
   * [stylelint](https://stylelint.io/)
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
-  * [ESLint](https://eslint.org/)
 
 These dependencies are for *default* theme of mdcms. If you utilize another mdcms theme, your dependencies may vary.
 

@@ -24,7 +24,6 @@ As mdcms itself, this theme is experimental as well. If you want to create a new
   * [stylelint](https://stylelint.io/)
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
-  * [ESLint](https://eslint.org/)
 
 ## For End Users
 

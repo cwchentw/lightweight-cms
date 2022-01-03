@@ -138,7 +138,6 @@ PHP 8.x is neither tested nor recommended because major GNU/Linux distributions 
   * [stylelint](https://stylelint.io/)
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
-  * [ESLint](https://eslint.org/)
 
 The dependencies mentioned here are based on *default* theme of mdcms. If you adapt another theme, your dependencies of the Web may vary.
 
@@ -204,6 +203,8 @@ See [mdcms.org](https://mdcms.org), which is a live demonstration of mdcms itsel
 
 ## Breaking Changes
 
+* 2022/01/03
+  * Remove ESLint
 * 2022/01/01
   * Add `SCRIPT_DIRECTION` in *config/parameters.template.php*
   * Add `SITE_ORIENTATION` in *config/parameters.template.php*
