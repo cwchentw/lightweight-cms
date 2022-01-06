@@ -77,7 +77,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install --lts
+$ nvm install 16.13.1
+$ nvm use 16.13.1
 ```
 
 ```shell
