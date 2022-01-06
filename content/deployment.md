@@ -1,6 +1,6 @@
 ---
 title: Deploy a mdcms Site to Nginx
-mtime: 2021/7/13
+mtime: 2022/1/5
 weight: 4
 ---
 
@@ -21,7 +21,7 @@ $ sudo apt install nginx php php-fpm
 Invoke this command to install packages for Composer:
 
 ```shell
-$ sudo apt install php-xml php-mbstring php-zip
+$ sudo apt install php-xml php-mbstring php-zip unzip
 ```
 
 If you utilize *default* theme of mdcms, invoke this command as well:
