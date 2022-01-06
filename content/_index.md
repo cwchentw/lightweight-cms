@@ -1,11 +1,11 @@
 Welcome to official site of mdcms (Markdown Content Management System). If you are new to mdcms, view our articles first.
 
-*mdcms is still experimental.*
+*mdcms is still experimental and evolving.*
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
 
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.23
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.27
 > choco install composer
 > choco install nodejs --version=16.13.1
 > choco install rsync
@@ -34,7 +34,7 @@ $ cd mysite
 $ ./tools/bin/serve
 </code></pre>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip unzip
 </code></pre>
 
 <pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ curl -o composer-setup.php https://getcomposer.org/installer
@@ -43,7 +43,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install --lts
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.13.1
+$ nvm use 16.13.1
 </code></pre>
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
