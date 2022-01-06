@@ -6,17 +6,17 @@
 ?>
 
 <!-- Native JavaScript for Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.0.3/bootstrap-native.min.js"
-    integrity="sha512-AQMIF/Dretc0m1KBmsTj0FNUeR7OZKw+DKAK+/jqrpalPQAP7ODqKJB6wHBPP6MDTKS52LYPihNa1cEpil8zaA=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.0.7/bootstrap-native.min.js"
+    integrity="sha512-8otC61oMBEZ1fT8Oi+a0mZEJHy2cSUhFnCS44L8B9erhfxO8cuRGSJo0Dhgw42Vw7g+PaJ8pTxFlUsa+zLbUsA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"
-    integrity="sha512-MinqHeqca99q5bWxFNQEQpplMBFiUNrEwuuDj2rCSh1DgeeTXUgvgYIHZ1puBS9IKBkdfLMSk/ZWVDasa3Y/2A=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"
+    integrity="sha512-Pbb8o120v5/hN/a6LjF4N4Lxou+xYZ0QcVF8J6TWhBbHmctQWd8O6xTDmHpE/91OjPzCk4JRoiJsexHYg4SotQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/nginx.min.js"
-    integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/nginx.min.js"
+    integrity="sha512-y3Mryvd8MCT1x8PScKC/zmbJTai3P3H6+5WH1yPpCV3UzoI3dKum7qyTeB92e1qwKnhMWjfWkTEN1Okz5rvvWg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Add more highlight.js language module(s) as needed. -->
 <script>hljs.highlightAll();</script>

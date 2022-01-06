@@ -27,15 +27,15 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Twitter Bootstrap -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css"
-    integrity="sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA=="
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+    integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/railscasts.min.css"
-        integrity="sha512-niK2LUYUB+oLfsoDK9tf+0zsedmJQJ9I7K911XkFoyc3YUT6+ISap8UIn35MfMD7Untol5bhHXvTAd13CKPg3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/railscasts.min.css"
+    integrity="sha512-rtvj6tMmkVaWoe4mh5qd8yiYRoWna8i4A6+sowSJgkVE0WONXLmAIE750g41aHKB6k5hHmD3HFZS2fQhg3m27g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <?php endif; ?>
 
 <!-- Add more third-party style sheets here. -->
