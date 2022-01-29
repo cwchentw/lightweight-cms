@@ -198,10 +198,6 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
-## Documentation
-
-See [mdcms.org](https://mdcms.org), which is a live demonstration of mdcms itself.
-
 ## Breaking Changes
 
 * 2022/01/03
