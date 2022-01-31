@@ -33,7 +33,7 @@ We utilize PHP 7 but not PHP 8 because at the time mdcms is created, PHP version
 |GNU/Linux Distribution|PHP Version|
 |----------------------|-----------|
 |Debian 11             |7.4.21     |
-|Ubuntu 20.04          |7.3.8      |
+|Ubuntu 20.04          |7.4.3      |
 |Rocky Linux 8.5       |7.2.24 (*) |
 |Fedora 35             |8.0.14     |
 |openSUSE Leap 15.3    |7.4.6      |

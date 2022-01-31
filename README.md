@@ -112,7 +112,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 * Production
   * GNU/Linux is recommended
   * A web server like Apache or Nginx
-  * PHP 7.3 or 7.4
+  * PHP 7.4
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) Perl (for global replacement)
@@ -181,7 +181,7 @@ You can run a mdcms site locally with builtin web server of PHP:
 $ ./tools/bin/serve
 ```
 
-[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 7.3 or above:
+[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 7.4:
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www
@@ -200,6 +200,8 @@ $ git push -u origin master
 
 ## Breaking Changes
 
+* 2022/02/01
+  * Drop support to PHP 7.3
 * 2022/01/03
   * Remove ESLint
 * 2022/01/01
