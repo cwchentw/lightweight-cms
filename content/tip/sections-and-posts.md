@@ -1,11 +1,21 @@
 ---
 title: Tips to Sections and Posts
-mtime: 2021/7/1
+mtime: 2022/1/30
 ---
 
 ## Prologue
 
 This article illustrates tips to sections and posts.
+
+## Add a Pair of Square Brackets to a Title
+
+Quote the title with a pair of `"` like this:
+
+```markdown
+---
+title: "[Golang] Build Development Environment"
+---
+```
 
 ## Add Extra Fields for Pages
 
