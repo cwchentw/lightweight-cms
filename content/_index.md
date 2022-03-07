@@ -5,9 +5,9 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
 
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.27
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.28
 > choco install composer
-> choco install nodejs --version=16.13.1
+> choco install nodejs --version=16.14.0
 > choco install rsync
 > choco install sed
 </code></pre>

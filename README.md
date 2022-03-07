@@ -20,9 +20,9 @@ mdcms, aka Markdown Content Management System, is yet another Markdown-based fla
 ### Windows
 
 ```shell
-> choco install php --version=7.4.27
+> choco install php --version=7.4.28
 > choco install composer
-> choco install nodejs --version=16.13.1
+> choco install nodejs --version=16.14.0
 > choco install rsync
 > choco install sed
 ```
