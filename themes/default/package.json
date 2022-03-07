@@ -30,7 +30,7 @@
     "gulp-stylelint": "^13.0.0",
     "gulp-uglify": "^3.0.2",
     "isdev": "^1.0.1",
-    "marked": "^2.0.0",
+    "marked": "^4.0.10",
     "sass": "^1.45.1",
     "stylelint": "^13.0.0",
     "stylelint-config-recommended": "^5.0.0"
