@@ -43,8 +43,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.13.1
-$ nvm use 16.13.1
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.14.0
+$ nvm use 16.14.0
 </code></pre>
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
