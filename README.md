@@ -20,7 +20,7 @@ mdcms, aka Markdown Content Management System, is yet another Markdown-based fla
 ### Windows
 
 ```shell
-> choco install php --version=7.4.28
+> choco install php --version=8.1.3
 > choco install composer
 > choco install nodejs --version=16.14.0
 > choco install rsync
@@ -44,7 +44,7 @@ mdcms, aka Markdown Content Management System, is yet another Markdown-based fla
 ### MacOS
 
 ```shell
-$ brew install php@7.4
+$ brew install php@8.1
 $ brew install composer
 $ brew install node@16
 ```

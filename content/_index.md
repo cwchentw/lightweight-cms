@@ -5,7 +5,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
 
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=7.4.28
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=8.1.3
 > choco install composer
 > choco install nodejs --version=16.14.0
 > choco install rsync
@@ -24,7 +24,7 @@ Welcome to official site of mdcms (Markdown Content Management System). If you a
 > git push -u origin master
 </code></pre>
 
-<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@7.4
+<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@8.1
 $ brew install composer
 $ brew install node@16
 </code></pre>
