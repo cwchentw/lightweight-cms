@@ -112,7 +112,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
 * Production
   * GNU/Linux is recommended
   * A web server like Apache or Nginx
-  * PHP 7.4
+  * PHP 8.1
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) Perl (for global replacement)
@@ -181,7 +181,7 @@ You can run a mdcms site locally with builtin web server of PHP:
 $ ./tools/bin/serve
 ```
 
-[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 7.4:
+[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 8.1:
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www
