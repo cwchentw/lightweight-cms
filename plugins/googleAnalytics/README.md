@@ -22,6 +22,11 @@ if ("" != $googleAnalyticsID) {
 }
 ```
 
+## Breaking Changes
+
+* `2022/03/22`
+  * Migrate to Google Analytics 4
+
 ## Copyright
 
 Copyright (c) 2021 Michelle Chen. Licensed under MIT
