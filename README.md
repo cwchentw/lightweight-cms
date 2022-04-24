@@ -200,6 +200,9 @@ $ git push -u origin master
 
 ## Breaking Changes
 
+* 2022/04/24
+  * Migrate `master` branch to PHP 8.1
+  * The old code is moved to `php74` branch
 * 2022/02/01
   * Drop support to PHP 7.3
 * 2022/01/03
