@@ -1,12 +1,12 @@
-# Default Theme for mdcms
+# Default Theme for Lightweight CMS
 
 ## Synopsis
 
-This is *default* theme for mdcms. In addition, it serves as a template to create other themes.
+This is *default* theme for Lightweight CMS. In addition, it serves as a template to create other themes.
 
 ## Warning
 
-As mdcms itself, this theme is experimental as well. If you want to create a new theme for mdcms, refer here to see whether any modification occurs.
+As Lightweight CMS itself, this theme is experimental as well. If you want to create a new theme for Lightweight CMS, refer here to see whether any modification occurs.
 
 ## System Requirements
 
@@ -27,13 +27,13 @@ As mdcms itself, this theme is experimental as well. If you want to create a new
 
 ## For End Users
 
-This theme represents a generic one, best suitable for documentation sites. You can safely keep this theme *as is*. If you want to alter anything here, create a new theme by copying this directory to a new location or there may be code conflicts when you update mdcms with Git.
+This theme represents a generic one, best suitable for documentation sites. You can safely keep this theme *as is*. If you want to alter anything here, create a new theme by copying this directory to a new location or there may be code conflicts when you update Lightweight CMS with Git.
 
 ## For Theme Creators
 
-The project structure of a mdcms theme is very liberal. The only mandatory file is *autoload.php* in the root path of a mdcms theme directory.
+The project structure of a Lightweight CMS theme is very liberal. The only mandatory file is *autoload.php* in the root path of a Lightweight CMS theme directory.
 
-There are only five mandatory functions in a mdcms theme currently:
+There are only five mandatory functions in a Lightweight CMS theme currently:
 
 * `loadHome()`: Load a layout of home page
 * `loadSection()`: Load a layout of sections
@@ -91,7 +91,7 @@ function loadPage()
 
 This function accepts one parameter, which represents a destination path to copy assets.
 
-This theme adapts Sass and Babel as the front end stacks. Such assets need compilation before deploying to a production environment. In this sample code, we call NPM to compile assets and copy their outputs recursively to a destination directory set by mdcms:
+This theme adapts Sass and Babel as the front end stacks. Such assets need compilation before deploying to a production environment. In this sample code, we call NPM to compile assets and copy their outputs recursively to a destination directory set by Lightweight CMS:
 
 ```php
 function loadAssets($dest)
@@ -134,7 +134,7 @@ function loadAssets($dest)
     try {
         $publicDirectory = $rootDirectory . "/public";
 
-        # xCopy is a utility function in mdcms.
+        # xCopy is a utility function in Lightweight CMS.
         #  It will copy directories and files recursively.
         \mdcms\Core\xCopy($publicDirectory, $dest);
     }

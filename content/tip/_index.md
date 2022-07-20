@@ -1,6 +1,6 @@
 ---
-title: Tips for mdcms
+title: Tips for Lightweight CMS
 weight: 3
 ---
 
-Short text to illustrate how to use mdcms. They intend to supplement other posts on this site.
+Short text to illustrate how to use Lightweight CMS. They intend to supplement other posts on this site.

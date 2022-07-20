@@ -7,7 +7,7 @@ mtime: 2021/7/10
 
 This article illustrates the usage of our utility scripts on Unix-equivalent systems.
 
-## Migrate a Local mdcms Repository to a New Site
+## Migrate a Local Lightweight CMS Repository to a New Site
 
 Invoke the following command:
 
@@ -17,11 +17,11 @@ $ ./tools/bin/migrate
 
 The utility script will create site configuration files and *posts* directory.
 
-## Run mdcms Sites Locally without Apache or Nginx
+## Run Lightweight CMS Sites Locally without Apache or Nginx
 
 Traditionally, PHP programmers install either Apache or Nginx to run PHP scripts locally. Nonetheless, it is not easy for beginners to write correct configurations for those web servers. With our utility script, you don't need to set up a local web server to run PHP scripts.
 
-Invoke this command to run a mdcms site locally:
+Invoke this command to run a Lightweight CMS site locally:
 
 ```shell
 $ ./tools/bin/serve
@@ -41,7 +41,7 @@ $ sudo ./tools/bin/serve
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
 
-## Deploy a mdcms Site to a PaaS
+## Deploy a Lightweight CMS Site to a PaaS
 
 Run the command to prepare your deployment:
 
@@ -55,9 +55,9 @@ We implement this script in POSIX shell because most PaaS are based on GNU/Linux
 $ .\tools\bin\publish.bat
 ```
 
-These utility scripts will copy router of mdcms and assets to *public* directory, ready for further step(s) to deploy your site.
+These utility scripts will copy router of Lightweight CMS and assets to *public* directory, ready for further step(s) to deploy your site.
 
-See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a mdcms site to a PaaS.
+See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a Lightweight CMS site to a PaaS.
 
 ## Synchonize Content on a Production Environment
 
@@ -77,7 +77,7 @@ Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything 
 
 ## Update Site Settings after Changing Project Structure
 
-Invoke this command to update site settings each time you change project structure of your mdcms repo:
+Invoke this command to update site settings each time you change project structure of your Lightweight CMS repo:
 
 ```shell
 $ ./tools/bin/init

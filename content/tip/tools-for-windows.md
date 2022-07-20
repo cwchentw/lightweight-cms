@@ -7,7 +7,7 @@ mtime: 2021/7/10
 
 This article illustrates the usage of our utility scripts on Windows family systems.
 
-## Migrate a Local mdcms Repository to a New Site
+## Migrate a Local Lightweight CMS Repository to a New Site
 
 Invoke the following command:
 
@@ -17,11 +17,11 @@ $ .\tools\bin\migrate.bat
 
 The utility script will create site configuration files and *posts* directory.
 
-## Run mdcms Sites Locally without IIS, Apache or Nginx
+## Run Lightweight CMS Sites Locally without IIS, Apache or Nginx
 
 Traditionally, PHP programmers install a web server to run PHP scripts locally. Nonetheless, it is not easy for beginners to write correct configurations for those web servers. With our utility script, you don't need to set up a local web server to run your PHP scripts.
 
-Run this command to run a mdcms site locally:
+Run this command to run a Lightweight CMS site locally:
 
 ```shell
 > .\tools\bin\serve.bat
@@ -47,7 +47,7 @@ Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything 
 
 Keep a trailing slash on your target path. It is required for `rsync(1)` to work properly.
 
-## Deploy a mdcms Site to a PaaS
+## Deploy a Lightweight CMS Site to a PaaS
 
 Run the Unix command to prepare your deployment:
 
@@ -61,13 +61,13 @@ We implement this script in POSIX shell because most PaaS are based on GNU/Linux
 $ .\tools\bin\publish.bat
 ```
 
-These utility scripts will copy router of mdcms and assets to *public* directory, ready for further step(s) to deploy your site.
+These utility scripts will copy router of Lightweight CMS and assets to *public* directory, ready for further step(s) to deploy your site.
 
-See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a mdcms site to a PaaS.
+See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a Lightweight CMS site to a PaaS.
 
 ## Update Site Settings after Changing Project Structure
 
-Run this command to update site settings each time you change project structure of your mdcms repo:
+Run this command to update site settings each time you change project structure of your Lightweight CMS repo:
 
 ```shell
 > .\tools\bin\init.bat
@@ -77,4 +77,4 @@ Site settings of mdmcs is recorded in PHP scripts, which are unusable in other s
 
 ## Why are not Some Utility Scripts Available on Windows?
 
-Most PHP developers develop PHP web applications on Unix-equivalent systems. Our utility scripts for Windows intend to run mdcms sites locally on Windows, not to develop mdcms itself.
+Most PHP developers develop PHP web applications on Unix-equivalent systems. Our utility scripts for Windows intend to run Lightweight CMS sites locally on Windows, not to develop Lightweight CMS itself.

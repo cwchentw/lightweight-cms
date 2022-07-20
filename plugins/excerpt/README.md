@@ -1,8 +1,8 @@
-# Excerpt for mdcms
+# Excerpt for Lightweight CMS
 
 ## Synopsis
 
-A tiny mdcms plugin to generate an excerpt from western European text.
+A tiny Lightweight CMS plugin to generate an excerpt from western European text.
 
 ## System Requirements
 

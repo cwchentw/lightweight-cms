@@ -1,8 +1,8 @@
-# Google Analytics for mdcms
+# Google Analytics for Lightweight CMS
 
 ## Synopsis
 
-A tiny mdcms plugin to add a Google Analytics tracker for mdcms sites.
+A tiny Lightweight CMS plugin to add a Google Analytics tracker for Lightweight CMS sites.
 
 ## System Requirements
 

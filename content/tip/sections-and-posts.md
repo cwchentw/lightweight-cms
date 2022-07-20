@@ -19,7 +19,7 @@ title: "[Golang] Build Development Environment"
 
 ## Add Extra Fields for Pages
 
-Besides builtin fields exposed in sections and posts, mdcms expose metadata as PHP arrays as well.
+Besides builtin fields exposed in sections and posts, Lightweight CMS expose metadata as PHP arrays as well.
 
 Let's say we add a subtitle in addition to a title:
 
@@ -50,7 +50,7 @@ Once visitors access this page, the code will direct them to a new location. Suc
 
 ## Use Layouts other than Sections and Posts
 
-It is unlikely theme creators can produce extra layouts in advance to fulfill unseen needs. Therefore, mdcms allows site owners to write custom pages instead of regular posts. Because of limited page size, we won't review the details to create custom pages here.
+It is unlikely theme creators can produce extra layouts in advance to fulfill unseen needs. Therefore, Lightweight CMS allows site owners to write custom pages instead of regular posts. Because of limited page size, we won't review the details to create custom pages here.
 
 ## Write a Web Application instead of a Post
 

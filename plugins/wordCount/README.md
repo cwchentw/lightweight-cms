@@ -1,8 +1,8 @@
-# Word Count for mdcms
+# Word Count for Lightweight CMS
 
 ## Synopsis
 
-A tiny mdcms plugin to calculate word count and reading time for western European text.
+A tiny Lightweight CMS plugin to calculate word count and reading time for western European text.
 
 ## System Requirements
 

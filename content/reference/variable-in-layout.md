@@ -6,7 +6,7 @@ weight: 7
 
 ## Prologue
 
-This article illustrates exposed variables in mdcms layouts. They are used by mdcms themes.
+This article illustrates exposed variables in Lightweight CMS layouts. They are used by Lightweight CMS themes.
 
 ## Variables Exposed in Home Page
 

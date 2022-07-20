@@ -1,12 +1,12 @@
 ---
-title: Settings for mdcms
+title: Settings for Lightweight CMS
 mtime: 2021/6/26
 weight: 6
 ---
 
 ## Prologue
 
-Settings in mdcms work as parameters to modify mdcms sites. This article illustrates those settings.
+Settings in Lightweight CMS work as parameters to modify Lightweight CMS sites. This article illustrates those settings.
 
 ## Note
 
@@ -14,9 +14,9 @@ mdcms is still *experimental and envolving*. Those settings may change without w
 
 ## Project Settings, Theme Settings and Plugin Settings
 
-There are three categories of settings in mdcms. Project settings are used by mdcms itself, theme settings used by mdcms themes and plugin settings used by mdcms plugins.
+There are three categories of settings in Lightweight CMS. Project settings are used by Lightweight CMS itself, theme settings used by Lightweight CMS themes and plugin settings used by Lightweight CMS plugins.
 
-You should not remove project settings because either internal library or utility scripts of mdcms rely on those constants to work properly. In contrary, theme settings and plugin settings are optional. Current theme settings are used by *default* theme of mdcms. You may use a different set of theme settings in another mdcms theme.
+You should not remove project settings because either internal library or utility scripts of Lightweight CMS rely on those constants to work properly. In contrary, theme settings and plugin settings are optional. Current theme settings are used by *default* theme of Lightweight CMS. You may use a different set of theme settings in another Lightweight CMS theme.
 
 ## Site Information
 
@@ -31,7 +31,7 @@ You should not remove project settings because either internal library or utilit
 * `SITE_THEME` (project): Theme used by a site
 * `SITE_LOGO` (project): File name of site logo without size suffix and file extension. Default file format of site logo is `image/png`
 
-`SITE_AUTHOR` is default author of a mdcms site. You may set a author of a post other than `SITE_AUTHOR` in its metadata.
+`SITE_AUTHOR` is default author of a Lightweight CMS site. You may set a author of a post other than `SITE_AUTHOR` in its metadata.
 
 ## Social Media
 
@@ -47,7 +47,7 @@ You should not remove project settings because either internal library or utilit
 * `BREADCRUMB_HOME` (project): Text used by home page on breadcrumbs
 * `EXCERPT_THRESHOLD` (plugin): Text amount for an excerpt of a post
 
-## Optioal Features of mdcms
+## Optioal Features of Lightweight CMS
 
 * `ENABLE_PWA` (theme): Enable PWA (progressive web application) related features
 * `ENABLE_TOC` (theme): Enable ToC (table of contents) on sidebars of posts
@@ -96,4 +96,4 @@ mdcms is flexible by design. Although these internal settings are seldom modifie
 
 ## Add Your Own Settings
 
-In addition to current settings used by mdcms, you may add you own as needed.
+In addition to current settings used by Lightweight CMS, you may add you own as needed.
