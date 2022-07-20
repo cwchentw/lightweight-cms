@@ -10,7 +10,7 @@ This article lists features of mdcms. Because mdcms is still _experimental and e
 
 == Site-related Features
 
-* Markdown or AsciiDoc or HTML posts
+* Markdown, AsciiDoc, reStructuredText or vanilla HTML posts
 * Nested sections
 * Draft status
 * PHP-based custom pages

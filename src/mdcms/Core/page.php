@@ -223,6 +223,14 @@ function getBreadcrumb($uri)
             . "/" . CONTENT_DIRECTORY
             . $prevPath
             . $arr[$i] . MARKDOWN_FILE_EXTENSION;
+        $asciiDocPath = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
+            . $prevPath
+            . $arr[$i] . ASCIIDOC_FILE_EXTENSION;
+        $reStructuredTextPath = $rootDirectory
+            . "/" . CONTENT_DIRECTORY
+            . $prevPath
+            . $arr[$i] . RESTRUCTUREDTEXT_FILE_EXTENSION;
         $phpPath = $rootDirectory
             . "/" . CONTENT_DIRECTORY
             . $prevPath
@@ -243,6 +251,18 @@ function getBreadcrumb($uri)
             array_push($result, $post);
         }
         else if (file_exists($markdownPath)) {
+            $post = readPost($prevPath . $arr[$i]);
+            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+
+            array_push($result, $post);
+        }
+        else if (file_exists($asciiDocPath)) {
+            $post = readPost($prevPath . $arr[$i]);
+            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+
+            array_push($result, $post);
+        }
+        else if (file_exists($reStructuredTextPath)) {
             $post = readPost($prevPath . $arr[$i]);
             $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
 

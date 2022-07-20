@@ -19,6 +19,7 @@ This article illustrates basic usage of mdcms. Some details are omitted for brev
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) AsciiDoctor (for AsciiDoc support)
+  * (Optional) Docutils (for reStructuredText support). Pygments (code highlighting for reStructuredText)
   * (Optional) Perl (for global replacement)
 * Development environment
   * [Composer](https://getcomposer.org/)

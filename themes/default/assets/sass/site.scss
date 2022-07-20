@@ -327,6 +327,14 @@ th {
 td { 
     border-bottom: 1px solid #ddd;
     text-align: right;
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        padding-left: unset;
+        padding-right: unset;
+    }
 }
   
 caption,

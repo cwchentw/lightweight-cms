@@ -44,3 +44,5 @@ define("HTML_FILE_EXTENSION", ".html");
 define("MARKDOWN_FILE_EXTENSION", ".md");
 # The extension of AsciiDoc files.
 define("ASCIIDOC_FILE_EXTENSION", ".adoc");
+# The extension of reStructuredText files.
+define("RESTRUCTUREDTEXT_FILE_EXTENSION", ".rst");

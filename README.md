@@ -116,6 +116,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) AsciiDoctor (for AsciiDoc support)
+  * (Optional) Docutils (for reStructuredText support). Pygments (code highlighting for reStructuredText)
   * (Optional) Perl (for global replacement)
 * Development
   * [Composer](https://getcomposer.org)
