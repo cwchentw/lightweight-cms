@@ -3,4 +3,4 @@ title: Sample Posts
 weight: 4
 ---
 
-Here lists random sample posts. They are not really parts of mdcms documentation. You may check how mdcms renders web pages with these posts.
+Here lists random sample posts. They are not really parts of Lightweight CMS documentation. You may check how Lightweight CMS renders web pages with these posts.

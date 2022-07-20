@@ -1,12 +1,12 @@
 ---
-title: Deploy a mdcms Site to Nginx
+title: Deploy a Lightweight CMS Site to Nginx
 mtime: 2022/1/5
 weight: 4
 ---
 
 ## Prologue
 
-This article demonstrates the whole process to deploy a mdcms site to a Nginx web server on GNU/Linux.
+This article demonstrates the whole process to deploy a Lightweight CMS site to a Nginx web server on GNU/Linux.
 
 ## Install Required Packages
 
@@ -24,7 +24,7 @@ Invoke this command to install packages for Composer:
 $ sudo apt install php-xml php-mbstring php-zip unzip
 ```
 
-If you utilize *default* theme of mdcms, invoke this command as well:
+If you utilize *default* theme of Lightweight CMS, invoke this command as well:
 
 ```shell
 $ sudo apt install nodejs npm
@@ -38,7 +38,7 @@ Run the following command to install a Nginx and PHP combo:
 $ sudo dnf install nginx php php-fpm
 ```
 
-Some CentOS still provides older PHP, which is incompatible with mdcms.
+Some CentOS still provides older PHP, which is incompatible with Lightweight CMS.
 
 Run this command to install packages for Composer:
 
@@ -46,7 +46,7 @@ Run this command to install packages for Composer:
 $ sudo dnf install php-json php-xml php-mbstring
 ```
 
-Run this command as well if you utilize *default* theme of mdcms:
+Run this command as well if you utilize *default* theme of Lightweight CMS:
 
 ```shell
 $ sudo dnf install nodejs npm
@@ -66,7 +66,7 @@ Run the command to install packages for Composer:
 $ sudo zypper install php7-phar php7-openssl php7-mbstring php7-zlib
 ```
 
-Run the command if you use *default* theme of mdcms:
+Run the command if you use *default* theme of Lightweight CMS:
 
 ```shell
 $ sudo zypper install nodejs14 npm14
@@ -96,7 +96,7 @@ $ sudo cp /etc/php7/fpm/php-fpm.d/www.conf.default /etc/php7/fpm/php-fpm.d/www.c
 Here we list a heavily-commented Nginx sample configuration:
 
 ```nginx
-# A sample Nginx configuration for mdcms-based sites.
+# A sample Nginx configuration for Lightweight CMS based sites.
 #
 # Don't simply copy and paste the configuration here. Instead,
 #  modify it according to your own situations.

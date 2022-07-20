@@ -1,6 +1,6 @@
 ---
-title: HOWTOs for mdcms
+title: HOWTOs for Lightweight CMS
 weight: 2
 ---
 
-This section provides in-depth guides on HOWTO do something on mdcms. They are neither tutorial nor reference. If you are unfamiliar with mdcms yet, read our introductory articles first.
+This section provides in-depth guides on HOWTO do something on Lightweight CMS. They are neither tutorial nor reference. If you are unfamiliar with Lightweight CMS yet, read our introductory articles first.

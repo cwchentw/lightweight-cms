@@ -1,6 +1,6 @@
-# mdcms
+# Lightweight CMS
 
-mdcms, aka Markdown Content Management System, is yet another Markdown-based flat-file CMS powered by PHP.
+Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system) supporting common lightweight markup languages, powered by PHP.
 
 ## Features
 
@@ -103,7 +103,7 @@ mdcms is still *experimental* and *evolving*.
 
 There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
 
-Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. mdcms combines the best of two worlds - PHP-powered dynamic websites with Markdown files as contents.
+Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with Markdown files as contents.
 
 ## System Requirements
 
@@ -142,7 +142,7 @@ PHP 8.x is neither tested nor recommended because major GNU/Linux distributions 
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-The dependencies mentioned here are based on *default* theme of mdcms. If you adapt another theme, your dependencies of the Web may vary.
+The dependencies mentioned here are based on *default* theme of Lightweight CMS. If you adapt another theme, your dependencies of the Web may vary.
 
 ## Usage
 
@@ -167,17 +167,17 @@ $ curl -o composer-setup.php https://getcomposer.org/installer
 $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 ```
 
-Install dependencies of mdcms with Composer:
+Install dependencies of Lightweight CMS with Composer:
 
 ```shell
 $ composer install --no-dev
 ```
 
-If you don't want to update your mdcms snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
+If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your mdcms copy, follow [this guide](/content/howto/how-to-upgrade-mdcms.md).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/content/howto/how-to-upgrade-mdcms.md).
 
-You can run a mdcms site locally with builtin web server of PHP:
+You can run a Lightweight CMS site locally with builtin web server of PHP:
 
 ```shell
 $ ./tools/bin/serve
@@ -191,7 +191,7 @@ $ sudo ./tools/bin/sync-to /path/to/www
 
 If you modify anything locally, repeat the above command to update your change(s) in a production environment.
 
-Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration to run mdcms sites.
+Set the configuration of a web server accordingly. [Here](/tools/etc/nginx.conf) is a sample Nginx configuration to run Lightweight CMS sites.
 
 (Optional) Save your local repo to a remote site:
 

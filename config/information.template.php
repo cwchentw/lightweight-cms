@@ -21,9 +21,9 @@ define("SITE_AUTHOR", "Michelle Chen");
 define("SITE_COPYRIGHT", "Copyright (c) 2021-2022 Michelle Chen. Licensed under CC BY 4.0.");
 # Language of rendered HTML pages.
 #
-# mdcms is not designed for a multi-language site.
+# Lightweight CMS is not designed for a multi-language site.
 #  You may require two or more sets of layouts and
-#  some modifications on router of mdcms for such a site.
+#  some modifications on router of Lightweight CMS for such a site.
 define("SITE_LANGUAGE", "en-US");
 # Theme of a site.
 define("SITE_THEME", "default");

@@ -3,6 +3,7 @@
 * 2022-07-20
   * Add *experimental* AsciiDoc support, only in `master` branch
   * Add *experimental* reStructuredText support, only in `master` branch
+  * Rebrand our website publishing system as Lightweight CMS
 * 2022-04-24
   * Migrate `master` branch to PHP 8.1
   * The old code is moved to `php74` branch

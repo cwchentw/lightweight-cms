@@ -1,22 +1,22 @@
 ---
-title: Deploy a mdcms Site to DigitalOcean App Platform
+title: Deploy a Lightweight CMS Site to DigitalOcean App Platform
 mtime: 2021/7/5
 ---
 
 ## Prologue
 
-Some web programmers prefer [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) over [VPS](https://en.wikipedia.org/wiki/Virtual_private_server) to delegate server maintenances to a (trustworthy) vendor. This article takes DigitalOcean App Platform as an instance to illustrate the process to deploy a mdcms site to a PaaS.
+Some web programmers prefer [PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service) over [VPS](https://en.wikipedia.org/wiki/Virtual_private_server) to delegate server maintenances to a (trustworthy) vendor. This article takes DigitalOcean App Platform as an instance to illustrate the process to deploy a Lightweight CMS site to a PaaS.
 
 ## System Requirements
 
 * A [DigitalOcean account](https://m.do.co/c/bb01e632c755)
 * Git
 
-If you want to try local deployment before putting your mdcms site online, check our [previous article](/basic-usage/).
+If you want to try local deployment before putting your Lightweight CMS site online, check our [previous article](/basic-usage/).
 
-## Prepare a mdcms Site
+## Prepare a Lightweight CMS Site
 
-Clone mdcms locally and rename it:
+Clone Lightweight CMS locally and rename it:
 
 ```shell
 $ git clone https://github.com/cwchentw/mdcms.git mysite
@@ -35,11 +35,11 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
-This step is mandatory because DigitalOcean App Platform will fetch code of your mdcms site from a remote repo.
+This step is mandatory because DigitalOcean App Platform will fetch code of your Lightweight CMS site from a remote repo.
 
 ## Run Your Site Locally First
 
-Before deploying a site to a PaaS, you should always try your code locally. Here are steps to run your mdcms site locally:
+Before deploying a site to a PaaS, you should always try your code locally. Here are steps to run your Lightweight CMS site locally:
 
 ```shell
 $ ./tools/bin/publish
@@ -47,7 +47,7 @@ $ cd public
 $ php -S localhost:3000
 ```
 
-`tools/bin/publish` is our utility script to deploy a mdcms site to a PaaS. The script will copy router of mdcms and assets to *public* directory. It resembles `tools/bin/serve` but the former won't call builtin server of PHP automatically.
+`tools/bin/publish` is our utility script to deploy a Lightweight CMS site to a PaaS. The script will copy router of Lightweight CMS and assets to *public* directory. It resembles `tools/bin/serve` but the former won't call builtin server of PHP automatically.
 
 ## Initial Deployment
 
@@ -93,17 +93,17 @@ Choose your plan:
 
 Here we chose *Basic* because we just wanted to try out the platform.
 
-It will take a while to build and deploy your mdcms site:
+It will take a while to build and deploy your Lightweight CMS site:
 
 <p><img src="/img/howto/digitalocean-app-platform-deployed-successfully.png" alt="Deploy your app successfully on DigitalOcean App Platform" class="img-fluid" /></p>
 
 ## Subsequent Deployments
 
-Once your mdcms site is set, you don't bother to maintain a web server, which is the reason some programmers choose a PaaS over a VPS. Update your site by committing your changes or triggering a deployment manually.
+Once your Lightweight site is set, you don't bother to maintain a web server, which is the reason some programmers choose a PaaS over a VPS. Update your site by committing your changes or triggering a deployment manually.
 
 ## Set Custom Domain for Your Site
 
-Even if you are satisfied with your PaaS now, you should always set a custom domain. For any reason, you may need to migrate your mdcms site or other web projects to another host in the future. Here we simulate to set a custom domain on the platform:
+Even if you are satisfied with your PaaS now, you should always set a custom domain. For any reason, you may need to migrate your Lightweight site or other web projects to another host in the future. Here we simulate to set a custom domain on the platform:
 
 <p><img src="/img/howto/digitalocean-app-platform-add-domain.png" alt="Set custom domain for your site on DigitalOcean App Platform" class="img-fluid" /></p>
 

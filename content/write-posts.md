@@ -1,12 +1,12 @@
 ---
-title: Write Posts on mdcms Sites
+title: Write Posts on Lightweight CMS Sites
 mtime: 2022/07/20
 weight: 3
 ---
 
 ## Prologue
 
-As a would-be owner of an awesome content website, you cannot wait to write and publish posts for your site. This article illustrates how to write posts on mdcms-based sites.
+As a would-be owner of an awesome content website, you cannot wait to write and publish posts for your site. This article illustrates how to write posts on Lightweight CMS based sites.
 
 ## Choose a Programming Editor
 
@@ -16,13 +16,13 @@ Markdown represents a simple and lightweight markup language without programming
 
 Posts are saved in a content directory, which default is *content*.
 
-If you are going to upgrade your mdcms snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
+If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
 
-Valid file formats for posts in mdcms sites are Markdown, AsciiDoc, reStructuredText and HTML.
+Valid file formats for posts in Lightweight CMS sites are Markdown, AsciiDoc, reStructuredText and HTML.
 
 ## The Relationship between Posts and URLs
 
-Because mdcms is a flat-file based content management system, URLs in a mdcms site map to directories and files in *content* directory directly. Here represents a pseudo URL:
+Because Lightweight CMS is a flat-file based content management system, URLs in a Lightweight CMS site map to directories and files in *content* directory directly. Here represents a pseudo URL:
 
 ```
 https://example.com/section/post/
@@ -40,7 +40,7 @@ Such URL will map to either *content/section/subsection/post.md* or *content/sec
 
 ## Write Markdown Posts
 
-The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by mdcms is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used by online editor of GitHub.
+The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by Lightweight CMS is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used by online editor of GitHub.
 
 Here shows a pseudo Markdown post:
 
@@ -100,7 +100,7 @@ In addition to writing Markdown posts, you can write vanilla HTML posts as well.
 <p>Another paragraph with some text.</p>
  ```
 
-Because mdcms renders web pages for you, you don't require to write everything from scratch.
+Because Lightweight CMS renders web pages for you, you don't require to write everything from scratch.
 
 ## Write Titles for Posts
 
@@ -110,7 +110,7 @@ You may write title of a post in the following region (by precedence):
 * `<h1>` tag equivalent in a post
 * File name
 
-If there is no title in a post, mdcms will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
+If there is no title in a post, Lightweight CMS will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
 
 ## Front Matters of Posts
 
@@ -155,6 +155,6 @@ Some text here.
 
 ## (Optional) Add Contents for Sections
 
-Sections in mdcms intend for intermediaries to posts merely. They seldom benefit site SEO. Nevertheless, you may still add content for sections as needed.
+Sections in Lightweight CMS intend for intermediaries to posts merely. They seldom benefit site SEO. Nevertheless, you may still add content for sections as needed.
 
 Contents for sections are written in *_index.md*. Write it as ordinary Markdown posts.

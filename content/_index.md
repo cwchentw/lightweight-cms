@@ -1,6 +1,6 @@
-Welcome to official site of mdcms (Markdown Content Management System). If you are new to mdcms, view our articles first.
+Welcome to the official site of Lightweight CMS. If you are new to this website publishing software, view our articles first.
 
-*mdcms is still experimental and evolving.*
+*Lightweight CMS is still experimental and evolving.*
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>

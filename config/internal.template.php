@@ -16,7 +16,7 @@ define("THEME_DIRECTORY", "themes");
 define("PLUGIN_DIRECTORY", "plugins");
 # The directory of personal assets.
 define("ASSET_DIRECTORY", "assets");
-# The directory of the internal libraries of mdcms.
+# The directory of the internal libraries of Lightweight CMS.
 define("LIBRARY_DIRECTORY", "src");
 # The directory of the web application.
 define("APPLICATION_DIRECTORY", "www");
