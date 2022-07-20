@@ -3,15 +3,15 @@
 
 
 # Base URL of a site without a trailing slash.
-define("SITE_BASE_URL", "https://mdcms.org");
+define("SITE_BASE_URL", "https://example.com");
 # Prefix of a site without a trailing slash.
 define("SITE_PREFIX", "");
 # Full name of a site.
-define("SITE_NAME", "Markdown Content Management System");
+define("SITE_NAME", "Lightweight CMS");
 # Short name of a site.
-define("SITE_SHORT_NAME", "mdcms");
+define("SITE_SHORT_NAME", "Lightweight CMS");
 # A concise description of a site.
-define("SITE_DESCRIPTION", "A Markdown-based Flat-File CMS Powered by PHP");
+define("SITE_DESCRIPTION", "A Flat-File CMS Supporting Common Lightweight Markup Languages, Powered by PHP");
 # Principal author of a site.
 #
 # If there are multiple authors in a site,
