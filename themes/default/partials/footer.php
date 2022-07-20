@@ -12,11 +12,14 @@
 
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
 <!-- highlight.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"
-    integrity="sha512-yUUc0qWm2rhM7X0EFe82LNnv2moqArj5nro/w1bi05A09hRVeIZbN6jlMoyu0+4I/Bu4Ck/85JQIU82T82M28w=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
+    integrity="sha512-gU7kztaQEl7SHJyraPfZLQCNnrKdaQi5ndOyt4L4UPL/FHDd/uB9Je6KDARIqwnNNE27hnqoWLBq+Kpe4iHfeQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/nginx.min.js"
-    integrity="sha512-nDPHnJC9UzEA9gBTo7iM80VLTYHcPhBR1v843vUHjolbM8ZKUn+cV0o4DbVd3tgqVd7Hnb6/yUARchFYk/RjaQ=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/asciidoc.min.js"
+    integrity="sha512-NMQe4J2795tJcPdY14h2z6QUYZH/3OoMAIUs1URGrAF+N2mSiEcQ/L68Pv+pBCEDwnzeZuV2LgfgGZn/SpvpFg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nginx.min.js"
+    integrity="sha512-0Z15/1ggjI+buaadbxMd/Ix4CvFrCCso/hu/RWrxY+zlhIHSiYCVCkTk99sLHtjIsNbhdsl/qVoK14ngLsXk6w=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Add more highlight.js language module(s) as needed. -->
 <script>hljs.highlightAll();</script>

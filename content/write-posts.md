@@ -1,6 +1,6 @@
 ---
 title: Write Posts on mdcms Sites
-mtime: 2021/6/26
+mtime: 2022/07/20
 weight: 3
 ---
 
@@ -10,7 +10,7 @@ As a would-be owner of an awesome content website, you cannot wait to write and 
 
 ## Choose a Programming Editor
 
-Markdown represents a simple and lightweight markup language without programming logic. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown as well.
+Markdown represents a simple and lightweight markup language without programming logic. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown and AsciiDoc as well.
 
 ## Save Posts
 
@@ -18,7 +18,7 @@ Posts are saved in a content directory, which default is *content*.
 
 If you are going to upgrade your mdcms snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
 
-Valid file formats for posts in mdcms sites are Markdown and HTML.
+Valid file formats for posts in mdcms sites are Markdown, AsciiDoc and HTML.
 
 ## The Relationship between Posts and URLs
 
@@ -53,6 +53,12 @@ Another paragraph with some text.
 ```
 
 Because of limited page size, we won't repeat syntax of GFM here. Refer to its official spec for more information.
+
+## Write AsciiDoc Posts
+
+*Experimental*
+
+Because Markdown syntax is limited in feature, we add [AsciiDoc](https://asciidoc.org/) as an alternative. [AsciiDoctor](https://asciidoctor.org/) is required on a production environment to publish AsciiDoc post(s).
 
 ## Write HTML Posts
 
@@ -100,7 +106,7 @@ If there is no title in a post, mdcms will generate one dynamically based on fil
 
 ## Front Matters of Posts
 
-Front matters are optional YAML text regions in top of posts, either Markdown or HTML ones. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
+Front matters are optional YAML text regions in top of posts, either Markdown, AsciiDoc or HTML ones. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
 
 Here represents a Markdown post with a front matter:
 
@@ -127,6 +133,17 @@ Here are exposed fields of front matters:
 Those fields are not hard coded but adjustable in *setting.php*.
 
 In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]`.
+
+A front matter in an AsciiDoc post is supported in this way:
+
+```asciidoc
+---
+title: An AsciiDoc Post
+mtime: 2022/07/20
+---
+
+Some text here.
+```
 
 ## (Optional) Add Contents for Sections
 

@@ -14,6 +14,7 @@ Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevert
   * PHP 8.1
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
+  * (Optional) AsciiDoctor (for AsciiDoc support)
   * (Optional) Perl (for global replacement)
 * Development environment
   * [Composer](https://getcomposer.org/)

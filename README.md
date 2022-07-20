@@ -5,7 +5,7 @@ mdcms, aka Markdown Content Management System, is yet another Markdown-based fla
 ## Features
 
 * Cross-platform
-* Web pages in Markdown, HTML and PHP
+* Web pages in Markdown, AsciiDoc, HTML and PHP
 * Draft pages
 * Nested sections
 * Breadcrumb (Bootstrap 5 based)
@@ -115,6 +115,7 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * PHP 8.1
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
+  * (Optional) AsciiDoctor (for AsciiDoc support)
   * (Optional) Perl (for global replacement)
 * Development
   * [Composer](https://getcomposer.org)
