@@ -60,7 +60,7 @@ You are a would-be owner of an awesome content website. It is not of your intere
 Clone Lightweight CMS to a local repo and rename it:
 
 ```shell
-$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 ```
 
 Change your working directory to root path of the cloned repo:
@@ -154,13 +154,13 @@ You, as a PHP programmer, are interested in developing Lightweight CMS itself. Y
 Create a fork of Lightweight CMS on GitHub, cloning the forked repo:
 
 ```shell
-$ git clone https://github.com/user/mdcms.git
+$ git clone https://github.com/user/lightweight-cms.git
 ```
 
 Change your working directory to root path of the cloned repo:
 
 ```shell
-$ cd mdcms
+$ cd lightweight-cms
 ```
 
 Install all dependencies with Composer:
@@ -182,7 +182,7 @@ The script calls both PHP Code Sniffer and PHPMD with modified rule sets. Our co
 Push back your modification(s) to the forked repo:
 
 ```
-$ git push https://github.com/user/mdcms.git
+$ git push https://github.com/user/lightweight-cms.git
 ```
 
 Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.

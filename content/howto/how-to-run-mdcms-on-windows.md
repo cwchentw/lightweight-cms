@@ -124,7 +124,7 @@ Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/lig
 Clone Lightweight CMS locally and rename it:
 
 ```shell
-> git clone https://github.com/cwchentw/mdcms.git mysite
+> git clone https://github.com/cwchentw/lightweight-cms.git mysite
 ```
 
 Change working directory to root path of the cloned repo:

@@ -12,7 +12,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 > choco install sed
 </code></pre>
 
-<pre class="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/mdcms.git mysite
+<pre class="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
 > .\tools\bin\serve.bat
 </code></pre>
@@ -29,7 +29,7 @@ $ brew install composer
 $ brew install node@16
 </code></pre>
 
-<pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
+<pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
 $ ./tools/bin/serve
 </code></pre>
@@ -47,7 +47,7 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 $ nvm use 16.15.1
 </code></pre>
 
-<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/mdcms.git mysite
+<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
 $ ./tools/bin/serve
 </code></pre>

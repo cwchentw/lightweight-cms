@@ -28,7 +28,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ```
 
 ```shell
-> git clone https://github.com/cwchentw/mdcms.git mysite
+> git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
 > .\tools\bin\serve.bat
 ```
@@ -50,7 +50,7 @@ $ brew install node@16
 ```
 
 ```shell
-$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
 $ ./tools/bin/serve
 ```
@@ -82,7 +82,7 @@ $ nvm use 16.15.1
 ```
 
 ```shell
-$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
 $ ./tools/bin/serve
 ```
@@ -151,7 +151,7 @@ We assume GNU/Linux as both development and production environments. If you use 
 Clone the repo locally:
 
 ```shell
-$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 ```
 
 Change your working directory to root path of the cloned repo:

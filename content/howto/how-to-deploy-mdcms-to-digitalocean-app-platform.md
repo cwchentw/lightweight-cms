@@ -19,7 +19,7 @@ If you want to try local deployment before putting your Lightweight CMS site onl
 Clone Lightweight CMS locally and rename it:
 
 ```shell
-$ git clone https://github.com/cwchentw/mdcms.git mysite
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 ```
 
 Change your working directory to root path of the cloned repo:

@@ -13,7 +13,7 @@ Here are two-step pseudo commands to upgrade your Lightweight CMS repo:
 
 ```shell
 $ cd path/to/your/lightweight-cms/site
-$ git pull https://github.com/cwchentw/mdcms.git
+$ git pull https://github.com/cwchentw/lightweight-cms.git
 ```
 
 Technically, you merge your Lightweight CMS snapshot with master branch of Lightweight CMS repo. Git will manage the process without manual intervention unless there are any conflict between codes of the two repositories.
@@ -71,7 +71,7 @@ The theme located in *themes/default* is the builtin theme for Lightweight CMS. 
 You may stick to specific version of Lightweight CMS to avoid unintentional change. Here we invoke a pseudo command:
 
 ```shell
-$ git pull https://github.com/cwchentw/mdcms.git 1.0
+$ git pull https://github.com/cwchentw/lightweight-cms.git 1.0
 ```
 
 Lightweight CMS is still experimental and envolving currently. We may announce some stable version to maintain if we think Lightweight CMS is mature enough.
