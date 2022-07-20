@@ -12,4 +12,4 @@ define("TWITTER", "");
 #
 # If it is a project, it should be in the form of `user/project`.
 #  In contrary, if it is a user, it should be the user name.
-define("GITHUB", "cwchentw/mdcms");
+define("GITHUB", "cwchentw/lightweight-cms");
