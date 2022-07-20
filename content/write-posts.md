@@ -18,7 +18,7 @@ Posts are saved in a content directory, which default is *content*.
 
 If you are going to upgrade your mdcms snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
 
-Valid file formats for posts in mdcms sites are Markdown, AsciiDoc and HTML.
+Valid file formats for posts in mdcms sites are Markdown, AsciiDoc, reStructuredText and HTML.
 
 ## The Relationship between Posts and URLs
 

@@ -5,7 +5,7 @@ mdcms, aka Markdown Content Management System, is yet another Markdown-based fla
 ## Features
 
 * Cross-platform
-* Web pages in Markdown, AsciiDoc, HTML and PHP
+* Web pages in Markdown, AsciiDoc, reStructuredText, HTML and PHP
 * Draft pages
 * Nested sections
 * Breadcrumb (Bootstrap 5 based)
