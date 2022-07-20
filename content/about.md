@@ -6,7 +6,7 @@ weight: 1
 
 [Lightweight CMS](https://github.com/cwchentw/mdcms) represents a flat-file based dynamic website generator powered by PHP.
 
-Unlike static website generators, HTML pages in the websites managed by Lightweight CMS are rendered dynamically, as all PHP-powered sites. Nonetheless, these sites don't rely on any relational database for content storage. Contents in such sites are stored as flat files, either Markdown or HTML pages.
+Unlike static website generators, HTML pages in the websites managed by Lightweight CMS are rendered dynamically, as all PHP-powered sites. Nonetheless, these sites don't rely on any relational database for content storage. Contents in such sites are stored as flat files, either Markdown, AsciiDoc, reStructuredText or HTML pages.
 
 Our approach combines the advantages of two worlds. Web pages in Lightweight CMS managed sites are rendered dynamically so that any modification will be reflected immediately. Website owners can write posts in a simple and lightweight markup language instead of betting on some custom online editors. Flat files are easier to backup and recover than database dumps.
 

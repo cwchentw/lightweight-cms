@@ -1,6 +1,6 @@
 ---
 title: Settings for Lightweight CMS
-mtime: 2021/6/26
+mtime: 2022/07/20
 weight: 6
 ---
 
@@ -93,6 +93,8 @@ mdcms is flexible by design. Although these internal settings are seldom modifie
 
 * `HTML_FILE_EXTENSION` (project): File extension used for HTML pages
 * `MARKDOWN_FILE_EXTENSION` (project): File extension used for Markdown pages
+* `ASCIIDOC_FILE_EXTENSION` (project): File extension used for AsciiDoc pages
+* `RESTRUCTUREDTEXT_FILE_EXTENSION` (project): File extension used for reStructuredText pages
 
 ## Add Your Own Settings
 

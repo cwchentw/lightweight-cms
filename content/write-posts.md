@@ -10,7 +10,7 @@ As a would-be owner of an awesome content website, you cannot wait to write and 
 
 ## Choose a Programming Editor
 
-Markdown represents a simple and lightweight markup language without programming logic. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown, AsciiDoc and reStructuredText as well.
+Plugins or extensions for popular lightweight markup languages are commonplace. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown, AsciiDoc and reStructuredText as well.
 
 ## Save Posts
 
@@ -70,7 +70,7 @@ Because the limitations by Docutils, all reStructuredText posts in our system st
 
 ## Write HTML Posts
 
-In addition to writing Markdown posts, you can write vanilla HTML posts as well. When writing such posts, don't write full HTML pages:
+In addition to writing posts in lightweight markup languages supported by our software, you can write vanilla HTML posts as well. When writing such posts, don't write full HTML pages:
 
 ```html
 <!-- DON'T write a full HTML page. -->

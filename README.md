@@ -103,7 +103,7 @@ Lightweight CMS is still *experimental* and *evolving*.
 
 There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
 
-Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with Markdown files as contents.
+Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat files written in common lightweight markup languages as contents.
 
 ## System Requirements
 
