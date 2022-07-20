@@ -65,6 +65,7 @@ function isPost($uri)
 
     $htmlPath = getPath($uri, HTML_FILE_EXTENSION);
     $markdownPath = getPath($uri, MARKDOWN_FILE_EXTENSION);
+    $asciiDocPath = getPath($uri, ASCIIDOC_FILE_EXTENSION);
 
     if (file_exists($htmlPath)) {
         # Load third-party libraries.
@@ -93,6 +94,32 @@ function isPost($uri)
         return true;
     }
     else if (file_exists($markdownPath)) {
+        # Load third-party libraries.
+        require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
+        # Load private scripts.
+        require_once __DIR__ . "{$sep}_utils.php";
+
+        $rawContent = file_get_contents($markdownPath);
+
+        $parser = new \Mni\FrontYAML\Parser();
+
+        # Parse raw content.
+        $document = $parser->parse($rawContent);
+
+        # Extract metadata from a post.
+        $metadata = $document->getYAML();
+
+        if (isValidField($metadata, METADATA_DRAFT)) {
+            if ($metadata[METADATA_DRAFT]) {
+                return false;
+            }
+
+            return true;
+        }
+
+        return true;
+    }
+    else if (file_exists($asciiDocPath)) {
         # Load third-party libraries.
         require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
         # Load private scripts.

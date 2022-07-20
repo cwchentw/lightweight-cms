@@ -42,3 +42,5 @@ define("METADATA_DRAFT", "draft");
 define("HTML_FILE_EXTENSION", ".html");
 # The extension of Markdown files.
 define("MARKDOWN_FILE_EXTENSION", ".md");
+# The extension of AsciiDoc files.
+define("ASCIIDOC_FILE_EXTENSION", ".adoc");

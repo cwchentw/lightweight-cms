@@ -160,8 +160,15 @@ else if (\mdcms\Core\isCustomPage($loc)) {
 }
 # Render a post.
 else if (\mdcms\Core\isPost($loc)) {
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
     $GLOBALS[MDCMS_POST] = \mdcms\Core\readPost($loc);
+
+    if (200 === $GLOBALS[MDCMS_POST][MDCMS_POST_STATUS]) {
+        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+    }
+    # Something is wrong while rendering a post.
+    else {
+        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\errorPageBreadcrumb($GLOBALS[MDCMS_POST][MDCMS_POST_TITLE]);
+    }
 
     loadPost();
 }

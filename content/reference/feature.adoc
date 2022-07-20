@@ -1,0 +1,51 @@
+---
+title: Features
+mtime: 2022/7/20
+weight: 2
+---
+
+== Prologue
+
+This article lists features of mdcms. Because mdcms is still _experimental and evolving_, the list may change.
+
+== Site-related Features
+
+* Markdown or AsciiDoc or HTML posts
+* Nested sections
+* Draft status
+* PHP-based custom pages
+* https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb] (Bootstrap 5 based)
+* https://en.wikipedia.org/wiki/Pagination[Pagination] (Bootstrap 5 based)
+* No following external links
+* https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
+* https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator
+* Static https://developers.google.com/web/fundamentals/primers/service-workers[service worker]
+* Dynamic https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[HTTP status 404] pages
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[404.html] generator
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500[50x.html] generator
+* offline.html generator
+* Asset management (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
+
+== Theme-related Features
+
+These features are available in _default_ theme:
+
+* Mobile-responsive layouts (through https://getbootstrap.com/docs/5.0/getting-started/introduction/[Bootstrap 5])
+* Top navbar (Bootstrap 5 based)
+* Table of Contents
+* Code highlighting (through https://highlightjs.org/[highlight.js])
+* Open graphs
+* Static social media sharing links (no JavaScript is required)
+
+== Plugin-related Features
+
+* Word count for western european text
+* Reading time for western european text
+* Excerpts from posts
+* Google analytics tracker
+
+== Project-related Features
+
+* Run sites locally without Apache or Nginx (through https://www.php.net/manual/en/features.commandline.webserver.php[builtin web server] of PHP)
+* Synchronize content on a production environment (through `rsync(1)`)
+* Migrate a local mdcms repository to a new site
