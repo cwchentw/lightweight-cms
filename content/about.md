@@ -4,7 +4,7 @@ mtime: 2022/07/20
 weight: 1
 ---
 
-[Lightweight CMS](https://github.com/cwchentw/mdcms) represents a flat-file based dynamic website generator powered by PHP.
+[Lightweight CMS](https://github.com/cwchentw/lightweight-cms) represents a flat-file based dynamic website generator powered by PHP.
 
 Unlike static website generators, HTML pages in the websites managed by Lightweight CMS are rendered dynamically, as all PHP-powered sites. Nonetheless, these sites don't rely on any relational database for content storage. Contents in such sites are stored as flat files, either Markdown, AsciiDoc, reStructuredText or HTML pages.
 
