@@ -1,15 +1,15 @@
 ---
-title: How to Manage Assets in mdcms
+title: How to Manage Assets in Lightweight CMS
 mtime: 2021/6/26
 ---
 
 ## Prologue
 
-In web programming, assets compose of which are placed in front end such as CSS sheets, JavaScript scripts, fonts, images and audios. This article discusses asset management is mdcms sites.
+In web programming, assets compose of which are placed in front end such as CSS sheets, JavaScript scripts, fonts, images and audios. This article discusses asset management is Lightweight CMS sites.
 
 ## Theme Assets vs Site Assets
 
-There are two levels of assets in mdcms sites. Theme assets mean those used by mdcms themes while site assets used by mdcms sites.
+There are two levels of assets in Lightweight CMS sites. Theme assets mean those used by Lightweight CMS themes while site assets used by Lightweight CMS sites.
 
 Theme assets are managed by theme creators. You should keep them *as is* unless you want to create or modify a theme. In this place we discuss site assets.
 
@@ -21,7 +21,7 @@ If your asset doesn't require processing or compiling before sending to front en
 
 Many front end languages are invented to improve original front end technologies. They are HTML template languages, CSS preprocessors and JavaScript transcompilers.
 
-The section introduces builtin front end stacks used by mdcms.
+The section introduces builtin front end stacks used by Lightweight CMS.
 
 ### SCSS
 
@@ -49,7 +49,7 @@ Fonts are copied *as is*. We keeps them in *asset* directory just for easier man
 
 *Experimental*
 
-Themes may bring their front stacks in addition to those used by mdcms sites. Therefore, you should not delete all assets under *public* while processing or compiling assets. Instead, you should set a list of directories and files to delete during asset building.
+Themes may bring their front stacks in addition to those used by Lightweight CMS sites. Therefore, you should not delete all assets under *public* while processing or compiling assets. Instead, you should set a list of directories and files to delete during asset building.
 
 Currently, you have to edit such lists in *build* scripts. We may change it later.
 

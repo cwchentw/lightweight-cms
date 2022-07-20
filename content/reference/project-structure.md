@@ -1,16 +1,16 @@
 ---
-title: Project Structure of mdcms
+title: Project Structure of Lightweight CMS
 mtime: 2021/6/26
 weight: 5
 ---
 
 ## Prologue
 
-This article illustrates project structure of mdcms to give its users a roadmap to mdcms.
+This article illustrates project structure of Lightweight CMS to give its users a roadmap to Lightweight CMS.
 
-## Bird View of mdcms
+## Bird View of Lightweight CMS
 
-Here we browse project structure of mdcms with `tree(1)`:
+Here we browse project structure of Lightweight CMS with `tree(1)`:
 
 ```shell
 $ tree -a -L 1 -F
@@ -48,21 +48,21 @@ We will introduce them in the following text.
 
 ## *content* Directory
 
-*content* directory stores site posts. In mdcms repository, this directory hoards live documentation of mdcms.
+*content* directory stores site posts. In Lightweight CMS repository, this directory hoards live documentation of Lightweight CMS.
 
-If you don't need to update your mdcms snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your mdcms repo, see [this article](/howto/how-to-upgrade-mdcms/) for more information.
+If you don't need to update your Lightweight CMS snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your Lightweight CMS repo, see [this article](/howto/how-to-upgrade-mdcms/) for more information.
 
 ## *setting.php* and *config* Directory
 
-*config* directory stores site settings. We split mdcms settings into multiple PHP scripts for easier management. *setting.php* works as a loader to those settings.
+*config* directory stores site settings. We split Lightweight CMS settings into multiple PHP scripts for easier management. *setting.php* works as a loader to those settings.
 
 ## *themes* Directory
 
-*themes* directory saves theme(s) for mdcms. There is at least one *default* theme for mdcms users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-mdcms-theme/).
+*themes* directory saves theme(s) for Lightweight CMS. There is at least one *default* theme for Lightweight CMS users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-mdcms-theme/).
 
 ## *plugins* Directory
 
-*plugins* directory saves plugin(s) for mdcms. Currently, there is no plugin inside. We and community contributors will add more in the future.
+*plugins* directory saves plugin(s) for Lightweight CMS. Currently, there is no plugin inside. We and community contributors will add more in the future.
 
 ## *static* Directory
 
@@ -72,28 +72,28 @@ If you don't need to update your mdcms snapshot, you may safely delete all sampl
 
 *assets* directory stows assets for front end. Unlike things in *static* directory, stuffs in *assets* require processing or compiling before senting to client environments.
 
-See [this article](/howto/how-to-manage-assets/) for information related to asset management in mdcms.
+See [this article](/howto/how-to-manage-assets/) for information related to asset management in Lightweight CMS.
 
 ## *build* Directory
 
 *Experimental*
 
-*build* directory places Gulp build scripts for builtin front end stacks used by mdcms. You may need to modify lists of directories and files to delete. We may change this situation later.
+*build* directory places Gulp build scripts for builtin front end stacks used by Lightweight CMS. You may need to modify lists of directories and files to delete. We may change this situation later.
 
 ## *www* Directory
 
-*www* directory places back end PHP scripts of mdcms on production environments. Currently, there is only a script in this directory - *index.php*, which is the router of mdcms.
+*www* directory places back end PHP scripts of Lightweight CMS on production environments. Currently, there is only a script in this directory - *index.php*, which is the router of Lightweight CMS.
 
-Users of mdmcs don't require to alter anything there mostly unless you want to contribute to mdcms itself.
+Users of mdmcs don't require to alter anything there mostly unless you want to contribute to Lightweight CMS itself.
 
 ## *src* Directory
 
-*src* directory hoards internal library of mdcms. Users of mdcms don't need to change anything there unless you want to contribute to mdcms itself.
+*src* directory hoards internal library of Lightweight CMS. Users of Lightweight CMS don't need to change anything there unless you want to contribute to Lightweight CMS itself.
 
 ## *tools* Directory
 
-*tools* directory stores utility scripts for mdcms. We implement utility scripts in POSIX shell on Unix and those in Batch on Windows. You don't need to alter anything there.
+*tools* directory stores utility scripts for Lightweight CMS. We implement utility scripts in POSIX shell on Unix and those in Batch on Windows. You don't need to alter anything there.
 
-## Stuffs in Root Path of mdcms
+## Stuffs in Root Path of Lightweight CMS
 
-They are documentation for mdcms and configurations for build scripts for assets. You don't need to alter anything there.
+They are documentation for Lightweight CMS and configurations for build scripts for assets. You don't need to alter anything there.

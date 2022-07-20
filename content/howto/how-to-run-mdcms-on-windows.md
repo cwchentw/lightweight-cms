@@ -1,11 +1,11 @@
 ---
-title: How to Run mdcms on Windows
+title: How to Run Lightweight CMS on Windows
 mtime: 2021/7/24
 ---
 
 ## Prologue
 
-Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run mdcms on Windows.
+Most PHP-powered sites run on GNU/Linux. Lightweight CMS sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run Lightweight CMS on Windows.
 
 ## System Requirements
 
@@ -22,7 +22,7 @@ Most PHP-powered sites run on GNU/Linux. mdcms sites are of no exception. Nevert
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org/) (for linting)
 
-If you are not interested in developing mdcms itself, you still require Composer to install other dependency packages for mdcms.
+If you are not interested in developing Lightweight CMS itself, you still require Composer to install other dependency packages for Lightweight CMS.
 
 ### Front End
 
@@ -41,11 +41,11 @@ If you are not interested in developing mdcms itself, you still require Composer
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-These dependencies are for *default* theme of mdcms. If you utilize another mdcms theme, your dependencies may vary.
+These dependencies are for *default* theme of Lightweight CMS. If you utilize another Lightweight CMS theme, your dependencies may vary.
 
-Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of mdcms itself.
+Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of Lightweight CMS itself.
 
-## Build a Development Environment for mdcms
+## Build a Development Environment for Lightweight CMS
 
 ### Install Command-Line Tools
 
@@ -121,7 +121,7 @@ Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/mdc
 
 ## Usage
 
-Clone mdcms locally and rename it:
+Clone Lightweight CMS locally and rename it:
 
 ```shell
 > git clone https://github.com/cwchentw/mdcms.git mysite
@@ -133,33 +133,33 @@ Change working directory to root path of the cloned repo:
 > cd mysite
 ```
 
-Install dependencies for mdcms:
+Install dependencies for Lightweight CMS:
 
 ```shell
 > composer install --no-dev
 ```
 
-Development tools like PHP Code Sniffer mean to lint code, which are not required to run mdcms.
+Development tools like PHP Code Sniffer mean to lint code, which are not required to run Lightweight CMS.
 
-If you don't want to update your mdcms snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
+If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your mdcms copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
-You can run a mdcms site locally with builtin web server of PHP:
+You can run a Lightweight CMS site locally with builtin web server of PHP:
 
 ```
 $ .\tools\bin\serve.bat
 ```
 
-Alternatively, if you want to simulate a production environment, copy your mdcms snapshot to Laragon document directory:
+Alternatively, if you want to simulate a production environment, copy your Lightweight CMS snapshot to Laragon document directory:
 
 ```shell
 > .\tools\bin\sync-to.bat C:\Laragon\www\mdcms
 ```
 
-If you alter anything in your mdcms site, repeat the above command to reflect your change on development environment.
+If you alter anything in your Lightweight CMS site, repeat the above command to reflect your change on development environment.
 
-(Optional) Save your mdcms repo to a remote site:
+(Optional) Save your Lightweight CMS repo to a remote site:
 
 ```shell
 > git remote set-url origin https://example.com/user/mysite.git

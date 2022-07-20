@@ -6,7 +6,7 @@ weight: 2
 
 == Prologue
 
-This article lists features of mdcms. Because mdcms is still _experimental and evolving_, the list may change.
+This article lists features of Lightweight CMS. Because Lightweight CMS is still _experimental and evolving_, the list may change.
 
 == Site-related Features
 
@@ -48,4 +48,4 @@ These features are available in _default_ theme:
 
 * Run sites locally without Apache or Nginx (through https://www.php.net/manual/en/features.commandline.webserver.php[builtin web server] of PHP)
 * Synchronize content on a production environment (through `rsync(1)`)
-* Migrate a local mdcms repository to a new site
+* Migrate a local Lightweight CMS repository to a new site

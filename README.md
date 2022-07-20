@@ -97,7 +97,7 @@ $ git push -u origin master
 
 ## Warning
 
-mdcms is still *experimental* and *evolving*.
+Lightweight CMS is still *experimental* and *evolving*.
 
 ## Why not another Static Site Generator?
 

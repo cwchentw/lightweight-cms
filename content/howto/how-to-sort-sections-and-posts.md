@@ -17,7 +17,7 @@ callback(mixed $a, mixed $b): int
 
 By this way, users of `usort` function can sort stuffs by their needs without reinventing sorting algorithms.
 
-mdcms call `usort` internally to sort sections and posts. By modifying sorting callables used by mdcms, mdcms users can write their sorting routines without altering other mdcms code.
+Lightweight CMS call `usort` internally to sort sections and posts. By modifying sorting callables used by the software, our users can write their sorting routines without altering other Lightweight CMS code.
 
 ## Sort Posts
 
@@ -33,7 +33,7 @@ Here we list common properties of posts used for sorting:
 
 ### Sample Code
 
-Here we show builtin sorting routine used by mdcms to sort posts:
+Here we show builtin sorting routine used by Lightweight CMS to sort posts:
 
 ```php
 # Callback to sort posts.
@@ -103,11 +103,11 @@ Here we list common properties of sections for sorting:
 * `mtime`: last modifiled time of a section
 * `weight`: a user-defined value for sorting
 
-Sections in mdcms are merely intermediaries to posts. Authors of sections don't make much sense mostly.
+Sections in Lightweight CMS are merely intermediaries to posts. Authors of sections don't make much sense mostly.
 
 ### Sample Code
 
-Here we show builtin sorting routine used by mdcms to sort sections:
+Here we show builtin sorting routine used by Lightweight CMS to sort sections:
 
 ```php
 # Callback to sort sections.

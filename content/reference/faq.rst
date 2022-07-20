@@ -7,29 +7,29 @@ weight: 4
 Synopsis
 --------
 
-This article answers FAQs related to mdcms.
+This article answers FAQs related to Lightweight CMS.
 
-What is mdcms?
+What is Lightweight CMS?
 --------------
 
-mdcms is a content management system (CMS), which intends to build content websites.
+Lightweight CMS is a content management system (CMS), which intends to build content websites.
 
-Is mdcms Free?
+Is Lightweight CMS Free?
 --------------
 
-Definitely, free as in both beer and speech. mdcms is licensed under MIT, feasible even for commercial websites. Currently, we have no paid services for mdcms.
+Definitely, free as in both beer and speech. Lightweight CMS is licensed under MIT, feasible even for commercial websites. Currently, we have no paid services for Lightweight CMS.
 
-What is Differences between mdcms and WordPress?
+What is Differences between Lightweight CMS and WordPress?
 -------------------------------------------------
 
-mdcms, as a flat-file CMS, doesn't rely on any relational database to store contents. Instead, posts in mdcms sites are saved in flat files, either Markdown, AsciiDoc, reStructuredText or HTML.
+Lightweight CMS, as a flat-file CMS, doesn't rely on any relational database to store contents. Instead, posts in Lightweight CMS sites are saved in flat files, either Markdown, AsciiDoc, reStructuredText or HTML.
 
-Why is mdcms Created?
+Why is Lightweight CMS Created?
 ----------------------
 
-We created mdcms to migrate some of our website from static sites into dynamic ones while retaining previous Markdown posts. Unlike static sites, dynamic websites can reflect our changes immediately, suitable for frequently modified content websites.
+We created Lightweight CMS to migrate some of our website from static sites into dynamic ones while retaining previous Markdown posts. Unlike static sites, dynamic websites can reflect our changes immediately, suitable for frequently modified content websites.
 
-Which Language is Utilized to Implement mdcms?
+Which Language is Utilized to Implement Lightweight CMS?
 -----------------------------------------------
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
@@ -46,17 +46,17 @@ Fedora 35              8.0.14 (*)
 openSUSE Leap 15.3     7.4.6
 ====================== ===========
 
-*(\*) Rocky Linux 8.5 and Fedora 35 are not usable for mdcms.*
+*(\*) Rocky Linux 8.5 and Fedora 35 are not usable for Lightweight CMS.*
 
-Does mdcms Run on Windows?
+Does Lightweight CMS Run on Windows?
 ---------------------------
 
 Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
 
-Does mdcms Run on XXX PaaS?
+Does Lightweight CMS Run on XXX PaaS?
 ----------------------------
 
-Maybe not. Every PaaS owns some catches. We cannot guarantee that mdcms will run on your PaaS vendor. In contrary, a GNU/Linux VPS with PHP plus either Apache or Nginx is recommended because of simplicity.
+Maybe not. Every PaaS owns some catches. We cannot guarantee that Lightweight CMS will run on your PaaS vendor. In contrary, a GNU/Linux VPS with PHP plus either Apache or Nginx is recommended because of simplicity.
 
 What Lightweight Markup Languages are Supported?
 -------------------------------------------------
