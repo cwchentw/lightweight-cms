@@ -117,7 +117,7 @@ You may encounter some warning from Windows Defender (a builtin firewall for Win
 
 Simply enable it. We don't use Laragon on production environments, stopping all services after development.
 
-Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/windows/nginx.conf) is a sample configuration.
+Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/lightweight-cms/blob/master/tools/etc/windows/nginx.conf) is a sample configuration.
 
 ## Usage
 

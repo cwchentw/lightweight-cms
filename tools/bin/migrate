@@ -77,7 +77,7 @@ sed -i "" "s/mdcms.org/example.com/" "${root}/config/information.php" || (
     exit 1;
 )
 
-sed -i "" "s/cwchentw\/mdcms//" "${root}/config/socialMedia.php" || (
+sed -i "" "s/cwchentw\/lightweight-cms//" "${root}/config/socialMedia.php" || (
     echo "Unable to modify socialMedia.php" >&2;
     exit 1;
 )

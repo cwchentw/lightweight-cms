@@ -104,7 +104,7 @@ Internally, the script calls `rsync(1)` to synchronize your Lightweight CMS site
 
 If you modify anything locally, repeat the command to update your change(s) in a production environment.
 
-Set configuration of a web server accordingly. [Here](https://github.com/cwchentw/mdcms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a Lightweight CMS site.
+Set configuration of a web server accordingly. [Here](https://github.com/cwchentw/lightweight-cms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a Lightweight CMS site.
 
 (Optional) Save the local repo to a remote site:
 
@@ -187,4 +187,4 @@ $ git push https://github.com/user/mdcms.git
 
 Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
 
-If you are busy, open [a dicussion](https://github.com/cwchentw/mdcms/discussions) or send us [an issue](https://github.com/cwchentw/mdcms/issues) instead.
+If you are busy, open [a dicussion](https://github.com/cwchentw/lightweight-cms/discussions) or send us [an issue](https://github.com/cwchentw/lightweight-cms/issues) instead.

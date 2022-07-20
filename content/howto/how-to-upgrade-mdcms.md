@@ -12,7 +12,7 @@ As most software, Lightweight CMS envolves with time. You may want to upgrade Li
 Here are two-step pseudo commands to upgrade your Lightweight CMS repo:
 
 ```shell
-$ cd path/to/your/mdcms/site
+$ cd path/to/your/lightweight-cms/site
 $ git pull https://github.com/cwchentw/mdcms.git
 ```
 

@@ -70,7 +70,7 @@ sed -i "s/mdcms.org/example.com/" %informationConfig:\=/% || (
 )
 
 set socialMediaConfig=%root%\config\socialMedia.php
-sed -i "s/cwchentw\/mdcms//" %socialMediaConfig:\=/% || (
+sed -i "s/cwchentw\/lightweight-cms//" %socialMediaConfig:\=/% || (
     echo Unable to modify socialMedia.php >&2
     echo /b 1
 )

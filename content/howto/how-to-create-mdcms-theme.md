@@ -5,7 +5,7 @@ mtime: 2021/11/6
 
 ## Prologue
 
-This guide illustrates to create a Lightweight CMS theme, taking [default theme](https://github.com/cwchentw/mdcms/tree/master/themes/default) of Lightweight CMS as an instance.
+This guide illustrates to create a Lightweight CMS theme, taking [default theme](https://github.com/cwchentw/lightweight-cms/tree/master/themes/default) of Lightweight CMS as an instance.
 
 ## Project Structure
 
@@ -176,9 +176,9 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 Here we list sample layouts used in Lightweight CMS themes:
 
-* Layout for [home page](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/home.php)
-* Layout for [sections](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/section.php)
-* Layout for [posts](https://github.com/cwchentw/mdcms/blob/master/themes/default/theme/post.php)
+* Layout for [home page](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/home.php)
+* Layout for [sections](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/section.php)
+* Layout for [posts](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/post.php)
 
 Check exposed variables in these layouts [here](/reference/variable-in-layout/).
 
