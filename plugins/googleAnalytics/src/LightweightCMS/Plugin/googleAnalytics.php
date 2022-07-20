@@ -1,5 +1,5 @@
 <?php
-namespace mdcms\Plugin;
+namespace LightweightCMS\Plugin;
 # Add a Google Analytics tracker for a mdcms site.
 
 function googleAnalytics($id)

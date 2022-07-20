@@ -23,7 +23,7 @@ $status = 200;
         <?php
         if ("" != GOOGLE_ANALYTICS_ID) {
             echo "<!-- Google Analytics -->";
-            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+            echo \LightweightCMS\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
         }
         ?>
 
@@ -57,7 +57,7 @@ $status = 200;
             <div id="main-content">
                 <?php
                 # Show home content if it is not empty.
-                $homeContent = \mdcms\Core\getHomeContent();
+                $homeContent = \LightweightCMS\Core\getHomeContent();
                 if ("" != $homeContent) {
                     echo $homeContent;
                 }
@@ -92,7 +92,7 @@ $status = 200;
                                     echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
@@ -120,7 +120,7 @@ $status = 200;
                                     echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
@@ -146,7 +146,7 @@ $status = 200;
 
                             echo "<p>";
 
-                            $sectionExcerpt = \mdcms\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                            $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
                             if ("" != $sectionExcerpt) {
                                 echo $sectionExcerpt;
                             }

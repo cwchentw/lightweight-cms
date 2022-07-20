@@ -1,5 +1,5 @@
 <?php
-namespace mdcms\Core;
+namespace LightweightCMS\Core;
 # Utility functions for mdcms.
 
 

@@ -1,6 +1,6 @@
 {
-    "name": "cwchen/mdcms",
-    "description": "Markdown-based content management system powered by PHP",
+    "name": "cwchen/lightweight-cms",
+    "description": "Flat-file based content management system supporting common lightweight markup languages, powered by PHP",
     "type": "project",
     "license": "MIT",
     "authors": [

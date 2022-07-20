@@ -18,7 +18,7 @@ A tiny Lightweight CMS plugin to add a Google Analytics tracker for Lightweight 
 $googleAnalyticsID = "";
 
 if ("" != $googleAnalyticsID) {
-    echo \mdcms\Plugin\googleAnalytics($googleAnalyticsID);
+    echo \LightweightCMS\Plugin\googleAnalytics($googleAnalyticsID);
 }
 ```
 

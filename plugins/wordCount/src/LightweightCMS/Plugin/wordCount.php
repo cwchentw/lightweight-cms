@@ -1,5 +1,5 @@
 <?php
-namespace mdcms\Plugin;
+namespace LightweightCMS\Plugin;
 # Calculate word count and read time for western European text.
 
 function wordCount($content)

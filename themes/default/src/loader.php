@@ -74,7 +74,7 @@ function loadAssets($dest)
 
         # xCopy is a utility function in mdcms.
         #  It will copy directories and files recursively.
-        \mdcms\Core\xCopy($publicDirectory, $dest);
+        \LightweightCMS\Core\xCopy($publicDirectory, $dest);
     }
     catch (Exception $e) {
         # Move back to old working directory.

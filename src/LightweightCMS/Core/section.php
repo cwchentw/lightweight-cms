@@ -1,5 +1,5 @@
 <?php
-namespace mdcms\Core;
+namespace LightweightCMS\Core;
 # Section related function(s).
 
 

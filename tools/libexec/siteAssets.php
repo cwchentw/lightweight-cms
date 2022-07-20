@@ -92,7 +92,7 @@ if (!system("npm run prod")) {
 try {
     # xCopy is a utility function in mdcms.
     #  It will copy directories and files recursively.
-    \mdcms\Core\xCopy($assetDirectory, $publicDirectory);
+    \LightweightCMS\Core\xCopy($assetDirectory, $publicDirectory);
 }
 catch (Exception $e) {
     # Move back to old working directory.

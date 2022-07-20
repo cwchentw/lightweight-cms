@@ -1,5 +1,5 @@
 <?php
-namespace mdcms\Plugin;
+namespace LightweightCMS\Plugin;
 # Generate an excerpt from western European text.
 
 

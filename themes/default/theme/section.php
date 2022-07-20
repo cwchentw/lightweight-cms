@@ -23,7 +23,7 @@ if (POST_PER_PAGE > 0) {
         <?php
         if ("" != GOOGLE_ANALYTICS_ID) {
             echo "<!-- Google Analytics -->";
-            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+            echo \LightweightCMS\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
         }
         ?>
 
@@ -107,7 +107,7 @@ if (POST_PER_PAGE > 0) {
                                     echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
@@ -135,7 +135,7 @@ if (POST_PER_PAGE > 0) {
                                     echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
@@ -159,7 +159,7 @@ if (POST_PER_PAGE > 0) {
 
                             echo "<p>";
 
-                            $sectionExcerpt = \mdcms\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                            $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
                             if ("" != $sectionExcerpt) {
                                 echo $sectionExcerpt;
                             }

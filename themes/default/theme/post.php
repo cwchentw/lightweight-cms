@@ -10,8 +10,8 @@ require_once __DIR__ . "/../src/utils.php";
 # Take global data.
 $post = $GLOBALS[MDCMS_POST];
 
-$wordCount = \mdcms\Plugin\wordCount($post[MDCMS_POST_CONTENT]);
-$readTime = \mdcms\Plugin\readTime($wordCount);
+$wordCount = \LightweightCMS\Plugin\wordCount($post[MDCMS_POST_CONTENT]);
+$readTime = \LightweightCMS\Plugin\readTime($wordCount);
 
 # Add id for each subtitle if none.
 if (ENABLE_TOC) {
@@ -37,7 +37,7 @@ if (ENABLE_TOC) {
         <?php
         if ("" != GOOGLE_ANALYTICS_ID) {
             echo "<!-- Google Analytics -->";
-            echo \mdcms\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
+            echo \LightweightCMS\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
         }
         ?>
 

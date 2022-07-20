@@ -23,7 +23,7 @@ if (isset($posts) && count($posts) > 0) {
     foreach ($posts as $post) {
         echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-        echo "<p>" . \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+        echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
 
         echo "<a class=\"btn btn-primary btn-sm\" "
             . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"

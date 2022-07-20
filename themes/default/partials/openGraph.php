@@ -17,10 +17,10 @@ else {
 
 $description = null;
 if (!is_null($post)) {
-    $description = \mdcms\Plugin\excerpt($post[MDCMS_POST_CONTENT]);
+    $description = \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]);
 }
 else if (!is_null($section)) {
-    $description = \mdcms\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+    $description = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
 }
 
 if ("" == $description) {

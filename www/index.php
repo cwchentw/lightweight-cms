@@ -24,14 +24,14 @@ if ("" != SITE_PREFIX) {
 # Render an error page for a bad URL.
 if (false != strpos($loc, "..")) {
     # Create an error page dynamically.
-    $post = \mdcms\Core\errorPage(
+    $post = \LightweightCMS\Core\errorPage(
         "Bad Request Error",
         "Invalid URL",
         400
     );
 
     # Create a breadcrumb dynamically.
-    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Bad Request Error");
+    $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Bad Request Error");
 
     $GLOBALS[MDCMS_POST] = $post;
     $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
@@ -39,16 +39,16 @@ if (false != strpos($loc, "..")) {
     loadPost();
 }
 # Render an error page if a wrong site prefix.
-else if ("" != SITE_PREFIX && !\mdcms\Core\startsWith($origLoc, SITE_PREFIX)) {
+else if ("" != SITE_PREFIX && !\LightweightCMS\Core\startsWith($origLoc, SITE_PREFIX)) {
     # Create an error page dynamically.
-    $post = \mdcms\Core\errorPage(
+    $post = \LightweightCMS\Core\errorPage(
         "Page Not Found",
         "The page doesn't exist on our server.",
         404
     );
 
     # Create a breadcrumb dynamically.
-    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+    $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
     $GLOBALS[MDCMS_POST] = $post;
     $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
@@ -56,39 +56,39 @@ else if ("" != SITE_PREFIX && !\mdcms\Core\startsWith($origLoc, SITE_PREFIX)) {
     loadPost();
 }
 # Render a home page.
-else if (\mdcms\Core\isHome($loc)) {
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+else if (\LightweightCMS\Core\isHome($loc)) {
+    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
     # Posts not included in any section.
-    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
+    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
-        $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($loc, 0);
+        $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
     }
 
     loadHome();
 }
 # Render a page of home page.
-else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
+else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $homeURI = "/";
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($homeURI);
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($homeURI);
+    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
+    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
     # Posts not included in any section.
-    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($homeURI);
+    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
 
     preg_match("/^\/(\d+)\/$/", $loc, $matches);
-    $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($homeURI, $matches[1]);
+    $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($homeURI, $matches[1]);
 
     # Show HTTP 404 page if no post on this page.
     if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
-        $post = \mdcms\Core\errorPage(
+        $post = \LightweightCMS\Core\errorPage(
             "Page Not Found",
             "The page doesn't exist on our server.",
             404
         );
 
         # Create a breadcrumb dynamically.
-        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+        $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
         $GLOBALS[MDCMS_POST] = $post;
         $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
@@ -100,47 +100,47 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInHome($loc)) {
     }
 }
 # Render a section.
-else if (\mdcms\Core\isSection($loc)) {
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+else if (\LightweightCMS\Core\isSection($loc)) {
+    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     # Current section.
-    $GLOBALS[MDCMS_SECTION] = \mdcms\Core\readSection($loc);
+    $GLOBALS[MDCMS_SECTION] = \LightweightCMS\Core\readSection($loc);
     # Subsections of current section.
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($loc);
+    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
     # Posts of current section.
-    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($loc);
+    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
-        $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($loc, 0);
+        $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
     }
 
     loadSection();
 }
 # Render a page of a section.
-else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
+else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     preg_match("/^\/(.+)\/(\d+)\/$/", $loc, $matches);
     $sectionURI = "/" . $matches[1] . "/";
     $page = $matches[2];
 
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($sectionURI);
+    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($sectionURI);
     # Current section.
-    $GLOBALS[MDCMS_SECTION] = \mdcms\Core\readSection($sectionURI);
+    $GLOBALS[MDCMS_SECTION] = \LightweightCMS\Core\readSection($sectionURI);
     # Subsections of current section.
-    $GLOBALS[MDCMS_SECTIONS] = \mdcms\Core\getSections($sectionURI);
+    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($sectionURI);
     # Posts of current section.
-    $GLOBALS[MDCMS_POSTS] = \mdcms\Core\getPosts($sectionURI);
+    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($sectionURI);
     # A page in a series of pages.
-    $GLOBALS[MDCMS_POST_PER_PAGE] = \mdcms\Core\getPostsPerPage($sectionURI, $page);
+    $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($sectionURI, $page);
 
     # Show HTTP 404 page if no post on this page.
     if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
-        $post = \mdcms\Core\errorPage(
+        $post = \LightweightCMS\Core\errorPage(
             "Page Not Found",
             "The page doesn't exist on our server.",
             404
         );
 
         # Create a breadcrumb dynamically.
-        $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+        $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
         $GLOBALS[MDCMS_POST] = $post;
         $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
@@ -152,22 +152,22 @@ else if (POST_PER_PAGE > 0 && \mdcms\Core\isPageInSection($loc)) {
     }
 }
 # Render a custom page.
-else if (\mdcms\Core\isCustomPage($loc)) {
-    $GLOBALS[MDCMS_POST] = \mdcms\Core\readCustomPage($loc);
-    $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+else if (\LightweightCMS\Core\isCustomPage($loc)) {
+    $GLOBALS[MDCMS_POST] = \LightweightCMS\Core\readCustomPage($loc);
+    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
 
-    \mdcms\Core\loadCustomPage($loc);
+    \LightweightCMS\Core\loadCustomPage($loc);
 }
 # Render a post.
-else if (\mdcms\Core\isPost($loc)) {
-    $GLOBALS[MDCMS_POST] = \mdcms\Core\readPost($loc);
+else if (\LightweightCMS\Core\isPost($loc)) {
+    $GLOBALS[MDCMS_POST] = \LightweightCMS\Core\readPost($loc);
 
     if (200 === $GLOBALS[MDCMS_POST][MDCMS_POST_STATUS]) {
-        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\getBreadcrumb($loc);
+        $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     }
     # Something is wrong while rendering a post.
     else {
-        $GLOBALS[MDCMS_BREADCRUMB] = \mdcms\Core\errorPageBreadcrumb($GLOBALS[MDCMS_POST][MDCMS_POST_TITLE]);
+        $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb($GLOBALS[MDCMS_POST][MDCMS_POST_TITLE]);
     }
 
     loadPost();
@@ -191,14 +191,14 @@ else {
 
     # If HTTP status 404, generate an error page on-the-fly.
     # Create an error page dynamically.
-    $post = \mdcms\Core\errorPage(
+    $post = \LightweightCMS\Core\errorPage(
         "Page Not Found",
         "The page doesn't exist on our server.",
         404
     );
 
     # Create a breadcrumb dynamically.
-    $breadcrumb = \mdcms\Core\errorPageBreadcrumb("Page Not Found");
+    $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
     $GLOBALS[MDCMS_POST] = $post;
     $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
