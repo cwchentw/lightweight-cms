@@ -1,13 +1,16 @@
 ---
 title: Frequent Asked Questions
-mtime: 2022/4/25
+mtime: 2022/07/21
 weight: 4
 ---
 
 Synopsis
---------
+========
 
 This article answers FAQs related to Lightweight CMS.
+
+General Questions
+=================
 
 What is Lightweight CMS?
 -------------------------
@@ -17,7 +20,7 @@ Lightweight CMS is a content management system (CMS), which intends to build con
 Is Lightweight CMS Free?
 -------------------------
 
-Definitely, free as in both beer and speech. Lightweight CMS is licensed under MIT, feasible even for commercial websites. Currently, we have no paid services for Lightweight CMS.
+Definitely, free as in both beer and speech. Lightweight CMS is licensed under `MIT <https://opensource.org/licenses/MIT>`_, feasible even for commercial websites. Currently, we have no paid services for Lightweight CMS.
 
 What is Differences between Lightweight CMS and WordPress?
 -----------------------------------------------------------
@@ -29,12 +32,15 @@ Why is Lightweight CMS Created?
 
 We created Lightweight CMS to migrate some of our website from static sites into dynamic ones while retaining previous Markdown posts. Unlike static sites, dynamic websites can reflect our changes immediately, suitable for frequently modified content websites.
 
+Technical Questions
+====================
+
 Which Language is Utilized to Implement Lightweight CMS?
 ---------------------------------------------------------
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-Currently, some GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our `master` branch to PHP 8, leaving our old code to `php74` branch:
+Currently, some GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8, leaving our old code to ``php74`` branch:
 
 ====================== ===========
 GNU/Linux Distribution PHP Version
@@ -57,6 +63,9 @@ Does Lightweight CMS Run on XXX PaaS?
 --------------------------------------
 
 Maybe not. Every PaaS owns some catches. We cannot guarantee that Lightweight CMS will run on your PaaS vendor. In contrary, a GNU/Linux VPS with PHP plus either Apache or Nginx is recommended because of simplicity.
+
+Feature Questions
+===================
 
 What Lightweight Markup Languages are Supported?
 -------------------------------------------------
