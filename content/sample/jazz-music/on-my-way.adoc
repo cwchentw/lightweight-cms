@@ -1,0 +1,11 @@
+---
+title: "On My Way [Lofi Study Music]"
+mtile: 2022/07/21
+---
+
+.On My Way
+audio::/audio/jazz-music/On-My-Way-Lofi-Study-Music.mp3[options="nodownload"]
+
+* On My Way by https://soundcloud.com/ghostrifter-official[Ghostrifter Official]
+* Music promoted by https://www.chosic.com/free-music/all/
+* https://creativecommons.org/licenses/by-sa/3.0/[Creative Commons CC BY-SA 3.0]
