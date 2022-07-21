@@ -59,26 +59,29 @@ if (ENABLE_TOC) {
 
         <div id="top" class="jumbotron">
             <div class="container">
-                <header>
-                    <h1>
-                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                <div>
+                    <header>
+                        <h1>
+                            <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
-                        <span>
-                            <?php echo $post[MDCMS_POST_TITLE]; ?>
-                        </span>
-                    </h1>
-                </header>
+                            <span>
+                                <?php echo $post[MDCMS_POST_TITLE]; ?>
+                            </span>
+                        </h1>
+                    </header>
 
-                <div class="post-info">
-                    <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
-                    <span class="author">Written by <?php echo $post[MDCMS_POST_AUTHOR]; ?>.</span>
-                    <?php endif; ?>
+                    <div class="post-info">
+                        <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
+                        <span class="author">Written by <?php echo $post[MDCMS_POST_AUTHOR]; ?>.</span>
+                        <?php endif; ?>
 
-                    <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
-                    <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?></span>
-                    <?php endif; ?>
+                        <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
+                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?></span>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php includePartials("breadcrumb.php"); ?>
                 </div>
-                <?php includePartials("breadcrumb.php"); ?>
             </div>
         </div>
 

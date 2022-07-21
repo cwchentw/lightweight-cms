@@ -4,8 +4,8 @@
 
 /* We utilize safe English fonts to save page loading time. */
 /* Fonts for titles. */
-$head-font: "DS Gabriele";
-$title-font: "Playfair Display";
+$head-font: "Lato";
+$title-font: "Lato";
 $serif: Palatino, "Times New Roman", Times, serif;
 /* Fonts for everywhere except titles and code. */
 $sans-serif: Roboto, Arial, Helvetica, sans-serif;
@@ -24,7 +24,7 @@ $text-font-color: #363639;
 
 @font-face {
     font-family: $head-font;
-    src: url("/font/dsgabriele.woff") format("woff");
+    src: url("/font/Lato-Regular.woff") format("woff");
 }
 
 html {
@@ -190,14 +190,17 @@ textarea {
 .jumbotron {
     background-color: $jumbotron-color;
 
-    padding-top: 48px;
-    padding-bottom: 48px;
-    margin-bottom: 0;
+    height: 50vh;
 
     .container {
         width: 80%;
+        height: 100%;
         max-width: 1400px;
         background-color: $jumbotron-color;
+
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
 
         h1 {
             color: $background-color;
@@ -218,7 +221,6 @@ textarea {
         }
 
         .post-info {
-            width: 88%;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 20pt;

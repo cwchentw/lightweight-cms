@@ -40,15 +40,17 @@ $status = 200;
         <div id="top" class="jumbotron">
             <div class="container">
                 <header>
-                    <h1 class="title">
-                        <img src="/img/<?php echo SITE_LOGO; ?>-128x128.png" alt="<?php echo SITE_NAME; ?>" style="margin-right: 10px;" />
+                    <div>
+                        <h1 class="title">
+                            <img class="d-none d-md-block" src="/img/<?php echo SITE_LOGO; ?>-128x128.png" alt="<?php echo SITE_NAME; ?>" style="margin-right: 10px;" />
 
-                        <span>
-                            <?php echo SITE_NAME; ?>
-                        </span>
-                    </h1>
+                            <span>
+                                <?php echo SITE_NAME; ?>
+                            </span>
+                        </h1>
 
-                    <div class="text-center subtitle"><?php echo SITE_DESCRIPTION; ?></div>
+                        <div class="text-center subtitle"><?php echo SITE_DESCRIPTION; ?></div>
+                    </div>
                 </header>
             </div>
         </div>

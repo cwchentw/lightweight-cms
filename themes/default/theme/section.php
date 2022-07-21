@@ -45,26 +45,29 @@ if (POST_PER_PAGE > 0) {
 
         <div id="top" class="jumbotron">
             <div class="container">
-                <header>
-                    <h1>
-                        <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                <div>
+                    <header>
+                        <h1>
+                            <img class="d-none d-md-block" src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
-                        <span>
-                            <?php echo $section[MDCMS_SECTION_TITLE]; ?>
-                        </span>
-                    </h1>
-                </header>
+                            <span>
+                                <?php echo $section[MDCMS_SECTION_TITLE]; ?>
+                            </span>
+                        </h1>
+                    </header>
 
-                <div class="post-info">
-                    <?php if (array_key_exists(MDCMS_SECTION_AUTHOR, $section) && "" != $section[MDCMS_SECTION_AUTHOR]): ?>
-                    <span class="author">Written by <?php echo $section[MDCMS_SECTION_AUTHOR]; ?>.</span>
-                    <?php endif; ?>
+                    <div class="post-info">
+                        <?php if (array_key_exists(MDCMS_SECTION_AUTHOR, $section) && "" != $section[MDCMS_SECTION_AUTHOR]): ?>
+                        <span class="author">Written by <?php echo $section[MDCMS_SECTION_AUTHOR]; ?>.</span>
+                        <?php endif; ?>
 
-                    <?php if (array_key_exists(MDCMS_SECTION_MTIME, $section)): ?>
-                    <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[MDCMS_SECTION_MTIME]); ?></span>
-                    <?php endif; ?>
+                        <?php if (array_key_exists(MDCMS_SECTION_MTIME, $section)): ?>
+                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[MDCMS_SECTION_MTIME]); ?></span>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php includePartials("breadcrumb.php"); ?>
                 </div>
-                <?php includePartials("breadcrumb.php"); ?>
             </div>
         </div>
 

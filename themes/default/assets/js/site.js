@@ -100,20 +100,21 @@ function fixedSidebar () {
         fixedSidebar.style.position = "fixed";
 
         /* The height of the top navbar. */
-        let navbarHeight = document.getElementById("navbarSupportedContent").clientHeight
+        let navbarHeight = document.getElementsByTagName('nav')[0].clientHeight;
         /* The height of the <h1> title of a page. */
-        let headerHeight = document.getElementsByTagName("h1")[0].clientHeight;
+        let windowHeight = document.documentElement.clientHeight || window.innerHeight;
+        let headerHeight = 0.5 * windowHeight;
 
-        /* The sidebar scrolls below both the navbar and the <h1> title. */
+        console.log(windowHeight);
+        console.log(headerHeight);
+
+        /* The sidebar scrolls below both the navbar and the title bar. */
         if (window.scrollY > navbarHeight + headerHeight) {
             fixedSidebar.style.top = "0";
         }
-        /* The sidebar scrolls below the navbar but above the <h1> title. */
-        else if (window.scrollY > navbarHeight) {
-            fixedSidebar.style.top = `${headerHeight}pt`;
-        }
-        else {
-            fixedSidebar.style.top = `${navbarHeight + headerHeight}pt`;
+        /* The sidebar scrolls within the navbar and the title bar. */
+        else  {
+            fixedSidebar.style.top = `${navbarHeight + headerHeight - document.documentElement.scrollTop}px`;
         }
 
         fixedSidebar.style.left = `${width}`.toString() + "px";
