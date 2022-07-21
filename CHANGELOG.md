@@ -2,6 +2,7 @@
 
 * 2022-07-21
   * Migrate the package of Lightweight CMS from `mdcms` to `LightweightCMS`
+  * Modify the AsciiDoctor templates for `<img>` and `<audio>` tags
 * 2022-07-20
   * Add *experimental* AsciiDoc support, only in `master` branch
   * Add *experimental* reStructuredText support, only in `master` branch
