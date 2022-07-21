@@ -296,6 +296,32 @@ textarea {
     }
 }
 
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.section-block {
+    width: 250pt;
+
+    border-style: solid;
+    border-width: 1pt;
+    border-color: darkslategray;
+
+    padding: 12pt;
+    margin-top: 18pt;
+    margin-left: 0;
+    margin-right: 15pt;
+    margin-bottom: 28pt;
+}
+
+@media screen and (max-width: $phone-width) {
+    .section-block {
+        width: 80%;
+    }
+}
+
 @media screen and (min-width: $large-screen-width) {
     #main-content {
         padding-left: 8%;

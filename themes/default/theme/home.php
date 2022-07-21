@@ -75,94 +75,91 @@ $status = 200;
                 }
                 ?>
 
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                    <?php
-                    # Add post(s) if any exists.
+                <?php
+                # Add post(s) if any exists.
 
-                    # Posts in a page of a series of pages.
-                    if (POST_PER_PAGE > 0) {
-                        if (isset($postsPerPage) && count($postsPerPage) > 0) {
-                            echo "<h2>Articles</h2>";
+                # Posts in a page of a series of pages.
+                if (POST_PER_PAGE > 0) {
+                    if (isset($postsPerPage) && count($postsPerPage) > 0) {
+                        echo "<h2>Articles</h2>";
 
-                            foreach ($postsPerPage as $post) {
-                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                        foreach ($postsPerPage as $post) {
+                            echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
-                                if (!is_null($post[MDCMS_POST_META])
-                                    && array_key_exists("description", $post[MDCMS_POST_META]))
-                                {
-                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
-                                }
-                                else {
-                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
-                                }
-
-                                echo "<a class=\"btn btn-primary btn-sm\" "
-                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
-                                    . "Read More"
-                                    . "</a>";
-
-                                echo "</p>";
+                            if (!is_null($post[MDCMS_POST_META])
+                                && array_key_exists("description", $post[MDCMS_POST_META]))
+                            {
+                                echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
                             }
-                        }
-
-                        includePartials("pagination.php");
-                    }
-                    # All posts.
-                    else {
-                        if (isset($posts) && count($posts) > 0) {
-                            echo "<h2>Articles</h2>";
-
-                            foreach ($posts as $post) {
-                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
-
-                                if (!is_null($post[MDCMS_POST_META])
-                                    && array_key_exists("description", $post[MDCMS_POST_META]))
-                                {
-                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
-                                }
-                                else {
-                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
-                                }
-
-                                echo "<a class=\"btn btn-primary btn-sm\" "
-                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
-                                    . "Read More"
-                                    . "</a>";
-
-                                echo "</p>";
-                            }
-                        }
-                    }
-                    ?>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">
-                    <?php
-                    # Add section(s) if any exists.
-                    if (isset($sections) && count($sections) > 0) {
-                        echo "<h2>Sections</h2>";
-
-                        foreach ($sections as $section) {
-                            echo "<h3>" . $section[MDCMS_SECTION_TITLE] . "</h3>";
-
-                            echo "<p>";
-
-                            $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
-                            if ("" != $sectionExcerpt) {
-                                echo $sectionExcerpt;
+                            else {
+                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
                             }
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                                . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
                                 . "Read More"
                                 . "</a>";
 
                             echo "</p>";
                         }
                     }
-                    ?>
-                    </div>
+
+                    includePartials("pagination.php");
+                }
+                # All posts.
+                else {
+                    if (isset($posts) && count($posts) > 0) {
+                        echo "<h2>Articles</h2>";
+
+                        foreach ($posts as $post) {
+                            echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+
+                            if (!is_null($post[MDCMS_POST_META])
+                                && array_key_exists("description", $post[MDCMS_POST_META]))
+                            {
+                                echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                            }
+                            else {
+                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                            }
+
+                            echo "<a class=\"btn btn-primary btn-sm\" "
+                                . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                . "Read More"
+                                . "</a>";
+
+                            echo "</p>";
+                        }
+                    }
+                }
+                ?>
+
+                <?php
+                # Add section(s) if any exists.
+                if (isset($sections) && count($sections) > 0) {
+                    echo "<div class=\"sections\">";  # Directive for the region of the sections.
+                    foreach ($sections as $section) {
+                        echo "<div class=\"section-block\">";  # Directive for a section.
+                        echo "<h2>" . $section[MDCMS_SECTION_TITLE] . "</h2>";  # Section title.
+
+                        echo "<p>";  # The descriptive text of a section.
+
+                        $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                        if ("" != $sectionExcerpt) {
+                            echo $sectionExcerpt;
+                        }
+
+                        echo "<a class=\"btn btn-primary btn-sm\" "
+                            . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                            . "Explore More"
+                            . "</a>";
+
+                        echo "</p>";  # End of the descriptive text of a section.
+                        echo "</div>";  # End of a section.
+                    }
+                    echo "</div>";  # End of the region of the sections.
+                }
+                ?>
                 </div>
             </div>
 
