@@ -62,3 +62,8 @@ What Lightweight Markup Languages are Supported?
 -------------------------------------------------
 
 `Markdown <https://github.github.com/gfm/>`_, `AsciiDoc <https://asciidoc.org/>`_ and `reStructuredText <https://docutils.sourceforge.io/rst.html>`_. Different markup languages met different use cases; hence, we support three common lightweight markup languages in our software.
+
+Why Some AsciiDoc Templates are Modified?
+------------------------------------------
+
+Some HTML tags rendered by AsciiDocter by default are counter-intuitive for web developers. To address these issues, we modify the templates of some HTML tags while retaining the semantic structures among the HTML tags set by AsciiDoctor.
