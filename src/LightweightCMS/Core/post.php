@@ -206,7 +206,8 @@ function readPost($page)
         );
         
         # Convert a AsciiDoc document to a HTML fragment.
-        $process = proc_open("asciidoctor -e -o - -", $descriptorspec, $pipes);
+        $asciiDoctorTemplatePath = $rootDirectory . "{$sep}tools{$sep}lib{$sep}asciidoctor-backends";
+        $process = proc_open("asciidoctor -T {$asciiDoctorTemplatePath} -E erb -e -o - -", $descriptorspec, $pipes);
         
         if (is_resource($process)) {
             # Write the input to STDIN.
