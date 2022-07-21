@@ -131,17 +131,6 @@ div {
     }
 }
 
-/* Fix an AsciiDoc list issue. */
-li {
-    p {
-        margin-top: 0;
-        margin-bottom: 0;
-
-        padding-left: unset;
-        padding-right: unset;
-    }
-}
-
 a {
     color: blue;
 
