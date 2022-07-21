@@ -64,7 +64,33 @@ copy "%root%\config\internal.template.php" "%root%\config\internal.php" || (
 )
 
 set informationConfig=%root%\config\information.php
+rem Update the site base URL.
+rem TODO: Set the new site name of Lightweight CMS.
 sed -i "s/mdcms.org/example.com/" %informationConfig:\=/% || (
+    echo Unable to modify information.php >&2
+    exit /b 1
+)
+
+rem Update the site name.
+sed -i "s/Lightweight CMS/Awesome Site/" %informationConfig:\=/% || (
+    echo Unable to modify information.php >&2
+    exit /b 1
+)
+
+rem Update the site description.
+sed -i "s/A Flat-File CMS Supporting Common Lightweight Markup Languages, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
+    echo Unable to modify information.php >&2
+    exit /b 1
+)
+
+rem Update the site author.
+sed -i "s/Michelle Chen/The Site Author/" %informationConfig:\=/% || (
+    echo Unable to modify information.php >&2
+    exit /b 1
+)
+
+rem Update the copyright text.
+sed -i "s/Licensed under CC BY 4\.0\./All Rights Reserved/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )
