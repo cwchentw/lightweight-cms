@@ -162,6 +162,34 @@ textarea {
     }
 }
 
+.sidebar {
+    width: 220pt;
+
+    padding: 1em;
+
+    margin-top: 5pt;
+
+    border-radius: 16px;
+
+    background-color: $sidebar-color;
+
+    ul {
+        list-style-type: none;
+        padding-left: 3pt;
+        padding-right: 3pt;
+
+        li {
+            a:hover {
+                font-weight: bold;
+            }
+
+            a:active {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
 .navbar {
     background-color: $navbar-color;
 
@@ -393,34 +421,6 @@ th {
 @media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
     .info-title {
         font-style: italic;
-    }
-}
-
-#side-info, #toc {
-    width: 220pt;
-
-    padding: 1em;
-
-    margin-top: 5pt;
-
-    border-radius: 16px;
-
-    background-color: $sidebar-color;
-
-    ul {
-        list-style-type: none;
-        padding-left: 3pt;
-        padding-right: 3pt;
-
-        li {
-            a:hover {
-                font-weight: bold;
-            }
-
-            a:active {
-                font-weight: bold;
-            }
-        }
     }
 }
 

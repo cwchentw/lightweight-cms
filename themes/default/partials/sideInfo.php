@@ -1,4 +1,4 @@
-<div id="side-info">
+<div id="side-info" class="sidebar">
     <div style="font-size: 0.92em;"><?php echo SITE_NAME; ?></div>
     <p style="font-size: 0.8em;"><?php echo SITE_DESCRIPTION; ?></p>
     <?php if (!is_null(FACEBOOK) && "" != FACEBOOK): ?>
