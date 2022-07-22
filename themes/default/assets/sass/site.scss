@@ -411,6 +411,16 @@ th {
         list-style-type: none;
         padding-left: 3pt;
         padding-right: 3pt;
+
+        li {
+            a:hover {
+                font-weight: bold;
+            }
+
+            a:active {
+                font-weight: bold;
+            }
+        }
     }
 }
 
