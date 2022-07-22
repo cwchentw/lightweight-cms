@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row g-0">
     <div class="col text-center info-title">
     <?php if (!is_null(SITE_COPYRIGHT) && "" != SITE_COPYRIGHT): ?>
         <?php echo SITE_COPYRIGHT; ?>
