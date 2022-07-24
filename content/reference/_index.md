@@ -1,5 +1,5 @@
 ---
-title: References of Lightweight CMS
+title: References
 weight: 1
 ---
 

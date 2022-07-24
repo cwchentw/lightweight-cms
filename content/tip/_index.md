@@ -1,5 +1,5 @@
 ---
-title: Tips for Lightweight CMS
+title: Tips
 weight: 3
 ---
 

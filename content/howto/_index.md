@@ -1,5 +1,5 @@
 ---
-title: HOWTOs for Lightweight CMS
+title: HOWTOs
 weight: 2
 ---
 
