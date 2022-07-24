@@ -10,12 +10,12 @@ This article lists features of Lightweight CMS. Because Lightweight CMS is still
 
 == Site-related Features
 
-* Markdown, AsciiDoc, reStructuredText or vanilla HTML posts
-* Nested sections
-* Draft status
+* Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
 * PHP-based custom pages
-* https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb] (Bootstrap 5 based)
-* https://en.wikipedia.org/wiki/Pagination[Pagination] (Bootstrap 5 based)
+* Store draft posts before publishing
+* Nested sections
+* https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb]
+* https://en.wikipedia.org/wiki/Pagination[Pagination]
 * No following external links
 * https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
 * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator
@@ -24,7 +24,8 @@ This article lists features of Lightweight CMS. Because Lightweight CMS is still
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[404.html] generator
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500[50x.html] generator
 * offline.html generator
-* Asset management (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
+* Asset compilation (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
+* Asset watching and hot change(s)
 
 == Theme-related Features
 

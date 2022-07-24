@@ -45,6 +45,10 @@ Images are mininized to save bandwidth. They are stored in *assets/img*.
 
 Fonts are copied *as is*. We keeps them in *asset* directory just for easier management. They are stored in *assets/font*.
 
+## Asset Watching and Hot Change(s)
+
+This feature is supported through Gulp [watch()](https://gulpjs.com/docs/en/api/watch/).
+
 ## Set Directories and Files to Delete
 
 *Experimental*

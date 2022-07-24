@@ -5,15 +5,17 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ## Features
 
 * Cross-platform
-* Web pages in Markdown, AsciiDoc, reStructuredText, HTML and PHP
-* Draft pages
+* Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
+* PHP-based custom pages
+* Store draft posts before publishing
 * Nested sections
-* Breadcrumb (Bootstrap 5 based)
-* Pagination (Bootstrap 5 based)
+* Breadcrumb
+* Pagination
 * Table of Contents
 * Sitemap
-* PWA (progressive web application)
-* Asset management (SCSS and Babel)
+* [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
+* Asset compilation (SCSS and Babel)
+* Asset watching and hot change(s)
 
 ## Synopsis
 
