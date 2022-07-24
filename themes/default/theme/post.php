@@ -15,6 +15,8 @@ $readTime = \LightweightCMS\Plugin\readTime($wordCount);
 
 # Add id for each subtitle if none.
 if (ENABLE_TOC) {
+    $originalPost = $post[MDCMS_POST_CONTENT];
+
     $post[MDCMS_POST_CONTENT]
         = preg_replace_callback(
             "/<h2>(.+?)<\/h2>/",
@@ -27,6 +29,10 @@ if (ENABLE_TOC) {
             $post[MDCMS_POST_CONTENT]
         );
 
+    if (strlen($originalPost) === strlen($post[MDCMS_POST_CONTENT])) {
+        $noSubtitle = True;
+    }
+    
     $GLOBALS[MDCMS_POST] = $post;
 }
 ?>
@@ -104,7 +110,10 @@ if (ENABLE_TOC) {
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">
                     <aside>
                         <?php
-                        if (!is_null(ENABLE_TOC) && ENABLE_TOC) {
+                        if ($noSubtitle) {
+                            includePartials("sideInfo.php");
+                        }
+                        else if (!is_null(ENABLE_TOC) && ENABLE_TOC) {
                             includePartials("toc.php");
                         }
                         else {
