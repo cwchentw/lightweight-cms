@@ -1,5 +1,5 @@
 ---
-title: Write Posts on Lightweight CMS Sites
+title: Write Posts
 mtime: 2022/07/20
 weight: 3
 ---

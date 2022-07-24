@@ -1,5 +1,5 @@
 ---
-title: Basic Usage of Lightweight CMS
+title: Basic Usage
 mtime: 2022/07/20
 weight: 2
 ---

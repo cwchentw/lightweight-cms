@@ -1,5 +1,5 @@
 ---
-title: About Lightweight CMS
+title: About
 mtime: 2022/07/20
 weight: 1
 ---

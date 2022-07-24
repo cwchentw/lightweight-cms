@@ -1,5 +1,5 @@
 ---
-title: Deploy a Lightweight CMS Site to Nginx
+title: Deploy to Nginx
 mtime: 2022/1/5
 weight: 4
 ---
