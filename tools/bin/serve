@@ -104,6 +104,11 @@ cp -pr "${www}/index.php" "$public" || (
     exit 1;
 )
 
+# Monitor asset change(s).
+cd "${root}" && npm run watch &
+export LIGHTWEIGHT_CMS_SITE_ASSET_PID=$!
+
 # Run a mdcms site locally.
 echo "Run a mdcms site locally. Press ctrl + c to stop the server."
+trap "kill -9 ${LIGHTWEIGHT_CMS_THEME_ASSET_PID}; kill -9 ${LIGHTWEIGHT_CMS_SITE_ASSET_PID}" exit;
 php -S "$address" -t "$public";

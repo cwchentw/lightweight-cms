@@ -1,5 +1,7 @@
 # Changelog
 
+* 2022-07-24
+  * Enable asset watching mode. Use the port of the built-in server other than the range from `3000` to `3003`
 * 2022-07-21
   * Migrate the package of Lightweight CMS from `mdcms` to `LightweightCMS`
   * Modify the AsciiDoctor templates for `<img>` and `<audio>` tags
