@@ -114,14 +114,10 @@ if (ENABLE_TOC) {
                     </aside>
                 </div>
             </div>
-
-            <?php includePartials("copyright.php"); ?>
         </div>
 
-        <!-- Currently, there is no footer in this theme.
-              Our footer is merely for script loading.
-              We may change it later. -->
         <?php includePartials("footer.php"); ?>
+        <?php includePartials("library.php"); ?>
     </body>
 </html>
 

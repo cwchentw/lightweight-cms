@@ -43,7 +43,7 @@ body {
     background-color: white;
 
     > .container {
-        min-height: 100%;
+        min-height: 50%;
         padding-top: 10pt;
         padding-bottom: 10pt;
 
@@ -171,6 +171,38 @@ textarea {
     }
 }
 
+.info-title {
+    color: $text-font-color;
+    font-family: $title-font, $sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    padding-left: 3pt;
+}
+
+footer {
+    display: flex;
+
+    color: $background-color;
+    background-color: darkslategray;
+
+    .container {
+        min-height: unset;
+        padding-top: 10pt;
+        padding-bottom: 10pt;
+
+        background-color: transparent;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        .info-title {
+            color: $background-color;
+            font-size: 15px;
+        }
+    }
+}
+
 .sidebar {
     width: 220pt;
 
@@ -210,6 +242,29 @@ textarea {
     .container {
         background-color: transparent;
         color: $background-color;
+    }
+}
+
+footer .container .links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .container .links ul {
+    list-style-type: none;
+}
+
+footer .container .links ul li {
+    display: block;
+
+    list-style-type: none;
+
+    height: 24px;
+
+    a {
+        color: $background-color;
+        font-size: 15px;
+        text-decoration: none;
     }
 }
 
@@ -415,14 +470,6 @@ th {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-}
-
-.info-title {
-    color: $text-font-color;
-    font-family: $title-font, $sans-serif;
-    font-size: 14pt;
-    font-weight: 500;
-    padding-left: 3pt;
 }
 
 /* Safari.

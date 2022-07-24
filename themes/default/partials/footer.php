@@ -1,46 +1,59 @@
 <?php
 # Footer of a mdcms theme.
 #
-# Currently, there is no real footer part in rendered pages.
-#  This PHP script is merely for Javascript program loading.
 ?>
 
-<!-- Native JavaScript for Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.1.2/bootstrap-native.min.js"
-    integrity="sha512-7l4X3SXR3kqMxOQHrq0SoLYe58UnkkwZSQfTyCOuSVGi5HD0oNgRQVehosJaPwSrnwQdXySXKGap3hrdnJ1mdw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<footer>
+    <div class="container">
+        <div class="links">
+            <ul>
+                <li>
+                    <a href="<?php echo SITE_PREFIX . "/about/"; ?>">About</a>
+                </li>
+                <li>
+                    <a href="<?php echo SITE_PREFIX . "/terms-and-conditions/"; ?>">Terms and Conditions</a>
+                </li>
+                <li>
+                    <a href="<?php echo SITE_PREFIX . "/privacy-policy/"; ?>">Privacy Policy</a>
+                </li>
+            </ul>
 
-<?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
-<!-- highlight.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"
-    integrity="sha512-gU7kztaQEl7SHJyraPfZLQCNnrKdaQi5ndOyt4L4UPL/FHDd/uB9Je6KDARIqwnNNE27hnqoWLBq+Kpe4iHfeQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/asciidoc.min.js"
-    integrity="sha512-NMQe4J2795tJcPdY14h2z6QUYZH/3OoMAIUs1URGrAF+N2mSiEcQ/L68Pv+pBCEDwnzeZuV2LgfgGZn/SpvpFg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/nginx.min.js"
-    integrity="sha512-0Z15/1ggjI+buaadbxMd/Ix4CvFrCCso/hu/RWrxY+zlhIHSiYCVCkTk99sLHtjIsNbhdsl/qVoK14ngLsXk6w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Add more highlight.js language module(s) as needed. -->
-<script>hljs.highlightAll();</script>
-<?php endif; ?>
+            <ul>
+                <?php if (!is_null(FACEBOOK) && "" != FACEBOOK): ?>
+                <!-- The link to Facebook (personal account or fan page). -->
+                <li><a href="https://facebook.com/<?php echo FACEBOOK; ?>"
+                    target="_blank" rel="noopener nofollow">Facebook</a>
+                </li>
+                <?php endif; ?>
 
-<!-- Add more third-party scripts here. -->
+                <?php if (!is_null(FACEBOOK_GROUP) && "" != FACEBOOK_GROUP): ?>
+                <!-- The link to Facebook group. -->
+                <li><a href="https://facebook.com/groups/<?php echo FACEBOOK_GROUP; ?>"
+                    target="_blank" rel="noopener nofollow">Facebook Group</a>
+                </li>
+                <?php endif; ?>
 
-<!-- Initialize some variables used in our JavaScript program.
-      Set them before calling site-specific scripts. -->
-<?php
-# The variable will be a JavaScript string.
-$enableFixedSidebar = "false";
-if (!is_null(ENABLE_FIXED_SIDEBAR) && ENABLE_FIXED_SIDEBAR) {
-    $enableFixedSidebar = "true";
-}
-?>
-<script>
-    var enableFixedSidebar = <?php echo $enableFixedSidebar; ?>;
-</script>
+                <?php if (!is_null(TWITTER) && "" != TWITTER): ?>
+                <!-- The link to Twitter. -->
+                <li><a href="https://twitter.com/<?php echo TWITTER; ?>"
+                    target="_blank" rel="noopener nofollow">Twitter</a>
+                </li>
+                <?php endif; ?>
 
-<!-- A site-specific script -->
-<script src="/js/site.js"></script>
-
-<!-- Add more site-specific scripts here. -->
+                <?php if (!is_null(GITHUB) && "" != GITHUB): ?>
+                <!-- The link to GitHub. -->
+                <li><a href="https://github.com/<?php echo GITHUB; ?>"
+                    target="_blank" rel="noopener nofollow">GitHub</a>
+                </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+        <div class="text-center info-title">
+            <?php if (!is_null(SITE_COPYRIGHT) && "" != SITE_COPYRIGHT): ?>
+            <?php echo SITE_COPYRIGHT; ?>
+            <?php else: ?>
+            Powered by <a href="https://github.com/cwchentw/lightweight-cms" target="_blank" rel="noopener nofollow">Lightweight CMS</a>
+            <?php endif; ?>
+        </div>
+    </div>
+</footer>
