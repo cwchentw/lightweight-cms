@@ -3,7 +3,7 @@
     <?php if (!is_null(SITE_COPYRIGHT) && "" != SITE_COPYRIGHT): ?>
         <?php echo SITE_COPYRIGHT; ?>
     <?php else: ?>
-        Powered by <a href="https://github.com/cwchentw/mdcms" target="_blank" rel="noopener nofollow">mdcms</a>
+        Powered by <a href="https://github.com/cwchentw/lightweight-cms" target="_blank" rel="noopener nofollow">Lightweight CMS</a>
     <?php endif; ?>
     </div>
 </div>
