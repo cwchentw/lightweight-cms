@@ -84,6 +84,7 @@ $status = 200;
                         echo "<h2>Articles</h2>";
 
                         foreach ($postsPerPage as $post) {
+                            echo "<article>";
                             echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
                             if (!is_null($post[MDCMS_POST_META])
@@ -101,6 +102,7 @@ $status = 200;
                                 . "</a>";
 
                             echo "</p>";
+                            echo "</article>";
                         }
                     }
 
@@ -112,6 +114,7 @@ $status = 200;
                         echo "<h2>Articles</h2>";
 
                         foreach ($posts as $post) {
+                            echo "<article>";
                             echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
 
                             if (!is_null($post[MDCMS_POST_META])
@@ -129,6 +132,7 @@ $status = 200;
                                 . "</a>";
 
                             echo "</p>";
+                            echo "</article>";
                         }
                     }
                 }

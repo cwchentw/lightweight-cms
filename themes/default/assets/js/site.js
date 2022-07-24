@@ -136,6 +136,16 @@ addEvent("scroll", window, fixedSidebar);
 addEvent("resize", window, fixedSidebar);
 
 function toggleMarkupLanguageText () {
+    if ("/" !== window.location.pathname) {
+        let anchor = document.getElementById('lightweight-markup-languages');
+        if (!anchor)
+            return;
+
+        anchor.setAttribute("title", "Markdown, AsciiDoc and reStructuredText");
+
+        return;
+    }
+
     let text = "Markdown, AsciiDoc and reStructuredText";
     let offset = 10;
     let latency = 18;
