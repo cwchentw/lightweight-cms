@@ -27,9 +27,9 @@ $status = 200;
         }
         ?>
 
-        <title><?php echo SITE_NAME; ?></title>
-        <meta name="description" content="<?php echo SITE_DESCRIPTION; ?>">
-        <meta name="author" content="<?php echo SITE_AUTHOR; ?>">
+        <title><?php echo strip_tags(SITE_NAME); ?></title>
+        <meta name="description" content="<?php echo strip_tags(SITE_DESCRIPTION); ?>">
+        <meta name="author" content="<?php echo strip_tags(SITE_AUTHOR); ?>">
 
         <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>

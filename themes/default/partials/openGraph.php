@@ -12,7 +12,7 @@ else if (!is_null($section) && array_key_exists(MDCMS_SECTION_TITLE, $section)) 
     $title = $section[MDCMS_SECTION_TITLE];
 }
 else {
-    $title = SITE_NAME;
+    $title = strip_tags(SITE_NAME);
 }
 
 $description = null;
@@ -24,7 +24,7 @@ else if (!is_null($section)) {
 }
 
 if ("" == $description) {
-    $description = SITE_DESCRIPTION;
+    $description = strip_tags(SITE_DESCRIPTION);
 }
 ?>
 <!-- Twitter card -->
