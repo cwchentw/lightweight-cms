@@ -92,6 +92,9 @@ copy /y %www%\index.php %public% || (
     exit /b 1
 )
 
+rem Monitor asset change(s).
+cd %root% && start "" npm run watch
+
 rem Run a mdcms site locally.
 echo Run a mdcms site locally. Press ctrl + c to stop the server.
 php -S %address% -t %public%

@@ -17,19 +17,35 @@ const browserSync = require('browser-sync').create();
 gulp.task('sass:build', require('./tasks/sass/build'));
 gulp.task('sass:clean', require('./tasks/sass/clean'));
 gulp.task('sass:lint', require('./tasks/sass/lint'));
+gulp.task('sass:copy', function () {
+  return gulp.src('../public/css/**/*.css')
+    .pipe(gulp.dest('../../../public/css'));
+});
 
 /* JavaScript related tasks */
 gulp.task('javascript:build', require('./tasks/javascript/build'));
 gulp.task('javascript:clean', require('./tasks/javascript/clean'));
 /* gulp.task('javascript:lint', require('./tasks/javascript/lint')); */
+gulp.task('javascript:copy', function () {
+  return gulp.src('../public/js/**/*.js')
+    .pipe(gulp.dest('../../../public/js'));
+});
 
 /* Font related tasks */
 gulp.task('font:build', require('./tasks/font/build'));
 gulp.task('font:clean', require('./tasks/font/clean'));
+gulp.task('font:copy', function () {
+  return gulp.src('../public/font/**/*.js')
+    .pipe(gulp.dest('../../../public/font'));
+});
 
 /* Image related tasks */
 gulp.task('image:build', require('./tasks/image/build'));
 gulp.task('image:clean', require('./tasks/image/clean'));
+gulp.task('image:copy', function () {
+  return gulp.src('../public/img/**/*.{jpg,jpeg,png,gif,svg}')
+    .pipe(gulp.dest('../../../public/img'));
+})
 
 /* Static assets related asks */
 gulp.task('static:copy', function () {
@@ -78,16 +94,16 @@ gulp.task('watch', function () {
     }
   });
 
-  gulp.watch('../assets/sass/**/*.scss', gulp.series('sass', reload))
+  gulp.watch('../assets/sass/**/*.scss', gulp.series('sass', 'sass:copy', reload))
     .on('error', message.error('WATCH: Sass'));
 
-  gulp.watch('../assets/js/**/*.js', gulp.series('javascript', reload))
+  gulp.watch('../assets/js/**/*.js', gulp.series('javascript', 'javascript:copy', reload))
     .on('error', message.error('WATCH: JavaScript'));
 
-  gulp.watch('../assets/font/**/*', gulp.series('font', reload))
+  gulp.watch('../assets/font/**/*', gulp.series('font', 'font:copy', reload))
     .on('error', message.error('WATCH: Font'));
 
-  gulp.watch('../assets/img/**/*.{jpg,jpeg,png,gif,svg}', gulp.series('image', reload))
+  gulp.watch('../assets/img/**/*.{jpg,jpeg,png,gif,svg}', gulp.series('image', 'image:copy', reload))
     .on('error', message.error('WATCH: Image'));
 
   gulp.watch('../static/**/*', gulp.series('static', reload))
@@ -96,3 +112,5 @@ gulp.task('watch', function () {
 
 /* The default build task. */
 gulp.task('default', gulp.parallel('sass', 'javascript', 'font', 'image', 'static'));
+
+gulp.task('watch', gulp.series('watch'));
