@@ -191,6 +191,7 @@ textarea {
 }
 
 .navbar {
+    background: linear-gradient(90deg, rgba(185,175,126,1) 0%, rgba(87,133,131,1) 40%, rgba(87,133,131,1) 100%);
     background-color: $navbar-color;
 
     border: 0;
@@ -198,7 +199,7 @@ textarea {
     box-shadow: none;
 
     .container {
-        background-color: $navbar-color;
+        background-color: transparent;
         color: $background-color;
     }
 }
