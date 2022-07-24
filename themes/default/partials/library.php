@@ -3,8 +3,8 @@
 ?>
 
 <!-- Native JavaScript for Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.1.2/bootstrap-native.min.js"
-    integrity="sha512-7l4X3SXR3kqMxOQHrq0SoLYe58UnkkwZSQfTyCOuSVGi5HD0oNgRQVehosJaPwSrnwQdXySXKGap3hrdnJ1mdw=="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.2.0/bootstrap-native.min.js"
+    integrity="sha512-GmnAinnWwLr6TlNR+oVdAJE+Nymkf+WkXsZBLTEnJ0GuWhReyRd3GRZHxYw6zHoMPqG6N+/OTm1R6pnCb+MVAQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <?php if (!is_null(ENABLE_CODE_HIGHTLIGHT) && ENABLE_CODE_HIGHTLIGHT): ?>
