@@ -19,7 +19,7 @@ define("PLUGIN_BLACKLIST", []);
 # To disable pagination, set it to `0`.
 define("POST_PER_PAGE", 5);
 # The text of home page on breadcrumbs.
-define("BREADCRUMB_HOME", "Index Page");
+define("BREADCRUMB_HOME", "Lightweight CMS");
 # The upper limit of the word count of a dynamically generated description.
 #
 # It should be less than the upper limit of that of a tweet of Twitter.
