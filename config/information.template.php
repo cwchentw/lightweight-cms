@@ -11,7 +11,7 @@ define("SITE_NAME", "Lightweight CMS");
 # Short name of a site.
 define("SITE_SHORT_NAME", "Lightweight CMS");
 # A concise description of a site.
-define("SITE_DESCRIPTION", "A Flat-File CMS Supporting Common Lightweight Markup Languages, Powered by PHP");
+define("SITE_DESCRIPTION", "A Flat-File CMS Supporting <span id=\"lightweight-markup-languages\">Popular Lightweight Markup Languages</span>, Powered by PHP");
 # Principal author of a site.
 #
 # If there are multiple authors in a site,

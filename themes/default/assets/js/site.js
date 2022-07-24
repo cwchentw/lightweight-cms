@@ -134,3 +134,34 @@ loadContent(fixedSidebar);
 
 addEvent("scroll", window, fixedSidebar);
 addEvent("resize", window, fixedSidebar);
+
+function toggleMarkupLanguageText () {
+    let text = "Markdown, AsciiDoc and reStructuredText";
+    let offset = 10;
+    let latency = 18;
+    let pos = text.length + offset;
+    setInterval(function () {
+        let anchor = document.getElementById('lightweight-markup-languages');
+        if (!anchor)
+            return;
+
+        if (pos <= text.length) {
+            anchor.innerText = text.slice(0, pos);
+            anchor.style.color = 'orange';
+            pos++;
+        }
+        else if (pos < text.length + offset) {
+            pos++
+        }
+        else if (pos < text.length + offset + latency) {
+            anchor.innerText = "Popular Lightweight Markup Languages";
+            anchor.style.color = 'snow';
+            pos++;
+        }
+        else {
+            pos = 0;
+        }
+    }, 90);
+}
+
+loadContent(toggleMarkupLanguageText);
