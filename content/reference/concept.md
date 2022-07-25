@@ -61,15 +61,19 @@ In Lightweight CMS, HTTP 404 pages are both generated dynamically and compiled i
 
 ## Widgets
 
+Widgets in web pages are purely conceptual, which are HTML elements with different styling under the hood. Here we introduce the widgets seen in *default* theme of Lightweight CMS.
+
 ### Navbars
 
-Navbars in a website let site visitors navigate through a site. Many sites put both top navbars and bottom navbars on their pages. Top navbars direct site users to relevant pages within while bottom ones provide site information like terms and conditions, privacy policy, links to social media.
+Navbars in a website let site visitors navigate through a site. They are thin horizontal widgets placed at the top of web pages mostly, may be sticky or not. Ideal navbars direct site users to relevant pages within smoothly.
 
-*Default* theme of Lightweight CMS utilizes navbars in Bootstrap 5 as top navbars and doesn't provide bottom navbars.
+### Footers
+
+As the name implies, footers are placed at the bottom of web pages, which provide site information like a copyright text, terms and conditions, privacy policy, links to social media and hiring announcement. It would be better to consider footers functional and optional information widgets.
 
 ### Breadcrumbs
 
-Breadcrumbs work as navigation schemes for site visitors from current pages (either sections or posts) to home pages. Although they are optional and purely functional. Those web widgets benefit SEO as well.
+Breadcrumbs work as navigation schemes for site visitors from current pages (either sections or posts) to home pages hierarchically. Although those web widgets are optional and purely functional, they benefit SEO as well.
 
 In Lightweight CMS, a breadcrumb of a page is an array of links from a home page to current page.
 
