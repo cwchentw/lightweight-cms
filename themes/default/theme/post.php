@@ -78,7 +78,7 @@ if (ENABLE_TOC) {
 
                     <div class="post-info">
                         <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post) && "" != $post[LIGHTWEIGHT_CMS_POST_AUTHOR]): ?>
-                        <span class="author">Written by <?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?>.</span>
+                        <span class="author">Written by <?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?>.<?php endif; ?></span>
                         <?php endif; ?>
 
                         <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?>

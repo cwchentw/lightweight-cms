@@ -58,7 +58,7 @@ if (POST_PER_PAGE > 0) {
 
                     <div class="post-info">
                         <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section) && "" != $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]): ?>
-                        <span class="author">Written by <?php echo $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]; ?>.</span>
+                        <span class="author">Written by <?php echo $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?>.<?php endif; ?></span>
                         <?php endif; ?>
 
                         <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?>
