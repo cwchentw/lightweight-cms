@@ -12,4 +12,6 @@ Our approach combines the advantages of two worlds. Web pages in Lightweight CMS
 
 With the advent of CDN services like [Cloudflare](https://www.cloudflare.com/), it takes virtually no effort to cache content, no matter they are from static or dynamic websites. Static sites are no longer critical for content caching with such services. In addition, they are of limited uses for several types of websites, such as a membership website or a mix of a blog and web application.
 
+Read more [here](/reference/concept/).
+
 This website itself is a live demonstration of Lightweight CMS, powered by a classical combination of GNU/Linux, Nginx and PHP.
