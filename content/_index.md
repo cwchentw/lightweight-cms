@@ -61,7 +61,7 @@ $ git commit -m "Migrate to a new site"
 $ git push -u origin master
 </code></pre>
 
-<p class="quick-start-hint">View the instructions for <button id="instruction-windows" class="btn btn-secondary">Windows</button> <button id="instruction-macos" class="btn btn-secondary">macOS</button> <button id="instruction-linux" class="btn btn-secondary">GNU/Linux</button></p>
+<p class="quick-start-hint">View the instructions for <button id="instruction-windows" class="btn btn-secondary instruction-button">Windows</button> <button id="instruction-macos" class="btn btn-secondary instruction-button">macOS</button> <button id="instruction-linux" class="btn btn-secondary instruction-button">GNU/Linux</button></p>
 
 <script>
 (function () {
