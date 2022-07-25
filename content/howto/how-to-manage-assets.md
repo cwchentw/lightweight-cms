@@ -1,5 +1,6 @@
 ---
 title: How to Manage Assets in Lightweight CMS
+linkTitle: Manage Assets in Lightweight CMS
 mtime: 2021/6/26
 ---
 

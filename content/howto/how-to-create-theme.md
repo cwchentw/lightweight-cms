@@ -1,5 +1,6 @@
 ---
 title: How to Create a Lightweight CMS Theme
+linkTitle: Create a Lightweight CMS Theme
 mtime: 2021/11/6
 ---
 

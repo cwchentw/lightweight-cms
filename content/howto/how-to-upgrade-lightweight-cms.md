@@ -1,5 +1,6 @@
 ---
 title: How to Upgrade Lightweight CMS
+linkTitle: Upgrade Lightweight CMS
 mtime: 2021/7/10
 ---
 

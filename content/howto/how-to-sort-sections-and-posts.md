@@ -1,5 +1,6 @@
 ---
 title: How to Sort Sections and Posts
+linkTitle: Sort Sections and Posts
 mtime: 2021/6/26
 ---
 
