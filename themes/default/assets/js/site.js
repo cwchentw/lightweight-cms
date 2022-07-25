@@ -173,3 +173,37 @@ function changeMarkupLanguageText () {
 }
 
 loadContent(changeMarkupLanguageText);
+
+function alignSectionTitleHeights () {
+    /* Search all section blocks. */
+    let sectionBlocks = document.getElementsByClassName("section-block");
+    if (!sectionBlocks || 0 === sectionBlocks.length)
+        return;
+
+    /* Get the maximal height of the subtitle of the section blocks. */
+    let height = -1;
+    for (let i = 0; i < sectionBlocks.length; ++i) {
+        let subtitle = sectionBlocks[i].getElementsByTagName("h2")[0];
+        if (!subtitle)
+            return;
+
+        let fontSize = parseInt(window.getComputedStyle(subtitle).fontSize, 10);
+        let textWidth = fontSize * subtitle.innerText.length;
+        let line = Math.round(textWidth / subtitle.scrollWidth);
+        let elemHeight = subtitle.scrollHeight * line;
+        console.log(`elem height: ${elemHeight}`);
+        if (elemHeight > height)
+            height = elemHeight;
+    }
+
+    /* Set the height of all `<h2>` tags. */
+    for (let i = 0; i < sectionBlocks.length; ++i) {
+        let subtitle = sectionBlocks[i].getElementsByTagName("h2")[0];
+        if (!subtitle)
+            return;
+
+        subtitle.style.height = `${height}px`;
+    }
+}
+
+loadContent(alignSectionTitleHeights);
