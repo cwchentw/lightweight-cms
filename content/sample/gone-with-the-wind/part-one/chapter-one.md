@@ -1,5 +1,6 @@
 ---
 title: Chapter 1 of Gone with the Wind
+linkTitle: Chapter 1
 author: Margaret Mitchell
 weight: 1
 ---

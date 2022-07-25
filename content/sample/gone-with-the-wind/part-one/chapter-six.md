@@ -1,5 +1,6 @@
 ---
 title: Chapter 6 of Gone with the Wind
+linkTitle: Chapter 6
 author: Margaret Mitchell
 weight: 6
 ---

@@ -1,5 +1,6 @@
 ---
 title: Chapter 2 of Gone with the Wind
+linkTitle: Chapter 2
 author: Margaret Mitchell
 weight: 2
 ---

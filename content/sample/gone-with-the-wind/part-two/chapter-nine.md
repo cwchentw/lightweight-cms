@@ -1,5 +1,6 @@
 ---
 title: Chapter 9 of Gone with the Wind
+linkTitle: Chapter 9
 author: Margaret Mitchell
 weight: 9
 ---

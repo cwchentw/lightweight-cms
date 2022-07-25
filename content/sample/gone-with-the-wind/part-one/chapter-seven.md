@@ -1,5 +1,6 @@
 ---
 title: Chapter 7 of Gone with the Wind
+linkTitle: Chapter 7
 author: Margaret Mitchell
 weight: 7
 ---

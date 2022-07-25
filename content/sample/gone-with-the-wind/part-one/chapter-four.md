@@ -1,5 +1,6 @@
 ---
 title: Chapter 4 of Gone with the Wind
+linkTitle: Chapter 4
 author: Margaret Mitchell
 weight: 4
 ---

@@ -1,5 +1,6 @@
 ---
 title: Chapter 8 of Gone with the Wind
+linkTitle: Chapter 8
 author: Margaret Mitchell
 weight: 8
 ---

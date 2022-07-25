@@ -1,5 +1,6 @@
 ---
 title: Chapter 3 of Gone with the Wind
+linkTitle: Chapter 3
 author: Margaret Mitchell
 weight: 3
 ---

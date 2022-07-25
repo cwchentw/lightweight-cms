@@ -1,5 +1,6 @@
 ---
 title: Chapter 5 of Gone with the Wind
+linkTitle: Chapter 5
 author: Margaret Mitchell
 weight: 5
 ---
