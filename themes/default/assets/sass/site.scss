@@ -115,6 +115,11 @@ div {
 
     font-size: 17pt;
     font-family: $sans-serif;
+
+    strong {
+        font-size: 1.03em;
+        font-weight: 900;
+    }
 }
 
 @media screen and (max-width: $phone-width) {
