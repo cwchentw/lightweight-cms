@@ -63,18 +63,18 @@ function getSections($uri)
             # Get top section(s).
             if ("/" == $uri) {
                 $section = readSection("/" . $file);
-                $section[MDCMS_LINK_PATH] = SITE_PREFIX . "/" . $file . "/";
+                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/" . $file . "/";
             }
             # Get subsection(s) of a section.
             else {
                 $section = readSection($uri . $file);
-                $section[MDCMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
+                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
             }
 
             # Skip functional sections.
             # TODO: We may change it later.
-            if (!(isValidField($section[MDCMS_SECTION_META], METADATA_NOINDEX)
-                    && $section[MDCMS_SECTION_META][METADATA_NOINDEX]))
+            if (!(isValidField($section[LIGHTWEIGHT_CMS_SECTION_META], METADATA_NOINDEX)
+                    && $section[LIGHTWEIGHT_CMS_SECTION_META][METADATA_NOINDEX]))
             {
                 array_push($result, $section);
             }
@@ -117,7 +117,7 @@ function getPosts($uri)
 
             # Remove file extensions.
             $origPath = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
-            $link[MDCMS_LINK_PATH] = SITE_PREFIX . $origPath;
+            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $origPath;
 
             # Get information of a post.
             # TODO: If the commands cost too many system resources, change it.
@@ -134,10 +134,10 @@ function getPosts($uri)
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[MDCMS_POST_META], METADATA_NOINDEX)
-                    && $post[MDCMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[MDCMS_POST_META], METADATA_DRAFT)
-                    && $link[MDCMS_POST_META][METADATA_DRAFT]))
+            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    && $post[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
+                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
             {
                 array_push($result, $link);
             }
@@ -190,8 +190,8 @@ function getBreadcrumb($uri)
     # Add the link to home.
     $d = array();
 
-    $d[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
-    $d[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
+    $d[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
+    $d[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
 
     array_push($result, $d);
 
@@ -202,7 +202,7 @@ function getBreadcrumb($uri)
     $arr = parseURI($uri);
     $len = count($arr);
     for ($i = 0; $i < $len; ++$i) {
-        $prev = $result[$i][MDCMS_LINK_PATH];
+        $prev = $result[$i][LIGHTWEIGHT_CMS_LINK_PATH];
 
         if ("" != SITE_PREFIX) {
             $prevPath = substr($prev, strlen(SITE_PREFIX));
@@ -237,40 +237,40 @@ function getBreadcrumb($uri)
             . $arr[$i] . ".php";
 
         $d = array();
-        $d[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+        $d[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
         if (is_dir($path)) {
             $section = readSection($prevPath . $arr[$i]);
-            $section[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $section[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
             array_push($result, $section);
         }
         else if (file_exists($htmlPath)) {
             $post = readPost($prevPath . $arr[$i]);
-            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }
         else if (file_exists($markdownPath)) {
             $post = readPost($prevPath . $arr[$i]);
-            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }
         else if (file_exists($asciiDocPath)) {
             $post = readPost($prevPath . $arr[$i]);
-            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }
         else if (file_exists($reStructuredTextPath)) {
             $post = readPost($prevPath . $arr[$i]);
-            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }
         else if (file_exists($phpPath)) {
             $post = readCustomPage($prevPath . $arr[$i]);
-            $post[MDCMS_LINK_PATH] = $prev . $arr[$i] . "/";
+            $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
         }

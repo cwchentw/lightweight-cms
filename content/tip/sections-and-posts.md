@@ -30,7 +30,7 @@ subtitle: A Post with a Subtitle
 ---
 ```
 
-Because `subtitle` is not a builtin field, access it in a metadata array like `$post[MDCMS_POST_META]["subtitle"]`.
+Because `subtitle` is not a builtin field, access it in a metadata array like `$post[LIGHTWEIGHT_CMS_POST_META]["subtitle"]`.
 
 ## Migrate a Page
 

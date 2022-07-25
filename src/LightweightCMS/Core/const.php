@@ -9,38 +9,38 @@ namespace LightweightCMS\Core;
 
 
 # Site related constants.
-define("MDCMS_SECTIONS", "sections");
-define("MDCMS_POSTS", "posts");
-define("MDCMS_POST_PER_PAGE", "post-per-page");
+define("LIGHTWEIGHT_CMS_SECTIONS", "sections");
+define("LIGHTWEIGHT_CMS_POSTS", "posts");
+define("LIGHTWEIGHT_CMS_POST_PER_PAGE", "post-per-page");
 
 
 # Page related constants.
-define("MDCMS_SECTION", "section");
-define("MDCMS_POST", "post");
-define("MDCMS_BREADCRUMB", "breadcrumb");
+define("LIGHTWEIGHT_CMS_SECTION", "section");
+define("LIGHTWEIGHT_CMS_POST", "post");
+define("LIGHTWEIGHT_CMS_BREADCRUMB", "breadcrumb");
 
 
 # Section related constants.
-define("MDCMS_SECTION_TITLE", "title");
-define("MDCMS_SECTION_AUTHOR", "author");
-define("MDCMS_SECTION_MTIME", "mtime");
-define("MDCMS_SECTION_WEIGHT", "weight");
-define("MDCMS_SECTION_META", "meta");
-define("MDCMS_SECTION_CONTENT", "content");
-define("MDCMS_SECTION_STATUS", "status");
+define("LIGHTWEIGHT_CMS_SECTION_TITLE", "title");
+define("LIGHTWEIGHT_CMS_SECTION_AUTHOR", "author");
+define("LIGHTWEIGHT_CMS_SECTION_MTIME", "mtime");
+define("LIGHTWEIGHT_CMS_SECTION_WEIGHT", "weight");
+define("LIGHTWEIGHT_CMS_SECTION_META", "meta");
+define("LIGHTWEIGHT_CMS_SECTION_CONTENT", "content");
+define("LIGHTWEIGHT_CMS_SECTION_STATUS", "status");
 
 
 # Post related constants.
-define("MDCMS_POST_TITLE", "title");
-define("MDCMS_POST_AUTHOR", "author");
-define("MDCMS_POST_MTIME", "mtime");
-define("MDCMS_POST_WEIGHT", "weight");
-define("MDCMS_POST_META", "meta");
-define("MDCMS_POST_CONTENT", "content");
-define("MDCMS_POST_STATUS", "status");
+define("LIGHTWEIGHT_CMS_POST_TITLE", "title");
+define("LIGHTWEIGHT_CMS_POST_AUTHOR", "author");
+define("LIGHTWEIGHT_CMS_POST_MTIME", "mtime");
+define("LIGHTWEIGHT_CMS_POST_WEIGHT", "weight");
+define("LIGHTWEIGHT_CMS_POST_META", "meta");
+define("LIGHTWEIGHT_CMS_POST_CONTENT", "content");
+define("LIGHTWEIGHT_CMS_POST_STATUS", "status");
 
 
 # Link related constants.
-define("MDCMS_LINK_TITLE", "title");
-define("MDCMS_LINK_PATH", "path");
-define("MDCMS_LINK_MTIME", "mtime");
+define("LIGHTWEIGHT_CMS_LINK_TITLE", "title");
+define("LIGHTWEIGHT_CMS_LINK_PATH", "path");
+define("LIGHTWEIGHT_CMS_LINK_MTIME", "mtime");

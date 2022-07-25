@@ -5,11 +5,11 @@
 
 
 # Take global data.
-$post = $GLOBALS[MDCMS_POST];
+$post = $GLOBALS[LIGHTWEIGHT_CMS_POST];
 
 # Extract titles and ids from <h2> titles.
 $subtitles = array();
-if (preg_match_all("/<h2 id=\"([^\"]+)\">(.+?)<\/h2>/", $post[MDCMS_POST_CONTENT], $matches)) {
+if (preg_match_all("/<h2 id=\"([^\"]+)\">(.+?)<\/h2>/", $post[LIGHTWEIGHT_CMS_POST_CONTENT], $matches)) {
     for ($i = 0; $i < count($matches[1]); ++$i) {
         $subtitle = array();
 

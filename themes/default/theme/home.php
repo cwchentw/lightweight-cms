@@ -8,10 +8,10 @@ require_once __DIR__ . "/../src/utils.php";
 
 
 # Take global data.
-$sections = $GLOBALS[MDCMS_SECTIONS];
-$posts = $GLOBALS[MDCMS_POSTS];
+$sections = $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS];
+$posts = $GLOBALS[LIGHTWEIGHT_CMS_POSTS];
 if (POST_PER_PAGE > 0) {
-    $postsPerPage = $GLOBALS[MDCMS_POST_PER_PAGE];
+    $postsPerPage = $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE];
 }
 # The HTTP status of the home page is always HTTP 200 OK.
 $status = 200;
@@ -85,19 +85,19 @@ $status = 200;
 
                         foreach ($postsPerPage as $post) {
                             echo "<article>";
-                            echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                            echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                            if (!is_null($post[MDCMS_POST_META])
-                                && array_key_exists("description", $post[MDCMS_POST_META]))
+                            if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                             {
-                                echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";
                             }
                             else {
-                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]) . " ";
                             }
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                . "href=\"" . $post[LIGHTWEIGHT_CMS_LINK_PATH] . "\">"
                                 . "Read More"
                                 . "</a>";
 
@@ -115,19 +115,19 @@ $status = 200;
 
                         foreach ($posts as $post) {
                             echo "<article>";
-                            echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                            echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                            if (!is_null($post[MDCMS_POST_META])
-                                && array_key_exists("description", $post[MDCMS_POST_META]))
+                            if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                             {
-                                echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";
                             }
                             else {
-                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                echo "<p>" . \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]) . " ";
                             }
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                . "href=\"" . $post[LIGHTWEIGHT_CMS_LINK_PATH] . "\">"
                                 . "Read More"
                                 . "</a>";
 
@@ -144,17 +144,17 @@ $status = 200;
                     echo "<div class=\"sections\">";  # Directive for the region of the sections.
                     foreach ($sections as $section) {
                         echo "<div class=\"section-block\">";  # Directive for a section.
-                        echo "<h2>" . $section[MDCMS_SECTION_TITLE] . "</h2>";  # Section title.
+                        echo "<h2>" . $section[LIGHTWEIGHT_CMS_SECTION_TITLE] . "</h2>";  # Section title.
 
                         echo "<p>";  # The descriptive text of a section.
 
-                        $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                        $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
                         if ("" != $sectionExcerpt) {
                             echo $sectionExcerpt;
                         }
 
                         echo "<a class=\"btn btn-primary btn-sm\" "
-                            . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                            . "href=\"" . $section[LIGHTWEIGHT_CMS_LINK_PATH] ."\">"
                             . "Explore More"
                             . "</a>";
 

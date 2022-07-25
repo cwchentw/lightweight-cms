@@ -9,11 +9,11 @@ require_once __DIR__ . "/../src/utils.php";
 
 
 # Take global data.
-$section = $GLOBALS[MDCMS_SECTION];
-$sections = $GLOBALS[MDCMS_SECTIONS];
-$posts = $GLOBALS[MDCMS_POSTS];
+$section = $GLOBALS[LIGHTWEIGHT_CMS_SECTION];
+$sections = $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS];
+$posts = $GLOBALS[LIGHTWEIGHT_CMS_POSTS];
 if (POST_PER_PAGE > 0) {
-    $postsPerPage = $GLOBALS[MDCMS_POST_PER_PAGE];
+    $postsPerPage = $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE];
 }
 ?>
 
@@ -27,8 +27,8 @@ if (POST_PER_PAGE > 0) {
         }
         ?>
 
-        <title><?php echo $section[MDCMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
-        <meta name="author" content="<?php echo $section[MDCMS_SECTION_AUTHOR]; ?>">
+        <title><?php echo $section[LIGHTWEIGHT_CMS_SECTION_TITLE] . " | " . SITE_NAME; ?></title>
+        <meta name="author" content="<?php echo $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]; ?>">
 
         <?php if (BLOCK_BOT_ON_SECTION): ?>
         <!-- Most section pages merely work as intermediate documents
@@ -51,18 +51,18 @@ if (POST_PER_PAGE > 0) {
                             <img class="d-none d-md-block" src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                             <span>
-                                <?php echo $section[MDCMS_SECTION_TITLE]; ?>
+                                <?php echo $section[LIGHTWEIGHT_CMS_SECTION_TITLE]; ?>
                             </span>
                         </h1>
                     </header>
 
                     <div class="post-info">
-                        <?php if (array_key_exists(MDCMS_SECTION_AUTHOR, $section) && "" != $section[MDCMS_SECTION_AUTHOR]): ?>
-                        <span class="author">Written by <?php echo $section[MDCMS_SECTION_AUTHOR]; ?>.</span>
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section) && "" != $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]): ?>
+                        <span class="author">Written by <?php echo $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]; ?>.</span>
                         <?php endif; ?>
 
-                        <?php if (array_key_exists(MDCMS_SECTION_MTIME, $section)): ?>
-                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[MDCMS_SECTION_MTIME]); ?></span>
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?>
+                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[LIGHTWEIGHT_CMS_SECTION_MTIME]); ?></span>
                         <?php endif; ?>
                     </div>
 
@@ -76,10 +76,10 @@ if (POST_PER_PAGE > 0) {
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php
                     # Show an optional section content if it exists.
-                    if (isset($section[MDCMS_SECTION_CONTENT])
-                        && "" != $section[MDCMS_SECTION_CONTENT])
+                    if (isset($section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
+                        && "" != $section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
                     {
-                        echo $section[MDCMS_SECTION_CONTENT];
+                        echo $section[LIGHTWEIGHT_CMS_SECTION_CONTENT];
                     }
                     ?>
 
@@ -103,19 +103,19 @@ if (POST_PER_PAGE > 0) {
 
                             foreach ($postsPerPage as $post) {
                                 echo "<article>";
-                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                                echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                                if (!is_null($post[MDCMS_POST_META])
-                                    && array_key_exists("description", $post[MDCMS_POST_META]))
+                                if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                    && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                                 {
-                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                    echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
-                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                    . "href=\"" . $post[LIGHTWEIGHT_CMS_LINK_PATH] . "\">"
                                     . "Read More"
                                     . "</a>";
 
@@ -133,19 +133,19 @@ if (POST_PER_PAGE > 0) {
 
                             foreach ($posts as $post) {
                                 echo "<article>";
-                                echo "<h3>" . $post[MDCMS_POST_TITLE] . "</h3>";
+                                echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                                if (!is_null($post[MDCMS_POST_META])
-                                    && array_key_exists("description", $post[MDCMS_POST_META]))
+                                if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                    && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                                 {
-                                    echo "<p>" . $post[MDCMS_POST_META]["description"] . " ";
+                                    echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";
                                 }
                                 else {
-                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]) . " ";
+                                    echo "<p>" . \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]) . " ";
                                 }
 
                                 echo "<a class=\"btn btn-primary btn-sm\" "
-                                    . "href=\"" . $post[MDCMS_LINK_PATH] . "\">"
+                                    . "href=\"" . $post[LIGHTWEIGHT_CMS_LINK_PATH] . "\">"
                                     . "Read More"
                                     . "</a>";
 
@@ -162,17 +162,17 @@ if (POST_PER_PAGE > 0) {
                         echo "<h2>Sections</h2>";
 
                         foreach ($sections as $section) {
-                            echo "<h3>" . $section[MDCMS_SECTION_TITLE] . "</h3>";
+                            echo "<h3>" . $section[LIGHTWEIGHT_CMS_SECTION_TITLE] . "</h3>";
 
                             echo "<p>";
 
-                            $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+                            $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
                             if ("" != $sectionExcerpt) {
                                 echo $sectionExcerpt;
                             }
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
-                                . "href=\"" . $section[MDCMS_LINK_PATH] ."\">"
+                                . "href=\"" . $section[LIGHTWEIGHT_CMS_LINK_PATH] ."\">"
                                 . "Read More"
                                 . "</a>";
 
@@ -195,4 +195,4 @@ if (POST_PER_PAGE > 0) {
     </body>
 </html>
 
-<?php http_response_code($section[MDCMS_SECTION_STATUS]); ?>
+<?php http_response_code($section[LIGHTWEIGHT_CMS_SECTION_STATUS]); ?>

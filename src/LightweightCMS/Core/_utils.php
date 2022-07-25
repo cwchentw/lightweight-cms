@@ -66,7 +66,7 @@ PERL;
         # Only for debugging.
         #echo $error . "\n";
 
-        #$result[MDCMS_POST_CONTENT] = $output;
+        #$result[LIGHTWEIGHT_CMS_POST_CONTENT] = $output;
         #echo $output;
 
         $returnValue =  proc_close($process);

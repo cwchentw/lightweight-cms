@@ -14,7 +14,7 @@ A tiny Lightweight CMS plugin to calculate word count and reading time for weste
 <?php
 # In your layout for posts.
 
-$wordCount = \LightweightCMS\Plugin\wordCount($post[MDCMS_POST_CONTENT]);
+$wordCount = \LightweightCMS\Plugin\wordCount($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 $readTime = \LightweightCMS\Plugin\readTime($wordCount);
 ```
 

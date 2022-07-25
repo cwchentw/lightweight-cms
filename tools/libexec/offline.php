@@ -23,9 +23,9 @@ require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep 
 # Create a post dynamically.
 $post = array();
 
-$post[MDCMS_POST_TITLE] = "Site is Offline";
-$post[MDCMS_POST_CONTENT] = "Our site is offline for a while. Sorry for inconvenience.";
-$post[MDCMS_POST_STATUS] = 404;
+$post[LIGHTWEIGHT_CMS_POST_TITLE] = "Site is Offline";
+$post[LIGHTWEIGHT_CMS_POST_CONTENT] = "Our site is offline for a while. Sorry for inconvenience.";
+$post[LIGHTWEIGHT_CMS_POST_STATUS] = 404;
 
 # Create breadcrumbs dynamically.
 $breadcrumb = array();
@@ -33,8 +33,8 @@ $breadcrumb = array();
 {
     $link = array();
 
-    $link[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
-    $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
+    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
+    $link[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
 
     array_push($breadcrumb, $link);
 }
@@ -42,14 +42,14 @@ $breadcrumb = array();
 {
     $link = array();
 
-    $link[MDCMS_LINK_TITLE] = "Site is Offline";
+    $link[LIGHTWEIGHT_CMS_LINK_TITLE] = "Site is Offline";
 
     array_push($breadcrumb, $link);
 }
 
 # Pass global variables to the layout of a post.
-$GLOBALS[MDCMS_POST] = $post;
-$GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+$GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+$GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 $GLOBALS["file"] = __FILE__;
 
 loadPost();

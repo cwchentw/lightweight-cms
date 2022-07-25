@@ -8,16 +8,16 @@ require_once __DIR__ . "/../src/utils.php";
 
 
 # Take global data.
-$post = $GLOBALS[MDCMS_POST];
+$post = $GLOBALS[LIGHTWEIGHT_CMS_POST];
 
-$wordCount = \LightweightCMS\Plugin\wordCount($post[MDCMS_POST_CONTENT]);
+$wordCount = \LightweightCMS\Plugin\wordCount($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 $readTime = \LightweightCMS\Plugin\readTime($wordCount);
 
 # Add id for each subtitle if none.
 if (ENABLE_TOC) {
-    $originalPost = $post[MDCMS_POST_CONTENT];
+    $originalPost = $post[LIGHTWEIGHT_CMS_POST_CONTENT];
 
-    $post[MDCMS_POST_CONTENT]
+    $post[LIGHTWEIGHT_CMS_POST_CONTENT]
         = preg_replace_callback(
             "/<h2>(.+?)<\/h2>/",
             function ($matches) {
@@ -26,14 +26,14 @@ if (ENABLE_TOC) {
                 $id = strtolower($id);
                 return "<h2 id=\"" . $id . "\">" . $matches[1] . "</h2>";
             },
-            $post[MDCMS_POST_CONTENT]
+            $post[LIGHTWEIGHT_CMS_POST_CONTENT]
         );
 
-    if (strlen($originalPost) === strlen($post[MDCMS_POST_CONTENT])) {
+    if (strlen($originalPost) === strlen($post[LIGHTWEIGHT_CMS_POST_CONTENT])) {
         $noSubtitle = True;
     }
     
-    $GLOBALS[MDCMS_POST] = $post;
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
 }
 ?>
 
@@ -47,12 +47,12 @@ if (ENABLE_TOC) {
         }
         ?>
 
-        <title><?php echo $post[MDCMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
-        <meta name="author" content="<?php echo $post[MDCMS_POST_AUTHOR]; ?>">
+        <title><?php echo $post[LIGHTWEIGHT_CMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
+        <meta name="author" content="<?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?>">
 
-        <?php if (array_key_exists(MDCMS_POST_META, $post)
-                  && array_key_exists(METADATA_NOINDEX, $post[MDCMS_POST_META])
-                  && $post[MDCMS_POST_META][METADATA_NOINDEX]): ?>
+        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
+                  && array_key_exists(METADATA_NOINDEX, $post[LIGHTWEIGHT_CMS_POST_META])
+                  && $post[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX]): ?>
             <!-- Some functional post doesn't benefit SEO.  -->
             <meta name="robots" content="noindex, follow">
         <?php endif; ?>
@@ -71,18 +71,18 @@ if (ENABLE_TOC) {
                             <img src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                             <span>
-                                <?php echo $post[MDCMS_POST_TITLE]; ?>
+                                <?php echo $post[LIGHTWEIGHT_CMS_POST_TITLE]; ?>
                             </span>
                         </h1>
                     </header>
 
                     <div class="post-info">
-                        <?php if (array_key_exists(MDCMS_POST_AUTHOR, $post) && "" != $post[MDCMS_POST_AUTHOR]): ?>
-                        <span class="author">Written by <?php echo $post[MDCMS_POST_AUTHOR]; ?>.</span>
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post) && "" != $post[LIGHTWEIGHT_CMS_POST_AUTHOR]): ?>
+                        <span class="author">Written by <?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?>.</span>
                         <?php endif; ?>
 
-                        <?php if (array_key_exists(MDCMS_POST_MTIME, $post)): ?>
-                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[MDCMS_POST_MTIME]); ?></span>
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?>
+                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]); ?></span>
                         <?php endif; ?>
                     </div>
 
@@ -103,7 +103,7 @@ if (ENABLE_TOC) {
                     <?php includePartials("shareButtons.php"); ?>
 
                     <main>
-                        <?php echo $post[MDCMS_POST_CONTENT]; ?>
+                        <?php echo $post[LIGHTWEIGHT_CMS_POST_CONTENT]; ?>
                     </main>
                 </div>
 
@@ -130,4 +130,4 @@ if (ENABLE_TOC) {
     </body>
 </html>
 
-<?php http_response_code($post[MDCMS_POST_STATUS]); ?>
+<?php http_response_code($post[LIGHTWEIGHT_CMS_POST_STATUS]); ?>

@@ -24,9 +24,9 @@ require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep 
 # Create a post dynamically.
 $post = array();
 
-$post[MDCMS_POST_TITLE] = "Page Not Found";
-$post[MDCMS_POST_CONTENT] = "The page doesn't exist on our server";
-$post[MDCMS_POST_STATUS] = 404;
+$post[LIGHTWEIGHT_CMS_POST_TITLE] = "Page Not Found";
+$post[LIGHTWEIGHT_CMS_POST_CONTENT] = "The page doesn't exist on our server";
+$post[LIGHTWEIGHT_CMS_POST_STATUS] = 404;
 
 # Create breadcrumbs dynamically.
 $breadcrumb = array();
@@ -34,8 +34,8 @@ $breadcrumb = array();
 {
     $link = array();
 
-    $link[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
-    $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
+    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
+    $link[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
 
     array_push($breadcrumb, $link);
 }
@@ -43,14 +43,14 @@ $breadcrumb = array();
 {
     $link = array();
 
-    $link[MDCMS_LINK_TITLE] = "Page Not Found";
+    $link[LIGHTWEIGHT_CMS_LINK_TITLE] = "Page Not Found";
 
     array_push($breadcrumb, $link);
 }
 
 # Pass global variables to the layout of a post.
-$GLOBALS[MDCMS_POST] = $post;
-$GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+$GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+$GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 $GLOBALS["file"] = __FILE__;
 
 loadPost();

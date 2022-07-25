@@ -140,7 +140,7 @@ Here are exposed fields of front matters:
 
 Those fields are not hard coded but adjustable in *setting.php*.
 
-In addition, all fields in a front matter are exposed in `$post[MDCMS_POST_METADATA]`.
+In addition, all fields in a front matter are exposed in `$post[LIGHTWEIGHT_CMS_POST_METADATA]`.
 
 A front matter in an AsciiDoc post is supported in this way:
 

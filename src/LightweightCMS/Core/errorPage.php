@@ -14,9 +14,9 @@ function errorPage($title, $content, $status)
     # Create a post dynamically.
     $post = array();
 
-    $post[MDCMS_POST_TITLE] = $title;
-    $post[MDCMS_POST_CONTENT] = $content;
-    $post[MDCMS_POST_STATUS] = $status;
+    $post[LIGHTWEIGHT_CMS_POST_TITLE] = $title;
+    $post[LIGHTWEIGHT_CMS_POST_CONTENT] = $content;
+    $post[LIGHTWEIGHT_CMS_POST_STATUS] = $status;
 
     return $post;
 }
@@ -35,8 +35,8 @@ function errorPageBreadcrumb($title)
     {
         $link = array();
 
-        $link[MDCMS_LINK_PATH] = SITE_PREFIX . "/";
-        $link[MDCMS_LINK_TITLE] = BREADCRUMB_HOME;
+        $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
+        $link[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
 
         array_push($breadcrumb, $link);
     }
@@ -44,7 +44,7 @@ function errorPageBreadcrumb($title)
     {
         $link = array();
 
-        $link[MDCMS_LINK_TITLE] = $title;
+        $link[LIGHTWEIGHT_CMS_LINK_TITLE] = $title;
 
         array_push($breadcrumb, $link);
     }

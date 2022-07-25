@@ -33,8 +33,8 @@ if (false != strpos($loc, "..")) {
     # Create a breadcrumb dynamically.
     $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Bad Request Error");
 
-    $GLOBALS[MDCMS_POST] = $post;
-    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }
@@ -50,20 +50,20 @@ else if ("" != SITE_PREFIX && !\LightweightCMS\Core\startsWith($origLoc, SITE_PR
     # Create a breadcrumb dynamically.
     $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
-    $GLOBALS[MDCMS_POST] = $post;
-    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }
 # Render a home page.
 else if (\LightweightCMS\Core\isHome($loc)) {
-    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
-    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
     # Posts not included in any section.
-    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
-        $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
     }
 
     loadHome();
@@ -71,16 +71,16 @@ else if (\LightweightCMS\Core\isHome($loc)) {
 # Render a page of home page.
 else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $homeURI = "/";
-    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
-    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
     # Posts not included in any section.
-    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
 
     preg_match("/^\/(\d+)\/$/", $loc, $matches);
-    $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($homeURI, $matches[1]);
+    $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($homeURI, $matches[1]);
 
     # Show HTTP 404 page if no post on this page.
-    if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
+    if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
         $post = \LightweightCMS\Core\errorPage(
             "Page Not Found",
             "The page doesn't exist on our server.",
@@ -90,8 +90,8 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
         # Create a breadcrumb dynamically.
         $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
-        $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+        $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
         loadPost();
     }
@@ -101,16 +101,16 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
 }
 # Render a section.
 else if (\LightweightCMS\Core\isSection($loc)) {
-    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     # Current section.
-    $GLOBALS[MDCMS_SECTION] = \LightweightCMS\Core\readSection($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($loc);
     # Subsections of current section.
-    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
     # Posts of current section.
-    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
-        $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
     }
 
     loadSection();
@@ -121,18 +121,18 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     $sectionURI = "/" . $matches[1] . "/";
     $page = $matches[2];
 
-    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($sectionURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($sectionURI);
     # Current section.
-    $GLOBALS[MDCMS_SECTION] = \LightweightCMS\Core\readSection($sectionURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($sectionURI);
     # Subsections of current section.
-    $GLOBALS[MDCMS_SECTIONS] = \LightweightCMS\Core\getSections($sectionURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($sectionURI);
     # Posts of current section.
-    $GLOBALS[MDCMS_POSTS] = \LightweightCMS\Core\getPosts($sectionURI);
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($sectionURI);
     # A page in a series of pages.
-    $GLOBALS[MDCMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($sectionURI, $page);
+    $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($sectionURI, $page);
 
     # Show HTTP 404 page if no post on this page.
-    if (count($GLOBALS[MDCMS_POST_PER_PAGE]) <= 0) {
+    if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
         $post = \LightweightCMS\Core\errorPage(
             "Page Not Found",
             "The page doesn't exist on our server.",
@@ -142,8 +142,8 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
         # Create a breadcrumb dynamically.
         $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
-        $GLOBALS[MDCMS_POST] = $post;
-        $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+        $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
         loadPost();
     }
@@ -153,21 +153,21 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
 }
 # Render a custom page.
 else if (\LightweightCMS\Core\isCustomPage($loc)) {
-    $GLOBALS[MDCMS_POST] = \LightweightCMS\Core\readCustomPage($loc);
-    $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = \LightweightCMS\Core\readCustomPage($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
 
     \LightweightCMS\Core\loadCustomPage($loc);
 }
 # Render a post.
 else if (\LightweightCMS\Core\isPost($loc)) {
-    $GLOBALS[MDCMS_POST] = \LightweightCMS\Core\readPost($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = \LightweightCMS\Core\readPost($loc);
 
-    if (200 === $GLOBALS[MDCMS_POST][MDCMS_POST_STATUS]) {
-        $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    if (200 === $GLOBALS[LIGHTWEIGHT_CMS_POST][LIGHTWEIGHT_CMS_POST_STATUS]) {
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     }
     # Something is wrong while rendering a post.
     else {
-        $GLOBALS[MDCMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb($GLOBALS[MDCMS_POST][MDCMS_POST_TITLE]);
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb($GLOBALS[LIGHTWEIGHT_CMS_POST][LIGHTWEIGHT_CMS_POST_TITLE]);
     }
 
     loadPost();
@@ -200,8 +200,8 @@ else {
     # Create a breadcrumb dynamically.
     $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
-    $GLOBALS[MDCMS_POST] = $post;
-    $GLOBALS[MDCMS_BREADCRUMB] = $breadcrumb;
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
     loadPost();
 }

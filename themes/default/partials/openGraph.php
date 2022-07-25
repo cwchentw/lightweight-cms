@@ -1,15 +1,15 @@
 <?php
-$post = $GLOBALS[MDCMS_POST];
-$section = $GLOBALS[MDCMS_SECTION];
+$post = $GLOBALS[LIGHTWEIGHT_CMS_POST];
+$section = $GLOBALS[LIGHTWEIGHT_CMS_SECTION];
 
 $twitter = TWITTER;
 
 $title = null;
-if (!is_null($post) && array_key_exists(MDCMS_POST_TITLE, $post)) {
-    $title = $post[MDCMS_POST_TITLE];
+if (!is_null($post) && array_key_exists(LIGHTWEIGHT_CMS_POST_TITLE, $post)) {
+    $title = $post[LIGHTWEIGHT_CMS_POST_TITLE];
 }
-else if (!is_null($section) && array_key_exists(MDCMS_SECTION_TITLE, $section)) {
-    $title = $section[MDCMS_SECTION_TITLE];
+else if (!is_null($section) && array_key_exists(LIGHTWEIGHT_CMS_SECTION_TITLE, $section)) {
+    $title = $section[LIGHTWEIGHT_CMS_SECTION_TITLE];
 }
 else {
     $title = strip_tags(SITE_NAME);
@@ -17,10 +17,10 @@ else {
 
 $description = null;
 if (!is_null($post)) {
-    $description = \LightweightCMS\Plugin\excerpt($post[MDCMS_POST_CONTENT]);
+    $description = \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 }
 else if (!is_null($section)) {
-    $description = \LightweightCMS\Plugin\excerpt($section[MDCMS_SECTION_CONTENT]);
+    $description = \LightweightCMS\Plugin\excerpt($section[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
 }
 
 if ("" == $description) {

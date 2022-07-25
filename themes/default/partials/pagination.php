@@ -13,7 +13,7 @@ function totalPages($count, $perPage)
     return $pages;
 }
 
-$post = $GLOBALS[MDCMS_POSTS];
+$post = $GLOBALS[LIGHTWEIGHT_CMS_POSTS];
 if (preg_match("/\/(\d+)\/$/", $_SERVER["REQUEST_URI"], $matches)) {
     $page = $matches[1];
 }

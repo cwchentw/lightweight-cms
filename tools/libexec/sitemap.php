@@ -26,11 +26,11 @@ $links = \LightweightCMS\Core\getAllLinks("/");
 foreach ($links as $link) {
     $node = $xml->createElement("url");
 
-    $url = SITE_BASE_URL . $link[MDCMS_LINK_PATH];
+    $url = SITE_BASE_URL . $link[LIGHTWEIGHT_CMS_LINK_PATH];
     $loc = $xml->createElement("loc", $url);
     $node->appendChild($loc);
 
-    $mtime = $xml->createElement("lastmod", date("Y-m-d", $link[MDCMS_LINK_MTIME]));
+    $mtime = $xml->createElement("lastmod", date("Y-m-d", $link[LIGHTWEIGHT_CMS_LINK_MTIME]));
     $node->appendChild($mtime);
 
     # Currently, we simply hard code the frequency of document change.

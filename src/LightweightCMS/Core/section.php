@@ -23,10 +23,10 @@ function readSection($page)
     $result = array();
 
     # Initialize the data of a section.
-    $result[MDCMS_SECTION_TITLE] = "";
-    $result[MDCMS_SECTION_AUTHOR] = "";
-    $result[MDCMS_SECTION_CONTENT] = "";
-    $result[MDCMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
+    $result[LIGHTWEIGHT_CMS_SECTION_TITLE] = "";
+    $result[LIGHTWEIGHT_CMS_SECTION_AUTHOR] = "";
+    $result[LIGHTWEIGHT_CMS_SECTION_CONTENT] = "";
+    $result[LIGHTWEIGHT_CMS_SECTION_STATUS] = 200;  # HTTP 200 OK.
 
     $indexPage = $rootDirectory . $sep . CONTENT_DIRECTORY
         . str_replace("/", $sep, $page) . $sep . SECTION_INDEX;
@@ -48,37 +48,37 @@ function readSection($page)
         # Expose metadata of a section. No matter it is empty or not.
         # Expose metadata of a section. No matter it is empty or not.
         if (!is_null($metadata)) {
-            $result[MDCMS_POST_META] = $metadata;
+            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
-            $result[MDCMS_POST_META] = array();
+            $result[LIGHTWEIGHT_CMS_POST_META] = array();
         }
 
         if (isValidField($metadata, METADATA_WEIGHT)) {
-            $result[MDCMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
+            $result[LIGHTWEIGHT_CMS_SECTION_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
         if (isValidField($metadata, METADATA_TITLE)) {
-            $result[MDCMS_SECTION_TITLE] = $metadata[METADATA_TITLE];
+            $result[LIGHTWEIGHT_CMS_SECTION_TITLE] = $metadata[METADATA_TITLE];
 
             $stripedContent = preg_replace("/^# (.+)/", "", $stripedContent);
 
             $parser = new \Parsedown();
-            $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
+            $result[LIGHTWEIGHT_CMS_SECTION_CONTENT] = $parser->text($stripedContent);
         }
         else {
             preg_match("/<h1>(.+)<\/h1>/", $stripedContent, $matches);
             if ("" != $matches[1]) {
-                $result[MDCMS_SECTION_TITLE] = $matches[1];
+                $result[LIGHTWEIGHT_CMS_SECTION_TITLE] = $matches[1];
 
                 $stripedContent = preg_replace("/<h1>(.+)<\/h1>/", "", $stripedContent);
 
                 $parser = new \Parsedown();
-                $result[MDCMS_SECTION_CONTENT] = $parser->text($stripedContent);
+                $result[LIGHTWEIGHT_CMS_SECTION_CONTENT] = $parser->text($stripedContent);
             }
             else {
                 $parser = new \Parsedown();
-                $result[MDCMS_SECTION_CONTENT] = $parser->text($rawContent);
+                $result[LIGHTWEIGHT_CMS_SECTION_CONTENT] = $parser->text($rawContent);
 
                 goto extract_title_from_page;
             }
@@ -87,29 +87,29 @@ function readSection($page)
     # Otherwise, extract data from the directory name.
     else {
         # Dummy metadata of a section.
-        $result[MDCMS_SECTION_META] = array();
+        $result[LIGHTWEIGHT_CMS_SECTION_META] = array();
 
         extract_title_from_page:
         $pages = parseURI($page);
         $title = preg_replace("/\/|-+/", " ", array_pop($pages));
         $title = ucwords($title);  # Capitalize a title.
-        $result[MDCMS_SECTION_TITLE] = $title;
+        $result[LIGHTWEIGHT_CMS_SECTION_TITLE] = $title;
     }
 
     # Set the author of a section.
     if (isValidField($metadata, METADATA_AUTHOR)) {
-        $result[MDCMS_SECTION_AUTHOR] = $metadata[METADATA_AUTHOR];
+        $result[LIGHTWEIGHT_CMS_SECTION_AUTHOR] = $metadata[METADATA_AUTHOR];
     }
     else {
-        $result[MDCMS_SECTION_AUTHOR] = SITE_AUTHOR;
+        $result[LIGHTWEIGHT_CMS_SECTION_AUTHOR] = SITE_AUTHOR;
     }
 
     # Prevent search engine bots from following links.
     if (NO_FOLLOW_EXTERNAL_LINK
-        && array_key_exists(MDCMS_SECTION_CONTENT, $result))
+        && array_key_exists(LIGHTWEIGHT_CMS_SECTION_CONTENT, $result))
     {
-        $output = noFollowLinks($result[MDCMS_SECTION_CONTENT]);
-        $result[MDCMS_SECTION_CONTENT] = $output;
+        $output = noFollowLinks($result[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
+        $result[LIGHTWEIGHT_CMS_SECTION_CONTENT] = $output;
     }
 
     return $result;
