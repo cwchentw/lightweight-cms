@@ -1,6 +1,6 @@
 ---
-title: Features
-mtime: 2022/7/20
+title: Feature
+mtime: 2022/7/25
 weight: 2
 ---
 
@@ -24,18 +24,16 @@ This article lists the features of Lightweight CMS.
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[404.html] generator
 * https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500[50x.html] generator
 * offline.html generator
-* Asset compilation (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
-* Asset watching and hot change(s)
 
 == Theme-related Features
 
 These features are available in _default_ theme:
 
 * Mobile-responsive layouts (through https://getbootstrap.com/docs/5.0/getting-started/introduction/[Bootstrap 5])
-* Top navbar (Bootstrap 5 based)
-* Table of Contents
+* Top navbar
+* Side information or table of contents
 * Code highlighting (through https://highlightjs.org/[highlight.js])
-* Open graphs
+* Twitter cards and open graphs
 * Static social media sharing links (no JavaScript is required)
 
 == Plugin-related Features
@@ -43,10 +41,16 @@ These features are available in _default_ theme:
 * Word count for western european text
 * Reading time for western european text
 * Excerpts from posts
-* Google analytics tracker
+* Google analytics 4 tracker
 
 == Project-related Features
 
-* Run sites locally without Apache or Nginx (through https://www.php.net/manual/en/features.commandline.webserver.php[builtin web server] of PHP)
+* Run a site locally without Apache or Nginx (through the https://www.php.net/manual/en/features.commandline.webserver.php[builtin web server] of PHP)
+* Asset compilation (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
+* Asset watching and hot change(s)
 * Synchronize content on a production environment (through `rsync(1)`)
-* Migrate a local Lightweight CMS repository to a new site
+* Migrate a local Lightweight CMS repository to a new site (through home-made scripts)
+
+== Next Step
+
+Learn to use Lightweight CMS link:/basic-usage/[here].

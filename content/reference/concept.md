@@ -1,5 +1,5 @@
 ---
-title: The Concepts
+title: Concept
 mtime: 2022/07/20
 weight: 1
 ---
@@ -101,3 +101,5 @@ Assets are stuffs used in front end like CSS sheets, JavaScript scripts, fonts, 
 ## The Bottom Line
 
 This article illustrates concepts to Lightweight CMS. If you are unfamiliar to web programming, this page may give you a mind roadmap to both Lightweight CMS and content websites in general.
+
+Here list [the features](/reference/feature/) of Lightweight CMS.
