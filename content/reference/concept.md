@@ -1,5 +1,6 @@
 ---
-title: Concept
+title: The Concepts of Lightweight CMS
+linkTitle: Concept
 mtime: 2022/07/20
 weight: 1
 ---

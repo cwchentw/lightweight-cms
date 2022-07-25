@@ -1,5 +1,6 @@
 ---
-title: Project Structure of Lightweight CMS
+title: The Project Structure of Lightweight CMS
+linkTitle: Project Structure
 mtime: 2021/6/26
 weight: 5
 ---

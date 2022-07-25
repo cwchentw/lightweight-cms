@@ -1,5 +1,6 @@
 ---
 title: Exposed Variables in Layouts
+linkTitle: Layout Variable
 mtime: 2021/6/26
 weight: 7
 ---

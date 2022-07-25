@@ -1,5 +1,6 @@
 ---
-title: Settings for Lightweight CMS
+title: The Settings for Lightweight CMS
+linkTitle: Setting
 mtime: 2022/07/20
 weight: 6
 ---

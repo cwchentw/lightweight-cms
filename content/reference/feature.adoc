@@ -1,5 +1,6 @@
 ---
-title: Feature
+title: The Features of Lightweight CMS
+linkTitle: Feature
 mtime: 2022/7/25
 weight: 2
 ---
