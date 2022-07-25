@@ -451,7 +451,7 @@ footer .container .links ul li {
 }
 
 .section-block {
-    width: 250pt;
+    width: 340px;
 
     border-style: solid;
     border-width: 1pt;
@@ -462,6 +462,19 @@ footer .container .links ul li {
     margin-left: 0;
     margin-right: 15pt;
     margin-bottom: 28pt;
+
+    h2 {
+        padding-left: unset;
+
+        &:before {
+            content: unset;
+            padding-right: unset;
+        }
+
+        &:after {
+            margin: unset;
+        }
+    }
 }
 
 @media screen and (max-width: $phone-width) {

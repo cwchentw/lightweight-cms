@@ -105,9 +105,6 @@ function fixedSidebar () {
         let windowHeight = document.documentElement.clientHeight || window.innerHeight;
         let headerHeight = 0.5 * windowHeight;
 
-        console.log(windowHeight);
-        console.log(headerHeight);
-
         /* The sidebar scrolls below both the navbar and the title bar. */
         if (window.scrollY > navbarHeight + headerHeight) {
             fixedSidebar.style.top = "0";
@@ -187,11 +184,7 @@ function alignSectionTitleHeights () {
         if (!subtitle)
             return;
 
-        let fontSize = parseInt(window.getComputedStyle(subtitle).fontSize, 10);
-        let textWidth = fontSize * subtitle.innerText.length;
-        let line = Math.round(textWidth / subtitle.scrollWidth);
-        let elemHeight = subtitle.scrollHeight * line;
-        console.log(`elem height: ${elemHeight}`);
+        let elemHeight = subtitle.scrollHeight;
         if (elemHeight > height)
             height = elemHeight;
     }
