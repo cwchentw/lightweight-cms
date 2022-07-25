@@ -203,6 +203,11 @@ footer {
     }
 }
 
+.site-navbar .container a {
+    color: $background-color;
+    text-decoration: none;
+}
+
 .sidebar {
     width: 220pt;
 
@@ -230,6 +235,45 @@ footer {
         }
     }
 }
+
+.site-navbar {
+    background: linear-gradient(90deg, rgba(185,175,126,1) 0%, rgba(87,133,131,1) 40%, rgba(87,133,131,1) 100%);
+    background-color: $navbar-color;
+
+    width: 100%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+
+    .container {
+        display: flex;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+
+            margin-left: auto;
+            margin-bottom: unset;
+
+            list-style-type: none;
+
+            li {
+                margin-right: 30px;
+                list-style-type: none;
+
+                a {
+                    color: $background-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
 
 .navbar {
     background: linear-gradient(90deg, rgba(185,175,126,1) 0%, rgba(87,133,131,1) 40%, rgba(87,133,131,1) 100%);
