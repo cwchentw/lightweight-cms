@@ -21,7 +21,7 @@ $status = 200;
 <html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
         <?php
-        if ("" != GOOGLE_ANALYTICS_ID) {
+        if (!is_null(GOOGLE_ANALYTICS_ID) && "" != GOOGLE_ANALYTICS_ID) {
             echo "<!-- Google Analytics -->";
             echo \LightweightCMS\Plugin\googleAnalytics(GOOGLE_ANALYTICS_ID);
         }
