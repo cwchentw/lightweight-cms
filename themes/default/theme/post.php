@@ -19,7 +19,7 @@ if (ENABLE_TOC) {
 
     $post[LIGHTWEIGHT_CMS_POST_CONTENT]
         = preg_replace_callback(
-            "/<h2>(.+?)<\/h2>/",
+            "/<h2(?: id=\"[^\"]+\")?>(.+?)<\/h2>/",
             function ($matches) {
                 $id = preg_replace("/<(.+?)>/", "", $matches[1]);
                 $id = preg_replace("/[ ]+/", "-", $id);
