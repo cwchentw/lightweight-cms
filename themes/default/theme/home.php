@@ -81,7 +81,7 @@ $status = 200;
                 # Posts in a page of a series of pages.
                 if (POST_PER_PAGE > 0) {
                     if (isset($postsPerPage) && count($postsPerPage) > 0) {
-                        echo "<h2>Articles</h2>";
+                        echo "<h2 id=\"introduction\">Articles</h2>";
 
                         foreach ($postsPerPage as $post) {
                             echo "<article>";
@@ -111,7 +111,7 @@ $status = 200;
                 # All posts.
                 else {
                     if (isset($posts) && count($posts) > 0) {
-                        echo "<h2>Articles</h2>";
+                        echo "<h2 id=\"introduction\">Articles</h2>";
 
                         foreach ($posts as $post) {
                             echo "<article>";

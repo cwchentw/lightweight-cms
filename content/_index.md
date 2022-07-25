@@ -1,4 +1,4 @@
-Welcome to the official site of Lightweight CMS. If you are new to this website publishing software, view our articles first.
+Welcome to the official site of Lightweight CMS. If you are new to this website publishing software, view our [introductory articles](/#introduction) first.
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
