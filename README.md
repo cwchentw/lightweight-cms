@@ -97,10 +97,6 @@ $ git commit -m "Migrate to a new site"
 $ git push -u origin master
 ```
 
-## Warning
-
-Lightweight CMS is still *experimental* and *evolving*.
-
 ## Why not another Static Site Generator?
 
 There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.

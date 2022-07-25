@@ -6,7 +6,7 @@ weight: 2
 
 == Prologue
 
-This article lists features of Lightweight CMS. Because Lightweight CMS is still _experimental and evolving_, the list may change.
+This article lists the features of Lightweight CMS.
 
 == Site-related Features
 

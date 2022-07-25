@@ -8,10 +8,6 @@ weight: 6
 
 Settings in Lightweight CMS work as parameters to modify Lightweight CMS sites. This article illustrates those settings.
 
-## Note
-
-mdcms is still *experimental and envolving*. Those settings may change without warning.
-
 ## Project Settings, Theme Settings and Plugin Settings
 
 There are three categories of settings in Lightweight CMS. Project settings are used by Lightweight CMS itself, theme settings used by Lightweight CMS themes and plugin settings used by Lightweight CMS plugins.

@@ -4,10 +4,6 @@
 
 This is *default* theme for Lightweight CMS. In addition, it serves as a template to create other themes.
 
-## Warning
-
-As Lightweight CMS itself, this theme is experimental as well. If you want to create a new theme for Lightweight CMS, refer here to see whether any modification occurs.
-
 ## System Requirements
 
 * Production environment

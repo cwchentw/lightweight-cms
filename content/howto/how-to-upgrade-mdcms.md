@@ -73,5 +73,3 @@ You may stick to specific version of Lightweight CMS to avoid unintentional chan
 ```shell
 $ git pull https://github.com/cwchentw/lightweight-cms.git 1.0
 ```
-
-Lightweight CMS is still experimental and envolving currently. We may announce some stable version to maintain if we think Lightweight CMS is mature enough.

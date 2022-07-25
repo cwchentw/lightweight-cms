@@ -1,7 +1,5 @@
 Welcome to the official site of Lightweight CMS. If you are new to this website publishing software, view our articles first.
 
-*Lightweight CMS is still experimental and evolving.*
-
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
 
