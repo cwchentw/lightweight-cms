@@ -563,3 +563,28 @@ th {
         font-size: 0.85em;
     }
 }
+
+.quick-start-hint {
+    text-align: center;
+}
+
+#quick-start {
+    border-bottom: unset;
+
+    text-align: center;
+
+    &:before {
+        content: unset;
+        padding-right: unset;
+    }
+
+    &:after {
+        margin: unset;
+    }
+}
+
+#client-system {
+    color: slateblue;
+    font-weight: 900;
+    font-size: 1.05em;
+}
