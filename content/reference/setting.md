@@ -24,7 +24,7 @@ You should not remove project settings because either internal library or utilit
 * `SITE_DESCRIPTION` (project): A concise description of a site
 * `SITE_AUTHOR` (project): Principle author of a site
 * `SITE_COPYRIGHT` (theme): Copyright text of a site
-* `SITE_LANGUAGE` (project): Language code used in a site. Look up a valid language code [here](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers)
+* `SITE_LANGUAGE` (project): Language code used in a site. Look up a valid language code [here](https://github.com/libyal/libfwnt/wiki/Language-Code-identifiers#language-identifiers)
 * `SITE_THEME` (project): Theme used by a site
 * `SITE_LOGO` (project): File name of site logo without size suffix and file extension. Default file format of site logo is `image/png`
 
