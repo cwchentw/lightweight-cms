@@ -1,12 +1,12 @@
 ---
 title: Basic Usage
-mtime: 2022/07/20
+mtime: 2022/07/25
 weight: 2
 ---
 
 ## Prologue
 
-This article illustrates basic usage of Lightweight CMS. Some details are omitted for brevity. We will introduce them in other posts.
+This article illustrates the basic usage of Lightweight CMS. Some details are omitted for brevity. We will introduce them in other posts.
 
 ## System Requirements
 
@@ -14,13 +14,13 @@ This article illustrates basic usage of Lightweight CMS. Some details are omitte
 
 * Production environment
   * GNU/Linux is recommended
-  * A web server like Apache or Nginx
-  * PHP 8.1
+  * A web server like [Apache](https://httpd.apache.org/) or [Nginx](https://www.nginx.com/)
+  * [PHP 8.1](https://www.php.net/) or above
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
-  * (Optional) AsciiDoctor (for AsciiDoc support)
-  * (Optional) Docutils (for reStructuredText support). Pygments (code highlighting for reStructuredText)
-  * (Optional) Perl (for global replacement)
+  * (Optional) [AsciiDoctor](https://asciidoctor.org/) (for AsciiDoc support)
+  * (Optional) [Docutils](https://docutils.sourceforge.io/) (for reStructuredText support). [Pygments](https://pygments.org/) (code highlighting in reStructuredText)
+  * (Optional) [Perl](https://www.perl.org/) (for global replacement)
 * Development environment
   * [Composer](https://getcomposer.org/)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
@@ -39,7 +39,7 @@ If you are not interested in developing Lightweight CMS itself, you still requir
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
   * (Optional) [highlight.js](https://highlightjs.org/)
 * Development environment
-  * Node.js
+  * [Node.js](https://nodejs.org/)
   * [Gulp](https://gulpjs.com/)
   * [Sass](https://sass-lang.com/)
   * [Autoprefixer](https://github.com/postcss/autoprefixer)
@@ -69,7 +69,7 @@ Change your working directory to root path of the cloned repo:
 $ cd mysite
 ```
 
-(Optional) Install Composer:
+Install Composer:
 
 ```shell
 $ curl -o composer-setup.php https://getcomposer.org/installer
@@ -78,7 +78,7 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
 
-Install dependency packages for Lightweight CMS:
+Install the dependency packages for Lightweight CMS:
 
 ```
 $ composer install --no-dev
@@ -88,13 +88,13 @@ If you don't want to update your Lightweight CMS snapshot, you may safely remove
 
 Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
 
-You can run a Lightweight CMS site locally with builtin web server of PHP:
+You can run a Lightweight CMS site locally with the builtin web server of PHP:
 
 ```
 $ sudo ./tools/bin/serve
 ```
 
-[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.1:
+[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.1 or above:
 
 ```
 $ sudo ./tools/bin/sync-to /path/to/www
@@ -151,7 +151,7 @@ $ git submodule update
 
 You, as a PHP programmer, are interested in developing Lightweight CMS itself. You may keep your modifications privately or send back your contributions to us.
 
-Create a fork of Lightweight CMS on GitHub, cloning the forked repo:
+Create a [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of Lightweight CMS on GitHub, cloning the forked repo:
 
 ```shell
 $ git clone https://github.com/user/lightweight-cms.git
@@ -185,6 +185,6 @@ Push back your modification(s) to the forked repo:
 $ git push https://github.com/user/lightweight-cms.git
 ```
 
-Send us a pull request. We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
+Send us a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
 
 If you are busy, open [a dicussion](https://github.com/cwchentw/lightweight-cms/discussions) or send us [an issue](https://github.com/cwchentw/lightweight-cms/issues) instead.
