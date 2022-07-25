@@ -159,12 +159,12 @@ if (POST_PER_PAGE > 0) {
                     <?php
                     # Add section(s) if any exists.
                     if (isset($sections) && count($sections) > 0) {
-                        echo "<h2>Sections</h2>";
-
+                        echo "<div class=\"sections\">";  # Directive for the region of the sections.
                         foreach ($sections as $section) {
-                            echo "<h3>" . $section[LIGHTWEIGHT_CMS_SECTION_TITLE] . "</h3>";
+                            echo "<div class=\"section-block\">";  # Directive for a section.
+                            echo "<h2>" . $section[LIGHTWEIGHT_CMS_SECTION_TITLE] . "</h2>";  # Section title.
 
-                            echo "<p>";
+                            echo "<p>";  # The descriptive text of a section.
 
                             $sectionExcerpt = \LightweightCMS\Plugin\excerpt($section[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
                             if ("" != $sectionExcerpt) {
@@ -173,13 +173,16 @@ if (POST_PER_PAGE > 0) {
 
                             echo "<a class=\"btn btn-primary btn-sm\" "
                                 . "href=\"" . $section[LIGHTWEIGHT_CMS_LINK_PATH] ."\">"
-                                . "Read More"
+                                . "Explore More"
                                 . "</a>";
 
-                            echo "</p>";
+                            echo "</p>";  # End of the descriptive text of a section.
+                            echo "</div>";  # End of a section.
                         }
+                        echo "</div>";  # End of the region of the sections.
                     }
                     ?>
+                </div>
                 </div>
 
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">

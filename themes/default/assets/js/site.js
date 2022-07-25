@@ -114,7 +114,7 @@ function fixedSidebar () {
         }
         /* The sidebar scrolls within the navbar and the title bar. */
         else  {
-            fixedSidebar.style.top = `${navbarHeight + headerHeight - document.documentElement.scrollTop}px`;
+            fixedSidebar.style.top = `${headerHeight - document.documentElement.scrollTop}px`;
         }
 
         fixedSidebar.style.left = `${width}`.toString() + "px";
