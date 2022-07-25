@@ -1,5 +1,6 @@
 ---
 title: Tips for Tools on Unix
+linkTitle: Tools on Unix
 mtime: 2021/7/10
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Tips to Sections and Posts
+linkTitle: Sections and Posts
 mtime: 2022/1/30
 ---
 
