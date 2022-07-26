@@ -81,19 +81,6 @@ h6 {
     font-family: $title-font, $serif;
 }
 
-/* Safari.
-   Ref: https://codepen.io/jeffclayton/pen/cbCsi
-*/
-@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-style: italic;
-    }
-}
-
 h2 {
     padding-left: 5pt;
     padding-bottom: 2pt;
@@ -410,27 +397,6 @@ footer .container .links ul li {
     }
 }
 
-/* Safari.
-   Ref: https://codepen.io/jeffclayton/pen/cbCsi
-*/
-@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
-    .jumbotron {
-        .container {
-            .subtitle {
-                font-style: italic;
-            }
-
-            .author {
-                font-style: italic;
-            }
-
-            .last-modified-time {
-                font-style: italic;
-            }
-        }
-    }
-}
-
 @media screen and (max-width: $phone-width) {
     .jumbotron {
         .post-info {
@@ -534,15 +500,6 @@ th {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* Safari.
-   Ref: https://codepen.io/jeffclayton/pen/cbCsi
-*/
-@media screen and (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
-    .info-title {
-        font-style: italic;
-    }
 }
 
 .toc-item {
