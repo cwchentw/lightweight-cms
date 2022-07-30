@@ -112,5 +112,3 @@ gulp.task('watch', function () {
 
 /* The default build task. */
 gulp.task('default', gulp.parallel('sass', 'javascript', 'font', 'image', 'static'));
-
-gulp.task('watch', gulp.series('watch'));
