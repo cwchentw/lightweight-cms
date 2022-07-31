@@ -51,7 +51,7 @@ We will introduce them in the following text.
 
 *content* directory stores site posts. In Lightweight CMS repository, this directory hoards live documentation of Lightweight CMS.
 
-If you don't need to update your Lightweight CMS snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your Lightweight CMS repo, see [this article](/howto/how-to-upgrade-mdcms/) for more information.
+If you don't need to update your Lightweight CMS snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your Lightweight CMS repo, see [this article](/howto/how-to-upgrade-lightweight-cms/) for more information.
 
 ## *setting.php* and *config* Directory
 
@@ -59,7 +59,7 @@ If you don't need to update your Lightweight CMS snapshot, you may safely delete
 
 ## *themes* Directory
 
-*themes* directory saves theme(s) for Lightweight CMS. There is at least one *default* theme for Lightweight CMS users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-mdcms-theme/).
+*themes* directory saves theme(s) for Lightweight CMS. There is at least one *default* theme for Lightweight CMS users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-lightweight-cms-theme/).
 
 ## *plugins* Directory
 

@@ -144,7 +144,7 @@ The dependencies mentioned here are based on *default* theme of Lightweight CMS.
 
 ## Usage
 
-We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/content/howto/how-to-run-mdcms-on-windows.md).
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/content/howto/how-to-run-lightweight-cms-on-windows.md).
 
 Clone the repo locally:
 
@@ -173,7 +173,7 @@ $ composer install --no-dev
 
 If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/content/howto/how-to-upgrade-mdcms.md).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/content/howto/how-to-upgrade-lightweight-cms.md).
 
 You can run a Lightweight CMS site locally with builtin web server of PHP:
 

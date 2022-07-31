@@ -144,7 +144,7 @@ Development tools like PHP Code Sniffer mean to lint code, which are not require
 
 If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-lightweight-cms/).
 
 You can run a Lightweight CMS site locally with builtin web server of PHP:
 

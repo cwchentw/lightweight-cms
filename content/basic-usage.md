@@ -53,7 +53,7 @@ Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript
 
 ## Usage for End Users
 
-We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/how-to-run-mdcms-on-windows/).
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/how-to-run-lightweight-cms-on-windows/).
 
 You are a would-be owner of an awesome content website. It is not of your interest to develop Lightweight CMS itself.
 
@@ -86,7 +86,7 @@ $ composer install --no-dev
 
 If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-mdcms/).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-lightweight-cms/).
 
 You can run a Lightweight CMS site locally with the builtin web server of PHP:
 
@@ -115,7 +115,7 @@ $ git push -u origin master
 
 ## Usage for Theme Creators
 
-You should create an independent repo for your Lightweight CMS theme. Follow [this guide](/howto/how-to-create-mdcms-theme/) to create a theme.
+You should create an independent repo for your Lightweight CMS theme. Follow [this guide](/howto/how-to-create-lightweight-cms-theme/) to create a theme.
 
 Assume your Lightweight CMS theme is ready. Add your theme to your Lightweight CMS copy as a Git submodule:
 

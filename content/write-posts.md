@@ -16,7 +16,7 @@ Plugins or extensions for popular lightweight markup languages are commonplace. 
 
 Posts are saved in a content directory, which default to *content*.
 
-If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-mdcms/) for more information.
+If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-lightweight-cms/) for more information.
 
 Valid file formats for posts in Lightweight CMS sites are [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) and HTML.
 

@@ -58,7 +58,7 @@ $ .\tools\bin\publish.bat
 
 These utility scripts will copy router of Lightweight CMS and assets to *public* directory, ready for further step(s) to deploy your site.
 
-See [this article](/howto/how-to-deploy-mdcms-to-digitalocean-app-platform/) for information related to deploy a Lightweight CMS site to a PaaS.
+See [this article](/howto/how-to-deploy-lightweight-cms-to-digitalocean-app-platform/) for information related to deploy a Lightweight CMS site to a PaaS.
 
 ## Synchonize Content on a Production Environment
 
