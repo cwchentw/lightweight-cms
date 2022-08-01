@@ -22,9 +22,9 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ### Windows
 
 ```shell
-> choco install php --version=8.1.7
+> choco install php --version=8.1.8
 > choco install composer
-> choco install nodejs --version=16.15.1
+> choco install nodejs --version=16.16.0
 > choco install rsync
 > choco install sed
 ```
@@ -79,8 +79,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install 16.15.1
-$ nvm use 16.15.1
+$ nvm install 16.16.0
+$ nvm use 16.16.0
 ```
 
 ```shell
