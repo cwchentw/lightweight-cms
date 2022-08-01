@@ -7,6 +7,7 @@
     <rule ref="Generic">
         <!-- Fix the line ending issue on Windows. -->
         <exclude name="Generic.Files.LineEndings"/>
+        <exclude name="Generic.Files.LineLength"/>
     </rule>
     <rule ref="PEAR">
         <exclude name="PEAR.Commenting.InlineComment"/>
@@ -16,6 +17,5 @@
         <exclude name="PEAR.ControlStructures.ControlSignature"/>
         <exclude name="PEAR.ControlStructures.MultiLineCondition"/>
         <exclude name="PEAR.Files.IncludingFile"/>
-        <exclude name="Generic.Files.LineLength"/>
     </rule>
 </ruleset>
