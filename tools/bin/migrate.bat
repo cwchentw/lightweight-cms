@@ -78,7 +78,7 @@ sed -i "s/Lightweight CMS/Awesome Site/" %informationConfig:\=/% || (
 )
 
 rem Update the site description.
-sed -i "s/A Flat-File CMS Supporting Common Lightweight Markup Languages, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
+sed -i "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )
@@ -90,7 +90,7 @@ sed -i "s/Michelle Chen/The Site Author/" %informationConfig:\=/% || (
 )
 
 rem Update the copyright text.
-sed -i "s/Licensed under CC BY 4\.0\./All Rights Reserved/" %informationConfig:\=/% || (
+sed -i "s/Licensed under MIT/All Rights Reserved/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )
@@ -103,6 +103,11 @@ sed -i "s/cwchentw\/lightweight-cms//" %socialMediaConfig:\=/% || (
 
 set parametersConfig=%root%\config\parameters.php
 sed -i "6 { N; N; N; N; N; N; N; N; s/define(.*""REDIRECT_LIST"",.*);/define(""REDIRECT_LIST"", []);/; }" %parametersConfig:\=/% || (
+    echo Unable to modify parameters.php >&2
+    echo /b 1
+)
+
+sed -i "s/Lightweight CMS/Home/" %parametersConfig:\=/% || (
     echo Unable to modify parameters.php >&2
     echo /b 1
 )
