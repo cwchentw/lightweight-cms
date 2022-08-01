@@ -4,6 +4,10 @@
     <rule ref="PSR1">
         <exclude name="PSR1.Files.SideEffects"/>
     </rule>
+    <rule ref="Generic">
+        <!-- Fix the line ending issue on Windows. -->
+        <exclude name="Generic.Files.LineEndings"/>
+    </rule>
     <rule ref="PEAR">
         <exclude name="PEAR.Commenting.InlineComment"/>
         <exclude name="PEAR.Commenting.FunctionComment"/>
