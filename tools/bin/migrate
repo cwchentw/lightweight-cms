@@ -86,7 +86,7 @@ sed -i"" "s/Lightweight CMS/Awesome Site/" "${root}/config/information.php" || (
 )
 
 # Update the site description.
-sed -i"" "s/A Flat-File CMS Supporting Common Lightweight Markup Languages, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
+sed -i"" "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
@@ -98,7 +98,7 @@ sed -i"" "s/Michelle Chen/The Site Author/" "${root}/config/information.php" || 
 )
 
 # Update the copyright text.
-sed -i"" "s/Licensed under CC BY 4\.0\./All Rights Reserved/" "${root}/config/information.php" || (
+sed -i"" "s/Licensed under MIT/All Rights Reserved/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
@@ -109,6 +109,11 @@ sed -i"" "s/cwchentw\/lightweight-cms//" "${root}/config/socialMedia.php" || (
 )
 
 sed -i"" "6 { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
+    echo "Unable to modify parameters.php" >&2;
+    exit 1;
+)
+
+sed -i"" "s/Lightweight CMS/Home/" "${root}/config/parameters.php" || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
