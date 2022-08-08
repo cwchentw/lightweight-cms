@@ -16,8 +16,7 @@ $breadcrumb = $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB];
         $len = count($breadcrumb);
         for ($i = 0; $i < $len; ++$i) {
             if ($i < $len - 1) {
-                if (!is_null($breadcrumb[$i][LIGHTWEIGHT_CMS_SECTION_META])
-                    && count($breadcrumb[$i][LIGHTWEIGHT_CMS_SECTION_META]) > 0
+                if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_META, $breadcrumb[$i])
                     && array_key_exists("linkTitle", $breadcrumb[$i][LIGHTWEIGHT_CMS_SECTION_META]))
                 {
                     echo "<li class=\"breadcrumb-item\">";
@@ -33,8 +32,7 @@ $breadcrumb = $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB];
                 }
             }
             else {
-                if (!is_null($breadcrumb[$i][LIGHTWEIGHT_CMS_POST_META])
-                    && count($breadcrumb[$i][LIGHTWEIGHT_CMS_POST_META]) > 0
+                if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $breadcrumb[$i])
                     && array_key_exists("linkTitle", $breadcrumb[$i][LIGHTWEIGHT_CMS_POST_META]))
                 {
                     echo "<li class=\"breadcrumb-item active\" aria-current=\"page\">"

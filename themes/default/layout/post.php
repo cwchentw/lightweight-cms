@@ -48,7 +48,9 @@ if (ENABLE_TOC) {
         ?>
 
         <title><?php echo $post[LIGHTWEIGHT_CMS_POST_TITLE] . " | " . SITE_NAME; ?></title>
+        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post) && "" != $post[LIGHTWEIGHT_CMS_POST_AUTHOR]): ?>
         <meta name="author" content="<?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?>">
+        <?php endif; ?>
 
         <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
                   && array_key_exists(METADATA_NOINDEX, $post[LIGHTWEIGHT_CMS_POST_META])

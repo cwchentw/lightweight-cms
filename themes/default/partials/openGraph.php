@@ -1,14 +1,19 @@
 <?php
-$post = $GLOBALS[LIGHTWEIGHT_CMS_POST];
-$section = $GLOBALS[LIGHTWEIGHT_CMS_SECTION];
+if (array_key_exists(LIGHTWEIGHT_CMS_POST, $GLOBALS)) {
+    $post = $GLOBALS[LIGHTWEIGHT_CMS_POST];
+}
+
+if (array_key_exists(LIGHTWEIGHT_CMS_SECTION, $GLOBALS)) {
+    $section = $GLOBALS[LIGHTWEIGHT_CMS_SECTION];
+}
 
 $twitter = TWITTER;
 
 $title = null;
-if (!is_null($post) && array_key_exists(LIGHTWEIGHT_CMS_POST_TITLE, $post)) {
+if (isset($post) && array_key_exists(LIGHTWEIGHT_CMS_POST_TITLE, $post)) {
     $title = $post[LIGHTWEIGHT_CMS_POST_TITLE];
 }
-else if (!is_null($section) && array_key_exists(LIGHTWEIGHT_CMS_SECTION_TITLE, $section)) {
+else if (isset($section) && array_key_exists(LIGHTWEIGHT_CMS_SECTION_TITLE, $section)) {
     $title = $section[LIGHTWEIGHT_CMS_SECTION_TITLE];
 }
 else {
@@ -16,10 +21,10 @@ else {
 }
 
 $description = null;
-if (!is_null($post)) {
+if (isset($post)) {
     $description = \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 }
-else if (!is_null($section)) {
+else if (isset($section)) {
     $description = \LightweightCMS\Plugin\excerpt($section[LIGHTWEIGHT_CMS_SECTION_CONTENT]);
 }
 
