@@ -9,7 +9,7 @@ function loadHome()
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . $sep . "theme" . $sep . "home.php";
+    require $rootDirectory . $sep . "layout" . $sep . "home.php";
 }
 
 function loadSection()
@@ -18,7 +18,7 @@ function loadSection()
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . $sep . "theme" . $sep . "section.php";
+    require $rootDirectory . $sep . "layout" . $sep . "section.php";
 }
 
 function loadPost()
@@ -27,7 +27,7 @@ function loadPost()
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
-    require $rootDirectory . $sep . "theme" . $sep . "post.php";
+    require $rootDirectory . $sep . "layout" . $sep . "post.php";
 }
 
 function loadAssets($dest)
