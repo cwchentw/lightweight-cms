@@ -7,7 +7,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <p class="quick-start-hint">We think you are using <span id="client-system"></span></p>
 
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=8.1.8
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=8.0.22
 > choco install composer
 > choco install nodejs --version=16.16.0
 > choco install rsync
@@ -26,7 +26,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 > git push -u origin master
 </code></pre>
 
-<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@8.1
+<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@8.0
 $ brew install composer
 $ brew install node@16
 </code></pre>

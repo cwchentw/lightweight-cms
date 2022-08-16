@@ -22,7 +22,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ### Windows
 
 ```shell
-> choco install php --version=8.1.8
+> choco install php --version=8.0.22
 > choco install composer
 > choco install nodejs --version=16.16.0
 > choco install rsync
@@ -46,7 +46,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ### MacOS
 
 ```shell
-$ brew install php@8.1
+$ brew install php@8.0
 $ brew install composer
 $ brew install node@16
 ```
