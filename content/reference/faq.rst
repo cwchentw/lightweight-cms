@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions
-mtime: 2022/07/21
+mtime: 2022/08/17
 weight: 4
 ---
 
@@ -40,19 +40,38 @@ Which Language is Utilized to Implement Lightweight CMS?
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-Currently, some GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8, leaving our old code to ``php74`` branch:
+Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php74`` and ``php80`` branches:
 
 ====================== ===========
 GNU/Linux Distribution PHP Version
 ====================== ===========
 Debian 11              7.4.21
 Ubuntu 22.04           8.1.2
-Rocky Linux 8.5        7.2.24 (*)
-Fedora 35              8.0.14 (*)
-openSUSE Leap 15.3     7.4.6
+Rocky Linux 9.0        8.0.13
+Fedora 36              8.1.9
+openSUSE Leap 15.4     8.0.10
 ====================== ===========
 
-*(\*) Rocky Linux 8.5 and Fedora 35 are not usable for Lightweight CMS.*
+How to Run Lightweight CMS on old PHP?
+--------------------------------------
+
+To run Lightweight CMS on PHP 7.4:
+
+.. code-block:: shell
+
+   $ git clone https://github.com/cwchentw/lightweight-cms.git
+   $ cd lightweight-cms
+   $ git checkout php74
+
+To run Lightweight CMS on PHP 8.0:
+
+.. code-block:: shell
+
+   $ git clone https://github.com/cwchentw/lightweight-cms.git
+   $ cd lightweight-cms
+   $ git checkout php80
+
+Non-``master`` branches of Lightweight CMS may not contain latest features.
 
 Does Lightweight CMS Run on Windows?
 --------------------------------------
