@@ -40,6 +40,3 @@ php %libexec%\assets.php || (
     echo Unable to load assets. >&2
     exit /b 1
 )
-
-rem Monitor asset change(s).
-cd "%theme%" && start "" npm run watch
