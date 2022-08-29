@@ -16,6 +16,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 * [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 * Asset compilation (SCSS and Babel)
 * Asset watching and hot change(s)
+* Compile static Lightweight sites
 
 ## Synopsis
 
