@@ -102,21 +102,28 @@ function isWebPage ($path)
 
 function compile ($content, $uri)
 {
+    if ("" !== SITE_PREFIX) {
+        $_uri = SITE_PREFIX . $uri;
+    }
+    else {
+        $_uri = $uri;
+    }
+
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
     $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
     if ("" != $content) {
-        if (!file_exists($publicDirectory . str_replace("/", $sep, $uri))) {
-            if (!mkdir($publicDirectory . str_replace("/", $sep, $uri))) {
+        if (!file_exists($publicDirectory . str_replace("/", $sep, $_uri))) {
+            if (!mkdir($publicDirectory . str_replace("/", $sep, $_uri))) {
                 fwrite(STDERR, "Unable to create a directory for " . $uri . PHP_EOL);
                 exit(1);
             }
         }
 
         if (!file_put_contents(
-            $publicDirectory . str_replace("/", $sep, $uri) . "index.html",
+            $publicDirectory . str_replace("/", $sep, $_uri) . "index.html",
             $content
         )) {
             fwrite(STDERR, "Unable to generate web page for " . $uri . PHP_EOL);
