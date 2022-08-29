@@ -21,6 +21,8 @@ if (count($argv) <= 1) {
 }
 
 $loc = $argv[1];
+# Trick for PHP CLI.
+$_SERVER["REQUEST_URI"] = $loc;
 
 if ("" != SITE_PREFIX) {
     $origLoc = $loc;

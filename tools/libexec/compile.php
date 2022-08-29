@@ -30,6 +30,7 @@ while (count($dirs) > 0) {
 
     $files = scandir($dir);
 
+    $pageCount = 0;
     foreach ($files as $file) {
         # Skip special directories.
         if ("." == substr($file, 0, 1)) {
@@ -55,6 +56,8 @@ while (count($dirs) > 0) {
             compile($pageContent, $uri);
         }
         else if (isWebPage($path)) {
+            $pageCount += 1;
+
             $fileParts = pathinfo($path);
             $relPath = str_replace($sep, "/", substr($path, strlen($contentDirectory)));
             $uri = substr($relPath, 0, -(strlen($fileParts["extension"])+1));
@@ -66,6 +69,21 @@ while (count($dirs) > 0) {
 
             $pageContent = compilePage(SITE_PREFIX . $uri);
             compile($pageContent, $uri);
+        }
+    }
+
+    if (POST_PER_PAGE > 0 && $pageCount > POST_PER_PAGE) {
+        $baseURI = str_replace($sep, "/", substr($dir, strlen($contentDirectory)));
+
+        $c = 1;
+        while ($pageCount > POST_PER_PAGE) {
+            $uri = $baseURI . "/" . $c . "/";
+
+            $pageContent = compilePage(SITE_PREFIX . $uri);
+            compile($pageContent, $uri);
+
+            $c += 1;
+            $pageCount -= POST_PER_PAGE;
         }
     }
 }
