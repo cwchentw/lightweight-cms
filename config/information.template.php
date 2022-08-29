@@ -3,7 +3,7 @@
 
 
 # Base URL of a site without a trailing slash.
-define("SITE_BASE_URL", "https://example.com");
+define("SITE_BASE_URL", "https://lightweightcms.org");
 # Prefix of a site without a trailing slash.
 define("SITE_PREFIX", "");
 # Full name of a site.
