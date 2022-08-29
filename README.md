@@ -33,6 +33,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 ```shell
 > git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
+> git checkout php80
 > .\tools\bin\serve.bat
 ```
 
@@ -41,7 +42,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 > .\tools\bin\migrate.bat
 > git add .
 > git commit -m "Migrate to a new site"
-> git push -u origin master
+> git push -u origin php80
 ```
 
 ### MacOS
@@ -55,6 +56,7 @@ $ brew install node@16
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+$ git checkout php80
 $ ./tools/bin/serve
 ```
 
@@ -63,7 +65,7 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ ./tools/bin/migrate
 $ git add .
 $ git commit -m "Migrate to a new site"
-$ git push -u origin master
+$ git push -u origin php80
 ```
 
 ### Ubuntu
@@ -87,6 +89,7 @@ $ nvm use 16.16.0
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+$ git checkout php80
 $ ./tools/bin/serve
 ```
 
@@ -95,7 +98,7 @@ $ git remote set-url origin https://example.com/user/mysite.git
 $ ./tools/bin/migrate
 $ git add .
 $ git commit -m "Migrate to a new site"
-$ git push -u origin master
+$ git push -u origin php80
 ```
 
 ## Why not another Static Site Generator?

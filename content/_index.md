@@ -16,6 +16,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <pre class="run-on-windows" style="display: none;"><code class="shell">> git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
+> git checkout php80
 > .\tools\bin\serve.bat
 </code></pre>
 
@@ -23,7 +24,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 > .\tools\bin\migrate.bat
 > git add .
 > git commit -m "Migrate to a new site"
-> git push -u origin master
+> git push -u origin php80
 </code></pre>
 
 <pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@8.0
@@ -33,6 +34,7 @@ $ brew install node@16
 
 <pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+$ git checkout php80
 $ ./tools/bin/serve
 </code></pre>
 
@@ -51,6 +53,7 @@ $ nvm use 16.16.0
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+$ git checkout php80
 $ ./tools/bin/serve
 </code></pre>
 
@@ -58,7 +61,7 @@ $ ./tools/bin/serve
 $ ./tools/bin/migrate
 $ git add .
 $ git commit -m "Migrate to a new site"
-$ git push -u origin master
+$ git push -u origin php80
 </code></pre>
 
 <p class="quick-start-hint">View the instructions for <button id="instruction-windows" class="btn btn-secondary instruction-button">Windows</button> <button id="instruction-macos" class="btn btn-secondary instruction-button">macOS</button> <button id="instruction-linux" class="btn btn-secondary instruction-button">GNU/Linux</button></p>
