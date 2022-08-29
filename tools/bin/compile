@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Run a mdcms site locally with builtin web server of PHP.
+# Compile a static Lightweight site.
 
 
 # Check whether PHP is available on the system.
@@ -84,18 +84,10 @@ fi
     exit $?;
 )
 
-# Monitor asset change(s).
-cd "${theme}" && npm run watch &
-export LIGHTWEIGHT_CMS_THEME_ASSET_PID=$!
-
 # Load personal assets.
 "${bin}/site-assets" || (
     exit $?;
 )
-
-# Monitor asset change(s).
-cd "${root}" && npm run watch &
-export LIGHTWEIGHT_CMS_SITE_ASSET_PID=$!
 
 # Create assets.
 #npm install
@@ -106,13 +98,5 @@ cp -pr "${static}/"* "$public" || (
     exit 1;
 )
 
-# Copy router of mdcms.
-cp -pr "${www}/index.php" "$public" || (
-    echo "Unable to copy router of mdmcs to public directory" >&2;
-    exit 1;
-)
-
-# Run a mdcms site locally.
-echo "Run a mdcms site locally. Press ctrl + c to stop the server."
-trap "kill -9 ${LIGHTWEIGHT_CMS_THEME_ASSET_PID}; kill -9 ${LIGHTWEIGHT_CMS_SITE_ASSET_PID}" exit;
-php -S "$address" -t "$public";
+# Compile a Lightweight site.
+php "${libexec}/compile.php"

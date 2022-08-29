@@ -44,7 +44,3 @@ fi
 php "${libexec}/assets.php" || (
     exit 1;
 )
-
-# Monitor asset change(s).
-cd "${theme}" && npm run watch &
-export LIGHTWEIGHT_CMS_THEME_ASSET_PID=$!

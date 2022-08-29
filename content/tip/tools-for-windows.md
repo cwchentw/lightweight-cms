@@ -1,7 +1,7 @@
 ---
 title: Tips for Tools on Windows
 linkTitle: Tools on Windows
-mtime: 2021/7/10
+mtime: 2022/8/29
 ---
 
 ## Synopsis
@@ -36,17 +36,13 @@ By default, this development web server runs on http://localhost:5000. To run a 
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
 
-## Synchonize Content to a Production Environment
+## Compile Static Lightweight Sites
 
-Let's say you run an local Nginx web server on [Laragon](https://laragon.org/). Run this command to update your change(s) on a production environment:
+Invoke the following command:
 
 ```shell
-> .\tools\bin\sync-to.bat c:\laragon\www\mdcms\
+> .\tools\bin\compile.bat
 ```
-
-Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything on your production environment.
-
-Keep a trailing slash on your target path. It is required for `rsync(1)` to work properly.
 
 ## Deploy a Lightweight CMS Site to a PaaS
 
@@ -59,12 +55,24 @@ $ ./tools/bin/publish
 We implement this script in POSIX shell because most PaaS are based on GNU/Linux. If you choose a Windows PaaS, run this script instead:
 
 ```shell
-$ .\tools\bin\publish.bat
+> .\tools\bin\publish.bat
 ```
 
 These utility scripts will copy router of Lightweight CMS and assets to *public* directory, ready for further step(s) to deploy your site.
 
 See [this article](/howto/how-to-deploy-lightweight-cms-to-digitalocean-app-platform/) for information related to deploy a Lightweight CMS site to a PaaS.
+
+## Synchonize Content to a Production Environment
+
+Let's say you run an local Nginx web server on [Laragon](https://laragon.org/). Run this command to update your change(s) on a production environment:
+
+```shell
+> .\tools\bin\sync-to.bat c:\laragon\www\mdcms\
+```
+
+Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything on your production environment.
+
+Keep a trailing slash on your target path. It is required for `rsync(1)` to work properly.
 
 ## Update Site Settings after Changing Project Structure
 

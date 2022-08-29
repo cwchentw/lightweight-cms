@@ -1,5 +1,5 @@
 @echo off
-rem Run a mdcms site locally with builtin web server of PHP.
+rem Compile a static Lightweight site.
 
 
 rem Check whether PHP is available on the system.
@@ -75,9 +75,6 @@ call %bin%\assets.bat || (
     exit /b %ERRORLEVEL%
 )
 
-rem Monitor asset change(s).
-cd "%theme%" && start "" npm run watch
-
 rem Load personal assets.
 call %bin%\site-assets.bat || (
     exit /b %ERRORLEVEL%
@@ -89,15 +86,7 @@ xcopy /s /y %static% %public% || (
     exit /b 1
 )
 
-rem Copy router of mdcms.
-copy /y %www%\index.php %public% || (
-    echo Unable to copy router of mdmcs to public directory >&2
-    exit /b 1
+rem Compile a Lightweight site.
+call php %libexec%\compile.php || (
+    exit /b %ERRORLEVEL%
 )
-
-rem Monitor asset change(s).
-cd %root% && start "" npm run watch
-
-rem Run a mdcms site locally.
-echo Run a mdcms site locally. Press ctrl + c to stop the server.
-php -S %address% -t %public%
