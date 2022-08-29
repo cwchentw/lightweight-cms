@@ -7,9 +7,9 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <p class="quick-start-hint">We think you are using <span id="client-system"></span></p>
 
-<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=8.1.8
+<pre class="install-on-windows" style="display: none;"><code class="shell">> choco install php --version=8.1.9
 > choco install composer
-> choco install nodejs --version=16.16.0
+> choco install nodejs --version=16.17.0
 > choco install rsync
 > choco install sed
 </code></pre>
@@ -45,8 +45,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener nofollow"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.16.0
-$ nvm use 16.16.0
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.17.0
+$ nvm use 16.17.0
 </code></pre>
 
 <pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite

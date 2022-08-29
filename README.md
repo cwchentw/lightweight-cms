@@ -16,16 +16,16 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 * [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 * Asset compilation (SCSS and Babel)
 * Asset watching and hot change(s)
-* Compile static Lightweight sites
+* Compile static Lightweight CMS sites
 
 ## Synopsis
 
 ### Windows
 
 ```shell
-> choco install php --version=8.1.8
+> choco install php --version=8.1.9
 > choco install composer
-> choco install nodejs --version=16.16.0
+> choco install nodejs --version=16.17.0
 > choco install rsync
 > choco install sed
 ```
@@ -44,7 +44,7 @@ Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_manag
 > git push -u origin master
 ```
 
-### MacOS
+### macOS
 
 ```shell
 $ brew install php@8.1
@@ -80,8 +80,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install 16.16.0
-$ nvm use 16.16.0
+$ nvm install 16.17.0
+$ nvm use 16.17.0
 ```
 
 ```shell

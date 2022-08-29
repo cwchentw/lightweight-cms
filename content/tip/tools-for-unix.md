@@ -42,7 +42,7 @@ $ sudo ./tools/bin/serve
 
 Internally, this utility script runs a builtin web server of PHP. This feature is available after PHP 5.4 ([ref](https://www.php.net/manual/en/features.commandline.webserver.php)).
 
-## Compile Static Lightweight Sites
+## Compile Static Lightweight CMS Sites
 
 Invoke the following command:
 
