@@ -51,11 +51,11 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 $ nvm use 16.17.0
 </code></pre>
 
-<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
-$ cd mysite
-$ git checkout <span class="github-lwcms-branch">master</span>
-$ ./tools/bin/serve
-</code></pre>
+<div id="run-on-ubuntu" class="demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite
+<span class="gp">$ </span><span class="nb">cd</span> mysite
+<span class="gp">$ </span>git checkout <span class="github-lwcms-branch">master</span>
+<span class="gp">$ </span>./tools/bin/serve
+</pre></div>
 
 <div id="run-on-unix" class="demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git remote set-url origin https://example.com/user/mysite.git
 <span class="gp">$ </span>./tools/bin/migrate
