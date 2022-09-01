@@ -27,6 +27,43 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 <span class="gp">&gt;</span> git push -u origin <span class="github-lwcms-branch">master</span>
 </pre></div>
 
+<div class="install-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>brew install php@<span class="brew-php-version">8.1</span>
+<span class="gp">$ </span>brew install composer
+<span class="gp">$ </span>brew install node@16
+</pre></div>
+
+<div class="run-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite
+<span class="gp">$ </span><span class="nb">cd</span> mysite
+<span class="gp">$ </span>git checkout <span class="github-lwcms-branch">master</span>
+<span class="gp">$ </span>./tools/bin/serve
+</pre></div>
+
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip unzip
+</code></pre>
+
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
+</code></pre>
+
+<p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener nofollow"><code>nvm</code></a></p>
+
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.17.0
+$ nvm use 16.17.0
+</code></pre>
+
+<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
+$ cd mysite
+$ git checkout <span class="github-lwcms-branch">master</span>
+$ ./tools/bin/serve
+</code></pre>
+
+<div id="run-on-unix" class="demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git remote set-url origin https://example.com/user/mysite.git
+<span class="gp">$ </span>./tools/bin/migrate
+<span class="gp">$ </span>git add .
+<span class="gp">$ </span>git commit -m <span class="s2">"Migrate to a new site"</span>
+<span class="gp">$ </span>git push -u origin <span class="github-lwcms-branch">master</span>
+</pre></div>
+
 <style id="css-style">pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -111,43 +148,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .demo-highlight .vm { color: #7AB4DB; font-weight: bold } /* Name.Variable.Magic */
 .demo-highlight .il { color: #4FB8CC } /* Literal.Number.Integer.Long */</style>
 
-<pre class="install-on-macos" style="display: none;"><code class="shell">$ brew install php@<span class="brew-php-version">8.1</span>
-$ brew install composer
-$ brew install node@16
-</code></pre>
-
-<pre id="run-on-macos" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
-$ cd mysite
-$ git checkout <span class="github-lwcms-branch">master</span>
-$ ./tools/bin/serve
-</code></pre>
-
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ sudo apt install php php-xml php-mbstring php-zip unzip
-</code></pre>
-
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ curl -o composer-setup.php https://getcomposer.org/installer
-$ php composer-setup.php --install-dir=$HOME/bin --filename=composer
-</code></pre>
-
-<p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener nofollow"><code>nvm</code></a></p>
-
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.17.0
-$ nvm use 16.17.0
-</code></pre>
-
-<pre id="run-on-ubuntu" style="display: none;"><code class="shell">$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
-$ cd mysite
-$ git checkout <span class="github-lwcms-branch">master</span>
-$ ./tools/bin/serve
-</code></pre>
-
-<pre id="run-on-unix" style="display: none;"><code class="shell">$ git remote set-url origin https://example.com/user/mysite.git
-$ ./tools/bin/migrate
-$ git add .
-$ git commit -m "Migrate to a new site"
-$ git push -u origin <span class="github-lwcms-branch">master</span>
-</code></pre>
-
 <div class="quick-start-hint row row-cols-auto justify-content-center">
     <div class="col">
         View the instructions for
@@ -187,6 +187,7 @@ $ git push -u origin <span class="github-lwcms-branch">master</span>
     var runOnWindows = document.getElementsByClassName("run-on-windows");
 
     var installOnMacOS = document.getElementsByClassName("install-on-macos");
+    var runOnMacOS = document.getElementsByClassName("run-on-macos");
 
     var installOnUbuntu = document.getElementsByClassName("install-on-ubuntu");
 
@@ -216,7 +217,10 @@ $ git push -u origin <span class="github-lwcms-branch">master</span>
             installOnMacOS[i].style.display = "inherit";
         }
 
-        document.getElementById("run-on-macos").style.display = "inherit";
+        for (var i = 0; i < runOnMacOS.length; ++i) {
+            runOnMacOS[i].style.display = "inherit";
+        }
+
         document.getElementById("run-on-unix").style.display = "inherit";
 
         clientSystem.innerText = "macOS";
@@ -251,7 +255,10 @@ $ git push -u origin <span class="github-lwcms-branch">master</span>
                 installOnMacOS[i].style.display = "none";
             }
 
-            document.getElementById("run-on-macos").style.display = "none";
+            for (var i = 0; i < runOnMacOS.length; ++i) {
+                runOnMacOS[i].style.display = "none";
+            }
+
             document.getElementById("run-on-unix").style.display = "none";
 
             for (var i = 0; i < installOnUbuntu.length; ++i) {
@@ -273,7 +280,10 @@ $ git push -u origin <span class="github-lwcms-branch">master</span>
                 installOnMacOS[i].style.display = "inherit";
             }
 
-            document.getElementById("run-on-macos").style.display = "inherit";
+            for (var i = 0; i < runOnMacOS.length; ++i) {
+                runOnMacOS[i].style.display = "inherit";
+            }
+
             document.getElementById("run-on-unix").style.display = "inherit";
 
             for (var i = 0; i < installOnUbuntu.length; ++i) {
@@ -295,7 +305,9 @@ $ git push -u origin <span class="github-lwcms-branch">master</span>
                 installOnMacOS[i].style.display = "none";
             }
 
-            document.getElementById("run-on-macos").style.display = "none";
+            for (var i = 0; i < runOnMacOS.length; ++i) {
+                runOnMacOS[i].style.display = "none";
+            }
 
             for (var i = 0; i < installOnUbuntu.length; ++i) {
                 installOnUbuntu[i].style.display = "inherit";
