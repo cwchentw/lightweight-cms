@@ -145,7 +145,8 @@ a {
 /* Fix wrapping issue on Apple mobile devices. */
 pre,
 code,
-textarea {
+textarea,
+.demo-highlight {
     font-family: $monospace;
     white-space: pre;
     word-wrap: normal;
@@ -153,9 +154,24 @@ textarea {
 
 @media screen and (min-width: $large-screen-width) {
     pre,
-    table {
+    table,
+    .demo-highlight {
         margin-left: 6%;
         margin-right: 6%;
+    }
+}
+
+.demo-highlight {
+    margin-bottom: 10px;
+    padding: 20px;
+
+    color: #e6e1dc;
+    background: #2b2b2b;
+
+    pre {
+        margin-left: unset;
+        margin-right: unset;
+        margin-bottom: unset;
     }
 }
 
