@@ -74,61 +74,61 @@ cp "${root}/config/internal.template.php" "${root}/config/internal.php" || (
 
 # Update the site base URL.
 # TODO: Set the new site name of Lightweight CMS.
-sed -i"" "s/mdcms.org/example.com/" "${root}/config/information.php" || (
+sed -i "" -e "s/mdcms.org/example.com/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
 # Update the site name.
-sed -i"" "s/Lightweight CMS/Awesome Site/" "${root}/config/information.php" || (
+sed -i "" -e "s/Lightweight CMS/Awesome Site/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
 # Update the site description.
-sed -i"" "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
+sed -i "" -e "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
 # Update the site author.
-sed -i"" "s/Michelle Chen/The Site Author/" "${root}/config/information.php" || (
+sed -i "" -e "s/Michelle Chen/The Site Author/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
 # Update the copyright text.
-sed -i"" "s/Licensed under MIT/All Rights Reserved/" "${root}/config/information.php" || (
+sed -i "" -e "s/Licensed under MIT/All Rights Reserved/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
 
-sed -i"" "s/cwchentw\/lightweight-cms//" "${root}/config/socialMedia.php" || (
+sed -i "" -e "s/cwchentw\/lightweight-cms//" "${root}/config/socialMedia.php" || (
     echo "Unable to modify socialMedia.php" >&2;
     exit 1;
 )
 
-sed -i"" "6 { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
+sed -i "" -e "6 { N; N; N; N; N; N; N; N; s/define(.*\"REDIRECT_LIST\",.*);/define(\"REDIRECT_LIST\", []);/; }" "${root}/config/parameters.php"  || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
 
-sed -i"" "s/Lightweight CMS/Home/" "${root}/config/parameters.php" || (
+sed -i "" -e "s/Lightweight CMS/Home/" "${root}/config/parameters.php" || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
 
-sed -i"" "s/#578583//" "${root}/config/parameters.php" || (
+sed -i "" -e "s/#578583//" "${root}/config/parameters.php" || (
     echo "Unable to modify parameters.php" >&2;
     exit 1;
 )
 
-sed -i"" "s/UA-105146581-5//" "${root}/config/optionalFeatures.php" || (
+sed -i "" -e "s/UA-105146581-5//" "${root}/config/optionalFeatures.php" || (
     echo "Unable to modify optionalFeatures.php" >&2;
     exit 1;
 )
 
-sed -i"" "s/content/posts/" "${root}/config/internal.php" || (
+sed -i "" -e "s/content/posts/" "${root}/config/internal.php" || (
     echo "Unable to modify internal.php" >&2;
     exit 1;
 )
