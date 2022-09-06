@@ -73,8 +73,7 @@ cp "${root}/config/internal.template.php" "${root}/config/internal.php" || (
 )
 
 # Update the site base URL.
-# TODO: Set the new site name of Lightweight CMS.
-sed -i "" -e "s/mdcms.org/example.com/" "${root}/config/information.php" || (
+sed -i "" -e "s/lightweightcms.org/example.com/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
@@ -86,7 +85,7 @@ sed -i "" -e "s/Lightweight CMS/Awesome Site/" "${root}/config/information.php" 
 )
 
 # Update the site description.
-sed -i "" -e "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
+sed -i "" -e "s/A Both <span[^>]*>[^<]*<\/span> and <span[^>]*>[^<]*<\/span> Flat-File CMS, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )
