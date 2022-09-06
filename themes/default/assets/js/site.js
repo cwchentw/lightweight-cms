@@ -132,45 +132,6 @@ loadContent(fixedSidebar);
 addEvent("scroll", window, fixedSidebar);
 addEvent("resize", window, fixedSidebar);
 
-function changeMarkupLanguageText () {
-    let text = "Markdown, AsciiDoc and reStructuredText";
-
-    /* Show the tooltip on all pages other than the home page. */
-    if ("/" !== window.location.pathname) {
-        let anchor = document.getElementById('lightweight-markup-languages');
-        if (!anchor)
-            return;
-
-        anchor.setAttribute("title", text);
-
-        return;
-    }
-
-    let pos = -12;  /* The counter to control the ticks. */
-    setInterval(function () {
-        let anchor = document.getElementById('lightweight-markup-languages');
-        if (!anchor)
-            return;
-
-        /* Keep the original text for a while. */
-        if (pos < 0) {
-            pos++;
-        }
-        /* Change the text character-by-character. */
-        else if (pos <= text.length) {
-            anchor.innerText = text.slice(0, pos);
-            anchor.style.color = 'orange';
-            pos++;
-        }
-        /* Stop the text animation. */
-        else {
-            return;
-        }
-    }, 90 /* One tick in microseconds. */);
-}
-
-loadContent(changeMarkupLanguageText);
-
 function alignSectionTitleHeights () {
     /* Search all section blocks. */
     let sectionBlocks = document.getElementsByClassName("section-block");
