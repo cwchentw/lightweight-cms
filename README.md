@@ -1,10 +1,11 @@
 # Lightweight CMS
 
-Lightweight CMS is a flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system) supporting common lightweight markup languages, powered by PHP.
+Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system), powered by PHP.
 
 ## Features
 
 * Cross-platform
+* Switch between static mode and dynamic one
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
 * PHP-based custom pages
 * Store draft posts before publishing
