@@ -65,8 +65,7 @@ copy "%root%\config\internal.template.php" "%root%\config\internal.php" || (
 
 set informationConfig=%root%\config\information.php
 rem Update the site base URL.
-rem TODO: Set the new site name of Lightweight CMS.
-sed -i "s/mdcms.org/example.com/" %informationConfig:\=/% || (
+sed -i "s/lightweightcms.org/example.com/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )
@@ -78,7 +77,7 @@ sed -i "s/Lightweight CMS/Awesome Site/" %informationConfig:\=/% || (
 )
 
 rem Update the site description.
-sed -i "s/A Flat-File CMS Supporting <span[^>]*>[^<]*<\/span>, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
+sed -i "s/A Both <span[^>]*>[^<]*<\/span> and <span[^>]*>[^<]*<\/span> Flat-File CMS, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Clean the public directories.
+# Clean downloaded code.
 
 
 cwd=$(dirname $0);
@@ -19,7 +19,7 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
-for dir in public "${theme}/public";
+for dir in vendor node_modules public "${theme}/vendor" "${theme}/node_modules" "${theme}/public";
 do
     rm -rf "$dir";
 done

@@ -1,5 +1,5 @@
 @echo off
-rem Clean the public directories.
+rem Clean downloaded code.
 
 
 rem Get working directory of current batch script.
@@ -29,4 +29,4 @@ if not exist %public% (
     )
 )
 
-for %%D in (public %theme%\public) do rmdir /s /q %%D
+for %%D in (vendor node_modules public %theme%\vendor %theme%\node_modules %theme%\public) do rmdir /s /q %%D
