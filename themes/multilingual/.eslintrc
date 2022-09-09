@@ -1,0 +1,13 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false
+    },
+    "rules": {
+        "strict": 1
+    },
+    "extends": ["plugin:compat/recommended"],
+    "env": {
+        "browser": true
+    }
+}

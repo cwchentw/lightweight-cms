@@ -1,0 +1,11 @@
+{
+    "siteName": "Lightweight CMS",
+    "siteDescription": "A Both <span class=\"static-text\">Static</span> and <span class=\"dynamic-text\">Dynamic</span> Flat-File CMS, Powered by PHP",
+    "about": "About",
+    "termsAndConditions": "Terms and Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "noContent": "No content available yet.",
+    "articles": "Articles",
+    "readMore": "Read More",
+    "exploreMore": "Explore More"
+}
