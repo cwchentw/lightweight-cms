@@ -6,6 +6,7 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 
 * Cross-platform
 * Switch between static mode and dynamic one
+* Build multilingual sites *(experimental)*
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
 * PHP-based custom pages
 * Store draft posts before publishing
@@ -122,8 +123,6 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [Composer](https://getcomposer.org)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org) (for linting)
-
-PHP 8.x is neither tested nor recommended because major GNU/Linux distributions still utilize PHP 7.x mostly.
 
 ### Front End
 
