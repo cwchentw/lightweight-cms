@@ -1,5 +1,8 @@
 # Changelog
 
+* 2022-09-09
+  * Support multilingual sites
+  * Migrate to *multilingual* theme
 * 2022-07-24
   * Enable asset watching mode. Use the port of the built-in server other than the range from `3000` to `3003`
 * 2022-07-21
