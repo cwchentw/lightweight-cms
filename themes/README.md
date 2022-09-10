@@ -6,4 +6,4 @@ This directory places themes of Lightweight CMS. If you want to establish a new 
 
 ## For Theme Creators
 
-Create an independent repo for your own Lightweight CMS theme. You may either copy one theme here as your boilerplate project or write everything from scratch. Later, integrate your theme into Lightweight CMS as a Git submodule. If you alter any thing here directly, your modifications will be rejected unless there is some compelling reason.
+Create an independent repo for your own Lightweight CMS theme. You may either copy one theme here as your boilerplate project or write everything from scratch. Later, integrate your theme into Lightweight CMS as a Git submodule. If you alter anything here directly, your modification will be rejected unless there is some compelling reason.
