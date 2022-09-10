@@ -9,6 +9,22 @@ function includePartials ($partial)
     include __DIR__ . "/../partials/" . $partial;
 }
 
+function baseURI ()
+{
+    $uri = $_SERVER["REQUEST_URI"];
+    if ("/" !== substr($uri, -1))
+        $uri .= "/";
+
+    if (0 === strpos($uri, "/zh-tw")) {
+        return substr($uri, strlen("/zh-tw"));
+    }
+    else if (0 === strpos($uri, "/en-us")) {
+        return substr($uri, strlen("/en-us"));
+    }
+
+    return $uri;
+}
+
 function siteLanguage ()
 {
     if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {

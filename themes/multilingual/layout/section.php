@@ -39,6 +39,7 @@ if (POST_PER_PAGE > 0) {
 
         <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
+        <?php includePartials("hreflang.php"); ?>
     </head>
     <body>
         <?php includePartials("navbar.php"); ?>
