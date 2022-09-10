@@ -25,6 +25,22 @@ function baseURI ()
     return $uri;
 }
 
+function homePage ()
+{
+    $uri = $_SERVER["REQUEST_URI"];
+    if ("/" !== substr($uri, -1))
+        $uri .= "/";
+
+    if (0 === strpos($uri, "/zh-tw")) {
+        return SITE_PREFIX . "/zh-tw/";
+    }
+    else if (0 === strpos($uri, "/en-us")) {
+        return SITE_PREFIX . "/en-us/";
+    }
+
+    return SITE_PREFIX . "/";
+}
+
 function siteLanguage ()
 {
     if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
@@ -38,17 +54,32 @@ function siteLanguage ()
     return SITE_LANGUAGE;
 }
 
+function siteName ()
+{
+    return localize("siteName", SITE_NAME);
+}
+
 function siteShortName ()
 {
+    return localize("siteShortName", SITE_SHORT_NAME);
+}
+
+function siteDescription ()
+{
+    return localize("siteDescription", SITE_DESCRIPTION);
+}
+
+function localize ($key, $default)
+{
     if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
-        return getLocalizedText("siteShortName");
+        return getLocalizedText($key);
     }
     else if (0 === strpos($_SERVER["REQUEST_URI"], "/en-us")) {
-        return getLocalizedText("siteShortName");
+        return getLocalizedText($key);
     }
 
     /* Fallback to default site short name. */
-    return SITE_SHORT_NAME;
+    return $default;
 }
 
 function getLocalizedText ($textFor)

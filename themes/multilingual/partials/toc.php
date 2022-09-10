@@ -36,7 +36,7 @@ else {
 ?>
 
 <div id="toc" class="sidebar">
-    <div class="text-center">Table of Contents</div>
+    <div class="text-center"><?php echo getLocalizedText("toc"); ?></div>
     <ul>
         <?php
         foreach ($subtitles as $subtitle) {
@@ -51,8 +51,8 @@ else {
         ?>
 
         <!-- FIXME: Check the rendered URL. -->
-        <li><a href="<?php echo $URI; ?>#top" class="toc-link">Back to Top</a></li>
+        <li><a href="<?php echo $URI; ?>#top" class="toc-link"><?php echo getLocalizedText("backToTop"); ?></a></li>
 
-        <li><a href="<?php echo SITE_PREFIX . "/"; ?>" class="toc-link">Back to Home</a></li>
+        <li><a href="<?php echo homePage(); ?>" class="toc-link"><?php echo getLocalizedText("backToHome"); ?></a></li>
     </ul>
 </div>

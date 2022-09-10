@@ -13,8 +13,16 @@ $breadcrumb = $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB];
     <ol class="breadcrumb">
 
         <?php
+        $uri = $_SERVER["REQUEST_URI"];
         $len = count($breadcrumb);
         for ($i = 0; $i < $len; ++$i) {
+            # Skip top breadcrumb on the subsites.
+            if (0 === $i
+                &&(0 === strpos($uri, "/zh-tw") || 0 === strpos($uri, "/en-us")))
+            {
+                continue;
+            }
+
             if ($i < $len - 1) {
                 if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_META, $breadcrumb[$i])
                     && array_key_exists("linkTitle", $breadcrumb[$i][LIGHTWEIGHT_CMS_SECTION_META]))
