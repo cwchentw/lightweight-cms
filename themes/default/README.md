@@ -4,6 +4,10 @@
 
 This is *default* theme for Lightweight CMS. In addition, it serves as a template to create other themes.
 
+## Note
+
+This theme doesn't support multilingual sites. If you demand one, check our [multilingual theme](/themes/multilingual/) instead.
+
 ## System Requirements
 
 * Production environment
@@ -34,7 +38,7 @@ There are only five mandatory functions in a Lightweight CMS theme currently:
 * `loadHome()`: Load a layout of home page
 * `loadSection()`: Load a layout of sections
 * `loadPost()`: Load a layout of posts
-* `loadPage()`: Load a layout of pages
+* `loadPage()`: Load a layout of pages *(not implemented yet)*
 * `loadAssets($dest)`: Load assets
 
 ### `loadHome()` Function

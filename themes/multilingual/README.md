@@ -4,6 +4,10 @@
 
 This is *multilingual* theme for Lightweight CMS. In addition, it serves as a template to create other themes.
 
+## Note
+
+This theme intends for multilingual sites, code of which is inevitably more complex than that of the themes for monolingual sites. If no multilingual site is required, check our [default theme](/themes/default/) instead.
+
 ## System Requirements
 
 * Production environment
@@ -34,7 +38,7 @@ There are only five mandatory functions in a Lightweight CMS theme currently:
 * `loadHome()`: Load a layout of home page
 * `loadSection()`: Load a layout of sections
 * `loadPost()`: Load a layout of posts
-* `loadPage()`: Load a layout of pages
+* `loadPage()`: Load a layout of pages *(not implemented yet)*
 * `loadAssets($dest)`: Load assets
 
 ### `loadHome()` Function
@@ -171,7 +175,15 @@ In contrary, if you utilize another front end stack(s) like Less and TypeScript,
 
 ## Add More Locales
 
-This theme adapts the URI prefix of a web page as its locale. You may add more locale(s) as needed.
+There are three conventional policies for multilingual sites:
+
+* Multiple domains
+* Same domain, multiple subdomains
+* Same domain, same subdomain
+
+Among them, the latest is best for SEO because all web pages contribute to a single domain. This theme confirms the same policy as well.
+
+This theme adapts the URI prefix of a web page as its locale. You may add more locale(s) as needed. Follow our code conventions while adding another locale for your website.
 
 ## Copyright
 
