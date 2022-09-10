@@ -63,7 +63,7 @@ $status = 200;
             <div id="main-content">
                 <?php
                 # Show home content if it is not empty.
-                if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
+                if (0 === strpos($_SERVER["REQUEST_URI"], SITE_PREFIX . "/zh-tw")) {
                     if (isset($section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
                         && "" != $section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
                     {
@@ -161,10 +161,10 @@ $status = 200;
                     echo "<div class=\"sections\">";  # Directive for the region of the sections.
                     foreach ($sections as $section) {
                         # Skip locale specific subsites.
-                        if ("/en-us/" === $section[LIGHTWEIGHT_CMS_LINK_PATH]) {
+                        if (SITE_PREFIX . "/en-us/" === $section[LIGHTWEIGHT_CMS_LINK_PATH]) {
                             continue;
                         }
-                        else if ("/zh-tw/" === $section[LIGHTWEIGHT_CMS_LINK_PATH]) {
+                        else if (SITE_PREFIX . "/zh-tw/" === $section[LIGHTWEIGHT_CMS_LINK_PATH]) {
                             continue;
                         }
 

@@ -15,17 +15,17 @@ $uri = $_SERVER["REQUEST_URI"];
 if ("/" !== substr($uri, -1))
     $uri .= "/";
 
-if (0 === strpos($uri, "/zh-tw")) {
+if (isZhTW()) {
     $referenceURI = "/zh-tw/reference/";
     $howtoURI = "/zh-tw/howto/";
     $tipURI = "/zh-tw/tip/";
 }
-else if (0 === strpos($uri, "/en-us")) {
+else if (isEnUS()) {
     $referenceURI = "/en-us/reference/";
     $howtoURI = "/en-us/howto/";
     $tipURI = "/en-us/tip/";
 }
-else /* Fallback to American English */ {
+else /* Fallback to default language. */ {
     $referenceURI = "/reference/";
     $howtoURI = "/howto/";
     $tipURI = "/tip/";

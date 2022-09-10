@@ -21,37 +21,37 @@ if ("/" !== substr($uri, -1))
     $uri .= "/";
 
 if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section)) {
-    if (0 === strpos($uri, "/zh-tw")) {
+    if (isZhTW()) {
         $writtenBy = "由 " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR] . " 撰寫";
     }
-    else if (0 === strpos($uri, "/en-us")) {
+    else if (isEnUS()) {
         $writtenBy = "Written by " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR];
     }
-    else /* Fallback to American English */ {
+    else /* Fallback to default language. */ {
         $writtenBy = "Written by " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR];
     }
 }
 
-if (0 === strpos($uri, "/zh-tw")) {
+if (isZhTW()) {
     $period = "。";
 }
-else if (0 === strpos($uri, "/en-us")) {
+else if (isEnUS()) {
     $period = ". ";
 }
-else /* Fallback to American English */ {
+else /* Fallback to default language. */ {
     $period = ". ";
 }
 
 if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)) {
-    if (0 === strpos($uri, "/zh-tw")) {
+    if (isZhTW()) {
         $lastModifiedOn = "最後修改於西元 " . date("Y", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 年 "
                                            . date("m", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 月 "
                                            . date("d", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 日";
     }
-    else if (0 === strpos($uri, "/en-us")) {
+    else if (isEnUS()) {
         $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
     }
-    else /* Fallback to American English */ {
+    else /* Fallback to default language. */ {
         $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
     }
 }

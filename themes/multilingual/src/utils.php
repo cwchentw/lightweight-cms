@@ -31,10 +31,10 @@ function homePage ()
     if ("/" !== substr($uri, -1))
         $uri .= "/";
 
-    if (0 === strpos($uri, "/zh-tw")) {
+    if (0 === strpos($uri, SITE_PREFIX . "/zh-tw")) {
         return SITE_PREFIX . "/zh-tw/";
     }
-    else if (0 === strpos($uri, "/en-us")) {
+    else if (0 === strpos($uri, SITE_PREFIX . "/en-us")) {
         return SITE_PREFIX . "/en-us/";
     }
 
@@ -71,10 +71,10 @@ function siteDescription ()
 
 function localize ($key, $default)
 {
-    if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
+    if (isZhTW()) {
         return getLocalizedText($key);
     }
-    else if (0 === strpos($_SERVER["REQUEST_URI"], "/en-us")) {
+    else if (isEnUS()) {
         return getLocalizedText($key);
     }
 
@@ -89,22 +89,32 @@ function getLocalizedText ($textFor)
     $rootDirectory = __DIR__ . $sep . "..";
 
     # The locale file for the zh-TW subsite.
-    if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
+    if (isZhTW()) {
         $jsonFile = $rootDirectory . $sep . "trans" . $sep . "zh-tw.json";
     }
     # The locale file for the en-US subsite.
-    else if (0 === strpos($_SERVER["REQUEST_URI"], "/en-us")) {
+    else if (isEnUS()) {
         $jsonFile = $rootDirectory . $sep . "trans" . $sep . "en-us.json";
     }
     # The fallback locale file.
     #
     # You may set it to another locale file if the default locale
     #  of your site is not American English.
-    else /* Fallback to English locale. */ {
+    else /* Fallback to default locale. */ {
         $jsonFile = $rootDirectory . $sep . "trans" . $sep . "en-us.json";
     }
 
     $trans = json_decode(file_get_contents($jsonFile), true);
 
     return $trans[$textFor];
+}
+
+function isEnUS ()
+{
+    return 0 === strpos($_SERVER["REQUEST_URI"], SITE_PREFIX . "/en-us");
+}
+
+function isZhTW ()
+{
+    return 0 === strpos($_SERVER["REQUEST_URI"],  SITE_PREFIX . "/zh-tw");
 }

@@ -18,7 +18,8 @@ $breadcrumb = $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB];
         for ($i = 0; $i < $len; ++$i) {
             # Skip top breadcrumb on the subsites.
             if (0 === $i
-                &&(0 === strpos($uri, "/zh-tw") || 0 === strpos($uri, "/en-us")))
+                && (0 === strpos($uri, SITE_PREFIX . "/zh-tw")
+                    || 0 === strpos($uri, SITE_PREFIX . "/en-us")))
             {
                 continue;
             }

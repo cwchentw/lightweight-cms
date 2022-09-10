@@ -2,6 +2,8 @@
 # Don't add any namespace in a mdcms theme. Instead,
 #  let mdcms load global functions.
 
+require_once "utils.php";
+
 
 function loadHome()
 {
@@ -18,12 +20,8 @@ function loadSection()
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
-    # Load the home page of the zh-TW subsite.
-    if ("/zh-tw/" === $_SERVER["REQUEST_URI"]) {
-        require $rootDirectory . $sep . "layout" . $sep . "home.php";
-    }
-    # Load the home page of the en-US subsite.
-    else if ("/en-us/" === $_SERVER["REQUEST_URI"]) {
+    # Load the home page of the subsites.
+    if (homePage() === $_SERVER["REQUEST_URI"]) {
         require $rootDirectory . $sep . "layout" . $sep . "home.php";
     }
     else {
