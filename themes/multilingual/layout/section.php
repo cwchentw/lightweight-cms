@@ -15,6 +15,46 @@ $posts = $GLOBALS[LIGHTWEIGHT_CMS_POSTS];
 if (POST_PER_PAGE > 0) {
     $postsPerPage = $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE];
 }
+
+$uri = $_SERVER["REQUEST_URI"];
+if ("/" !== substr($uri, -1))
+    $uri .= "/";
+
+if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section)) {
+    if (0 === strpos($uri, "/zh-tw")) {
+        $writtenBy = "由 " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR] . " 撰寫";
+    }
+    else if (0 === strpos($uri, "/en-us")) {
+        $writtenBy = "Written by " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR];
+    }
+    else /* Fallback to American English */ {
+        $writtenBy = "Written by " . $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR];
+    }
+}
+
+if (0 === strpos($uri, "/zh-tw")) {
+    $period = "。";
+}
+else if (0 === strpos($uri, "/en-us")) {
+    $period = ". ";
+}
+else /* Fallback to American English */ {
+    $period = ". ";
+}
+
+if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)) {
+    if (0 === strpos($uri, "/zh-tw")) {
+        $lastModifiedOn = "最後修改於西元 " . date("Y", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 年 "
+                                           . date("m", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 月 "
+                                           . date("d", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 日";
+    }
+    else if (0 === strpos($uri, "/en-us")) {
+        $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
+    }
+    else /* Fallback to American English */ {
+        $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -58,13 +98,8 @@ if (POST_PER_PAGE > 0) {
                     </header>
 
                     <div class="post-info">
-                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section) && "" != $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]): ?>
-                        <span class="author">Written by <?php echo $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?>.<?php endif; ?></span>
-                        <?php endif; ?>
-
-                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?>
-                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $section[LIGHTWEIGHT_CMS_SECTION_MTIME]); ?></span>
-                        <?php endif; ?>
+<?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_AUTHOR, $section) && "" != $section[LIGHTWEIGHT_CMS_SECTION_AUTHOR]): ?><!-- Trick to prevent an extra space. -->
+<span class="author"><?php echo $writtenBy; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?><?php echo $period; ?><?php endif; ?></span><?php endif; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)): ?><span class="last-modified-time"><?php echo $lastModifiedOn; ?></span><?php endif; ?>
                     </div>
 
                     <?php includePartials("breadcrumb.php"); ?>
