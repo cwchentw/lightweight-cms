@@ -22,21 +22,21 @@
                 <?php if (!is_null(FACEBOOK) && "" != FACEBOOK): ?>
                 <!-- The link to Facebook (personal account or fan page). -->
                 <li><a href="https://facebook.com/<?php echo FACEBOOK; ?>"
-                    target="_blank" rel="noopener nofollow">Facebook</a>
+                    target="_blank" rel="noopener nofollow"><?php echo getLocalizedText("facebook"); ?></a>
                 </li>
                 <?php endif; ?>
 
                 <?php if (!is_null(FACEBOOK_GROUP) && "" != FACEBOOK_GROUP): ?>
                 <!-- The link to Facebook group. -->
                 <li><a href="https://facebook.com/groups/<?php echo FACEBOOK_GROUP; ?>"
-                    target="_blank" rel="noopener nofollow">Facebook Group</a>
+                    target="_blank" rel="noopener nofollow"><?php echo getLocalizedText("facebookGroup"); ?></a>
                 </li>
                 <?php endif; ?>
 
                 <?php if (!is_null(TWITTER) && "" != TWITTER): ?>
                 <!-- The link to Twitter. -->
                 <li><a href="https://twitter.com/<?php echo TWITTER; ?>"
-                    target="_blank" rel="noopener nofollow">Twitter</a>
+                    target="_blank" rel="noopener nofollow"><?php echo getLocalizedText("twitter"); ?></a>
                 </li>
                 <?php endif; ?>
 

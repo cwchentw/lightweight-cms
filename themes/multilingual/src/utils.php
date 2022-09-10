@@ -22,6 +22,19 @@ function siteLanguage ()
     return SITE_LANGUAGE;
 }
 
+function siteShortName ()
+{
+    if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
+        return getLocalizedText("siteShortName");
+    }
+    else if (0 === strpos($_SERVER["REQUEST_URI"], "/en-us")) {
+        return getLocalizedText("siteShortName");
+    }
+
+    /* Fallback to default site short name. */
+    return SITE_SHORT_NAME;
+}
+
 function getLocalizedText ($textFor)
 {
     # Get the root path of default theme of mdcms.

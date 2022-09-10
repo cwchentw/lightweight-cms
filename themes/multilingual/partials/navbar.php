@@ -15,17 +15,17 @@ function hasSocialMedia()
 <nav class="site-navbar">
     <div class="container">
         <a href="<?php echo SITE_PREFIX . "/"; ?>">
-            <?php echo SITE_SHORT_NAME; ?>
+            <?php echo siteShortName(); ?>
         </a>
         <ul>
             <li>
-                <a href="<?php echo SITE_PREFIX . "/reference/" ?>">Reference</a>
+                <a href="<?php echo SITE_PREFIX . "/reference/" ?>"><?php echo getLocalizedText("reference"); ?></a>
             </li>
             <li>
-                <a href="<?php echo SITE_PREFIX . "/howto/" ?>">HOWTOs</a>
+                <a href="<?php echo SITE_PREFIX . "/howto/" ?>"><?php echo getLocalizedText("howto"); ?></a>
             </li>
             <li>
-                <a href="<?php echo SITE_PREFIX . "/tip/" ?>">Tips</a>
+                <a href="<?php echo SITE_PREFIX . "/tip/" ?>"><?php echo getLocalizedText("tip"); ?></a>
             </li>
         </ul>
     </div>
