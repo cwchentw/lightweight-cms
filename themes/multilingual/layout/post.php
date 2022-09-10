@@ -132,11 +132,13 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
         <div class="container">
             <div class="row">
                 <div id="main-content" class="col-lg-9 col-xs-12">
+                    <?php if (!isZhTW()): ?>
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $wordCount; ?> word(s) in the post.
                         It will take <?php echo $readTime; ?> minute(s) to read.
                     </div>
+                    <?php endif; ?>
 
                     <?php includePartials("shareButtons.php"); ?>
 
