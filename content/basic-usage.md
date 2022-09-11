@@ -1,6 +1,6 @@
 ---
 title: Basic Usage
-mtime: 2022/07/25
+mtime: 2022/09/11
 weight: 2
 ---
 
@@ -188,3 +188,9 @@ $ git push https://github.com/user/lightweight-cms.git
 Send us a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
 
 If you are busy, open [a dicussion](https://github.com/cwchentw/lightweight-cms/discussions) or send us [an issue](https://github.com/cwchentw/lightweight-cms/issues) instead.
+
+## Usage for Translators
+
+Lightweight CMS is a multilingual site currently, open to the translations for the site text of Lightweight CMS. If you want to translate the site text to a new locale, send us a pull request related to the locale or request the locate related code on GitHub [dicussion](https://github.com/cwchentw/lightweight-cms/discussions).
+
+By default, Lightweight CMS supports `ltr` (left-to-right) scripts. The support to `rtl` scripts is an open issue.
