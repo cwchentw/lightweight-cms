@@ -27,10 +27,6 @@ function baseURI ()
 
 function localePrefix ()
 {
-    $uri = $_SERVER["REQUEST_URI"];
-    if ("/" !== substr($uri, -1))
-        $uri .= "/";
-
     if (isZhTW()) {
         return "/zh-tw";
     }
@@ -43,14 +39,10 @@ function localePrefix ()
 
 function homePage ()
 {
-    $uri = $_SERVER["REQUEST_URI"];
-    if ("/" !== substr($uri, -1))
-        $uri .= "/";
-
-    if (0 === strpos($uri, SITE_PREFIX . "/zh-tw")) {
+    if (isZhTW()) {
         return SITE_PREFIX . "/zh-tw/";
     }
-    else if (0 === strpos($uri, SITE_PREFIX . "/en-us")) {
+    else if (isEnUS()) {
         return SITE_PREFIX . "/en-us/";
     }
 
@@ -59,10 +51,10 @@ function homePage ()
 
 function siteLanguage ()
 {
-    if (0 === strpos($_SERVER["REQUEST_URI"], "/zh-tw")) {
+    if (isZhTW()) {
         return "zh-TW";
     }
-    else if (0 === strpos($_SERVER["REQUEST_URI"], "/en-us")) {
+    else if (isEnUS()) {
         return "en-US";
     }
 

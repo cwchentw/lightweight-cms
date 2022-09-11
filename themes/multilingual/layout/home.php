@@ -63,7 +63,10 @@ $status = 200;
             <div id="main-content">
                 <?php
                 # Show home content if it is not empty.
-                if (0 === strpos($_SERVER["REQUEST_URI"], SITE_PREFIX . "/zh-tw")) {
+                #
+                # TODO: Our site merely supports traditional Chinese
+                #  and English now. Add more locale specific code as needed.
+                if ("/zh-tw/" === homePage()) {
                     if (isset($section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
                         && "" != $section[LIGHTWEIGHT_CMS_SECTION_CONTENT])
                     {
