@@ -8,7 +8,7 @@
         <div class="links">
             <ul>
                 <li>
-                    <a href="<?php echo SITE_PREFIX . "/about/"; ?>"><?php echo getLocalizedText("about"); ?></a>
+                    <a href="<?php echo SITE_PREFIX . localePrefix() . "/about/"; ?>"><?php echo getLocalizedText("about"); ?></a>
                 </li>
                 <li>
                     <a href="<?php echo SITE_PREFIX . "/terms-and-conditions/"; ?>"><?php echo getLocalizedText("termsAndConditions"); ?></a>

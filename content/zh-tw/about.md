@@ -26,6 +26,6 @@ weight: 1
 
 ## 繼續深入
 
-在[這裡](/reference/concept/)閱讀 Lightweight CMS 的概念。.
+閱讀 Lightweight CMS 的[概念](/zh-tw/reference/concept/)。.
 
 這個網站本身就是 Lightweight CMS 的即時展示。此網站包含 GNU/Linux、Nginx 和 PHP 的經典組合。
