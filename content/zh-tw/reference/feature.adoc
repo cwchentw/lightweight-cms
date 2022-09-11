@@ -1,0 +1,61 @@
+---
+title: Lightweight CMS 的特性
+linkTitle: 特性
+mtime: 2022/09/11
+weight: 2
+---
+
+== 前言
+
+This article lists the features of Lightweight CMS.
+
+== 網站相關特性
+
+* Cross-platform
+* Switch between static mode and dynamic one
+* Build multilingual sites *(experimental)*
+* Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
+* PHP-based custom pages
+* Store draft posts before publishing
+* Nested sections
+* https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb]
+* https://en.wikipedia.org/wiki/Pagination[Pagination]
+* No following external links
+* https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
+* https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator
+* Static https://developers.google.com/web/fundamentals/primers/service-workers[service worker]
+* Dynamic https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[HTTP status 404] pages
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[404.html] generator
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500[50x.html] generator
+* offline.html generator
+
+== 佈景主題相關特性
+
+These features are available in _default_ theme:
+
+* Mobile-responsive layouts (through https://getbootstrap.com/docs/5.0/getting-started/introduction/[Bootstrap 5])
+* Top navbar
+* Side information or table of contents
+* Code highlighting (through https://highlightjs.org/[highlight.js])
+* Twitter cards and open graphs
+* Static social media sharing links (no JavaScript is required)
+
+== 外掛相關特性
+
+* Word count for western european text
+* Reading time for western european text
+* Excerpts from posts
+* Google analytics 4 tracker
+
+== 專案相關特性
+
+* Run a site locally without Apache or Nginx (through the https://www.php.net/manual/en/features.commandline.webserver.php[builtin web server] of PHP)
+* Asset compilation (through https://sass-lang.com/[Sass] and https://babeljs.io/[Babel])
+* Asset watching and hot change(s)
+* Synchronize content on a production environment (through `rsync(1)`)
+* Migrate a local Lightweight CMS repository to a new site (through home-made scripts)
+* Compile static Lightweight CMS sites
+
+== 繼續深入
+
+Learn to use Lightweight CMS link:/basic-usage/[here].
