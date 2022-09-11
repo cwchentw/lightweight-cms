@@ -1,0 +1,132 @@
+---
+title: 如何發佈 Lightweight CMS 網站到 DigitalOcean App Platform
+linkTitle: 發佈 Lightweight CMS 網站到 DigitalOcean App Platform
+mtime: 2022/09/12
+weight: 6
+---
+
+== 前言
+
+Some web programmers prefer https://en.wikipedia.org/wiki/Platform_as_a_service[PaaS] over https://en.wikipedia.org/wiki/Virtual_private_server[VPS] to delegate server maintenances to a (trustworthy) vendor. This article takes DigitalOcean App Platform as an instance to illustrate the process to deploy a Lightweight CMS site to a PaaS.
+
+== 系統需求
+
+* A https://m.do.co/c/bb01e632c755[DigitalOcean account]
+* Git
+
+If you want to try local deployment before putting your Lightweight CMS site online, check our link:/basic-usage/[previous article].
+
+== 準備 Lightweight CMS 網站
+
+Clone Lightweight CMS locally and rename it:
+
+[source,shell]
+----
+$ git clone https://github.com/cwchentw/lightweight-cms.git mysite
+----
+
+Change your working directory to root path of the cloned repo:
+
+[source,shell]
+----
+$ cd mysite
+----
+
+Save the repo to a remote Git repository (either [GitHub](https://github.com/) or [GitLab](https://gitlab.com/)):
+
+[source,shell]
+----
+$ git remote set-url origin https://example.com/user/mysite.git
+$ git push -u origin master
+----
+
+This step is mandatory because DigitalOcean App Platform will fetch code of your Lightweight CMS site from a remote repo.
+
+== 先在本地端運行網站
+
+Before deploying a site to a PaaS, you should always try your code locally. Here are steps to run your Lightweight CMS site locally:
+
+[source,shell]
+----
+$ ./tools/bin/publish
+$ cd public
+$ php -S localhost:3000
+----
+
+`tools/bin/publish` is our utility script to deploy a Lightweight CMS site to a PaaS. The script will copy router of Lightweight CMS and assets to _public_ directory. It resembles `tools/bin/serve` but the former won't call builtin server of PHP automatically.
+
+== 第一次發佈
+
+On initial deployment, a PaaS will fetch your code from a remote repository, trying to build and deploy your website or web application. The article takes DigitalOcean App Platform as an example to demonstrate the process.
+
+Choose your source:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-choose-source.png[Choose your source for DigitalOcean App Platform]
+
+If you are confident to your commits, check "**Autodeploy code changes**", which will build and deploy your commits automatically.
+
+Configure your application:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-configure-your-app.png[Configure your application for DigitalOcean App Platform]
+
+Choose _Web Services_ here for external sites. DigitalOcean App Platform provides other types of app for internal uses.
+
+Set your _Build Command_ like this:
+
+[source,shell]
+----
+tools/bin/publish
+----
+
+This is same command we tried locally.
+
+Set your _Run Command_ as it:
+
+[source,shell]
+----
+heroku-php-nginx -C tools/etc/nginx_do.conf public/
+----
+
+We write a Nginx configuration for this vendor. In addition, you need to specify application path.
+
+Name your web service:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-name-your-web-service.png[Name your web service for DigitalOcean App Platform]
+
+You should choose a region near your audience here, not yourself.
+
+Choose your plan:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-finalize-and-launch.png[Choose your plan for DigitalOcean App Platform]
+
+Here we chose *Basic* because we just wanted to try out the platform.
+
+It will take a while to build and deploy your Lightweight CMS site:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-deployed-successfully.png[Deploy your app successfully on DigitalOcean App Platform]
+
+== 後續發佈
+
+Once your Lightweight site is set, you don't bother to maintain a web server, which is the reason some programmers choose a PaaS over a VPS. Update your site by committing your changes or triggering a deployment manually.
+
+== 為網站設置自訂網域
+
+Even if you are satisfied with your PaaS now, you should always set a custom domain. For any reason, you may need to migrate your Lightweight site or other web projects to another host in the future. Here we simulate to set a custom domain on the platform:
+
+[.img-fluid]
+image::/img/howto/digitalocean-app-platform-add-domain.png[Set custom domain for your site on DigitalOcean App Platform]
+
+In this case, set your DNS providers as following:
+
+* `ns1.digitalocean.com`
+* `ns2.digitalocean.com`
+* `ns3.digitalocean.com`
+
+== 給 PaaS 新手的附記
+
+Using PaaS instead of VPS is not as easy as you think. You may encounter several failed deployments before first successful one. Read manuals of your PaaS vendor to figure out the tricky parts and possible workarounds.
