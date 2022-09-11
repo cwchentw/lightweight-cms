@@ -6,29 +6,29 @@ weight: 2
 
 ## 前言
 
-This article illustrates the basic usage of Lightweight CMS. Some details are omitted for brevity. We will introduce them in other posts.
+本文說明 Lightweight CMS 的基本用法。為了節約篇幅，略去一些細節。我們會在其他文章介紹這些內容。
 
 ## 系統需求
 
 ### 後端
 
-* Production environment
-  * GNU/Linux is recommended
-  * A web server like [Apache](https://httpd.apache.org/) or [Nginx](https://www.nginx.com/)
-  * [PHP 8.1](https://www.php.net/) or above
-  * FastCGI Process Manager (FPM) of PHP
+* 生產環境
+  * 建議使用 GNU/Linux
+  * 網頁伺服器，像是 [Apache](https://httpd.apache.org/) 或 [Nginx](https://www.nginx.com/)
+  * [PHP 8.1](https://www.php.net/) 以上的版本
+  * PHP 的 FastCGI 行程管理器
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
-  * (Optional) [AsciiDoctor](https://asciidoctor.org/) (for AsciiDoc support)
-  * (Optional) [Docutils](https://docutils.sourceforge.io/) (for reStructuredText support). [Pygments](https://pygments.org/) (code highlighting in reStructuredText)
-  * (Optional) [Perl](https://www.perl.org/) (for global replacement)
-* Development environment
+  * (可選擇) [AsciiDoctor](https://asciidoctor.org/) (AsciiDoc 支援)
+  * (可選擇) [Docutils](https://docutils.sourceforge.io/) (reStructuredText 支援)。[Pygments](https://pygments.org/) (在 reStructuredText 使用語法高亮)
+  * (可選擇) [Perl](https://www.perl.org/) (全域替換)
+* 生產環境
   * [Composer](https://getcomposer.org/)
-  * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
-  * [PHPMD](https://phpmd.org/) (for linting)
+  * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (語法檢查)
+  * [PHPMD](https://phpmd.org/) (語法檢查)
 
-Any major GNU/Linux distro should suffice to host a Lightweight CMS site.
+主流 GNU/Linux 發行版應該足以托管 Lightweight CMS 網站。
 
-If you are not interested in developing Lightweight CMS itself, you still require Composer to install other dependency packages for Lightweight CMS.
+即使你對開發 Lightweight CMS 本身沒興趣，你仍然需要 Composer 以安裝 Lightweight CMS 的相依套件。
 
 ### 前端
 
