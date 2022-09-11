@@ -6,7 +6,7 @@ weight: 1
 
 ## 兼具動態和靜態
 
-[輕量級內容管理系統](https://github.com/cwchentw/lightweight-cms)是兼具靜態和動態的**平面文件 (flat-file)** **內容管理系統 (content management system)**，以 PHP 驅動。
+[Lightweight CMS (輕量級內容管理系統)](https://github.com/cwchentw/lightweight-cms)是兼具靜態和動態的**平面文件 (flat-file)** **內容管理系統 (content management system)**，以 PHP 驅動。
 
 根據內容管理系統輸出網頁的方式，內容管理系統可能是靜態或動態的。[WordPress](https://wordpress.org/) 是世上最知名的動態內容管理系統；[Jekyll](https://jekyllrb.com/) 和 [Hugo](https://gohugo.io/) 則是知名的靜態內容管理系統。
 
