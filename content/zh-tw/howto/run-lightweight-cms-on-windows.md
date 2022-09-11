@@ -1,17 +1,17 @@
 ---
-title: How to Run Lightweight CMS on Windows
-linkTitle: Run Lightweight CMS on Windows
-mtime: 2021/7/24
+title: 如何在 Windows 上運行 Lightweight CMS
+linkTitle: 在 Windows 上運行 Lightweight CMS
+mtime: 2022/09/12
 weight: 4
 ---
 
-## Prologue
+## 前言
 
 Most PHP-powered sites run on GNU/Linux. Lightweight CMS sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run Lightweight CMS on Windows.
 
-## System Requirements
+## 系統需求
 
-### Back End
+### 後端
 
 * Production environment
   * A web server like Apache or Nginx
@@ -28,7 +28,7 @@ Most PHP-powered sites run on GNU/Linux. Lightweight CMS sites are of no excepti
 
 If you are not interested in developing Lightweight CMS itself, you still require Composer to install other dependency packages for Lightweight CMS.
 
-### Front End
+### 前端
 
 * Production environment
   * A [modern browser](https://browsehappy.com/) like Chrome and Firefox
@@ -49,9 +49,9 @@ These dependencies are for *default* theme of Lightweight CMS. If you utilize an
 
 Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of Lightweight CMS itself.
 
-## Build a Development Environment for Lightweight CMS
+## 建立開發環境
 
-### Install Command-Line Tools
+### 安裝命令列工具
 
 Install [Chocolatey](https://chocolatey.org) first, which is a package manager for Windows used to install other software.
 
@@ -83,7 +83,7 @@ Install `sed(1)` for Windows:
 
 (Optional) Install Perl from either [ActivePerl](https://www.activestate.com/products/perl/) or [Strawberry Perl](https://strawberryperl.com/).
 
-### Install Laragon
+### 安裝 Laragon
 
 Download installer of Laragon from its [official website](https://laragon.org). Doubly click the installer to install Laragon.
 
@@ -123,7 +123,7 @@ Simply enable it. We don't use Laragon on production environments, stopping all 
 
 Set your Nginx configuration accordingly. [Here](https://github.com/cwchentw/lightweight-cms/blob/master/tools/etc/windows/nginx.conf) is a sample configuration.
 
-## Usage
+## 用法
 
 Clone Lightweight CMS locally and rename it:
 
