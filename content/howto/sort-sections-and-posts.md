@@ -2,6 +2,7 @@
 title: How to Sort Sections and Posts
 linkTitle: Sort Sections and Posts
 mtime: 2021/6/26
+weight: 2
 ---
 
 ## Prologue
