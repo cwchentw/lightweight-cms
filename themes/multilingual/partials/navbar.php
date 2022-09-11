@@ -10,26 +10,6 @@ function hasSocialMedia()
         && "" == TWITTER
         && "" == GITHUB);
 }
-
-$uri = $_SERVER["REQUEST_URI"];
-if ("/" !== substr($uri, -1))
-    $uri .= "/";
-
-if (isZhTW()) {
-    $referenceURI = "/zh-tw/reference/";
-    $howtoURI = "/zh-tw/howto/";
-    $tipURI = "/zh-tw/tip/";
-}
-else if (isEnUS()) {
-    $referenceURI = "/en-us/reference/";
-    $howtoURI = "/en-us/howto/";
-    $tipURI = "/en-us/tip/";
-}
-else /* Fallback to default language. */ {
-    $referenceURI = "/reference/";
-    $howtoURI = "/howto/";
-    $tipURI = "/tip/";
-}
 ?>
 
 <nav class="site-navbar">
@@ -39,13 +19,13 @@ else /* Fallback to default language. */ {
         </a>
         <ul>
             <li>
-                <a href="<?php echo SITE_PREFIX . $referenceURI; ?>"><?php echo getLocalizedText("reference"); ?></a>
+                <a href="<?php echo SITE_PREFIX . localePrefix() . "/reference/"; ?>"><?php echo getLocalizedText("reference"); ?></a>
             </li>
             <li>
-                <a href="<?php echo SITE_PREFIX . $howtoURI; ?>"><?php echo getLocalizedText("howto"); ?></a>
+                <a href="<?php echo SITE_PREFIX . localePrefix() . "/howto/"; ?>"><?php echo getLocalizedText("howto"); ?></a>
             </li>
             <li>
-                <a href="<?php echo SITE_PREFIX . $tipURI; ?>"><?php echo getLocalizedText("tip"); ?></a>
+                <a href="<?php echo SITE_PREFIX . localePrefix() . "/tip/"; ?>"><?php echo getLocalizedText("tip"); ?></a>
             </li>
         </ul>
     </div>

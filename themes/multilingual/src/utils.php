@@ -25,6 +25,22 @@ function baseURI ()
     return $uri;
 }
 
+function localePrefix ()
+{
+    $uri = $_SERVER["REQUEST_URI"];
+    if ("/" !== substr($uri, -1))
+        $uri .= "/";
+
+    if (isZhTW()) {
+        return "/zh-tw";
+    }
+    else if (isEnUS()) {
+        return "/en-us";
+    }
+
+    return "";
+}
+
 function homePage ()
 {
     $uri = $_SERVER["REQUEST_URI"];
