@@ -1,15 +1,15 @@
 ---
-title: How to Create a Lightweight CMS Theme
-linkTitle: Create a Lightweight CMS Theme
-mtime: 2021/11/6
+title: 如何建立 Lightweight CMS 佈景主題
+linkTitle: 建立 Lightweight CMS 佈景主題
+mtime: 2022/09/12
 weight: 5
 ---
 
-## Prologue
+## 前言
 
 This guide illustrates to create a Lightweight CMS theme, taking [default theme](https://github.com/cwchentw/lightweight-cms/tree/master/themes/default) of Lightweight CMS as an instance.
 
-## Project Structure
+## 專案架構
 
 Here we list project structure of *default* theme of Lightweight CMS:
 
@@ -51,9 +51,9 @@ None of these are mandatory for a Lightweight CMS theme. The only required file 
 
 Project structure of a Lightweight CMS theme is very liberal. *autoload.php* is the only mandatory file for a Lightweight CMS theme. The script should always be located in root path of a Lightweight CMS theme. You may either implement required functions within it or load another PHP script.
 
-## Required Functions in a Lightweight CMS Theme
+## 佈景主題的必要函式
 
-### `loadHome()` Function
+### `loadHome()` 函式
 
 The essential function to load layout for home page in a Lightweight CMS site. It receives no parameter. Theme creators are responsible to load a layout for home page properly.
 
@@ -73,7 +73,7 @@ function loadHome()
 
 It is recommended to use `require` instead of `include` here because it should be an error unable to load a layout properly.
 
-### `loadSection()` Function
+### `loadSection()` 函式
 
 The necessary function to load layout for sections in a Lightweight CMS site. In a similiar fashion, it receives no parameter. Here shows an example:
 
@@ -90,7 +90,7 @@ function loadSection()
 
 Lightweight CMS doesn't distinguish between top sections and nested ones. Therefore, only one function is needed here.
 
-### `loadPost()` Function
+### `loadPost()` 函式
 
 The mandatory function to load layout for posts in a Lightweight CMS site. No parameter is needed. Here shows a sample code:
 
@@ -105,7 +105,7 @@ function loadPost()
 }
 ```
 
-### `loadAssets($dest)` Function
+### `loadAssets($dest)` 函式
 
 The function to copy assets in a theme to a destination path specified by Lightweight CMS. Unlike other functions here, it receives one parameter, which represents a destination path.
 
@@ -174,7 +174,7 @@ function loadAssets($dest)
 
 You should not copy and paste the code here to your own theme. Instead, modify it according to your situation.
 
-## Required Layouts
+## 必要的版面
 
 Here we list sample layouts used in Lightweight CMS themes:
 
@@ -182,18 +182,18 @@ Here we list sample layouts used in Lightweight CMS themes:
 * Layout for [sections](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/section.php)
 * Layout for [posts](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/post.php)
 
-Check exposed variables in these layouts [here](/reference/variable-in-layout/).
+Check exposed variables in these layouts [here](/zh-tw/reference/variable-in-layout/).
 
-## Best Practices to Write a Lightweight CMS Theme
+## 撰寫佈景主題的最佳實務
 
-### Avoid Namespace
+### 避免命名空間
 
 Rounter of Lightweight CMS views these required functions as global ones. Therefore, don't add any namespace in required  functions.
 
-### Load Third-Party Libraries
+### 載入第三方函式庫
 
 You may need features other than those in the core library of Lightweight CMS. If you need any third-party library, you should load them in the main loader, i.e. *autoload.php* in root path of a Lightweight CMS theme. Furthermore, you should write code to detect and compile you dependencies automatically.
 
-### Write Build Scripts for Assets
+### 為靜態資產寫編譯腳本
 
 Gulp build scripts in *default* theme of Lightweight CMS is not a required part of a Lightweight CMS theme. You may delete them, adding your build scripts for front end stacks of your theme. Automate your compilation so that you can invoke the whole process in a single command.
