@@ -47,7 +47,7 @@ weight: 2
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-這裡的相依是是根據 *default* 和 *multilingual* 佈景主題而定。如果你使用另一個佈景主題，你的前端相異性可能會不同。
+這裡的相依套件是是根據 *default* 和 *multilingual* 佈景主題而定。如果你使用另一個佈景主題，你的前端相依性可能會不同。
 
 目前我們使用 Sass 做為 CSS 前處理器和 Babel 加上 Flow 做為 JavaScript 轉譯器。如果你偏好其他前端技術，你可以移除我們的前端編譯腳本，加上你自己的。這些腳本和 Lightweight CMS 本身是獨立的。
 
@@ -85,38 +85,38 @@ $ rm -f composer-setup.php
 $ composer install --no-dev
 ```
 
-If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
+若你不想更新 Lightweight CMS 網站，你可以移除 *content* 目錄內所有範例文章，但不要移除該目錄本身，然後加上你自己的文章。
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-lightweight-cms/).
+相對來說，若你想要更新 Lightweight CMS 網站，請看這篇[指引](/zh-tw/howto/how-to-upgrade-lightweight-cms/)。
 
-You can run a Lightweight CMS site locally with the builtin web server of PHP:
+你可以用 PHP 內建網頁伺服器在本地端運行 Lightweight CMS 網站：
 
-```
+```shell
 $ sudo ./tools/bin/serve
 ```
 
-[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.1 or above:
+[發佈](/zh-tw/deployment/)該專案到支援 PHP 8.1 以上的網站托管服務：
 
-```
+```shell
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
-Internally, the script calls `rsync(1)` to synchronize your Lightweight CMS site on a production environment. Therefore, you may set your target path to a remote server.
+該腳本內部呼叫 `rsync(1)` 來同步本地端的 Lightweight CMS 網站到生產環境。因此，你可以將目標路徑設到遠端主機。
 
-If you modify anything locally, repeat the command to update your change(s) in a production environment.
+若你更動了本地端，重覆上述指令，將修改更新到生產環境上。
 
-Set configuration of a web server accordingly. [Here](https://github.com/cwchentw/lightweight-cms/blob/master/tools/etc/nginx.conf) is a sample Nginx configuration to run a Lightweight CMS site.
+根據你的環境設置網頁伺服器。[這裡](https://github.com/cwchentw/lightweight-cms/blob/master/tools/etc/nginx.conf)是一份執行 Lightweight CMS 網站的範例 Nginx 設定檔。
 
-(Optional) Save the local repo to a remote site:
+(可選擇的) 將本地端專案存到遠端專案托管平台：
 
-```
+```shell
 $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
 ## 佈景主題製作者的用法
 
-You should create an independent repo for your Lightweight CMS theme. Follow [this guide](/howto/how-to-create-lightweight-cms-theme/) to create a theme.
+你應該為佈景主題建立獨立的專案。參考這份[指引](/zh-tw/howto/create-lightweight-cms-theme/)來建立佈景主題。
 
 Assume your Lightweight CMS theme is ready. Add your theme to your Lightweight CMS copy as a Git submodule:
 
@@ -126,7 +126,7 @@ $ git submodule add https://example.com/user/myTheme.git themes/myTheme
 
 Later, initialize and update your change(s) to your Lightweight CMS repo if any:
 
-```
+```shell
 $ git submodule init
 $ git submodule update
 ```
