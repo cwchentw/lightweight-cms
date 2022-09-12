@@ -21,7 +21,7 @@ weight: 2
   * (可選擇) [AsciiDoctor](https://asciidoctor.org/) (AsciiDoc 支援)
   * (可選擇) [Docutils](https://docutils.sourceforge.io/) (reStructuredText 支援)。[Pygments](https://pygments.org/) (在 reStructuredText 使用語法高亮)
   * (可選擇) [Perl](https://www.perl.org/) (全域替換)
-* 生產環境
+* 開發環境
   * [Composer](https://getcomposer.org/)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (語法檢查)
   * [PHPMD](https://phpmd.org/) (語法檢查)
@@ -32,13 +32,13 @@ weight: 2
 
 ### 前端
 
-* Production environment
-  * A [modern browser](https://browsehappy.com/) like Chrome and Firefox
+* 生產環境
+  * [生產環境](https://browsehappy.com/)，像是 Chrome 和 Firefox
   * [Normalize.css](https://necolas.github.io/normalize.css/)
   * [Bootstrap 5](https://getbootstrap.com/)
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
-  * (Optional) [highlight.js](https://highlightjs.org/)
-* Development environment
+  * (可選擇) [highlight.js](https://highlightjs.org/)
+* 開發環境
   * [Node.js](https://nodejs.org/)
   * [Gulp](https://gulpjs.com/)
   * [Sass](https://sass-lang.com/)
@@ -47,40 +47,41 @@ weight: 2
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-These dependencies are for *default* theme of Lightweight CMS. If you utilize another Lightweight CMS theme, your dependencies may vary.
+這裡的相依是是根據 *default* 和 *multilingual* 佈景主題而定。如果你使用另一個佈景主題，你的前端相異性可能會不同。
 
-Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of Lightweight CMS itself.
+目前我們使用 Sass 做為 CSS 前處理器和 Babel 加上 Flow 做為 JavaScript 轉譯器。如果你偏好其他前端技術，你可以移除我們的前端編譯腳本，加上你自己的。這些腳本和 Lightweight CMS 本身是獨立的。
 
 ## 一般使用者的用法
 
-We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/how-to-run-lightweight-cms-on-windows/).
+我們認定 GNU/Linux 同時為開發環境和生產環境。如果你使用 Windows，請看這篇[文章](/zh-tw/howto/run-lightweight-cms-on-windows/)。
 
-You are a would-be owner of an awesome content website. It is not of your interest to develop Lightweight CMS itself.
+你將成為一個令人讚嘆的內容型網站的擁有者。開發 Lightweight CMS 本身不符合你的興趣。
 
-Clone Lightweight CMS to a local repo and rename it:
+拷貝 Lightweight CMS 到本地端並將其改名：
 
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 ```
 
-Change your working directory to root path of the cloned repo:
+將工作目錄移到該專案的根目錄：
 
 ```shell
 $ cd mysite
 ```
 
-Install Composer:
+安裝 Composer：
 
 ```shell
 $ curl -o composer-setup.php https://getcomposer.org/installer
 $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
+$ rm -f composer-setup.php
 ```
 
-By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
+在預設情形下，這些指令將 Composer 安裝到 *$HOME/bin* ，其指令名為 `composer`。
 
-Install the dependency packages for Lightweight CMS:
+安裝 Lightweight CMS 的相依套件：
 
-```
+```shell
 $ composer install --no-dev
 ```
 
