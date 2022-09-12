@@ -33,7 +33,7 @@ weight: 2
 ### 前端
 
 * 生產環境
-  * [生產環境](https://browsehappy.com/)，像是 Chrome 和 Firefox
+  * [現代瀏覽器](https://browsehappy.com/)，像是 Chrome 和 Firefox
   * [Normalize.css](https://necolas.github.io/normalize.css/)
   * [Bootstrap 5](https://getbootstrap.com/)
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
@@ -53,7 +53,7 @@ weight: 2
 
 ## 一般使用者的用法
 
-我們認定 GNU/Linux 同時為開發環境和生產環境。如果你使用 Windows，請看這篇[文章](/zh-tw/howto/run-lightweight-cms-on-windows/)。
+我們認定 GNU/Linux 同時為開發環境和生產環境。如果你使用 Windows，請看這篇[指引](/zh-tw/howto/run-lightweight-cms-on-windows/)。
 
 你將成為一個令人讚嘆的內容型網站的擁有者。開發 Lightweight CMS 本身不符合你的興趣。
 
@@ -87,7 +87,7 @@ $ composer install --no-dev
 
 若你不想更新 Lightweight CMS 網站，你可以移除 *content* 目錄內所有範例文章，但不要移除該目錄本身，然後加上你自己的文章。
 
-相對來說，若你想要更新 Lightweight CMS 網站，請看這篇[指引](/zh-tw/howto/how-to-upgrade-lightweight-cms/)。
+相對來說，若你想要更新 Lightweight CMS 網站，請看這篇[指引](/zh-tw/howto/upgrade-lightweight-cms/)。
 
 你可以用 PHP 內建網頁伺服器在本地端運行 Lightweight CMS 網站：
 
