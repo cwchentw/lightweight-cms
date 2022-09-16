@@ -1,28 +1,28 @@
 ---
 title: 撰寫文章
-mtime: 2022/09/11
+mtime: 2022/09/16
 weight: 3
 ---
 
 ## 前言
 
-As a would-be owner of an awesome content website, you cannot wait to write and publish posts for your site. This article illustrates how to write posts on Lightweight CMS based sites.
+即將成為偉大的內容型網站的擁有者，你等不及要撰寫和發佈文章到網站上。本文說明如何在 Lightweight CMS 網站撰寫文章。
 
 ## 選擇程式編輯器
 
-Plugins or extensions for popular lightweight markup languages are commonplace. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown, AsciiDoc and reStructuredText as well.
+對主流輕量級標記語言的編輯器外掛很常見。主要編輯器應該都可以勝任撰寫文章的任務。[VS Code](https://code.visualstudio.com/) 是免費且跨平台的編輯器，在網頁程式設計師間很受歡迎，也適合用來撰寫 Markdown、AsciiDoc 和 reStructuredText 文檔。
 
 ## 儲存文章
 
-Posts are saved in a content directory, which default to *content*.
+文章儲存在內容目錄，預設值為 *content* 。
 
-If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-lightweight-cms/) for more information.
+若想要更新 Lightweight CMS 快照，你應該將文章存到 *content* 以外的目錄。參考這篇[指引](/zh-tw/howto/upgrade-lightweight-cms/)以取得更多資訊。
 
-Valid file formats for posts in Lightweight CMS sites are [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) and HTML.
+Lightweight CMS 網站支援的文檔格式為 [Markdown](https://github.github.com/gfm/)、[AsciiDoc](https://asciidoc.org/)、[reStructuredText](https://docutils.sourceforge.io/rst.html) 和 HTML。
 
 ## 文章和網址的關連性
 
-Because Lightweight CMS is a flat-file based content management system, URLs in a Lightweight CMS site map to directories and files in *content* directory directly. Here represents a pseudo URL and file mapping:
+由於 Lightweight CMS 是平面文件內容管理系統，其網址會直接對應到內容目錄的子目錄和文檔。以下是兩者間的對映：
 
 |File Format     |Path                               |
 |----------------|-----------------------------------|
@@ -32,7 +32,7 @@ Because Lightweight CMS is a flat-file based content management system, URLs in 
 |reStructuredText|*content/section/post.rst*         |
 |HTML            |*content/section/post.html*        |
 
-Nested sections for a post are allowed as well. Here shows its mapping:
+也支援嵌套章節中的文章。以下是其對映：
 
 |File Format     |Path                                          |
 |----------------|----------------------------------------------|
@@ -44,7 +44,7 @@ Nested sections for a post are allowed as well. Here shows its mapping:
 
 ## 撰寫 Markdown 文章
 
-The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by Lightweight CMS is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used by online editor of GitHub.
+原本 Markdown 的特性較侷限。有數個 Markdown 變體擴展了這個小型標記語言。Lightweight CMS 支援的 Markdown 方言為 [GFM (GitHub-flavored Markdown)](https://github.github.com/gfm/)，這個語言即為 GitHub 線上編輯器使用的 Markdown 方言。
 
 Here shows a pseudo Markdown post:
 
