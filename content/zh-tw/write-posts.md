@@ -46,7 +46,7 @@ Lightweight CMS 網站支援的文檔格式為 [Markdown](https://github.github.
 
 原本 Markdown 的特性較侷限。有數個 Markdown 變體擴展了這個小型標記語言。Lightweight CMS 支援的 Markdown 方言為 [GFM (GitHub-flavored Markdown)](https://github.github.com/gfm/)，這個語言即為 GitHub 線上編輯器使用的 Markdown 方言。
 
-Here shows a pseudo Markdown post:
+這裡展示假想的 Markdown 文檔：
 
 ```markdown
 # A Markdown Post
@@ -56,29 +56,29 @@ A paragraph with some text.
 Another paragraph with some text.
 ```
 
-Because of limited page size, we won't repeat syntax of GFM here. Refer to its official spec for more information.
+由於篇幅限制，我們不會說明 GFM 的語法。請參考其官方文件。
 
 ## 撰寫 AsciiDoc 文章
 
-*Experimental*
+*實驗性質*
 
-Because Markdown syntax is limited in feature, we add [AsciiDoc](https://asciidoc.org/) as an alternative. [AsciiDoctor](https://asciidoctor.org/) is required on the host environment to render AsciiDoc post(s).
+由於 Markdown 語法特性侷限，我們新增 [AsciiDoc](https://asciidoc.org/) 做為替代的標記語言。托管環境需要安裝 [AsciiDoctor](https://asciidoctor.org/) 以輸出 AsciiDoc 文檔。
 
-We modify the templates of ordered list, unordered list, `<img>` tag and `<audio>` tag to add class(es) on these tags while keeping the same semantic structure(s) set by AsciiDoc.
+我們修改了有序清單、無序清單、`<img>` 標籤、`<audio>` 標籤的模板。這是為了在這些標籤上新增 CSS 類別，並保存 AsciiDoc 原本的語義架構。
 
-Because the limitations by AsciiDoctor, all AsciiDoc posts in our system start at `<h2>`-level titles. Titles in front matters are required for post top headings.
+由於 AsciiDoctor 的限制，所有的 AsciiDoc 文章從 `<h2>` 層級標題起算。前頁的大標題是必需的。
 
 ## 撰寫 reStructuredText 文章
 
-*Experimental*
+*實驗性質*
 
-As above, Markdown is feature-limited; therefore, we add [reStructuredText](https://docutils.sourceforge.io/rst.html) for complex posts unmet in Markdown. [Docutils](https://docutils.sourceforge.io/index.html) is required on the host environment for reStructuredText rendering. [Pygments](https://pygments.org/) is needed as well for code highlighting in reStructuredText posts.
+同上，Markdown 語法特性上受到侷限，故我們新增 [reStructuredText](https://docutils.sourceforge.io/rst.html) 以處理複雜格式的文章，而這些文章無法以 Markdown 處理。托管環境需要安裝 [Docutils](https://docutils.sourceforge.io/index.html) 以輸出 reStructuredText 文檔。此外，若需要語法高亮，需要安裝 [Pygments](https://pygments.org/)。
 
-Because the limitations by Docutils, all reStructuredText posts in our system start at `<h2>`-level titles. Titles in front matters are required for post top headings.
+由於 Docutils 的限制，所有的 reStructuredText 文章從 `<h2>` 層級標題起算。前頁的大標題是必需的。
 
 ## 撰寫 HTML 文章
 
-In addition to writing posts in lightweight markup languages supported by our software, you can write vanilla HTML posts as well. When writing such posts, **DON'T** write full HTML pages:
+除了使用本軟體支援的輕量級標記語言，也可以直接用 HTML 撰寫文檔。撰寫 HTML 文檔時，**不要**撰寫整個 HTML 頁面：
 
 ```html
 <!-- DON'T write a full HTML page. -->
@@ -97,7 +97,7 @@ In addition to writing posts in lightweight markup languages supported by our so
 </html>
 ```
 
- Instead, write which between a pair of `<body>` tags:
+只寫出 `<body>` 內的文字及標籤即可：
 
  ```html
 <!-- Write which between <body> tags instead. -->
@@ -108,11 +108,11 @@ In addition to writing posts in lightweight markup languages supported by our so
 <p>Another paragraph with some text.</p>
  ```
 
-Because Lightweight CMS renders web pages for you, you don't require to write everything from scratch.
+這是因為 Lightweight CMS 會自行輸出頁面，不需要從頭撰寫網頁。
 
 ## 撰寫文章標題
 
-You may write a title of a post in the following region (by precedence):
+可以在以下區域撰寫文章標題 (按優先順序排列)：
 
 * `title` field in front matter of a post
 * `<h1>` tag equivalent in a post (in Markdown and HTML posts)
