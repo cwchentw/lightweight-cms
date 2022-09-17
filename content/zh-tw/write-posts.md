@@ -1,6 +1,6 @@
 ---
 title: 撰寫文章
-mtime: 2022/09/16
+mtime: 2022/09/17
 weight: 3
 ---
 
@@ -114,17 +114,19 @@ Another paragraph with some text.
 
 可以在以下區域撰寫文章標題 (按優先順序排列)：
 
-* `title` field in front matter of a post
-* `<h1>` tag equivalent in a post (in Markdown and HTML posts)
-* File name
+* 前頁的 `title` 欄位
+* 文章的 `<h1>` 等效標籤 (僅限 Markdown 和 HTML 文檔)
+* 檔案名稱
 
-If there is no title in a post, Lightweight CMS will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
+若文檔沒有標題，Lightweight CMS 會自動從檔案名稱產生文章標題。這時候，你應該用烤肉串命名法 (kebab case) 來命名檔案，像是 `title-of-awesome-post` *(註)* 。
+
+*(註) 這是針對英文文檔的考量*
 
 ## 前頁
 
-前頁 (front matter) are optional YAML text regions in top of posts. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
+前頁 (front matter) 是位於文檔頂端、可選擇性的 YAML 文字區塊。其用途是文件的元資料，這些資料無法直接從文檔中取得。
 
-Here represents a Markdown post with a front matter:
+以下是一篇 Markdown 文檔的前頁：
 
 ```markdown
 ---
@@ -139,18 +141,18 @@ A paragraph with some text.
 Another paragraph with some text.
 ```
 
-Here are the exposed fields of front matters if available:
+以下是前頁會外露到變數的欄位：
 
 * `title`
 * `author`
 * `mtime`
 * `weight`
 
-Those fields are not hard coded but adjustable in *setting.php*.
+這些欄位的名稱可在 Lightweight CMS 的內部設定中調整。
 
-In addition, all fields in a front matter are exposed in `$post[LIGHTWEIGHT_CMS_POST_METADATA]`.
+此外，所有的欄位都外露到 `$post[LIGHTWEIGHT_CMS_POST_METADATA]` 陣列中。
 
-A front matter in an AsciiDoc post is supported in this way, not by its native front matter format:
+AsciiDoc 的前頁採用和此處相同的格式，而非 AsciiDoc 原生前頁格式：
 
 ```asciidoc
 ---
@@ -163,6 +165,6 @@ Some text here.
 
 ## (選擇性) 增加章節的內容
 
-Sections in Lightweight CMS intend for intermediaries to posts merely. They seldom benefit site SEO. Nevertheless, you may still add content for sections as needed.
+Lightweight CMS 的章節僅是文章的過渡頁面，對網站 SEO 幾無幫助。然而，你仍然可為章節新增內容。
 
-Contents for sections are written in *_index.md*. Write it as ordinary Markdown posts.
+章節的內容寫在 *_index.md* 文檔中。該文檔等同於一般的 Markdown 文檔。
