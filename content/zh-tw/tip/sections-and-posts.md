@@ -1,13 +1,14 @@
 ---
 title: 章節和文章的訣竅
 linkTitle: 章節和文章
+description: "本文說明關於章節和文章的訣竅。"
 mtime: 2022/09/12
 weight: 1
 ---
 
 ## 前言
 
-This article illustrates tips to sections and posts.
+本文說明關於章節和文章的訣竅。
 
 ## 在標題加入一對方括號
 
