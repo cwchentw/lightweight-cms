@@ -1,7 +1,9 @@
 ---
 title: Tips to Sections and Posts
 linkTitle: Sections and Posts
+description: "This article illustrates tips to sections and posts."
 mtime: 2022/1/30
+weight: 1
 ---
 
 ## Prologue

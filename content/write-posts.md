@@ -1,6 +1,6 @@
 ---
 title: Write Posts
-mtime: 2022/07/25
+mtime: 2022/09/16
 weight: 3
 ---
 
@@ -16,13 +16,13 @@ Plugins or extensions for popular lightweight markup languages are commonplace. 
 
 Posts are saved in a content directory, which default to *content*.
 
-If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-lightweight-cms/) for more information.
+If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/upgrade-lightweight-cms/) for more information.
 
 Valid file formats for posts in Lightweight CMS sites are [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) and HTML.
 
 ## The Relationship between the Posts and the URLs
 
-Because Lightweight CMS is a flat-file based content management system, URLs in a Lightweight CMS site map to directories and files in *content* directory directly. Here represents a pseudo URL and file mapping:
+Because Lightweight CMS is a flat-file based content management system, URLs in a Lightweight CMS site map to directories and files in the content directory directly. Here represents a pseudo URL and file mapping:
 
 |File Format     |Path                               |
 |----------------|-----------------------------------|

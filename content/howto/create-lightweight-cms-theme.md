@@ -2,6 +2,7 @@
 title: How to Create a Lightweight CMS Theme
 linkTitle: Create a Lightweight CMS Theme
 mtime: 2021/11/6
+weight: 5
 ---
 
 ## Prologue
@@ -177,9 +178,9 @@ You should not copy and paste the code here to your own theme. Instead, modify i
 
 Here we list sample layouts used in Lightweight CMS themes:
 
-* Layout for [home page](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/home.php)
-* Layout for [sections](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/section.php)
-* Layout for [posts](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/theme/post.php)
+* Layout for [home page](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/home.php)
+* Layout for [sections](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/section.php)
+* Layout for [posts](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/post.php)
 
 Check exposed variables in these layouts [here](/reference/variable-in-layout/).
 

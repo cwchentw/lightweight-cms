@@ -1,0 +1,21 @@
+{
+    "siteName": "Lightweight CMS",
+    "siteShortName": "Lightweight CMS",
+    "siteDescription": "A Both <span class=\"static-text\">Static</span> and <span class=\"dynamic-text\">Dynamic</span> Flat-File CMS, Powered by PHP",
+    "reference": "Reference",
+    "howto": "HOWTO",
+    "tip": "Tip",
+    "about": "About",
+    "termsAndConditions": "Terms and Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "facebook": "Facebook",
+    "facebookGroup": "Facebook Group",
+    "twitter": "Twitter",
+    "noContent": "No content available yet.",
+    "articles": "Articles",
+    "readMore": "Read More",
+    "exploreMore": "Explore More",
+    "toc": "Table of Contents",
+    "backToTop": "Back to Top",
+    "backToHome": "Back to Home"
+}

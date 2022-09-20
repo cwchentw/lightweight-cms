@@ -2,6 +2,7 @@
 title: Tips for Tools on Unix
 linkTitle: Tools on Unix
 mtime: 2022/8/29
+weight: 2
 ---
 
 ## Synopsis

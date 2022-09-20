@@ -1,6 +1,6 @@
 ---
 title: Basic Usage
-mtime: 2022/07/25
+mtime: 2022/09/12
 weight: 2
 ---
 
@@ -47,13 +47,13 @@ If you are not interested in developing Lightweight CMS itself, you still requir
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-These dependencies are for *default* theme of Lightweight CMS. If you utilize another Lightweight CMS theme, your dependencies may vary.
+These dependencies are for *default* and *multilingual* themes of Lightweight CMS. If you utilize another Lightweight CMS theme, your dependencies may vary.
 
 Currently, we utilize Sass as CSS preprocessor and Babel with Flow as JavaScript transcompiler. If you prefer other front end stacks over our choices, you may completely remove those, adding your own. They are independent of Lightweight CMS itself.
 
 ## Usage for End Users
 
-We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/how-to-run-lightweight-cms-on-windows/).
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/howto/run-lightweight-cms-on-windows/).
 
 You are a would-be owner of an awesome content website. It is not of your interest to develop Lightweight CMS itself.
 
@@ -74,29 +74,30 @@ Install Composer:
 ```shell
 $ curl -o composer-setup.php https://getcomposer.org/installer
 $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
+$ rm -f composer-setup.php
 ```
 
-By default, this shell script will install Composer to *$HOME/bin* with the name `composer`.
+By default, the commands will install Composer to *$HOME/bin* with the name `composer`.
 
 Install the dependency packages for Lightweight CMS:
 
-```
+```shell
 $ composer install --no-dev
 ```
 
 If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/how-to-upgrade-lightweight-cms/).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/howto/upgrade-lightweight-cms/).
 
 You can run a Lightweight CMS site locally with the builtin web server of PHP:
 
-```
+```shell
 $ sudo ./tools/bin/serve
 ```
 
 [Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.1 or above:
 
-```
+```shell
 $ sudo ./tools/bin/sync-to /path/to/www
 ```
 
@@ -108,14 +109,14 @@ Set configuration of a web server accordingly. [Here](https://github.com/cwchent
 
 (Optional) Save the local repo to a remote site:
 
-```
+```shell
 $ git remote set-url origin https://example.com/user/mysite.git
 $ git push -u origin master
 ```
 
 ## Usage for Theme Creators
 
-You should create an independent repo for your Lightweight CMS theme. Follow [this guide](/howto/how-to-create-lightweight-cms-theme/) to create a theme.
+You should create an independent repo for your Lightweight CMS theme. Follow [this guide](/howto/create-lightweight-cms-theme/) to create a theme.
 
 Assume your Lightweight CMS theme is ready. Add your theme to your Lightweight CMS copy as a Git submodule:
 
@@ -125,7 +126,7 @@ $ git submodule add https://example.com/user/myTheme.git themes/myTheme
 
 Later, initialize and update your change(s) to your Lightweight CMS repo if any:
 
-```
+```shell
 $ git submodule init
 $ git submodule update
 ```
@@ -142,7 +143,7 @@ $ git submodule add https://example.com/user/myPlugin.git plugins/myPlugin
 
 Later, initialize and update your change(s) to your Lightweight CMS repo if any:
 
-```
+```shell
 $ git submodule init
 $ git submodule update
 ```
@@ -165,7 +166,7 @@ $ cd lightweight-cms
 
 Install all dependencies with Composer:
 
-```
+```shell
 $ composer install
 ```
 
@@ -173,7 +174,7 @@ Modify Lightweight CMS in any way you like as long as it still runs smoothly. Yo
 
 You should lint your modification with the following script:
 
-```
+```shell
 $ ./tools/bin/lint
 ```
 
@@ -181,10 +182,16 @@ The script calls both PHP Code Sniffer and PHPMD with modified rule sets. Our co
 
 Push back your modification(s) to the forked repo:
 
-```
+```shell
 $ git push https://github.com/user/lightweight-cms.git
 ```
 
 Send us a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
 
 If you are busy, open [a dicussion](https://github.com/cwchentw/lightweight-cms/discussions) or send us [an issue](https://github.com/cwchentw/lightweight-cms/issues) instead.
+
+## Usage for Translators
+
+Lightweight CMS is a multilingual site currently, open to the translations for the site text of Lightweight CMS. If you want to translate the site text to a new locale, send us a pull request related to the locale or request the locate related code on GitHub [dicussion](https://github.com/cwchentw/lightweight-cms/discussions).
+
+By default, Lightweight CMS supports `ltr` (left-to-right) scripts. The support to `rtl` scripts is an open issue.

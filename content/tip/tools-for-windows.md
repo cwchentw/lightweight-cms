@@ -2,6 +2,7 @@
 title: Tips for Tools on Windows
 linkTitle: Tools on Windows
 mtime: 2022/8/29
+weight: 3
 ---
 
 ## Synopsis

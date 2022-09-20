@@ -6,6 +6,7 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 
 * Cross-platform
 * Switch between static mode and dynamic one
+* Build multilingual sites *(experimental)*
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
 * PHP-based custom pages
 * Store draft posts before publishing
@@ -34,7 +35,11 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 ```shell
 > git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
+<<<<<<< HEAD
 > git checkout php80
+=======
+> git checkout master
+>>>>>>> master
 > .\tools\bin\serve.bat
 ```
 
@@ -57,7 +62,11 @@ $ brew install node@16
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+<<<<<<< HEAD
 $ git checkout php80
+=======
+$ git checkout master
+>>>>>>> master
 $ ./tools/bin/serve
 ```
 
@@ -90,7 +99,11 @@ $ nvm use 16.17.0
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
+<<<<<<< HEAD
 $ git checkout php80
+=======
+$ git checkout master
+>>>>>>> master
 $ ./tools/bin/serve
 ```
 
@@ -102,11 +115,11 @@ $ git commit -m "Migrate to a new site"
 $ git push -u origin php80
 ```
 
-## Why not another Static Site Generator?
+## Why not simply another Static Site Generator?
 
-There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a dynamic one.
+There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a CMS capable to switch between static and dynamic websites.
 
-Website owners prefer flat files over relational databases. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat files written in common lightweight markup languages as contents.
+Website owners prefer flat files over relational databases when feasible. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat files written in common lightweight markup languages as contents.
 
 ## System Requirements
 
@@ -125,8 +138,6 @@ Website owners prefer flat files over relational databases. Nonetheless, static 
   * [Composer](https://getcomposer.org)
   * [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) (for linting)
   * [PHPMD](https://phpmd.org) (for linting)
-
-PHP 8.x is neither tested nor recommended because major GNU/Linux distributions still utilize PHP 7.x mostly.
 
 ### Front End
 
@@ -149,7 +160,7 @@ The dependencies mentioned here are based on *default* theme of Lightweight CMS.
 
 ## Usage
 
-We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](/content/howto/how-to-run-lightweight-cms-on-windows.md).
+We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](https://lightweightcms.org/howto/run-lightweight-cms-on-windows/).
 
 Clone the repo locally:
 
@@ -178,7 +189,7 @@ $ composer install --no-dev
 
 If you don't want to update your Lightweight CMS snapshot, you may safely remove all sample posts in *content* directory but not the directory itself, adding your awesome ones.
 
-Instead, if you are going to update your Lightweight CMS copy, follow [this guide](/content/howto/how-to-upgrade-lightweight-cms.md).
+Instead, if you are going to update your Lightweight CMS copy, follow [this guide](https://lightweightcms.org/howto/upgrade-lightweight-cms/).
 
 You can run a Lightweight CMS site locally with builtin web server of PHP:
 
@@ -186,7 +197,7 @@ You can run a Lightweight CMS site locally with builtin web server of PHP:
 $ ./tools/bin/serve
 ```
 
-[Deploy](/content/deployment.md) the cloned repo to a web hosting service supporting PHP 8.1:
+[Deploy](https://lightweightcms.org/deployment/) the cloned repo to a web hosting service supporting PHP 8.1:
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www

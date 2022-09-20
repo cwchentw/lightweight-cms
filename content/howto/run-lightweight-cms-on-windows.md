@@ -2,6 +2,7 @@
 title: How to Run Lightweight CMS on Windows
 linkTitle: Run Lightweight CMS on Windows
 mtime: 2021/7/24
+weight: 4
 ---
 
 ## Prologue
@@ -9,6 +10,8 @@ mtime: 2021/7/24
 Most PHP-powered sites run on GNU/Linux. Lightweight CMS sites are of no exception. Nevertheless, some web programmers prefer Windows during development stage. This article illustrates steps to run Lightweight CMS on Windows.
 
 ## System Requirements
+
+### Back End
 
 * Production environment
   * A web server like Apache or Nginx
@@ -148,7 +151,7 @@ Instead, if you are going to update your Lightweight CMS copy, follow [this guid
 
 You can run a Lightweight CMS site locally with builtin web server of PHP:
 
-```
+```shell
 $ .\tools\bin\serve.bat
 ```
 
