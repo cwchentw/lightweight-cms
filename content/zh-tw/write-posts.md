@@ -1,28 +1,28 @@
 ---
 title: 撰寫文章
-mtime: 2022/09/11
+mtime: 2022/09/17
 weight: 3
 ---
 
 ## 前言
 
-As a would-be owner of an awesome content website, you cannot wait to write and publish posts for your site. This article illustrates how to write posts on Lightweight CMS based sites.
+即將成為偉大的內容型網站的擁有者，你等不及要撰寫和發佈文章到網站上。本文說明如何在 Lightweight CMS 網站撰寫文章。
 
 ## 選擇程式編輯器
 
-Plugins or extensions for popular lightweight markup languages are commonplace. Any programming editor should suffice. [VS Code](https://code.visualstudio.com/), a free and cross-platform editor, is popular among web programmers and suitable for Markdown, AsciiDoc and reStructuredText as well.
+對主流輕量級標記語言的編輯器外掛很常見。主要編輯器應該都可以勝任撰寫文章的任務。[VS Code](https://code.visualstudio.com/) 是免費且跨平台的編輯器，在網頁程式設計師間很受歡迎，也適合用來撰寫 Markdown、AsciiDoc 和 reStructuredText 文檔。
 
 ## 儲存文章
 
-Posts are saved in a content directory, which default to *content*.
+文章儲存在內容目錄，預設值為 *content* 。
 
-If you are going to upgrade your Lightweight CMS snapshot, you should save posts to a directory other than *content*. See [this guide](/howto/how-to-upgrade-lightweight-cms/) for more information.
+若想要更新 Lightweight CMS 快照，你應該將文章存到 *content* 以外的目錄。參考這篇[指引](/zh-tw/howto/upgrade-lightweight-cms/)以取得更多資訊。
 
-Valid file formats for posts in Lightweight CMS sites are [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) and HTML.
+Lightweight CMS 網站支援的文檔格式為 [Markdown](https://github.github.com/gfm/)、[AsciiDoc](https://asciidoc.org/)、[reStructuredText](https://docutils.sourceforge.io/rst.html) 和 HTML。
 
 ## 文章和網址的關連性
 
-Because Lightweight CMS is a flat-file based content management system, URLs in a Lightweight CMS site map to directories and files in *content* directory directly. Here represents a pseudo URL and file mapping:
+由於 Lightweight CMS 是平面文件內容管理系統，其網址會直接對應到內容目錄的子目錄和文檔。以下是兩者間的對映：
 
 |File Format     |Path                               |
 |----------------|-----------------------------------|
@@ -32,7 +32,7 @@ Because Lightweight CMS is a flat-file based content management system, URLs in 
 |reStructuredText|*content/section/post.rst*         |
 |HTML            |*content/section/post.html*        |
 
-Nested sections for a post are allowed as well. Here shows its mapping:
+也支援嵌套章節中的文章。以下是其對映：
 
 |File Format     |Path                                          |
 |----------------|----------------------------------------------|
@@ -44,9 +44,9 @@ Nested sections for a post are allowed as well. Here shows its mapping:
 
 ## 撰寫 Markdown 文章
 
-The feature set of original Markdown is limited. There are several variants of Markdown extending the capacity of this small markup language. The Markdown dialect supported by Lightweight CMS is [GitHub-flavored Markdown](https://github.github.com/gfm/) (GFM), which is used by online editor of GitHub.
+原本 Markdown 的特性較侷限。有數個 Markdown 變體擴展了這個小型標記語言。Lightweight CMS 支援的 Markdown 方言為 [GFM (GitHub-flavored Markdown)](https://github.github.com/gfm/)，這個語言即為 GitHub 線上編輯器使用的 Markdown 方言。
 
-Here shows a pseudo Markdown post:
+這裡展示假想的 Markdown 文檔：
 
 ```markdown
 # A Markdown Post
@@ -56,29 +56,29 @@ A paragraph with some text.
 Another paragraph with some text.
 ```
 
-Because of limited page size, we won't repeat syntax of GFM here. Refer to its official spec for more information.
+由於篇幅限制，我們不會說明 GFM 的語法。請參考其官方文件。
 
 ## 撰寫 AsciiDoc 文章
 
-*Experimental*
+*實驗性質*
 
-Because Markdown syntax is limited in feature, we add [AsciiDoc](https://asciidoc.org/) as an alternative. [AsciiDoctor](https://asciidoctor.org/) is required on the host environment to render AsciiDoc post(s).
+由於 Markdown 語法特性侷限，我們新增 [AsciiDoc](https://asciidoc.org/) 做為替代的標記語言。托管環境需要安裝 [AsciiDoctor](https://asciidoctor.org/) 以輸出 AsciiDoc 文檔。
 
-We modify the templates of ordered list, unordered list, `<img>` tag and `<audio>` tag to add class(es) on these tags while keeping the same semantic structure(s) set by AsciiDoc.
+我們修改了有序清單、無序清單、`<img>` 標籤、`<audio>` 標籤的模板。這是為了在這些標籤上新增 CSS 類別，並保存 AsciiDoc 原本的語義架構。
 
-Because the limitations by AsciiDoctor, all AsciiDoc posts in our system start at `<h2>`-level titles. Titles in front matters are required for post top headings.
+由於 AsciiDoctor 的限制，所有的 AsciiDoc 文章從 `<h2>` 層級標題起算。前頁的大標題是必需的。
 
 ## 撰寫 reStructuredText 文章
 
-*Experimental*
+*實驗性質*
 
-As above, Markdown is feature-limited; therefore, we add [reStructuredText](https://docutils.sourceforge.io/rst.html) for complex posts unmet in Markdown. [Docutils](https://docutils.sourceforge.io/index.html) is required on the host environment for reStructuredText rendering. [Pygments](https://pygments.org/) is needed as well for code highlighting in reStructuredText posts.
+同上，Markdown 語法特性上受到侷限，故我們新增 [reStructuredText](https://docutils.sourceforge.io/rst.html) 以處理複雜格式的文章，而這些文章無法以 Markdown 處理。托管環境需要安裝 [Docutils](https://docutils.sourceforge.io/index.html) 以輸出 reStructuredText 文檔。此外，若需要語法高亮，需要安裝 [Pygments](https://pygments.org/)。
 
-Because the limitations by Docutils, all reStructuredText posts in our system start at `<h2>`-level titles. Titles in front matters are required for post top headings.
+由於 Docutils 的限制，所有的 reStructuredText 文章從 `<h2>` 層級標題起算。前頁的大標題是必需的。
 
 ## 撰寫 HTML 文章
 
-In addition to writing posts in lightweight markup languages supported by our software, you can write vanilla HTML posts as well. When writing such posts, **DON'T** write full HTML pages:
+除了使用本軟體支援的輕量級標記語言，也可以直接用 HTML 撰寫文檔。撰寫 HTML 文檔時，**不要**撰寫整個 HTML 頁面：
 
 ```html
 <!-- DON'T write a full HTML page. -->
@@ -97,7 +97,7 @@ In addition to writing posts in lightweight markup languages supported by our so
 </html>
 ```
 
- Instead, write which between a pair of `<body>` tags:
+只寫出 `<body>` 內的文字及標籤即可：
 
  ```html
 <!-- Write which between <body> tags instead. -->
@@ -108,23 +108,25 @@ In addition to writing posts in lightweight markup languages supported by our so
 <p>Another paragraph with some text.</p>
  ```
 
-Because Lightweight CMS renders web pages for you, you don't require to write everything from scratch.
+這是因為 Lightweight CMS 會自行輸出頁面，不需要從頭撰寫網頁。
 
 ## 撰寫文章標題
 
-You may write a title of a post in the following region (by precedence):
+可以在以下區域撰寫文章標題 (按優先順序排列)：
 
-* `title` field in front matter of a post
-* `<h1>` tag equivalent in a post (in Markdown and HTML posts)
-* File name
+* 前頁的 `title` 欄位
+* 文章的 `<h1>` 等效標籤 (僅限 Markdown 和 HTML 文檔)
+* 檔案名稱
 
-If there is no title in a post, Lightweight CMS will generate one dynamically based on file name of a post. In such case, you should name your post files in kebab case like `title-of-awesome-post`.
+若文檔沒有標題，Lightweight CMS 會自動從檔案名稱產生文章標題。這時候，你應該用烤肉串命名法 (kebab case) 來命名檔案，像是 `title-of-awesome-post` *(註)* 。
+
+*(註) 這是針對英文文檔的考量*
 
 ## 前頁
 
-前頁 (front matter) are optional YAML text regions in top of posts. Such regions intend for metadata of posts that are difficult or unable to retrieve from post files directly.
+前頁 (front matter) 是位於文檔頂端、可選擇性的 YAML 文字區塊。其用途是文件的元資料，這些資料無法直接從文檔中取得。
 
-Here represents a Markdown post with a front matter:
+以下是一篇 Markdown 文檔的前頁：
 
 ```markdown
 ---
@@ -139,18 +141,18 @@ A paragraph with some text.
 Another paragraph with some text.
 ```
 
-Here are the exposed fields of front matters if available:
+以下是前頁會外露到變數的欄位：
 
 * `title`
 * `author`
 * `mtime`
 * `weight`
 
-Those fields are not hard coded but adjustable in *setting.php*.
+這些欄位的名稱可在 Lightweight CMS 的內部設定中調整。
 
-In addition, all fields in a front matter are exposed in `$post[LIGHTWEIGHT_CMS_POST_METADATA]`.
+此外，所有的欄位都外露到 `$post[LIGHTWEIGHT_CMS_POST_METADATA]` 陣列中。
 
-A front matter in an AsciiDoc post is supported in this way, not by its native front matter format:
+AsciiDoc 的前頁採用和此處相同的格式，而非 AsciiDoc 原生前頁格式：
 
 ```asciidoc
 ---
@@ -163,6 +165,6 @@ Some text here.
 
 ## (選擇性) 增加章節的內容
 
-Sections in Lightweight CMS intend for intermediaries to posts merely. They seldom benefit site SEO. Nevertheless, you may still add content for sections as needed.
+Lightweight CMS 的章節僅是文章的過渡頁面，對網站 SEO 幾無幫助。然而，你仍然可為章節新增內容。
 
-Contents for sections are written in *_index.md*. Write it as ordinary Markdown posts.
+章節的內容寫在 *_index.md* 文檔中。該文檔等同於一般的 Markdown 文檔。

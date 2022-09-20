@@ -1,6 +1,6 @@
 ---
 title: 基本用法
-mtime: 2022/09/11
+mtime: 2022/09/16
 weight: 2
 ---
 
@@ -118,13 +118,13 @@ $ git push -u origin master
 
 你應該為佈景主題建立獨立的專案。參考這份[指引](/zh-tw/howto/create-lightweight-cms-theme/)來建立佈景主題。
 
-Assume your Lightweight CMS theme is ready. Add your theme to your Lightweight CMS copy as a Git submodule:
+假定你的 Lightweight CMS 佈景主題已經完成。將該佈景主題加入專案的 Git submodule：
 
 ```shell
 $ git submodule add https://example.com/user/myTheme.git themes/myTheme
 ```
 
-Later, initialize and update your change(s) to your Lightweight CMS repo if any:
+日後可將佈景主題的更動更新到專案中：
 
 ```shell
 $ git submodule init
@@ -133,65 +133,67 @@ $ git submodule update
 
 ## 外掛製作者的用法
 
-You should create an independent repo for your Lightweight CMS plugin.
+你應該為外掛建立獨立的專案。
 
-Assume your Lightweight CMS plugin is ready. Add your plugin to your Lightweight copy as a Git submodule:
+假定你的 Lightweight CMS 外掛已經完成。將該外掛加入專案的 Git submodule：
 
 ```shell
 $ git submodule add https://example.com/user/myPlugin.git plugins/myPlugin
 ```
 
-Later, initialize and update your change(s) to your Lightweight CMS repo if any:
+日後可以外掛的更動更新到專案中：
 
-```
+```shell
 $ git submodule init
 $ git submodule update
 ```
 
 ## 專案貢獻者的用法
 
-You, as a PHP programmer, are interested in developing Lightweight CMS itself. You may keep your modifications privately or send back your contributions to us.
+身為 PHP 程式設計者，你對開發 Lightweight CMS 本身有興趣。你可以私下保留你的更動 *(註)* 或是將貢獻回傳至本專案。
 
-Create a [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of Lightweight CMS on GitHub, cloning the forked repo:
+*(註) 因為 Lightweight CMS 採用 MIT 授權*
+
+建立 Lightweight CMS 的[分支](https://docs.github.com/en/get-started/quickstart/fork-a-repo)。拷貝該分支到本地端：
 
 ```shell
 $ git clone https://github.com/user/lightweight-cms.git
 ```
 
-Change your working directory to root path of the cloned repo:
+將工作目錄移到該拷貝的根目錄：
 
 ```shell
 $ cd lightweight-cms
 ```
 
-Install all dependencies with Composer:
+用 Composer 安裝所有的相依性：
 
-```
+```shell
 $ composer install
 ```
 
-Modify Lightweight CMS in any way you like as long as it still runs smoothly. You don't require to remove any post in *content* directory. They serve as sample data to see whether your change(s) work.
+只要 Lightweight CMS 仍可正常運行，你可以任意地修改此拷貝。你不需要移除 *content* 目錄內的文章。這些文章可以當成檢視修改是否正常運作的範例資料。
 
-You should lint your modification with the following script:
+你應該對修改過的程式碼進行檢查：
 
-```
+```shell
 $ ./tools/bin/lint
 ```
 
-The script calls both PHP Code Sniffer and PHPMD with modified rule sets. Our coding convention is not totally set yet.
+該腳本會呼叫 PHP Code Sniffer 和 PHPMD。這些工具在檢查時會根據修改過的規則集。我們的撰碼規範尚未完全設置好。
 
-Push back your modification(s) to the forked repo:
+將修改送回分支：
 
 ```
 $ git push https://github.com/user/lightweight-cms.git
 ```
 
-Send us a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). We will review your code, merging it if proper. Even your code is not accepted, we may still modify Lightweight CMS according to your intention.
+傳送 [PR (pull request)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) 給我們。我們會審視你的程式碼。若程式碼符合要求，會將其合併。即使你的 PR 未被接受，我們仍可能會根據你的意圖修改 Lightweight CMS。
 
-If you are busy, open [a dicussion](https://github.com/cwchentw/lightweight-cms/discussions) or send us [an issue](https://github.com/cwchentw/lightweight-cms/issues) instead.
+如果你很忙碌，可以開啟 [dicussion](https://github.com/cwchentw/lightweight-cms/discussions) 或傳給我們 [issue](https://github.com/cwchentw/lightweight-cms/issues)。
 
 ## 網站翻譯者的用法
 
-Lightweight CMS is a multilingual site currently, open to the translations for the site text of Lightweight CMS. If you want to translate the site text to a new locale, send us a pull request related to the locale or request the locate related code on GitHub [dicussion](https://github.com/cwchentw/lightweight-cms/discussions).
+Lightweight CMS 現在是多語系網站，開放網站文字的翻譯。若你想要將 Lightweight CMS 網站翻到新的語系，請上傳和語系相關的 PR 或是開啟相關 [dicussion](https://github.com/cwchentw/lightweight-cms/discussions)。
 
-By default, Lightweight CMS supports `ltr` (left-to-right) scripts. The support to `rtl` scripts is an open issue.
+在預設情形下，Lightweight CMS 支援 `ltr` (左到右) 文字。對 `rtl` (右到左) 文字仍保持開放。
