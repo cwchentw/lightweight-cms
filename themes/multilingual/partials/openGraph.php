@@ -21,7 +21,13 @@ else {
 }
 
 $description = null;
-if (isset($post)) {
+if (isset($post)
+    && array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
+    && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
+{
+    $description = $post[LIGHTWEIGHT_CMS_POST_META]["description"];
+}
+else if (isset($post)) {
     $description = \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 }
 else if (isset($section)) {
