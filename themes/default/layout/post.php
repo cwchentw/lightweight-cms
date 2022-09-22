@@ -53,6 +53,13 @@ if (ENABLE_TOC) {
         <?php endif; ?>
 
         <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
+                  && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META])): ?>
+        <meta name="description" content="<?php echo $post[LIGHTWEIGHT_CMS_POST_META]["description"]; ?>">
+        <?php else: ?>
+        <meta name="description" content="<?php echo \LightweightCMS\Plugin\excerpt($post[LIGHTWEIGHT_CMS_POST_CONTENT]); ?>">
+        <?php endif; ?>
+
+        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
                   && array_key_exists(METADATA_NOINDEX, $post[LIGHTWEIGHT_CMS_POST_META])
                   && $post[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX]): ?>
             <!-- Some functional post doesn't benefit SEO.  -->
