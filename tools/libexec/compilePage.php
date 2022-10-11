@@ -145,7 +145,19 @@ else if (\LightweightCMS\Core\isPost($loc)) {
 
     loadPost();
 }
+# Draft pages or anything else.
 else {
-    fwrite(STDERR, "Not a valid page: " . $loc . PHP_EOL);
-    exit(1);
+    $post = \LightweightCMS\Core\errorPage(
+        "Page Not Found",
+        "The page doesn't exist on our server.",
+        404
+    );
+
+    # Create a breadcrumb dynamically.
+    $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+    loadPost();
 }
