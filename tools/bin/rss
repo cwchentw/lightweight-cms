@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# A utility script to generate a rss.xml for Lightweight CMS.
+
+
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+if ! [ -d "$public" ];
+then
+    mkdir -p "$public" || (
+        echo "Unable to create a public directory" >&2;
+        exit 1;
+    )
+fi
+
+php "${libexec}/rss.php" > "$public/rss.xml" || (
+    echo "Unable to create a rss.xml" >&2;
+    exit 1;
+)

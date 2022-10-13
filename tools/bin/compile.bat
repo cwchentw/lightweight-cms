@@ -70,6 +70,11 @@ call %bin%\sitemap.bat || (
     exit /b %ERRORLEVEL%
 )
 
+rem Create a rss.xml
+call %bin%\rss.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Load theme assets.
 call %bin%\assets.bat || (
     exit /b %ERRORLEVEL%

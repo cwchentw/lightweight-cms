@@ -1,7 +1,7 @@
 ---
 title: The Features of Lightweight CMS
 linkTitle: Feature
-mtime: 2022/09/06
+mtime: 2022/10/14
 weight: 2
 ---
 
@@ -22,6 +22,7 @@ This article lists the features of Lightweight CMS.
 * https://en.wikipedia.org/wiki/Pagination[Pagination]
 * No following external links
 * https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
+* RSS feed generator
 * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator
 * Static https://developers.google.com/web/fundamentals/primers/service-workers[service worker]
 * Dynamic https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404[HTTP status 404] pages
