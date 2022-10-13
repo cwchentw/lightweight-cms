@@ -56,6 +56,11 @@ usort($links, function ($a, $b) {
 foreach ($links as $link) {
     $node = $xml->createElement("item");
 
+    # Skip the home page.
+    $url = SITE_BASE_URL . $link[LIGHTWEIGHT_CMS_LINK_PATH];
+    if (SITE_BASE_URL === $url)
+        continue;
+
     $title = $link[LIGHTWEIGHT_CMS_POST_TITLE];
     $titleNode = $xml->createElement("title", $title);
     $node->appendChild($titleNode);
@@ -75,7 +80,6 @@ foreach ($links as $link) {
     $authorNode = $xml->createElement("author", $author);
     $node->appendChild($authorNode);
 
-    $url = SITE_BASE_URL . $link[LIGHTWEIGHT_CMS_LINK_PATH];
     $loc = $xml->createElement("link", $url);
     $node->appendChild($loc);
 
