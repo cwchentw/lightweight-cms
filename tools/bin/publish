@@ -47,28 +47,33 @@ then
     )
 fi
 
-# Create 404.html
+# Create a 404.html
 "${bin}/404" || (
     exit $?;
 )
 
-# Create 50x.html
+# Create a 50x.html
 "${bin}/50x" || (
     exit $?;
 )
 
-# Create offline.html
+# Create an offline.html
 "${bin}/offline" || (
     exit $?;
 )
 
-# Create manifest.json
+# Create a manifest.json
 "${bin}/manifest" || (
     exit $?;
 )
 
-# Create sitemap.xml
+# Create a sitemap.xml
 "${bin}/sitemap" || (
+    exit $?;
+)
+
+# Create a rss.xml
+"${bin}/rss" || (
     exit $?;
 )
 

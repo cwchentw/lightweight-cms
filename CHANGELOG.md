@@ -1,5 +1,7 @@
 # Changelog
 
+* 2022-10-14
+  * Add a RSS feed generator
 * 2022-09-09
   * Support multilingual sites
   * Migrate to *multilingual* theme
