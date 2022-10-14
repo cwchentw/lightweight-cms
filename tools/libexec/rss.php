@@ -58,7 +58,8 @@ foreach ($links as $link) {
 
     # Skip the home page.
     $url = SITE_BASE_URL . $link[LIGHTWEIGHT_CMS_LINK_PATH];
-    if (SITE_BASE_URL === $url)
+    $siteURL = SITE_BASE_URL . SITE_PREFIX . "/";
+    if ($url == $siteURL)
         continue;
 
     $title = $link[LIGHTWEIGHT_CMS_POST_TITLE];
