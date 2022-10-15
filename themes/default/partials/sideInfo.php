@@ -33,6 +33,11 @@
     </a>
     <?php endif; ?>
 
+    <a class="img-link"
+        href="<?php echo SITE_BASE_URL . SITE_PREFIX . "/rss.xml"; ?>">
+        <img src="/img/share-buttons/rss-32x32.png" alt="RSS Feed of <?php echo SITE_NAME; ?>"/>
+    </a>
+
     <ul>
         <li><a href="<?php echo $_SERVER["REQUEST_URI"]; ?>#top" class="toc-link">Back to Top</a></li>
         <?php if ((SITE_PREFIX . "/") != $_SERVER["REQUEST_URI"]): ?>
