@@ -46,6 +46,11 @@
                     target="_blank" rel="noopener nofollow">GitHub</a>
                 </li>
                 <?php endif; ?>
+
+                <li><a class="img-link" href="<?php echo SITE_BASE_URL . SITE_PREFIX . "/rss.xml"; ?>">
+                        RSS
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="text-center info-title">
