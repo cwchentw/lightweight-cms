@@ -65,6 +65,16 @@ function isPageInSection($uri)
     return false;
 }
 
+function isTagPage ($uri)
+{
+    return preg_match("/^\/tags\/(.+)\/$/", $uri);
+}
+
+function isPageInTagPage ($uri)
+{
+    return preg_match("/^\/tags\/[^\/]+\/\d+\/$/", $uri);
+}
+
 function isCustomPage($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
