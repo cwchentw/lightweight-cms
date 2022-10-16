@@ -1,6 +1,7 @@
 ---
 title: 基本用法
 mtime: 2022/09/16
+tags: ["使用"]
 weight: 2
 ---
 

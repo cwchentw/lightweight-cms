@@ -154,28 +154,8 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInTags($loc)) {
         loadSection();
     }
 }
-# Render a tag page, which is a section as well.
-else if (\LightweightCMS\Core\isTagPage($loc)) {
-    preg_match("/^\/tags\/(.+)\/$/", $loc, $matches);
-    $tag = urldecode($matches[1]);
-
-    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
-
-    # Create a special section on-the-fly.
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "[Tag] " . $tag;
-
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();
-
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts($loc);
-    if (POST_PER_PAGE > 0) {
-        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerTagPage($loc, 0);
-    }
-
-    loadSection();
-}
 else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
-    preg_match("/^\/tags\/(.+)\/(\d+)\/$/", $loc, $matches);
+    preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $loc, $matches);
     $tag = urldecode($matches[1]);
     $page = $matches[2];
 
@@ -187,9 +167,14 @@ else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
 
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();
 
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts($loc);
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts(
+        SITE_PREFIX . "/tags/" . urlencode($tag) . "/"
+    );
     if (POST_PER_PAGE > 0) {
-        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerPage($loc, $page);
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerTagPage(
+            SITE_PREFIX . "/tags/" . urlencode($tag) . "/",
+            $page
+        );
     }
 
     # Show HTTP 404 page if no post on this page.
@@ -211,6 +196,26 @@ else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
     else {
         loadSection();
     }
+}
+# Render a tag page, which is a section as well.
+else if (\LightweightCMS\Core\isTagPage($loc)) {
+    preg_match("/^\/tags\/(.+)\/$/", $loc, $matches);
+    $tag = urldecode($matches[1]);
+
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
+
+    # Create a special section on-the-fly.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "[Tag] " . $tag;
+
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts($loc);
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerTagPage($loc, 0);
+    }
+
+    loadSection();
 }
 # Render a section.
 else if (\LightweightCMS\Core\isSection($loc)) {

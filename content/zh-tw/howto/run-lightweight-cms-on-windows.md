@@ -2,6 +2,7 @@
 title: 如何在 Windows 上運行 Lightweight CMS
 linkTitle: 在 Windows 上運行 Lightweight CMS
 mtime: 2022/09/12
+tags: ["使用"]
 weight: 4
 ---
 

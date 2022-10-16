@@ -88,6 +88,49 @@ while (count($dirs) > 0) {
     }
 }
 
+$dataDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY . $sep . "data";
+$json = file_get_contents($dataDirectory . $sep . "tags.json");
+
+$tags = json_decode($json, JSON_UNESCAPED_UNICODE);
+
+$tagsURI = SITE_PREFIX . "/tags/";
+$tagsContent = compilePage($tagsURI);
+compile($tagsContent, $tagsURI);
+
+$tagCount = 0;
+foreach ($tags as $tag => $paths) {
+    $tagPageURI = SITE_PREFIX . "/tags/" . $tag . "/";
+    $tagPageContent = compilePage($tagPageURI);
+    compile($tagPageContent, $tagPageURI);
+
+    $tagPageCount = 0;
+    foreach ($paths as $path) {
+        $tagPageCount += 1;
+    }
+
+    if (POST_PER_PAGE > 0 && $tagPageCount > POST_PER_PAGE) {
+        $c = 1;
+        while ($tagPageCount > POST_PER_PAGE) {
+            $u = SITE_PREFIX . "/tags/" . $tag . "/" . $c . "/";
+            $tagPageContent = compilePage($u);
+            compile($tagPageContent, $u);
+            $tagPageCount -= POST_PER_PAGE;
+        }
+    }
+
+    $tagCount += 1;
+}
+
+if (POST_PER_PAGE > 0 && $tagCount > POST_PER_PAGE) {
+    $c = 1;
+    while ($tagCount > POST_PER_PAGE) {
+        $u = SITE_PREFIX . "/tags/" . $c . "/";
+        $tagsContent = compilePage($u);
+        compile($tagsContent, $u);
+        $tagCount -= POST_PER_PAGE;
+    }
+}
+
 function isWebPage ($path)
 {
     $fileParts = pathinfo($path);
