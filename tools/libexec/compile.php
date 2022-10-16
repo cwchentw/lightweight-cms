@@ -88,6 +88,20 @@ while (count($dirs) > 0) {
     }
 }
 
+$dataDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY . $sep . "data";
+$json = file_get_contents($dataDirectory . $sep . "tags.json");
+
+$tags = json_decode($json, JSON_UNESCAPED_UNICODE);
+
+$tagsURI = SITE_PREFIX . "/tags/";
+$tagsContent = compilePage($tagsURI);
+compile($tagsContent, $tagsURI);
+foreach ($tags as $tag => $paths) {
+    $tagPageURI = SITE_PREFIX . "/tags/" . $tag . "/";
+    $tagPageContent = compilePage($tagPageURI);
+    compile($tagPageContent, $tagPageURI);
+}
+
 function isWebPage ($path)
 {
     $fileParts = pathinfo($path);
