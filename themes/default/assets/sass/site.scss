@@ -142,6 +142,15 @@ a {
     }
 }
 
+a.badge {
+    text-decoration: none;
+
+    &:hover {
+        color: $background-color;
+        text-decoration: none;
+    }
+}
+
 /* Fix wrapping issue on Apple mobile devices. */
 pre,
 code,

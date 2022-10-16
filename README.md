@@ -14,6 +14,7 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 * Breadcrumb
 * Pagination
 * Table of Contents
+* Interlinked tags
 * Sitemap
 * RSS feed
 * [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
