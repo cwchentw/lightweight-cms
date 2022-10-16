@@ -67,5 +67,5 @@ if (!file_exists($dataDirectory)) {
 # Create a JSON file as the tag data.
 file_put_contents(
     $dataDirectory . $sep . "tags.json",
-    0 === count($json) ? json_encode($json, JSON_FORCE_OBJECT) : json_encode($json)
+    0 === count($json) ? json_encode($json, JSON_FORCE_OBJECT) : json_encode($json, JSON_UNESCAPED_UNICODE)
 );

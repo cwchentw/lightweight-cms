@@ -16,7 +16,7 @@ function getTags ()
 
     $result = array();
 
-    $tags = json_decode($json);
+    $tags = json_decode($json, JSON_UNESCAPED_UNICODE);
 
     foreach ($tags as $tag => $paths) {
         $link = array();
@@ -24,7 +24,7 @@ function getTags ()
         $link[LIGHTWEIGHT_CMS_POST_META] = array();
         $link[LIGHTWEIGHT_CMS_POST_TITLE] = $tag;
         $link[LIGHTWEIGHT_CMS_POST_META]["description"] = $tag . " related articles";
-        $link[LIGHTWEIGHT_CMS_LINK_PATH] = "/tags/" . $tag . "/";
+        $link[LIGHTWEIGHT_CMS_LINK_PATH] = "/tags/" . urlencode($tag) . "/";
 
         array_push($result, $link);
     }
@@ -63,7 +63,7 @@ function tagPosts ($uri)
     require_once __DIR__ . $sep . "post.php";
 
     preg_match("/^\/tags\/(.+)\/$/", $uri, $matches);
-    $tag = $matches[1];
+    $tag = urldecode($matches[1]);
 
     $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
     $dataDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY . $sep . "data";
