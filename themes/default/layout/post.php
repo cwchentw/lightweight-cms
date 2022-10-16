@@ -109,6 +109,7 @@ if (ENABLE_TOC) {
                         It will take <?php echo $readTime; ?> minute(s) to read.
                     </div>
 
+                    <?php includePartials("tags.php"); ?>
                     <?php includePartials("shareButtons.php"); ?>
 
                     <main>

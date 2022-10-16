@@ -147,6 +147,7 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
                     </div>
                     <?php endif; ?>
 
+                    <?php includePartials("tags.php"); ?>
                     <?php includePartials("shareButtons.php"); ?>
 
                     <main>

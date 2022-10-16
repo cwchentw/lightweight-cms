@@ -99,6 +99,119 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
         loadHome();
     }
 }
+# Tags is a special section.
+else if (\LightweightCMS\Core\isTags($loc)) {
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb("Tags");
+
+    # Create a special section on-the-fly.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "Tags";
+
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();  # Tags owns no subsection.
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getTags();
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getTagsPerPage(0);
+    }
+
+    loadSection();
+}
+# Render a page of a tags section.
+else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInTags($loc)) {
+    preg_match("/^\/tags\/(\d+)\/$/", $loc, $matches);
+    $page = $matches[1];
+
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb("Tags");
+
+    # Create a special section on-the-fly.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "Tags";
+
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();  # Tags owns no subsection.
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getTags();
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getTagsPerPage($page);
+    }
+
+    # Show HTTP 404 page if no post on this page.
+    if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
+        $post = \LightweightCMS\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
+
+        # Create a breadcrumb dynamically.
+        $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
+
+        $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+        loadPost();
+    }
+    else {
+        loadSection();
+    }
+}
+# Render a tag page, which is a section as well.
+else if (\LightweightCMS\Core\isTagPage($loc)) {
+    preg_match("/^\/tags\/(.+)\/$/", $loc, $matches);
+    $tag = $matches[1];
+
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
+
+    # Create a special section on-the-fly.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "[Tag] " . $tag;
+
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts($loc);
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerTagPage($loc, 0);
+    }
+
+    loadSection();
+}
+else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
+    preg_match("/^\/tags\/(.+)\/(\d+)\/$/", $loc, $matches);
+    $tag = $matches[1];
+    $page = $matches[2];
+
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
+
+    # Create a special section on-the-fly.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = array();
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION][LIGHTWEIGHT_CMS_SECTION_TITLE] = "[Tag] " . $tag;
+
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = array();
+
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\tagPosts($loc);
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\tagPostsPerPage($loc, $page);
+    }
+
+    # Show HTTP 404 page if no post on this page.
+    if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
+        $post = \LightweightCMS\Core\errorPage(
+            "Page Not Found",
+            "The page doesn't exist on our server.",
+            404
+        );
+
+        # Create a breadcrumb dynamically.
+        $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
+
+        $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+        loadPost();
+    }
+    else {
+        loadSection();
+    }
+}
 # Render a section.
 else if (\LightweightCMS\Core\isSection($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);

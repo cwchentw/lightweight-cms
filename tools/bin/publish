@@ -77,6 +77,11 @@ fi
     exit $?;
 )
 
+# Create a tags.json in the data directory.
+"${bin}/tags" || (
+    exit $?;
+)
+
 # Load assets.
 "${bin}/assets" || (
     exit $?;

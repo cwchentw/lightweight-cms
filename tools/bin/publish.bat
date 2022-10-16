@@ -75,6 +75,11 @@ call %bin%\rss.bat || (
     exit /b %ERRORLEVEL%
 )
 
+rem Create a tags.json
+call %bin%\tags.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Load theme assets.
 call %bin%\assets.bat || (
     exit /b %ERRORLEVEL%

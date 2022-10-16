@@ -1,7 +1,7 @@
 ---
 title: The Features of Lightweight CMS
 linkTitle: Feature
-mtime: 2022/10/14
+mtime: 2022/10/16
 weight: 2
 ---
 
@@ -21,6 +21,7 @@ This article lists the features of Lightweight CMS.
 * https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb]
 * https://en.wikipedia.org/wiki/Pagination[Pagination]
 * No following external links
+* Interlinked tags
 * https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
 * RSS feed generator
 * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator

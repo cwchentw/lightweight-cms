@@ -1,6 +1,7 @@
 ---
 title: Deploy to Nginx
 mtime: 2022/1/5
+tags: ["Deployment"]
 weight: 4
 ---
 
