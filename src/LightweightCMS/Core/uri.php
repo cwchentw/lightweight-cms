@@ -72,7 +72,7 @@ function isTagPage ($uri)
 
 function isPageInTagPage ($uri)
 {
-    return preg_match("/^\/tags\/[^\/]+\/\d+\/$/", $uri);
+    return preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $uri);
 }
 
 function isCustomPage($uri)
