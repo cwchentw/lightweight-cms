@@ -157,7 +157,7 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInTags($loc)) {
 # Render a tag page, which is a section as well.
 else if (\LightweightCMS\Core\isTagPage($loc)) {
     preg_match("/^\/tags\/(.+)\/$/", $loc, $matches);
-    $tag = $matches[1];
+    $tag = urldecode($matches[1]);
 
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
 
@@ -176,7 +176,7 @@ else if (\LightweightCMS\Core\isTagPage($loc)) {
 }
 else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
     preg_match("/^\/tags\/(.+)\/(\d+)\/$/", $loc, $matches);
-    $tag = $matches[1];
+    $tag = urldecode($matches[1]);
     $page = $matches[2];
 
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\tagPageBreadcrumb($tag);
