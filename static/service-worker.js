@@ -19,7 +19,7 @@ function update (req) {
 }
 
 /* Update the base URL when migrating a website. */
-var BASE_URL = 'mdcms.org';
+var BASE_URL = 'lightweightcms.org';
 
 self.addEventListener('fetch', function (event) {
     if (event.request.url.match(BASE_URL)) {

@@ -89,6 +89,11 @@ fi
     exit $?;
 )
 
+# Update some static files.
+"${bin}/update" || (
+    exit $?;
+)
+
 # Load assets.
 "${bin}/assets" || (
     exit $?;

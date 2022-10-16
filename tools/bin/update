@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# Update some static files dynamically.
+
+
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
+# Check whether sed is available on the system.
+if ! command -v sed 2>&1 1>/dev/null;
+then
+    echo "No sed on the system" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+# Generate site settings if it doesn't exist.
+if ! [ -f "${lib}/settings.sh" ];
+then
+    "${bin}/init" > "${lib}/settings.sh" || (
+        exit $?;
+    )
+fi
+
+# Load site settings.
+. "${lib}/settings.sh";
+
+base_url=$(php ${libexec}/config.php SITE_BASE_URL);
+logo=$(php ${libexec}/config.php SITE_LOGO);
+
+sed -i "" -e "s/var BASE_URL = '[^']*';/var BASE_URL = '${base_url#https:\/\/}';/" "${static}/service-worker.js" || (
+    echo "Unable to modify service-worker.js" >&2;
+    exit 1;
+)
+
+if [ -f "${theme}/assets/sass/site.scss" ];
+then
+    sed -i "" -e "s/logo-36x36.png/${logo}-36x36.png/" "${theme}/assets/sass/site.scss" || (
+        echo "Unable to modify site.scss" >&2;
+        exit 1;
+    )
+fi
