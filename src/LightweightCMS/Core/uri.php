@@ -18,6 +18,27 @@ function isPageInHome($uri)
     return false;
 }
 
+function isTags ($uri)
+{
+    $sep = DIRECTORY_SEPARATOR;
+
+    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    # Load global setting.
+    require_once $rootDirectory . "{$sep}setting.php";
+
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
+    return $uri === SITE_PREFIX . "/tags/";
+}
+
+function isPageInTags ($uri)
+{
+    return preg_match("/^\/tags\/\d+\/$/", $uri);
+}
+
 # Check whether the page is a section.
 #
 # The function doesn't distinguish between top sections
