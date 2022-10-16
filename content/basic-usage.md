@@ -1,6 +1,7 @@
 ---
 title: Basic Usage
 mtime: 2022/09/12
+tags: ["Usage"]
 weight: 2
 ---
 

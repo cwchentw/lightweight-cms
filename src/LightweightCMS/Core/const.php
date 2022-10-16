@@ -35,6 +35,7 @@ define("LIGHTWEIGHT_CMS_POST_TITLE", "title");
 define("LIGHTWEIGHT_CMS_POST_AUTHOR", "author");
 define("LIGHTWEIGHT_CMS_POST_MTIME", "mtime");
 define("LIGHTWEIGHT_CMS_POST_WEIGHT", "weight");
+define("LIGHTWEIGHT_CMS_POST_TAGS", "tags");
 define("LIGHTWEIGHT_CMS_POST_META", "meta");
 define("LIGHTWEIGHT_CMS_POST_CONTENT", "content");
 define("LIGHTWEIGHT_CMS_POST_STATUS", "status");
