@@ -1,7 +1,7 @@
 {
     "siteName": "Lightweight CMS",
     "siteShortName": "Lightweight CMS",
-    "siteDescription": "A Both <span class=\"static-text\">Static</span> and <span class=\"dynamic-text\">Dynamic</span> Flat-File CMS, Powered by PHP",
+    "siteDescription": "A Both <span class=\"static-text\">Static<\/span> and <span class=\"dynamic-text\">Dynamic<\/span> Flat-File CMS, Powered by PHP",
     "reference": "Reference",
     "howto": "HOWTO",
     "tip": "Tip",

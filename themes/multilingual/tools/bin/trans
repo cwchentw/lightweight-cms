@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# A utility script to re-generate the main translation file of a Lightweight CMS site.
+
+
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
+
+cwd=$(dirname $0);
+bin="${cwd}/../bin";
+lib="${cwd}/../lib";
+libexec="${cwd}/../libexec";
+
+php "${libexec}/trans.php" || (
+    echo "Unable to create the main translation file" >&2;
+    exit 1;
+)
