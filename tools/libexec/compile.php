@@ -114,6 +114,8 @@ foreach ($tags as $tag => $paths) {
             $u = SITE_PREFIX . "/tags/" . $tag . "/" . $c . "/";
             $tagPageContent = compilePage($u);
             compile($tagPageContent, $u);
+
+            $c += 1;
             $tagPageCount -= POST_PER_PAGE;
         }
     }
@@ -127,6 +129,8 @@ if (POST_PER_PAGE > 0 && $tagCount > POST_PER_PAGE) {
         $u = SITE_PREFIX . "/tags/" . $c . "/";
         $tagsContent = compilePage($u);
         compile($tagsContent, $u);
+
+        $c += 1;
         $tagCount -= POST_PER_PAGE;
     }
 }
