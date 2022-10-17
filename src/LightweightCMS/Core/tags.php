@@ -24,7 +24,11 @@ function getTags ()
         $link[LIGHTWEIGHT_CMS_POST_META] = array();
         $link[LIGHTWEIGHT_CMS_POST_TITLE] = $tag;
         $link[LIGHTWEIGHT_CMS_POST_META]["description"] = $tag . " related articles";
-        $link[LIGHTWEIGHT_CMS_LINK_PATH] = "/tags/" . urlencode($tag) . "/";
+        $link[LIGHTWEIGHT_CMS_LINK_PATH] =
+            "/tags/"
+              # Trick to replace ` ` into `%20` in a URL string.
+            . preg_replace("/_/", "%20", urlencode(preg_replace("/ /", "_", $tag)))
+            . "/";
 
         array_push($result, $link);
     }
