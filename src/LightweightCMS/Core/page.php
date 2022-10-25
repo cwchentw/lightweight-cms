@@ -5,14 +5,17 @@ namespace LightweightCMS\Core;
 
 function getHomeContent()
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    require_once $rootDirectory . "/vendor/autoload.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load the third-party libraries.
+    require_once $rootDirectory . $sep . "vendor" . $sep . "autoload.php";
 
-    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
-    $indexPage = $contentDirectory . "/" . SECTION_INDEX;
+    $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
+    $indexPage = $contentDirectory . $sep . SECTION_INDEX;
 
+    # Default to an empty string.
     $result = "";
 
     if (file_exists($indexPage)) {
@@ -20,6 +23,8 @@ function getHomeContent()
 
         $parser = new \Mni\FrontYAML\Parser();
 
+        # We assume a section index to be a Markdown post,
+        #  which may be incorrect.
         $document = $parser->parse($rawContent);
 
         # Discard metadata from index page.
@@ -39,16 +44,17 @@ function getHomeContent()
 #  like "/section-title/post-title/".
 function getSections($uri)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    # Load local scripts.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/section.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "section.php";
 
     $result = array();
 
-    $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY . $uri;
+    $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY . $uri;
     $files = scandir($contentDirectory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -57,7 +63,7 @@ function getSections($uri)
             continue;
         }
 
-        $path = $contentDirectory . "/" . $file;
+        $path = $contentDirectory . $sep . $file;
         if (is_dir($path)) {
             $section = null;
             # Get top section(s).
@@ -88,18 +94,19 @@ function getSections($uri)
 
 function getPosts($uri)
 {
-    $rootDirectory = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    # Load local scripts.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/post.php";
-    require_once __DIR__ . "/customPage.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Get the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "post.php";
+    require_once __DIR__ . $sep . "customPage.php";
 
     $result = array();
 
-    $modifiedURI = preg_replace("/\//", DIRECTORY_SEPARATOR, $uri);
-    $directory = $rootDirectory . DIRECTORY_SEPARATOR . CONTENT_DIRECTORY . $modifiedURI;
+    $modifiedURI = preg_replace("/\//", $sep, $uri);
+    $directory = $rootDirectory . $sep . CONTENT_DIRECTORY . $modifiedURI;
     $files = scandir($directory, SCANDIR_SORT_ASCENDING);
 
     foreach ($files as $file) {
@@ -115,7 +122,7 @@ function getPosts($uri)
         if (is_file($path)) {
             $link = array();
 
-            # Remove file extensions.
+            # Remove the file extension.
             $origPath = $uri . pathinfo($file, PATHINFO_FILENAME) . "/";
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $origPath;
 
@@ -173,17 +180,18 @@ function getPostsPerPage($uri, $page)
 
 function getBreadcrumb($uri)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    # Load a local script.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/uri.php";
-    require_once __DIR__ . "/post.php";
-    require_once __DIR__ . "/customPage.php";
-    # Load private scripts.
-    require_once __DIR__ . "/_site.php";
-    require_once __DIR__ . "/_uri.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Get the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "uri.php";
+    require_once __DIR__ . $sep . "post.php";
+    require_once __DIR__ . $sep . "customPage.php";
+    # Load some private scripts.
+    require_once __DIR__ . $sep . "_site.php";
+    require_once __DIR__ . $sep . "_uri.php";
 
     $result = array();
 
@@ -211,7 +219,6 @@ function getBreadcrumb($uri)
             $prevPath = $prev;
         }
 
-        $rootDirectory = __DIR__ . "/../../..";
         $path = $rootDirectory
             . "/" . CONTENT_DIRECTORY
             . $prevPath . $arr[$i];
