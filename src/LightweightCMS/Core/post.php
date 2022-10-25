@@ -7,22 +7,20 @@ namespace LightweightCMS\Core;
 function readPost($page)
 {
     $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
 
-    # Get the root path of mdcms.
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-
-    # Load third-party libraries.
-    require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
-    # Load local scripts.
-    require_once __DIR__ . "{$sep}const.php";
-    require_once __DIR__ . "{$sep}errorPage.php";
-    require_once __DIR__ . "{$sep}uri.php";
-    require_once __DIR__ . "{$sep}utils.php";
-    # Load private scripts.
-    require_once __DIR__ . "{$sep}_uri.php";
-    require_once __DIR__ . "{$sep}_utils.php";
+    # Load the third-party libraries.
+    require_once $rootDirectory . $sep . "vendor" . $sep . "autoload.php";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "errorPage.php";
+    require_once __DIR__ . $sep . "uri.php";
+    require_once __DIR__ . $sep . "utils.php";
+    # Load some private scripts.
+    require_once __DIR__ . $sep . "_uri.php";
+    require_once __DIR__ . $sep . "_utils.php";
 
     $result = array();
 
@@ -186,6 +184,9 @@ function readPost($page)
         $document = $parser->parse($rawContent, false);
 
         # Extract metadata from a post.
+        #
+        # FIXME: YAML-style front matters are used instead of
+        #  the native AsciiDoc front matters.
         $metadata = $document->getYAML();
 
         # Strip metadata from a post.
@@ -204,11 +205,16 @@ function readPost($page)
             1 => array("pipe", "w"),
             2 => array("pipe", "w")
         );
-        
+
         # Convert a AsciiDoc document to a HTML fragment.
-        $asciiDoctorTemplatePath = $rootDirectory . "{$sep}tools{$sep}lib{$sep}asciidoctor-backends";
-        $process = proc_open("asciidoctor -T {$asciiDoctorTemplatePath} -E erb -e -o - -", $descriptorspec, $pipes);
-        
+        $asciiDoctorTemplatePath =
+            $rootDirectory . $sep . "tools" . $sep . "lib" . $sep . "asciidoctor-backends";
+        $process = proc_open(
+            "asciidoctor -T {$asciiDoctorTemplatePath} -E erb -e -o - -",
+            $descriptorspec,
+            $pipes
+        );
+
         if (is_resource($process)) {
             # Write the input to STDIN.
             fwrite($pipes[0], $stripedContent);
@@ -274,7 +280,7 @@ function readPost($page)
             }
         }
         else {
-            $result = errorPage("Internal Server Error", "Unable to Convert AsciiDoc", 500);
+            $result = errorPage("Internal Server Error", "Unable to Run AsciiDoc", 500);
         }
     }
     else if (file_exists($reStructuredTextPath)) {
@@ -304,9 +310,9 @@ function readPost($page)
             1 => array("pipe", "w"),
             2 => array("pipe", "w")
         );
-        
+
         # Convert a reStructuredText document to a HTML fragment.
-        $rst2html = $rootDirectory . "${sep}tools${sep}libexec${sep}rst2html-fragment.py";
+        $rst2html = $rootDirectory . $sep . "tools" . $sep . "libexec" . $sep . "rst2html-fragment.py";
         if (strncasecmp(PHP_OS, 'WIN', 3) == 0) {
             # Run the utility script on Windows.
             # TODO: Test the utility script on Windows.
@@ -316,7 +322,6 @@ function readPost($page)
             # Run the utility script on Unix.
             $process = proc_open("${rst2html}", $descriptorspec, $pipes);
         }
-        
 
         if (is_resource($process)) {
             # Write the input to STDIN.
@@ -383,7 +388,7 @@ function readPost($page)
             }
         }
         else {
-            $result = errorPage("Internal Server Error", "Unable to Convert reStructuredText", 500);
+            $result = errorPage("Internal Server Error", "Unable to Run reStructuredText", 500);
         }
     }
 
