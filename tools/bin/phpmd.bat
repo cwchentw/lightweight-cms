@@ -36,4 +36,4 @@ if not exist %lib%\settings.bat (
 rem Load site settings.
 call %lib%\settings.bat
 
-"%root%\vendor\bin\phpmd.bat" "%target%" text "%etc%\phpmd.xml" 
+"%root%\vendor\bin\phpmd.bat" "%target%" text "%etc%\phpmd.xml"

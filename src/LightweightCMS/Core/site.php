@@ -306,7 +306,7 @@ function getAllLinks($uri)
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-    
+
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
@@ -322,7 +322,7 @@ function getAllLinks($uri)
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
                     $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-    
+
                     # Skip functional posts.
                     # TODO: We may change it later.
                     if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)

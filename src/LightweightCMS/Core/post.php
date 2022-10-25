@@ -219,13 +219,13 @@ function readPost($page)
             # Write the input to STDIN.
             fwrite($pipes[0], $stripedContent);
             fclose($pipes[0]);
-        
+
             # Receive the output from STDOUT.
             $content = stream_get_contents($pipes[1]);
             fclose($pipes[1]);
-        
+
             $returnValue = proc_close($process);
-        
+
             if (0 === $returnValue) {
                 # Set the author of a post.
                 if (isValidField($metadata, METADATA_AUTHOR)) {
@@ -250,7 +250,7 @@ function readPost($page)
 
                 if (isValidField($metadata, METADATA_TITLE)) {
                     $result[LIGHTWEIGHT_CMS_POST_TITLE] = $metadata[METADATA_TITLE];
-        
+
                     # We have received a title from the metadata of a post.
                     #  Therefore, we remove <h1>-level titles from the content.
                     $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
@@ -260,7 +260,7 @@ function readPost($page)
                     # Therefore, we don't use a HTML parser but some regex pattern.
                     if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $content, $matches)) {
                         $result[LIGHTWEIGHT_CMS_POST_TITLE] = $matches[1];
-        
+
                         # Remove <h1>-level titles from the content.
                         $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
                     }
@@ -327,13 +327,13 @@ function readPost($page)
             # Write the input to STDIN.
             fwrite($pipes[0], $stripedContent);
             fclose($pipes[0]);
-        
+
             # Receive the output from STDOUT.
             $content = stream_get_contents($pipes[1]);
             fclose($pipes[1]);
-        
+
             $returnValue = proc_close($process);
-        
+
             if (0 === $returnValue) {
                 # Set the author of a post.
                 if (isValidField($metadata, METADATA_AUTHOR)) {
@@ -358,7 +358,7 @@ function readPost($page)
 
                 if (isValidField($metadata, METADATA_TITLE)) {
                     $result[LIGHTWEIGHT_CMS_POST_TITLE] = $metadata[METADATA_TITLE];
-        
+
                     # We have received a title from the metadata of a post.
                     #  Therefore, we remove <h1>-level titles from the content.
                     $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
@@ -368,7 +368,7 @@ function readPost($page)
                     # Therefore, we don't use a HTML parser but some regex pattern.
                     if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $content, $matches)) {
                         $result[LIGHTWEIGHT_CMS_POST_TITLE] = $matches[1];
-        
+
                         # Remove <h1>-level titles from the content.
                         $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
                     }
