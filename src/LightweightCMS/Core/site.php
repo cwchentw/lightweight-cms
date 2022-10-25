@@ -5,16 +5,17 @@ namespace LightweightCMS\Core;
 
 function getAllLinks($uri)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Get global setting.
-    require_once $rootDirectory . "/setting.php";
-    # Load local scripts.
-    require_once __DIR__ . "/const.php";
-    require_once __DIR__ . "/customPage.php";
-    require_once __DIR__ . "/post.php";
-    # Load private scripts.
-    require_once __DIR__ . "/_site.php";
-    require_once __DIR__ . "/_utils.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Get the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "customPage.php";
+    require_once __DIR__ . $sep . "post.php";
+    # Load some private scripts.
+    require_once __DIR__ . $sep . "_site.php";
+    require_once __DIR__ . $sep . "_utils.php";
 
     $result = array();
 
@@ -22,8 +23,6 @@ function getAllLinks($uri)
 
     # Add all valid directories and files into the queue.
     if (isHome($uri)) {
-        $rootDirectory = __DIR__ . "/../../..";
-
         # The home page itself is a special page.
         {
             $link = array();
@@ -38,7 +37,7 @@ function getAllLinks($uri)
             array_push($result, $link);
         }
 
-        $contentDirectory = $rootDirectory . "/" . CONTENT_DIRECTORY;
+        $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
         $files = scandir($contentDirectory);
 
         foreach ($files as $file) {
@@ -50,7 +49,7 @@ function getAllLinks($uri)
                 continue;
             }
 
-            $path = $contentDirectory . "/" . $file;
+            $path = $contentDirectory . $sep . $file;
             if (is_dir($path)) {
                 $page = getPageFromPath($path);
                 array_push($pages, $page);
