@@ -1,19 +1,21 @@
 <?php
-# The manifest.json generator of mdcms.
+# The manifest.json generator for Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
-# Load global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
 
-# The text of some languages displays right-to-left.
 $image = SITE_LOGO;
+
+# We assume a site logo is a PNG file,
+#  which may be incorrect.
 $imageExtension = ".png";
 $imageType = "image/png";
-$imagePath = "/img";
+
+$imagePath = "/img";  # A URI path, not a file system path.
 
 
 $json = array();

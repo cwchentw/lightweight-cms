@@ -90,13 +90,13 @@ call %bin%\site-assets.bat || (
     exit /b %ERRORLEVEL%
 )
 
-rem Copy static files.
+rem Copy the static files.
 xcopy /s /y %static% %public% || (
     echo Unable to copy static files to the public directory >&2
     exit /b 1
 )
 
-rem Copy router of mdcms.
+rem Copy the router of Lightweight CMS.
 copy /y %www%\index.php %public% || (
     echo Unable to copy router of mdmcs to public directory >&2
     exit /b 1

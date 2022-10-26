@@ -1,8 +1,8 @@
 /* The main build script of the assets of default theme
-    of mdcms.
+    of Lightweight CMS.
 
-   It is not really a part of a mdcms theme. You can safely
-    delete it and write your own build script. */
+   It is not really a part of a Lightweight CMS theme.
+    You can safely delete it and write your own build script. */
 
 const fs = require('fs');
 const path = require('path');

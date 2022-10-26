@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# A utility script to generate a 50x.html for mdcms.
+# A utility script to generate a 50x.html for Lightweight CMS.
 
 
 # Check whether PHP is available on the system.

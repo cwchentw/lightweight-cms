@@ -1,6 +1,6 @@
 <?php
 namespace LightweightCMS\Core;
-# Private utility functions for mdcms.
+# Private utility functions for Lightweight CMS.
 
 
 function isValidField($array, $key)

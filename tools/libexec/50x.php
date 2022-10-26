@@ -1,23 +1,22 @@
 <?php
-# A HTTP status 50x error page generator of mdcms.
+# A HTTP status 50x error page generator for Lightweight CMS.
 #
 # A 50x.html should be always static because some error
 #  occurs unexpectedly. In such case, a PHP-based dynamic page
 #  won't render well.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
-# Load global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
 
-# Load required libraries.
+# Load the built-in libraries.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
-# Load plugin(s) if any.
+# Load the plugin(s) if any.
 require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
-# Load site theme.
+# Load a site theme.
 require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 

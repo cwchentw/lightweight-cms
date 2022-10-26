@@ -1,13 +1,12 @@
 <?php
-# Don't add any namespace in a mdcms theme. Instead,
-#  let mdcms load global functions.
+# Don't add any namespace in a Lightweight CMS theme.
+#  Instead, let Lightweight CMS load global functions.
 
 require_once "utils.php";
 
 
 function loadHome()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -16,7 +15,6 @@ function loadHome()
 
 function loadSection()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -31,7 +29,6 @@ function loadSection()
 
 function loadPost()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -43,7 +40,6 @@ function loadAssets($dest)
     # Save the path of old working directory.
     $oldDirectory = getcwd();
 
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -80,7 +76,7 @@ function loadAssets($dest)
     try {
         $publicDirectory = $rootDirectory . $sep . "public";
 
-        # xCopy is a utility function in mdcms.
+        # xCopy is a utility function in Lightweight CMS.
         #  It will copy directories and files recursively.
         \LightweightCMS\Core\xCopy($publicDirectory, $dest);
     }

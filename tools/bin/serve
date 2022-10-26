@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Run a mdcms site locally with builtin web server of PHP.
+# Run a Lightweight CMS site locally with builtin web server of PHP.
 
 
 # Check whether PHP is available on the system.
@@ -115,19 +115,19 @@ export LIGHTWEIGHT_CMS_SITE_ASSET_PID=$!
 # Create assets.
 #npm install
 
-# Copy static files.
+# Copy the static files.
 cp -pr "${static}/"* "$public" || (
     echo "Unable to copy static files to the public directory" >&2;
     exit 1;
 )
 
-# Copy router of mdcms.
+# Copy the router of Lightweight CMS.
 cp -pr "${www}/index.php" "$public" || (
     echo "Unable to copy router of mdmcs to public directory" >&2;
     exit 1;
 )
 
-# Run a mdcms site locally.
-echo "Run a mdcms site locally. Press ctrl + c to stop the server."
+# Run a Lightweight CMS site locally.
+echo "Run a Lightweight CMS site locally. Press ctrl + c to stop the server."
 trap "kill -9 ${LIGHTWEIGHT_CMS_THEME_ASSET_PID}; kill -9 ${LIGHTWEIGHT_CMS_SITE_ASSET_PID}" exit;
 php -S "$address" -t "$public";

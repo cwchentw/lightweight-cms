@@ -1,7 +1,8 @@
 <?php
 # A private utility script.
 #
-# It is not included by the main loader of default theme of mdcms.
+# It is not included by the main loader of
+#  multilingual theme of Lightweight CMS.
 
 
 function includePartials ($partial)
@@ -92,7 +93,6 @@ function localize ($key, $default)
 
 function getLocalizedText ($textFor)
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 

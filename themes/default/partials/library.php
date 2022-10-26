@@ -1,5 +1,5 @@
 <?php
-# Library of a mdcms theme.
+# The front-end library of a Lightweight CMS theme.
 ?>
 
 <!-- Native JavaScript for Bootstrap -->

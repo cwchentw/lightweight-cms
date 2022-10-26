@@ -1,5 +1,5 @@
 @echo off
-rem A utility script to generate a 404.html for mdcms.
+rem A utility script to generate a 404.html for Lightweight CMS.
 
 
 rem Check whether PHP is available on the system.

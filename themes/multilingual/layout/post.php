@@ -1,7 +1,7 @@
 <?php
 # The layout of posts of a site.
 #
-# This is one mandatory layout for a mdcms theme.
+# This is one mandatory layout for a Lightweight CMS theme.
 
 # Require a private utility script.
 require_once __DIR__ . "/../src/utils.php";

@@ -1,6 +1,6 @@
 <?php
 namespace LightweightCMS\Core;
-# Utility functions for mdcms.
+# Utility functions for Lightweight CMS.
 
 
 # Check whether `$source` string starts with `$target` string.

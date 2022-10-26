@@ -2,7 +2,7 @@
 # The layout of sections of a site.
 #
 # Top sections and subsections are indistinguishable in this theme.
-# This is one mandatory layout for a mdcms theme.
+# This is one mandatory layout for a Lightweight CMS theme.
 
 # Require a private utility script.
 require_once __DIR__ . "/../src/utils.php";

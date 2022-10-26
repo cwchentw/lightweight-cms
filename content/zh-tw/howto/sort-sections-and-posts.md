@@ -7,7 +7,7 @@ weight: 2
 
 ## 前言
 
-mdcms owns builtin algorithms to sort sections and posts. They should be feasible for general conditions. Nevertheless, you may need your own algorithms for sorting of sections and posts. This article illustrates to write your own sorting algorithms.
+Lightweight CMS owns builtin algorithms to sort sections and posts. They should be feasible for general conditions. Nevertheless, you may need your own algorithms for sorting of sections and posts. This article illustrates to write your own sorting algorithms.
 
 ## PHP 如何排序
 

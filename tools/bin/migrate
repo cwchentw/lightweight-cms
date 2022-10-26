@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Migrate local mdcms repository to a new site
+# Migrate the local Lightweight CMS repository to a new site
 
 
 # Check whether PHP is available on the system.

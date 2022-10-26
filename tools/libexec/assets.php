@@ -1,8 +1,7 @@
 <?php
-# The theme assets loader of mdcms.
+# The theme assets loader of Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
@@ -19,7 +18,7 @@ try {
     $publicDirectory = $rootDirectory . $sep . "public";
 
     # `loadAssets($dest)` is a function
-    #  implemented by a mdcms theme.
+    #  implemented by a Lightweight CMS theme.
     loadAssets($publicDirectory);
 }
 catch (Exception $e) {

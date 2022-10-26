@@ -1,8 +1,8 @@
 <?php
-# The main PHP script for a mdcms theme.
+# The main PHP script for a Lightweight CMS theme.
 #
 # It is mandatory to place autoload.php in the
-#  root path of a mdcms theme.
+#  root path of a Lightweight CMS theme.
 
 
 $sep = DIRECTORY_SEPARATOR;
