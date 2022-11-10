@@ -219,22 +219,6 @@ else if (\LightweightCMS\Core\isTagPage($loc)) {
 
     loadSection();
 }
-# Render a section.
-else if (\LightweightCMS\Core\isSection($loc)) {
-    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
-    # Current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($loc);
-    # Subsections of current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
-    # Posts of current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
-    # First page in a series of pages.
-    if (POST_PER_PAGE > 0) {
-        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
-    }
-
-    loadSection();
-}
 # Render a page of a section.
 else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     preg_match("/^\/(.+)\/(\d+)\/$/", $loc, $matches);
@@ -270,6 +254,22 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     else {
         loadSection();
     }
+}
+# Render a section.
+else if (\LightweightCMS\Core\isSection($loc)) {
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    # Current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($loc);
+    # Subsections of current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
+    # Posts of current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
+    # First page in a series of pages.
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
+    }
+
+    loadSection();
 }
 # Render a custom page.
 else if (\LightweightCMS\Core\isCustomPage($loc)) {

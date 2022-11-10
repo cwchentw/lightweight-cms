@@ -11,16 +11,16 @@ function isHome($uri)
 
 function isPageInHome($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/(\d+)\/$/", $uri);
 }
 
 function isTags ($uri)
 {
-    $sep = DIRECTORY_SEPARATOR;
-    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
-    # Load the site settings.
-    require_once $rootDirectory . $sep . "setting.php";
-
     /* Add a trailing slash if no any. */
     if ("/" != substr($uri, strlen($uri)-1, 1)) {
         $uri .= "/";
@@ -31,6 +31,11 @@ function isTags ($uri)
 
 function isPageInTags ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/\d+\/$/", $uri);
 }
 
@@ -41,10 +46,9 @@ function isPageInTags ($uri)
 function isSection($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
-
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
 
     $path = $rootDirectory . $sep . CONTENT_DIRECTORY . $sep . str_replace("/", $sep, $uri);
 
@@ -53,6 +57,11 @@ function isSection($uri)
 
 function isPageInSection($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     if (preg_match("/^\/(.+)\/(\d+)\/$/", $uri, $matches)) {
         return isSection("/" . $matches[1] . "/");
     }
@@ -62,11 +71,21 @@ function isPageInSection($uri)
 
 function isTagPage ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/(.+)\/$/", $uri);
 }
 
 function isPageInTagPage ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $uri);
 }
 
