@@ -9,7 +9,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <div class="install-on-windows demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">&gt;</span> choco install php --version=<span class="choco-php-version">8.1.10</span>
 <span class="gp">&gt;</span> choco install composer
-<span class="gp">&gt;</span> choco install nodejs --version=16.17.0
+<span class="gp">&gt;</span> choco install nodejs --version=18.12.1
 <span class="gp">&gt;</span> choco install rsync
 <span class="gp">&gt;</span> choco install sed
 </pre></div>
@@ -29,7 +29,7 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <div class="install-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>brew install php@<span class="brew-php-version">8.1</span>
 <span class="gp">$ </span>brew install composer
-<span class="gp">$ </span>brew install node@16
+<span class="gp">$ </span>brew install node@18
 </pre></div>
 
 <div class="run-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite
@@ -47,8 +47,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener nofollow"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 16.17.0
-$ nvm use 16.17.0
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 18.12.1
+$ nvm use 18.12.1
 </code></pre>
 
 <div id="run-on-ubuntu" class="demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite
