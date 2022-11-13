@@ -1,5 +1,5 @@
 @echo off
-rem Migrate local mdcms repository to a new site
+rem Migrate the local Lightweight CMS repository to a new site
 
 
 rem Check whether PHP is available on the system.

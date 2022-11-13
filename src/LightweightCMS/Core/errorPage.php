@@ -5,11 +5,12 @@ namespace LightweightCMS\Core;
 
 function errorPage($title, $content, $status)
 {
-    $rootDirectory = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..";
-    # Load site settings.
-    require_once $rootDirectory . DIRECTORY_SEPARATOR . "setting.php";
-    # Load local script(s).
-    require_once __DIR__ . DIRECTORY_SEPARATOR . "const.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load the constants.
+    require_once __DIR__ . $sep . "const.php";
 
     # Create a post dynamically.
     $post = array();
@@ -23,31 +24,28 @@ function errorPage($title, $content, $status)
 
 function errorPageBreadcrumb($title)
 {
-    $rootDirectory = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "..";
-    # Load site settings.
-    require_once $rootDirectory . DIRECTORY_SEPARATOR . "setting.php";
-    # Load local script(s).
-    require_once __DIR__ . DIRECTORY_SEPARATOR . "const.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load the constants.
+    require_once __DIR__ . $sep . "const.php";
 
     # Create a breadcrumb dynamically.
     $breadcrumb = array();
 
-    {
-        $link = array();
+    $home = array();
 
-        $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
-        $link[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
+    $home[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/";
+    $home[LIGHTWEIGHT_CMS_LINK_TITLE] = BREADCRUMB_HOME;
 
-        array_push($breadcrumb, $link);
-    }
+    array_push($breadcrumb, $home);
 
-    {
-        $link = array();
+    $page = array();
 
-        $link[LIGHTWEIGHT_CMS_LINK_TITLE] = $title;
+    $page[LIGHTWEIGHT_CMS_LINK_TITLE] = $title;
 
-        array_push($breadcrumb, $link);
-    }
+    array_push($breadcrumb, $page);
 
     return $breadcrumb;
 }

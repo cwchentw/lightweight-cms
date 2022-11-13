@@ -1,7 +1,7 @@
 <?php
 # The layout of posts of a site.
 #
-# This is one mandatory layout for a mdcms theme.
+# This is one mandatory layout for a Lightweight CMS theme.
 
 # Require a private utility script.
 require_once __DIR__ . "/../src/utils.php";
@@ -32,7 +32,7 @@ if (ENABLE_TOC) {
     if (strlen($originalPost) === strlen($post[LIGHTWEIGHT_CMS_POST_CONTENT])) {
         $noSubtitle = True;
     }
-    
+
     $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-# Header of a mdcms theme.
+# The header of a Lightweight CMS theme.
 #
 # The PHP script includes stuffs within `<head>` tags.
 ?>

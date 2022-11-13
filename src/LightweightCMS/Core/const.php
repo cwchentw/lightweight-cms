@@ -1,7 +1,7 @@
 <?php
 namespace LightweightCMS\Core;
 
-# Constants used in mdcms.
+# Constants used in Lightweight CMS.
 #
 # Unlike the constants in setting.php, it won't help much to
 #  modify these constants. They merely serve as unique symbols

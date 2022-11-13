@@ -1,7 +1,7 @@
 <?php
 # Breadcrumb(s) of a page.
 #
-# This layout is applicable to all pages in mdcms sites
+# This layout is applicable to all pages in Lightweight CMS sites
 #  - home page, sections and posts.
 
 

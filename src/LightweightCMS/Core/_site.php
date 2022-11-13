@@ -5,7 +5,6 @@ namespace LightweightCMS\Core;
 
 function getPageFromPath($path)
 {
-    # Get the root path of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
 
@@ -27,7 +26,6 @@ function getPageFromPath($path)
 
 function getHTMLPathFromPage($page)
 {
-    # Get the root path of mdcms.
     $rootDirectory = __DIR__ . "/../../..";
 
     $path = $rootDirectory

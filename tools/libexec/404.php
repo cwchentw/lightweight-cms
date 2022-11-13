@@ -1,12 +1,11 @@
 <?php
-# A HTTP status 404 error page generator of mdcms.
+# A HTTP status 404 error page generator of Lightweight CMS.
 #
 # A 404.html should be both dynamic and static because
 #  some error occurs unexpectedly. In such case, a PHP-based
 #  dynamic page won't render well.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 

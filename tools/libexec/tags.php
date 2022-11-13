@@ -2,7 +2,6 @@
 # The RSS feed generator of Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 

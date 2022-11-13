@@ -1,5 +1,5 @@
 @echo off
-rem Sync a local mdcms repo to a production environment.
+rem Sync a local Lightweight CMS repo to a production environment.
 rem  Unrequired directories and files are skipped.
 
 
@@ -99,7 +99,7 @@ xcopy /s /y %static% %public% || (
     exit /b 1
 )
 
-rem Remove router of mdcms.
+rem Remove the router of Lightweight CMS.
 del /q %public%\index.php
 
 rem Trick for rsync on Windows.

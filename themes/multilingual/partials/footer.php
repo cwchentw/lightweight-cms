@@ -1,5 +1,5 @@
 <?php
-# Footer of a mdcms theme.
+# The footer of a Lightweight CMS theme.
 #
 ?>
 

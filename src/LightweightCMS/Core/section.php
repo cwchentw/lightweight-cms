@@ -6,19 +6,19 @@ namespace LightweightCMS\Core;
 function readSection($page)
 {
     $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
 
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-    # Load third-party libraries.
-    require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
-    # Load local scripts.
-    require_once __DIR__ . "{$sep}const.php";
-    require_once __DIR__ . "{$sep}uri.php";
-    require_once __DIR__ . "{$sep}utils.php";
-    # Load private scripts.
-    require_once __DIR__ . "{$sep}_uri.php";
-    require_once __DIR__ . "{$sep}_utils.php";
+    # Load the third-party libraries.
+    require_once $rootDirectory . $sep . "vendor" . $sep . "autoload.php";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load some local scripts.
+    require_once __DIR__ . $sep . "const.php";
+    require_once __DIR__ . $sep . "uri.php";
+    require_once __DIR__ . $sep . "utils.php";
+    # Load some private scripts.
+    require_once __DIR__ . $sep . "_uri.php";
+    require_once __DIR__ . $sep . "_utils.php";
 
     $result = array();
 
@@ -37,6 +37,8 @@ function readSection($page)
 
         $parser = new \Mni\FrontYAML\Parser();
 
+        # We assume a section index to be a Markdown post,
+        #  which may be incorrect.
         $document = $parser->parse($rawContent);
 
         # Extract metadata from a post.
@@ -45,7 +47,6 @@ function readSection($page)
         # Strip metadata from a post.
         $stripedContent = $document->getContent();
 
-        # Expose metadata of a section. No matter it is empty or not.
         # Expose metadata of a section. No matter it is empty or not.
         if (!is_null($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;

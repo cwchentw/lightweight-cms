@@ -48,7 +48,6 @@ The function doesn't accept any parameter. Theme creators are responsible to loa
 ```php
 function loadHome()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -63,7 +62,6 @@ In a similar fashion, the function doesn't accept any parameter. Here shows a sa
 ```php
 function loadSection()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
@@ -86,7 +84,6 @@ Here is an example:
 ```php
 function loadPost()
 {
-    # Get the root path of default theme of mdcms.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 

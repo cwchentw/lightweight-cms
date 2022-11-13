@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Sync a local mdcms repo to a production environment.
+# Sync a local Lightweight CMS repo to a production environment.
 #  Unrequired directories and files are skipped.
 
 
@@ -111,7 +111,7 @@ cp -pr "${static}/"* "$public" || (
     exit 1;
 )
 
-# Remove router of mdcms.
+# Remove the router of Lightweight CMS.
 rm -f "${public}/index.php";
 
 # Sync directories and files between the source

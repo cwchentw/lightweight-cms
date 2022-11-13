@@ -1,15 +1,12 @@
 <?php
-# The sitemap.xml generator of mdcms.
+# The sitemap.xml generator for Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
-
-# Get global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
-
-# Load required library.
+# Load the built-in library.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 
 

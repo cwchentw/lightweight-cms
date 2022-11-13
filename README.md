@@ -29,7 +29,7 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 ```shell
 > choco install php --version=8.0.22
 > choco install composer
-> choco install nodejs --version=16.17.0
+> choco install nodejs --version=18.12.1
 > choco install rsync
 > choco install sed
 ```
@@ -94,8 +94,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install 16.17.0
-$ nvm use 16.17.0
+$ nvm install 18.12.1
+$ nvm use 18.12.1
 ```
 
 ```shell

@@ -3,7 +3,6 @@ namespace LightweightCMS\Core;
 
 function loadCustomPage($uri)
 {
-    # Get the root path of mdcms.
     $rootDirectory = __DIR__ . "/../../..";
 
     # Load third-party libraries.
@@ -35,7 +34,6 @@ function loadCustomPage($uri)
 
 function readCustomPage($uri)
 {
-    # Get the root path of mdcms.
     $rootDirectory = __DIR__ . "/../../..";
 
     # Load third-party libraries.

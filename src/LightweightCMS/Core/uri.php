@@ -3,39 +3,39 @@ namespace LightweightCMS\Core;
 # URIs related functions.
 
 
-# Check whether the page is the home page of a site.
+# Check whether the web page is the home page of a site.
 function isHome($uri)
 {
-    return "/" == $uri;
+    return "/" === $uri;
 }
 
 function isPageInHome($uri)
 {
-    if (preg_match("/^\/(\d+)\/$/", $uri)) {
-        return true;
-    }
-
-    return false;
-}
-
-function isTags ($uri)
-{
-    $sep = DIRECTORY_SEPARATOR;
-
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
-
     /* Add a trailing slash if no any. */
     if ("/" != substr($uri, strlen($uri)-1, 1)) {
         $uri .= "/";
     }
 
-    return $uri === SITE_PREFIX . "/tags/";
+    return preg_match("/^\/(\d+)\/$/", $uri);
+}
+
+function isTags ($uri)
+{
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
+    return "/tags/" === $uri;
 }
 
 function isPageInTags ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/\d+\/$/", $uri);
 }
 
@@ -46,10 +46,9 @@ function isPageInTags ($uri)
 function isSection($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
-
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
 
     $path = $rootDirectory . $sep . CONTENT_DIRECTORY . $sep . str_replace("/", $sep, $uri);
 
@@ -58,6 +57,11 @@ function isSection($uri)
 
 function isPageInSection($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     if (preg_match("/^\/(.+)\/(\d+)\/$/", $uri, $matches)) {
         return isSection("/" . $matches[1] . "/");
     }
@@ -67,18 +71,28 @@ function isPageInSection($uri)
 
 function isTagPage ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/(.+)\/$/", $uri);
 }
 
 function isPageInTagPage ($uri)
 {
+    /* Add a trailing slash if no any. */
+    if ("/" != substr($uri, strlen($uri)-1, 1)) {
+        $uri .= "/";
+    }
+
     return preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $uri);
 }
 
 function isCustomPage($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
-    require_once __DIR__ . "{$sep}_uri.php";
+    require_once __DIR__ . $sep . "_uri.php";
 
     $path = getPath($uri, ".php");
 
@@ -88,11 +102,11 @@ function isCustomPage($uri)
 function isPost($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
-    require_once __DIR__ . "{$sep}_uri.php";
-
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
-    # Load global setting.
-    require_once $rootDirectory . "{$sep}setting.php";
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
+    # Load a private script.
+    require_once __DIR__ . $sep . "_uri.php";
 
     $htmlPath = getPath($uri, HTML_FILE_EXTENSION);
     $markdownPath = getPath($uri, MARKDOWN_FILE_EXTENSION);

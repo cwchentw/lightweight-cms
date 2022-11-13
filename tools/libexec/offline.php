@@ -1,12 +1,10 @@
 <?php
-# An offline.html generator of mdcms.
+# An offline.html generator for Lightweight CMS.
 #
-# offline.html is utilized by service worker for mdcms.
+# offline.html is utilized by the service worker for Lightweight CMS.
 
 
 $sep = DIRECTORY_SEPARATOR;
-
-# Get the absolute path of a local mdcms.
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
 # Load global settings.

@@ -1,5 +1,5 @@
 @echo off
-rem A utility script to generate an offline.html for mdcms.
+rem A utility script to generate an offline.html for Lightweight CMS.
 
 
 rem Check whether PHP is available on the system.

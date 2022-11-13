@@ -1,6 +1,6 @@
 <?php
 namespace LightweightCMS\Plugin;
-# Add a Google Analytics tracker for a mdcms site.
+# Add a Google Analytics tracker for a Lightweight CMS site.
 
 function googleAnalytics($id)
 {

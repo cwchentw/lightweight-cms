@@ -100,13 +100,13 @@ fi
 # Create assets.
 #npm install
 
-# Copy static files.
+# Copy the static files.
 cp -pr "${static}/"* "$public" || (
     echo "Unable to copy static files to the public directory" >&2;
     exit 1;
 )
 
-# Copy router of mdcms.
+# Copy the router of Lightweight CMS.
 cp -pr "${www}/index.php" "$public" || (
     echo "Unable to copy router of mdmcs to public directory" >&2;
     exit 1;

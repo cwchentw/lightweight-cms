@@ -1,7 +1,7 @@
 <?php
 # ToC (Table of Contents) for default theme.
 #
-# It is only applicatble to posts in mdcms sites.
+# It is only applicatble to the posts in Lightweight CMS sites.
 
 
 # Take global data.

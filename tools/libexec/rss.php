@@ -2,17 +2,14 @@
 # The RSS feed generator of Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
-# Get global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
-
-# Load required library.
+# Load the built-in library.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
-
-# Load required plubins.
+# Load the plubin(s) if any.
 require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 
 

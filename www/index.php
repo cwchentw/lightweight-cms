@@ -1,27 +1,28 @@
 <?php
-# Router of mdcms.
+# Router of Lightweight CMS.
 
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . "..";
-# Load global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
-# Load builtin library.
+# Load the builtin library.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
-# Load plugin(s) if any.
+# Load the plugin(s) if any.
 require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 # Load a theme.
 require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
-# Filter input URI.
+# Filter the input URI.
 $loc = filter_input(INPUT_SERVER, "REQUEST_URI", FILTER_SANITIZE_URL);
 
+# Manipulate the URI for a subsite.
 if ("" != SITE_PREFIX) {
     $origLoc = $loc;
     $loc = substr($loc, strlen(SITE_PREFIX));
 }
 
-# Render an error page for a bad URL.
+# Render an error page for a bad URI.
 if (false != strpos($loc, "..")) {
     # Create an error page dynamically.
     $post = \LightweightCMS\Core\errorPage(
@@ -55,7 +56,7 @@ else if ("" != SITE_PREFIX && !\LightweightCMS\Core\startsWith($origLoc, SITE_PR
 
     loadPost();
 }
-# Render a home page.
+# Render the home page of a site.
 else if (\LightweightCMS\Core\isHome($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
@@ -68,7 +69,7 @@ else if (\LightweightCMS\Core\isHome($loc)) {
 
     loadHome();
 }
-# Render a page of home page.
+# Render a page of the home page.
 else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
@@ -99,7 +100,7 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
         loadHome();
     }
 }
-# Tags is a special section.
+# Render the tags, which is a special section.
 else if (\LightweightCMS\Core\isTags($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb("Tags");
 
@@ -154,6 +155,7 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInTags($loc)) {
         loadSection();
     }
 }
+# Render a page of a tag page.
 else if (\LightweightCMS\Core\IsPageInTagPage($loc)) {
     preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $loc, $matches);
     $tag = urldecode($matches[1]);
@@ -217,22 +219,6 @@ else if (\LightweightCMS\Core\isTagPage($loc)) {
 
     loadSection();
 }
-# Render a section.
-else if (\LightweightCMS\Core\isSection($loc)) {
-    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
-    # Current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($loc);
-    # Subsections of current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
-    # Posts of current section.
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
-    # First page in a series of pages.
-    if (POST_PER_PAGE > 0) {
-        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
-    }
-
-    loadSection();
-}
 # Render a page of a section.
 else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     preg_match("/^\/(.+)\/(\d+)\/$/", $loc, $matches);
@@ -268,6 +254,22 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInSection($loc)) {
     else {
         loadSection();
     }
+}
+# Render a section.
+else if (\LightweightCMS\Core\isSection($loc)) {
+    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    # Current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTION] = \LightweightCMS\Core\readSection($loc);
+    # Subsections of current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
+    # Posts of current section.
+    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
+    # First page in a series of pages.
+    if (POST_PER_PAGE > 0) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
+    }
+
+    loadSection();
 }
 # Render a custom page.
 else if (\LightweightCMS\Core\isCustomPage($loc)) {

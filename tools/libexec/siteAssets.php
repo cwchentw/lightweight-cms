@@ -1,22 +1,19 @@
 <?php
-# The site assets loader of mdcms.
+# The site assets loader for Lightweight CMS.
 
 
-# Get the absolute path of a local mdcms.
 $sep = DIRECTORY_SEPARATOR;
 $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
-
-# Load global settings.
+# Load the site settings.
 require_once $rootDirectory . $sep . "setting.php";
-
-# Load private library.
+# Load the built-in library.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 
 if (!LOAD_SITE_ASSETS) {
     exit(0);
 }
 
-# Get directory of personal assets.
+# Get the directory of the personal assets.
 $assetDirectory = $rootDirectory . $sep . ASSET_DIRECTORY;
 $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
@@ -56,12 +53,12 @@ if (!$hasAsset) {
 # Save the path of old working directory.
 $oldDirectory = getcwd();
 
-# Move to root path of mdcms.
+# Move to the root path of Lightweight CMS.
 if (!chdir($rootDirectory)) {
     # Move back to old working directory.
     chdir($oldDirectory);
 
-    fwrite(STDERR, "Unable to change working directory to root path of mdcms", PHP_EOL);
+    fwrite(STDERR, "Unable to change working directory to the root path of Lightweight CMS", PHP_EOL);
     exit(1);
 }
 
@@ -90,7 +87,7 @@ if (!system("npm run prod")) {
 
 # Copy assets recursively.
 try {
-    # xCopy is a utility function in mdcms.
+    # xCopy is a utility function in Lightweight CMS.
     #  It will copy directories and files recursively.
     \LightweightCMS\Core\xCopy($assetDirectory, $publicDirectory);
 }
