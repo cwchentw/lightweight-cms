@@ -23,17 +23,90 @@ function getHomeContent()
 
         $parser = new \Mni\FrontYAML\Parser();
 
-        # We assume a section index to be a Markdown post,
-        #  which may be incorrect.
-        $document = $parser->parse($rawContent);
+        $ext = "." . pathinfo($indexPage, PATHINFO_EXTENSION);
+
+        if (MARKDOWN_FILE_EXTENSION === $ext) {
+            $document = $parser->parse($rawContent);
+        }
+        else {
+            $document = $parser->parse($rawContent, false);
+        }
 
         # Discard metadata from index page.
         #$metadata = $document->getYAML();
 
         # Strip metadata from index page.
-        $stripedContent = $document->getContent();
+        if (MARKDOWN_FILE_EXTENSION === $ext) {
+            $stripedContent = $document->getContent();
+            $result .= $stripedContent;
+        }
+        else if (ASCIIDOC_FILE_EXTENSION === $ext) {
+            # Convert a AsciiDoc document to a HTML fragment.
+            $asciiDoctorTemplatePath =
+                $rootDirectory . $sep . "tools" . $sep . "lib" . $sep . "asciidoctor-backends";
+            $process = proc_open(
+                "asciidoctor -T {$asciiDoctorTemplatePath} -E erb -e -o - -",
+                $descriptorspec,
+                $pipes
+            );
 
-        $result .= $stripedContent;
+            if (is_resource($process)) {
+                # Write the input to STDIN.
+                fwrite($pipes[0], $stripedContent);
+                fclose($pipes[0]);
+
+                # Receive the output from STDOUT.
+                $content = stream_get_contents($pipes[1]);
+                fclose($pipes[1]);
+
+                $returnValue = proc_close($process);
+
+                if (0 === $returnValue) {
+                    $result .= $content;
+                }
+                else {
+                    $result = "Internal Server Error";
+                }
+            }
+            else {
+                $result = "Internal Server Error";
+            }
+        }
+        else if (RESTRUCTUREDTEXT_FILE_EXTENSION === $ext) {
+            # Convert a reStructuredText document to a HTML fragment.
+            $rst2html = $rootDirectory . $sep . "tools" . $sep . "libexec" . $sep . "rst2html-fragment.py";
+            if (strncasecmp(PHP_OS, 'WIN', 3) == 0) {
+                # Run the utility script on Windows.
+                # TODO: Test the utility script on Windows.
+                $process = proc_open("python ${rst2html}", $descriptorspec, $pipes);
+            }
+            else {
+                # Run the utility script on Unix.
+                $process = proc_open("${rst2html}", $descriptorspec, $pipes);
+            }
+
+            if (is_resource($process)) {
+                # Write the input to STDIN.
+                fwrite($pipes[0], $stripedContent);
+                fclose($pipes[0]);
+
+                # Receive the output from STDOUT.
+                $content = stream_get_contents($pipes[1]);
+                fclose($pipes[1]);
+
+                $returnValue = proc_close($process);
+
+                if (0 === $returnValue) {
+                    $result .= $content;
+                }
+                else {
+                    $result = "Internal Server Error";
+                }
+            }
+            else {
+                $result = "Internal Server Error";
+            }
+        }
     }
 
     return $result;
