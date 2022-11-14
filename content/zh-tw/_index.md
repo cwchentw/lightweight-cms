@@ -33,7 +33,7 @@ title: 輕量級內容管理系統
 
 <div class="install-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>brew install php@<span class="brew-php-version">8.1</span>
 <span class="gp">$ </span>brew install composer
-<span class="gp">$ </span>brew install node@16
+<span class="gp">$ </span>brew install node@18
 </pre></div>
 
 <div class="run-on-macos demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite

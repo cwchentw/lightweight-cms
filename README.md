@@ -58,7 +58,7 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 ```shell
 $ brew install php@8.0
 $ brew install composer
-$ brew install node@16
+$ brew install node@18
 ```
 
 ```shell
