@@ -103,7 +103,7 @@ function fixedSidebar () {
         let navbarHeight = document.getElementsByTagName('nav')[0].clientHeight;
         /* The height of the <h1> title of a page. */
         let windowHeight = document.documentElement.clientHeight || window.innerHeight;
-        let headerHeight = 0.5 * windowHeight;
+        let headerHeight = 0.6 * windowHeight;
 
         /* The sidebar scrolls below both the navbar and the title bar. */
         if (window.scrollY > navbarHeight + headerHeight) {

@@ -85,7 +85,7 @@ sed -i "" -e "s/Lightweight CMS/Awesome Site/" "${root}/config/information.php" 
 )
 
 # Update the site description.
-sed -i "" -e "s/A Both <span[^>]*>[^<]*<\/span> and <span[^>]*>[^<]*<\/span> Flat-File CMS, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
+sed -i "" -e "s/A Dual-Mode, Flat-File CMS, Powered by PHP/A Concise Description of Your Awesome Site/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )

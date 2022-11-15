@@ -1,7 +1,7 @@
 {
-    "siteName": "輕量級內容管理系統",
-    "siteShortName": "輕量級內容管理系統",
-    "siteDescription": "兼具<span class=\"static-text\">靜態</span>和<span class=\"dynamic-text\">動態</span>的平面文件內容管理系統，以 PHP 驅動",
+    "siteName": "輕量級 CMS",
+    "siteShortName": "輕量級 CMS",
+    "siteDescription": "雙模式、平面文件內容管理系統，以 PHP 驅動",
     "reference": "參照",
     "howto": "指引",
     "tip": "訣竅",

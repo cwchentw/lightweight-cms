@@ -346,7 +346,7 @@ footer .container .links ul li {
 .jumbotron {
     background-color: $jumbotron-color;
 
-    height: 50vh;
+    height: 60vh;
 
     .container {
         width: 80%;
@@ -561,20 +561,6 @@ th {
 
 .quick-start-hint {
     text-align: center;
-}
-
-.static-text {
-    font-weight: 800;
-    font-size: 1.08em;
-
-    color: mediumturquoise;
-}
-
-.dynamic-text {
-    font-weight: 800;
-    font-size: 1.08em;
-
-    color: coral;
 }
 
 #quick-start {

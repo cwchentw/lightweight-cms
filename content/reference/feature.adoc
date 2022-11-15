@@ -13,7 +13,7 @@ This article lists the features of Lightweight CMS.
 
 * Cross-platform
 * Switch between static mode and dynamic one
-* Build multilingual sites *(experimental)*
+* Build a multilingual site
 * Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
 * PHP-based custom pages
 * Store draft posts before publishing
@@ -56,7 +56,7 @@ These features are available in _default_ theme:
 * Asset watching and hot change(s)
 * Synchronize content on a production environment (through `rsync(1)`)
 * Migrate a local Lightweight CMS repository to a new site (through home-made scripts)
-* Compile static Lightweight CMS sites
+* Compile to a static site if no dynamic feature is needed
 
 == Next Step
 

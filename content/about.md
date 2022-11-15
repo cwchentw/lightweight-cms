@@ -6,7 +6,7 @@ weight: 1
 
 ## Both Static and Dynamic
 
-[Lightweight CMS](https://github.com/cwchentw/lightweight-cms) represents a both *static* and *dynamic* **flat-file** **content management system (CMS)** powered by PHP.
+[Lightweight CMS](https://github.com/cwchentw/lightweight-cms) represents a **dual-mode**, **flat-file** **content management system (CMS)** powered by PHP.
 
 Based on the method a CMS renders web pages, a CMS is either static or dynamic. [WordPress](https://wordpress.org/) is the most famous dynamic CMS on the earth while both [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/) are popular static ones.
 

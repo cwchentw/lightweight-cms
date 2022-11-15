@@ -54,7 +54,7 @@ These features are available in _default_ theme:
 * Asset watching and hot change(s)
 * Synchronize content on a production environment (through `rsync(1)`)
 * Migrate a local Lightweight CMS repository to a new site (through home-made scripts)
-* Compile static Lightweight CMS sites
+* Compile to a static site if no dynamic feature is needed
 
 == 繼續深入
 
