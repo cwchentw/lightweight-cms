@@ -1,12 +1,13 @@
 # Lightweight CMS
 
-Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system), powered by PHP.
+Lightweight CMS is a dual-mode, flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system), powered by PHP.
 
 ## Features
 
 * Cross-platform
 * Switch between static mode and dynamic one
-* Build multilingual sites *(experimental)*
+* Compile to a static site if no dynamic feature is needed
+* (Optional) Build a multilingual site
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
 * PHP-based custom pages
 * Store draft posts before publishing
@@ -20,7 +21,6 @@ Lightweight CMS is a both *static* and *dynamic* flat-file [CMS](https://en.wiki
 * [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 * Asset compilation (SCSS and Babel)
 * Asset watching and hot change(s)
-* Compile static Lightweight CMS sites
 
 ## Synopsis
 
@@ -107,7 +107,7 @@ $ git push -u origin master
 
 ## Why not simply another Static Site Generator?
 
-There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a CMS capable to switch between static and dynamic websites.
+There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a CMS capable to switch between a static website and a dynamic one.
 
 Website owners prefer flat files over relational databases when feasible. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat files written in common lightweight markup languages as contents.
 

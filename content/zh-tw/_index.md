@@ -1,5 +1,5 @@
 ---
-title: 輕量級內容管理系統
+title: 輕量級 CMS
 ---
 
 歡迎來到 **Lightweight CMS (輕量級內容管理系統)** 的官方網站。如果你對本網站發佈軟體感到陌生，先觀看我們的[介紹文章](/zh-tw/#introduction)。
