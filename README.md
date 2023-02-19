@@ -210,4 +210,4 @@ See [here](/CHANGELOG.md)
 
 ## Copyright
 
-Copyright (c) 2021-2022 Michelle Chen. Licensed under MIT
+Copyright (c) 2021-2023 Michelle Chen. Licensed under MIT
