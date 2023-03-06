@@ -40,6 +40,8 @@ function readPost($page)
     if (file_exists($htmlPath)) {
         $rawContent = file_get_contents($htmlPath);
 
+        /* FIXME: To our best knowledge, there is no front matter YAML parser
+            for PHP 8.2 currently. Hence, we keep the version of PHP in 8.1. */
         $parser = new \Mni\FrontYAML\Parser();
 
         # Parse raw content.
