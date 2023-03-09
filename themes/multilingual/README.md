@@ -38,7 +38,7 @@ There are only five mandatory functions in a Lightweight CMS theme currently:
 * `loadHome()`: Load a layout of home page
 * `loadSection()`: Load a layout of sections
 * `loadPost()`: Load a layout of posts
-* `loadPage()`: Load a layout of pages *(not implemented yet)*
+* `loadPage()`: Load a layout of pages
 * `loadAssets($dest)`: Load assets
 
 ### `loadHome()` Function
@@ -93,14 +93,15 @@ function loadPost()
 
 ### `loadPage()` Function
 
-*Not implemented yet*
-
 Here is an example:
 
 ```php
-function loadPage()
+function loadPage ()
 {
-    require __DIR__ . "/theme/" . "page.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "layout" . $sep . "page.php";
 }
 ```
 

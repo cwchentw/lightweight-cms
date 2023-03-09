@@ -15,7 +15,7 @@ This article lists the features of Lightweight CMS.
 * Switch between static mode and dynamic one
 * Build a multilingual site
 * Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
-* PHP-based custom pages
+* Dynamic pages in PHP
 * Store draft posts before publishing
 * Nested sections
 * https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb]

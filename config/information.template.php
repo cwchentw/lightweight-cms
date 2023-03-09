@@ -26,6 +26,6 @@ define("SITE_COPYRIGHT", "Copyright (c) 2021-2023 Michelle Chen. Licensed under 
 #  some modifications on router of Lightweight CMS for such a site.
 define("SITE_LANGUAGE", "en-US");
 # Theme of a site.
-define("SITE_THEME", "multilingual");
+define("SITE_THEME", "default");
 # Logo of a site.
 define("SITE_LOGO", "logo");

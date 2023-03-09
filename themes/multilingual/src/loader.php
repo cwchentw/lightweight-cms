@@ -35,6 +35,14 @@ function loadPost()
     require $rootDirectory . $sep . "layout" . $sep . "post.php";
 }
 
+function loadPage ()
+{
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "layout" . $sep . "page.php";
+}
+
 function loadAssets($dest)
 {
     # Save the path of old working directory.
