@@ -34,6 +34,7 @@ function readPost($page)
     $markdownPath = getPath($page, MARKDOWN_FILE_EXTENSION);
     $asciiDocPath = getPath($page, ASCIIDOC_FILE_EXTENSION);
     $reStructuredTextPath = getPath($page, RESTRUCTUREDTEXT_FILE_EXTENSION);
+    $phpPath = getPath($page, ".php");
 
     # Here we simply set higher priority for HTML pages.
     #  We may change it later.
@@ -392,6 +393,78 @@ function readPost($page)
         else {
             $result = errorPage("Internal Server Error", "Unable to Run reStructuredText", 500);
         }
+    }
+    else if (file_exists($phpPath)) {
+        $rawContent = file_get_contents($reStructuredTextPath);
+
+        $parser = new \Mni\FrontYAML\Parser();
+
+        # Parse raw content.
+        $document = $parser->parse($rawContent, false);
+
+        # Extract metadata from a post.
+        $metadata = $document->getYAML();
+
+        # Strip metadata from a post.
+        $stripedContent = $document->getContent();
+        $content = $stripedContent;
+
+        # Expose metadata of a post. No matter it is empty or not.
+        if (!is_null($metadata)) {
+            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
+        }
+        else {
+            $result[LIGHTWEIGHT_CMS_POST_META] = array();
+        }
+
+        # Set the author of a post.
+        if (isValidField($metadata, METADATA_AUTHOR)) {
+            $result[LIGHTWEIGHT_CMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];
+        }
+        else {
+            $result[LIGHTWEIGHT_CMS_POST_AUTHOR] = SITE_AUTHOR;
+        }
+
+        # Set the mtime of a post.
+        if (isValidField($metadata, METADATA_MTIME)) {
+            $result[LIGHTWEIGHT_CMS_POST_MTIME] = strtotime($metadata[METADATA_MTIME]);
+        }
+        else {
+            $result[LIGHTWEIGHT_CMS_POST_MTIME] = filemtime($phpPath);
+        }
+
+        # Set weight of a post if any.
+        if (isValidField($metadata, METADATA_WEIGHT)) {
+            $result[LIGHTWEIGHT_CMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
+        }
+
+        if (isValidField($metadata, METADATA_TITLE)) {
+            $result[LIGHTWEIGHT_CMS_POST_TITLE] = $metadata[METADATA_TITLE];
+
+            # We have received a title from the metadata of a post.
+            #  Therefore, we remove <h1>-level titles from the content.
+            $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
+        }
+        else {
+            # `$content` is not a full HTML document.
+            # Therefore, we don't use a HTML parser but some regex pattern.
+            if (preg_match("/<h1[^>]*>(.+)<\/h1>/", $content, $matches)) {
+                $result[LIGHTWEIGHT_CMS_POST_TITLE] = $matches[1];
+
+                # Remove <h1>-level titles from the content.
+                $result[LIGHTWEIGHT_CMS_POST_CONTENT] = preg_replace("/<h1[^>]*>(.+)<\/h1>/", "", $content);
+            }
+            else {
+                $pages = parseURI($page);
+                $title = preg_replace("/\/|-+/", " ", array_pop($pages));
+                $title = ucwords($title);  # Capitalize a title.
+                $result[LIGHTWEIGHT_CMS_POST_TITLE] = $title;
+                $result[LIGHTWEIGHT_CMS_POST_CONTENT] = $content;
+            }
+        }
+
+        # We cannot tell whether the content of the PHP page is wrong or not.
+        #  Hence, we postpone the evaluation till our page layout.
     }
 
     # Prevent search engine bots from following links.

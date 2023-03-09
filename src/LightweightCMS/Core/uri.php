@@ -89,7 +89,7 @@ function isPageInTagPage ($uri)
     return preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $uri);
 }
 
-function isCustomPage($uri)
+function isPage($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     require_once __DIR__ . $sep . "_uri.php";

@@ -1,7 +1,7 @@
 ---
 title: The Concepts of Lightweight CMS
 linkTitle: Concept
-mtime: 2022/07/20
+mtime: 2023/03/09
 weight: 1
 ---
 
@@ -43,15 +43,11 @@ Posts or post pages work as real information conveyors in a Lightweight CMS site
 
 In addition to content in posts, Lightweight CMS provides metadata for each post like a title, an author and last modified time. These metadata are accessible in its layout.
 
-### Custom Pages
+### Dynamic Pages
 
-`https://example.com/section/custom-page/`
+`https://example.com/section/page/`
 
-Sometimes Lightweight CMS users require to create custom pages with layouts different from those of home page, sections and posts. In Lightweight CMS, custom pages are PHP scripts in *content* directory.
-
-Because custom pages in a Lightweight CMS site don't rely on layouts from a Lightweight CMS theme, users have to arrange layouts in those pages by themselves.
-
-*TODO: Use the partials in a Lightweight CMS theme*
+Sometimes Lightweight CMS users require dynamic pages in their sites. In Lightweight CMS, those pages are PHP scripts with optional front matters in *content* directory.
 
 ### Error Pages
 

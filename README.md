@@ -9,7 +9,7 @@ Lightweight CMS is a dual-mode, flat-file [CMS](https://en.wikipedia.org/wiki/Co
 * Compile to a static site if no dynamic feature is needed
 * (Optional) Build a multilingual site
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
-* PHP-based custom pages
+* Dynamic pages in PHP
 * Store draft posts before publishing
 * Nested sections
 * Breadcrumb
@@ -131,7 +131,6 @@ Website owners prefer flat files over relational databases when feasible. Noneth
   * GNU/Linux is recommended
   * A web server like Apache or Nginx
   * PHP 8.1
-  * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) AsciiDoctor (for AsciiDoc support)
   * (Optional) Docutils (for reStructuredText support). Pygments (code highlighting for reStructuredText)
@@ -150,7 +149,7 @@ Website owners prefer flat files over relational databases when feasible. Noneth
   * [Bootstrap.Native](https://thednp.github.io/bootstrap.native/)
   * (Optional) [highlight.js](https://highlightjs.org)
 * Development
-  * Node.js 16.x
+  * Node.js 18.x
   * [Gulp](https://gulpjs.com/)
   * [Sass](https://sass-lang.com/)
   * [Autoprefixer](https://github.com/postcss/autoprefixer)
