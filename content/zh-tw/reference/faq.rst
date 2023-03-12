@@ -1,6 +1,6 @@
 ---
 title: 常見問題集
-mtime: 2022/09/11
+mtime: 2023/03/12
 weight: 4
 ---
 
@@ -40,7 +40,7 @@ Lightweight CMS 是使用什麼程式語言製作的？
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php74`` and ``php80`` branches:
+Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php80`` branches:
 
 ====================== ===========
 GNU/Linux Distribution PHP Version
@@ -54,14 +54,6 @@ openSUSE Leap 15.4     8.0.10
 
 如何在舊版 PHP 上執行 Lightweight CMS？
 ------------------------------------------------------------------
-
-To run Lightweight CMS on PHP 7.4:
-
-.. code-block:: shell
-
-   $ git clone https://github.com/cwchentw/lightweight-cms.git
-   $ cd lightweight-cms
-   $ git checkout php74
 
 To run Lightweight CMS on PHP 8.0:
 
