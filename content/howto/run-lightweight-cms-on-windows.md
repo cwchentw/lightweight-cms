@@ -1,7 +1,7 @@
 ---
 title: How to Run Lightweight CMS on Windows
 linkTitle: Run Lightweight CMS on Windows
-mtime: 2021/7/24
+mtime: 2023/03/12
 tags: ["Usage"]
 weight: 4
 ---
@@ -16,7 +16,7 @@ Most PHP-powered sites run on GNU/Linux. Lightweight CMS sites are of no excepti
 
 * Production environment
   * A web server like Apache or Nginx
-  * PHP 8.1
+  * PHP 8.0 or 8.1
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) AsciiDoctor (for AsciiDoc support)

@@ -41,7 +41,7 @@ function readPost($page)
     if (file_exists($htmlPath)) {
         $rawContent = file_get_contents($htmlPath);
 
-        /* FIXME: To our best knowledge, there is no front matter YAML parser
+        /* NOTE: To our best knowledge, there is no front matter YAML parser
             for PHP 8.2 currently. Hence, we keep the version of PHP in 8.1. */
         $parser = new \Mni\FrontYAML\Parser();
 
@@ -172,7 +172,10 @@ function readPost($page)
             $result[LIGHTWEIGHT_CMS_POST_WEIGHT] = $metadata[METADATA_WEIGHT];
         }
 
-        # Convert the Markdown document into a HTML document.
+        /* Convert the Markdown document into a HTML document.
+
+           NOTE: erusev/Parsedown doesn't support PHP 8.2 yet.
+            Hence, we keep the version of PHP in 8.1.  */
         $parser = new \Parsedown();
         $result[LIGHTWEIGHT_CMS_POST_CONTENT] = $parser->text($result["content"]);
 

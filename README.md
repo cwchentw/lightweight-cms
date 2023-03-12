@@ -118,7 +118,7 @@ Website owners prefer flat files over relational databases when feasible. Noneth
 * Production
   * GNU/Linux is recommended
   * A web server like Apache or Nginx
-  * PHP 8.1
+  * PHP 8.0 or 8.1
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) AsciiDoctor (for AsciiDoc support)
   * (Optional) Docutils (for reStructuredText support). Pygments (code highlighting for reStructuredText)
@@ -186,7 +186,7 @@ You can run a Lightweight CMS site locally with builtin web server of PHP:
 $ ./tools/bin/serve
 ```
 
-[Deploy](https://lightweightcms.org/deployment/) the cloned repo to a web hosting service supporting PHP 8.1:
+[Deploy](https://lightweightcms.org/deployment/) the cloned repo to a web hosting service supporting PHP 8.0 or 8.1:
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www

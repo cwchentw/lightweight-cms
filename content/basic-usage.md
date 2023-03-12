@@ -1,6 +1,6 @@
 ---
 title: Basic Usage
-mtime: 2022/09/12
+mtime: 2023/03/12
 tags: ["Usage"]
 weight: 2
 ---
@@ -16,7 +16,7 @@ This article illustrates the basic usage of Lightweight CMS. Some details are om
 * Production environment
   * GNU/Linux is recommended
   * A web server like [Apache](https://httpd.apache.org/) or [Nginx](https://www.nginx.com/)
-  * [PHP 8.1](https://www.php.net/) or above
+  * [PHP](https://www.php.net/) 8.0 or 8.1
   * FastCGI Process Manager (FPM) of PHP
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (Optional) [AsciiDoctor](https://asciidoctor.org/) (for AsciiDoc support)
@@ -96,7 +96,7 @@ You can run a Lightweight CMS site locally with the builtin web server of PHP:
 $ sudo ./tools/bin/serve
 ```
 
-[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.1 or above:
+[Deploy](/deployment/) the cloned repo to a web hosting service supporting PHP 8.0 or 8.1:
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www

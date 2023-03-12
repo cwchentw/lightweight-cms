@@ -1,6 +1,6 @@
 ---
 title: 基本用法
-mtime: 2022/09/16
+mtime: 2023/3/12
 tags: ["使用"]
 weight: 2
 ---
@@ -16,7 +16,7 @@ weight: 2
 * 生產環境
   * 建議使用 GNU/Linux
   * 網頁伺服器，像是 [Apache](https://httpd.apache.org/) 或 [Nginx](https://www.nginx.com/)
-  * [PHP 8.1](https://www.php.net/) 以上的版本
+  * [PHP](https://www.php.net/) 8.0 或 8.1
   * PHP 的 FastCGI 行程管理器
   * [FrontYAML](https://github.com/mnapoli/FrontYAML)
   * (可選擇) [AsciiDoctor](https://asciidoctor.org/) (AsciiDoc 支援)
@@ -96,7 +96,7 @@ $ composer install --no-dev
 $ sudo ./tools/bin/serve
 ```
 
-[發佈](/zh-tw/deployment/)該專案到支援 PHP 8.1 以上的網站托管服務：
+[發佈](/zh-tw/deployment/)該專案到支援 PHP 8.0 或 8.1 的網站托管服務：
 
 ```shell
 $ sudo ./tools/bin/sync-to /path/to/www
