@@ -55,7 +55,7 @@ function readPost($page)
         $stripedContent = $document->getContent();
 
         # Expose metadata of a post. No matter it is empty or not.
-        if (!is_null($metadata)) {
+        if (is_array($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
@@ -124,7 +124,7 @@ function readPost($page)
         $stripedContent = $document->getContent();
 
         # Expose metadata of a post. No matter it is empty or not.
-        if (!is_null($metadata)) {
+        if (is_array($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
@@ -199,7 +199,7 @@ function readPost($page)
         $stripedContent = $document->getContent();
 
         # Expose metadata of a post. No matter it is empty or not.
-        if (!is_null($metadata)) {
+        if (is_array($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
@@ -304,7 +304,7 @@ function readPost($page)
         $stripedContent = $document->getContent();
 
         # Expose metadata of a post. No matter it is empty or not.
-        if (!is_null($metadata)) {
+        if (is_array($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
@@ -413,7 +413,7 @@ function readPost($page)
         $content = $stripedContent;
 
         # Expose metadata of a post. No matter it is empty or not.
-        if (!is_null($metadata)) {
+        if (is_array($metadata)) {
             $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
         }
         else {
