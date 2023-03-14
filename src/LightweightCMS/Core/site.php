@@ -56,13 +56,13 @@ function getAllLinks($uri)
             }
             else if (isHTMLFile($path)) {
                 $uri = getPageFromPath($path);
-                $link = readHTMLLink($uri);
+                $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -72,13 +72,13 @@ function getAllLinks($uri)
             }
             else if (isMarkdownFile($path)) {
                 $uri = getPageFromPath($path);
-                $link = readMarkdownLink($uri);
+                $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -90,11 +90,11 @@ function getAllLinks($uri)
                 $uri = getPageFromPath($path);
                 $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -106,11 +106,11 @@ function getAllLinks($uri)
                 $uri = getPageFromPath($path);
                 $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -122,11 +122,11 @@ function getAllLinks($uri)
                 $uri = getPageFromPath($path);
                 $link = readCustomPage($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -163,12 +163,13 @@ function getAllLinks($uri)
         /* `$path` is a HTML file. */
         if (file_exists($htmlPath)) {
             $uri = getPageFromPath($path);
-            $link = readHTMLLink($uri);
+            $link = readPost($uri);
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -179,12 +180,13 @@ function getAllLinks($uri)
         /* `$path` is a Markdown file. */
         else if (file_exists($markdownPath)) {
             $uri = getPageFromPath($path);
-            $link = readMarkdownLink($uri);
+            $link = readPost($uri);
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -199,7 +201,8 @@ function getAllLinks($uri)
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -214,7 +217,8 @@ function getAllLinks($uri)
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -224,13 +228,13 @@ function getAllLinks($uri)
         }
         else if (file_exists($phpPath)) {
             $uri = getPageFromPath($phpPath);
-            $link = readCustomPage($uri);
+            $link = readPost($uri);
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-            $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -269,13 +273,13 @@ function getAllLinks($uri)
                 # Load a HTML file.
                 else if (isHTMLFile($subpath)) {
                     $uri = getPageFromPath($subpath);
-                    $link = readHTMLLink($uri);
+                    $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -286,13 +290,13 @@ function getAllLinks($uri)
                 # Load a Markdown file.
                 else if (isMarkdownFile($subpath)) {
                     $uri = getPageFromPath($subpath);
-                    $link = readMarkdownLink($uri);
+                    $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -304,11 +308,11 @@ function getAllLinks($uri)
                     $uri = getPageFromPath($subpath);
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -320,11 +324,11 @@ function getAllLinks($uri)
                     $uri = getPageFromPath($subpath);
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -334,13 +338,13 @@ function getAllLinks($uri)
                 }
                 else if (isPHPFile($subpath)) {
                     $uri = getPageFromPath($subpath);
-                    $link = readCustomPage($uri);
+                    $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
