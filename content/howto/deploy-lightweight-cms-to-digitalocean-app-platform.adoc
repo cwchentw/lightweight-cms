@@ -33,7 +33,7 @@ Change your working directory to root path of the cloned repo:
 $ cd mysite
 ----
 
-Save the repo to a remote Git repository (either [GitHub](https://github.com/) or [GitLab](https://gitlab.com/)):
+Save the repo to a remote Git repository (either https://github.com/[GitHub] or https://gitlab.com/[GitLab]):
 
 [source,shell]
 ----
