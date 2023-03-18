@@ -63,7 +63,7 @@ If you don't need to update your Lightweight CMS snapshot, you may safely delete
 
 ## *plugins* Directory
 
-*plugins* directory saves plugin(s) for Lightweight CMS. Currently, there is no plugin inside. We and community contributors will add more in the future.
+*plugins* directory saves plugin(s) for Lightweight CMS. Currently, there is merely few plugins inside. We and community contributors will add more in the future.
 
 ## *static* Directory
 
@@ -76,8 +76,6 @@ If you don't need to update your Lightweight CMS snapshot, you may safely delete
 See [this article](/howto/manage-assets/) for information related to asset management in Lightweight CMS.
 
 ## *build* Directory
-
-*Experimental*
 
 *build* directory places Gulp build scripts for builtin front end stacks used by Lightweight CMS. You may need to modify lists of directories and files to delete. We may change this situation later.
 
