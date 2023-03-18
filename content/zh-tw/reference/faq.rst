@@ -68,7 +68,7 @@ Non-``master`` branches of Lightweight CMS may not contain latest features.
 Lightweight CMS 可以在 Windows 上運行嗎？
 --------------------------------------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
 
 Lightweight CMS 可以在某個 PaaS 上運行嗎？
 ---------------------------------------------------------------------

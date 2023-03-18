@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions
-mtime: 2023/03/12
+mtime: 2023/03/19
 weight: 4
 ---
 
@@ -68,7 +68,7 @@ Non-``master`` branches of Lightweight CMS may not contain latest features.
 Does Lightweight CMS Run on Windows?
 --------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
 
 Does Lightweight CMS Run on XXX PaaS?
 --------------------------------------

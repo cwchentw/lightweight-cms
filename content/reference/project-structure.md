@@ -1,7 +1,7 @@
 ---
 title: The Project Structure of Lightweight CMS
 linkTitle: Project Structure
-mtime: 2021/6/26
+mtime: 2023/03/19
 weight: 5
 ---
 
@@ -85,7 +85,7 @@ See [this article](/howto/how-to-manage-assets/) for information related to asse
 
 *www* directory places back end PHP scripts of Lightweight CMS on production environments. Currently, there is only a script in this directory - *index.php*, which is the router of Lightweight CMS.
 
-Users of mdmcs don't require to alter anything there mostly unless you want to contribute to Lightweight CMS itself.
+Users of Lightweight CMS don't require to alter anything there mostly unless you want to contribute to Lightweight CMS itself.
 
 ## *src* Directory
 

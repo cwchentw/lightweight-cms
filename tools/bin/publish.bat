@@ -1,5 +1,5 @@
 @echo off
-rem Publish a mdmcs site to a PaaS.
+rem Publish a Lightweight CMS site to a PaaS.
 
 
 rem Check whether PHP is available on the system.
@@ -98,6 +98,6 @@ xcopy /s /y %static% %public% || (
 
 rem Copy the router of Lightweight CMS.
 copy /y %www%\index.php %public% || (
-    echo Unable to copy router of mdmcs to public directory >&2
+    echo Unable to copy the router of Lightweight CMS to public directory >&2
     exit /b 1
 )
