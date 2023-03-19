@@ -52,6 +52,13 @@ Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
 
+By what is Lightweight CMS Inspired?
+-------------------------------------
+
+`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
+
+Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
+
 How to Run Lightweight CMS on old PHP?
 --------------------------------------
 

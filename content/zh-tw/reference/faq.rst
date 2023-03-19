@@ -1,6 +1,6 @@
 ---
 title: 常見問題集
-mtime: 2023/03/12
+mtime: 2023/03/19
 weight: 4
 ---
 
@@ -51,6 +51,13 @@ Rocky Linux 9.0        8.0.13
 Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
+
+Lightweight CMS 的靈感來自何處？
+-------------------------------------------------------------------
+
+`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
+
+Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
 
 如何在舊版 PHP 上執行 Lightweight CMS？
 ------------------------------------------------------------------
