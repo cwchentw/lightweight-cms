@@ -1,7 +1,7 @@
 ---
 title: 版面可用變數
 linkTitle: 版面變數
-mtime: 2022/09/11
+mtime: 2023/03/19
 weight: 7
 ---
 
@@ -43,6 +43,10 @@ Fields in `$GLOBALS[LIGHTWEIGHT_CMS_POST]` (`$post` here):
 * `$post[LIGHTWEIGHT_CMS_POST_AUTHOR]`: Author of current post
 * `$post[LIGHTWEIGHT_CMS_POST_MTIME]`: Last modified time of current post
 * `$post[LIGHTWEIGHT_CMS_POST_META]`: exposed metadata of current post
+
+## 頁面可用變數
+
+和文章可用變數相同。
 
 ## 章節內子章節可用變數
 

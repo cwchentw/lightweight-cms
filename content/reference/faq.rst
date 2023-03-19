@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions
-mtime: 2023/03/12
+mtime: 2023/03/19
 weight: 4
 ---
 
@@ -52,6 +52,13 @@ Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
 
+By what is Lightweight CMS Inspired?
+-------------------------------------
+
+`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
+
+Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
+
 How to Run Lightweight CMS on old PHP?
 --------------------------------------
 
@@ -68,7 +75,7 @@ Non-``master`` branches of Lightweight CMS may not contain latest features.
 Does Lightweight CMS Run on Windows?
 --------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
 
 Does Lightweight CMS Run on XXX PaaS?
 --------------------------------------

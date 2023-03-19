@@ -77,7 +77,7 @@ In Lightweight CMS, a breadcrumb of a page is an array of links from a home page
 
 Pagination means to scale posts by splitting posts into multiple section pages. With pagination, there won't be too many links to posts, which is bad to SEO.
 
-*Default* theme of mdmcs utilizes pagination in Bootstrap 5.
+*Default* theme of Lightweight CMS utilizes pagination in Bootstrap 5.
 
 ### 目錄 Table of Contents
 

@@ -1,7 +1,7 @@
 ---
 title: 如何在 Windows 上運行 Lightweight CMS
 linkTitle: 在 Windows 上運行 Lightweight CMS
-mtime: 2023/03/12
+mtime: 2023/03/19
 tags: ["使用"]
 weight: 4
 ---
@@ -159,7 +159,7 @@ $ .\tools\bin\serve.bat
 Alternatively, if you want to simulate a production environment, copy your Lightweight CMS snapshot to Laragon document directory:
 
 ```shell
-> .\tools\bin\sync-to.bat C:\Laragon\www\mdcms
+> .\tools\bin\sync-to.bat C:\Laragon\www\lightweight-cms
 ```
 
 If you alter anything in your Lightweight CMS site, repeat the above command to reflect your change on development environment.

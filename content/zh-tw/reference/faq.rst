@@ -1,6 +1,6 @@
 ---
 title: 常見問題集
-mtime: 2023/03/12
+mtime: 2023/03/19
 weight: 4
 ---
 
@@ -52,6 +52,13 @@ Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
 
+Lightweight CMS 的靈感來自何處？
+-------------------------------------------------------------------
+
+`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
+
+Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
+
 如何在舊版 PHP 上執行 Lightweight CMS？
 ------------------------------------------------------------------
 
@@ -68,7 +75,7 @@ Non-``master`` branches of Lightweight CMS may not contain latest features.
 Lightweight CMS 可以在 Windows 上運行嗎？
 --------------------------------------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
 
 Lightweight CMS 可以在某個 PaaS 上運行嗎？
 ---------------------------------------------------------------------
