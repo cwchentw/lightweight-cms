@@ -174,7 +174,6 @@ function getPosts($uri)
     # Load some local scripts.
     require_once __DIR__ . $sep . "const.php";
     require_once __DIR__ . $sep . "post.php";
-    require_once __DIR__ . $sep . "customPage.php";
 
     $result = array();
 
@@ -255,7 +254,6 @@ function getBreadcrumb($uri)
     require_once __DIR__ . $sep . "const.php";
     require_once __DIR__ . $sep . "uri.php";
     require_once __DIR__ . $sep . "post.php";
-    require_once __DIR__ . $sep . "customPage.php";
     # Load some private scripts.
     require_once __DIR__ . $sep . "_site.php";
     require_once __DIR__ . $sep . "_uri.php";

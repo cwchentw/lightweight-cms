@@ -36,32 +36,53 @@ function readPost($page)
     $reStructuredTextPath = getPath($page, RESTRUCTUREDTEXT_FILE_EXTENSION);
     $phpPath = getPath($page, ".php");
 
+    if (file_exists($htmlPath)) {
+        $path = $htmlPath;
+    }
+    else if (file_exists($markdownPath)) {
+        $path = $markdownPath;
+    }
+    else if (file_exists($asciiDocPath)) {
+        $path = $asciiDocPath;
+    }
+    else if (file_exists($reStructuredTextPath)) {
+        $path = $reStructuredTextPath;
+    }
+    else if (file_exists($phpPath)) {
+        $path = $phpPath;
+    }
+
+    $rawContent = file_get_contents($path);
+
+    /* NOTE: To our best knowledge, there is no front matter YAML parser
+        for PHP 8.2 currently. Hence, we keep the version of PHP in 8.1. */
+    $parser = new \Mni\FrontYAML\Parser();
+
+    # Parse raw content.
+    if (file_exists($markdownPath)) {
+        $document = $parser->parse($rawContent);
+    }
+    else {
+        $document = $parser->parse($rawContent, false);
+    }
+
+    # Extract metadata from a post.
+    $metadata = $document->getYAML();
+
+    # Strip metadata from a post.
+    $stripedContent = $document->getContent();
+
+    # Expose metadata of a post. No matter it is empty or not.
+    if (is_array($metadata)) {
+        $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
+    }
+    else {
+        $result[LIGHTWEIGHT_CMS_POST_META] = array();
+    }
+
     # Here we simply set higher priority for HTML pages.
     #  We may change it later.
     if (file_exists($htmlPath)) {
-        $rawContent = file_get_contents($htmlPath);
-
-        /* NOTE: To our best knowledge, there is no front matter YAML parser
-            for PHP 8.2 currently. Hence, we keep the version of PHP in 8.1. */
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        # Strip metadata from a post.
-        $stripedContent = $document->getContent();
-
-        # Expose metadata of a post. No matter it is empty or not.
-        if (is_array($metadata)) {
-            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
-        }
-        else {
-            $result[LIGHTWEIGHT_CMS_POST_META] = array();
-        }
-
         if (isValidField($metadata, METADATA_TITLE)) {
             $result[LIGHTWEIGHT_CMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
@@ -111,26 +132,6 @@ function readPost($page)
         $result[LIGHTWEIGHT_CMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
     else if (file_exists($markdownPath)) {
-        $rawContent = file_get_contents($markdownPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        $document = $parser->parse($rawContent);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        # Strip metadata from a post.
-        $stripedContent = $document->getContent();
-
-        # Expose metadata of a post. No matter it is empty or not.
-        if (is_array($metadata)) {
-            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
-        }
-        else {
-            $result[LIGHTWEIGHT_CMS_POST_META] = array();
-        }
-
         if (isValidField($metadata, METADATA_TITLE)) {
             $result[LIGHTWEIGHT_CMS_POST_TITLE] = $metadata[METADATA_TITLE];
 
@@ -182,30 +183,6 @@ function readPost($page)
         $result[LIGHTWEIGHT_CMS_POST_STATUS] = 200;  # HTTP 200 OK.
     }
     else if (file_exists($asciiDocPath)) {
-        $rawContent = file_get_contents($asciiDocPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        #
-        # FIXME: YAML-style front matters are used instead of
-        #  the native AsciiDoc front matters.
-        $metadata = $document->getYAML();
-
-        # Strip metadata from a post.
-        $stripedContent = $document->getContent();
-
-        # Expose metadata of a post. No matter it is empty or not.
-        if (is_array($metadata)) {
-            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
-        }
-        else {
-            $result[LIGHTWEIGHT_CMS_POST_META] = array();
-        }
-
         $descriptorspec = array(
             0 => array("pipe", "r"),
             1 => array("pipe", "w"),
@@ -290,27 +267,6 @@ function readPost($page)
         }
     }
     else if (file_exists($reStructuredTextPath)) {
-        $rawContent = file_get_contents($reStructuredTextPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        # Strip metadata from a post.
-        $stripedContent = $document->getContent();
-
-        # Expose metadata of a post. No matter it is empty or not.
-        if (is_array($metadata)) {
-            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
-        }
-        else {
-            $result[LIGHTWEIGHT_CMS_POST_META] = array();
-        }
-
         $descriptorspec = array(
             0 => array("pipe", "r"),
             1 => array("pipe", "w"),
@@ -398,28 +354,6 @@ function readPost($page)
         }
     }
     else if (file_exists($phpPath)) {
-        $rawContent = file_get_contents($reStructuredTextPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        # Strip metadata from a post.
-        $stripedContent = $document->getContent();
-        $content = $stripedContent;
-
-        # Expose metadata of a post. No matter it is empty or not.
-        if (is_array($metadata)) {
-            $result[LIGHTWEIGHT_CMS_POST_META] = $metadata;
-        }
-        else {
-            $result[LIGHTWEIGHT_CMS_POST_META] = array();
-        }
-
         # Set the author of a post.
         if (isValidField($metadata, METADATA_AUTHOR)) {
             $result[LIGHTWEIGHT_CMS_POST_AUTHOR] = $metadata[METADATA_AUTHOR];

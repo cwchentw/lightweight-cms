@@ -11,7 +11,6 @@ function getAllLinks($uri)
     require_once $rootDirectory . $sep . "setting.php";
     # Load some local scripts.
     require_once __DIR__ . $sep . "const.php";
-    require_once __DIR__ . $sep . "customPage.php";
     require_once __DIR__ . $sep . "post.php";
     # Load some private scripts.
     require_once __DIR__ . $sep . "_site.php";
