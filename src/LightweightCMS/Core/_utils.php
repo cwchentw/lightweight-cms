@@ -17,9 +17,10 @@ function isValidField ($array, $key)
 #  globally with callbacks.
 function noFollowLinks ($content)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Load global setting.
-    require_once $rootDirectory . "/setting.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
 
     $baseURL = SITE_BASE_URL;
     $perlProgram = <<<PERL

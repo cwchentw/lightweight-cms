@@ -6,7 +6,7 @@ namespace LightweightCMS\Core;
 function getPageFromPath ($path)
 {
     $sep = DIRECTORY_SEPARATOR;
-    $rootDirectory = __DIR__ . "{$sep}..{$sep}..{$sep}..";
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
 
     $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
     $page = substr($path, strlen($contentDirectory));
