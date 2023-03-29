@@ -120,7 +120,7 @@ function getAllLinks($uri)
             }
             else if (isPHPFile($path)) {
                 $uri = getPageFromPath($path);
-                $link = readCustomPage($uri);
+                $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
 
                 # Skip functional posts.

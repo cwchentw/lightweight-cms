@@ -200,13 +200,7 @@ function getPosts($uri)
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $origPath;
 
             # Get information of a post.
-            # TODO: If the commands cost too many system resources, change it.
-            if ("php" == pathinfo($path)["extension"]) {
-                $post = readCustomPage($origPath);
-            }
-            else {
-                $post = readPost($origPath);
-            }
+            $post = readPost($origPath);
 
             foreach ($post as $key => $value) {
                 $link[$key] = $value;
@@ -349,7 +343,7 @@ function getBreadcrumb($uri)
             array_push($result, $post);
         }
         else if (file_exists($phpPath)) {
-            $post = readCustomPage($prevPath . $arr[$i]);
+            $post = readPost($prevPath . $arr[$i]);
             $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);
