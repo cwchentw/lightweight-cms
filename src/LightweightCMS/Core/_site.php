@@ -61,17 +61,11 @@ function readDirectoryLink($uri)
     return readSection($uri);
 }
 
-function isHTMLFile($path)
+function isPostFile($path)
 {
-    return strpos($path, HTML_FILE_EXTENSION);
-}
-
-function isMarkdownFile($path)
-{
-    return strpos($path, MARKDOWN_FILE_EXTENSION);
-}
-
-function isPHPFile($path)
-{
-    return strpos($path, ".php");
+    return strpos($path, HTML_FILE_EXTENSION)
+        || strpos($path, MARKDOWN_FILE_EXTENSION)
+        || strpos($path, ASCIIDOC_FILE_EXTENSION)
+        || strpos($path, RESTRUCTUREDTEXT_FILE_EXTENSION)
+        || strpos($path, ".php");
 }

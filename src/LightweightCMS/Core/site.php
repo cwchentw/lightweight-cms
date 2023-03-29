@@ -53,71 +53,8 @@ function getAllLinks($uri)
                 $page = getPageFromPath($path);
                 array_push($pages, $page);
             }
-            else if (isHTMLFile($path)) {
-                $uri = getPageFromPath($path);
-                $link = readPost($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (isMarkdownFile($path)) {
-                $uri = getPageFromPath($path);
-                $link = readPost($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (strpos($path, ASCIIDOC_FILE_EXTENSION)) {
-                $uri = getPageFromPath($path);
-                $link = readPost($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (strpos($path, RESTRUCTUREDTEXT_FILE_EXTENSION)) {
-                $uri = getPageFromPath($path);
-                $link = readPost($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (isPHPFile($path)) {
+            else if (isPostFile($path))
+            {
                 $uri = getPageFromPath($path);
                 $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
@@ -159,74 +96,13 @@ function getAllLinks($uri)
         $rstDocPath = $path . RESTRUCTUREDTEXT_FILE_EXTENSION;
         $phpPath = $path . ".php";
 
-        /* `$path` is a HTML file. */
-        if (file_exists($htmlPath)) {
+        if (file_exists($htmlPath)
+            || file_exists($markdownPath)
+            || file_exists($asciiDocPath)
+            || file_exists($rstDocPath)
+            || file_exists($phpPath))
+        {
             $uri = getPageFromPath($path);
-            $link = readPost($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        /* `$path` is a Markdown file. */
-        else if (file_exists($markdownPath)) {
-            $uri = getPageFromPath($path);
-            $link = readPost($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($asciiDocPath)) {
-            $uri = getPageFromPath($path);
-            $link = readPost($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($rstDocPath)) {
-            $uri = getPageFromPath($path);
-            $link = readPost($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($phpPath)) {
-            $uri = getPageFromPath($phpPath);
             $link = readPost($uri);
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
 
@@ -270,72 +146,8 @@ function getAllLinks($uri)
                     array_push($pages, getPageFromPath($subpath));
                 }
                 # Load a HTML file.
-                else if (isHTMLFile($subpath)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readPost($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                # Load a Markdown file.
-                else if (isMarkdownFile($subpath)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readPost($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (strpos($subpath, ASCIIDOC_FILE_EXTENSION)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readPost($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (strpos($subpath, RESTRUCTUREDTEXT_FILE_EXTENSION)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readPost($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (isPHPFile($subpath)) {
+                else if (isPostFile($subpath))
+                {
                     $uri = getPageFromPath($subpath);
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
