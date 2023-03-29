@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Functions for all pages.
 
 
-function getHomeContent()
+function getHomeContent ()
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -115,7 +115,7 @@ function getHomeContent()
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/post-title/".
-function getSections($uri)
+function getSections ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -165,7 +165,7 @@ function getSections($uri)
     return $result;
 }
 
-function getPosts($uri)
+function getPosts ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -222,7 +222,7 @@ function getPosts($uri)
     return $result;
 }
 
-function getPostsPerPage($uri, $page)
+function getPostsPerPage ($uri, $page)
 {
     $result = getPosts($uri);
 
@@ -244,7 +244,7 @@ function getPostsPerPage($uri, $page)
     return $result;
 }
 
-function getBreadcrumb($uri)
+function getBreadcrumb ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";

@@ -4,7 +4,7 @@ namespace LightweightCMS\Core;
 
 
 # The implementation is too long. We may refactor it later.
-function readPost($page)
+function readPost ($page)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";

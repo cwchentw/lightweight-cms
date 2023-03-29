@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Site related functions.
 
 
-function getAllLinks($uri)
+function getAllLinks ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -12,6 +12,7 @@ function getAllLinks($uri)
     # Load some local scripts.
     require_once __DIR__ . $sep . "const.php";
     require_once __DIR__ . $sep . "post.php";
+    require_once __DIR__ . $sep . "section.php";
     # Load some private scripts.
     require_once __DIR__ . $sep . "_site.php";
     require_once __DIR__ . $sep . "_utils.php";
@@ -122,7 +123,7 @@ function getAllLinks($uri)
             /* Convert from path to page. */
             if (!BLOCK_BOT_ON_SECTION) {
                 $uri = getPageFromPath($dirpath);
-                $link = readDirectoryLink($uri);
+                $link = readSection($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[LIGHTWEIGHT_CMS_LINK_MTIME] = stat($dirpath)["mtime"];
                 array_push($result, $link);

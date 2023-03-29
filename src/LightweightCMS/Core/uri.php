@@ -4,12 +4,12 @@ namespace LightweightCMS\Core;
 
 
 # Check whether the web page is the home page of a site.
-function isHome($uri)
+function isHome ($uri)
 {
     return "/" === $uri;
 }
 
-function isPageInHome($uri)
+function isPageInHome ($uri)
 {
     /* Add a trailing slash if no any. */
     if ("/" != substr($uri, strlen($uri)-1, 1)) {
@@ -43,7 +43,7 @@ function isPageInTags ($uri)
 #
 # The function doesn't distinguish between top sections
 #  and nested ones.
-function isSection($uri)
+function isSection ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -55,7 +55,7 @@ function isSection($uri)
     return is_dir($path);
 }
 
-function isPageInSection($uri)
+function isPageInSection ($uri)
 {
     /* Add a trailing slash if no any. */
     if ("/" != substr($uri, strlen($uri)-1, 1)) {
@@ -89,7 +89,7 @@ function isPageInTagPage ($uri)
     return preg_match("/^\/tags\/([^\/]+?)\/(\d+)\/$/", $uri);
 }
 
-function isPage($uri)
+function isPage ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     require_once __DIR__ . $sep . "_uri.php";
@@ -99,7 +99,7 @@ function isPage($uri)
     return file_exists($path);
 }
 
-function isPost($uri)
+function isPost ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";

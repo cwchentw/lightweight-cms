@@ -7,7 +7,7 @@ namespace LightweightCMS\Core;
 #
 # PHP 8 provides `str_starts_with` function. Because
 #  we assume PHP 7, we write our own utility function.
-function startsWith($source, $target)
+function startsWith ($source, $target)
 {
     return $target == substr($source, 0, strlen($target));
 }
@@ -15,7 +15,7 @@ function startsWith($source, $target)
 # Copy directories and files recursively.
 #
 # Call it within a `try ... catch ...` block because the task may fail.
-function xCopy($src, $dst)
+function xCopy ($src, $dst)
 {
     # Create destination directory if it doesn't exist.
     if (!is_dir($dst)) {
