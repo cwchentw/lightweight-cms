@@ -8,6 +8,20 @@ This is *multilingual* theme for Lightweight CMS. In addition, it serves as a te
 
 This theme intends for multilingual sites, code of which is inevitably more complex than that of the themes for monolingual sites. If no multilingual site is required, check our [default theme](/themes/default/) instead.
 
+Each time you modify your site information, invoke the following command to update the default translation JSON file:
+
+```shell
+$ ./themes/multilingual/tools/bin/trans
+```
+
+On Windows, run the command instead:
+
+```shell
+> .\themes\multilingual\tools\bin\trans.bat
+```
+
+You still need to modify the translation JSON files other than the default one.
+
 ## System Requirements
 
 * Production environment
