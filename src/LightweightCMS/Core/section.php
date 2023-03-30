@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Section related function(s).
 
 
-function readSection($page)
+function readSection ($page)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";

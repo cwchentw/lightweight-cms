@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Private utility functions for Lightweight CMS.
 
 
-function isValidField($array, $key)
+function isValidField ($array, $key)
 {
     return !is_null($array)
         && array_key_exists($key, $array)
@@ -15,11 +15,12 @@ function isValidField($array, $key)
 # Internally, the function calls Perl instead of utilizing
 #  regex of PHP because the latter is unable to replace patterns
 #  globally with callbacks.
-function noFollowLinks($content)
+function noFollowLinks ($content)
 {
-    $rootDirectory = __DIR__ . "/../../..";
-    # Load global setting.
-    require_once $rootDirectory . "/setting.php";
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
+    # Load the site settings.
+    require_once $rootDirectory . $sep . "setting.php";
 
     $baseURL = SITE_BASE_URL;
     $perlProgram = <<<PERL

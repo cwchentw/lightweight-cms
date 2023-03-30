@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Generate error pages dynamically.
 
 
-function errorPage($title, $content, $status)
+function errorPage ($title, $content, $status)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -22,7 +22,7 @@ function errorPage($title, $content, $status)
     return $post;
 }
 
-function errorPageBreadcrumb($title)
+function errorPageBreadcrumb ($title)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
