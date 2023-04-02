@@ -137,18 +137,9 @@ function getSections ($uri)
         }
 
         $path = $contentDirectory . $sep . $file;
-        if (is_dir($path)) {
-            $section = null;
-            # Get top section(s).
-            if ("/" == $uri) {
-                $section = readSection("/" . $file);
-                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/" . $file . "/";
-            }
-            # Get subsection(s) of a section.
-            else {
-                $section = readSection($uri . $file);
-                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
-            }
+        if (is_dir($path)) {           
+            $section = readSection($uri . $file);
+            $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
 
             # Skip functional sections.
             # TODO: We may change it later.
