@@ -112,99 +112,46 @@ function isPost ($uri)
     $markdownPath = getPath($uri, MARKDOWN_FILE_EXTENSION);
     $asciiDocPath = getPath($uri, ASCIIDOC_FILE_EXTENSION);
     $reStructuredTextPath = getPath($uri, RESTRUCTUREDTEXT_FILE_EXTENSION);
+    $phpPath = getPath($uri, ".php");
 
     if (file_exists($htmlPath)) {
-        # Load third-party libraries.
-        require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-        # Load private scripts.
-        require_once __DIR__ . "{$sep}_utils.php";
-
-        $rawContent = file_get_contents($htmlPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        if (isValidField($metadata, METADATA_DRAFT)) {
-            if ($metadata[METADATA_DRAFT]) {
-                return false;
-            }
-
-            return true;
-        }
-
-        return true;
+        $path = $htmlPath;
     }
     else if (file_exists($markdownPath)) {
-        # Load third-party libraries.
-        require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-        # Load private scripts.
-        require_once __DIR__ . "{$sep}_utils.php";
-
-        $rawContent = file_get_contents($markdownPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        if (isValidField($metadata, METADATA_DRAFT)) {
-            if ($metadata[METADATA_DRAFT]) {
-                return false;
-            }
-
-            return true;
-        }
-
-        return true;
+        $path = $markdownPath;
     }
     else if (file_exists($asciiDocPath)) {
-        # Load third-party libraries.
-        require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-        # Load private scripts.
-        require_once __DIR__ . "{$sep}_utils.php";
-
-        $rawContent = file_get_contents($asciiDocPath);
-
-        $parser = new \Mni\FrontYAML\Parser();
-
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
-
-        # Extract metadata from a post.
-        $metadata = $document->getYAML();
-
-        if (isValidField($metadata, METADATA_DRAFT)) {
-            if ($metadata[METADATA_DRAFT]) {
-                return false;
-            }
-
-            return true;
-        }
-
-        return true;
+        $path = $asciiDocPath;
     }
     else if (file_exists($reStructuredTextPath)) {
-        # Load third-party libraries.
-        require_once $rootDirectory . "{$sep}vendor{$sep}autoload.php";
-        # Load private scripts.
-        require_once __DIR__ . "{$sep}_utils.php";
+        $path = $reStructuredTextPath;
+    }
+    else if (file_exists($phpPath)) {
+        $path = $phpPath;
+    }
+    else {
+        $path = null;
+    }
 
-        $rawContent = file_get_contents($reStructuredTextPath);
+    if (!is_null($path)) {
+        # Load third-party libraries.
+        require_once $rootDirectory . $sep . "vendor" . $sep . "autoload.php";
+        # Load private scripts.
+        require_once __DIR__ . $sep . "_utils.php";
+
+        $rawContent = file_get_contents($path);
 
         $parser = new \Mni\FrontYAML\Parser();
 
-        # Parse raw content.
-        $document = $parser->parse($rawContent, false);
+        # Parse some raw content.
+        if (file_exists($markdownPath)) {
+            $document = $parser->parse($rawContent);
+        }
+        else {
+            $document = $parser->parse($rawContent, false);
+        }
 
-        # Extract metadata from a post.
+        # Extract the metadata from a post.
         $metadata = $document->getYAML();
 
         if (isValidField($metadata, METADATA_DRAFT)) {
