@@ -40,7 +40,7 @@ if (false != strpos($loc, "..")) {
     loadPost();
 }
 # Render an error page if a wrong site prefix.
-else if ("" != SITE_PREFIX && !\LightweightCMS\Core\startsWith($origLoc, SITE_PREFIX)) {
+else if ("" != SITE_PREFIX && !str_starts_with($origLoc, SITE_PREFIX)) {
     # Create an error page dynamically.
     $post = \LightweightCMS\Core\errorPage(
         "Page Not Found",

@@ -3,15 +3,6 @@ namespace LightweightCMS\Core;
 # Utility functions for Lightweight CMS.
 
 
-# Check whether `$source` string starts with `$target` string.
-#
-# PHP 8 provides `str_starts_with` function. Because
-#  we assume PHP 7, we write our own utility function.
-function startsWith ($source, $target)
-{
-    return $target == substr($source, 0, strlen($target));
-}
-
 # Copy directories and files recursively.
 #
 # Call it within a `try ... catch ...` block because the task may fail.
