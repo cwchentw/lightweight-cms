@@ -21,7 +21,7 @@ function getPageFromPath ($path)
         $page .= "/";
     }
 
-    return $page;
+    return str_replace("\\", "/", $page);
 }
 
 function isPostFile ($path)

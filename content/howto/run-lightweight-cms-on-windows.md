@@ -3,7 +3,7 @@ title: How to Run Lightweight CMS on Windows
 linkTitle: Run Lightweight CMS on Windows
 mtime: 2023/03/19
 tags: ["Usage"]
-weight: 4
+weight: 5
 ---
 
 ## Prologue
