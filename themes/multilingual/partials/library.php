@@ -2,6 +2,14 @@
 # The front-end library of a Lightweight CMS theme.
 ?>
 
+<!-- Use quicklink to prefetch links based the user's current view. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        quicklink.listen();
+    });
+</script>
+
 <!-- Native JavaScript for Bootstrap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap.native/4.2.0/bootstrap-native.min.js"
     integrity="sha512-GmnAinnWwLr6TlNR+oVdAJE+Nymkf+WkXsZBLTEnJ0GuWhReyRd3GRZHxYw6zHoMPqG6N+/OTm1R6pnCb+MVAQ=="
