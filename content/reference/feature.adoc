@@ -1,7 +1,7 @@
 ---
 title: The Features of Lightweight CMS
 linkTitle: Feature
-mtime: 2022/10/16
+mtime: 2023/6/8
 weight: 2
 ---
 
@@ -12,16 +12,15 @@ This article lists the features of Lightweight CMS.
 == Site-related Features
 
 * Cross-platform
-* Switch between static mode and dynamic one
-* Build a multilingual site
+* Switch between static mode and dynamic mode
 * Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
-* Dynamic pages in PHP
-* Store draft posts before publishing
+* Write dynamic pages in PHP
+* Draft posts
 * Nested sections
 * https://en.wikipedia.org/wiki/Breadcrumb_navigation[Breadcrumb]
 * https://en.wikipedia.org/wiki/Pagination[Pagination]
-* No following external links
 * Interlinked tags
+* No following external links for SEO
 * https://en.wikipedia.org/wiki/Site_map[Sitemap] generator
 * RSS feed generator
 * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json[manifest.json] generator
@@ -33,7 +32,7 @@ This article lists the features of Lightweight CMS.
 
 == Theme-related Features
 
-These features are available in _default_ theme:
+These features are available in _default_ and/or _multilingual_ themes:
 
 * Mobile-responsive layouts (through https://getbootstrap.com/docs/5.0/getting-started/introduction/[Bootstrap 5])
 * Top navbar
@@ -41,6 +40,7 @@ These features are available in _default_ theme:
 * Code highlighting (through https://highlightjs.org/[highlight.js])
 * Twitter cards and open graphs
 * Static social media sharing links (no JavaScript is required)
+* Build a multilingual site
 
 == Plugin-related Features
 
@@ -56,7 +56,7 @@ These features are available in _default_ theme:
 * Asset watching and hot change(s)
 * Synchronize content on a production environment (through `rsync(1)`)
 * Migrate a local Lightweight CMS repository to a new site (through home-made scripts)
-* Compile to a static site if no dynamic feature is needed
+* Compile to a static site if no dynamic page is needed
 
 == Next Step
 

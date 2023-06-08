@@ -1,25 +1,26 @@
 # Lightweight CMS
 
-Lightweight CMS is a dual-mode, flat-file [CMS](https://en.wikipedia.org/wiki/Content_management_system), powered by PHP.
+Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 
 ## Features
 
 * Cross-platform
-* Switch between static mode and dynamic one
-* Compile to a static site if no dynamic feature is needed
-* (Optional) Build a multilingual site
+* Switch between static mode and dynamic mode
+* Compile to a static site if no dynamic page is needed
+* Build a multilingual site
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
-* Dynamic pages in PHP
-* Store draft posts before publishing
+* Write dynamic pages in PHP
+* Draft posts
 * Nested sections
 * Breadcrumb
 * Pagination
 * Table of Contents
 * Interlinked tags
-* Sitemap
-* RSS feed
-* [Progressive Web Application](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
-* Asset compilation (SCSS and Babel)
+* No following external links for SEO
+* Sitemap generator
+* RSS feed generator
+* Progressive Web Application
+* Asset compilation
 * Asset watching and hot change(s)
 
 ## Synopsis
@@ -107,9 +108,9 @@ $ git push -u origin master
 
 ## Why not simply another Static Site Generator?
 
-There have been more than enough static site generators currently. It is not ideal to reinvent one more wheel. Therefore, we create a CMS capable to switch between a static website and a dynamic one.
+There have been more than enough static site generators currently. It is unbeneficial to reinvent one more wheel. Therefore, we create a flat-file CMS capable to switch between a static website and a dynamic one.
 
-Website owners prefer flat files over relational databases when feasible. Nonetheless, static sites are suboptimal for some types of websites, like a membership site or a mix of a blog and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat files written in common lightweight markup languages as contents.
+Website owners prefer flat files over relational databases when feasible. Nonetheless, static sites are suboptimal for some sorts of websites, like a membership site or a mix of a content site and web application. Lightweight CMS combines the best of two worlds - PHP-powered dynamic websites with flat-file posts written in popular lightweight markup languages.
 
 ## System Requirements
 
@@ -145,7 +146,7 @@ Website owners prefer flat files over relational databases when feasible. Noneth
   * [Babel](https://babeljs.io/)
   * [Flow](https://flow.org/en/)
 
-The dependencies mentioned here are based on *default* theme of Lightweight CMS. If you adapt another theme, your dependencies of the Web may vary.
+The dependencies mentioned here are based on *default* and *multilingual* themes of Lightweight CMS. If you adapt another theme, your dependencies of the Web may vary.
 
 ## Usage
 
