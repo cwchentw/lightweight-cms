@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions
-mtime: 2023/03/19
+mtime: 2023/06/27
 weight: 4
 ---
 
@@ -40,7 +40,7 @@ Which Language is Utilized to Implement Lightweight CMS?
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php80`` branches:
+Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php74`` and ``php80`` branches:
 
 ====================== ===========
 GNU/Linux Distribution PHP Version
@@ -51,13 +51,6 @@ Rocky Linux 9.0        8.0.13
 Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
-
-By what is Lightweight CMS Inspired?
--------------------------------------
-
-`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
-
-Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
 
 How to Run Lightweight CMS on old PHP?
 --------------------------------------
@@ -70,12 +63,26 @@ To run Lightweight CMS on PHP 8.0:
    $ cd lightweight-cms
    $ git checkout php80
 
-Non-``master`` branches of Lightweight CMS may not contain latest features.
+To run Lightweight CMS on PHP 8.1:
+
+.. code-block:: shell
+
+   $ git clone https://github.com/cwchentw/lightweight-cms.git
+   $ cd lightweight-cms
+   $ git checkout master
+
+Non-``master`` branches of Lightweight CMS may not contain the latest features.
 
 Does Lightweight CMS Run on Windows?
 --------------------------------------
 
 Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
+
+
+Why does Lightweight CMS Run Slowly on Windows?
+----------------------------------------------------
+
+It's rather a PHP issue than a Lightweight CMS one. Consider a virtualized GNU/Linux or WSL (Windows Subsystem for Linux) instead.
 
 Does Lightweight CMS Run on XXX PaaS?
 --------------------------------------
