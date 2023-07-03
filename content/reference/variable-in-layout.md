@@ -1,7 +1,7 @@
 ---
 title: Exposed Variables in Layouts
 linkTitle: Layout Variable
-mtime: 2021/6/26
+mtime: 2023/03/19
 weight: 7
 ---
 
@@ -43,6 +43,10 @@ Fields in `$GLOBALS[LIGHTWEIGHT_CMS_POST]` (`$post` here):
 * `$post[LIGHTWEIGHT_CMS_POST_AUTHOR]`: Author of current post
 * `$post[LIGHTWEIGHT_CMS_POST_MTIME]`: Last modified time of current post
 * `$post[LIGHTWEIGHT_CMS_POST_META]`: exposed metadata of current post
+
+## Variables Exposed in a Page
+
+Same as those in a post.
 
 ## Variables in an Element of Subsections of a Section
 

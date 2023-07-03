@@ -40,7 +40,7 @@ if (false != strpos($loc, "..")) {
     loadPost();
 }
 # Render an error page if a wrong site prefix.
-else if ("" != SITE_PREFIX && !\LightweightCMS\Core\startsWith($origLoc, SITE_PREFIX)) {
+else if ("" != SITE_PREFIX && !str_starts_with($origLoc, SITE_PREFIX)) {
     # Create an error page dynamically.
     $post = \LightweightCMS\Core\errorPage(
         "Page Not Found",
@@ -271,12 +271,19 @@ else if (\LightweightCMS\Core\isSection($loc)) {
 
     loadSection();
 }
-# Render a custom page.
-else if (\LightweightCMS\Core\isCustomPage($loc)) {
-    $GLOBALS[LIGHTWEIGHT_CMS_POST] = \LightweightCMS\Core\readCustomPage($loc);
-    $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+# Render a PHP page, which is a special case of a post.
+else if (\LightweightCMS\Core\isPage($loc)) {
+    $GLOBALS[LIGHTWEIGHT_CMS_POST] = \LightweightCMS\Core\readPost($loc);
 
-    \LightweightCMS\Core\loadCustomPage($loc);
+    if (200 === $GLOBALS[LIGHTWEIGHT_CMS_POST][LIGHTWEIGHT_CMS_POST_STATUS]) {
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
+    }
+    # Something is wrong while rendering a post.
+    else {
+        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\errorPageBreadcrumb($GLOBALS[LIGHTWEIGHT_CMS_POST][LIGHTWEIGHT_CMS_POST_TITLE]);
+    }
+
+    loadPage();
 }
 # Render a post.
 else if (\LightweightCMS\Core\isPost($loc)) {

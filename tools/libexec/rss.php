@@ -63,7 +63,7 @@ foreach ($links as $link) {
     $titleNode = $xml->createElement("title", $title);
     $node->appendChild($titleNode);
 
-    if (!is_null($link[LIGHTWEIGHT_CMS_POST_META])
+    if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $link)
         && array_key_exists("description", $link[LIGHTWEIGHT_CMS_POST_META]))
     {
         $description = $link[LIGHTWEIGHT_CMS_POST_META]["description"];

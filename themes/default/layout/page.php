@@ -38,50 +38,10 @@ if (ENABLE_TOC) {
 
     $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
 }
-
-$uri = $_SERVER["REQUEST_URI"];
-if ("/" !== substr($uri, -1))
-    $uri .= "/";
-
-if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post)) {
-    if (isZhTW()) {
-        $writtenBy = "由 " . $post[LIGHTWEIGHT_CMS_POST_AUTHOR] . " 撰寫";
-    }
-    else if (isEnUS()) {
-        $writtenBy = "Written by " . $post[LIGHTWEIGHT_CMS_POST_AUTHOR];
-    }
-    else /* Fallback to default language. */ {
-        $writtenBy = "Written by " . $post[LIGHTWEIGHT_CMS_POST_AUTHOR];
-    }
-}
-
-if (isZhTW()) {
-    $period = "。";
-}
-else if (isEnUS()) {
-    $period = ". ";
-}
-else /* Fallback to default language. */ {
-    $period = ". ";
-}
-
-if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
-    if (isZhTW()) {
-        $lastModifiedOn = "最後修改於西元 " . date("Y", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 年 "
-                                           . date("m", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 月 "
-                                           . date("d", $post[LIGHTWEIGHT_CMS_POST_MTIME]) . " 日";
-    }
-    else if (isEnUS()) {
-        $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
-    }
-    else /* Fallback to default language. */ {
-        $lastModifiedOn = "Last modified on " . date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]);
-    }
-}
 ?>
 
 <!DOCTYPE html>
-<html lang="<?php echo siteLanguage(); ?>">
+<html lang="<?php echo SITE_LANGUAGE; ?>">
     <head>
         <?php
         if (!is_null(GOOGLE_ANALYTICS_ID) && "" != GOOGLE_ANALYTICS_ID) {
@@ -111,7 +71,6 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
 
         <?php includePartials("openGraph.php"); ?>
         <?php includePartials("header.php"); ?>
-        <?php includePartials("hreflang.php"); ?>
     </head>
     <body>
         <?php includePartials("navbar.php"); ?>
@@ -130,8 +89,13 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
                     </header>
 
                     <div class="post-info">
-<?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post) && "" != $post[LIGHTWEIGHT_CMS_POST_AUTHOR]): ?><!-- Trick to prevent an extra space. -->
-<span class="author"><?php echo $writtenBy; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?><?php echo $period; ?><?php endif; ?></span><?php endif; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?><span class="last-modified-time"><?php echo $lastModifiedOn; ?></span><?php endif; ?>
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_AUTHOR, $post) && "" != $post[LIGHTWEIGHT_CMS_POST_AUTHOR]): ?>
+                        <span class="author">Written by <?php echo $post[LIGHTWEIGHT_CMS_POST_AUTHOR]; ?><?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?>.<?php endif; ?></span>
+                        <?php endif; ?>
+
+                        <?php if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)): ?>
+                        <span class="last-modified-time">Last modified on <?php echo date("Y-m-d", $post[LIGHTWEIGHT_CMS_POST_MTIME]); ?></span>
+                        <?php endif; ?>
                     </div>
 
                     <?php includePartials("breadcrumb.php"); ?>
@@ -142,19 +106,39 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
         <div class="container">
             <div class="row">
                 <div id="main-content" class="col-lg-9 col-xs-12">
-                    <?php if (!isZhTW()): ?>
                     <!-- 300 wpm is the average reading speed of adults. -->
                     <div class="alert alert-info" role="alert">
                         There are <?php echo $wordCount; ?> word(s) in the post.
                         It will take <?php echo $readTime; ?> minute(s) to read.
                     </div>
-                    <?php endif; ?>
 
                     <?php includePartials("tags.php"); ?>
                     <?php includePartials("shareButtons.php"); ?>
 
                     <main>
-                        <?php echo $post[LIGHTWEIGHT_CMS_POST_CONTENT]; ?>
+                        <?php
+                        try {
+                            eval($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
+
+                            # HTTP 200 OK.
+                            http_response_code(200);
+                        }
+                        catch (Exception $e) {
+                            $post = \LightweightCMS\Core\errorPage(
+                                "Internal Server Error",
+                                "Unable to run the page",
+                                500
+                            );
+
+                            # Create a breadcrumb dynamically.
+                            $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Internal Server Error");
+
+                            $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+                            $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+                            loadPost();
+                        }
+                        ?>
                     </main>
                 </div>
 
@@ -180,5 +164,3 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
         <?php includePartials("library.php"); ?>
     </body>
 </html>
-
-<?php http_response_code($post[LIGHTWEIGHT_CMS_POST_STATUS]); ?>

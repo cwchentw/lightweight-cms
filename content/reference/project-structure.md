@@ -1,7 +1,7 @@
 ---
 title: The Project Structure of Lightweight CMS
 linkTitle: Project Structure
-mtime: 2021/6/26
+mtime: 2023/03/19
 weight: 5
 ---
 
@@ -51,7 +51,7 @@ We will introduce them in the following text.
 
 *content* directory stores site posts. In Lightweight CMS repository, this directory hoards live documentation of Lightweight CMS.
 
-If you don't need to update your Lightweight CMS snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your Lightweight CMS repo, see [this article](/howto/how-to-upgrade-lightweight-cms/) for more information.
+If you don't need to update your Lightweight CMS snapshot, you may safely delete all sample posts in *content* directory, adding your own. In contrary, if you are going to update your Lightweight CMS repo, see [this article](/howto/upgrade-lightweight-cms/) for more information.
 
 ## *setting.php* and *config* Directory
 
@@ -59,11 +59,11 @@ If you don't need to update your Lightweight CMS snapshot, you may safely delete
 
 ## *themes* Directory
 
-*themes* directory saves theme(s) for Lightweight CMS. There is at least one *default* theme for Lightweight CMS users. If you want to create or modify your own theme, see [this article](/howto/how-to-create-lightweight-cms-theme/).
+*themes* directory saves theme(s) for Lightweight CMS. There is at least one *default* theme for Lightweight CMS users. If you want to create or modify your own theme, see [this article](/howto/create-lightweight-cms-theme/).
 
 ## *plugins* Directory
 
-*plugins* directory saves plugin(s) for Lightweight CMS. Currently, there is no plugin inside. We and community contributors will add more in the future.
+*plugins* directory saves plugin(s) for Lightweight CMS. Currently, there is merely few plugins inside. We and community contributors will add more in the future.
 
 ## *static* Directory
 
@@ -73,11 +73,9 @@ If you don't need to update your Lightweight CMS snapshot, you may safely delete
 
 *assets* directory stows assets for front end. Unlike things in *static* directory, stuffs in *assets* require processing or compiling before senting to client environments.
 
-See [this article](/howto/how-to-manage-assets/) for information related to asset management in Lightweight CMS.
+See [this article](/howto/manage-assets/) for information related to asset management in Lightweight CMS.
 
 ## *build* Directory
-
-*Experimental*
 
 *build* directory places Gulp build scripts for builtin front end stacks used by Lightweight CMS. You may need to modify lists of directories and files to delete. We may change this situation later.
 
@@ -85,7 +83,7 @@ See [this article](/howto/how-to-manage-assets/) for information related to asse
 
 *www* directory places back end PHP scripts of Lightweight CMS on production environments. Currently, there is only a script in this directory - *index.php*, which is the router of Lightweight CMS.
 
-Users of mdmcs don't require to alter anything there mostly unless you want to contribute to Lightweight CMS itself.
+Users of Lightweight CMS don't require to alter anything there mostly unless you want to contribute to Lightweight CMS itself.
 
 ## *src* Directory
 

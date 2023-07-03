@@ -1,8 +1,8 @@
 ---
 title: How to Create a Lightweight CMS Theme
 linkTitle: Create a Lightweight CMS Theme
-mtime: 2021/11/6
-weight: 5
+mtime: 2023/03/31
+weight: 6
 ---
 
 ## Prologue
@@ -55,12 +55,12 @@ Project structure of a Lightweight CMS theme is very liberal. *autoload.php* is 
 
 ### `loadHome()` Function
 
-The essential function to load layout for home page in a Lightweight CMS site. It receives no parameter. Theme creators are responsible to load a layout for home page properly.
+The essential function to load the layout for home page in a Lightweight CMS site. It receives no parameter. Theme creators are responsible to load a layout for home page properly.
 
 Here is a sample code:
 
 ```php
-function loadHome()
+function loadHome ()
 {
     # Get the root path of default theme of Lightweight CMS.
     $sep = DIRECTORY_SEPARATOR;
@@ -75,10 +75,10 @@ It is recommended to use `require` instead of `include` here because it should b
 
 ### `loadSection()` Function
 
-The necessary function to load layout for sections in a Lightweight CMS site. In a similiar fashion, it receives no parameter. Here shows an example:
+The necessary function to load the layout for sections in a Lightweight CMS site. In a similiar fashion, it receives no parameter. Here shows an example:
 
 ```php
-function loadSection()
+function loadSection ()
 {
     # Get the root path of default theme of Lightweight CMS.
     $sep = DIRECTORY_SEPARATOR;
@@ -92,16 +92,30 @@ Lightweight CMS doesn't distinguish between top sections and nested ones. Theref
 
 ### `loadPost()` Function
 
-The mandatory function to load layout for posts in a Lightweight CMS site. No parameter is needed. Here shows a sample code:
+The mandatory function to load the layout for posts in a Lightweight CMS site. No parameter is needed. Here shows a sample code:
 
 ```php
-function loadPost()
+function loadPost ()
 {
     # Get the root path of default theme of Lightweight CMS.
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
 
     require $rootDirectory . $sep . "theme" . $sep . "post.php";
+}
+```
+
+### `loadPage()` Function
+
+The needed function to load the layout for pages in a Lightweight CMS site. No parameter is required. Here shows a sample code:
+
+```php
+function loadPage ()
+{
+    $sep = DIRECTORY_SEPARATOR;
+    $rootDirectory = __DIR__ . $sep . "..";
+
+    require $rootDirectory . $sep . "layout" . $sep . "page.php";
 }
 ```
 
@@ -114,7 +128,7 @@ The function to copy assets in a theme to a destination path specified by Lightw
 Here is the function used by *default* theme of Lightweight CMS:
 
 ```php
-function loadAssets($dest)
+function loadAssets ($dest)
 {
     # Save the path of old working directory.
     $oldDirectory = getcwd();
@@ -181,6 +195,7 @@ Here we list sample layouts used in Lightweight CMS themes:
 * Layout for [home page](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/home.php)
 * Layout for [sections](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/section.php)
 * Layout for [posts](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/post.php)
+* Layout for [pages](https://github.com/cwchentw/lightweight-cms/blob/master/themes/default/layout/page.php)
 
 Check exposed variables in these layouts [here](/reference/variable-in-layout/).
 

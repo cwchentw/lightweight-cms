@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Functions for all pages.
 
 
-function getHomeContent()
+function getHomeContent ()
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -115,7 +115,7 @@ function getHomeContent()
 # Nested sections are supported. Nonetheless, it is not recommended
 #  because of SEO. Instead, two layers of web pages are purposed,
 #  like "/section-title/post-title/".
-function getSections($uri)
+function getSections ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -137,18 +137,9 @@ function getSections($uri)
         }
 
         $path = $contentDirectory . $sep . $file;
-        if (is_dir($path)) {
-            $section = null;
-            # Get top section(s).
-            if ("/" == $uri) {
-                $section = readSection("/" . $file);
-                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . "/" . $file . "/";
-            }
-            # Get subsection(s) of a section.
-            else {
-                $section = readSection($uri . $file);
-                $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
-            }
+        if (is_dir($path)) {           
+            $section = readSection($uri . $file);
+            $section[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri . $file . "/";
 
             # Skip functional sections.
             # TODO: We may change it later.
@@ -165,7 +156,7 @@ function getSections($uri)
     return $result;
 }
 
-function getPosts($uri)
+function getPosts ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -174,7 +165,6 @@ function getPosts($uri)
     # Load some local scripts.
     require_once __DIR__ . $sep . "const.php";
     require_once __DIR__ . $sep . "post.php";
-    require_once __DIR__ . $sep . "customPage.php";
 
     $result = array();
 
@@ -200,13 +190,7 @@ function getPosts($uri)
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $origPath;
 
             # Get information of a post.
-            # TODO: If the commands cost too many system resources, change it.
-            if ("php" == pathinfo($path)["extension"]) {
-                $post = readCustomPage($origPath);
-            }
-            else {
-                $post = readPost($origPath);
-            }
+            $post = readPost($origPath);
 
             foreach ($post as $key => $value) {
                 $link[$key] = $value;
@@ -229,7 +213,7 @@ function getPosts($uri)
     return $result;
 }
 
-function getPostsPerPage($uri, $page)
+function getPostsPerPage ($uri, $page)
 {
     $result = getPosts($uri);
 
@@ -251,7 +235,7 @@ function getPostsPerPage($uri, $page)
     return $result;
 }
 
-function getBreadcrumb($uri)
+function getBreadcrumb ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -261,7 +245,6 @@ function getBreadcrumb($uri)
     require_once __DIR__ . $sep . "const.php";
     require_once __DIR__ . $sep . "uri.php";
     require_once __DIR__ . $sep . "post.php";
-    require_once __DIR__ . $sep . "customPage.php";
     # Load some private scripts.
     require_once __DIR__ . $sep . "_site.php";
     require_once __DIR__ . $sep . "_uri.php";
@@ -349,7 +332,7 @@ function getBreadcrumb($uri)
             array_push($result, $post);
         }
         else if (file_exists($phpPath)) {
-            $post = readCustomPage($prevPath . $arr[$i]);
+            $post = readPost($prevPath . $arr[$i]);
             $post[LIGHTWEIGHT_CMS_LINK_PATH] = $prev . $arr[$i] . "/";
 
             array_push($result, $post);

@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Private functions related to URIs.
 
 
-function parseURI($uri)
+function parseURI ($uri)
 {
     $result = array();
 
@@ -43,7 +43,7 @@ function parseURI($uri)
     return $result;
 }
 
-function getPath($uri, $extension)
+function getPath ($uri, $extension)
 {
     $result = "";
 

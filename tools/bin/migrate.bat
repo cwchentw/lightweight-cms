@@ -77,7 +77,7 @@ sed -i "s/Lightweight CMS/Awesome Site/" %informationConfig:\=/% || (
 )
 
 rem Update the site description.
-sed -i "s/A Dual-Mode, Flat-File CMS, Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
+sed -i "s/A Dual-Mode, Flat-File CMS Powered by PHP/A Concise Description of Your Awesome Site/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )

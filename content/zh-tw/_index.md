@@ -170,7 +170,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <select id="php-version" class="form-select" aria-label="Select PHP Version">
             <option value="php81" selected>8.1</option>
             <option value="php80">8.0</option>
-            <option value="php74">7.4</option>
         </select>
     </div>
 </div>
@@ -354,20 +353,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             console.log(githubCMSBranches.length);
             for (var i = 0; i < githubCMSBranches.length; ++i) {
                 githubCMSBranches[i].innerText = "php80";
-            }
-        }
-        else if ("php74" === phpVersion) {
-            console.log("PHP 7.4 is selected");
-            for (var i = 0; i < chocoPHPVersions.length; ++i) {
-                chocoPHPVersions[i].innerText = "7.4.30";
-            }
-
-            for (var i = 0; i < brewPHPVersions.length; ++i) {
-                brewPHPVersions[i].innerText = "7.4";
-            }
-
-            for (var i = 0; i < githubCMSBranches.length; ++i) {
-                githubCMSBranches[i].innerText = "php74";
             }
         }
     });

@@ -2,7 +2,7 @@
 title: How to Upgrade Lightweight CMS
 linkTitle: Upgrade Lightweight CMS
 mtime: 2021/7/10
-weight: 3
+weight: 4
 ---
 
 ## Prologue

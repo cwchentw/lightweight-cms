@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Publish a mdmcs site to a PaaS.
+# Publish a Lightweight CMS site to a PaaS.
 
 
 # Check whether PHP is available on the system.
@@ -108,6 +108,6 @@ cp -pr "${static}/"* "$public" || (
 
 # Copy the router of Lightweight CMS.
 cp -pr "${www}/index.php" "$public" || (
-    echo "Unable to copy router of mdmcs to public directory" >&2;
+    echo "Unable to copy the router of Lightweight CMS to public directory" >&2;
     exit 1;
 )

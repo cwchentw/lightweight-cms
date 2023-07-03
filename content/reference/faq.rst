@@ -1,6 +1,6 @@
 ---
 title: Frequent Asked Questions
-mtime: 2022/08/17
+mtime: 2023/06/27
 weight: 4
 ---
 
@@ -55,14 +55,6 @@ openSUSE Leap 15.4     8.0.10
 How to Run Lightweight CMS on old PHP?
 --------------------------------------
 
-To run Lightweight CMS on PHP 7.4:
-
-.. code-block:: shell
-
-   $ git clone https://github.com/cwchentw/lightweight-cms.git
-   $ cd lightweight-cms
-   $ git checkout php74
-
 To run Lightweight CMS on PHP 8.0:
 
 .. code-block:: shell
@@ -71,12 +63,26 @@ To run Lightweight CMS on PHP 8.0:
    $ cd lightweight-cms
    $ git checkout php80
 
-Non-``master`` branches of Lightweight CMS may not contain latest features.
+To run Lightweight CMS on PHP 8.1:
+
+.. code-block:: shell
+
+   $ git clone https://github.com/cwchentw/lightweight-cms.git
+   $ cd lightweight-cms
+   $ git checkout master
+
+Non-``master`` branches of Lightweight CMS may not contain the latest features.
 
 Does Lightweight CMS Run on Windows?
 --------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
+
+
+Why does Lightweight CMS Run Slowly on Windows?
+----------------------------------------------------
+
+It's rather a PHP issue than a Lightweight CMS one. Consider a virtualized GNU/Linux or WSL (Windows Subsystem for Linux) instead.
 
 Does Lightweight CMS Run on XXX PaaS?
 --------------------------------------

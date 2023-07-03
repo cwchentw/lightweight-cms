@@ -101,7 +101,7 @@ xcopy /s /y %static% %public% || (
 
 rem Copy the router of Lightweight CMS.
 copy /y %www%\index.php %public% || (
-    echo Unable to copy router of mdmcs to public directory >&2
+    echo Unable to copy the router of Lightweight CMS to public directory >&2
     exit /b 1
 )
 

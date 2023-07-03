@@ -154,7 +154,29 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
                     <?php includePartials("shareButtons.php"); ?>
 
                     <main>
-                        <?php echo $post[LIGHTWEIGHT_CMS_POST_CONTENT]; ?>
+                        <?php
+                        try {
+                            eval($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
+
+                            # HTTP 200 OK.
+                            http_response_code(200);
+                        }
+                        catch (Exception $e) {
+                            $post = \LightweightCMS\Core\errorPage(
+                                "Internal Server Error",
+                                "Unable to run the page",
+                                500
+                            );
+
+                            # Create a breadcrumb dynamically.
+                            $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Internal Server Error");
+
+                            $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+                            $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+                            loadPost();
+                        }
+                        ?>
                     </main>
                 </div>
 
@@ -180,5 +202,3 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
         <?php includePartials("library.php"); ?>
     </body>
 </html>
-
-<?php http_response_code($post[LIGHTWEIGHT_CMS_POST_STATUS]); ?>

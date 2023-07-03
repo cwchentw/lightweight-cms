@@ -1,7 +1,7 @@
 ---
 title: Tips for Tools on Windows
 linkTitle: Tools on Windows
-mtime: 2022/8/29
+mtime: 2023/03/19
 weight: 3
 ---
 
@@ -68,7 +68,7 @@ See [this article](/howto/how-to-deploy-lightweight-cms-to-digitalocean-app-plat
 Let's say you run an local Nginx web server on [Laragon](https://laragon.org/). Run this command to update your change(s) on a production environment:
 
 ```shell
-> .\tools\bin\sync-to.bat c:\laragon\www\mdcms\
+> .\tools\bin\sync-to.bat c:\laragon\www\lightweight-cms\
 ```
 
 Internally, this utility script runs `rsync(1)`. Therefore, don't edit anything on your production environment.
@@ -83,7 +83,7 @@ Run this command to update site settings each time you change project structure 
 > .\tools\bin\init.bat
 ```
 
-Site settings of mdmcs is recorded in PHP scripts, which are unusable in other scripting languages. To address this issue, we generate a usable settings for Batch.
+Site settings of Lightweight CMS is recorded in PHP scripts, which are unusable in other scripting languages. To address this issue, we generate a usable settings for Batch.
 
 ## Why are not Some Utility Scripts Available on Windows?
 

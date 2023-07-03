@@ -105,7 +105,7 @@ if (POST_PER_PAGE > 0) {
                                 echo "<article>";
                                 echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                                if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
                                     && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                                 {
                                     echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";
@@ -135,7 +135,7 @@ if (POST_PER_PAGE > 0) {
                                 echo "<article>";
                                 echo "<h3>" . $post[LIGHTWEIGHT_CMS_POST_TITLE] . "</h3>";
 
-                                if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+                                if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
                                     && array_key_exists("description", $post[LIGHTWEIGHT_CMS_POST_META]))
                                 {
                                     echo "<p>" . $post[LIGHTWEIGHT_CMS_POST_META]["description"] . " ";

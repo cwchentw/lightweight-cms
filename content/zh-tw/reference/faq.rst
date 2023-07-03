@@ -1,6 +1,6 @@
 ---
 title: 常見問題集
-mtime: 2022/09/11
+mtime: 2023/03/19
 weight: 4
 ---
 
@@ -40,7 +40,7 @@ Lightweight CMS 是使用什麼程式語言製作的？
 
 PHP 8. We select PHP rather than another language because PHP is one of few languages that works as a both template and application language. In addition, PHP hosting services are everywhere.
 
-Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php74`` and ``php80`` branches:
+Currently, many GNU/Linux distributions adapt PHP 8 while some still PHP 7. We have migrated our ``master`` branch to PHP 8.1, leaving our old code to ``php80`` branches:
 
 ====================== ===========
 GNU/Linux Distribution PHP Version
@@ -52,16 +52,15 @@ Fedora 36              8.1.9
 openSUSE Leap 15.4     8.0.10
 ====================== ===========
 
+Lightweight CMS 的靈感來自何處？
+-------------------------------------------------------------------
+
+`Hugo <https://gohugo.io/>`_, the static site generator we used before rolling our own. We learn a lot from that framework like how site settings are set and how the project directories are arranged. 
+
+Hugo adapt a home-made template language, uneasy to learn and use. Hence, we choose PHP, a template language well known by all web developers.
+
 如何在舊版 PHP 上執行 Lightweight CMS？
 ------------------------------------------------------------------
-
-To run Lightweight CMS on PHP 7.4:
-
-.. code-block:: shell
-
-   $ git clone https://github.com/cwchentw/lightweight-cms.git
-   $ cd lightweight-cms
-   $ git checkout php74
 
 To run Lightweight CMS on PHP 8.0:
 
@@ -76,7 +75,7 @@ Non-``master`` branches of Lightweight CMS may not contain latest features.
 Lightweight CMS 可以在 Windows 上運行嗎？
 --------------------------------------------------------------------
 
-Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for mdmcs.
+Certainly. Many web programmers write code on Windows while deploying applications to GNU/Linux. We adapt this practice as well. Nevertheless, GNU/Linux is recommended as a production environment for Lightweight CMS.
 
 Lightweight CMS 可以在某個 PaaS 上運行嗎？
 ---------------------------------------------------------------------

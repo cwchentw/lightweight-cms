@@ -1,12 +1,16 @@
 # Changelog
 
+* 2023-05-29
+  * Remove the unneeded config files for the runtime environments
+* 2023-03-09
+  * Support themed PHP pages
 * 2022-10-16
-  * Supports interlinked tags
+  * Support interlinked tags
 * 2022-10-14
   * Add a RSS feed generator
 * 2022-09-09
   * Support multilingual sites
-  * Migrate to *multilingual* theme
+  * Migrate our default theme to *multilingual* theme
 * 2022-07-24
   * Enable asset watching mode. Use the port of the built-in server other than the range from `3000` to `3003`
 * 2022-07-21

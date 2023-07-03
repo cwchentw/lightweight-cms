@@ -1,7 +1,7 @@
 ---
 title: Tips for Tools on Unix
 linkTitle: Tools on Unix
-mtime: 2022/8/29
+mtime: 2023/03/19
 weight: 2
 ---
 
@@ -93,4 +93,4 @@ Invoke this command to update site settings each time you change project structu
 $ ./tools/bin/init
 ```
 
-Site settings of mdmcs is recorded in PHP scripts, which are unusable in other scripting languages. To address this issue, we generate a usable settings for POSIX shell.
+Site settings of Lightweight CMS is recorded in PHP scripts, which are unusable in other scripting languages. To address this issue, we generate a usable settings for POSIX shell.

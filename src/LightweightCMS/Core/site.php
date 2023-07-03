@@ -3,7 +3,7 @@ namespace LightweightCMS\Core;
 # Site related functions.
 
 
-function getAllLinks($uri)
+function getAllLinks ($uri)
 {
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . ".." . $sep . "..";
@@ -11,8 +11,8 @@ function getAllLinks($uri)
     require_once $rootDirectory . $sep . "setting.php";
     # Load some local scripts.
     require_once __DIR__ . $sep . "const.php";
-    require_once __DIR__ . $sep . "customPage.php";
     require_once __DIR__ . $sep . "post.php";
+    require_once __DIR__ . $sep . "section.php";
     # Load some private scripts.
     require_once __DIR__ . $sep . "_site.php";
     require_once __DIR__ . $sep . "_utils.php";
@@ -54,79 +54,16 @@ function getAllLinks($uri)
                 $page = getPageFromPath($path);
                 array_push($pages, $page);
             }
-            else if (isHTMLFile($path)) {
-                $uri = getPageFromPath($path);
-                $link = readHTMLLink($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (isMarkdownFile($path)) {
-                $uri = getPageFromPath($path);
-                $link = readMarkdownLink($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (strpos($path, ASCIIDOC_FILE_EXTENSION)) {
+            else if (isPostFile($path))
+            {
                 $uri = getPageFromPath($path);
                 $link = readPost($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                 # Skip functional posts.
                 # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (strpos($path, RESTRUCTUREDTEXT_FILE_EXTENSION)) {
-                $uri = getPageFromPath($path);
-                $link = readPost($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                        && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                {
-                    array_push($result, $link);
-                }
-            }
-            else if (isPHPFile($path)) {
-                $uri = getPageFromPath($path);
-                $link = readCustomPage($uri);
-                $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                # Skip functional posts.
-                # TODO: We may change it later.
-                if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                    && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                     && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                         && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -160,77 +97,20 @@ function getAllLinks($uri)
         $rstDocPath = $path . RESTRUCTUREDTEXT_FILE_EXTENSION;
         $phpPath = $path . ".php";
 
-        /* `$path` is a HTML file. */
-        if (file_exists($htmlPath)) {
-            $uri = getPageFromPath($path);
-            $link = readHTMLLink($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        /* `$path` is a Markdown file. */
-        else if (file_exists($markdownPath)) {
-            $uri = getPageFromPath($path);
-            $link = readMarkdownLink($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($asciiDocPath)) {
+        if (file_exists($htmlPath)
+            || file_exists($markdownPath)
+            || file_exists($asciiDocPath)
+            || file_exists($rstDocPath)
+            || file_exists($phpPath))
+        {
             $uri = getPageFromPath($path);
             $link = readPost($uri);
             $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
 
             # Skip functional posts.
             # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($rstDocPath)) {
-            $uri = getPageFromPath($path);
-            $link = readPost($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                    && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-            {
-                array_push($result, $link);
-            }
-        }
-        else if (file_exists($phpPath)) {
-            $uri = getPageFromPath($phpPath);
-            $link = readCustomPage($uri);
-            $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-            $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-            # Skip functional posts.
-            # TODO: We may change it later.
-            if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+            if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                 && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                     && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
@@ -243,7 +123,7 @@ function getAllLinks($uri)
             /* Convert from path to page. */
             if (!BLOCK_BOT_ON_SECTION) {
                 $uri = getPageFromPath($dirpath);
-                $link = readDirectoryLink($uri);
+                $link = readSection($uri);
                 $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
                 $link[LIGHTWEIGHT_CMS_LINK_MTIME] = stat($dirpath)["mtime"];
                 array_push($result, $link);
@@ -267,80 +147,16 @@ function getAllLinks($uri)
                     array_push($pages, getPageFromPath($subpath));
                 }
                 # Load a HTML file.
-                else if (isHTMLFile($subpath)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readHTMLLink($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                # Load a Markdown file.
-                else if (isMarkdownFile($subpath)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readMarkdownLink($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (strpos($subpath, ASCIIDOC_FILE_EXTENSION)) {
+                else if (isPostFile($subpath))
+                {
                     $uri = getPageFromPath($subpath);
                     $link = readPost($uri);
                     $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
 
                     # Skip functional posts.
                     # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (strpos($subpath, RESTRUCTUREDTEXT_FILE_EXTENSION)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readPost($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
-                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
-                            && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
-                    {
-                        array_push($result, $link);
-                    }
-                }
-                else if (isPHPFile($subpath)) {
-                    $uri = getPageFromPath($subpath);
-                    $link = readCustomPage($uri);
-                    $link[LIGHTWEIGHT_CMS_LINK_PATH] = SITE_PREFIX . $uri;
-                    $link[LIGHTWEIGHT_CMS_LINK_MTIME] = $link[LIGHTWEIGHT_CMS_POST_MTIME];
-
-                    # Skip functional posts.
-                    # TODO: We may change it later.
-                    if (!(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
+                    if (isValidField($link, LIGHTWEIGHT_CMS_POST_META)
+                        && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_NOINDEX)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_NOINDEX])
                         && !(isValidField($link[LIGHTWEIGHT_CMS_POST_META], METADATA_DRAFT)
                             && $link[LIGHTWEIGHT_CMS_POST_META][METADATA_DRAFT]))
