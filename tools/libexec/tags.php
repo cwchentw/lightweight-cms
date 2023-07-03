@@ -40,7 +40,7 @@ foreach ($posts as $post) {
     if ($url == $siteURL)
         continue;
 
-    if (!is_null($post[LIGHTWEIGHT_CMS_POST_META])
+    if (array_key_exists(LIGHTWEIGHT_CMS_POST_META, $post)
         && array_key_exists(LIGHTWEIGHT_CMS_POST_TAGS, $post[LIGHTWEIGHT_CMS_POST_META]))
     {
         $tags = $post[LIGHTWEIGHT_CMS_POST_META][LIGHTWEIGHT_CMS_POST_TAGS];

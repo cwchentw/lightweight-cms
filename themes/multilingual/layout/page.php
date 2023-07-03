@@ -30,7 +30,10 @@ if (ENABLE_TOC) {
         );
 
     if (strlen($originalPost) === strlen($post[LIGHTWEIGHT_CMS_POST_CONTENT])) {
-        $noSubtitle = True;
+        $noSubtitle = TRUE;
+    }
+    else {
+        $noSubtitle = FALSE;
     }
 
     $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
