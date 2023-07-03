@@ -38,11 +38,7 @@ Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 ```shell
 > git clone https://github.com/cwchentw/lightweight-cms.git mysite
 > cd mysite
-<<<<<<< HEAD
 > git checkout php80
-=======
-> git checkout master
->>>>>>> master
 > .\tools\bin\serve.bat
 ```
 
@@ -65,11 +61,7 @@ $ brew install node@18
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
-<<<<<<< HEAD
 $ git checkout php80
-=======
-$ git checkout master
->>>>>>> master
 $ ./tools/bin/serve
 ```
 
@@ -102,11 +94,7 @@ $ nvm use 18.12.1
 ```shell
 $ git clone https://github.com/cwchentw/lightweight-cms.git mysite
 $ cd mysite
-<<<<<<< HEAD
 $ git checkout php80
-=======
-$ git checkout master
->>>>>>> master
 $ ./tools/bin/serve
 ```
 
