@@ -51,6 +51,7 @@ You should not remove project settings because either internal library or utilit
 
 * `ENABLE_PWA` (theme): Enable PWA (progressive web application) related features
 * `ENABLE_TOC` (theme): Enable ToC (table of contents) on sidebars of posts
+* `ENABLE_IMAGE_LAZY_LOADING` (theme): Enable image lazy loading
 * `ENABLE_FIXED_SIDEBAR` (theme): Enable fixed sidebars
 * `ENABLE_CODE_HIGHTLIGHT` (theme): Enable code highlighting powered by [hightlightjs](https://highlightjs.org/)
 * `BLOCK_BOT_ON_SECTION` (theme): Prevent search engine bots from crawling sections

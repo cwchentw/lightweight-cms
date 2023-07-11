@@ -6,6 +6,8 @@
 define("ENABLE_PWA", true);
 # Enable a ToC (Table of Contents) on sidebars of posts.
 define("ENABLE_TOC", true);
+# Enable image lazy loading.
+define("ENABLE_IMAGE_LAZY_LOADING", true);
 # Enable fixed sidebars.
 define("ENABLE_FIXED_SIDEBAR", true);
 # Enable the support to hightlight.js

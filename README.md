@@ -16,6 +16,7 @@ Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 * Pagination
 * Table of Contents
 * Interlinked tags
+* Image lazy loading
 * No following external links for SEO
 * Sitemap generator
 * RSS feed generator

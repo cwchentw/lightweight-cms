@@ -35,13 +35,20 @@
 <!-- Initialize some variables used in our JavaScript program.
       Set them before calling site-specific scripts. -->
 <?php
-# The variable will be a JavaScript string.
+# Enable image lazy loading if enabled by the user.
+$enableImageLazyLoading = "false";
+if (!is_null(ENABLE_IMAGE_LAZY_LOADING) && ENABLE_IMAGE_LAZY_LOADING) {
+    $enableImageLazyLoading = "true";
+}
+
+# Enable fixed sidebar if enabled by the user.
 $enableFixedSidebar = "false";
 if (!is_null(ENABLE_FIXED_SIDEBAR) && ENABLE_FIXED_SIDEBAR) {
     $enableFixedSidebar = "true";
 }
 ?>
 <script>
+    var enableImageLazyLoading = <?php echo $enableImageLazyLoading; ?>;
     var enableFixedSidebar = <?php echo $enableFixedSidebar; ?>;
 </script>
 

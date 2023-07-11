@@ -38,6 +38,7 @@ These features are available in _default_ and/or _multilingual_ themes:
 * Top navbar
 * Side information or table of contents
 * Code highlighting (through https://highlightjs.org/[highlight.js])
+* Image lazy loading
 * Twitter cards and open graphs
 * Static social media sharing links (no JavaScript is required)
 * Build a multilingual site

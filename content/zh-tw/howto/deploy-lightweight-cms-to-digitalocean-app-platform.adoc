@@ -61,15 +61,15 @@ On initial deployment, a PaaS will fetch your code from a remote repository, try
 
 Choose your source:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-choose-source.png[Choose your source for DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Choose your source for DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-choose-source.png"]
 
 If you are confident to your commits, check "**Autodeploy code changes**", which will build and deploy your commits automatically.
 
 Configure your application:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-configure-your-app.png[Configure your application for DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Configure your application for DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-configure-your-app.png"]
 
 Choose _Web Services_ here for external sites. DigitalOcean App Platform provides other types of app for internal uses.
 
@@ -93,22 +93,22 @@ We write a Nginx configuration for this vendor. In addition, you need to specify
 
 Name your web service:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-name-your-web-service.png[Name your web service for DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Name your web service for DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-name-your-web-service.png"]
 
 You should choose a region near your audience here, not yourself.
 
 Choose your plan:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-finalize-and-launch.png[Choose your plan for DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Choose your plan for DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-finalize-and-launch.png"]
 
 Here we chose *Basic* because we just wanted to try out the platform.
 
 It will take a while to build and deploy your Lightweight CMS site:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-deployed-successfully.png[Deploy your app successfully on DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Deploy your app successfully on DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-deployed-successfully.png"]
 
 == 後續發佈
 
@@ -118,8 +118,8 @@ Once your Lightweight site is set, you don't bother to maintain a web server, wh
 
 Even if you are satisfied with your PaaS now, you should always set a custom domain. For any reason, you may need to migrate your Lightweight site or other web projects to another host in the future. Here we simulate to set a custom domain on the platform:
 
-[.img-fluid]
-image::/img/howto/digitalocean-app-platform-add-domain.png[Set custom domain for your site on DigitalOcean App Platform]
+[.img-fluid.lazy]
+image::&#8203;[Set custom domain for your site on DigitalOcean App Platform,data-src="/img/howto/digitalocean-app-platform-add-domain.png"]
 
 In this case, set your DNS providers as following:
 

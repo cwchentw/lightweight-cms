@@ -2,7 +2,7 @@
 title: How to Create a Lightweight CMS Theme
 linkTitle: Create a Lightweight CMS Theme
 mtime: 2023/03/31
-weight: 6
+weight: 7
 ---
 
 ## Prologue
