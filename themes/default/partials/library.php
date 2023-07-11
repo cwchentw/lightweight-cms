@@ -48,6 +48,7 @@ if (!is_null(ENABLE_FIXED_SIDEBAR) && ENABLE_FIXED_SIDEBAR) {
 }
 ?>
 <script>
+    var enableImageLazyLoading = <?php echo $enableImageLazyLoading; ?>;
     var enableFixedSidebar = <?php echo $enableFixedSidebar; ?>;
 </script>
 
