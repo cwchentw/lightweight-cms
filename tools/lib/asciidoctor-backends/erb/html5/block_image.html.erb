@@ -6,7 +6,8 @@ end %>>
 if attr? :link %>
 <a class="image" href="<%= attr :link %>"><img src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %>></a><%
 else %>
-<img <%= @id && %( id="#{@id}") %>class="<%= [@style,role].compact * ' ' %>" src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %>><%
+                                                                                                                                                                                                                                                           <%#= FIXME: No built-in support for data attribute. %>
+<img <%= @id && %( id="#{@id}") %>class="<%= [@style,role].compact * ' ' %>" src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %><%= (attr? "data-src") ? %( data-src="#{attr "data-src"}") : nil %>><%
 end %><%
 if title? %>
 <div class="title"><%= captioned_title %></div><%

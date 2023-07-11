@@ -1,5 +1,7 @@
 # Changelog
 
+* 2023-07-11
+  * Support image lazy loading (workaround)
 * 2023-05-29
   * Remove the unneeded config files for the runtime environments
 * 2023-03-09
