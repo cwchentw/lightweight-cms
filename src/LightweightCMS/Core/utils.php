@@ -44,7 +44,7 @@ function xCopy ($src, $dst)
             # Copy a file.
             else {
                 # Copy a file only if it doesn't exist.
-                if (!is_file($dst . $sep. $file)) {
+                if (!is_file($dst . $sep . $file)) {
                     if (!copy($src . $sep . $file, $dst . $sep . $file)) {
                         # Release the handle of destination directory.
                         closedir($dir);

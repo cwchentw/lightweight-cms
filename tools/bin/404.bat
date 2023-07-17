@@ -35,8 +35,10 @@ if not exist %public% (
     )
 )
 
-rem Create a 50x.html.
-php %libexec%\404.php > %public%\404.html || (
-    echo Unable to create a 404.html >&2
-    exit /b 1
+rem Create a 404.html only if it doesn't exist.
+if not exist %public%\404.html (
+    php %libexec%\404.php > %public%\404.html || (
+        echo Unable to create a 404.html >&2
+        exit /b 1
+    )
 )

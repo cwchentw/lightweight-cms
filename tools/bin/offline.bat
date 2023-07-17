@@ -35,7 +35,10 @@ if not exist %public% (
     )
 )
 
-php %libexec%\offline.php > %public%\offline.html || (
-    echo Unable to create a 404.html >&2
-    exit /b 1
+rem Create an offline.html only if it doesn't exist.
+if not exist %public%\offline.html (
+    php %libexec%\offline.php > %public%\offline.html || (
+        echo Unable to create a 404.html >&2
+        exit /b 1
+    )
 )

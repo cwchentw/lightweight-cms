@@ -35,8 +35,10 @@ if not exist %public% (
     )
 )
 
-rem Create a manifest.json.
-php %libexec%\manifest.php > %public%\manifest.json || (
-    echo Unable to create a manifest.json >&2
-    exit /b 1
+rem Create a manifest.json only if it doesn't exist.
+if not exist %public%\manifest.json (
+    php %libexec%\manifest.php > %public%\manifest.json || (
+        echo Unable to create a manifest.json >&2
+        exit /b 1
+    )
 )
