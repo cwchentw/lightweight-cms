@@ -1,5 +1,8 @@
 # Changelog
 
+* 2023-07-17
+  * Optimize the compilation time in static mode (*experimental*)
+  * Add `DATA_DIRECTORY` in *config/internal.template.php*
 * 2023-07-11
   * Support image lazy loading (workaround)
 * 2023-05-29

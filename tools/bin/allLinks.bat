@@ -1,6 +1,12 @@
 @echo off
-rem Clean downloaded code.
+rem Utility to create the link file.
 
+
+rem Check whether PHP is available on the system.
+php --version >nul || (
+    echo No PHP on the system >&2
+    exit /b 1
+)
 
 rem Get working directory of current batch script.
 set cwd=%~dp0
@@ -18,7 +24,8 @@ if not exist %lib%\settings.bat (
     )
 )
 
-rem Load site settings.
-call %lib%\settings.bat
-
-for %%D in (data vendor node_modules public %theme%\vendor %theme%\node_modules %theme%\public) do rmdir /s /q %%D
+rem Create the link file.
+php %libexec%\allLinks.php || (
+    echo Unable to create the link file >&2
+    exit /b 1
+)

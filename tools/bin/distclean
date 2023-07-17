@@ -19,7 +19,7 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
-for dir in vendor node_modules public "${theme}/vendor" "${theme}/node_modules" "${theme}/public";
+for dir in data vendor node_modules public "${theme}/vendor" "${theme}/node_modules" "${theme}/public";
 do
     rm -rf "$dir";
 done

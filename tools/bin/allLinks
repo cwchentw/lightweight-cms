@@ -1,6 +1,5 @@
 #!/bin/sh
-#
-# A utility script to generate a manifest.json for Lightweight CMS.
+# Utility to create the link file.
 
 
 # Check whether PHP is available on the system.
@@ -26,18 +25,8 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
-if ! [ -d "$public" ];
-then
-    mkdir -p "$public" || (
-        echo "Unable to create a public directory" >&2;
-        exit 1;
-    )
-fi
-
-# Create a menifest.json only if it doesn't exist.
-if ! [ -f "${public}/manifest.json" ]; then
-    php "${libexec}/manifest.php" > "${public}/manifest.json" || (
-        echo "Unable to create a manifest.json" >&2;
-        exit 1;
-    )
-fi
+# reate the link file.
+php "${libexec}/allLinks.php" || (
+    echo "Unable to create the link file" >&2;
+    exit 1;
+)

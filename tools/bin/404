@@ -35,7 +35,10 @@ then
     )
 fi
 
-php "${libexec}/404.php" > "${public}/404.html" || (
-    echo "Unable to create a 404.html" >&2;
-    exit 1;
-)
+# Create a 404.html only if it doesn't exist.
+if ! [ -f "${public}/404.html" ]; then
+    php "${libexec}/404.php" > "${public}/404.html" || (
+        echo "Unable to create a 404.html" >&2;
+        exit 1;
+    )
+fi

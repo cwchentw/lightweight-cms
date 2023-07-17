@@ -13,6 +13,16 @@ require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 
 
+$dataDirectory = $rootDirectory . $sep . DATA_DIRECTORY;
+$linkFile = $dataDirectory . $sep . "allLinks.json";
+
+if (is_file($linkFile)) {
+    $links = json_decode(file_get_contents($linkFile), TRUE);
+}
+else {
+    $links = \LightweightCMS\Core\getAllLinks(SITE_PREFIX . "/");
+}
+
 $xml = new DOMDocument("1.0", "UTF-8");
 
 # Pretty printing is not required because rss.xml is read by RSS readers.
@@ -34,7 +44,6 @@ $channel->appendChild($siteDescription);
 $siteURL = $xml->createElement("link", SITE_BASE_URL . SITE_PREFIX . "/");
 $channel->appendChild($siteURL);
 
-$links = \LightweightCMS\Core\getAllLinks("/");
 usort($links, function ($a, $b) {
     $ma = $a[LIGHTWEIGHT_CMS_POST_MTIME];
     $mb = $b[LIGHTWEIGHT_CMS_POST_MTIME];

@@ -35,7 +35,10 @@ then
     )
 fi
 
-php "${libexec}/offline.php" > "${public}/offline.html" || (
-    echo "Unable to create an offline.html" >&2;
-    exit 1;
-)
+# Create a offline.html only if it doesn't exist.
+if ! [ -f "${public}/offline.html" ]; then
+    php "${libexec}/offline.php" > "${public}/offline.html" || (
+        echo "Unable to create an offline.html" >&2;
+        exit 1;
+    )
+fi

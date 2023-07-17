@@ -10,6 +10,16 @@ require_once $rootDirectory . $sep . "setting.php";
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
 
 
+$dataDirectory = $rootDirectory . $sep . DATA_DIRECTORY;
+$linkFile = $dataDirectory . $sep . "allLinks.json";
+
+if (is_file($linkFile)) {
+    $links = json_decode(file_get_contents($linkFile), TRUE);
+}
+else {
+    $links = \LightweightCMS\Core\getAllLinks(SITE_PREFIX . "/");
+}
+
 $xml = new DOMDocument("1.0", "UTF-8");
 
 # Pretty printing is not required because sitemap.xml is read by search engine bots.
@@ -17,8 +27,6 @@ $xml = new DOMDocument("1.0", "UTF-8");
 
 $urlset = $xml->createElement("urlset");
 $urlset->setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
-
-$links = \LightweightCMS\Core\getAllLinks("/");
 
 foreach ($links as $link) {
     $node = $xml->createElement("url");

@@ -24,6 +24,9 @@ define("APPLICATION_DIRECTORY", "www");
 define("STATIC_DIRECTORY", "static");
 # The directory of public files.
 define("PUBLIC_DIRECTORY", "public");
+# The directory of site data.
+define("DATA_DIRECTORY", "data");
+
 
 # Title of a section or a post.
 define("METADATA_TITLE", "title");

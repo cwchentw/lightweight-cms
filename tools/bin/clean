@@ -19,7 +19,7 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
-for dir in public "${theme}/public";
+for dir in data public "${theme}/public";
 do
     rm -rf "$dir";
 done

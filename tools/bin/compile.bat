@@ -65,6 +65,11 @@ call %bin%\manifest.bat || (
     exit /b %ERRORLEVEL%
 )
 
+rem Create the link file.
+call %bin%\allLinks.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Create a sitemap.xml
 call %bin%\sitemap.bat || (
     exit /b %ERRORLEVEL%
@@ -98,5 +103,10 @@ xcopy /s /y %static% %public% || (
 
 rem Compile a Lightweight site.
 call php %libexec%\compile.php || (
+    exit /b %ERRORLEVEL%
+)
+
+rem Create the checksum of the posts.
+call php %libexec%\checkFile.php || (
     exit /b %ERRORLEVEL%
 )

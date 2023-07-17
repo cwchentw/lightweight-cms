@@ -21,12 +21,4 @@ if not exist %lib%\settings.bat (
 rem Load site settings.
 call %lib%\settings.bat
 
-rem Create a public directory if it doesn't exist.
-if not exist %public% (
-    mkdir %public% || (
-        echo Unable to create a public directory >&2
-        exit /b 1
-    )
-)
-
-for %%D in (public %theme%\public) do rmdir /s /q %%D
+for %%D in (data public %theme%\public) do rmdir /s /q %%D

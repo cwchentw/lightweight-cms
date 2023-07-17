@@ -15,14 +15,43 @@ require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep . "autoload.php";
 
 
+$checkFile = $rootDirectory . $sep . DATA_DIRECTORY . $sep . "checked.json";
+if (is_file($checkFile)) {
+    $isChecked = TRUE;
+    if (!($checkStringData = file_get_contents($checkFile))) {
+        $isChecked = FALSE;
+    }
+
+    if ($isChecked) {
+        $checkData = json_decode($checkStringData, TRUE);
+    }
+}
+else {
+    $isChecked = FALSE;
+}
+
 $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
+if (!is_dir($publicDirectory)) {
+    $isChecked = FALSE;
+}
+
+$contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
 
 # Generate the static page of the home page.
-$pageContent = compilePage(SITE_PREFIX . "/");
-compile($pageContent, "/");
+if ($isChecked) {
+    $homePageFile = $contentDirectory . $sep . SECTION_INDEX;
+
+    if ($checkData[SITE_PREFIX . "/"] != hash_file("sha256", $homePageFile)) {
+        goto COMPILE_HOME;
+    }
+}
+else {
+COMPILE_HOME:
+    $pageContent = compilePage(SITE_PREFIX . "/");
+    compile($pageContent, "/");
+}
 
 $dirs = array();
-$contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
 array_push($dirs, $contentDirectory);
 
 while (count($dirs) > 0) {
@@ -52,8 +81,17 @@ while (count($dirs) > 0) {
                 $uri .= "/";
             }
 
-            $pageContent = compilePage(SITE_PREFIX . $uri);
-            compile($pageContent, $uri);
+            if ($isChecked) {
+                $sectionPageFile = $path . $sep . SECTION_INDEX;
+                if ($checkData[SITE_PREFIX . $uri] != hash_file("sha256", $sectionPageFile)) {
+                    goto COMPILE_SECTION;
+                }
+            }
+            else {
+            COMPILE_SECTION:
+                $pageContent = compilePage(SITE_PREFIX . $uri);
+                compile($pageContent, $uri);
+            }
         }
         else if (isWebPage($path)) {
             $pageCount += 1;
@@ -67,8 +105,16 @@ while (count($dirs) > 0) {
                 $uri .= "/";
             }
 
-            $pageContent = compilePage(SITE_PREFIX . $uri);
-            compile($pageContent, $uri);
+            if ($isChecked) {
+                if ($checkData[SITE_PREFIX . $uri] != hash_file("sha256", $path)) {
+                    goto COMPILE_POST;
+                }
+            }
+            else {
+            COMPILE_POST:
+                $pageContent = compilePage(SITE_PREFIX . $uri);
+                compile($pageContent, $uri);
+            }
         }
     }
 
@@ -172,7 +218,7 @@ function compile ($content, $uri)
     if ("" != $content) {
         if (!file_exists($publicDirectory . str_replace("/", $sep, $_uri))) {
             if (!mkdir($publicDirectory . str_replace("/", $sep, $_uri))) {
-                fwrite(STDERR, "Unable to create a directory for " . $uri . PHP_EOL);
+                fwrite(STDERR, "Unable to create a directory for " . $_uri . PHP_EOL);
                 exit(1);
             }
         }
@@ -181,12 +227,12 @@ function compile ($content, $uri)
             $publicDirectory . str_replace("/", $sep, $_uri) . "index.html",
             $content
         )) {
-            fwrite(STDERR, "Unable to generate web page for " . $uri . PHP_EOL);
+            fwrite(STDERR, "Unable to generate web page for " . $_uri . PHP_EOL);
             exit(1);
         }
     }
     else {
-        fwrite(STDERR, "Unable to generate web page for " . $uri . PHP_EOL);
+        fwrite(STDERR, "Unable to generate web page for " . $_uri . PHP_EOL);
         exit(1);
     }
 }
