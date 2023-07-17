@@ -65,6 +65,11 @@ call %bin%\manifest.bat || (
     exit /b %ERRORLEVEL%
 )
 
+rem Create the link file.
+call %bin%\allLinks.bat || (
+    exit /b %ERRORLEVEL%
+)
+
 rem Create a sitemap.xml
 call %bin%\sitemap.bat || (
     exit /b %ERRORLEVEL%

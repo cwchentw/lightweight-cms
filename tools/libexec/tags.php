@@ -7,15 +7,22 @@ $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
 # Get global settings.
 require_once $rootDirectory . $sep . "setting.php";
-
 # Load required library.
 require_once $rootDirectory . $sep . LIBRARY_DIRECTORY . $sep . "autoload.php";
-
 # Load required plubins.
 require_once $rootDirectory . $sep . PLUGIN_DIRECTORY . $sep . "autoload.php";
 
 
-$posts = \LightweightCMS\Core\getAllLinks("/");
+$dataDirectory = $rootDirectory . $sep . DATA_DIRECTORY;
+$linkFile = $dataDirectory . $sep . "allLinks.json";
+
+if (is_file($linkFile)) {
+    $posts = json_decode(file_get_contents($linkFile), TRUE);
+}
+else {
+    $posts = \LightweightCMS\Core\getAllLinks(SITE_PREFIX . "/");
+}
+
 usort($posts, function ($a, $b) {
     $ma = $a[LIGHTWEIGHT_CMS_POST_MTIME];
     $mb = $b[LIGHTWEIGHT_CMS_POST_MTIME];
