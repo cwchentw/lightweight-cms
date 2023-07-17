@@ -43,13 +43,16 @@ function xCopy ($src, $dst)
             }
             # Copy a file.
             else {
-                if (!copy($src . $sep . $file, $dst . $sep . $file)) {
-                    # Release the handle of destination directory.
-                    closedir($dir);
+                # Copy a file only if it doesn't exist.
+                if (!is_file($dst . $sep. $file)) {
+                    if (!copy($src . $sep . $file, $dst . $sep . $file)) {
+                        # Release the handle of destination directory.
+                        closedir($dir);
 
-                    # We may find a better exception for this event.
-                    # TODO: Refactor it later.
-                    throw new \Exception("Unable to create file: " . $dst . $sep . $file . "\n");
+                        # We may find a better exception for this event.
+                        # TODO: Refactor it later.
+                        throw new \Exception("Unable to create file: " . $dst . $sep . $file . "\n");
+                    }
                 }
             }
         }
