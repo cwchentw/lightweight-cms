@@ -1,6 +1,12 @@
 @echo off
-rem Clean downloaded code.
+rem Check whether the posts are modified.
 
+
+rem Check whether PHP is available on the system.
+php --version >nul || (
+    echo No PHP on the system >&2
+    exit /b 1
+)
 
 rem Get working directory of current batch script.
 set cwd=%~dp0
@@ -21,4 +27,13 @@ if not exist %lib%\settings.bat (
 rem Load site settings.
 call %lib%\settings.bat
 
-for %%D in (data vendor node_modules public %theme%\vendor %theme%\node_modules %theme%\public) do rmdir /s /q %%D
+rem No public directory. Don't create the checksum file.
+if not exist %public% (
+    exit /b 0
+)
+
+rem Create the checksum file.
+php %libexec%\checkFile.php || (
+    echo Unable to create checked.json >&2
+    exit /b 1
+)

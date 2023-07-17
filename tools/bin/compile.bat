@@ -100,3 +100,8 @@ rem Compile a Lightweight site.
 call php %libexec%\compile.php || (
     exit /b %ERRORLEVEL%
 )
+
+rem Create the checksum of the posts.
+call php %libexec%\checkFile.php || (
+    exit /b %ERRORLEVEL%
+)
