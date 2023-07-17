@@ -114,4 +114,11 @@ cp -pr "${static}/"* "$public" || (
 )
 
 # Compile a Lightweight site.
-php "${libexec}/compile.php"
+php "${libexec}/compile.php" || (
+    exit $?;
+)
+
+# Create the checksum of the posts.
+php "${libexec}/checkFile.php" || (
+    exit $?;
+)
