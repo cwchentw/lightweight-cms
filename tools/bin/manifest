@@ -34,7 +34,10 @@ then
     )
 fi
 
-php "${libexec}/manifest.php" > "$public/manifest.json" || (
-    echo "Unable to create a manifest.json" >&2;
-    exit 1;
-)
+# Create a menifest.json only if it doesn't exist.
+if ! [ -f "${public}/manifest.json" ]; then
+    php "${libexec}/manifest.php" > "${public}/manifest.json" || (
+        echo "Unable to create a manifest.json" >&2;
+        exit 1;
+    )
+fi

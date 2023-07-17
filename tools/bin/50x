@@ -35,7 +35,10 @@ then
     )
 fi
 
-php "${libexec}/50x.php" > "${public}/50x.html" || (
-    echo "Unable to create a 50x.html" >&2;
-    exit 1;
-)
+# Create a 50x.html only if it doesn't exist.
+if ! [ -f "${public}/50x.html" ]; then
+    php "${libexec}/50x.php" > "${public}/50x.html" || (
+        echo "Unable to create a 50x.html" >&2;
+        exit 1;
+    )
+fi
