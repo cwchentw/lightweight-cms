@@ -74,6 +74,11 @@ fi
     exit $?;
 )
 
+# Create the link file.
+"${bin}/allLinks" || (
+    exit $?;
+)
+
 # Create a sitemap.xml
 "${bin}/sitemap" || (
     exit $?;

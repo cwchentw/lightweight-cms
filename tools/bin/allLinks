@@ -1,7 +1,13 @@
 #!/bin/sh
-#
-# Clean downloaded code.
+# Utility to create the link file.
 
+
+# Check whether PHP is available on the system.
+if ! command -v php 2>&1 1>/dev/null;
+then
+    echo "No PHP on the system" >&2;
+    exit 1;
+fi
 
 cwd=$(dirname $0);
 bin="${cwd}/../bin";
@@ -19,7 +25,8 @@ fi
 # Load site settings.
 . "${lib}/settings.sh";
 
-for dir in data vendor node_modules public "${theme}/vendor" "${theme}/node_modules" "${theme}/public";
-do
-    rm -rf "$dir";
-done
+# reate the link file.
+php "${libexec}/allLinks.php" || (
+    echo "Unable to create the link file" >&2;
+    exit 1;
+)
