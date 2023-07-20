@@ -38,18 +38,12 @@ if (!is_dir($publicDirectory)) {
 $contentDirectory = $rootDirectory . $sep . CONTENT_DIRECTORY;
 
 # Generate the static page of the home page.
-if ($isChecked) {
-    $homePageFile = $contentDirectory . $sep . SECTION_INDEX;
-
-    if ($checkData[SITE_PREFIX . "/"] != hash_file("sha256", $homePageFile)) {
-        goto COMPILE_HOME;
-    }
-}
-else {
-COMPILE_HOME:
-    $pageContent = compilePage(SITE_PREFIX . "/");
-    compile($pageContent, "/");
-}
+#
+# Even the home page itself doesn't change,
+#  there may be some new posts. Hence, we always
+#  compile the home page.
+$pageContent = compilePage(SITE_PREFIX . "/");
+compile($pageContent, "/");
 
 $dirs = array();
 array_push($dirs, $contentDirectory);
@@ -81,17 +75,13 @@ while (count($dirs) > 0) {
                 $uri .= "/";
             }
 
-            if ($isChecked) {
-                $sectionPageFile = $path . $sep . SECTION_INDEX;
-                if ($checkData[SITE_PREFIX . $uri] != hash_file("sha256", $sectionPageFile)) {
-                    goto COMPILE_SECTION;
-                }
-            }
-            else {
-            COMPILE_SECTION:
-                $pageContent = compilePage(SITE_PREFIX . $uri);
-                compile($pageContent, $uri);
-            }
+            # Compile a section.
+            #
+            # Even the section page itself doesn't change,
+            #  there may be some new posts. Hence, we always
+            #  compile a section.
+            $pageContent = compilePage(SITE_PREFIX . $uri);
+            compile($pageContent, $uri);
         }
         else if (isWebPage($path)) {
             $pageCount += 1;
