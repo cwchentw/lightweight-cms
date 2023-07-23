@@ -42,6 +42,9 @@ function loadAssets($dest)
 
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . "..";
+    $siteDirectory = $rootDirectory . $sep . ".." . $sep . "..";
+
+    require_once $siteDirectory . $sep . "setting.php";
 
     # Move to theme directory.
     if (!chdir($rootDirectory)) {
@@ -74,7 +77,7 @@ function loadAssets($dest)
 
     # Copy assets recursively.
     try {
-        $publicDirectory = $rootDirectory . $sep . "public";
+        $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
         # xCopy is a utility function in Lightweight CMS.
         #  It will copy directories and files recursively.
