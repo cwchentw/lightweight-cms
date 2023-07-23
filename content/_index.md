@@ -7,9 +7,9 @@ Welcome to the official site of Lightweight CMS. If you are new to this website 
 
 <p class="quick-start-hint">We think you are using <span id="client-system"></span></p>
 
-<div class="install-on-windows demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">&gt;</span> choco install php --version=<span class="choco-php-version">8.1.10</span>
+<div class="install-on-windows demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">&gt;</span> choco install php --version=<span class="choco-php-version">8.1.21</span>
 <span class="gp">&gt;</span> choco install composer
-<span class="gp">&gt;</span> choco install nodejs --version=18.12.1
+<span class="gp">&gt;</span> choco install nodejs --version=18.17.0
 <span class="gp">&gt;</span> choco install rsync
 <span class="gp">&gt;</span> choco install sed
 </pre></div>
@@ -47,8 +47,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 
 <p class="install-on-ubuntu" style="display: none;">Install <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener nofollow"><code>nvm</code></a></p>
 
-<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 18.12.1
-$ nvm use 18.12.1
+<pre class="install-on-ubuntu" style="display: none;"><code class="shell">$ nvm install 18.17.0
+$ nvm use 18.17.0
 </code></pre>
 
 <div id="run-on-ubuntu" class="demo-highlight nohighlight" style="display: none;"><pre><span></span><span class="gp">$ </span>git clone https://github.com/cwchentw/lightweight-cms.git mysite
@@ -324,7 +324,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             console.log("PHP 8.1 is selected");
             console.log(chocoPHPVersions.length);
             for (var i = 0; i < chocoPHPVersions.length; ++i) {
-                chocoPHPVersions[i].innerText = "8.1.10";
+                chocoPHPVersions[i].innerText = "8.1.21";
             }
 
             for (var i = 0; i < brewPHPVersions.length; ++i) {

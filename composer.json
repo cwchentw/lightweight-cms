@@ -11,10 +11,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "mnapoli/front-yaml": "^1.8"
+        "mnapoli/front-yaml": "^2.0",
+        "erusev/parsedown": "^1.7"
     },
     "require-dev": {
-        "phpmd/phpmd": "^2.11.1",
-        "squizlabs/php_codesniffer": "^3.6.2"
+        "phpmd/phpmd": "^2.13",
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }

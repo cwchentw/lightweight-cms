@@ -59,7 +59,7 @@ Install [Chocolatey](https://chocolatey.org) first, which is a package manager f
 Install PHP:
 
 ```shell
-> choco install php --version=8.1.9
+> choco install php --version=8.1.21
 ```
 
 At time of our writing, many GNU/Linux distributions still provide PHP 7 rather than PHP 8. Therefore, we install PHP 7 intentionally.

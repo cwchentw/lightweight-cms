@@ -29,9 +29,9 @@ Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 ### Windows
 
 ```shell
-> choco install php --version=8.1.9
+> choco install php --version=8.1.21
 > choco install composer
-> choco install nodejs --version=18.12.1
+> choco install nodejs --version=18.17.0
 > choco install rsync
 > choco install sed
 ```
@@ -88,8 +88,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install 18.12.1
-$ nvm use 18.12.1
+$ nvm install 18.17.0
+$ nvm use 18.17.0
 ```
 
 ```shell
