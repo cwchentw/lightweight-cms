@@ -75,29 +75,58 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
     # Posts not included in any section.
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
+    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
+    }
+    else {
+        $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
+    }
 
     preg_match("/^\/(\d+)\/$/", $loc, $matches);
     $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($homeURI, $matches[1]);
 
     # Show HTTP 404 page if no post on this page.
-    if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
-        $post = \LightweightCMS\Core\errorPage(
-            "Page Not Found",
-            "The page doesn't exist on our server.",
-            404
-        );
+    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+        $c = count($GLOBALS[LIGHTWEIGHT_CMS_POSTS]);
+        $p = ceil($c / POST_PER_PAGE);
+        if ($matches[1] >= $p) {
+            $post = \LightweightCMS\Core\errorPage(
+                "Page Not Found",
+                "The page doesn't exist on our server.",
+                404
+            );
 
-        # Create a breadcrumb dynamically.
-        $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
+            # Create a breadcrumb dynamically.
+            $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
 
-        $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
-        $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+            $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+            $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
 
-        loadPost();
+            loadPost();
+        }
+        else {
+            loadHome();
+        }
     }
     else {
-        loadHome();
+        if (count($GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE]) <= 0) {
+            $post = \LightweightCMS\Core\errorPage(
+                "Page Not Found",
+                "The page doesn't exist on our server.",
+                404
+            );
+
+            # Create a breadcrumb dynamically.
+            $breadcrumb = \LightweightCMS\Core\errorPageBreadcrumb("Page Not Found");
+
+            $GLOBALS[LIGHTWEIGHT_CMS_POST] = $post;
+            $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = $breadcrumb;
+
+            loadPost();
+        }
+        else {
+            loadHome();
+        }
     }
 }
 # Render the tags, which is a special section.

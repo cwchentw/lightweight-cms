@@ -2,6 +2,9 @@
 # Optional features in a site.
 
 
+# Style of a site.
+# Possible value: blog or documentation.
+define("SITE_STYLE", "documentation");
 # Enable the supports to PWA (progressive web application).
 define("ENABLE_PWA", true);
 # Enable a ToC (Table of Contents) on sidebars of posts.

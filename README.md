@@ -149,6 +149,14 @@ Website owners prefer flat files over relational databases when feasible. Noneth
 
 The dependencies mentioned here are based on *default* and *multilingual* themes of Lightweight CMS. If you adapt another theme, your dependencies of the Web may vary.
 
+## Builtin Themes
+
+* *default* theme for documentation sites
+* *multilingual* theme for documentation sites with multiple locales
+* *blog* theme for blogs
+
+Set `SITE_STYLE` in *config/optionalFeatures.php* or its template to `blog` if you employ *blog* theme or its equivalent; to `documentation` otherwise.
+
 ## Usage
 
 We assume GNU/Linux as both development and production environments. If you use Windows, see [this article](https://lightweightcms.org/howto/run-lightweight-cms-on-windows/).

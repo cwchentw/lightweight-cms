@@ -109,6 +109,11 @@ while (count($dirs) > 0) {
     }
 
     if (POST_PER_PAGE > 0 && $pageCount > POST_PER_PAGE) {
+        # Skip the pages for a home page in blogs.
+        if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE && $contentDirectory === $dir) {
+            continue;
+        }
+
         $baseURI = str_replace($sep, "/", substr($dir, strlen($contentDirectory)));
 
         $c = 1;
@@ -121,6 +126,23 @@ while (count($dirs) > 0) {
             $c += 1;
             $pageCount -= POST_PER_PAGE;
         }
+    }
+}
+
+# Compile the pages for a home page in blogs.
+if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+    $allPosts = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
+
+    $c = 1;
+    $postCount = count($allPosts);
+    while ($postCount > POST_PER_PAGE) {
+        $uri = SITE_PREFIX . "/" . $c . "/";
+
+        $pageContent = compilePage($uri);
+        compile($pageContent, $uri);
+
+        $c += 1;
+        $postCount -= POST_PER_PAGE;
     }
 }
 

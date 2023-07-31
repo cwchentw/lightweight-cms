@@ -1,5 +1,8 @@
 # Changelog
 
+* 2023-07-30
+  * Add *blog* theme for blogs
+  * Add `SITE_STYLE` in *config/optionalFeatures.template.php*
 * 2023-07-17
   * Optimize the compilation time in static mode (*experimental*)
   * Add `DATA_DIRECTORY` in *config/internal.template.php*
