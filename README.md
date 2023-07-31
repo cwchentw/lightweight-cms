@@ -29,9 +29,9 @@ Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 ### Windows
 
 ```shell
-> choco install php --version=8.0.22
+> choco install php --version=8.1.21
 > choco install composer
-> choco install nodejs --version=18.12.1
+> choco install nodejs --version=18.17.0
 > choco install rsync
 > choco install sed
 ```
@@ -88,8 +88,8 @@ $ php composer-setup.php --install-dir=$HOME/bin --filename=composer
 Install [nvm](https://github.com/nvm-sh/nvm). Install Node.js with `nvm`:
 
 ```shell
-$ nvm install 18.12.1
-$ nvm use 18.12.1
+$ nvm install 18.17.0
+$ nvm use 18.17.0
 ```
 
 ```shell
@@ -148,6 +148,14 @@ Website owners prefer flat files over relational databases when feasible. Noneth
   * [Flow](https://flow.org/en/)
 
 The dependencies mentioned here are based on *default* and *multilingual* themes of Lightweight CMS. If you adapt another theme, your dependencies of the Web may vary.
+
+## Builtin Themes
+
+* *default* theme for documentation sites
+* *multilingual* theme for documentation sites with multiple locales
+* *blog* theme for blogs
+
+Set `SITE_STYLE` in *config/optionalFeatures.php* or its template to `blog` if you employ *blog* theme or its equivalent; to `documentation` otherwise.
 
 ## Usage
 

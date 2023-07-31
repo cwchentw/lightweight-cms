@@ -15,7 +15,7 @@ require_once $rootDirectory . $sep . THEME_DIRECTORY . $sep . SITE_THEME . $sep 
 
 
 try {
-    $publicDirectory = $rootDirectory . $sep . "public";
+    $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
     # `loadAssets($dest)` is a function
     #  implemented by a Lightweight CMS theme.
