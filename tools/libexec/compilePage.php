@@ -32,8 +32,12 @@ if ("" != SITE_PREFIX) {
 if (\LightweightCMS\Core\isHome($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
-    # Posts not included in any section.
-    $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($loc);
+    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+        $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
+    }
+    else {
+        $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getPosts($homeURI);
+    }
     # First page in a series of pages.
     if (POST_PER_PAGE > 0) {
         $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($loc, 0);
@@ -46,7 +50,6 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
-    # Posts not included in any section.
     if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
         $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
     }
