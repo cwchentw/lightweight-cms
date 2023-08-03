@@ -13,15 +13,38 @@ $sections = $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS];
 $pages = \LightweightCMS\Core\getPosts(SITE_PREFIX . "/");
 # Posts are all the web pages except those under a home page.
 $posts = $GLOBALS[LIGHTWEIGHT_CMS_POSTS];
-usort($posts, $GLOBALS[SORT_POST_CALLBACK]);
-preg_match("/^\/(\d+)\/$/", $_SERVER["REQUEST_URI"], $matches);
-if (!is_null($matches)) {
+if (preg_match("/^\/(\d+)\/$/",
+    $_SERVER["REQUEST_URI"],
+    $matches))
+{
     $currentPageCount = $matches[1];
 }
 else {
     $currentPageCount = 0;
 }
-usort($posts, $GLOBALS[SORT_POST_CALLBACK]);
+# Sort two posts in reverse chronological order by default.
+usort($posts, function ($a, $b) {
+    if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $a)
+        && array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $b))
+    {
+        $ma = $a[LIGHTWEIGHT_CMS_POST_MTIME];
+        $mb = $b[LIGHTWEIGHT_CMS_POST_MTIME];
+
+        return $ma <=> $mb;
+    }
+
+    if (array_key_exists(LIGHTWEIGHT_CMS_POST_TITLE, $a)
+        && array_key_exists(LIGHTWEIGHT_CMS_POST_TITLE, $b))
+    {
+        $ta = $a[LIGHTWEIGHT_CMS_POST_TITLE];
+        $tb = $b[LIGHTWEIGHT_CMS_POST_TITLE];
+
+        return strcasecmp($ta, $tb);
+    }
+
+    # They are equal, which is seldom the case.
+    return 0;
+});
 if (POST_PER_PAGE > 0) {
     $currentPosts = array();
 
