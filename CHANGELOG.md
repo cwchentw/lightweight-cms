@@ -1,5 +1,7 @@
 # Changelog
 
+* 2023-07-03
+  * Move `SITE_STYLE` to *config/parameters.template.php*
 * 2023-07-30
   * Add *blog* theme for blogs
   * Add `SITE_STYLE` in *config/optionalFeatures.template.php*

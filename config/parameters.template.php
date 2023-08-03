@@ -2,6 +2,9 @@
 # Parameters of a site.
 
 
+# Style of a site.
+# Possible value: blog or documentation.
+define("SITE_STYLE", "documentation");
 # Redirecting rules.
 define(
     "REDIRECT_LIST",
