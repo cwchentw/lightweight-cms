@@ -1,7 +1,7 @@
 ---
 title: The Features of Lightweight CMS
 linkTitle: Feature
-mtime: 2023/6/8
+mtime: 2023/09/09
 weight: 2
 ---
 
@@ -12,7 +12,8 @@ This article lists the features of Lightweight CMS.
 == Site-related Features
 
 * Cross-platform
-* Switch between static mode and dynamic mode
+* Use vanilla PHP as its core and template language, which is well known by virtually all web developers
+* Switch between a static site and PHP dynamic website
 * Write posts in either https://github.github.com/gfm/[Markdown], https://asciidoc.org/[AsciiDoc], https://docutils.sourceforge.io/rst.html[reStructuredText] or vanilla HTML
 * Write dynamic pages in PHP
 * Draft posts

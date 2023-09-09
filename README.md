@@ -5,8 +5,8 @@ Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
 ## Features
 
 * Cross-platform
-* Switch between static mode and dynamic mode
-* Compile to a static site if no dynamic page is needed
+* Use vanilla PHP as its core and template language, which is well known by virtually all web developers
+* Switch between a static site and PHP dynamic website
 * Build a multilingual site
 * Write posts in either [Markdown](https://github.github.com/gfm/), [AsciiDoc](https://asciidoc.org/), [reStructuredText](https://docutils.sourceforge.io/rst.html) or vanilla HTML
 * Write dynamic pages in PHP
