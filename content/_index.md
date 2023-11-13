@@ -1,4 +1,4 @@
-Welcome to the official site of Lightweight CMS, which is a live demostration of Lightweight CMS itself.
+Welcome to the official site of Lightweight CMS, which is a live demonstration of Lightweight CMS itself.
 
 If you are new to the content website builder, view our [introductory articles](/#introduction) first.
 
