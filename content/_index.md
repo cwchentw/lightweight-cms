@@ -1,4 +1,6 @@
-Welcome to the official site of Lightweight CMS. If you are new to this website publishing software, view our [introductory articles](/#introduction) first.
+Welcome to the official site of Lightweight CMS, which is a live demostration of Lightweight CMS itself.
+
+If you are new to the content website builder, view our [introductory articles](/#introduction) first.
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>

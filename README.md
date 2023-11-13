@@ -1,6 +1,6 @@
 # Lightweight CMS
 
-Lightweight CMS is a dual-mode, flat-file CMS powered by PHP.
+Dual-mode, flat-file CMS powered by PHP
 
 ## Features
 
@@ -219,4 +219,4 @@ See [here](/CHANGELOG.md)
 
 ## Copyright
 
-Copyright (c) 2021-2023 Michelle Chen. Licensed under MIT
+Copyright (c) 2023 Michelle Chen. Licensed under MIT
