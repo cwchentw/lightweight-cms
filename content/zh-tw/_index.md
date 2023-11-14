@@ -2,7 +2,44 @@
 title: 輕量級 CMS
 ---
 
-歡迎來到 **Lightweight CMS (輕量級內容管理系統)** 的官方網站。如果你對本網站發佈軟體感到陌生，先觀看我們的[介紹文章](/zh-tw/#introduction)。
+歡迎來到 **Lightweight CMS (輕量級內容管理系統)** 的官方網站。這個網站即為 Lightweight CMS 原始碼本身的展示品。
+
+<style>
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.125rem;
+    text-align: center;
+}
+</style>
+
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">跨平台</div>
+        <p>在 Windows、macOS 和 GNU/Linux 上執行 Lightweight CMS</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">基於 PHP</div>
+        <p>以幾乎所有網站開發者都熟悉的<i>通用語言</i>實作</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">多種輕量級語言</div>
+        <p>使用 Markdown、AsciiDoc 或 reStructuredText 撰寫頁面</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">雙模式</div>
+        <p>可以是靜態或動態網站。切換相當容易</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">免資料庫</div>
+        <p>使用 Git 等版本控制系統管理網站</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">MIT 授權</div>
+        <p>對個人和商業網站都寬容的授權模式</p>
+    </div>
+</div>
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>

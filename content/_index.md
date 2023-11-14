@@ -1,6 +1,41 @@
 Welcome to the official site of Lightweight CMS, which is a live demonstration of Lightweight CMS itself.
 
-If you are new to the content website builder, view our [introductory articles](/#introduction) first.
+<style>
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.125rem;
+    text-align: center;
+}
+</style>
+
+<div class="row">
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">Cross Platform</div>
+        <p>Run Lightweight CMS on Windows, macOS and GNU/Linux</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">PHP Based</div>
+        <p>Implemented in a <i>lingua franca</i> well known by virtually all web developers</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">Lightweight Languages</div>
+        <p>Write posts in either Markdown, AsciiDoc or reStructuredText</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">Dual Mode</div>
+        <p>Either a static site or a dynamic site. Switch between them is piece of cake</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">Database Free</div>
+        <p>Manage you site by a version control system like Git</p>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12">
+        <div class="feature-title">MIT License</div>
+        <p>Permissive for both personal and commercial sites</p>
+    </div>
+</div>
 
 <!-- Separator. -->
 <div style="padding-top: 25pt;"></div>
