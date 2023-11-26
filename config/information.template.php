@@ -11,14 +11,14 @@ define("SITE_NAME", "Lightweight CMS");
 # Short name of a site.
 define("SITE_SHORT_NAME", "Lightweight CMS");
 # A concise description of a site.
-define("SITE_DESCRIPTION", "A Dual-Mode, Flat-File CMS Powered by PHP");
+define("SITE_DESCRIPTION", "Dual-Mode, Flat-File CMS Powered by PHP");
 # Principal author of a site.
 #
 # If there are multiple authors in a site,
 #  set the author of a specific post in its front matter.
 define("SITE_AUTHOR", "Michelle Chen");
 # Copyright text of a site.
-define("SITE_COPYRIGHT", "Copyright (c) 2021-2023 Michelle Chen. Licensed under MIT");
+define("SITE_COPYRIGHT", "Copyright (c) 2023 Michelle Chen. Licensed under MIT");
 # Language of rendered HTML pages.
 #
 # Lightweight CMS is not designed for a multi-language site.

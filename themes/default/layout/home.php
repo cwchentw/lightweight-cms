@@ -55,7 +55,7 @@ $status = 200;
             </div>
         </div>
 
-        <div id="top" class="container">
+        <div class="container">
             <div id="main-content">
                 <?php
                 # Show home content if it is not empty.
@@ -164,7 +164,6 @@ $status = 200;
                     echo "</div>";  # End of the region of the sections.
                 }
                 ?>
-                </div>
             </div>
         </div>
 

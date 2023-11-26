@@ -5,7 +5,7 @@ $url = $baseURL . $relURL;
 $title = urldecode(SITE_NAME);
 $summary = urlencode(SITE_DESCRIPTION);
 $twitter = TWITTER;
-$width = "32x32";
+$width = "32";
 ?>
 
 <div style='margin-bottom: 10px;'>
