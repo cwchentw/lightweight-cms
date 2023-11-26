@@ -107,7 +107,7 @@ if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)) {
             </div>
         </div>
 
-        <div id="top" class="container">
+        <div class="container">
             <div class="row">
                 <div id="main-content" class="col-lg-9 col-xs-12">
                     <?php
@@ -218,7 +218,6 @@ if (array_key_exists(LIGHTWEIGHT_CMS_SECTION_MTIME, $section)) {
                         echo "</div>";  # End of the region of the sections.
                     }
                     ?>
-                </div>
                 </div>
 
                 <div id="fixed-sidebar" class="col-lg-3 col-xs-12">

@@ -108,7 +108,7 @@ $status = 200;
             </div>
         </div>
 
-        <div id="top" class="container">
+        <div class="container">
             <div id="main-content">
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col">
