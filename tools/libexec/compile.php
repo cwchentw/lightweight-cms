@@ -153,17 +153,14 @@ $tags = json_decode($json, JSON_UNESCAPED_UNICODE);
 
 $tagsURI = SITE_PREFIX . "/tags/";
 $tagsContent = compilePage($tagsURI);
-compile($tagsContent, $tagsURI);
+compile($tagsContent, "/tags/");
 
 $tagCount = 0;
 foreach ($tags as $tag => $paths) {
     $tagPageContent = compilePage(
         SITE_PREFIX . "/tags/" . urlencode($tag) . "/"
     );
-    compile(
-        $tagPageContent,
-        SITE_PREFIX . "/tags/${tag}/"
-    );
+    compile($tagPageContent, "/tags/${tag}/");
 
     $tagPageCount = 0;
     foreach ($paths as $path) {
@@ -176,10 +173,7 @@ foreach ($tags as $tag => $paths) {
             $tagPageContent = compilePage(
                 SITE_PREFIX . "/tags/" . urlencode($tag) . "/" . $c . "/"
             );
-            compile(
-                $tagPageContent,
-                SITE_PREFIX . "/tags/${tag}/${c}/"
-            );
+            compile($tagPageContent, "/tags/${tag}/${c}/");
 
             $c += 1;
             $tagPageCount -= POST_PER_PAGE;
@@ -192,8 +186,8 @@ foreach ($tags as $tag => $paths) {
 if (POST_PER_PAGE > 0 && $tagCount > POST_PER_PAGE) {
     $c = 1;
     while ($tagCount > POST_PER_PAGE) {
-        $u = SITE_PREFIX . "/tags/" . $c . "/";
-        $tagsContent = compilePage($u);
+        $u = "/tags/" . $c . "/";
+        $tagsContent = compilePage(SITE_PREFIX . $u);
         compile($tagsContent, $u);
 
         $c += 1;
@@ -215,36 +209,29 @@ function isWebPage ($path)
 
 function compile ($content, $uri)
 {
-    if ("" !== SITE_PREFIX) {
-        $_uri = SITE_PREFIX . $uri;
-    }
-    else {
-        $_uri = $uri;
-    }
-
     $sep = DIRECTORY_SEPARATOR;
     $rootDirectory = __DIR__ . $sep . ".." . $sep . "..";
 
     $publicDirectory = $rootDirectory . $sep . PUBLIC_DIRECTORY;
 
     if ("" != $content) {
-        if (!file_exists($publicDirectory . str_replace("/", $sep, $_uri))) {
-            if (!mkdir($publicDirectory . str_replace("/", $sep, $_uri))) {
-                fwrite(STDERR, "Unable to create a directory for " . $_uri . PHP_EOL);
+        if (!file_exists($publicDirectory . str_replace("/", $sep, $uri))) {
+            if (!mkdir($publicDirectory . str_replace("/", $sep, $uri))) {
+                fwrite(STDERR, "Unable to create a directory for " . $uri . PHP_EOL);
                 exit(1);
             }
         }
 
         if (!file_put_contents(
-            $publicDirectory . str_replace("/", $sep, $_uri) . "index.html",
+            $publicDirectory . str_replace("/", $sep, $uri) . "index.html",
             $content
         )) {
-            fwrite(STDERR, "Unable to generate web page for " . $_uri . PHP_EOL);
+            fwrite(STDERR, "Unable to generate web page for " . $uri . PHP_EOL);
             exit(1);
         }
     }
     else {
-        fwrite(STDERR, "Unable to generate web page for " . $_uri . PHP_EOL);
+        fwrite(STDERR, "Unable to generate web page for " . $uri . PHP_EOL);
         exit(1);
     }
 }

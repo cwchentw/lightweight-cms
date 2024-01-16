@@ -11,14 +11,14 @@
 <?php endif; ?>
 
 <!-- icon in the highest resolution we need it for -->
-<link rel="icon" sizes="192x192" href="/img/<?php echo SITE_LOGO; ?>-192x192.png">
+<link rel="icon" sizes="192x192" href="<?php echo SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-192x192.png">
 
 <!-- Reuse same icon for Safari -->
-<link rel="apple-touch-icon" href="/img/<?php echo SITE_LOGO; ?>-192x192.png">
+<link rel="apple-touch-icon" href="<?php echo SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-192x192.png">
 
 <?php if (!is_null(ENABLE_PWA) && ENABLE_PWA): ?>
 <!-- Configuration for an installable web application. -->
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="<?php echo SITE_PREFIX; ?>/manifest.json">
 <?php endif; ?>
 
 <!-- Reduce inconsistency between browsers. -->
@@ -41,12 +41,12 @@
 <!-- Add more third-party style sheets here. -->
 
 <!-- A site-specific style sheet -->
-<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="<?php echo SITE_PREFIX; ?>/css/site.css">
 
 <!-- Add more site-specific style sheets here. -->
 
 <?php if (!is_null(ENABLE_PWA) && ENABLE_PWA): ?>
 <!-- A service worker runs in the background to enrich
       user experiences under offline and slow network. -->
-<script src="/register-service-worker.js"></script>
+<script src="<?php echo SITE_PREFIX; ?>/register-service-worker.js"></script>
 <?php endif; ?>

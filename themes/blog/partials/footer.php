@@ -47,7 +47,7 @@
                 </li>
                 <?php endif; ?>
 
-                <li><a class="img-link" href="<?php echo SITE_BASE_URL . SITE_PREFIX . "/rss.xml"; ?>">
+                <li><a class="img-link" href="<?php echo SITE_PREFIX . "/rss.xml"; ?>">
                         RSS
                     </a>
                 </li>

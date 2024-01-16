@@ -5,7 +5,7 @@
     <a class="img-link"
         href="https://facebook.com/<?php echo FACEBOOK; ?>"
         target="_blank" rel="noopener nofollow">
-        <img src="/img/share-buttons/facebook-32x32.png" alt="Facebook of <?php echo siteName(); ?>"/>
+        <img src="<?php echo SITE_PREFIX; ?>/img/share-buttons/facebook-32x32.png" alt="Facebook of <?php echo siteName(); ?>"/>
     </a>
     <?php endif; ?>
 
@@ -13,7 +13,7 @@
     <a class="img-link"
         href="https://facebook.com/groups/<?php echo FACEBOOK_GROUP; ?>"
         target="_blank" rel="noopener nofollow">
-        <img src="/img/share-buttons/facebook-32x32.png" alt="Facebook Group of <?php echo siteName(); ?>"/>
+        <img src="<?php echo SITE_PREFIX; ?>/img/share-buttons/facebook-32x32.png" alt="Facebook Group of <?php echo siteName(); ?>"/>
     </a>
     <?php endif; ?>
 
@@ -21,7 +21,7 @@
     <a class="img-link"
         href="https://twitter.com/<?php echo TWITTER; ?>"
         target="_blank" rel="noopener nofollow">
-        <img src="/img/share-buttons/twitter-32x32.png" alt="Twitter of <?php echo siteName()?>"/>
+        <img src="<?php echo SITE_PREFIX; ?>/img/share-buttons/twitter-32x32.png" alt="Twitter of <?php echo siteName()?>"/>
     </a>
     <?php endif; ?>
 
@@ -29,13 +29,13 @@
     <a class="img-link"
         href="https://github.com/<?php echo GITHUB; ?>"
         target="_blank" rel="noopener nofollow">
-        <img src="/img/share-buttons/github-32x32.png" alt="GitHub of <?php echo SITE_NAME; ?>"/>
+        <img src="<?php echo SITE_PREFIX; ?>/img/share-buttons/github-32x32.png" alt="GitHub of <?php echo SITE_NAME; ?>"/>
     </a>
     <?php endif; ?>
 
     <a class="img-link"
-        href="<?php echo SITE_BASE_URL . SITE_PREFIX . "/rss.xml"; ?>">
-        <img src="/img/share-buttons/rss-32x32.png" alt="RSS Feed of <?php echo SITE_NAME; ?>"/>
+        href="<?php echo SITE_PREFIX . "/rss.xml"; ?>">
+        <img src="<?php echo SITE_PREFIX; ?>/img/share-buttons/rss-32x32.png" alt="RSS Feed of <?php echo SITE_NAME; ?>"/>
     </a>
 
     <ul>

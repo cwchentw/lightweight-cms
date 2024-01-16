@@ -46,7 +46,7 @@ if ("" == $description) {
 <?php endif; ?>
 <meta name="twitter:title" content="<?php echo $title; ?>" />
 <meta name="twitter:description" content="<?php echo $description; ?>" />
-<meta name="twitter:image" content="<?php echo SITE_BASE_URL; ?>/img/<?php echo SITE_LOGO; ?>-128x128.png" />
+<meta name="twitter:image" content="<?php echo SITE_BASE_URL . SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-128x128.png" />
 
 <!-- Open graph -->
 <meta property="og:title" content="<?php echo $title; ?>" />
@@ -54,4 +54,4 @@ if ("" == $description) {
 <meta property="og:url" content="<?php echo SITE_BASE_URL . $_SERVER["REQUEST_URI"]; ?>" />
 <meta property="og:locale" content="<?php echo SITE_LANGUAGE; ?>" />
 <meta property="og:description" content="<?php echo $description; ?>" />
-<meta property="og:image" content="<?php echo SITE_BASE_URL; ?>/img/<?php echo SITE_LOGO; ?>-128x128.png" />
+<meta property="og:image" content="<?php echo SITE_BASE_URL . SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-128x128.png" />

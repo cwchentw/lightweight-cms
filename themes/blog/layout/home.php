@@ -95,7 +95,7 @@ $status = 200;
                 <header>
                     <div>
                         <h1 class="title">
-                            <img class="d-none d-md-block" src="/img/<?php echo SITE_LOGO; ?>-128x128.png" alt="<?php echo SITE_NAME; ?>" style="margin-right: 10px;" />
+                            <img class="d-none d-md-block" src="<?php echo SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-128x128.png" alt="<?php echo SITE_NAME; ?>" style="margin-right: 10px;" />
 
                             <span>
                                 <?php echo SITE_NAME; ?>

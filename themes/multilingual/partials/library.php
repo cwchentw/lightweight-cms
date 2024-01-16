@@ -53,6 +53,6 @@ if (!is_null(ENABLE_FIXED_SIDEBAR) && ENABLE_FIXED_SIDEBAR) {
 </script>
 
 <!-- A site-specific script -->
-<script src="/js/site.js"></script>
+<script src="<?php echo SITE_PREFIX; ?>/js/site.js"></script>
 
 <!-- Add more site-specific scripts here. -->
