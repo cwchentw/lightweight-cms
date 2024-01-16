@@ -80,7 +80,7 @@ if (ENABLE_TOC) {
                 <div>
                     <header>
                         <h1>
-                            <img class="d-none d-md-block" src="/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
+                            <img class="d-none d-md-block" src="<?php echo SITE_PREFIX; ?>/img/<?php echo SITE_LOGO; ?>-64x64.png" alt="<?php echo SITE_AUTHOR; ?>" style="margin-right: 10px;" />
 
                             <span>
                                 <?php echo $post[LIGHTWEIGHT_CMS_POST_TITLE]; ?>

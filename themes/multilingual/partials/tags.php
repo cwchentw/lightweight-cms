@@ -12,7 +12,7 @@ else {
 <div style='margin-bottom: 5px;'>
 <?php
 foreach ($tags as $tag) {
-    echo "<a href='/tags/" . preg_replace("/_/", "%20", urlencode(preg_replace("/ /", "_", $tag))) . "/'"
+    echo "<a href='" . SITE_PREFIX . "/tags/" . preg_replace("/_/", "%20", urlencode(preg_replace("/ /", "_", $tag))) . "/'"
         . " class='badge bg-primary' style='margin-right: 3px; margin-bottom: 5px;'>"
         . $tag . "</a>";
 }
