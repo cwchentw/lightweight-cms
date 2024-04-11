@@ -156,4 +156,4 @@ In contrary, if you utilize another front end stack(s) like Less and TypeScript,
 
 ## Copyright
 
-Copyright (c) Michelle Chen. Licensed under MIT
+Copyright (c) OpenTechCoder. Licensed under MIT

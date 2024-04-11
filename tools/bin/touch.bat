@@ -1,6 +1,6 @@
 @echo off
 rem wtouch.bat - Simulate Unix `touch` on Windows.
-rem Copyright (c) 2020 Michelle Chen.
+rem Copyright (c) 2020 OpenTechCoder.
 rem Licensed under MIT.
 
 

@@ -29,4 +29,4 @@ if ("" != $googleAnalyticsID) {
 
 ## Copyright
 
-Copyright (c) 2021 Michelle Chen. Licensed under MIT
+Copyright (c) 2021 OpenTechCoder. Licensed under MIT

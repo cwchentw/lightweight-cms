@@ -129,7 +129,7 @@ Here represents a Markdown post with a front matter:
 ```markdown
 ---
 title: A Markdown Post
-author: Michelle Chen
+author: OpenTechCoder
 mtime: 2021/06/08
 description: A concise description for a post
 ---

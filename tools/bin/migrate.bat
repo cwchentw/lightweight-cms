@@ -83,7 +83,7 @@ sed -i "s/Dual-Mode, Flat-File CMS Powered by PHP/A Concise Description of Your 
 )
 
 rem Update the site author.
-sed -i "s/Michelle Chen/The Site Author/" %informationConfig:\=/% || (
+sed -i "s/OpenTechCoder/The Site Author/" %informationConfig:\=/% || (
     echo Unable to modify information.php >&2
     exit /b 1
 )

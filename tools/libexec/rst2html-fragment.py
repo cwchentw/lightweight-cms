@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # rst2html-fragment.py - Convert reStructuredText to HTML fragment
 #
-# Copyright (c) 2022 Michelle Chen. Licensed under MIT
+# Copyright (c) 2022 OpenTechCoder. Licensed under MIT
 
 
 import sys

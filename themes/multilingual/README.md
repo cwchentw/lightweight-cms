@@ -199,4 +199,4 @@ This theme adapts the URI prefix of a web page as its locale. You may add more l
 
 ## Copyright
 
-Copyright (c) Michelle Chen. Licensed under MIT
+Copyright (c) OpenTechCoder. Licensed under MIT

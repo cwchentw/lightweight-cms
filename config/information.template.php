@@ -16,9 +16,9 @@ define("SITE_DESCRIPTION", "Dual-Mode, Flat-File CMS Powered by PHP");
 #
 # If there are multiple authors in a site,
 #  set the author of a specific post in its front matter.
-define("SITE_AUTHOR", "Michelle Chen");
+define("SITE_AUTHOR", "OpenTechCoder");
 # Copyright text of a site.
-define("SITE_COPYRIGHT", "Copyright (c) 2023 Michelle Chen. Licensed under MIT");
+define("SITE_COPYRIGHT", "Copyright (c) 2023 OpenTechCoder. Licensed under MIT");
 # Language of rendered HTML pages.
 #
 # Lightweight CMS is not designed for a multi-language site.
