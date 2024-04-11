@@ -219,4 +219,4 @@ See [here](/CHANGELOG.md)
 
 ## Copyright
 
-Copyright (c) 2023 OpenTechCoder. Licensed under MIT
+Copyright (c) 2023 ByteBard. Licensed under MIT

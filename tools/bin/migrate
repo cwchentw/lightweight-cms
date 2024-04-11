@@ -91,7 +91,7 @@ sed -i "" -e "s/Dual-Mode, Flat-File CMS Powered by PHP/A Concise Description of
 )
 
 # Update the site author.
-sed -i "" -e "s/OpenTechCoder/The Site Author/" "${root}/config/information.php" || (
+sed -i "" -e "s/ByteBard/The Site Author/" "${root}/config/information.php" || (
     echo "Unable to modify information.php" >&2;
     exit 1;
 )

@@ -131,7 +131,7 @@ Another paragraph with some text.
 ```markdown
 ---
 title: A Markdown Post
-author: OpenTechCoder
+author: ByteBard
 mtime: 2021/06/08
 description: A concise description for a post
 ---

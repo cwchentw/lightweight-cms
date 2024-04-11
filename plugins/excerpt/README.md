@@ -37,4 +37,4 @@ if (isset($posts) && count($posts) > 0) {
 
 ## Copyright
 
-Copyright (c) 2021 OpenTechCoder. Licensed under MIT
+Copyright (c) 2021 ByteBard. Licensed under MIT
