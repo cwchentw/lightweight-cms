@@ -13,27 +13,27 @@ Welcome to the official site of Lightweight CMS, which is a live demonstration o
 <div class="row">
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">Cross Platform</div>
-        <p>Run Lightweight CMS on Windows, macOS and GNU/Linux</p>
+        <p>Run Lightweight CMS on Windows, macOS, or GNU/Linux with ease.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">PHP Based</div>
-        <p>Implemented in a <i>lingua franca</i> well known by virtually all web developers</p>
+        <p>Built with a <i>lingua franca</i> familiar to virtually every web developer.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">Lightweight Languages</div>
-        <p>Write posts in either Markdown, AsciiDoc or reStructuredText</p>
+        <p>Write posts in Markdown, AsciiDoc, or reStructuredText — your choice.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">Dual Mode</div>
-        <p>Either a static site or a dynamic site. Switch between them is piece of cake</p>
+        <p>Serve as a static site or a dynamic one — switching is effortless.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">Database Free</div>
-        <p>Manage you site by a version control system like Git</p>
+        <p>Manage your site entirely through version control systems like Git.</p>
     </div>
     <div class="col-lg-4 col-md-6 col-12">
         <div class="feature-title">MIT License</div>
-        <p>Permissive for both personal and commercial sites</p>
+        <p>Permissively licensed for both personal and commercial use.</p>
     </div>
 </div>
 
