@@ -1,5 +1,7 @@
 # Changelog
 
+* 2026-04-17
+  * Deprecate `NO_FOLLOW_EXTERNAL_LINK` (global external link nofollow policy)
 * 2023-07-03
   * Move `SITE_STYLE` to *config/parameters.template.php*
 * 2023-07-30

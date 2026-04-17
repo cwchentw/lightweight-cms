@@ -404,8 +404,7 @@ function readPost ($page)
         #  Hence, we postpone the evaluation till our page layout.
     }
 
-    # Prevent search engine bots from following links.
-    # FIXME: Not working for reStructuredText posts.
+    # Deprecated: global nofollow policy (do not extend)
     if (NO_FOLLOW_EXTERNAL_LINK) {
         $output = noFollowLinks($result[LIGHTWEIGHT_CMS_POST_CONTENT]);
         $result[LIGHTWEIGHT_CMS_POST_CONTENT] = $output;

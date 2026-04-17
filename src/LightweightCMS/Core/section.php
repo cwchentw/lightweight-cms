@@ -105,7 +105,7 @@ function readSection ($page)
         $result[LIGHTWEIGHT_CMS_SECTION_AUTHOR] = SITE_AUTHOR;
     }
 
-    # Prevent search engine bots from following links.
+    # Deprecated: global nofollow policy (do not extend)
     if (NO_FOLLOW_EXTERNAL_LINK
         && array_key_exists(LIGHTWEIGHT_CMS_SECTION_CONTENT, $result))
     {

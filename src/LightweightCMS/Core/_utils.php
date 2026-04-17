@@ -10,11 +10,21 @@ function isValidField ($array, $key)
         && "" != $array[$key];
 }
 
-# Disallow search engines from following links.
+# DEPRECATED: Legacy SEO policy to add rel="nofollow" to external links.
 #
-# Internally, the function calls Perl instead of utilizing
-#  regex of PHP because the latter is unable to replace patterns
-#  globally with callbacks.
+# Historical context:
+# - This was originally introduced to discourage search engines from
+#   following outbound links, based on older SEO practices.
+# - The implementation also relied on a Perl helper rather than PHP-side
+#   regex processing, due to limitations / convenience at the time.
+#
+# Current status:
+# - This policy is being retired.
+# - Blanket nofollow for editorial outbound links is no longer desired.
+# - Kept temporarily for backward compatibility and safe rollback.
+#
+# TODO:
+# - Remove once the nofollow policy is fully retired.
 function noFollowLinks ($content)
 {
     $sep = DIRECTORY_SEPARATOR;
