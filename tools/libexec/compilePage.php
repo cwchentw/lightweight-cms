@@ -32,7 +32,7 @@ if ("" != SITE_PREFIX) {
 if (\LightweightCMS\Core\isHome($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($loc);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($loc);
-    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+    if (!is_null(SITE_MODE) && "blog" === SITE_MODE) {
         $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
     }
     else {
@@ -50,7 +50,7 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $homeURI = "/";
     $GLOBALS[LIGHTWEIGHT_CMS_BREADCRUMB] = \LightweightCMS\Core\getBreadcrumb($homeURI);
     $GLOBALS[LIGHTWEIGHT_CMS_SECTIONS] = \LightweightCMS\Core\getSections($homeURI);
-    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+    if (!is_null(SITE_MODE) && "blog" === SITE_MODE) {
         $GLOBALS[LIGHTWEIGHT_CMS_POSTS] = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
     }
     else {
@@ -61,7 +61,7 @@ else if (POST_PER_PAGE > 0 && \LightweightCMS\Core\isPageInHome($loc)) {
     $GLOBALS[LIGHTWEIGHT_CMS_POST_PER_PAGE] = \LightweightCMS\Core\getPostsPerPage($homeURI, $matches[1]);
 
     # Show HTTP 404 page if no post on this page.
-    if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+    if (!is_null(SITE_MODE) && "blog" === SITE_MODE) {
         $c = count($GLOBALS[LIGHTWEIGHT_CMS_POSTS]);
         $p = ceil($c / POST_PER_PAGE);
         if ($matches[1] >= $p) {

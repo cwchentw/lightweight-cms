@@ -1,5 +1,7 @@
 # Changelog
 
+* 2026-04-18
+  * Rename `SITE_STYLE` to `SITE_MODE` to clarify that it affects content selection, not just styling
 * 2026-04-17
   * Deprecate `NO_FOLLOW_EXTERNAL_LINK` (global external link nofollow policy)
 * 2023-07-03

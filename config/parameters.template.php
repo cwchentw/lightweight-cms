@@ -4,7 +4,7 @@
 
 # Style of a site.
 # Possible value: blog or documentation.
-define("SITE_STYLE", "documentation");
+define("SITE_MODE", "documentation");
 # Redirecting rules.
 define(
     "REDIRECT_LIST",

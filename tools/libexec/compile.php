@@ -110,7 +110,7 @@ while (count($dirs) > 0) {
 
     if (POST_PER_PAGE > 0 && $pageCount > POST_PER_PAGE) {
         # Skip the pages for a home page in blogs.
-        if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE && $contentDirectory === $dir) {
+        if (!is_null(SITE_MODE) && "blog" === SITE_MODE && $contentDirectory === $dir) {
             continue;
         }
 
@@ -130,7 +130,7 @@ while (count($dirs) > 0) {
 }
 
 # Compile the pages for a home page in blogs.
-if (!is_null(SITE_STYLE) && "blog" === SITE_STYLE) {
+if (!is_null(SITE_MODE) && "blog" === SITE_MODE) {
     $allPosts = \LightweightCMS\Core\getAllPosts(SITE_PREFIX . "/");
 
     $c = 1;

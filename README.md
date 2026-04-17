@@ -105,7 +105,7 @@ It started from Hugo-inspired concepts and evolved into a pragmatic platform for
 - `multilingual`: documentation with i18n
 - `blog`: blog-style layout
 
-Set `SITE_STYLE` in `config/optionalFeatures.php` to `blog` or `documentation`.
+Set `SITE_MODE` in `config/parameters.php` to `blog` or `documentation`.
 
 ## Deployment
 
