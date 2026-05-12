@@ -156,6 +156,8 @@ if (array_key_exists(LIGHTWEIGHT_CMS_POST_MTIME, $post)) {
                     <main>
                         <?php
                         try {
+                            # NOTICE: This build-time heuristic code uses eval(). 
+                            # For safety guidelines and operational boundaries, please refer to NOTICE.md in the repository root.
                             eval($post[LIGHTWEIGHT_CMS_POST_CONTENT]);
 
                             # HTTP 200 OK.
